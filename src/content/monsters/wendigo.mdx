@@ -52,12 +52,48 @@ sightings:
       label: 'Ojibwe / Cree / Innu / Naskapi territory · centuries of cultural record',
       sourceUrl: 'https://www.britannica.com/topic/wendigo',
     }
+recordKind: folklore
+recordNote: Traditional folklore and historical records of belief. The creature and the
+  interpretation of the records are distinct.
+illustration:
+  src: /illustrations/wendigo.png
+  alt: Loose black-ink study of a gaunt humanlike figure with elongated limbs; no antlers.
+  caption: Imagined ink study · not evidence
+dossier:
+  entity: The Wendigo (Windigo / Witiko)
+  origin: Algonquian Tradition — Northern Boreal Forests
+  status: Active Threat — Seasonal / Winter Months
+  stamps:
+    - Extreme Cold
+    - Boreal Forests
+    - Ancient Threat
+  dangerLabel: CRITICAL
+  dangerNote: 9/10 — Apex predator. Possession risk. No escape in isolation.
+rules:
+  - title: Never go into the northern wilderness alone in winter.
+    body: The creature targets the isolated. Remove isolation from the equation wherever possible.
+  - title: Maintain your fire at all costs.
+    body:
+      Not a small fire. Not a dying fire. A fire that burns loud and hot and announces your presence
+      to everything in the forest. The cold is the Wendigo’s domain. Heat is yours.
+  - title: Do not follow voices into the trees.
+    body:
+      If you hear your name called in the dark — especially in a voice you recognise — do not move
+      toward it. Call back from where you are. Wait for the person to come to you.
+  - title: Watch for the cold inside.
+    body:
+      An unnatural cold felt from within. A craving that is not quite hunger. A detachment from the
+      people around you. These are not metaphors. Take them seriously immediately.
+  - title: Do not let desperation become an option.
+    body:
+      Plan for more food than you think you need. Know your exit routes. The worst outcomes begin
+      with the worst situations — reduce the situations.
+  - title: Respect the forest and the people who taught us this.
+    body:
+      The Algonquian nations have lived alongside this danger for thousands of years. Their warnings
+      are not superstition. They are accumulated wisdom paid for in survival.
 ---
 
-import StampRow from '../../components/StampRow.astro';
-import DocMeta from '../../components/DocMeta.astro';
-import DocTitle from '../../components/DocTitle.astro';
-import DangerMeter from '../../components/DangerMeter.astro';
 import Section from '../../components/Section.astro';
 import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
@@ -65,49 +101,6 @@ import EncounterCard from '../../components/EncounterCard.astro';
 import Outro from '../../components/Outro.astro';
 import MonsterMap from '../../components/MonsterMap.astro';
 import '../../styles/pages/wendigo.css';
-
-export const rules = [
-  {
-    title: 'Never go into the northern wilderness alone in winter.',
-    body: 'The creature targets the isolated. Remove isolation from the equation wherever possible.',
-  },
-  {
-    title: 'Maintain your fire at all costs.',
-    body: 'Not a small fire. Not a dying fire. A fire that burns loud and hot and announces your presence to everything in the forest. The cold is the Wendigo’s domain. Heat is yours.',
-  },
-  {
-    title: 'Do not follow voices into the trees.',
-    body: 'If you hear your name called in the dark — especially in a voice you recognise — do not move toward it. Call back from where you are. Wait for the person to come to you.',
-  },
-  {
-    title: 'Watch for the cold inside.',
-    body: 'An unnatural cold felt from within. A craving that is not quite hunger. A detachment from the people around you. These are not metaphors. Take them seriously immediately.',
-  },
-  {
-    title: 'Do not let desperation become an option.',
-    body: 'Plan for more food than you think you need. Know your exit routes. The worst outcomes begin with the worst situations — reduce the situations.',
-  },
-  {
-    title: 'Respect the forest and the people who taught us this.',
-    body: 'The Algonquian nations have lived alongside this danger for thousands of years. Their warnings are not superstition. They are accumulated wisdom paid for in survival.',
-  },
-];
-
-<StampRow red="Extreme Cold" faded="Boreal Forests" blue="Ancient Threat" />
-<DocMeta
-  rows={[
-    { label: 'ENTITY', value: 'The Wendigo (Windigo / Witiko)' },
-    { label: 'ORIGIN', value: 'Algonquian Tradition — Northern Boreal Forests' },
-    { label: 'THREAT GUIDE TYPE', value: 'Identification · Behaviour · Survival Protocol' },
-    { label: 'STATUS', value: 'Active Threat — Seasonal / Winter Months' },
-  ]}
-/>
-<DocTitle subtitle={frontmatter.description}>The Wendigo</DocTitle>
-<DangerMeter
-  danger={frontmatter.danger}
-  label="CRITICAL"
-  description="9/10 — Apex predator. Possession risk. No escape in isolation."
-/>
 
 <Section heading="If You're Reading This">
   <p>
@@ -246,7 +239,12 @@ export const rules = [
 </Section>
 
 <Section heading="Six Rules That May Save Your Life">
-  <SixRules rules={rules} />
+  <SixRules
+    rules={frontmatter.rules}
+    title={frontmatter.title}
+    number={frontmatter.number}
+    pocketHref="/pocket/wendigo/"
+  />
 </Section>
 
 <Section heading="Two Cases on the Record">

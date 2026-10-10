@@ -61,12 +61,54 @@ sightings:
       label: '"Springheel Jack" / Mothman-form sighting predating Point Pleasant',
       sourceUrl: 'https://folklife.si.edu/magazine/mothman-point-pleasant-west-virginia',
     }
+recordKind: reported
+recordNote: Witness reports and the Mothman legend are presented alongside historical events. A
+  documented event does not verify a supernatural explanation.
+illustration:
+  src: /illustrations/mothman.png
+  alt: Loose black-ink study of a neckless figure with partly spread wings.
+  caption: Imagined ink study · not evidence
+dossier:
+  entity: The Mothman
+  origin: Point Pleasant, West Virginia — November 1966
+  status: Dormant at Origin — Active Reports Globally Ongoing
+  stamps:
+    - Harbinger Class
+    - Point Pleasant WV
+    - Bridge Warning
+  dangerLabel: HARBINGER
+  dangerNote: 8/10 — Physical threat unclear. Prophetic appearance. Disaster follows within days.
+rules:
+  - title: Do not stop on bridges at night.
+    body:
+      If you see red eyes above a bridge, do not investigate. Do not take a photograph. Get off the
+      bridge and keep driving until you are somewhere with solid ground beneath you and no water
+      below.
+  - title: Do not look into the eyes.
+    body:
+      Every account of direct eye contact describes a hypnotic effect — a paralysis, a compulsion to
+      stay, to not move. Look away immediately. Move first, process the experience later, somewhere
+      safe.
+  - title: If it follows your car, do not stop.
+    body: The Mothman matched speed with vehicles at over 100 miles per hour. Maintain speed, get to
+      populated areas, and stay there. It has not been documented following into cities.
+  - title: Pay attention to what it is near.
+    body:
+      If the Mothman is a warning, it is warning you about a specific location. Note where you saw
+      it. Note what structures, what bridges, what facilities are nearby. That information may
+      matter to someone.
+  - title: Report it.
+    body:
+      Point Pleasant had a year of warnings before the Silver Bridge collapsed. More people reported
+      seeing it than reported it publicly. If you see something you cannot explain near
+      infrastructure — tell someone. Even if they do not believe you.
+  - title: Trust the dread.
+    body:
+      Every witness in Point Pleasant described a feeling of deep wrongness in the areas where the
+      Mothman appeared — a heaviness, an oppressive atmosphere. That feeling is information. If a
+      place feels wrong, leave the place.
 ---
 
-import StampRow from '../../components/StampRow.astro';
-import DocMeta from '../../components/DocMeta.astro';
-import DocTitle from '../../components/DocTitle.astro';
-import DangerMeter from '../../components/DangerMeter.astro';
 import Section from '../../components/Section.astro';
 import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
@@ -74,49 +116,6 @@ import EncounterCard from '../../components/EncounterCard.astro';
 import Outro from '../../components/Outro.astro';
 import MonsterMap from '../../components/MonsterMap.astro';
 import '../../styles/pages/mothman.css';
-
-export const rules = [
-  {
-    title: 'Do not stop on bridges at night.',
-    body: 'If you see red eyes above a bridge, do not investigate. Do not take a photograph. Get off the bridge and keep driving until you are somewhere with solid ground beneath you and no water below.',
-  },
-  {
-    title: 'Do not look into the eyes.',
-    body: 'Every account of direct eye contact describes a hypnotic effect — a paralysis, a compulsion to stay, to not move. Look away immediately. Move first, process the experience later, somewhere safe.',
-  },
-  {
-    title: 'If it follows your car, do not stop.',
-    body: 'The Mothman matched speed with vehicles at over 100 miles per hour. Maintain speed, get to populated areas, and stay there. It has not been documented following into cities.',
-  },
-  {
-    title: 'Pay attention to what it is near.',
-    body: 'If the Mothman is a warning, it is warning you about a specific location. Note where you saw it. Note what structures, what bridges, what facilities are nearby. That information may matter to someone.',
-  },
-  {
-    title: 'Report it.',
-    body: 'Point Pleasant had a year of warnings before the Silver Bridge collapsed. More people reported seeing it than reported it publicly. If you see something you cannot explain near infrastructure — tell someone. Even if they do not believe you.',
-  },
-  {
-    title: 'Trust the dread.',
-    body: 'Every witness in Point Pleasant described a feeling of deep wrongness in the areas where the Mothman appeared — a heaviness, an oppressive atmosphere. That feeling is information. If a place feels wrong, leave the place.',
-  },
-];
-
-<StampRow red="Harbinger Class" faded="Point Pleasant WV" blue="Bridge Warning" />
-<DocMeta
-  rows={[
-    { label: 'ENTITY', value: 'The Mothman' },
-    { label: 'ORIGIN', value: 'Point Pleasant, West Virginia — November 1966' },
-    { label: 'THREAT GUIDE TYPE', value: 'Identification · Behaviour · Survival Protocol' },
-    { label: 'STATUS', value: 'Dormant at Origin — Active Reports Globally Ongoing' },
-  ]}
-/>
-<DocTitle subtitle={frontmatter.description}>The Mothman</DocTitle>
-<DangerMeter
-  danger={frontmatter.danger}
-  label="HARBINGER"
-  description="8/10 — Physical threat unclear. Prophetic appearance. Disaster follows within days."
-/>
 
 <Section heading="Before We Begin">
   <p>
@@ -253,7 +252,12 @@ export const rules = [
     The rules for this one are different. You are not trying to survive an attack. You are trying to
     survive what comes after.
   </p>
-  <SixRules rules={rules} />
+  <SixRules
+    rules={frontmatter.rules}
+    title={frontmatter.title}
+    number={frontmatter.number}
+    pocketHref="/pocket/mothman/"
+  />
 </Section>
 
 <Section heading="Two Cases on the Record">

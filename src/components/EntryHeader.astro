@@ -1,0 +1,88 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import type { ReadingStats } from '../lib/reading-time.ts';
+import { recordLabels } from '../lib/entry-sections.ts';
+import DangerMeter from './DangerMeter.astro';
+import DocMeta from './DocMeta.astro';
+import InkIllustration from './InkIllustration.astro';
+interface Props {
+  entry: CollectionEntry<'monsters'>;
+  stats: ReadingStats;
+}
+const { entry, stats } = Astro.props;
+const { data } = entry;
+---
+
+<header class="entry-opening">
+  <div class="entry-kicker"><span>Journal entry {data.number}</span><span>{data.region}</span></div>
+  <div class="entry-hero">
+    <div class="entry-heading">
+      <h1 class="doc-title">{data.title}</h1>
+      <p class="entry-reading-time">
+        {stats.minutes} min read <span aria-hidden="true">·</span>
+        {stats.words.toLocaleString()} words
+      </p>
+      <p class="doc-subtitle">{data.description}</p>
+      <div class="entry-actions">
+        <a class="guide-button" href="#six-rules"
+          >Jump to Six Rules <span aria-hidden="true">↓</span></a
+        >
+        {
+          data.rules && (
+            <a class="pocket-link" href={`/pocket/${entry.id}/`}>
+              Printable pocket guide ↗
+            </a>
+          )
+        }
+      </div>
+    </div>
+    {
+      data.illustration && (
+        <figure class="creature-study">
+          <InkIllustration
+            src={data.illustration.src}
+            alt={data.illustration.alt}
+            width={360}
+            loading="eager"
+            fetchpriority="high"
+          />
+          <figcaption>
+            <span>Illustration / {data.number}</span>
+            {data.illustration.caption}
+          </figcaption>
+        </figure>
+      )
+    }
+  </div>
+  {
+    data.recordKind && (
+      <div class={`record-context record-context--${data.recordKind}`}>
+        <span class="record-kind">{recordLabels[data.recordKind]}</span>
+        <p>{data.recordNote}</p>
+      </div>
+    )
+  }
+  {
+    data.dossier && (
+      <>
+        <DangerMeter
+          danger={data.danger}
+          label={data.dossier.dangerLabel}
+          description={data.dossier.dangerNote}
+        />
+        <details class="dossier-details">
+          <summary>
+            Entry details <span>{data.entryClass}</span>
+          </summary>
+          <DocMeta
+            rows={[
+              { label: 'ENTITY', value: data.dossier.entity },
+              { label: 'ORIGIN', value: data.dossier.origin },
+              { label: 'STATUS', value: data.dossier.status },
+            ]}
+          />
+        </details>
+      </>
+    )
+  }
+</header>

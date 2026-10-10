@@ -1,9 +1,8 @@
 ---
 import { getCollection } from 'astro:content';
 import FieldManual from '../layouts/FieldManual.astro';
-import StampRow from '../components/StampRow.astro';
-import DocMeta from '../components/DocMeta.astro';
-import DocTitle from '../components/DocTitle.astro';
+import InkIllustration from '../components/InkIllustration.astro';
+import { recordLabels } from '../lib/entry-sections.ts';
 import { upcoming } from '../config/site.ts';
 import { groupBySeason, seasonRoman } from '../lib/seasons.ts';
 import '../styles/pages/entries.css';
@@ -28,63 +27,21 @@ const dangerBands = [
 ---
 
 <FieldManual
+  variant="index"
   title="Monster Index"
   description="Every Monster Survival Guide entry filed so far. Start anywhere. Read everything."
   classification="monster survival guide  —  menu"
   bottomBar="monster survival guide  ·  all entries  ·  season one"
 >
-  <StampRow red="All Entries" faded="Season One" blue="Field Manual" />
-  <DocMeta
-    rows={[
-      { label: 'DOCUMENT TYPE', value: 'Index — All Survival Guide Journal Entries' },
-      { label: 'SEASON', value: 'One — Currently Active' },
-      { label: 'ENTRIES', value: `${entries.length} Filed — More Incoming` },
-      { label: 'STATUS', value: 'Open Distribution — Read Before You Need To' },
-    ]}
-  />
-  <DocTitle subtitle="Every survival guide filed so far. Start anywhere. Read everything.">
-    All<br />Entries
-  </DocTitle>
-
-  <h2 class="section-head">Start Here</h2>
-  <div class="entry-list">
-    <a class="entry-card about" href="/">
-      <div class="entry-band" style="background: rgba(26,22,16,0.25);"></div>
-      <div class="entry-body">
-        <div class="entry-label">Introduction · Field Manual</div>
-        <h3 class="entry-title">About This Guide</h3>
-        <div class="entry-desc">
-          What this is, how it works, and why you should read it before you need it.
-        </div>
-        <div class="entry-meta">
-          <span class="entry-tag">How to use</span>
-          <span class="entry-tag">Danger index explained</span>
-          <span class="entry-tag">Season one overview</span>
-        </div>
-      </div>
-      <div class="entry-right">
-        <div class="mini-index">
-          <div class="mini-label">No threat entity</div>
-        </div>
-        <div class="entry-arrow">→</div>
-      </div>
-    </a>
-  </div>
-
-  <hr class="divider" />
-
-  <p class="season-nav-row" aria-label="Browse by season">
-    <span class="season-nav-label">Browse by season:</span>
-    {
-      seasonGroups.map((g) => (
-        <a class="season-nav-chip" href={`/seasons/${g.season}`}>
-          Season {seasonRoman(g.season)} ({g.entries.length})
-        </a>
-      ))
-    }
-  </p>
-
-  <h2 class="section-head">All Survival Entries</h2>
+  <header class="index-heading">
+    <div class="index-topline">
+      <span>Monster Survival Guide</span><nav aria-label="Guide navigation">
+        <a href="/sightings/">Sightings</a><a href="/glossary/">Glossary</a>
+      </nav>
+    </div>
+    <h1>Find your next encounter.</h1>
+    <p>Every creature in the journal. <a href="/">New here? About this guide ↗</a></p>
+  </header>
 
   <label class="filter-search" for="entries-search">
     <span class="visually-hidden">Search entries</span>
@@ -102,7 +59,7 @@ const dangerBands = [
     <input
       id="entries-search"
       type="search"
-      placeholder="Search by name, region, tag, or description…"
+      placeholder="Search monsters, places, or lore…"
       autocomplete="off"
       data-search
     />
@@ -117,62 +74,96 @@ const dangerBands = [
     </button>
   </label>
 
-  <div class="filter-bar" data-filter-bar>
-    <fieldset class="filter-group">
-      <legend class="filter-legend">Danger</legend>
-      <button type="button" class="filter-chip is-active" data-filter="danger" data-value="all">
-        All
-      </button>
-      {
-        dangerBands.map((band) => (
+  <div class="index-toolbar">
+    <details class="index-filters">
+      <summary>Filter by danger or tag</summary>
+      <div class="filter-bar" data-filter-bar>
+        <fieldset class="filter-group">
+          <legend class="filter-legend">Danger</legend>
           <button
             type="button"
-            class="filter-chip"
+            class="filter-chip is-active"
             data-filter="danger"
-            data-min={band.min}
-            data-max={band.max}
+            data-value="all"
+            aria-pressed="true"
           >
-            {band.label}
+            All
           </button>
-        ))
-      }
-    </fieldset>
+          {
+            dangerBands.map((band) => (
+              <button
+                type="button"
+                class="filter-chip"
+                data-filter="danger"
+                data-min={band.min}
+                data-max={band.max}
+                aria-pressed="false"
+              >
+                {band.label}
+              </button>
+            ))
+          }
+        </fieldset>
 
-    <fieldset class="filter-group filter-group--tags">
-      <legend class="filter-legend">Tag</legend>
-      <button type="button" class="filter-chip is-active" data-filter="tag" data-value="all">
-        All
-      </button>
-      {
-        allTags.map((tag, i) => (
+        <fieldset class="filter-group filter-group--tags">
+          <legend class="filter-legend">Tag</legend>
           <button
             type="button"
-            class="filter-chip"
+            class="filter-chip is-active"
             data-filter="tag"
-            data-value={tag}
-            data-tag-rest={i >= 5 ? '' : null}
-            hidden={i >= 5 ? true : null}
+            data-value="all"
+            aria-pressed="true"
           >
-            {tag}
+            All
           </button>
-        ))
-      }
+          {
+            allTags.map((tag, i) => (
+              <button
+                type="button"
+                class="filter-chip"
+                data-filter="tag"
+                data-value={tag}
+                aria-pressed="false"
+                data-tag-rest={i >= 5 ? '' : null}
+                hidden={i >= 5 ? true : null}
+              >
+                {tag}
+              </button>
+            ))
+          }
+          {
+            allTags.length > 5 && (
+              <button type="button" class="filter-toggle" data-tag-toggle aria-expanded="false">
+                <span data-tag-toggle-show>Show all {allTags.length}</span>
+                <span data-tag-toggle-hide hidden>
+                  Show fewer
+                </span>
+              </button>
+            )
+          }
+        </fieldset>
+
+        <button type="button" class="filter-clear" data-filter-clear>Reset</button>
+      </div>
       {
-        allTags.length > 5 && (
-          <button type="button" class="filter-toggle" data-tag-toggle aria-expanded="false">
-            <span data-tag-toggle-show>Show all {allTags.length}</span>
-            <span data-tag-toggle-hide hidden>
-              Show fewer
-            </span>
-          </button>
+        seasonGroups.length > 1 && (
+          <p class="season-nav-row" aria-label="Browse by season">
+            {seasonGroups.map((g) => (
+              <a class="season-nav-chip" href={`/seasons/${g.season}`}>
+                Season {seasonRoman(g.season)} ({g.entries.length})
+              </a>
+            ))}
+          </p>
         )
       }
-    </fieldset>
-
-    <button type="button" class="filter-clear" data-filter-clear>Reset</button>
+    </details>
+    <p class="index-count" role="status" aria-live="polite" data-result-count>
+      {entries.length} entries
+    </p>
   </div>
 
   <p class="filter-empty" data-filter-empty hidden>No entries match this combination of filters.</p>
+  <h2 class="visually-hidden">All survival entries</h2>
 
   <div class="entry-list" data-entry-list>
     {
@@ -194,16 +185,21 @@ const dangerBands = [
             .toLowerCase()}
         >
           <div class="entry-band" style={`background: ${e.data.bandColor};`} />
+          {e.data.illustration && (
+            <figure class="index-study">
+              <InkIllustration src={e.data.illustration.src} alt="" width={140} />
+              <figcaption>Illustration</figcaption>
+            </figure>
+          )}
           <div class="entry-body">
             <div class="entry-label">
               Entry {e.data.number} · {e.data.entryClass} · {e.data.region}
             </div>
             <h3 class="entry-title">{e.data.title}</h3>
             <div class="entry-desc">{e.data.description}</div>
-            <div class="entry-meta">
-              {e.data.tags.map((t) => (
-                <span class="entry-tag">{t}</span>
-              ))}
+            <div class="entry-summary">
+              <span>Danger {e.data.danger}/10</span>
+              {e.data.recordKind && <span>{recordLabels[e.data.recordKind]}</span>}
             </div>
           </div>
           <div class="entry-right">
@@ -265,6 +261,8 @@ const dangerBands = [
   const tagToggle = document.querySelector<HTMLButtonElement>('[data-tag-toggle]');
   const tagToggleShow = document.querySelector<HTMLElement>('[data-tag-toggle-show]');
   const tagToggleHide = document.querySelector<HTMLElement>('[data-tag-toggle-hide]');
+  const resultCount = document.querySelector<HTMLElement>('[data-result-count]');
+  const filterSummary = document.querySelector<HTMLElement>('.index-filters summary');
 
   const state: {
     danger: { min: number; max: number } | null;
@@ -293,6 +291,10 @@ const dangerBands = [
       comingSoon.toggleAttribute('hidden', filterActive);
     }
     if (empty) empty.toggleAttribute('hidden', visible > 0);
+    if (resultCount) resultCount.textContent = `${visible} of ${cards.length} entries`;
+    if (filterSummary)
+      filterSummary.textContent =
+        state.danger || state.tag ? 'Filters active · edit or reset' : 'Filter by danger or tag';
   }
 
   bar?.addEventListener('click', (event) => {
@@ -313,6 +315,7 @@ const dangerBands = [
 
     bar.querySelectorAll<HTMLElement>(`[data-filter="${filter}"]`).forEach((chip) => {
       chip.classList.toggle('is-active', chip === target);
+      chip.setAttribute('aria-pressed', String(chip === target));
     });
 
     applyFilters();
@@ -352,6 +355,7 @@ const dangerBands = [
     searchClear?.toggleAttribute('hidden', true);
     bar?.querySelectorAll<HTMLElement>('[data-filter]').forEach((chip) => {
       chip.classList.toggle('is-active', chip.dataset.value === 'all');
+      chip.setAttribute('aria-pressed', String(chip.dataset.value === 'all'));
     });
     applyFilters();
   });

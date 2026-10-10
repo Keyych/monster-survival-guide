@@ -1,10 +1,7 @@
 /**
- * Estimate reading time and word count from an Astro page's raw source.
- *
- * Each monster page imports its own source as `?raw` and passes it here:
- *
- *   import pageSource from './wendigo.astro?raw';
- *   const stats = readingStats(pageSource);
+ * Estimate reading time and word count from raw MDX or Astro source.
+ * The entry route appends its frontmatter rules so they count once, alongside
+ * the body text, in the title's reading estimate.
  *
  * The helper strips the Astro frontmatter, HTML/component tags, and JSX
  * expressions, then counts whitespace-separated tokens that contain a letter
@@ -24,7 +21,10 @@ export function readingStats(astroSource: string): ReadingStats {
   const withoutFrontmatter = astroSource.replace(/^---\n[\s\S]*?\n---/, '');
 
   // Strip JSX-style expressions and HTML tags.
-  const stripped = withoutFrontmatter.replace(/\{[^}]*\}/g, ' ').replace(/<[^>]+>/g, ' ');
+  const stripped = withoutFrontmatter
+    .replace(/^import .*?;\s*$/gm, '')
+    .replace(/\{[^}]*\}/g, ' ')
+    .replace(/<[^>]+>/g, ' ');
 
   // Decode the few HTML entities we use in copy so they count as words.
   const decoded = stripped

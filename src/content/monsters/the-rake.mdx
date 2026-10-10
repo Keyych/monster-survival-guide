@@ -65,12 +65,56 @@ sightings:
       label: 'Police radio-call account · motorist sees figure crawling on roadway (self-report)',
       sourceUrl: 'https://urbanlegends.info/what-is-the-rake-is-he-actually-real/',
     }
+recordKind: constructed
+recordNote: Constructed internet lore. Fictional source texts are distinguished below from later
+  self-reported experiences.
+illustration:
+  src: /illustrations/the-rake.png
+  alt: Loose black-ink study of a crouching hairless figure with long limbs.
+  caption: Imagined ink study · not evidence
+dossier:
+  entity: The Rake
+  origin: Internet Folklore — First Codified 4chan /b/, 2005
+  status: Active in Reported Lore — Bedroom & Wooded-Edge Encounters
+  stamps:
+    - Bedside Threat
+    - Modern Folklore
+    - Origin 2005
+  dangerLabel: EXTREME
+  dangerNote: 8/10 — Extreme. Sleep-state attacks. Domestic threshold breach. No reliable counter.
+rules:
+  - title: Do not read about the Rake before bed.
+    body:
+      Cultural priming materially increases the probability of an episode. Whatever you think the
+      experience is, the variable that you can most reliably control is what you put into your head
+      in the last hour of the day. Read something else.
+  - title: Sleep on your side.
+    body: Supine sleeping (on your back) is the strongest single behavioural correlate with sleep
+      paralysis episodes. Side-sleeping reduces the rate substantially. This is not folklore. This
+      is sleep medicine.
+  - title: If you wake and cannot move, breathe.
+    body:
+      The episode is time-limited. The body’s atonia will resolve, almost always within a minute or
+      two. Slow your breathing. Do not fight the paralysis. Wiggle a toe or a finger — voluntary
+      movement of an extremity is the most reliable way to break the episode.
+  - title: Do not turn the light on to "check".
+    body:
+      'Whatever you see, real or hallucinated, the response is the same: get out of the bed, get out
+      of the bedroom, go somewhere with light and other people, and re-enter the room only when you
+      are fully awake. Do not investigate while still partially in REM.'
+  - title: Treat the underlying sleep disorder.
+    body:
+      If episodes are recurrent, you have a clinical situation, not a paranormal one — at least in
+      the first instance. Sleep clinics treat this routinely. The standard interventions work. Use
+      them.
+  - title: Do not photograph or record the bedroom looking for it.
+    body:
+      Whether you accept the legend or the neuroscience, this rule holds. The legend says recording
+      escalates proximity. The neuroscience says reviewing footage of your bedroom at 3am is a
+      near-perfect protocol for entrenching the anxiety that drives the episodes. Both are reasons
+      not to do it.
 ---
 
-import StampRow from '../../components/StampRow.astro';
-import DocMeta from '../../components/DocMeta.astro';
-import DocTitle from '../../components/DocTitle.astro';
-import DangerMeter from '../../components/DangerMeter.astro';
 import Section from '../../components/Section.astro';
 import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
@@ -78,49 +122,6 @@ import EncounterCard from '../../components/EncounterCard.astro';
 import Outro from '../../components/Outro.astro';
 import MonsterMap from '../../components/MonsterMap.astro';
 import '../../styles/pages/the-rake.css';
-
-export const rules = [
-  {
-    title: 'Do not read about the Rake before bed.',
-    body: 'Cultural priming materially increases the probability of an episode. Whatever you think the experience is, the variable that you can most reliably control is what you put into your head in the last hour of the day. Read something else.',
-  },
-  {
-    title: 'Sleep on your side.',
-    body: 'Supine sleeping (on your back) is the strongest single behavioural correlate with sleep paralysis episodes. Side-sleeping reduces the rate substantially. This is not folklore. This is sleep medicine.',
-  },
-  {
-    title: 'If you wake and cannot move, breathe.',
-    body: 'The episode is time-limited. The body’s atonia will resolve, almost always within a minute or two. Slow your breathing. Do not fight the paralysis. Wiggle a toe or a finger — voluntary movement of an extremity is the most reliable way to break the episode.',
-  },
-  {
-    title: 'Do not turn the light on to "check".',
-    body: 'Whatever you see, real or hallucinated, the response is the same: get out of the bed, get out of the bedroom, go somewhere with light and other people, and re-enter the room only when you are fully awake. Do not investigate while still partially in REM.',
-  },
-  {
-    title: 'Treat the underlying sleep disorder.',
-    body: 'If episodes are recurrent, you have a clinical situation, not a paranormal one — at least in the first instance. Sleep clinics treat this routinely. The standard interventions work. Use them.',
-  },
-  {
-    title: 'Do not photograph or record the bedroom looking for it.',
-    body: 'Whether you accept the legend or the neuroscience, this rule holds. The legend says recording escalates proximity. The neuroscience says reviewing footage of your bedroom at 3am is a near-perfect protocol for entrenching the anxiety that drives the episodes. Both are reasons not to do it.',
-  },
-];
-
-<StampRow red="Bedside Threat" faded="Modern Folklore" blue="Origin 2005" />
-<DocMeta
-  rows={[
-    { label: 'ENTITY', value: 'The Rake' },
-    { label: 'ORIGIN', value: 'Internet Folklore — First Codified 4chan /b/, 2005' },
-    { label: 'THREAT GUIDE TYPE', value: 'Identification · Behaviour · Survival Protocol' },
-    { label: 'STATUS', value: 'Active in Reported Lore — Bedroom & Wooded-Edge Encounters' },
-  ]}
-/>
-<DocTitle subtitle={frontmatter.description}>The Rake</DocTitle>
-<DangerMeter
-  danger={frontmatter.danger}
-  label="EXTREME"
-  description="8/10 — Extreme. Sleep-state attacks. Domestic threshold breach. No reliable counter."
-/>
 
 <Section heading="Before We Begin">
   <p>
@@ -277,7 +278,12 @@ export const rules = [
 </Section>
 
 <Section heading="Six Rules That May Save Your Life">
-  <SixRules rules={rules} />
+  <SixRules
+    rules={frontmatter.rules}
+    title={frontmatter.title}
+    number={frontmatter.number}
+    pocketHref="/pocket/the-rake/"
+  />
 </Section>
 
 <Section heading="Two Cases on the Record">

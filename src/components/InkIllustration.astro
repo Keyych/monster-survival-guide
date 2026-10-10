@@ -1,0 +1,44 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  src: string;
+  alt: string;
+  width: number;
+  loading?: 'lazy' | 'eager';
+  fetchpriority?: 'high' | 'low' | 'auto';
+}
+const { src, alt, width, loading = 'lazy', fetchpriority = 'auto' } = Astro.props;
+// Logical /illustrations paths keep frontmatter simple; CMS uploads fall back
+// to their public URL. Bundled originals get transparent PNGs at 1× and 2×.
+const images = import.meta.glob<{ default: ImageMetadata }>('../assets/illustrations/*.png', {
+  eager: true,
+});
+const bundled = src.startsWith('/illustrations/') ? images[`../assets${src}`]?.default : undefined;
+---
+
+{
+  bundled ? (
+    <Image
+      src={bundled}
+      alt={alt}
+      width={width}
+      densities={[1, 2]}
+      format="png"
+      loading={loading}
+      fetchpriority={fetchpriority}
+      decoding="async"
+    />
+  ) : (
+    <img
+      src={src}
+      alt={alt}
+      width={width}
+      height={width}
+      loading={loading}
+      fetchpriority={fetchpriority}
+      decoding="async"
+    />
+  )
+}

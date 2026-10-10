@@ -7,19 +7,48 @@ interface Rule {
 }
 interface Props {
   rules: Rule[];
+  title?: string;
+  number?: string;
+  pocketHref?: string;
 }
-const { rules } = Astro.props;
+const { rules, title, number, pocketHref } = Astro.props;
 ---
 
-<ol class="rules-list">
+<div class="survival-panel">
+  <header class="survival-panel-header">
+    <div>
+      <p class="protocol-eyebrow">Field protocol {number && ` / ${number}`}</p><h3>
+        Six rules. Keep them close.
+      </h3>
+    </div>
+    {
+      pocketHref && (
+        <a class="protocol-print" href={pocketHref}>
+          Print pocket guide ↗
+        </a>
+      )
+    }
+  </header>
+  {title && <p class="protocol-entity">{title}</p>}
+  <ol class="rules-list">
+    {
+      rules.map((rule, i) => (
+        <li>
+          <span class="rule-num" aria-hidden="true">
+            {String(i + 1).padStart(2, '0')}
+          </span>
+          <span>
+            <strong>{rule.title}</strong> {rule.body}
+          </span>
+        </li>
+      ))
+    }
+  </ol>
   {
-    rules.map((rule, i) => (
-      <li>
-        <span class="rule-num">{String(i + 1).padStart(2, '0')}</span>
-        <span>
-          <strong>{rule.title}</strong> {rule.body}
-        </span>
-      </li>
-    ))
+    pocketHref && (
+      <p class="protocol-footer">
+        A field guide to the story’s survival rules · <a href={pocketHref}>Take a copy with you</a>
+      </p>
+    )
   }
-</ol>
+</div>

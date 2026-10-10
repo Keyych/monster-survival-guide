@@ -29,6 +29,15 @@
   box-sizing: border-box;
 }
 
+[hidden] {
+  display: none !important;
+}
+
+:focus-visible {
+  outline: 2px solid var(--warn, #8b1a0a);
+  outline-offset: 4px;
+}
+
 /* ── SKIP LINK (keyboard a11y) ────────────────────────────────────────── */
 
 .skip-link {

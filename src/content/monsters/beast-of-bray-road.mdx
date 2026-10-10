@@ -61,12 +61,50 @@ sightings:
       label: 'Northern Wisconsin Dogman cluster',
       sourceUrl: 'https://www.lindagodfrey.com/',
     }
+recordKind: reported
+recordNote: Witness accounts and regional folklore. The sources document what people reported, not a
+  confirmed species.
+illustration:
+  src: /illustrations/beast-of-bray-road.png
+  alt: Loose black-ink study of an upright wolf-like figure.
+  caption: Imagined ink study · not evidence
+dossier:
+  entity: The Beast of Bray Road (Manitou / Wisconsin Wolfman)
+  origin: Bray Road, Elkhorn, Wisconsin — first reported sightings 1936
+  status: Active — Sightings Across Upper Midwest Ongoing
+  stamps:
+    - Walworth County WI
+    - Upright Canid
+    - Godfrey Archive
+  dangerLabel: ROAD HUNTER
+  dangerNote: 6/10 — Significant. Vehicle pursuit reported. No confirmed fatalities. Localised but expanding.
+rules:
+  - title: Do not get out of the car.
+    body: The single most consistent piece of advice from the witness archive. The vehicle is your
+      shelter. Until you are somewhere with light and people, stay inside it.
+  - title: Do not stop on rural roads at night to investigate movement.
+    body: If something is in your headlights that is the wrong shape — keep driving. Slow down only
+      enough to be safe. Do not pull over. Do not roll the window down.
+  - title: Do not photograph it.
+    body:
+      Multiple accounts describe the creature reacting aggressively to the use of phones, cameras,
+      and flashlights. Whether this is coincidence or specific behaviour, the pattern is in the
+      record. Keep moving.
+  - title: If it paces your vehicle, accelerate.
+    body:
+      Recorded pursuit speeds put the creature in the 25–35 mph range over short distances. You can
+      outrun it on any rural road. Do it.
+  - title: Secure livestock at sundown.
+    body: The clearest non-vehicular pattern in the archive is opportunistic predation on small
+      livestock — sheep, calves, dogs. If you farm in southern Wisconsin or northern Illinois, your
+      evening chores include closing every barn door before dark.
+  - title: Trust the staring.
+    body:
+      Witnesses universally describe the creature as making sustained, deliberate eye contact. This
+      is not animal behaviour. Treat it as the warning it almost certainly is, and remove yourself
+      from the situation.
 ---
 
-import StampRow from '../../components/StampRow.astro';
-import DocMeta from '../../components/DocMeta.astro';
-import DocTitle from '../../components/DocTitle.astro';
-import DangerMeter from '../../components/DangerMeter.astro';
 import Section from '../../components/Section.astro';
 import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
@@ -74,49 +112,6 @@ import EncounterCard from '../../components/EncounterCard.astro';
 import Outro from '../../components/Outro.astro';
 import MonsterMap from '../../components/MonsterMap.astro';
 import '../../styles/pages/beast-of-bray-road.css';
-
-export const rules = [
-  {
-    title: 'Do not get out of the car.',
-    body: 'The single most consistent piece of advice from the witness archive. The vehicle is your shelter. Until you are somewhere with light and people, stay inside it.',
-  },
-  {
-    title: 'Do not stop on rural roads at night to investigate movement.',
-    body: 'If something is in your headlights that is the wrong shape — keep driving. Slow down only enough to be safe. Do not pull over. Do not roll the window down.',
-  },
-  {
-    title: 'Do not photograph it.',
-    body: 'Multiple accounts describe the creature reacting aggressively to the use of phones, cameras, and flashlights. Whether this is coincidence or specific behaviour, the pattern is in the record. Keep moving.',
-  },
-  {
-    title: 'If it paces your vehicle, accelerate.',
-    body: 'Recorded pursuit speeds put the creature in the 25–35 mph range over short distances. You can outrun it on any rural road. Do it.',
-  },
-  {
-    title: 'Secure livestock at sundown.',
-    body: 'The clearest non-vehicular pattern in the archive is opportunistic predation on small livestock — sheep, calves, dogs. If you farm in southern Wisconsin or northern Illinois, your evening chores include closing every barn door before dark.',
-  },
-  {
-    title: 'Trust the staring.',
-    body: 'Witnesses universally describe the creature as making sustained, deliberate eye contact. This is not animal behaviour. Treat it as the warning it almost certainly is, and remove yourself from the situation.',
-  },
-];
-
-<StampRow red="Walworth County WI" faded="Upright Canid" blue="Godfrey Archive" />
-<DocMeta
-  rows={[
-    { label: 'ENTITY', value: 'The Beast of Bray Road (Manitou / Wisconsin Wolfman)' },
-    { label: 'ORIGIN', value: 'Bray Road, Elkhorn, Wisconsin — first reported sightings 1936' },
-    { label: 'THREAT GUIDE TYPE', value: 'Identification · Behaviour · Survival Protocol' },
-    { label: 'STATUS', value: 'Active — Sightings Across Upper Midwest Ongoing' },
-  ]}
-/>
-<DocTitle subtitle={frontmatter.description}>The Beast of Bray Road</DocTitle>
-<DangerMeter
-  danger={frontmatter.danger}
-  label="ROAD HUNTER"
-  description="6/10 — Significant. Vehicle pursuit reported. No confirmed fatalities. Localised but expanding."
-/>
 
 <Section heading="Before We Begin">
   <p>
@@ -254,7 +249,12 @@ export const rules = [
 </Section>
 
 <Section heading="Six Rules That May Save Your Life">
-  <SixRules rules={rules} />
+  <SixRules
+    rules={frontmatter.rules}
+    title={frontmatter.title}
+    number={frontmatter.number}
+    pocketHref="/pocket/beast-of-bray-road/"
+  />
 </Section>
 
 <Section heading="Two Cases on the Record">

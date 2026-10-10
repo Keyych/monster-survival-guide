@@ -1,0 +1,82 @@
+---
+import type { EntrySection } from '../lib/entry-sections.ts';
+interface Props {
+  sections: EntrySection[];
+}
+const { sections } = Astro.props;
+---
+
+<aside class="contents-rail" aria-label="Entry contents">
+  <a class="contents-back" href="/entries/">← All entries</a>
+  <nav aria-label="On this page">
+    <p class="contents-label">In this entry</p>
+    <ol>
+      {
+        sections.map((section, index) => (
+          <li>
+            <a href={`#${section.id}`} data-contents-link>
+              <span class="contents-number" aria-hidden="true">
+                {String(index + 1).padStart(2, '0')}
+              </span>
+              {section.label}
+            </a>
+          </li>
+        ))
+      }
+    </ol>
+  </nav>
+  <a class="contents-pocket" href={`${Astro.url.pathname.replace(/\/$/, '')}/#six-rules`}
+    >Keep the Six Rules close ↓</a
+  >
+</aside>
+
+<details class="mobile-contents">
+  <summary>In this entry <span aria-hidden="true">+</span></summary>
+  <nav aria-label="Entry sections">
+    {sections.map((section) => <a href={`#${section.id}`}>{section.label}</a>)}
+  </nav>
+</details>
+
+<script>
+  const menu = document.querySelector<HTMLDetailsElement>('.mobile-contents');
+  menu?.addEventListener('click', (event) => {
+    const link = (event.target as HTMLElement).closest<HTMLAnchorElement>('a[href^="#"]');
+    if (!link) return;
+    const target = document.getElementById(link.hash.slice(1));
+    if (!target) return;
+    event.preventDefault();
+    menu.open = false;
+    history.pushState(null, '', link.hash);
+    target.scrollIntoView({ block: 'start' });
+    const heading = document.querySelector<HTMLElement>(`${link.hash}-heading`);
+    heading?.focus({ preventScroll: true });
+  });
+  const links = Array.from(document.querySelectorAll<HTMLAnchorElement>('[data-contents-link]'));
+  const sections = links
+    .map((link) => document.getElementById(link.hash.slice(1)))
+    .filter((section): section is HTMLElement => section !== null);
+  if (sections.length) {
+    let queued = false;
+    const update = () => {
+      const current =
+        [...sections].reverse().find((section) => section.getBoundingClientRect().top <= 150) ??
+        sections[0];
+      links.forEach((link) => {
+        if (link.hash === `#${current.id}`) link.setAttribute('aria-current', 'location');
+        else link.removeAttribute('aria-current');
+      });
+      queued = false;
+    };
+    window.addEventListener(
+      'scroll',
+      () => {
+        if (!queued) {
+          queued = true;
+          requestAnimationFrame(update);
+        }
+      },
+      { passive: true },
+    );
+    update();
+  }
+</script>

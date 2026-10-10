@@ -18,6 +18,24 @@ const monsters = defineCollection({
     danger: z.number().int().min(1).max(10),
     bandColor: z.string(),
 
+    illustration: z.object({ src: z.string(), alt: z.string(), caption: z.string() }).optional(),
+    recordKind: z.enum(['reported', 'folklore', 'constructed']).optional(),
+    recordNote: z.string().optional(),
+    dossier: z
+      .object({
+        entity: z.string(),
+        origin: z.string(),
+        status: z.string(),
+        stamps: z.array(z.string()).length(3),
+        dangerLabel: z.string(),
+        dangerNote: z.string(),
+      })
+      .optional(),
+    rules: z
+      .array(z.object({ title: z.string(), body: z.string() }))
+      .length(6)
+      .optional(),
+
     classification: z.string(),
     bottomBar: z.string().optional(),
     entryStatus: z.string().default('Active Entry'),

@@ -80,8 +80,9 @@ test('entries filter hides cards', async ({ page }) => {
   expect(before).toBeGreaterThan(1);
 
   // Click the 9–10 danger band.
+  await page.locator('.index-filters summary').click();
   await page.getByRole('button', { name: '9–10' }).click();
-  await page.waitForTimeout(50);
+  await expect(page.getByRole('button', { name: '9–10' })).toHaveAttribute('aria-pressed', 'true');
   const after = await page.locator('[data-card]:not([hidden])').count();
   expect(after).toBeLessThan(before);
   expect(after).toBeGreaterThan(0);
