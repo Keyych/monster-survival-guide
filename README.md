@@ -147,6 +147,16 @@ Published entries use the shared `EntryHeader` and `EntryNavigation` components.
 Keep a single notebook column, quiet links in the page flow, and circled rule
 numbers in the margin. The contents note opens on demand; it does not stay fixed
 beside or above the prose.
+All reading pages, including pocket-guide previews, share the 850px maximum
+notebook width, responsive margins, and viewport minimum height. Longer entries
+continue vertically. Keep that geometry in `field-manual.css`; do not introduce
+page-specific wrapper widths. `NotebookMotion` turns the sheet around its left
+edge on same-site page links, then uses normal document navigation so each
+page's scripts initialize normally. Section jumps, external links, downloads,
+and reduced-motion preferences bypass the animation. Pocket guides retain their
+separate A5 print dimensions. `tests/notebook.spec.ts` covers the shared frame,
+navigation, history restoration, and motion/storage fallbacks.
+
 Copy the `illustration`, `recordKind`, `recordNote`, `dossier`, and `rules`
 frontmatter from an existing published entry, then replace its values. Do not
 repeat the title or dossier in the MDX body. Drafts with their older inline

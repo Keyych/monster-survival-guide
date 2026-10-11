@@ -3,6 +3,8 @@ import { getCollection, type CollectionEntry } from 'astro:content';
 import { site } from '../../config/site.ts';
 import { recordLabels } from '../../lib/entry-sections.ts';
 import InkIllustration from '../../components/InkIllustration.astro';
+import NotebookMotion from '../../components/NotebookMotion.astro';
+import '../../styles/field-manual.css';
 import '@fontsource/sorts-mill-goudy/400.css';
 import '@fontsource/anonymous-pro/400.css';
 
@@ -30,6 +32,7 @@ const entryUrl = new URL(`/${entry.id}/`, site.url).href;
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <NotebookMotion />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{data.title} — Six Rules Pocket Guide</title>
     <meta
@@ -40,79 +43,92 @@ const entryUrl = new URL(`/${entry.id}/`, site.url).href;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
   <body>
-    <nav class="print-toolbar" aria-label="Pocket guide actions">
-      <a href={`/${entry.id}/#six-rules`}>← Back to the entry</a>
-      <button type="button" data-print>Print / Save PDF</button>
-      <p>A5 portrait · Print at 100% · Disable browser headers and footers</p>
-    </nav>
-    <main class="pocket-sheet">
-      <header class="pocket-heading">
-        <div>
-          <p class="eyebrow">Monster Survival Guide / {data.number}</p>
-          <h1>{data.title}</h1>
-          <p class="subtitle">Six rules. Keep them close.</p>
-          <p class="record">
-            {data.recordKind && recordLabels[data.recordKind]} · Story-world danger {data.danger}/10
-          </p>
-        </div>
-        {
-          data.illustration && (
-            <figure>
-              <InkIllustration
-                src={data.illustration.src}
-                alt={data.illustration.alt}
-                width={160}
-                loading="eager"
-              />
-            </figure>
-          )
-        }
-      </header>
-      <ol class="pocket-rules">
-        {
-          data.rules?.map((rule, index) => (
-            <li>
-              <>
-                <span class="rule-number" aria-hidden="true">
-                  {String(index + 1).padStart(2, '0')}
-                </span>
-                <div>
+    <a class="skip-link" href="#pocket-sheet">Skip to main content</a>
+    <div class="document" data-notebook-page>
+      <div class="doc-inner">
+        <nav class="print-toolbar" aria-label="Pocket guide actions">
+          <a href={`/${entry.id}/#six-rules`}>← Back to the entry</a>
+          <button type="button" data-print>Print / Save PDF</button>
+          <p>A5 portrait · Print at 100% · Disable browser headers and footers</p>
+        </nav>
+        <main class="pocket-sheet" id="pocket-sheet" tabindex="-1">
+          <header class="pocket-heading">
+            <div>
+              <p class="eyebrow">Monster Survival Guide / {data.number}</p>
+              <h1>{data.title}</h1>
+              <p class="subtitle">Six rules. Keep them close.</p>
+              <p class="record">
+                {data.recordKind && recordLabels[data.recordKind]} · Story-world danger {
+                  data.danger
+                }/10
+              </p>
+            </div>
+            {
+              data.illustration && (
+                <figure>
+                  <InkIllustration
+                    src={data.illustration.src}
+                    alt={data.illustration.alt}
+                    width={160}
+                    loading="eager"
+                  />
+                </figure>
+              )
+            }
+          </header>
+          <ol class="pocket-rules">
+            {
+              data.rules?.map((rule, index) => (
+                <li>
                   <>
-                    <h2>{rule.title}</h2>
-                    <p>{rule.body}</p>
+                    <span class="rule-number" aria-hidden="true">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                    <div>
+                      <>
+                        <h2>{rule.title}</h2>
+                        <p>{rule.body}</p>
+                      </>
+                    </div>
                   </>
-                </div>
-              </>
-            </li>
-          ))
-        }
-      </ol>
-      <footer>
-        <p>
-          Folklore and storytelling · The rules are part of the guide’s narrative, not verified
-          safety advice.
-        </p>
-        <a href={entryUrl}>{entryUrl.replace('https://', '')}</a>
-      </footer>
-    </main>
+                </li>
+              ))
+            }
+          </ol>
+          <footer>
+            <p>
+              Folklore and storytelling · The rules are part of the guide’s narrative, not verified
+              safety advice.
+            </p>
+            <a href={entryUrl}>{entryUrl.replace('https://', '')}</a>
+          </footer>
+        </main>
+      </div>
+    </div>
     <script>
       document.querySelector('[data-print]')?.addEventListener('click', () => window.print());
     </script>
   </body>
 </html>
 <style>
+  :global(:root) {
+    --paper: #f6f1e6;
+    --ink: #25221c;
+    --faded: #585247;
+    --warn: #704534;
+    --rule: rgba(37, 34, 28, 0.13);
+  }
+
   * {
     box-sizing: border-box;
   }
   body {
     margin: 0;
-    padding: 24px 16px 50px;
-    background: #d7d1c3;
     color: #25221c;
     font-family: 'Sorts Mill Goudy', Georgia, serif;
   }
   .print-toolbar {
-    max-width: 740px;
+    max-width: none;
     margin: 0 auto 22px;
     display: flex;
     align-items: center;
@@ -141,11 +157,10 @@ const entryUrl = new URL(`/${entry.id}/`, site.url).href;
     font-size: 12px;
   }
   .pocket-sheet {
-    max-width: 740px;
+    max-width: none;
     margin: auto;
-    background: #f6f1e6;
-    padding: 34px;
-    box-shadow: 0 8px 32px #241d1620;
+    background: transparent;
+    padding: 0;
   }
   .pocket-heading {
     display: grid;
@@ -230,14 +245,12 @@ const entryUrl = new URL(`/${entry.id}/`, site.url).href;
   }
   footer p {
     margin: 0 0 6px;
+    font: inherit;
   }
   footer a {
     overflow-wrap: anywhere;
   }
   @media (max-width: 500px) {
-    .pocket-sheet {
-      padding: 22px;
-    }
     .pocket-heading {
       grid-template-columns: 1fr 80px;
       gap: 8px;
@@ -254,10 +267,15 @@ const entryUrl = new URL(`/${entry.id}/`, site.url).href;
     margin: 10mm;
   }
   @media print {
+    .doc-inner {
+      padding: 0;
+    }
     body {
       background: white;
       padding: 0;
       color: black;
+      display: block;
+      min-height: 0;
     }
     .print-toolbar {
       display: none;
@@ -311,6 +329,9 @@ const entryUrl = new URL(`/${entry.id}/`, site.url).href;
     }
     footer a {
       text-decoration: none;
+    }
+    footer a::after {
+      content: none;
     }
   }
 </style>

@@ -1,0 +1,78 @@
+:root {
+  --notebook-width: 850px;
+}
+html {
+  scrollbar-gutter: stable both-edges;
+}
+[data-notebook-page] {
+  transform-origin: left var(--notebook-pivot, 50svh);
+  backface-visibility: hidden;
+}
+/* Full document navigation keeps each page's scripts, forms and history native. */
+html[data-notebook-departure] [data-notebook-page] {
+  animation: notebook-depart 240ms ease-in both;
+  pointer-events: none;
+}
+html[data-notebook-arrival='forward'] [data-notebook-page] {
+  animation: notebook-arrive 320ms cubic-bezier(0.16, 0.8, 0.24, 1) both;
+}
+html[data-notebook-arrival='back'] [data-notebook-page] {
+  animation: notebook-arrive-back 320ms cubic-bezier(0.16, 0.8, 0.24, 1) both;
+}
+@keyframes notebook-depart {
+  from {
+    transform: perspective(1600px) rotateY(0);
+    filter: brightness(1);
+  }
+  to {
+    transform: perspective(1600px) rotateY(-82deg);
+    filter: brightness(0.72);
+  }
+}
+@keyframes notebook-arrive {
+  from {
+    transform: perspective(1600px) rotateY(78deg);
+    filter: brightness(0.78);
+  }
+  to {
+    transform: perspective(1600px) rotateY(0);
+    filter: brightness(1);
+  }
+}
+@keyframes notebook-arrive-back {
+  from {
+    transform: perspective(1600px) rotateY(-78deg);
+    filter: brightness(0.78);
+  }
+  to {
+    transform: perspective(1600px) rotateY(0);
+    filter: brightness(1);
+  }
+}
+/* The writing arrives with the sheet, rather than fading in separately. */
+.document .classification-bar,
+.document .stamp-row,
+.document .doc-meta,
+.document .doc-title,
+.document .doc-subtitle,
+.document .section,
+.document .entry-card,
+.document .scale-item {
+  animation: none;
+}
+@media (prefers-reduced-motion: reduce), print {
+  html[data-notebook-arrival] [data-notebook-page],
+  html[data-notebook-departure] [data-notebook-page] {
+    animation: none !important;
+    transform: none;
+    filter: none;
+  }
+}
+@media print {
+  html {
+    scrollbar-gutter: auto;
+  }
+  [data-notebook-page] {
+    backface-visibility: visible;
+  }
+}

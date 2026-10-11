@@ -235,16 +235,6 @@
 }
 
 /* A compact, searchable journal index with drawings on the paper itself. */
-.document--index {
-  max-width: 980px;
-}
-.document--index .doc-inner {
-  padding: 28px 42px 48px;
-}
-.document--index .doc-inner::before {
-  left: 22px;
-  opacity: 0.25;
-}
 .index-topline {
   display: flex;
   justify-content: space-between;
@@ -436,15 +426,6 @@
   opacity: 0.7;
 }
 @media (max-width: 600px) {
-  body:has(.document--index) {
-    padding: 10px 8px 40px;
-  }
-  .document--index .doc-inner {
-    padding: 20px 20px 36px;
-  }
-  .document--index .doc-inner::before {
-    display: none;
-  }
   .index-topline {
     margin-bottom: 20px;
     font-size: 0.64rem;
