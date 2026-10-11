@@ -50,6 +50,7 @@ test('each entry has working contents, an illustration, and the same six rules i
         .allTextContents();
       await page.getByRole('link', { name: 'Printable pocket guide' }).click();
       await expect(page).toHaveURL(new RegExp(`/pocket/${slug}/`));
+      await expect(page.locator('[data-notebook-page]')).toBeVisible();
       const printed = await page.locator('.pocket-rules li > div').allTextContents();
       const normalize = (s: string) => s.replace(/\s+/g, ' ').trim();
       expect(printed.map(normalize)).toEqual(rules.map(normalize));

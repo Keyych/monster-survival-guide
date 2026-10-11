@@ -40,24 +40,53 @@ for (const width of [1280, 375]) {
 
 test.beforeEach(async ({ page }) => {
   await page.addInitScript(() => {
-    document.addEventListener('animationstart', (event) => {
-      if (!event.animationName.startsWith('notebook-')) return;
+    new MutationObserver((changes) => {
+      const event = changes.find(
+        (change) =>
+          change.attributeName?.startsWith('data-notebook-') &&
+          document.documentElement.hasAttribute(change.attributeName),
+      );
+      if (!event) return;
+      const animationName =
+        event.attributeName === 'data-notebook-departure' ? 'notebook-depart' : 'notebook-arrive';
       try {
         const turns = JSON.parse(sessionStorage.getItem('observed-turns') || '[]');
-        turns.push(event.animationName);
+        turns.push(animationName);
         sessionStorage.setItem('observed-turns', JSON.stringify(turns));
       } catch {
         // Some tests deliberately disable storage.
       }
+    }).observe(document, {
+      subtree: true,
+      attributes: true,
+      attributeFilter: ['data-notebook-departure', 'data-notebook-arrival'],
     });
   });
 });
 
-test('page links flip, section jumps stay still, and back navigation remains usable', async ({
+test('page links curl, section jumps stay still, and back navigation remains usable', async ({
   page,
 }) => {
   await page.goto('/entries/');
   await page.locator('[data-card][href="/slenderman"]').click();
+  await expect(page.locator('.notebook-turn-layer')).toHaveAttribute('aria-hidden', 'true');
+  // Different surface angles confirm the sheet bends instead of rotating rigidly.
+  await expect
+    .poll(() =>
+      page
+        .locator('.notebook-paper-strip')
+        .evaluateAll(
+          (strips) =>
+            new Set(strips.map((strip) => getComputedStyle(strip).transform.split(',')[0])).size,
+        ),
+    )
+    .toBeGreaterThan(2);
+  expect(
+    await page.locator('[id]').evaluateAll((elements) => {
+      const ids = elements.map((element) => element.id);
+      return new Set(ids).size === ids.length;
+    }),
+  ).toBe(true);
   await expect(page).toHaveURL(/\/slenderman\/?$/);
   await expect(page.locator('html')).not.toHaveAttribute('data-notebook-arrival');
   const turns = await page.evaluate(() =>
@@ -110,4 +139,27 @@ test('blocked session storage never prevents a page link from working', async ({
   await page.locator('[data-card][href="/slenderman"]').click();
   await expect(page).toHaveURL(/\/slenderman\/?$/);
   await expect(page.locator('h1')).toHaveText('Slenderman');
+});
+
+test('a motion preference change releases an active turn and follows the link', async ({
+  page,
+}) => {
+  await page.goto('/entries/');
+  await page.locator('[data-card][href="/slenderman"]').click();
+  await expect(page.locator('.notebook-turn-layer')).toHaveCount(1);
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await expect(page).toHaveURL(/\/slenderman\/?$/);
+  await expect(page.locator('[data-notebook-page]')).toBeVisible();
+  await expect(page.locator('.notebook-turn-layer')).toHaveCount(0);
+});
+
+test('throttled animation frames cannot block navigation', async ({ page }) => {
+  await page.addInitScript(() => {
+    window.requestAnimationFrame = () => 0;
+  });
+  await page.goto('/entries/');
+  await page.locator('[data-card][href="/slenderman"]').click();
+  await expect(page).toHaveURL(/\/slenderman\/?$/);
+  await expect(page.locator('[data-notebook-page]')).toBeVisible();
+  await expect(page.locator('.notebook-turn-layer')).toHaveCount(0);
 });

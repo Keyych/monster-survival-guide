@@ -5,109 +5,25 @@ import '../styles/notebook-motion.css';
 <script is:inline>
   (() => {
     const root = document.documentElement;
-    const storageKey = 'notebook-page-turn';
-    const reducedMotion = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const pageKey = (url) => `${url.pathname.replace(/\/+$/, '') || '/'}${url.search}`;
-    let navigating = false;
-    const placeSpine = (sheet) => {
-      sheet?.style.setProperty(
-        '--notebook-pivot',
-        `${innerHeight / 2 - sheet.getBoundingClientRect().top}px`,
-      );
-    };
-
-    // Read before the body paints, so the arriving sheet starts at the spine.
+    // Mark arrivals before paint; the motion module builds the curved paper.
     try {
-      const saved = JSON.parse(sessionStorage.getItem(storageKey) || 'null');
-      sessionStorage.removeItem(storageKey);
+      const saved = JSON.parse(sessionStorage.getItem('notebook-page-turn') || 'null');
+      sessionStorage.removeItem('notebook-page-turn');
+      const key = `${location.pathname.replace(/\/+$/, '') || '/'}${location.search}`;
       if (
-        saved &&
-        saved.to === pageKey(new URL(location.href)) &&
+        saved?.to === key &&
         Date.now() - saved.at < 15000 &&
-        !reducedMotion()
+        !matchMedia('(prefers-reduced-motion: reduce)').matches
       ) {
         root.dataset.notebookArrival = 'forward';
+        // A failed/blocked module must never hide the page indefinitely.
+        setTimeout(() => delete root.dataset.notebookArrival, 1800);
       }
     } catch {
       /* Storage is optional; ordinary navigation still works. */
     }
-
-    document.addEventListener('animationend', (event) => {
-      if (event.animationName.startsWith('notebook-arrive')) {
-        delete root.dataset.notebookArrival;
-      }
-    });
-
-    document.addEventListener('click', async (event) => {
-      if (
-        event.defaultPrevented ||
-        event.button !== 0 ||
-        event.metaKey ||
-        event.ctrlKey ||
-        event.shiftKey ||
-        event.altKey ||
-        reducedMotion()
-      )
-        return;
-      const link = event.target instanceof Element ? event.target.closest('a[href]') : null;
-      if (
-        !link ||
-        link.hasAttribute('download') ||
-        (link.target && link.target !== '_self') ||
-        link.hasAttribute('data-no-page-turn')
-      )
-        return;
-      const next = new URL(link.href, location.href);
-      const current = new URL(location.href);
-      if (
-        next.origin !== current.origin ||
-        !/^https?:$/.test(next.protocol) ||
-        pageKey(next) === pageKey(current) ||
-        /^\/admin(?:\/|$)/.test(next.pathname) ||
-        (/\.[a-z0-9]+$/i.test(next.pathname) && !/\.html?$/i.test(next.pathname))
-      )
-        return;
-      const sheet = document.querySelector('[data-notebook-page]');
-      if (!sheet) return;
-      event.preventDefault();
-      if (navigating) return;
-      navigating = true;
-      placeSpine(sheet);
-      delete root.dataset.notebookArrival;
-      root.dataset.notebookDeparture = 'forward';
-
-      // A bounded wait: a cancelled animation or unavailable API must never
-      // leave a working link stuck on a folded sheet.
-      try {
-        await Promise.race([
-          Promise.allSettled(sheet.getAnimations().map((animation) => animation.finished)),
-          new Promise((resolve) => setTimeout(resolve, 350)),
-        ]);
-      } catch {
-        /* Navigate immediately if animation APIs are unavailable. */
-      }
-      if (!navigating) return;
-      try {
-        sessionStorage.setItem(storageKey, JSON.stringify({ to: pageKey(next), at: Date.now() }));
-      } catch {
-        /* No storage is needed to follow the link. */
-      }
-      location.assign(next.href);
-    });
-
-    // Clear departure state before a page enters the back/forward cache.
-    addEventListener('pagehide', () => {
-      navigating = false;
-      delete root.dataset.notebookDeparture;
-      delete root.dataset.notebookArrival;
-    });
-    addEventListener('pageshow', (event) => {
-      navigating = false;
-      delete root.dataset.notebookDeparture;
-      placeSpine(document.querySelector('[data-notebook-page]'));
-      const fromHistory =
-        event.persisted || performance.getEntriesByType('navigation')[0]?.type === 'back_forward';
-      if (fromHistory && !reducedMotion()) root.dataset.notebookArrival = 'back';
-    });
   })();
+</script>
+<script>
+  import '../scripts/notebook-motion';
 </script>

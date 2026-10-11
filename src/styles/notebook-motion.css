@@ -4,52 +4,93 @@
 html {
   scrollbar-gutter: stable both-edges;
 }
-[data-notebook-page] {
-  transform-origin: left var(--notebook-pivot, 50svh);
-  backface-visibility: hidden;
+html[data-notebook-departure] [data-notebook-page],
+html[data-notebook-arrival] [data-notebook-page] {
+  visibility: hidden;
 }
-/* Full document navigation keeps each page's scripts, forms and history native. */
-html[data-notebook-departure] [data-notebook-page] {
-  animation: notebook-depart 240ms ease-in both;
+/* Only the visible paper is animated. The real page retains its scroll geometry. */
+.notebook-turn-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  overflow: hidden;
+  contain: strict;
   pointer-events: none;
 }
-html[data-notebook-arrival='forward'] [data-notebook-page] {
-  animation: notebook-arrive 320ms cubic-bezier(0.16, 0.8, 0.24, 1) both;
+.notebook-turn-stage {
+  position: absolute;
+  perspective: 2200px;
+  perspective-origin: 50% 50%;
+  transform-style: preserve-3d;
 }
-html[data-notebook-arrival='back'] [data-notebook-page] {
-  animation: notebook-arrive-back 320ms cubic-bezier(0.16, 0.8, 0.24, 1) both;
+.notebook-turn-underlay {
+  position: absolute;
+  inset: 0;
+  background: var(--paper);
+  box-shadow:
+    2px 2px 0 #0003,
+    5px 5px 0 #0002;
 }
-@keyframes notebook-depart {
-  from {
-    transform: perspective(1600px) rotateY(0);
-    filter: brightness(1);
-  }
-  to {
-    transform: perspective(1600px) rotateY(-82deg);
-    filter: brightness(0.72);
-  }
+.notebook-fold-shadow {
+  position: absolute;
+  top: -3%;
+  bottom: -3%;
+  left: -6%;
+  width: 22%;
+  background: linear-gradient(90deg, transparent, #24170cc9 60%, transparent);
+  filter: blur(12px);
+  transform-origin: left center;
+  will-change: transform, opacity;
 }
-@keyframes notebook-arrive {
-  from {
-    transform: perspective(1600px) rotateY(78deg);
-    filter: brightness(0.78);
-  }
-  to {
-    transform: perspective(1600px) rotateY(0);
-    filter: brightness(1);
-  }
+.notebook-paper-strip {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  transform-origin: left center;
+  transform-style: preserve-3d;
+  will-change: transform;
 }
-@keyframes notebook-arrive-back {
-  from {
-    transform: perspective(1600px) rotateY(-78deg);
-    filter: brightness(0.78);
-  }
-  to {
-    transform: perspective(1600px) rotateY(0);
-    filter: brightness(1);
-  }
+.notebook-paper-front,
+.notebook-paper-back {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  backface-visibility: hidden;
 }
-/* The writing arrives with the sheet, rather than fading in separately. */
+.notebook-paper-front::after,
+.notebook-paper-back::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(44, 29, 12, var(--fold-shade-start, 0)),
+    rgba(44, 29, 12, var(--fold-shade-end, 0))
+  );
+  pointer-events: none;
+}
+.notebook-paper-front::after {
+  z-index: 2;
+}
+.notebook-paper-back {
+  transform: rotateY(180deg);
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(#fff3, #d4c5a51a),
+    repeating-linear-gradient(0deg, transparent 0 31px, #73614a12 31px 32px);
+}
+.notebook-paper-back::after {
+  transform: scaleX(-1);
+}
+/* Preserve the section's styling without duplicating live anchor IDs. */
+[data-notebook-copy] [data-notebook-id='six-rules'] .section-head {
+  text-decoration: underline;
+  text-decoration-color: var(--warn);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 7px;
+}
+/* The writing travels with the paper, rather than fading in separately. */
 .document .classification-bar,
 .document .stamp-row,
 .document .doc-meta,
@@ -63,16 +104,14 @@ html[data-notebook-arrival='back'] [data-notebook-page] {
 @media (prefers-reduced-motion: reduce), print {
   html[data-notebook-arrival] [data-notebook-page],
   html[data-notebook-departure] [data-notebook-page] {
-    animation: none !important;
-    transform: none;
-    filter: none;
+    visibility: visible;
+  }
+  .notebook-turn-layer {
+    display: none;
   }
 }
 @media print {
   html {
     scrollbar-gutter: auto;
-  }
-  [data-notebook-page] {
-    backface-visibility: visible;
   }
 }

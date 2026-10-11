@@ -150,12 +150,16 @@ beside or above the prose.
 All reading pages, including pocket-guide previews, share the 850px maximum
 notebook width, responsive margins, and viewport minimum height. Longer entries
 continue vertically. Keep that geometry in `field-manual.css`; do not introduce
-page-specific wrapper widths. `NotebookMotion` turns the sheet around its left
-edge on same-site page links, then uses normal document navigation so each
-page's scripts initialize normally. Section jumps, external links, downloads,
+page-specific wrapper widths. `NotebookMotion` curls the outer edge across a
+temporary paper surface on same-site page links, then lets the arriving sheet
+uncurl and settle. Narrow segments follow one continuous bend with a shaded
+paper reverse and a moving fold shadow; the viewport-sized overlay is inert and
+removed after the turn. The real page keeps its layout, focus, and scroll
+position. Normal document navigation initializes each page's scripts. Section jumps, external links, downloads,
 and reduced-motion preferences bypass the animation. Pocket guides retain their
 separate A5 print dimensions. `tests/notebook.spec.ts` covers the shared frame,
-navigation, history restoration, and motion/storage fallbacks.
+navigation, history restoration, and motion/storage fallbacks, including
+interrupted or throttled animations.
 
 Copy the `illustration`, `recordKind`, `recordNote`, `dossier`, and `rules`
 frontmatter from an existing published entry, then replace its values. Do not
