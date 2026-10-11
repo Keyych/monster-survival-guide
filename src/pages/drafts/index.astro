@@ -63,51 +63,58 @@ const drafts = (await getCollection('monsters', ({ data }) => data.status === 'd
   </Section>
 
   <Section heading="All drafts (sorted by entry number)">
-    <table class="format-table drafts-table">
-      <thead>
-        <tr>
-          <th scope="col">No.</th>
-          <th scope="col">Title</th>
-          <th scope="col">Class</th>
-          <th scope="col">Region</th>
-          <th scope="col">Danger</th>
-          <th scope="col">Pins</th>
-          <th scope="col">Preview</th>
-        </tr>
-      </thead>
-      <tbody>
-        {
-          drafts.map((d) => (
-            <tr>
-              <td>
-                <code>{d.data.number}</code>
-              </td>
-              <td>
-                <strong>{d.data.title}</strong>
-                <div class="drafts-hook">{d.data.description}</div>
-              </td>
-              <td>{d.data.entryClass}</td>
-              <td>{d.data.region}</td>
-              <td>
-                <span class="drafts-danger" data-danger={d.data.danger}>
-                  {d.data.danger}/10
-                </span>
-              </td>
-              <td>{d.data.sightings.length}</td>
-              <td>
-                <a class="drafts-preview-link" href={`/drafts/${d.id}/`}>
-                  Preview →
-                </a>
-              </td>
-            </tr>
-          ))
-        }
-      </tbody>
-    </table>
+    <div class="drafts-scroll" role="region" aria-label="Draft entries" tabindex="0">
+      <table class="format-table drafts-table">
+        <thead>
+          <tr>
+            <th scope="col">No.</th>
+            <th scope="col">Title</th>
+            <th scope="col">Class</th>
+            <th scope="col">Region</th>
+            <th scope="col">Danger</th>
+            <th scope="col">Pins</th>
+            <th scope="col">Preview</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            drafts.map((d) => (
+              <tr>
+                <td>
+                  <code>{d.data.number}</code>
+                </td>
+                <td>
+                  <strong>{d.data.title}</strong>
+                  <div class="drafts-hook">{d.data.description}</div>
+                </td>
+                <td>{d.data.entryClass}</td>
+                <td>{d.data.region}</td>
+                <td>
+                  <span class="drafts-danger" data-danger={d.data.danger}>
+                    {d.data.danger}/10
+                  </span>
+                </td>
+                <td>{d.data.sightings.length}</td>
+                <td>
+                  <a class="drafts-preview-link" href={`/drafts/${d.id}/`}>
+                    Preview →
+                  </a>
+                </td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
   </Section>
 </FieldManual>
 
 <style>
+  .drafts-scroll {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
   .drafts-table th,
   .drafts-table td {
     font-size: 0.85rem;

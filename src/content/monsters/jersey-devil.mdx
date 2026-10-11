@@ -69,12 +69,51 @@ sightings:
       label: 'Forest service investigation of livestock kills',
       sourceUrl: 'https://www.smithsonianmag.com/history/real-story-jersey-devil-180959299/',
     }
+recordKind: folklore
+recordNote: Regional folklore and historical press accounts. Printed reports and the legend are
+  distinguished from verified zoological evidence.
+illustration:
+  src: /illustrations/jersey-devil.png
+  alt: Loose black-ink study of a horse-headed figure with batlike wings and hooves.
+dossier:
+  entity: The Jersey Devil (The Leeds Devil)
+  origin: Pine Barrens, New Jersey — first reports c. 1735
+  status: Active — Sightings Continuous Since 18th Century
+  stamps:
+    - Pine Barrens NJ
+    - Leeds Family
+    - Phenomenon of 1909
+  dangerLabel: AERIAL THREAT
+  dangerNote: 7/10 — Aerial. Territorial. Livestock attacks documented. Human attacks rare but reported.
+rules:
+  - title: Do not camp alone in the Pine Barrens.
+    body:
+      The sighting record is overwhelmingly populated by solo witnesses or small parties separated
+      from a larger group. Numbers matter. Stay with your group.
+  - title: If you hear the scream, do not investigate.
+    body: The scream is the recurring feature. Treat it the way you would treat a bear sound — as a
+      notification of presence, not an invitation. Move toward people, light, and roads.
+  - title: Watch the rooflines and the tree-tops.
+    body:
+      The Jersey Devil is aerial. Most witnesses who saw the creature directly describe seeing it
+      perched — on a roof, a fence, a low branch. Your peripheral vision is doing more work than you
+      think it is. Trust it.
+  - title: Secure livestock and pets at sundown.
+    body:
+      The clearest behavioural pattern in the historical record is opportunistic predation on small
+      animals at night. If you keep chickens, goats, or dogs in pinelands country, get them indoors
+      before the light goes.
+  - title: Do not drive the back roads of the Barrens at night with the windows down.
+    body:
+      Sightings cluster on rural roads — Routes 532, 563, 72. The creature has been reported pacing
+      vehicles. Keep your windows up. Keep moving. Do not stop to investigate.
+  - title: If something lands on the roof, do not go outside.
+    body:
+      Multiple historical accounts describe the creature settling onto cabin roofs, screaming once,
+      and leaving when not engaged. The witnesses who survived the experience are without exception
+      the ones who stayed inside.
 ---
 
-import StampRow from '../../components/StampRow.astro';
-import DocMeta from '../../components/DocMeta.astro';
-import DocTitle from '../../components/DocTitle.astro';
-import DangerMeter from '../../components/DangerMeter.astro';
 import Section from '../../components/Section.astro';
 import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
@@ -82,49 +121,6 @@ import EncounterCard from '../../components/EncounterCard.astro';
 import Outro from '../../components/Outro.astro';
 import MonsterMap from '../../components/MonsterMap.astro';
 import '../../styles/pages/jersey-devil.css';
-
-export const rules = [
-  {
-    title: 'Do not camp alone in the Pine Barrens.',
-    body: 'The sighting record is overwhelmingly populated by solo witnesses or small parties separated from a larger group. Numbers matter. Stay with your group.',
-  },
-  {
-    title: 'If you hear the scream, do not investigate.',
-    body: 'The scream is the recurring feature. Treat it the way you would treat a bear sound — as a notification of presence, not an invitation. Move toward people, light, and roads.',
-  },
-  {
-    title: 'Watch the rooflines and the tree-tops.',
-    body: 'The Jersey Devil is aerial. Most witnesses who saw the creature directly describe seeing it perched — on a roof, a fence, a low branch. Your peripheral vision is doing more work than you think it is. Trust it.',
-  },
-  {
-    title: 'Secure livestock and pets at sundown.',
-    body: 'The clearest behavioural pattern in the historical record is opportunistic predation on small animals at night. If you keep chickens, goats, or dogs in pinelands country, get them indoors before the light goes.',
-  },
-  {
-    title: 'Do not drive the back roads of the Barrens at night with the windows down.',
-    body: 'Sightings cluster on rural roads — Routes 532, 563, 72. The creature has been reported pacing vehicles. Keep your windows up. Keep moving. Do not stop to investigate.',
-  },
-  {
-    title: 'If something lands on the roof, do not go outside.',
-    body: 'Multiple historical accounts describe the creature settling onto cabin roofs, screaming once, and leaving when not engaged. The witnesses who survived the experience are without exception the ones who stayed inside.',
-  },
-];
-
-<StampRow red="Pine Barrens NJ" faded="Leeds Family" blue="Phenomenon of 1909" />
-<DocMeta
-  rows={[
-    { label: 'ENTITY', value: 'The Jersey Devil (The Leeds Devil)' },
-    { label: 'ORIGIN', value: 'Pine Barrens, New Jersey — first reports c. 1735' },
-    { label: 'THREAT GUIDE TYPE', value: 'Identification · Behaviour · Survival Protocol' },
-    { label: 'STATUS', value: 'Active — Sightings Continuous Since 18th Century' },
-  ]}
-/>
-<DocTitle subtitle={frontmatter.description}>The Jersey Devil</DocTitle>
-<DangerMeter
-  danger={frontmatter.danger}
-  label="AERIAL THREAT"
-  description="7/10 — Aerial. Territorial. Livestock attacks documented. Human attacks rare but reported."
-/>
 
 <Section heading="Before We Begin">
   <p>
@@ -263,7 +259,12 @@ export const rules = [
 </Section>
 
 <Section heading="Six Rules That May Save Your Life">
-  <SixRules rules={rules} />
+  <SixRules
+    rules={frontmatter.rules}
+    title={frontmatter.title}
+    number={frontmatter.number}
+    pocketHref="/pocket/jersey-devil/"
+  />
 </Section>
 
 <Section heading="Two Cases on the Record">

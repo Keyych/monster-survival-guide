@@ -1,0 +1,299 @@
+.entry-content {
+  min-width: 0;
+}
+.entry-back {
+  display: inline-block;
+  padding: 10px 0;
+  margin-bottom: 16px;
+  font:
+    0.75rem/1.5 'Anonymous Pro',
+    monospace;
+  color: var(--faded);
+  text-decoration: none;
+}
+.entry-kicker {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  color: var(--faded);
+  font:
+    0.7rem/1.5 'Anonymous Pro',
+    monospace;
+  letter-spacing: 0.05em;
+}
+.entry-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 190px;
+  align-items: center;
+  gap: 16px;
+  margin: 28px 0 12px;
+}
+.entry-heading .doc-title {
+  font-family: 'Sorts Mill Goudy', Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(2.5rem, 4.5vw, 3.6rem);
+  line-height: 1.06;
+  text-transform: none;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+  animation: none;
+  margin: 0 0 12px;
+}
+.entry-reading-time {
+  font:
+    0.7rem/1.5 'Anonymous Pro',
+    monospace;
+  color: var(--faded);
+  margin: 0 0 18px;
+}
+.entry-reading-time span {
+  padding: 0 4px;
+}
+.entry-heading .doc-subtitle {
+  font-size: 1.08rem;
+  line-height: 1.65;
+  margin: 0;
+  animation: none;
+}
+.entry-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0 20px;
+  margin-top: 12px;
+}
+.entry-actions a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 1px;
+}
+.rules-jump {
+  gap: 10px;
+  color: var(--warn);
+  font-style: italic;
+  font-size: 1rem;
+}
+.pocket-link {
+  color: var(--faded);
+  font:
+    0.72rem/1.5 'Anonymous Pro',
+    monospace;
+}
+.creature-study {
+  margin: 0 -12px 0 0;
+  transform: rotate(2deg);
+}
+.creature-study img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+.entry-danger {
+  color: var(--warn);
+  font:
+    0.72rem/1.6 'Anonymous Pro',
+    monospace;
+  margin: 16px 0 0;
+}
+.entry-danger span {
+  padding: 0 5px;
+}
+.entry-notes {
+  margin: 0;
+}
+.entry-notes summary,
+.entry-contents summary {
+  width: fit-content;
+  padding: 10px 0;
+  cursor: pointer;
+  color: var(--faded);
+  font-size: 0.95rem;
+  font-style: italic;
+  line-height: 1.5;
+}
+.entry-notes summary span {
+  font-size: 0.9rem;
+}
+.entry-notes p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--faded);
+  margin: 8px 0 12px;
+}
+.entry-notes .doc-meta {
+  border: 0;
+  margin: 12px 0;
+  padding: 0;
+  font-size: 0.7rem;
+  animation: none;
+}
+.entry-contents {
+  margin: 0 0 32px;
+}
+.entry-contents nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 20px;
+  padding: 4px 0 12px;
+}
+.entry-contents nav a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--faded);
+  font-size: 0.95rem;
+  text-underline-offset: 4px;
+  text-decoration-color: var(--rule);
+}
+.entry-contents a:hover,
+.entry-back:hover,
+.pocket-link:hover {
+  color: var(--ink);
+}
+.document--entry .section {
+  scroll-margin-top: 30px;
+  animation: none;
+}
+.document--entry .section-head {
+  display: block;
+  font:
+    italic 400 1.55rem/1.35 'Sorts Mill Goudy',
+    Georgia,
+    serif;
+  letter-spacing: 0;
+  text-transform: none;
+  border: 0;
+  margin-bottom: 22px;
+}
+.document--entry .section-head::before,
+.document--entry .section-head::after {
+  display: none;
+}
+.document--entry .section-head:focus-visible {
+  outline: 2px solid var(--warn);
+  outline-offset: 5px;
+}
+#six-rules .section-head {
+  text-decoration: underline;
+  text-decoration-color: var(--warn);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 7px;
+}
+.notebook-rules {
+  margin: 14px 0 30px;
+}
+.notebook-rules .rules-list {
+  margin: 0;
+}
+.notebook-rules .rules-list li {
+  position: relative;
+  border: 0;
+  padding: 9px 0 24px;
+  gap: 20px;
+  font-size: 1.02rem;
+  line-height: 1.75;
+}
+.notebook-rules .rule-num {
+  flex: 0 0 35px;
+  min-width: 35px;
+  height: 36px;
+  color: var(--warn);
+  font:
+    italic 400 1.45rem/1.4 'Sorts Mill Goudy',
+    Georgia,
+    serif;
+  text-align: center;
+  border: 1px solid currentColor;
+  border-radius: 48% 54% 46% 50%;
+  transform: rotate(-5deg);
+  margin-left: -55px;
+}
+.notebook-rules li:nth-child(even) .rule-num {
+  border-radius: 55% 45% 52% 44%;
+  transform: rotate(4deg);
+}
+.notebook-rules .rules-list strong {
+  display: block;
+  font-size: 1.13rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.rules-note {
+  color: var(--faded);
+  font-size: 0.95rem;
+  margin: 8px 0 0;
+}
+.rules-note a {
+  display: inline-block;
+  padding: 10px 0;
+  margin-left: 14px;
+  color: var(--warn);
+  font:
+    0.73rem/1.5 'Anonymous Pro',
+    monospace;
+  text-underline-offset: 4px;
+}
+.source-context {
+  font:
+    0.68rem/1.5 'Anonymous Pro',
+    monospace;
+  color: var(--faded);
+  padding: 12px 22px;
+  border-bottom: 1px solid var(--rule);
+}
+@media (max-width: 600px) {
+  .entry-kicker {
+    font-size: 0.65rem;
+    letter-spacing: 0;
+  }
+  .entry-hero {
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-top: 24px;
+  }
+  .entry-heading .doc-title {
+    font-size: 2.6rem;
+  }
+  .creature-study {
+    width: 165px;
+    justify-self: end;
+    margin: 4px -8px 0 0;
+  }
+  .entry-contents nav {
+    gap: 0 12px;
+  }
+  .notebook-rules .rules-list li {
+    gap: 10px;
+  }
+  .notebook-rules .rule-num {
+    flex-basis: 28px;
+    min-width: 28px;
+    height: 29px;
+    margin-left: -38px;
+    font-size: 1.15rem;
+  }
+}
+@media print {
+  .entry-contents,
+  .entry-back,
+  .entry-actions,
+  .rules-note {
+    display: none !important;
+  }
+  .document--entry .doc-inner {
+    padding: 0.4in;
+  }
+  .notebook-rules .rule-num {
+    margin-left: 0;
+  }
+  .notebook-rules .rules-list li {
+    break-inside: avoid;
+  }
+}

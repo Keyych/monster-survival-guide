@@ -69,61 +69,54 @@ sightings:
       label: 'Roadside BEK report — Australian paranormal archive',
       sourceUrl: 'https://www.spookyisles.com/who-are-the-black-eyed-children/',
     }
+recordKind: reported
+recordNote: Self-reported encounters within a modern urban legend. Reports are attributed to their
+  sources and are not independent verification.
+illustration:
+  src: /illustrations/black-eyed-children.png
+  alt: Loose black-ink sketch of two fully dressed children with dark eyes.
+dossier:
+  entity: Black-Eyed Children (BEK)
+  origin: First Documented — Abilene, Texas, 1996
+  status: Active — Global Reports Ongoing — Coastal Pattern Noted
+  stamps:
+    - Threshold Threat
+    - Coastal Pattern
+    - Global Reports
+  dangerLabel: THRESHOLD
+  dangerNote: 7/10 — Danger is conditional. Do not invite them in. That is the only rule that matters.
+rules:
+  - title: Do not open the door.
+    body: Not partially. Not to speak through. The threshold is your only protection. The moment you
+      open a door, you have created a gap in the boundary. Do not create the gap.
+  - title: Do not make eye contact.
+    body: Multiple witnesses describe a hypnotic effect associated with sustained eye contact. Look
+      away. The eyes are the mechanism, not the window.
+  - title: Trust the dread before you understand it.
+    body:
+      The body knows before the mind does. If you feel that sourceless, pre-rational fear — act on
+      it immediately. Do not wait to understand it. The understanding will come too late.
+  - title: Do not engage the explanation.
+    body: They will have a reason. The reason will be plausible. Engaging with the reason is the
+      beginning of compliance. You do not need to evaluate whether the explanation is true. Refuse
+      without engaging the logic.
+  - title: On the water, check your thresholds.
+    body: Hatches, portholes, companionway doors — anything that constitutes the boundary between
+      outside and inside on a vessel — should be secured after dark in coastal waters. Your boat is
+      a threshold. Treat it accordingly.
+  - title: If you said yes — leave immediately.
+    body:
+      If you gave the invitation before you understood what you were giving it to — do not stay to
+      find out what happens next. Every account of what follows an invitation is secondhand, because
+      the people who gave it are not the ones who told the story afterward.
 ---
 
-import StampRow from '../../components/StampRow.astro';
-import DocMeta from '../../components/DocMeta.astro';
-import DocTitle from '../../components/DocTitle.astro';
-import DangerMeter from '../../components/DangerMeter.astro';
 import Section from '../../components/Section.astro';
 import SixRules from '../../components/SixRules.astro';
 import EncounterCard from '../../components/EncounterCard.astro';
 import Outro from '../../components/Outro.astro';
 import MonsterMap from '../../components/MonsterMap.astro';
 import '../../styles/pages/black-eyed-children.css';
-
-export const rules = [
-  {
-    title: 'Do not open the door.',
-    body: 'Not partially. Not to speak through. The threshold is your only protection. The moment you open a door, you have created a gap in the boundary. Do not create the gap.',
-  },
-  {
-    title: 'Do not make eye contact.',
-    body: 'Multiple witnesses describe a hypnotic effect associated with sustained eye contact. Look away. The eyes are the mechanism, not the window.',
-  },
-  {
-    title: 'Trust the dread before you understand it.',
-    body: 'The body knows before the mind does. If you feel that sourceless, pre-rational fear — act on it immediately. Do not wait to understand it. The understanding will come too late.',
-  },
-  {
-    title: 'Do not engage the explanation.',
-    body: 'They will have a reason. The reason will be plausible. Engaging with the reason is the beginning of compliance. You do not need to evaluate whether the explanation is true. Refuse without engaging the logic.',
-  },
-  {
-    title: 'On the water, check your thresholds.',
-    body: 'Hatches, portholes, companionway doors — anything that constitutes the boundary between outside and inside on a vessel — should be secured after dark in coastal waters. Your boat is a threshold. Treat it accordingly.',
-  },
-  {
-    title: 'If you said yes — leave immediately.',
-    body: 'If you gave the invitation before you understood what you were giving it to — do not stay to find out what happens next. Every account of what follows an invitation is secondhand, because the people who gave it are not the ones who told the story afterward.',
-  },
-];
-
-<StampRow red="Threshold Threat" faded="Coastal Pattern" blue="Global Reports" />
-<DocMeta
-  rows={[
-    { label: 'ENTITY', value: 'Black-Eyed Children (BEK)' },
-    { label: 'ORIGIN', value: 'First Documented — Abilene, Texas, 1996' },
-    { label: 'THREAT GUIDE TYPE', value: 'Identification · Behaviour · Survival Protocol' },
-    { label: 'STATUS', value: 'Active — Global Reports Ongoing — Coastal Pattern Noted' },
-  ]}
-/>
-<DocTitle subtitle={frontmatter.description}>Black-Eyed Children</DocTitle>
-<DangerMeter
-  danger={frontmatter.danger}
-  label="THRESHOLD"
-  description="7/10 — Danger is conditional. Do not invite them in. That is the only rule that matters."
-/>
 
 <Section heading="Before We Begin">
   <p>
@@ -244,7 +237,12 @@ export const rules = [
 </Section>
 
 <Section heading="Six Rules That May Save Your Life">
-  <SixRules rules={rules} />
+  <SixRules
+    rules={frontmatter.rules}
+    title={frontmatter.title}
+    number={frontmatter.number}
+    pocketHref="/pocket/black-eyed-children/"
+  />
 </Section>
 
 <Section heading="Two Cases on the Record">

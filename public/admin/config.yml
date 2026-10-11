@@ -71,6 +71,43 @@ collections:
       - { label: 'Publish Date', name: 'publishDate', widget: 'datetime', required: false }
       - { label: 'Date Modified', name: 'dateModified', widget: 'datetime', required: false }
       - { label: 'Season', name: 'season', widget: 'number', value_type: 'int', default: 1, min: 1 }
+      - label: 'Record type'
+        name: 'recordKind'
+        widget: 'select'
+        required: false
+        options:
+          - { label: 'Reported accounts', value: 'reported' }
+          - { label: 'Folklore & tradition', value: 'folklore' }
+          - { label: 'Constructed lore', value: 'constructed' }
+      - { label: 'Record context', name: 'recordNote', widget: 'text', required: false }
+      - label: 'Ink illustration'
+        name: 'illustration'
+        widget: 'object'
+        required: false
+        fields:
+          - { label: 'Transparent PNG', name: 'src', widget: 'image' }
+          - { label: 'Image description', name: 'alt', widget: 'string' }
+      - label: 'Entry header and dossier'
+        name: 'dossier'
+        widget: 'object'
+        required: false
+        fields:
+          - { label: 'Entity', name: 'entity', widget: 'string' }
+          - { label: 'Origin', name: 'origin', widget: 'string' }
+          - { label: 'Status', name: 'status', widget: 'string' }
+          - { label: 'Archive stamps', name: 'stamps', widget: 'list', min: 3, max: 3 }
+          - { label: 'Danger label', name: 'dangerLabel', widget: 'string' }
+          - { label: 'Danger note', name: 'dangerNote', widget: 'text' }
+      - label: 'Six Rules'
+        name: 'rules'
+        widget: 'list'
+        required: false
+        min: 6
+        max: 6
+        hint: 'Shared by the entry panel and printable pocket guide. Keep exactly six rules.'
+        fields:
+          - { label: 'Rule', name: 'title', widget: 'string' }
+          - { label: 'Explanation', name: 'body', widget: 'text' }
       - label: 'Map Pin (optional)'
         name: 'coords'
         widget: 'object'

@@ -1,5 +1,6 @@
 ---
 import '../styles/field-manual.css';
+import NotebookMotion from '../components/NotebookMotion.astro';
 
 // Self-hosted fonts via @fontsource — no Google Fonts CDN, no preconnect needed.
 import '@fontsource/rajdhani/400.css';
@@ -44,6 +45,7 @@ interface Props {
    * link — used by the editorial /drafts/ preview routes.
    */
   noindex?: boolean;
+  variant?: 'entry' | 'index';
 }
 
 const {
@@ -56,6 +58,7 @@ const {
   ogImage = site.defaultOgImage,
   article,
   noindex = false,
+  variant,
 } = Astro.props;
 
 const bottomText = bottomBar ?? classification;
@@ -78,6 +81,7 @@ const jsonLd = article
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <NotebookMotion />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
@@ -114,7 +118,7 @@ const jsonLd = article
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
-    <div class="document">
+    <div class:list={['document', variant && `document--${variant}`]} data-notebook-page>
       <div class="classification-bar" aria-hidden="true">
         ◆ &nbsp; <Fragment set:html={classification} /> &nbsp; ◆
       </div>

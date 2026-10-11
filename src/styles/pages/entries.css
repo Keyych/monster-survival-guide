@@ -233,3 +233,247 @@
   border-color: var(--ink);
   color: var(--ink);
 }
+
+/* A compact, searchable journal index with drawings on the paper itself. */
+.index-topline {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 16px;
+  margin-bottom: 24px;
+  color: var(--faded);
+  font:
+    0.7rem/1.5 'Anonymous Pro',
+    monospace;
+}
+.index-topline > span {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.index-topline nav {
+  display: flex;
+  gap: 20px;
+}
+.index-topline a {
+  color: var(--ink);
+  text-decoration: none;
+}
+.index-heading h1 {
+  font:
+    400 clamp(2rem, 5vw, 3rem)/1.1 'Sorts Mill Goudy',
+    Georgia,
+    serif;
+  letter-spacing: -0.025em;
+  margin-bottom: 12px;
+}
+.index-heading p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 22px;
+  color: var(--faded);
+}
+.index-heading p a {
+  color: var(--ink);
+  text-underline-offset: 4px;
+  margin-left: 6px;
+}
+.filter-search {
+  border-color: color-mix(in srgb, var(--ink) 35%, transparent);
+  padding: 10px 14px;
+  margin-bottom: 10px;
+}
+.filter-search input[type='search'] {
+  font-size: 1rem;
+  letter-spacing: 0;
+  min-height: 28px;
+}
+.filter-search-clear {
+  width: 44px;
+  height: 44px;
+}
+.index-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: start;
+  gap: 10px;
+  margin: 0 0 16px;
+}
+.index-filters {
+  flex: 1;
+  min-width: 0;
+}
+.index-filters summary {
+  font:
+    0.73rem/1.5 'Anonymous Pro',
+    monospace;
+  color: var(--ink);
+  padding: 12px 0;
+  cursor: pointer;
+}
+.index-filters[open] {
+  flex-basis: 100%;
+  order: 1;
+}
+.index-filters .filter-bar {
+  margin: 6px 0 0;
+}
+.index-count {
+  font:
+    0.7rem/1.5 'Anonymous Pro',
+    monospace;
+  color: var(--faded);
+  margin: 0;
+  padding: 12px 0;
+  white-space: nowrap;
+}
+.filter-chip {
+  min-height: 36px;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  padding: 8px 10px;
+}
+.filter-legend,
+.filter-toggle,
+.filter-clear {
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+}
+.filter-toggle,
+.filter-clear {
+  min-height: 40px;
+  padding: 8px;
+}
+.filter-chip:focus-visible,
+.filter-search-clear:focus-visible,
+.filter-toggle:focus-visible {
+  outline: 2px solid var(--warn);
+  outline-offset: 3px;
+}
+.document--index .entry-list {
+  margin-top: 0;
+  border-top: 2px solid var(--ink);
+}
+.document--index .entry-card {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--rule);
+  align-items: center;
+  min-height: 170px;
+  animation: none;
+}
+.document--index .entry-card:hover {
+  background: color-mix(in srgb, var(--ink) 3%, transparent);
+}
+.document--index .entry-band {
+  width: 3px;
+  height: 42px;
+  align-self: center;
+}
+.index-study {
+  flex: 0 0 140px;
+  margin: 10px 8px;
+  text-align: center;
+}
+.index-study img {
+  display: block;
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+}
+.document--index .entry-body {
+  min-width: 0;
+  padding: 20px 10px 20px 8px;
+  gap: 7px;
+}
+.document--index .entry-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.06em;
+  line-height: 1.5;
+  color: var(--faded);
+}
+.document--index .entry-title {
+  font:
+    400 1.9rem/1.1 'Sorts Mill Goudy',
+    Georgia,
+    serif;
+  letter-spacing: -0.02em;
+}
+.document--index .entry-desc {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.entry-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  font:
+    0.65rem/1.5 'Anonymous Pro',
+    monospace;
+  color: var(--faded);
+  margin-top: 3px;
+}
+.document--index .entry-right {
+  padding: 20px 14px;
+}
+.document--index .mini-index {
+  display: none;
+}
+.document--index .entry-arrow {
+  font-size: 1.1rem;
+  opacity: 0.7;
+}
+@media (max-width: 600px) {
+  .index-topline {
+    margin-bottom: 20px;
+    font-size: 0.64rem;
+  }
+  .index-heading p a {
+    display: block;
+    margin: 8px 0 0;
+  }
+  .index-study {
+    flex-basis: 80px;
+    margin: 8px 6px 8px 2px;
+  }
+  .index-study img {
+    width: 80px;
+    height: 100px;
+  }
+  .document--index .entry-title {
+    font-size: 1.5rem;
+  }
+  .document--index .entry-desc {
+    font-size: 0.92rem;
+  }
+  .document--index .entry-label {
+    font-size: 0.6rem;
+  }
+  .document--index .entry-body {
+    padding: 18px 0 18px 4px;
+  }
+  .document--index .entry-right {
+    display: none;
+  }
+  .filter-chip {
+    min-height: 44px;
+  }
+}
+@media print {
+  .index-toolbar,
+  .filter-search {
+    display: none;
+  }
+  .document--index .doc-inner {
+    padding: 0.4in;
+  }
+  .index-study {
+    flex-basis: 80px;
+  }
+  .index-study img {
+    width: 80px;
+    height: 80px;
+  }
+}

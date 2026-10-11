@@ -7,19 +7,33 @@ interface Rule {
 }
 interface Props {
   rules: Rule[];
+  title?: string;
+  number?: string;
+  pocketHref?: string;
 }
-const { rules } = Astro.props;
+const { rules, pocketHref } = Astro.props;
 ---
 
-<ol class="rules-list">
+<div class="notebook-rules">
+  <ol class="rules-list">
+    {
+      rules.map((rule, i) => (
+        <li>
+          <span class="rule-num" aria-hidden="true">
+            {i + 1}
+          </span>
+          <span>
+            <strong>{rule.title}</strong> {rule.body}
+          </span>
+        </li>
+      ))
+    }
+  </ol>
   {
-    rules.map((rule, i) => (
-      <li>
-        <span class="rule-num">{String(i + 1).padStart(2, '0')}</span>
-        <span>
-          <strong>{rule.title}</strong> {rule.body}
-        </span>
-      </li>
-    ))
+    pocketHref && (
+      <p class="rules-note">
+        <em>Keep these close.</em> <a href={pocketHref}>Print pocket guide ↗</a>
+      </p>
+    )
   }
-</ol>
+</div>

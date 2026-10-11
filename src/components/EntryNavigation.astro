@@ -1,0 +1,35 @@
+---
+import type { EntrySection } from '../lib/entry-sections.ts';
+interface Props {
+  sections: EntrySection[];
+}
+const { sections } = Astro.props;
+---
+
+<details class="entry-contents">
+  <summary>Find a section in these notes</summary>
+  <nav aria-label="Entry sections">
+    {
+      sections.map((section) => (
+        <a href={`#${section.id}`} data-contents-link>
+          {section.label}
+        </a>
+      ))
+    }
+  </nav>
+</details>
+
+<script>
+  const menu = document.querySelector<HTMLDetailsElement>('.entry-contents');
+  menu?.addEventListener('click', (event) => {
+    const link = (event.target as HTMLElement).closest<HTMLAnchorElement>('a[href^="#"]');
+    if (!link) return;
+    const target = document.getElementById(link.hash.slice(1));
+    if (!target) return;
+    event.preventDefault();
+    menu.open = false;
+    history.pushState(null, '', link.hash);
+    target.scrollIntoView({ block: 'start' });
+    document.getElementById(`${target.id}-heading`)?.focus({ preventScroll: true });
+  });
+</script>

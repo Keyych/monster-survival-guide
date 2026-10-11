@@ -1,7 +1,10 @@
 ---
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 import FieldManual from '../layouts/FieldManual.astro';
-import BackLink from '../components/BackLink.astro';
+import EntryHeader from '../components/EntryHeader.astro';
+import EntryNavigation from '../components/EntryNavigation.astro';
+import { entrySections } from '../lib/entry-sections.ts';
+import '../styles/entry-reading.css';
 import RelatedEntries from '../components/RelatedEntries.astro';
 import CommentSection from '../components/CommentSection.astro';
 import { readingStats } from '../lib/reading-time.ts';
@@ -27,10 +30,14 @@ const { Content } = await render(entry);
 const data = entry.data;
 
 // Reading time computed from the raw MDX body — same heuristic as before.
-const stats = readingStats(entry.body ?? '');
+const stats = readingStats(
+  [entry.body ?? '', ...(data.rules ?? []).map((rule) => `${rule.title} ${rule.body}`)].join('\n'),
+);
+const sections = entrySections(entry.body ?? '');
 ---
 
 <FieldManual
+  variant="entry"
   title={data.title}
   description={data.description}
   classification={data.classification}
@@ -42,27 +49,12 @@ const stats = readingStats(entry.body ?? '');
     dateModified: data.dateModified?.toISOString(),
   }}
 >
-  <BackLink href="/" label="Back to Guide" />
-
-  <Content />
-
-  <p class="reading-time" aria-label="Estimated reading time">
-    Reading time · {stats.minutes} min · {stats.words.toLocaleString()} words
-  </p>
-
-  <RelatedEntries currentSlug={entry.id} currentTags={data.tags} currentDanger={data.danger} />
-
-  <CommentSection slug={entry.id} />
+  <article class="entry-content">
+    <a class="entry-back" href="/entries/">← All entries</a>
+    {data.dossier && <EntryHeader entry={entry} stats={stats} />}
+    <EntryNavigation sections={sections} />
+    <Content />
+    <RelatedEntries currentSlug={entry.id} currentTags={data.tags} currentDanger={data.danger} />
+    <CommentSection slug={entry.id} />
+  </article>
 </FieldManual>
-
-<style>
-  .reading-time {
-    font-family: 'Anonymous Pro', monospace;
-    font-size: 0.6rem;
-    letter-spacing: 0.15em;
-    color: var(--margin);
-    text-transform: uppercase;
-    margin-top: 32px;
-    text-align: right;
-  }
-</style>

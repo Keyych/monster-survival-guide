@@ -1,4 +1,5 @@
 ---
+import { sectionId } from '../lib/entry-sections.ts';
 interface Props {
   heading: string;
   /** Heading level. Defaults to h2 — bump if nesting deeper. */
@@ -8,7 +9,9 @@ const { heading, level = 2 } = Astro.props;
 const Heading = `h${level}` as const;
 ---
 
-<section class="section">
-  <Heading class="section-head">{heading}</Heading>
+<section class="section" id={sectionId(heading)} aria-labelledby={`${sectionId(heading)}-heading`}>
+  <Heading class="section-head" id={`${sectionId(heading)}-heading`} tabindex="-1"
+    >{heading}</Heading
+  >
   <slot />
 </section>

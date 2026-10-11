@@ -51,12 +51,51 @@ sightings:
       label: 'Documented in Leaphorn / Chee mystery series consulted with Diné advisors',
       sourceUrl: 'https://www.britannica.com/topic/skin-walker',
     }
+recordKind: folklore
+recordNote: Publicly discussed cultural traditions and attributed reports. The drawing is an
+  imagined animal form, not an authoritative depiction of Diné belief.
+illustration:
+  src: /illustrations/skinwalker.png
+  alt: Loose black-ink sketch of an ambiguous coyote-like animal with elongated limbs.
+dossier:
+  entity: The Skinwalker (Yee Naaldlooshii)
+  origin: Diné (Navajo) Tradition — American Southwest
+  status: Critical — Active Reports From Four Corners Region
+  stamps:
+    - Sacred Lore
+    - Four Corners
+    - Discuss With Care
+  dangerLabel: CRITICAL
+  dangerNote: 9/10 — Apex spiritual threat. Shapeshifting. Mimicry. Avoidance is the only protocol.
+rules:
+  - title: Do not say the name aloud unnecessarily.
+    body:
+      Especially not in the homes or vehicles of Diné people. Especially not at night. The cultural
+      prohibition is the entire defensive doctrine of this journal entry. Honour it.
+  - title: Do not visit "Skinwalker Ranch" or related sites as tourists.
+    body:
+      Treating the lore as entertainment, going looking for an encounter, is the best-documented way
+      of producing one. The novelty wears off. The encounter does not.
+  - title: If a voice from outside calls your name, do not respond.
+    body:
+      If the voice is one you recognise — a partner, a parent, a child — and it is calling from a
+      place that voice has no business being, especially at night, do not open the door, do not call
+      back, and confirm the location of the real person by other means.
+  - title: If an animal seems wrong, leave the area.
+    body:
+      Wrong proportions. Wrong eye-height. Movement that is not the movement of that species. You do
+      not need to identify what it is. You only need to be somewhere else.
+  - title: Do not photograph or record what you cannot identify.
+    body:
+      'The witness archive contains a striking number of accounts in which the use of cameras and
+      audio recorders preceded escalation. Whether or not you accept the metaphysical explanation,
+      the behavioural one is sound: you are signalling engagement.'
+  - title: Listen to Diné voices when they tell you to stop.
+    body: If a Diné friend, neighbour, or stranger asks you to drop a topic, drop the topic. The
+      teaching is not yours to negotiate. It is theirs to maintain, and they have been maintaining
+      it for an extremely long time.
 ---
 
-import StampRow from '../../components/StampRow.astro';
-import DocMeta from '../../components/DocMeta.astro';
-import DocTitle from '../../components/DocTitle.astro';
-import DangerMeter from '../../components/DangerMeter.astro';
 import Section from '../../components/Section.astro';
 import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
@@ -64,49 +103,6 @@ import EncounterCard from '../../components/EncounterCard.astro';
 import Outro from '../../components/Outro.astro';
 import MonsterMap from '../../components/MonsterMap.astro';
 import '../../styles/pages/skinwalker.css';
-
-export const rules = [
-  {
-    title: 'Do not say the name aloud unnecessarily.',
-    body: 'Especially not in the homes or vehicles of Diné people. Especially not at night. The cultural prohibition is the entire defensive doctrine of this journal entry. Honour it.',
-  },
-  {
-    title: 'Do not visit "Skinwalker Ranch" or related sites as tourists.',
-    body: 'Treating the lore as entertainment, going looking for an encounter, is the best-documented way of producing one. The novelty wears off. The encounter does not.',
-  },
-  {
-    title: 'If a voice from outside calls your name, do not respond.',
-    body: 'If the voice is one you recognise — a partner, a parent, a child — and it is calling from a place that voice has no business being, especially at night, do not open the door, do not call back, and confirm the location of the real person by other means.',
-  },
-  {
-    title: 'If an animal seems wrong, leave the area.',
-    body: 'Wrong proportions. Wrong eye-height. Movement that is not the movement of that species. You do not need to identify what it is. You only need to be somewhere else.',
-  },
-  {
-    title: 'Do not photograph or record what you cannot identify.',
-    body: 'The witness archive contains a striking number of accounts in which the use of cameras and audio recorders preceded escalation. Whether or not you accept the metaphysical explanation, the behavioural one is sound: you are signalling engagement.',
-  },
-  {
-    title: 'Listen to Diné voices when they tell you to stop.',
-    body: 'If a Diné friend, neighbour, or stranger asks you to drop a topic, drop the topic. The teaching is not yours to negotiate. It is theirs to maintain, and they have been maintaining it for an extremely long time.',
-  },
-];
-
-<StampRow red="Sacred Lore" faded="Four Corners" blue="Discuss With Care" />
-<DocMeta
-  rows={[
-    { label: 'ENTITY', value: 'The Skinwalker (Yee Naaldlooshii)' },
-    { label: 'ORIGIN', value: 'Diné (Navajo) Tradition — American Southwest' },
-    { label: 'THREAT GUIDE TYPE', value: 'Identification · Behaviour · Survival Protocol' },
-    { label: 'STATUS', value: 'Critical — Active Reports From Four Corners Region' },
-  ]}
-/>
-<DocTitle subtitle={frontmatter.description}>The Skinwalker</DocTitle>
-<DangerMeter
-  danger={frontmatter.danger}
-  label="CRITICAL"
-  description="9/10 — Apex spiritual threat. Shapeshifting. Mimicry. Avoidance is the only protocol."
-/>
 
 <div class="cultural-note">
   <p>
@@ -120,9 +116,10 @@ export const rules = [
     popular folklore, and because uninformed engagement with its legend has produced real harm. We
     have therefore made three editorial decisions:{' '}
     <strong>
-      we do not include images, we do not present specific Diné ceremonial information that elders
-      have asked be kept private, and we centre the survival material on what non-Diné people most
-      need to know — which is, almost entirely, what not to do.
+      the illustration is an imagined animal-form sketch rather than a depiction of sacred belief,
+      we do not present specific Diné ceremonial information that elders have asked be kept private,
+      and we centre the survival material on what non-Diné people most need to know — which is,
+      almost entirely, what not to do.
     </strong>
   </p>
   <p>
@@ -254,7 +251,12 @@ export const rules = [
 
 <Section heading="Six Rules That May Save Your Life">
   <p>These rules are framed for non-Diné readers. They are deliberately conservative.</p>
-  <SixRules rules={rules} />
+  <SixRules
+    rules={frontmatter.rules}
+    title={frontmatter.title}
+    number={frontmatter.number}
+    pocketHref="/pocket/skinwalker/"
+  />
 </Section>
 
 <Section heading="Two Cases on the Record">

@@ -16,6 +16,18 @@ interface Props {
   references: Reference[];
 }
 const { id, title, meta, verdict, verdictLabel, references } = Astro.props;
+const sourceContext =
+  verdict === 'lore'
+    ? 'Constructed lore · fictional source text'
+    : verdict === 'cultural'
+      ? 'Cultural tradition · attributed account'
+      : verdict === 'folklore'
+        ? 'Folklore · unverified narrative'
+        : /self.report/i.test(verdictLabel)
+          ? 'Self-reported experience · not independently verified'
+          : verdict === 'firsthand'
+            ? 'Reported account · witness testimony'
+            : 'Documented event or report · does not verify the entity';
 ---
 
 <article class="encounter-card">
@@ -30,6 +42,7 @@ const { id, title, meta, verdict, verdictLabel, references } = Astro.props;
       <span class={`verdict-badge ${verdict}`}>{verdictLabel}</span>
     </div>
   </header>
+  <div class="source-context">{sourceContext}</div>
   <div class="encounter-body">
     <slot />
   </div>

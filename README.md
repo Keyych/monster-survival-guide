@@ -141,6 +141,55 @@ playwright.config.ts            # E2E config
 3. Create `src/styles/pages/<slug>.css` with theme tokens in `:root` (paper, ink, warn, accent, etc.). Copy from any existing file.
 4. The `/entries` index, `/sightings` map, RSS feed, sitemap, and per-entry OG image all auto-discover the new entry. Nothing else to wire up.
 
+### Illustrated entries and pocket guides
+
+Published entries use the shared `EntryHeader` and `EntryNavigation` components.
+Keep a single notebook column, quiet links in the page flow, and circled rule
+numbers in the margin. The contents note opens on demand; it does not stay fixed
+beside or above the prose.
+All reading pages, including pocket-guide previews, share the 850px maximum
+notebook width, responsive margins, and viewport minimum height. Longer entries
+continue vertically. Keep that geometry in `field-manual.css`; do not introduce
+page-specific wrapper widths. `NotebookMotion` curls the outer edge across a
+temporary paper surface on same-site page links, then lets the arriving sheet
+uncurl and settle. Narrow segments follow one continuous bend with a shaded
+paper reverse and a moving fold shadow; the viewport-sized overlay is inert and
+removed after the turn. The real page keeps its layout, focus, and scroll
+position. Normal document navigation initializes each page's scripts. Section jumps, external links, downloads,
+and reduced-motion preferences bypass the animation. Pocket guides retain their
+separate A5 print dimensions. `tests/notebook.spec.ts` covers the shared frame,
+navigation, history restoration, and motion/storage fallbacks, including
+interrupted or throttled animations.
+
+Copy the `illustration`, `recordKind`, `recordNote`, `dossier`, and `rules`
+frontmatter from an existing published entry, then replace its values. Do not
+repeat the title or dossier in the MDX body. Drafts with their older inline
+headers remain supported.
+
+- **Artwork:** put a transparent PNG in `src/assets/illustrations/<slug>.png` and set
+  `illustration.src` to `/illustrations/<slug>.png`. Use loose monochrome ink
+  sketches with open shading, no painted background or colored rendering. Write
+  descriptive alt text for accessibility. Keep the drawings uncaptioned so they
+  feel like the writer’s doodles on the page.
+  `InkIllustration` builds PNGs at the display size and twice that size for sharp
+  screens, preserving transparency. CMS uploads also work via their public URL.
+- **Source context:** choose `reported`, `folklore`, or `constructed` for
+  `recordKind`. Explain the distinction in `recordNote`; a reported account is
+  not verification of the creature. Encounter cards retain their individual
+  verdicts and show a matching source-context label.
+- **Six Rules:** keep exactly six `{ title, body }` objects in frontmatter. In
+  the body, use `<SixRules rules={frontmatter.rules} title={frontmatter.title}
+number={frontmatter.number} pocketHref="/pocket/<slug>/" />` inside the existing
+  Six Rules section. The same data generates `/pocket/<slug>/`, with a one-page
+  A5 print layout and a browser Print / Save PDF action.
+- **Contents:** static `<Section heading="…">` headings generate a quiet, collapsible
+  contents note in the page flow on desktop and mobile. The Six Rules section receives the stable `#six-rules`
+  anchor. Keep headings unique and use double quotes around `heading` values.
+
+The optional Decap editor includes these fields. `tests/reading.spec.ts` checks
+contents links, search/filter behavior, mobile navigation, matching print rules,
+and single-page A5 output for all eight current entries.
+
 To **draft** an entry: set `status: 'draft'`. To **schedule** publication: set `status: 'published'` plus a future `publishDate:`. Both cases keep the entry out of the built site.
 
 ## Adding a glossary term

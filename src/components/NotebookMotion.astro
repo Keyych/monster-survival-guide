@@ -1,0 +1,29 @@
+---
+import '../styles/notebook-motion.css';
+---
+
+<script is:inline>
+  (() => {
+    const root = document.documentElement;
+    // Mark arrivals before paint; the motion module builds the curved paper.
+    try {
+      const saved = JSON.parse(sessionStorage.getItem('notebook-page-turn') || 'null');
+      sessionStorage.removeItem('notebook-page-turn');
+      const key = `${location.pathname.replace(/\/+$/, '') || '/'}${location.search}`;
+      if (
+        saved?.to === key &&
+        Date.now() - saved.at < 15000 &&
+        !matchMedia('(prefers-reduced-motion: reduce)').matches
+      ) {
+        root.dataset.notebookArrival = 'forward';
+        // A failed/blocked module must never hide the page indefinitely.
+        setTimeout(() => delete root.dataset.notebookArrival, 1800);
+      }
+    } catch {
+      /* Storage is optional; ordinary navigation still works. */
+    }
+  })();
+</script>
+<script>
+  import '../scripts/notebook-motion';
+</script>

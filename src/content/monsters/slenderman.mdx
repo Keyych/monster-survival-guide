@@ -69,61 +69,53 @@ sightings:
       label: 'Long-running ARG seeded a generation of online sightings (Atlanta-based)',
       sourceUrl: 'https://knowyourmeme.com/memes/marble-hornets',
     }
+recordKind: constructed
+recordNote: Created internet fiction. Real-world cases below concern the influence of the story, not
+  evidence that its fictional entity exists.
+illustration:
+  src: /illustrations/slenderman.png
+  alt: Loose black-ink study of a tall, faceless figure in a dark suit.
+dossier:
+  entity: Slenderman (The Operator)
+  origin: Internet — Something Awful Forums, June 2009
+  status: Active — No Geographic Boundary Confirmed
+  stamps:
+    - Absolute Threat
+    - No Geography
+    - Digital Origin
+  dangerLabel: ABSOLUTE
+  dangerNote: 10/10 — No weaknesses confirmed. Psychological corruption. Presence alone is lethal.
+rules:
+  - title: Do not go into the woods alone at night.
+    body: The treeline is his domain. The threshold between open space and dense dark is where he waits.
+  - title: Trust peripheral fear above direct observation.
+    body: If something in the corner of your eye makes your stomach drop, do not look away to
+      rationalise it. Act on the instinct. Move toward people immediately.
+  - title: If you begin drawing him involuntarily, tell someone.
+    body:
+      Compulsive imagery is an early warning sign of Proxy Syndrome. You are not going mad — you are
+      being targeted. Get help. Get witnesses. Do not be alone.
+  - title: Do not film him.
+    body:
+      The static, the distortion, the corrupted footage — that is not a recording artefact. That is
+      an invitation. Cameras are lures. Put it down. Run.
+  - title: The calm is a trap.
+    body:
+      If you feel peaceful near him — serene, accepted, drawn forward — you are already compromised.
+      That feeling is not comfort. It is the absence of the survival instinct he has stolen from
+      you. Fight through it.
+  - title: Noise, light, and people.
+    body:
+      He cannot follow you there. Or perhaps he has simply chosen not to, yet. Either way, that is
+      where you go. That is where you stay.
 ---
 
-import StampRow from '../../components/StampRow.astro';
-import DocMeta from '../../components/DocMeta.astro';
-import DocTitle from '../../components/DocTitle.astro';
-import DangerMeter from '../../components/DangerMeter.astro';
 import Section from '../../components/Section.astro';
 import SixRules from '../../components/SixRules.astro';
 import EncounterCard from '../../components/EncounterCard.astro';
 import Outro from '../../components/Outro.astro';
 import MonsterMap from '../../components/MonsterMap.astro';
 import '../../styles/pages/slenderman.css';
-
-export const rules = [
-  {
-    title: 'Do not go into the woods alone at night.',
-    body: 'The treeline is his domain. The threshold between open space and dense dark is where he waits.',
-  },
-  {
-    title: 'Trust peripheral fear above direct observation.',
-    body: 'If something in the corner of your eye makes your stomach drop, do not look away to rationalise it. Act on the instinct. Move toward people immediately.',
-  },
-  {
-    title: 'If you begin drawing him involuntarily, tell someone.',
-    body: 'Compulsive imagery is an early warning sign of Proxy Syndrome. You are not going mad — you are being targeted. Get help. Get witnesses. Do not be alone.',
-  },
-  {
-    title: 'Do not film him.',
-    body: 'The static, the distortion, the corrupted footage — that is not a recording artefact. That is an invitation. Cameras are lures. Put it down. Run.',
-  },
-  {
-    title: 'The calm is a trap.',
-    body: 'If you feel peaceful near him — serene, accepted, drawn forward — you are already compromised. That feeling is not comfort. It is the absence of the survival instinct he has stolen from you. Fight through it.',
-  },
-  {
-    title: 'Noise, light, and people.',
-    body: 'He cannot follow you there. Or perhaps he has simply chosen not to, yet. Either way, that is where you go. That is where you stay.',
-  },
-];
-
-<StampRow red="Absolute Threat" faded="No Geography" blue="Digital Origin" />
-<DocMeta
-  rows={[
-    { label: 'ENTITY', value: 'Slenderman (The Operator)' },
-    { label: 'ORIGIN', value: 'Internet — Something Awful Forums, June 2009' },
-    { label: 'THREAT GUIDE TYPE', value: 'Identification · Behaviour · Survival Protocol' },
-    { label: 'STATUS', value: 'Active — No Geographic Boundary Confirmed' },
-  ]}
-/>
-<DocTitle subtitle={frontmatter.description}>Slenderman</DocTitle>
-<DangerMeter
-  danger={frontmatter.danger}
-  label="ABSOLUTE"
-  description="10/10 — No weaknesses confirmed. Psychological corruption. Presence alone is lethal."
-/>
 
 <Section heading="Before We Begin">
   <p>
@@ -229,7 +221,12 @@ export const rules = [
 </Section>
 
 <Section heading="Six Rules That May Save Your Life">
-  <SixRules rules={rules} />
+  <SixRules
+    rules={frontmatter.rules}
+    title={frontmatter.title}
+    number={frontmatter.number}
+    pocketHref="/pocket/slenderman/"
+  />
 </Section>
 
 <Section heading="Two Cases on the Record">
