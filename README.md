@@ -152,7 +152,8 @@ headers remain supported.
 - **Artwork:** put a transparent PNG in `src/assets/illustrations/<slug>.png` and set
   `illustration.src` to `/illustrations/<slug>.png`. Use loose monochrome ink
   sketches with open shading, no painted background or colored rendering. Write
-  descriptive alt text and a caption that identifies it as an imagined illustration.
+  descriptive alt text for accessibility. Keep the drawings uncaptioned so they
+  feel like the writer’s doodles on the page.
   `InkIllustration` builds PNGs at the display size and twice that size for sharp
   screens, preserving transparency. CMS uploads also work via their public URL.
 - **Source context:** choose `reported`, `folklore`, or `constructed` for

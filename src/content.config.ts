@@ -18,7 +18,7 @@ const monsters = defineCollection({
     danger: z.number().int().min(1).max(10),
     bandColor: z.string(),
 
-    illustration: z.object({ src: z.string(), alt: z.string(), caption: z.string() }).optional(),
+    illustration: z.object({ src: z.string(), alt: z.string() }).optional(),
     recordKind: z.enum(['reported', 'folklore', 'constructed']).optional(),
     recordNote: z.string().optional(),
     dossier: z

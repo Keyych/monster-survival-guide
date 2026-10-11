@@ -87,12 +87,6 @@ collections:
         fields:
           - { label: 'Transparent PNG', name: 'src', widget: 'image' }
           - { label: 'Image description', name: 'alt', widget: 'string' }
-          - {
-              label: 'Caption',
-              name: 'caption',
-              widget: 'string',
-              default: 'Imagined ink study · not evidence',
-            }
       - label: 'Entry header and dossier'
         name: 'dossier'
         widget: 'object'
