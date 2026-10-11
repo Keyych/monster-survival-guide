@@ -144,6 +144,9 @@ playwright.config.ts            # E2E config
 ### Illustrated entries and pocket guides
 
 Published entries use the shared `EntryHeader` and `EntryNavigation` components.
+Keep a single notebook column, quiet links in the page flow, and circled rule
+numbers in the margin. The contents note opens on demand; it does not stay fixed
+beside or above the prose.
 Copy the `illustration`, `recordKind`, `recordNote`, `dossier`, and `rules`
 frontmatter from an existing published entry, then replace its values. Do not
 repeat the title or dossier in the MDX body. Drafts with their older inline
@@ -165,8 +168,8 @@ headers remain supported.
 number={frontmatter.number} pocketHref="/pocket/<slug>/" />` inside the existing
   Six Rules section. The same data generates `/pocket/<slug>/`, with a one-page
   A5 print layout and a browser Print / Save PDF action.
-- **Contents:** static `<Section heading="…">` headings generate the desktop
-  rail and mobile menu. The Six Rules section receives the stable `#six-rules`
+- **Contents:** static `<Section heading="…">` headings generate a quiet, collapsible
+  contents note in the page flow on desktop and mobile. The Six Rules section receives the stable `#six-rules`
   anchor. Keep headings unique and use double quotes around `heading` values.
 
 The optional Decap editor includes these fields. `tests/reading.spec.ts` checks

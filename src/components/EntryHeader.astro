@@ -2,7 +2,6 @@
 import type { CollectionEntry } from 'astro:content';
 import type { ReadingStats } from '../lib/reading-time.ts';
 import { recordLabels } from '../lib/entry-sections.ts';
-import DangerMeter from './DangerMeter.astro';
 import DocMeta from './DocMeta.astro';
 import InkIllustration from './InkIllustration.astro';
 interface Props {
@@ -13,7 +12,7 @@ const { entry, stats } = Astro.props;
 const { data } = entry;
 ---
 
-<header class="entry-opening">
+<header class="entry-opening" id="entry-opening">
   <div class="entry-kicker"><span>Journal entry {data.number}</span><span>{data.region}</span></div>
   <div class="entry-hero">
     <div class="entry-heading">
@@ -24,7 +23,7 @@ const { data } = entry;
       </p>
       <p class="doc-subtitle">{data.description}</p>
       <div class="entry-actions">
-        <a class="guide-button" href="#six-rules"
+        <a class="rules-jump" href="#six-rules"
           >Jump to Six Rules <span aria-hidden="true">↓</span></a
         >
         {
@@ -50,26 +49,21 @@ const { data } = entry;
       )
     }
   </div>
-  {
-    data.recordKind && (
-      <div class={`record-context record-context--${data.recordKind}`}>
-        <span class="record-kind">{recordLabels[data.recordKind]}</span>
-        <p>{data.recordNote}</p>
-      </div>
-    )
-  }
-  {
-    data.dossier && (
-      <>
-        <DangerMeter
-          danger={data.danger}
-          label={data.dossier.dangerLabel}
-          description={data.dossier.dangerNote}
-        />
-        <details class="dossier-details">
-          <summary>
-            Entry details <span>{data.entryClass}</span>
-          </summary>
+
+  <p class="entry-danger">
+    Danger {data.danger}/10 <span aria-hidden="true">·</span>
+    {data.dossier?.dangerLabel ?? data.entryClass}
+  </p>
+  <details class="entry-notes">
+    <summary
+      >{data.recordKind ? recordLabels[data.recordKind] : 'Entry details'}
+      <span>— notes on this entry</span></summary
+    >
+    {data.recordNote && <p>{data.recordNote}</p>}
+    {
+      data.dossier && (
+        <>
+          <p>{data.dossier.dangerNote}</p>
           <DocMeta
             rows={[
               { label: 'ENTITY', value: data.dossier.entity },
@@ -77,8 +71,8 @@ const { data } = entry;
               { label: 'STATUS', value: data.dossier.status },
             ]}
           />
-        </details>
-      </>
-    )
-  }
+        </>
+      )
+    }
+  </details>
 </header>

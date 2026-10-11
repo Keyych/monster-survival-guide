@@ -49,14 +49,12 @@ const sections = entrySections(entry.body ?? '');
     dateModified: data.dateModified?.toISOString(),
   }}
 >
-  <div class="entry-layout">
+  <article class="entry-content">
+    <a class="entry-back" href="/entries/">← All entries</a>
+    {data.dossier && <EntryHeader entry={entry} stats={stats} />}
     <EntryNavigation sections={sections} />
-    <article class="entry-content">
-      <a class="mobile-back" href="/entries/">← All entries</a>
-      {data.dossier && <EntryHeader entry={entry} stats={stats} />}
-      <Content />
-      <RelatedEntries currentSlug={entry.id} currentTags={data.tags} currentDanger={data.danger} />
-      <CommentSection slug={entry.id} />
-    </article>
-  </div>
+    <Content />
+    <RelatedEntries currentSlug={entry.id} currentTags={data.tags} currentDanger={data.danger} />
+    <CommentSection slug={entry.id} />
+  </article>
 </FieldManual>

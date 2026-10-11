@@ -57,17 +57,21 @@ test('each entry has working contents, an illustration, and the same six rules i
   }
 });
 
-test('desktop jump targets the Six Rules and updates the contents rail', async ({ page }) => {
+test('desktop section note and direct Six Rules jump work', async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto('/mothman/');
-  await expect(page.getByRole('navigation', { name: 'On this page', exact: true })).toBeVisible();
+  await expect(page.locator('.entry-contents')).not.toHaveAttribute('open');
+  await page.locator('.entry-contents summary').click();
+  await page
+    .getByRole('navigation', { name: 'Entry sections', exact: true })
+    .getByRole('link', { name: 'Origins', exact: true })
+    .click();
+  await expect(page.locator('#where-it-comes-from-heading')).toBeInViewport();
+  await expect(page.locator('.entry-contents')).not.toHaveAttribute('open');
   await page.getByRole('link', { name: 'Jump to Six Rules' }).click();
   await expect(page).toHaveURL(/#six-rules$/);
   await expect(page.locator('#six-rules-heading')).toBeInViewport();
-  await expect(page.locator('[data-contents-link][href="#six-rules"]')).toHaveAttribute(
-    'aria-current',
-    'location',
-  );
+  await expect(page.locator('.entry-contents')).not.toBeInViewport();
 });
 
 test('mobile contents close after a section choice and keep the heading in view', async ({
@@ -75,19 +79,18 @@ test('mobile contents close after a section choice and keep the heading in view'
 }) => {
   await page.setViewportSize({ width: 375, height: 812 });
   await page.goto('/mothman/');
-  await expect(page.locator('.contents-rail')).toBeHidden();
-  await page.locator('.mobile-contents summary').click();
+  await page.locator('.entry-contents summary').click();
   await page
     .getByRole('navigation', { name: 'Entry sections', exact: true })
     .getByRole('link', { name: 'The Six Rules', exact: true })
     .click();
-  await expect(page.locator('.mobile-contents')).not.toHaveAttribute('open');
+  await expect(page.locator('.entry-contents')).not.toHaveAttribute('open');
   await expect(page.locator('#six-rules-heading')).toBeFocused();
   await expect(page.locator('#six-rules-heading')).toBeInViewport();
   const top = await page
     .locator('#six-rules-heading')
     .evaluate((el) => el.getBoundingClientRect().top);
-  expect(top).toBeGreaterThan(55);
+  expect(top).toBeGreaterThan(0);
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(375);
 });
 
