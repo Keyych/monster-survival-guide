@@ -15,6 +15,7 @@ import '@fontsource/anonymous-pro/400-italic.css';
 import { site, cloudflareAnalyticsToken } from '../config/site.ts';
 import SocialRow from '../components/SocialRow.astro';
 import NewsletterForm from '../components/NewsletterForm.astro';
+import AdBanner from '../components/AdBanner.astro';
 import { siteGraph, articleGraph, type ArticleSchemaInput } from '../lib/structured-data.ts';
 
 interface Props {
@@ -130,6 +131,8 @@ const jsonLd = article
         ◆ &nbsp; <Fragment set:html={classification} /> &nbsp; ◆
       </div>
 
+      <AdBanner slot="3396217818" position="top" />
+
       <main id="main-content" class="doc-inner" tabindex="-1">
         <slot />
 
@@ -149,6 +152,8 @@ const jsonLd = article
           </div>
         </footer>
       </main>
+
+      <AdBanner slot="1161111724" position="bottom" />
 
       <div class="bottom-bar" aria-hidden="true">
         ◆ &nbsp; <Fragment set:html={bottomText} /> &nbsp; ◆

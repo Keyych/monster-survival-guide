@@ -1,0 +1,77 @@
+---
+/**
+ * Themed AdSense banner for the field-manual layout.
+ *
+ * Renders a labeled "advertisement" strip that sits on the paper directly
+ * below the top classification bar / above the bottom bar, styled to match
+ * their monospace, letter-spaced treatment. The strip collapses entirely when
+ * no ad fills it (e.g. during AdSense review or on a no-fill) and in print.
+ *
+ * The account-level AdSense loader lives in FieldManual.astro's <head>; this
+ * component only emits the per-slot <ins> and its push().
+ */
+interface Props {
+  /** AdSense ad-unit slot id. */
+  slot: string;
+  /** 'top' or 'bottom' — picks the divider edge and labels the region. */
+  position?: 'top' | 'bottom';
+}
+const { slot, position = 'top' } = Astro.props;
+const client = 'ca-pub-8050001391076027';
+---
+
+<aside class:list={['ad-banner', `ad-banner--${position}`]} aria-label="Advertisement">
+  <span class="ad-banner__label" aria-hidden="true">◆ &nbsp;Advertisement&nbsp; ◆</span>
+  <ins
+    class="adsbygoogle"
+    style="display:block"
+    data-ad-client={client}
+    data-ad-slot={slot}
+    data-ad-format="auto"
+    data-full-width-responsive="true"></ins>
+  <script is:inline>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</aside>
+
+<style>
+  .ad-banner {
+    position: relative;
+    z-index: 1;
+    padding: 12px 24px 14px;
+    text-align: center;
+    background: var(--paper);
+  }
+  .ad-banner--top {
+    border-bottom: 1px solid var(--rule);
+  }
+  .ad-banner--bottom {
+    border-top: 1px solid var(--rule);
+  }
+  .ad-banner__label {
+    display: block;
+    margin-bottom: 8px;
+    font-family: 'Anonymous Pro', monospace;
+    font-size: 0.55rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--margin, var(--faded));
+    opacity: 0.72;
+  }
+  .ad-banner .adsbygoogle {
+    display: block;
+    margin: 0 auto;
+    max-width: 728px;
+    min-height: 0;
+  }
+  /* Collapse the whole strip when AdSense reports no ad (review / no-fill),
+     so the paper never carries an empty labeled gap. */
+  .ad-banner:has(ins[data-ad-status='unfilled']) {
+    display: none;
+  }
+  @media print {
+    .ad-banner {
+      display: none;
+    }
+  }
+</style>
