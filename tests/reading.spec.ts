@@ -33,7 +33,7 @@ test('each entry has working contents, an illustration, and the same six rules i
 }) => {
   for (const slug of slugs) {
     await test.step(slug, async () => {
-      await page.goto(`/${slug}/`);
+      await page.goto(`/${slug}/`, { waitUntil: 'domcontentloaded' });
       await expect(page.locator('h1')).toHaveCount(1);
       await expect(page.locator('.entry-reading-time')).toBeVisible();
       await expect(page.locator('.creature-study img')).toHaveJSProperty('complete', true);

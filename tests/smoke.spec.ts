@@ -52,7 +52,7 @@ test('sitemap pages load with H1 + meta description', async ({ page }, testInfo)
 
   for (const path of paths) {
     await test.step(`GET ${path}`, async () => {
-      const response = await page.goto(path);
+      const response = await page.goto(path, { waitUntil: 'domcontentloaded' });
       expect(response?.status(), `status for ${path}`).toBe(200);
 
       const h1 = await page.locator('h1').first().textContent();

@@ -7,6 +7,10 @@ export default defineConfig({
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 1 : 0,
+  // A couple of tests walk every entry / every sitemap page in one test, which
+  // runs well over the 30s default on CI (slower runner, parallel workers,
+  // third-party ad/widget scripts). Give them headroom.
+  timeout: 120_000,
   reporter: process.env.CI ? 'github' : 'list',
   use: {
     baseURL: `http://localhost:${PORT}`,
