@@ -1,0 +1,16 @@
+/* Theme tokens for /owlman-of-mawnan. Shared layout rules live in field-manual.css. */
+/* Palette: Cornish woodland dusk — slate and moss over a churchyard tower. */
+:root {
+  --paper: #e4e7dd;
+  --aged: #d3d8c6;
+  --ink: #171c15;
+  --faded: #41493a;
+  --stamp-red: #8b1a0a;
+  --stamp-blue: #2c3f2a;
+  --accent: #3f5a32;
+  --redact: #0e120c;
+  --margin: #55614a;
+  --highlight: #5e7d42;
+  --rule: rgba(23, 28, 21, 0.1);
+  --warn: #7a2a12;
+}

@@ -9,7 +9,8 @@ danger: 6
 bandColor: '#2a3a18'
 classification: 'monster survival guide  —  the rougarou'
 entryStatus: 'Active Entry'
-status: 'draft'
+status: 'published'
+publishDate: '2026-10-20'
 season: 1
 sightings:
   - {
@@ -17,12 +18,14 @@ sightings:
       lat: 29.6,
       lon: -90.72,
       label: 'Cultural centre of contemporary Rougarou folklore · annual Rougarou Festival',
+      sourceUrl: 'https://64parishes.org/entry/rougarou',
     }
   - {
       name: 'Lafourche Parish, LA',
       lat: 29.55,
       lon: -90.4,
-      label: 'Bayou Lafourche traditions · multiple documented 20th-century sightings',
+      label: 'Bayou Lafourche traditions · Cajun and Houma rougarou accounts concentrate here',
+      sourceUrl: 'https://64parishes.org/entry/rougarou',
     }
   - {
       name: 'Atchafalaya Basin',
@@ -34,112 +37,321 @@ sightings:
       name: 'St. Martin Parish',
       lat: 30.13,
       lon: -91.83,
-      label: '18th-century French-colonial loup-garou tradition arrives here',
+      label: 'Heart of French-colonial Acadiana where the loup-garou tradition took root',
     }
 recordKind: folklore
-recordNote: Working draft about folklore and tradition. Cultural context and sources still need
-  checking. The doodle is an imagined interpretation, not an authoritative cultural depiction.
+recordNote: Living Cajun folklore and cultural history, documented by folklorists and
+  Louisiana institutions. The tradition and its social function are the record — the creature
+  itself is not a verified animal. The doodle is an imagined interpretation, not an
+  authoritative cultural depiction.
 illustration:
   src: /illustrations/rougarou.png
   alt: Loose ink doodle of a wolf-headed figure with humanlike shoulders and a long-fingered hand.
 dossier:
-  entity: The Rougarou
+  entity: The Rougarou (from the French loup-garou)
   origin: Cajun Louisiana · the bayous
-  status: Draft — awaiting research
+  status: Living Tradition — Documented Folklore of South Louisiana
   stamps:
-    - Bayou Threat
+    - Bayou Folklore
     - Louisiana
-    - Cajun Lore
-  dangerLabel: BAYOU
-  dangerNote: 6/10 — Wolf-headed, human-bodied. Documented attacks on livestock and a few on humans.
-    Salt and Catholic rite recur as counters in the lore.
+    - Cajun Tradition
+  dangerLabel: CAUTIONARY
+  dangerNote: 6/10 — A cautionary figure, not a predator. No Louisiana account has it killing
+    a person; the real teeth are the behaviour the story was built to enforce.
 rules:
-  - title: TODO — rule 1
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 2
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 3
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 4
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 5
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 6
-    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: Treat the rougarou as a warning, not a target.
+    body: No Louisiana account has it killing anyone. It exists to enforce behaviour — read the
+      lesson, do not hunt the beast.
+  - title: Trace the name to understand the creature.
+    body: Rougarou is loup-garou worn down by Cajun French. Follow it to the Acadians exiled in
+      1755 and the bayou werewolf starts to make sense.
+  - title: Keep children home after dark the old way.
+    body: Elders raised the rougarou to stop kids wandering the swamp at night. The danger it
+      names — dark water, not a wolf — is entirely real.
+  - title: Respect the Catholic weight of the curse.
+    body: The tradition tied transformation to breaking Lent and neglecting parish duty. The tale
+      carried faith and discipline, not just fright.
+  - title: Hold a rougarou's name for a year and a day.
+    body: Lore says revealing a known rougarou too soon curses you next. The rule taught
+      discretion — some things are kept, not broadcast.
+  - title: Let culture, not fear, carry it now.
+    body: Houma's Rougarou Fest recast the beast as guardian of a sinking coast. It survives best
+      as living tradition.
 ---
 
 import Section from '../../components/Section.astro';
+import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
 import EncounterCard from '../../components/EncounterCard.astro';
 import Outro from '../../components/Outro.astro';
 import MonsterMap from '../../components/MonsterMap.astro';
-import '../../styles/pages/_draft.css';
+import '../../styles/pages/rougarou.css';
 
 <Section heading="If You're Reading This">
   <p>
-    TODO — cold open. Place the reader at the scene of the encounter. Establish atmosphere. Earn
-    attention before asking for trust.
+    It is a warm, wet night somewhere down Bayou Lafourche. The sugar cane stands black against a
+    sky that never fully darkens over the Gulf, and the water beside the road does not so much flow
+    as breathe. A child who was told, firmly, to be home before dark is not home before dark. And
+    somewhere behind the treeline, a mother's voice carries the oldest warning in Acadiana —{' '}
+    <em>the rougarou will get you.</em>
+  </p>
+  <p>
+    You will not find a body at the end of this story. That is the first thing to understand about
+    the rougarou, and the thing that sets it apart from almost everything else in this guide. For
+    three centuries it has prowled the edge of the swamp in the Cajun imagination, and in all that
+    time the records do not hold a single person it killed.
+  </p>
+  <p>
+    This is the eighteenth journal entry of the Monster Survival Guide. The subject — the Rougarou,
+    the bayou werewolf, French Louisiana's own loup-garou. It is an entry less about surviving a
+    creature than about understanding one, because this is folklore that was built to do a job. The
+    most useful thing we can tell you is what that job was, and who it was done to.
   </p>
 </Section>
 
 <Section heading="Where It Comes From">
   <p>
-    TODO — origin section. Cultural / historical / geographic context. A creature without context is
-    a horror story; a creature with context is something a reader can understand.
+    The rougarou does not begin in Louisiana. It begins in France, as the <em>loup-garou</em> — from
+    <em>loup</em>, "wolf," and <em>garou</em>, a man who turns into an animal, a word that shares
+    its deep roots with the English "werewolf." The European legend crossed the Atlantic with French
+    settlers and, above all, with the Acadians — the French colonists whom the British expelled from
+    Canada beginning in 1755, and who drifted south to become the people we now call Cajuns. They
+    carried the loup-garou into the bayous with everything else they could save.
   </p>
+  <p>
+    The name itself tells the story of that journey. As the folklorist Barry Jean Ancelet of the
+    University of Louisiana at Lafayette has long explained, <em>loup-garou</em> wore down to{' '}
+    <em>rougarou</em> through ordinary Cajun French — the liquid consonants "l" and "r" trading
+    places on the tongue, generation after generation, until the French wolf became a bayou word.
+  </p>
+  <div class="pull-quote">
+    Most monsters are meant to be feared. The rougarou was meant to be useful. It kept children out
+    of dark water and adults inside the faith — and it did that work so well that families still
+    tell it long after they stopped believing in the wolf.
+  </div>
+  <p>
+    What arrived in the swamp did not stay European. By the time folklorists were writing it down,
+    the Louisiana rougarou bore little resemblance to its ancestor. Witnesses rarely described a
+    wolf at all — more often a dog, an owl, or simply a wrong shape in the dark. Ancelet has read it
+    as a figure for a people living with a foot in two worlds, the French and the Anglo-American,
+    and noted that the bayous grew their own variations besides — the <em>chien-garou</em>, even the{' '}
+    <em>lapin-garou</em>.
+  </p>
+  <div class="lore-box">
+    <p>
+      In the Catholic Cajun tradition, becoming a rougarou was a punishment for the lapsed. The most
+      widely repeated version holds that breaking Lent seven years running could turn a person into
+      the beast, and a literary account from the University of Louisiana at Lafayette records
+      tellings in which the creature hunts down Catholics who fail to keep Lent at all. The 64
+      Parishes encyclopedia, published by the Louisiana Endowment for the Humanities, ties the curse
+      plainly to punishment for sins — above all the failure of one's duties as a parishioner.
+    </p>
+  </div>
 </Section>
 
 <Section heading="What You Are Looking At">
+  <StatRow
+    stats={[
+      {
+        num: '1755',
+        label: 'Year the Acadian expulsion began carrying the loup-garou toward Louisiana',
+      },
+      {
+        num: '101',
+        label: 'Days of the curse in one common variant, before it passes by drawn blood',
+      },
+      {
+        num: '2011',
+        label: 'Year Houma’s Rougarou Fest revived the tradition as coastal folklore',
+      },
+    ]}
+  />
   <p>
-    TODO — physical description and identifying features. What witnesses agree on. What varies. What
-    to look for before you know what you are looking at.
+    There is no fixed rougarou. The one point the tellings agree on is a body that is part human and
+    part beast — most often described as a human frame carrying the head of a wolf or a dog. Past
+    that, the creature shifts with the storyteller. Some give it glowing eyes and red fur; some make
+    it an owl or an indistinct shadow; some insist it is simply a neighbour who is not, on certain
+    nights, entirely a neighbour.
   </p>
+  <p>
+    That instability is not a flaw in the record. It is the signature of a living oral tradition,
+    one carried in families rather than fixed in a book. As Ancelet puts it, one's idea of the
+    rougarou depends far more on who is telling the story than on any single cultural text — which
+    is exactly why the picture gets richer, not clearer, the more accounts you gather.
+  </p>
+  <div class="warning-box">
+    <div class="warn-label">⚠ Critical Field Note</div>
+    <p>
+      If someone describes a rougarou to you, listen to the teller as closely as the tale. These
+      stories belong to specific Cajun and Houma communities of Lafourche and Terrebonne Parishes,
+      and they carry real cultural weight. The respectful move is not to debunk the creature but to
+      understand what the telling is for — and in whose mouth, and about whom, it is being told.
+    </p>
+  </div>
 </Section>
 
 <Section heading="How It Operates">
   <p>
-    TODO — behaviour pattern. How it hunts / haunts / appears. What comes first, next, and after.
+    The rougarou works on behaviour before it works on anyone's throat. Its first and most
+    documented function is the raising of children. Across the bayou parishes, the warning that{' '}
+    <em>the rougarou will catch you</em> kept children home after dark and out of the swamp — a
+    place that genuinely kills, by water and snake and current, whether or not anything with a
+    wolf's head is in it.
+  </p>
+  <p>
+    Its second function is moral. The curse was the Church's enforcer by other means — a story that
+    made breaking Lent and neglecting one's parish a thing with teeth. In the versions where
+    transformation is contagious, the rougarou passes the curse by drawing a victim's blood, and
+    anyone who learns a rougarou's human identity must keep the secret for a year and a day, or for
+    a hundred and one days, or become the next one themselves.
+  </p>
+  <p>
+    What all of this describes is not a predator's hunting pattern. It is a mechanism of social
+    control, elegant and self-sustaining, dressed as a monster. The rougarou "operates" the way a
+    good cautionary tale operates — by making the consequences of straying feel immediate, personal,
+    and close enough to the treeline to believe.
   </p>
 </Section>
 
 <Section heading="An Honest Assessment of Its Weaknesses">
   <p>
-    TODO — what the accumulated evidence suggests works against it. Be honest when this section is
-    thin.
+    This is the entry where the honest assessment is not about how to kill the thing, because there
+    is nothing in the record to kill. The rougarou has never been a creature you fight. It has
+    always been a story a community tells, and its "weaknesses" are the weaknesses of a story.
+  </p>
+  <p>
+    <strong>It leaves no body.</strong> Unlike the livestock-killers and lake monsters elsewhere in
+    this guide, the rougarou generates no carcass, no specimen, no photograph that survives
+    scrutiny. The 64 Parishes encyclopedia notes that no Louisiana accounts even describe it killing
+    its victims. There is, simply, nothing physical to recover.
+  </p>
+  <p>
+    <strong>It changes with every teller.</strong> A creature whose appearance, rules, and even
+    species shift from family to family is behaving like folklore, not like an animal. That is not a
+    mark against it. It is proof of what it actually is.
+  </p>
+  <p>
+    <strong>Its real power was always social.</strong> The counters that the lore offers — salt
+    lines, a blow that draws blood, Catholic observance — are moral instruments, not weapons. They
+    work on conduct, which is the only thing the rougarou was ever built to touch.
+  </p>
+  <p>
+    None of this makes the tradition small. A story that shaped how generations of children treated
+    the swamp, and how adults treated their faith, is doing more real work than most monsters ever
+    manage.
   </p>
 </Section>
 
 <Section heading="Six Rules That May Save Your Life">
-  <p>TODO — short intro paragraph framing the rules.</p>
+  <p>
+    These rules will not help you fight a rougarou, because there is no record of one needing to be
+    fought. They will help you read the tradition honestly, respect the communities it belongs to,
+    and understand the quiet, practical work the story was built to do.
+  </p>
   <SixRules
     rules={frontmatter.rules}
     title={frontmatter.title}
     number={frontmatter.number}
-    pocketHref={frontmatter.status === 'draft' ? `/drafts/rougarou/pocket/` : `/pocket/rougarou/`}
+    pocketHref="/pocket/rougarou/"
   />
 </Section>
 
 <Section heading="Two Cases on the Record">
-  <p>TODO — intro paragraph for the encounter section.</p>
+  <p>
+    These two cases are not monster encounters — there are none to cite. They are documented
+    chapters in the life of the folklore itself: the tradition as it was used, and the tradition as
+    Louisiana chose to keep it alive.
+  </p>
   <EncounterCard
-    id="Encounter 01 · TODO · TODO date"
-    title="TODO — encounter title"
-    meta="TODO — encounter witness / context"
-    verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    id="Encounter 01 · French Louisiana · 18th–20th century"
+    title="The Cautionary Tradition"
+    meta="Cajun Catholic Childrearing · Recorded by Louisiana Folklorists"
+    verdict="cultural"
+    verdictLabel="Cultural Record"
+    references={[
+      {
+        text: 'University of Louisiana at Lafayette — “The Myth of the Rougarou,” Rougarou literary journal',
+        label: 'louisiana.edu',
+        href: 'https://english-archive.louisiana.edu/rougarou/about.html',
+      },
+      {
+        text: 'Nathan Rabalais — “Rougarou,” 64 Parishes (Louisiana Endowment for the Humanities, 2024)',
+        label: '64parishes.org',
+        href: 'https://64parishes.org/entry/rougarou',
+      },
+      {
+        text: 'Wikipedia — “Rougarou” (loup-garou etymology and the seven-years-of-Lent variant)',
+        label: 'wikipedia.org',
+        href: 'https://en.wikipedia.org/wiki/Rougarou',
+      },
+    ]}
   >
-    <p>TODO — encounter prose. Real, cited account.</p>
+    <p>
+      The best-documented thing the rougarou has ever done is raise Cajun children. In the French
+      Catholic communities of south Louisiana — settled in large part by Acadians exiled from Canada
+      after 1755 — the creature was the enforcer of two separate curfews at once. Parents warned
+      children that the rougarou would catch them if they misbehaved or wandered out after dark, and
+      the warning did real protective work in a landscape of open water, snakes, and current.
+    </p>
+    <p>
+      For adults, the curse carried the weight of the Church. The literary record kept by the
+      University of Louisiana at Lafayette preserves tellings in which the beast hunts down
+      Catholics who break Lent, and the widely repeated French-Catholic rule held that breaking Lent
+      seven years running could transform a person outright. The 64 Parishes encyclopedia, written
+      by folklorist Nathan Rabalais for the Louisiana Endowment for the Humanities, ties the curse
+      to punishment for sins and the failure of one's duties as a parishioner.
+    </p>
+    <p>
+      This is folklore caught in the act of doing its job. The rougarou did not need to be real to
+      be effective; as Barry Jean Ancelet has argued, what mattered was never belief in the creature
+      but belief in the stories, and in their power to connect one generation to the next.
+    </p>
   </EncounterCard>
   <EncounterCard
-    id="Encounter 02 · TODO · TODO date"
-    title="TODO — second encounter title"
-    meta="TODO — second encounter witness / context"
-    verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    id="Encounter 02 · New Orleans & Houma · 2000–present"
+    title="The Legend, Institutionalized"
+    meta="Audubon Zoo · Rougarou Fest · South Louisiana Wetlands Discovery Center"
+    verdict="cultural"
+    verdictLabel="Cultural Record"
+    references={[
+      {
+        text: 'Nathan Rabalais — “Rougarou,” 64 Parishes (Louisiana Endowment for the Humanities, 2024)',
+        label: '64parishes.org',
+        href: 'https://64parishes.org/entry/rougarou',
+      },
+      {
+        text: 'Country Roads Magazine — “Houma Rougarou Festival Returns”',
+        label: 'countryroadsmagazine.com',
+        href: 'https://countryroadsmagazine.com/travel/getaways/houma-rougarou-festival-returns/',
+      },
+      {
+        text: 'WAFB — “Showcasing Louisiana: Rougarou Fest in Houma” (2020)',
+        label: 'wafb.com',
+        href: 'https://www.wafb.com/2020/10/21/showcasing-louisiana-rougarou-fest-houma/',
+      },
+    ]}
   >
-    <p>TODO — second encounter prose.</p>
+    <p>
+      As belief in the wolf faded, Louisiana's cultural institutions did something more interesting
+      than forget it — they adopted it. At the Audubon Zoo in New Orleans, among the alligators and
+      black bears of the Louisiana Swamp exhibit, a resident rougarou has been frightening and
+      delighting children since 2000, keeping the creature in front of a new generation inside a
+      place dedicated to the state's living wetlands.
+    </p>
+    <p>
+      In 2011, in Houma, Jonathan Foret launched Rougarou Fest as a fundraiser for the South
+      Louisiana Wetlands Discovery Center and a way to revive a fading tradition. The festival did
+      not just preserve the beast; it reinterpreted it. The rougarou was recast as a supernatural
+      protector of a coast that is physically disappearing — Foret has called it "our Smokey the
+      Bear," and the event carries the tagline that if the rougarou has nowhere left to live, then
+      neither will we.
+    </p>
+    <p>
+      This is the rarest thing a monster can do — change jobs and survive. The creature that once
+      enforced Lent and curfew now helps a parish talk about coastal land loss, hurricanes, and
+      rising water. The folklore is not dying out. It is being deliberately, affectionately kept,
+      and handed a new warning to carry.
+    </p>
   </EncounterCard>
 </Section>
 
@@ -148,8 +360,21 @@ import '../../styles/pages/_draft.css';
 <Section heading="Before You Go">
   <Outro>
     <p>
-      TODO — closing outro. Echo the cold open. Land the rules. Give the reader a parting
-      instruction.
+      The rougarou is the gentlest monster in this guide, and in some ways the most honest about
+      what a monster is for. It left no bodies and needed none. It kept children out of the dark
+      water and adults inside the faith, and it did that work for three hundred years on the
+      strength of a story alone.
+    </p>
+    <p>
+      So there is nothing here to tell you to carry, no fire to keep burning, no lab to send a
+      sample to. Instead, when you are down the bayou some warm night and the cane goes black
+      against the sky, remember who the warning was always for — and remember that the people of
+      Acadiana are still telling it, on purpose, because a good story is the one thing the water
+      cannot take.
+    </p>
+    <p>
+      End of journal entry. Mind the dark water. Respect the telling. The scariest thing here is how
+      well it worked.
     </p>
   </Outro>
 </Section>

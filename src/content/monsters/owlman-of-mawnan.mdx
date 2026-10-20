@@ -9,7 +9,8 @@ danger: 5
 bandColor: '#1a3018'
 classification: 'monster survival guide  —  the owlman of mawnan'
 entryStatus: 'Active Entry'
-status: 'draft'
+status: 'published'
+publishDate: '2026-10-20'
 season: 1
 sightings:
   - {
@@ -34,114 +35,287 @@ sightings:
       label: "'Gemini' letter sighting reported in Fortean Times — disputed authenticity",
     }
 recordKind: reported
-recordNote: Working draft based on reported accounts and their later retellings. Sources and claims
-  still need checking; reports do not establish that the creature exists.
+recordNote: Reported accounts and their later retellings, traced back to a single promoter with a
+  hoaxer's record. The reports do not establish that the creature exists.
 illustration:
   src: /illustrations/owlman-of-mawnan.png
   alt: Loose ink doodle of an owl-headed figure with partly spread feathered wings.
 dossier:
-  entity: The Owlman of Mawnan
-  origin: Cornwall, England
-  status: Draft — awaiting research
+  entity: The Owlman of Mawnan (the Cornish Owlman)
+  origin: Mawnan church, Cornwall, England — Easter 1976
+  status: Reported Since 1976 — Widely Read as Hoax or Misidentified Owl
   stamps:
     - Cornish Lore
     - Mawnan Parish
-    - Aerial Cryptid
-  dangerLabel: AERIAL
+    - Probable Hoax
+  dangerLabel: OVERSTATED
   dangerNote:
-    5/10 — Reportedly observes rather than attacks. Investigation cluster strictly localised
-    to Mawnan parish.
+    5/10 — Reportedly looms and alarms rather than attacks. No verified harm, no photograph, and
+    the record traces to one showman and, at bottom, a large owl.
 rules:
-  - title: TODO — rule 1
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 2
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 3
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 4
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 5
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 6
-    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: Name the owl before you name the Owlman.
+    body:
+      Barn and eagle owls nest in church towers and loom man-sized at dusk, complete with ear tufts
+      and bright eyeshine. Rule out the ordinary bird before you reach for the cryptid.
+  - title: Follow the story back to its source.
+    body:
+      Nearly every early account runs through Tony "Doc" Shiels, a magician with a hoaxer's record
+      who supplied the drawings. When one promoter feeds the headlines, treat the chain as evidence.
+  - title: Trust the fright, not the framing.
+    body:
+      The Melling girls were genuinely scared, but the winged "bird-man" legend was built around them
+      afterward. Separate an honest reaction from the interpretation later bolted onto it.
+  - title: Carry a camera, not a sketchpad.
+    body: The whole case rests on a sketch handed over after the fact — never a photograph. A dated,
+      scaled image outlasts any retold description.
+  - title: Let dusk and the churchyard do the work.
+    body:
+      Low light, tall trees, and an old tower turn an ordinary bird into a looming shape. Change the
+      hour and the angle before you trust what you saw.
+  - title: Hold the hoax reading, keep the loose ends.
+    body:
+      Shiels's reputation explains the 1976 wave, yet a handful of later reports arrived without him.
+      Stay sceptical, and stay a little curious.
 ---
 
 import Section from '../../components/Section.astro';
+import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
 import EncounterCard from '../../components/EncounterCard.astro';
 import Outro from '../../components/Outro.astro';
 import MonsterMap from '../../components/MonsterMap.astro';
-import '../../styles/pages/_draft.css';
+import '../../styles/pages/owlman-of-mawnan.css';
 
 <Section heading="If You're Reading This">
   <p>
-    TODO — cold open. Place the reader at the scene of the encounter. Establish atmosphere. Earn
-    attention before asking for trust.
+    It is an overcast Easter weekend in 1976, and two girls are walking up through the woods toward
+    the little church at Mawnan, on the wooded south coast of Cornwall. The tower rises grey above
+    the trees. Then something lifts off it — large, upright, feathered, with eyes they will later
+    draw as red — and climbs into the branches before dropping out of sight behind the stone.
+  </p>
+  <p>
+    They run. Their father cuts the family holiday short and takes them home to Lancashire. One of
+    the girls makes a sketch of the thing she saw, and that drawing, handed to the right person, is
+    about to become the most famous winged monster in the West Country.
+  </p>
+  <p>
+    This is the twenty-fourth journal entry of the Monster Survival Guide. The subject: the Owlman
+    of Mawnan — Cornwall's answer to the American Mothman. It is also an entry where the guide has
+    to be careful, because the trail of evidence here is thin, tangled, and keeps leading back to
+    the same man.
   </p>
 </Section>
 
 <Section heading="Where It Comes From">
   <p>
-    TODO — origin section. Cultural / historical / geographic context. A creature without context is
-    a horror story; a creature with context is something a reader can understand.
+    The Owlman has a tidy origin, which should already make you cautious. On or about 17 April 1976,
+    June and Vicky Melling — aged roughly twelve and nine, on holiday from Preston in Lancashire —
+    reported seeing a large winged creature above the tower of the thirteenth-century church of St
+    Mawnan and St Stephen. Their father was alarmed enough to end the trip. The account reached the
+    public not through the family but through Tony "Doc" Shiels, to whom June's sketch was passed.
+  </p>
+  <p>
+    Shiels is the hinge of the whole story. A surrealist painter, stage magician, and self-styled
+    "wizard," he was already running a season of "monster-raising" stunts in Cornwall in 1976, and
+    was separately tied to faked images of the Loch Ness Monster. It was Shiels who named the
+    creature the "Owlman," Shiels who supplied the drawings, and Shiels who kept it in the papers.
+  </p>
+  <div class="pull-quote">
+    Most cryptids are anonymous and old. This one has a birth date, a parish, and a promoter — and
+    the promoter is a professional conjuror with a documented taste for a hoax. That is not a
+    footnote to the legend. It is the legend.
+  </div>
+  <p>
+    A second sighting followed on 3 July 1976, when two fourteen-year-olds, Sally Chapman and
+    Barbara Perry, camping near the church, described "a big owl with pointed ears, as big as a
+    man," with glowing eyes and black, pincer-like claws. More reports trickled in over the
+    following decades. The cryptozoologist Jonathan Downes, of the Centre for Fortean Zoology, later
+    gathered the accounts into a book, <em>The Owlman and Others</em> (1997) — the fullest catalogue
+    of a case that, source by source, keeps thinning out as you pull on it.
   </p>
 </Section>
 
 <Section heading="What You Are Looking At">
+  <StatRow
+    stats={[
+      {
+        num: '1976',
+        label: 'Year the first sightings were reported, over Mawnan church in Cornwall',
+      },
+      {
+        num: '0',
+        label: 'Photographs ever produced — the record is sketches, letters, and retellings',
+      },
+      {
+        num: '2',
+        label: 'Owl species offered as the likely original — the barn owl and the eagle owl',
+      },
+    ]}
+  />
   <p>
-    TODO — physical description and identifying features. What witnesses agree on. What varies. What
-    to look for before you know what you are looking at.
+    The reported creature is large and upright — human-sized or bigger — with broad feathered wings,
+    a flattish owl-like face, ears or horns, glowing red eyes, and clawed feet likened to "two
+    blacksmith's pincers." Witnesses put its height at around four feet and its wingspan at close to
+    two metres. It is almost always seen near the church, at or after dusk, and it tends to rise,
+    hover, and vanish rather than approach.
   </p>
+  <p>
+    Set that against an ordinary bird. A barn owl — pale, silent, man-high when it flares its wings
+    — nests readily in old church towers, and a Eurasian eagle-owl is a genuinely enormous animal
+    with prominent ear tufts and a near-two-metre span. In poor light, over a familiar landmark,
+    either could produce almost every feature in the Owlman file.
+  </p>
+  <div class="warning-box">
+    <div class="warn-label">⚠ Critical Field Note</div>
+    <p>
+      When someone describes "the Owlman," establish where the description came from before you
+      weigh it. If it reaches you through Shiels or a retelling of Shiels, you are holding a story
+      that has passed through a showman's hands. If it is a fresh, independent sighting at dusk,
+      your first suspect is a very large owl over a very old tower — not a new species.
+    </p>
+  </div>
 </Section>
 
 <Section heading="How It Operates">
   <p>
-    TODO — behaviour pattern. How it hunts / haunts / appears. What comes first, next, and after.
+    The pattern is remarkably consistent, and remarkably owl-like. The figure is seen at or near the
+    church, usually in failing light, usually from below, usually for a few seconds. It is on the
+    tower, or above the trees, and then it climbs or glides away. Witnesses report dread, hissing or
+    strange sounds, and a sense of being watched — the texture of a fright, not the mechanics of a
+    predator.
+  </p>
+  <p>
+    What it does not do is attack. There is no bite, no abduction, no body, no feather recovered and
+    tested. For all the menace in the descriptions, the Owlman's entire documented behaviour is to
+    appear, loom, and leave — exactly what a startled bird at dusk does, and exactly what a good
+    story needs to stay alive without ever being pinned down.
+  </p>
+  <p>
+    The other thing it does is recur on a convenient schedule. New sightings surfaced in 1978, 1989,
+    and 1995, several of them arriving as anonymous letters to local papers and Fortean magazines —
+    the "Gemini" letter of 1995 among them — their authorship impossible to confirm. A monster that
+    only ever manifests as testimony, and whose testimony often cannot be traced to a real person,
+    is behaving less like an animal than like folklore.
   </p>
 </Section>
 
 <Section heading="An Honest Assessment of Its Weaknesses">
   <p>
-    TODO — what the accumulated evidence suggests works against it. Be honest when this section is
-    thin.
+    There is no monster to fight here, so the honest assessment is about the evidence, and the
+    evidence is weak in three specific ways.
+  </p>
+  <p>
+    <strong>The source collapses.</strong> The founding material — the name, the drawings, the press
+    attention — runs through Tony "Doc" Shiels, a magician mid-way through a run of deliberate
+    monster hoaxes and already caught faking Loch Ness photographs. Occult historian Gareth Medway
+    and others have argued the whole affair may simply be his invention.
+  </p>
+  <p>
+    <strong>The record collapses.</strong> In fifty years the case has produced sketches, letters,
+    and retellings, and not one photograph, specimen, or physical trace. Several later "sightings"
+    are anonymous and uncheckable.
+  </p>
+  <p>
+    <strong>The description collapses into a bird.</strong> Investigator Joe Nickell points to barn
+    owls nesting in the tower; others, including Rev. Lionel Fanthorpe, to a Eurasian eagle-owl. A
+    four-foot, red-eyed, big-eared, two-metre-winged shape at dusk is, unfortunately for the legend,
+    a fair description of a large owl.
+  </p>
+  <p>
+    None of that means the witnesses lied or imagined their fear. It means the thing to be sceptical
+    of is the story, and the thing most likely over the tower is an owl.
   </p>
 </Section>
 
 <Section heading="Six Rules That May Save Your Life">
-  <p>TODO — short intro paragraph framing the rules.</p>
+  <p>
+    These rules will not help you fight a monster, because the evidence says there isn't one. They
+    will help you read a dusk sighting honestly, trace a story to its source, and avoid being the
+    next name a showman adds to the file.
+  </p>
   <SixRules
     rules={frontmatter.rules}
     title={frontmatter.title}
     number={frontmatter.number}
-    pocketHref={
-      frontmatter.status === 'draft'
-        ? `/drafts/owlman-of-mawnan/pocket/`
-        : `/pocket/owlman-of-mawnan/`
-    }
+    pocketHref="/pocket/owlman-of-mawnan/"
   />
 </Section>
 
 <Section heading="Two Cases on the Record">
-  <p>TODO — intro paragraph for the encounter section.</p>
+  <p>
+    These two cases bracket the Owlman: the 1976 sightings that created it, and the sceptical
+    reading that has shadowed it ever since.
+  </p>
   <EncounterCard
-    id="Encounter 01 · TODO · TODO date"
-    title="TODO — encounter title"
-    meta="TODO — encounter witness / context"
-    verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    id="Encounter 01 · Mawnan, Cornwall · April & July 1976"
+    title="The 1976 Sightings"
+    meta="June & Vicky Melling · Sally Chapman & Barbara Perry"
+    verdict="firsthand"
+    verdictLabel="Reported — Witness Accounts"
+    references={[
+      {
+        text: 'Wikipedia — “Owlman” (1976 sightings; Melling and Chapman/Perry accounts)',
+        label: 'en.wikipedia.org',
+        href: 'https://en.wikipedia.org/wiki/Owlman',
+      },
+      {
+        text: 'The Cornish Bird — “The Owlman of Mawnan Smith”',
+        label: 'cornishbirdblog.com',
+        href: 'https://cornishbirdblog.com/the-owlman-of-mawnan-smith/',
+      },
+    ]}
   >
-    <p>TODO — encounter prose. Real, cited account.</p>
+    <p>
+      Over the Easter weekend of 1976, around 17 April, June and Vicky Melling — young sisters on
+      holiday from Lancashire — reported a large winged creature above the tower of the thirteenth-
+      century church at Mawnan. They described a feathered "bird-man" with red eyes; the sight
+      frightened them so badly their father cut the family's holiday short. One of the girls drew
+      what she had seen, and that sketch was passed to Tony "Doc" Shiels, who named the creature the
+      "Owlman."
+    </p>
+    <p>
+      On 3 July 1976, two fourteen-year-olds camping near the same church, Sally Chapman and Barbara
+      Perry, reported "a big owl with pointed ears, as big as a man," with glowing eyes and black,
+      pincer-like claws. The two accounts, months apart and from different witnesses, became the
+      twin pillars of the legend — but both reached the public filtered through the same promoter,
+      and neither was ever supported by a photograph or any physical trace.
+    </p>
   </EncounterCard>
   <EncounterCard
-    id="Encounter 02 · TODO · TODO date"
-    title="TODO — second encounter title"
-    meta="TODO — second encounter witness / context"
-    verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    id="Encounter 02 · Mawnan, Cornwall · 1976–1997"
+    title="The Showman and the Owl"
+    meta="Tony “Doc” Shiels · the hoax and misidentification reading"
+    verdict="documented"
+    verdictLabel="Probable Hoax / Misidentification"
+    references={[
+      {
+        text: 'Hoaxes.org — “The Owlman of Mawnan” (Shiels, the Hoax Museum, and the Loch Ness fakes)',
+        label: 'hoaxes.org',
+        href: 'https://hoaxes.org/weblog/comments/the_owlman_of_mawnan',
+      },
+      {
+        text: 'Wikipedia — “Owlman” (Medway hoax suggestion; Nickell barn owl; Fanthorpe eagle-owl; Downes, “The Owlman and Others”, 1997)',
+        label: 'en.wikipedia.org',
+        href: 'https://en.wikipedia.org/wiki/Owlman',
+      },
+    ]}
   >
-    <p>TODO — second encounter prose.</p>
+    <p>
+      The sceptical case does not rest on a single debunking but on who the story keeps leading back
+      to. Tony "Doc" Shiels — the magician who named the Owlman and supplied its drawings — was in
+      the middle of a 1976 run of "monster-raising" publicity stunts and is separately on record as
+      the source of a faked Loch Ness Monster image. Occult historian Gareth Medway has suggested
+      the entire Owlman affair may have been Shiels's invention, and his documented history with
+      Nessie photographs leaves his credibility very low.
+    </p>
+    <p>
+      Where the story is not a hoax, it is most plausibly a bird. Investigator Joe Nickell notes
+      that barn owls commonly nest in church towers and loom large in poor light; Rev. Lionel
+      Fanthorpe and others have proposed a Eurasian eagle-owl, a genuinely man-sized bird with
+      prominent ear tufts. Cryptozoologist Jonathan Downes gathered the later reports in{' '}
+      <em>The Owlman and Others</em> (1997), but half a century on, the case has produced no
+      photograph, no specimen, and no owl that was ever more than an owl.
+    </p>
   </EncounterCard>
 </Section>
 
@@ -150,8 +324,19 @@ import '../../styles/pages/_draft.css';
 <Section heading="Before You Go">
   <Outro>
     <p>
-      TODO — closing outro. Echo the cold open. Land the rules. Give the reader a parting
-      instruction.
+      The Owlman is Cornwall's Mothman, and like Mothman it is best understood as a thing we can
+      watch being assembled: two frightened children, a sketch, a church at dusk, and a showman who
+      knew exactly what to do with all three.
+    </p>
+    <p>
+      If you find yourself at Mawnan as the light goes and something large lifts off the tower, give
+      it the honest treatment. Note the hour, note the poor light, and remember that a barn owl with
+      its wings spread is already the size of a small man. Then ask where the story came from before
+      you decide what the shape was.
+    </p>
+    <p>
+      End of journal entry. Mind the dusk. Stay sceptical. The scariest thing here is how cheaply a
+      monster was made.
     </p>
   </Outro>
 </Section>

@@ -9,7 +9,8 @@ danger: 8
 bandColor: '#4a1818'
 classification: 'monster survival guide  —  the aswang'
 entryStatus: 'Active Entry'
-status: 'draft'
+status: 'published'
+publishDate: '2026-10-20'
 season: 1
 sightings:
   - {
@@ -37,109 +38,296 @@ sightings:
       label: 'Northern variant traditions: the manananggal vs. the wakwak',
     }
 recordKind: folklore
-recordNote: Working draft about folklore and tradition. Cultural context and sources still need
-  checking. The doodle is an imagined interpretation, not an authoritative cultural depiction.
+recordNote: Folklore and documented history of belief, including a real, cited military-historical
+  case. The creatures belong to tradition; the social and historical record is distinct — and real.
 illustration:
   src: /illustrations/aswang.png
   alt: Loose ink doodle of an imagined shapeshifter with a humanlike face and a clawed hand.
 dossier:
-  entity: The Aswang
-  origin: Philippines · Visayas archipelago
-  status: Draft — awaiting research
+  entity: The Aswang (asuang — Visayan umbrella term)
+  origin: Philippines · Visayas archipelago · pre-colonial tradition
+  status: Active in Tradition — Real Social & Military-Historical Footprint
   stamps:
     - Filipino Lore
     - Visayas
     - Sacred Tradition
-  dangerLabel: CRITICAL
-  dangerNote: 8/10 — Apex shapeshifting threat in Filipino tradition. Mimicry, possession risk.
-    Cultural protections are the defensive doctrine.
+  dangerLabel: FOLKLORE
+  dangerNote: 8/10 in tradition — but no specimen has ever been recovered. The documented harm falls
+    on accused neighbours and on those who weaponise the fear, not on any monster.
 rules:
-  - title: TODO — rule 1
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 2
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 3
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 4
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 5
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 6
-    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: Learn which creature you actually mean.
+    body: Aswang is an umbrella term for at least five distinct beings — viscera-sucker, ghoul, weredog, witch, and sorcerer. Naming the specific form is the first act of understanding.
+  - title: Treat the tradition as knowledge, not a joke.
+    body: Visayan aswang lore is centuries old and predates Spanish contact. It carries real moral and social weight — approach it with the respect you would give any living belief.
+  - title: Watch what an accusation does to a person.
+    body: The aswang label has long been used to isolate the sick, the elderly, and the outsider. The documented harm falls on accused neighbours, not on any monster.
+  - title: Know the folk protections for what they are.
+    body: Garlic, salt, blades kept near the bed, and the stingray-tail whip recur across the record. They are cultural reassurance — comfort and custom, not proven defence.
+  - title: Remember that belief can be weaponised.
+    body: In the early 1950s a US officer staged an aswang killing to frighten rebels off a hill. Fear this real is a tool others will reach for.
+  - title: Respect the people who kept this lore alive.
+    body: Capiz and the wider Visayas have carried these stories for generations. Their warnings map a hard world — hear them as culture, not superstition.
 ---
 
 import Section from '../../components/Section.astro';
+import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
 import EncounterCard from '../../components/EncounterCard.astro';
 import Outro from '../../components/Outro.astro';
 import MonsterMap from '../../components/MonsterMap.astro';
-import '../../styles/pages/_draft.css';
+import '../../styles/pages/aswang.css';
 
 <Section heading="If You're Reading This">
   <p>
-    TODO — cold open. Place the reader at the scene of the encounter. Establish atmosphere. Earn
-    attention before asking for trust.
+    It is the middle of the night in a barangay somewhere in the Western Visayas. The house is
+    timber and tin, the shutters are closed, and above the door hangs a head of garlic that has been
+    there so long it has gone to paper. A knife rests under the pillow — point out, the way the
+    grandmother insisted — and a stingray tail hangs from a nail in the corner. Outside, the frogs
+    stop.
+  </p>
+  <p>
+    Somewhere off in the dark there is a sound people here have a name for: a soft, wet flapping, or
+    a faint <em>tik-tik</em> that grows quieter as the thing making it draws nearer. Everyone in the
+    house knows the rule. You do not open the shutter to look. You wait for morning, and in the
+    morning you ask who in the village has been keeping to themselves lately.
+  </p>
+  <p>
+    This is the thirteenth journal entry of the Monster Survival Guide. The subject: the Aswang —
+    not a single monster but a whole family of them, the most feared beings in Filipino folklore.
+    This is also an entry that has to be careful, because unlike the cold of the north or a sick
+    coyote in a Texas field, the real danger in the aswang's story has usually fallen on living
+    human beings.
   </p>
 </Section>
 
 <Section heading="Where It Comes From">
   <p>
-    TODO — origin section. Cultural / historical / geographic context. A creature without context is
-    a horror story; a creature with context is something a reader can understand.
+    The aswang is sometimes called the national monster of the Philippines, and it is genuinely
+    ancient — its roots reach back into Visayan belief from long before Ferdinand Magellan reached
+    the islands in 1521. It is not one creature with one description. It is an umbrella word,{' '}
+    <em>asuang</em>
+    in the older spelling, stretched across a crowd of distinct beings that different islands and
+    different barangays describe in different ways. Ask ten people what an aswang is and you may get
+    ten answers, all of them correct to the person giving them.
   </p>
+  <p>
+    The folklorist Maximo Ramos, whose 1990 study remains the standard reference, sorted that crowd
+    into roughly five types: the blood-sucker, the corpse-eater or ghoul, the viscera-sucker (the
+    famous self-segmenting manananggal among them), the animal-transformer or weredog, and the
+    sorcerer or witch who sickens neighbours by supernatural means. Scholars are careful to note
+    that this is a twentieth-century comparative scheme, a way of organising the stories — not a
+    taxonomy every village ever recognised.
+  </p>
+  <div class="pull-quote">
+    Most of the monsters in this guide hide in the wilderness. The aswang hides in the village — in
+    the quiet neighbour, the widow who fishes alone, the old man who keeps strange hours. That is
+    what makes it the most human horror in these pages, and the most dangerous to be accused of
+    being.
+  </div>
+  <p>
+    No province is more bound to the aswang than Capiz, on the island of Panay, which carries a
+    nationwide reputation as "aswang country." Historians of the belief suspect that reputation owes
+    as much to old ethnolinguistic rivalry — Capiz against neighbouring Iloilo — as to anything
+    supernatural, and some say the real folkloric hub lies elsewhere on Panay entirely. A further
+    strand of scholarship links the whole cluster of beliefs to the Spanish colonial habit of
+    demonising Filipinos — often women, and often healers — who resisted conversion. The monster, in
+    other words, has a history as well as a mythology.
+  </p>
+  <div class="lore-box">
+    <p>
+      The aswang is not frozen in the past. Capiz has at times leaned into its reputation — a
+      planned "Aswang Festival" in Roxas City in the mid-2000s drew real political, economic, and
+      religious pushback, documented by folklorists, over whether a province should celebrate,
+      profit from, or bury a label its own residents can still find stigmatising. Living folklore is
+      argued over, not merely inherited.
+    </p>
+  </div>
 </Section>
 
 <Section heading="What You Are Looking At">
+  <StatRow
+    stats={[
+      { num: '5', label: 'Distinct creature types grouped under one umbrella term (Ramos, 1990)' },
+      { num: '1950s', label: 'Decade a US officer staged an aswang killing as a wartime psyop' },
+      { num: '0', label: 'Physical specimens of any aswang ever recovered or tested' },
+    ]}
+  />
   <p>
-    TODO — physical description and identifying features. What witnesses agree on. What varies. What
-    to look for before you know what you are looking at.
+    There is no single thing to look for, because the aswang wears whatever shape its particular
+    form demands. By day, tradition holds, it is indistinguishable from an ordinary person — a
+    neighbour, a vendor, a relative. The tells are small and folkloric: eyes that reflect your own
+    image upside down, a preference for walking with the body oddly angled, a reclusiveness that the
+    community reads backward into every later misfortune.
   </p>
+  <p>
+    By night the forms diverge. The manananggal severs its torso from its lower half and flies on
+    membranous wings, trailing its entrails, leaving the abandoned legs standing somewhere to be
+    found and salted. The weredog and its kin take the shape of a dog, a pig, a cat, or a great
+    black bird. The viscera-suckers are associated with that thin <em>tik-tik</em> or{' '}
+    <em>wakwak</em> call — a sound said, confusingly, to grow fainter as the creature comes closer,
+    so that distance itself becomes untrustworthy.
+  </p>
+  <div class="warning-box">
+    <div class="warn-label">⚠ Critical Field Note</div>
+    <p>
+      The most important thing to understand about "spotting" an aswang is what the spotting does.
+      In the recorded cases, the accusation lands on real, identifiable people — and the people
+      chosen are almost always the socially weak: a disabled elder, a widow, an outsider. When you
+      think you are hunting a monster in a Visayan village, the record says you are far more likely
+      to be hurting a neighbour.
+    </p>
+  </div>
 </Section>
 
 <Section heading="How It Operates">
   <p>
-    TODO — behaviour pattern. How it hunts / haunts / appears. What comes first, next, and after.
+    Set aside the question of whether anything flies at night, and the aswang does something very
+    precise inside a community: it explains. When a pregnancy ends without warning, when a child
+    sickens and dies, when a healthy adult wastes away for reasons no one can see, the aswang gives
+    the loss a shape and a culprit. Folklorists have long read the tradition as a way of making
+    sense of the cruelties of a hard world — illness, miscarriage, sudden death — in an idiom older
+    than the clinic.
+  </p>
+  <p>
+    It also polices. Aswang belief encodes warnings: do not wander alone at night, guard pregnant
+    women and newborns, keep the house closed after dark, and — crucially — be a known and trusted
+    part of your community, because the person who keeps apart is the person who gets named. The
+    monster rewards belonging and punishes isolation, which is a social instruction dressed as a
+    horror story.
+  </p>
+  <p>
+    And that same machinery can be turned against people deliberately. An accusation of being aswang
+    runs in families in the telling, which means it can isolate not just a person but a bloodline.
+    The documented aswang cases are, over and over, cases of ordinary human beings being marked,
+    avoided, and sometimes driven out — the belief operating exactly as a mechanism of exclusion.
   </p>
 </Section>
 
 <Section heading="An Honest Assessment of Its Weaknesses">
   <p>
-    TODO — what the accumulated evidence suggests works against it. Be honest when this section is
-    thin.
+    Here is the honest part, and it is the whole point of this entry: there is nothing to fight. No
+    specimen of any aswang has ever been recovered, frozen, photographed with scale, or tested. This
+    is folklore — rich, ancient, regionally precise folklore — not a cryptid awaiting a carcass.
+  </p>
+  <p>
+    <strong>The protections are cultural, not proven.</strong> Garlic over the door, salt, a blade
+    beneath the pillow, the stingray-tail whip — these recur across the Visayan record and matter
+    enormously as custom and comfort. There is no evidence they repel anything but anxiety, and that
+    is not nothing.
+  </p>
+  <p>
+    <strong>The footprint, where it is real, is social and historical.</strong> The aswang's genuine
+    power is what belief does: it discriminates, it excludes, and — as the record below shows — it
+    can be weaponised by people who understand it. That footprint is far more consequential than any
+    fanged silhouette.
+  </p>
+  <p>
+    None of that makes the tradition false in the ways that matter to the people who hold it. It
+    means the thing to respect is the culture, and the thing to be wary of is what the fear does to
+    the living.
   </p>
 </Section>
 
 <Section heading="Six Rules That May Save Your Life">
-  <p>TODO — short intro paragraph framing the rules.</p>
+  <p>
+    These rules will not help you fight an aswang, because the evidence says there is no creature to
+    fight. They will help you understand a living tradition, treat it with the seriousness it has
+    earned, and avoid becoming the person who turns a frightened village against one of its own.
+  </p>
   <SixRules
     rules={frontmatter.rules}
     title={frontmatter.title}
     number={frontmatter.number}
-    pocketHref={frontmatter.status === 'draft' ? `/drafts/aswang/pocket/` : `/pocket/aswang/`}
+    pocketHref="/pocket/aswang/"
   />
 </Section>
 
 <Section heading="Two Cases on the Record">
-  <p>TODO — intro paragraph for the encounter section.</p>
+  <p>
+    These two cases show the aswang doing its real work. The first is the tradition itself —
+    centuries deep, documented by folklorists, and alive enough to still start arguments. The second
+    is the day a modern military turned that belief into a weapon.
+  </p>
   <EncounterCard
-    id="Encounter 01 · TODO · TODO date"
-    title="TODO — encounter title"
-    meta="TODO — encounter witness / context"
-    verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    id="Encounter 01 · Western Visayas · Centuries of record"
+    title="The Tradition Itself"
+    meta="Capiz & the Visayas · Folklore documented by Ramos, Azuma, and others"
+    verdict="documented"
+    verdictLabel="Folklore Documented"
+    references={[
+      {
+        text: 'The Aswang Project — “What Is The Aswang?” (summarising Maximo Ramos’s 1990 classification)',
+        label: 'aswangproject.com',
+        href: 'https://aswangproject.com/what-is-an-aswang',
+      },
+      {
+        text: 'Kentaro Azuma — “In Search of Aswang: A Ghost Story, Monster and Sorcerer in Philippine Society,” Kyoto Review of Southeast Asia, Issue 12 (2012)',
+        label: 'kyotoreview.org',
+        href: 'https://kyotoreview.org/?p=2363',
+      },
+    ]}
   >
-    <p>TODO — encounter prose. Real, cited account.</p>
+    <p>
+      The aswang is one of the oldest and most widespread beings in Filipino folklore, rooted in
+      Visayan belief that predates Spanish contact in 1521. Across the archipelago it functions as
+      an umbrella term for several distinct creatures — the viscera-sucking manananggal, the ghoul,
+      the weredog, the witch — which Maximo Ramos organised in 1990 into the five-type scheme still
+      used today. Capiz province on Panay carries the enduring, nationwide reputation as its
+      heartland.
+    </p>
+    <p>
+      Scholars who have gone looking at the belief up close keep finding the same thing. In a study
+      published in the <em>Kyoto Review of Southeast Asia</em>, Kentaro Azuma traced aswang rumours
+      near Roxas City to two living villagers — a widow who fished for a living and an elderly
+      disabled man — and showed how the label sanctioned their social exclusion. The aswang, on the
+      record, is less a creature in the dark than a story a community tells about the people it has
+      decided to fear.
+    </p>
   </EncounterCard>
   <EncounterCard
-    id="Encounter 02 · TODO · TODO date"
-    title="TODO — second encounter title"
-    meta="TODO — second encounter witness / context"
-    verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    id="Encounter 02 · Central Luzon · Early 1950s"
+    title="The CIA's Fake Aswang"
+    meta="Col. Edward Lansdale · Anti-Huk psychological operation"
+    verdict="verified"
+    verdictLabel="Historically Verified"
+    references={[
+      {
+        text: 'The Aswang Project — “PSYWAR in the Philippines: The ASWANG of the CIA”',
+        label: 'aswangproject.com',
+        href: 'https://aswangproject.com/psywar-philippines-aswang-cia',
+      },
+      {
+        text: 'Task & Purpose — “How a fake vampire helped the US win a war in the Philippines”',
+        label: 'taskandpurpose.com',
+        href: 'https://taskandpurpose.com/history/fake-vampire-massacare-philippines/',
+      },
+      {
+        text: 'Edward G. Lansdale — “In the Midst of Wars: An American’s Mission to Southeast Asia” (Harper & Row, 1972; Fordham University Press, 1991)',
+        label: 'fordhampress.com',
+        href: 'https://fordhampress.com/in-the-midst-of-wars-pb.html',
+      },
+    ]}
   >
-    <p>TODO — second encounter prose.</p>
+    <p>
+      During the campaign against the communist Hukbalahap rebellion in the early 1950s, US Air
+      Force officer and CIA operative Edward Lansdale set out to deny the Huks a hill they were
+      using. Rather than fight for it, he exploited what the local population already believed. His
+      psywar squad first spread word through the area that an aswang had taken up residence on the
+      hill.
+    </p>
+    <p>
+      Then they made the rumour true. The squad ambushed a Huk patrol after dark, seized the last
+      man in the column, punctured his neck with two holes in the manner of the folklore, drained
+      the body of blood, and left it on the trail for his comrades to find. By Lansdale's own
+      account in his 1972 memoir, <em>In the Midst of Wars</em>, "every member of the patrol
+      believed that the asuang had got him." The unit abandoned the hill.
+    </p>
+    <p>
+      The episode is a genuine, documented piece of Cold War history, and it is the clearest proof
+      of the aswang's real power: not fangs, but fear — a belief so deeply held that a foreign
+      military could pick it up and use it as a weapon against the people who held it. Lansdale
+      would carry the same playbook of belief-as-leverage to Vietnam.
+    </p>
   </EncounterCard>
 </Section>
 
@@ -148,8 +336,20 @@ import '../../styles/pages/_draft.css';
 <Section heading="Before You Go">
   <Outro>
     <p>
-      TODO — closing outro. Echo the cold open. Land the rules. Give the reader a parting
-      instruction.
+      The aswang is the most human monster in this guide. It does not live in the snow or walk out
+      of a film. It lives in the village, in the oldest beliefs of the Visayan islands, and its real
+      bite has almost always been felt by living people — the accused neighbour, the isolated widow,
+      the Huk soldier on a dark hillside who believed what a stranger wanted him to believe.
+    </p>
+    <p>
+      Hang the garlic if your grandmother tells you to; there is no harm in custom, and a great deal
+      of meaning. But keep your scepticism pointed where it belongs — not at the dark outside the
+      shutter, but at anyone, from a frightened crowd to a foreign colonel, who would use that dark
+      against another person.
+    </p>
+    <p>
+      End of journal entry. Respect the tradition. Doubt the accusation. The most dangerous aswang
+      has always been the one we make of each other.
     </p>
   </Outro>
 </Section>

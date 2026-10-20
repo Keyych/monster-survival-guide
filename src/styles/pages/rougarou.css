@@ -1,0 +1,15 @@
+/* Theme tokens for /rougarou. Shared layout rules live in field-manual.css. */
+:root {
+  --paper: #e6e8d6;
+  --aged: #d4d8bd;
+  --ink: #12180e;
+  --faded: #3c4a2c;
+  --stamp-red: #7a2414;
+  --stamp-blue: #2a3a18;
+  --accent: #4a6a26;
+  --redact: #0a0e07;
+  --margin: #566a38;
+  --highlight: #6a8a34;
+  --rule: rgba(18, 24, 14, 0.1);
+  --warn: #7a2414;
+}

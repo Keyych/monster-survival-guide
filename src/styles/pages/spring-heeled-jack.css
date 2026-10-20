@@ -1,0 +1,16 @@
+/* Theme tokens for /spring-heeled-jack. Shared layout rules live in field-manual.css. */
+/* Palette: gaslit Victorian night — sooted paper, ember and gaslight amber, indigo dark. */
+:root {
+  --paper: #d9cdb6;
+  --aged: #c7b99c;
+  --ink: #16120c;
+  --faded: #44382a;
+  --stamp-red: #8a2412;
+  --stamp-blue: #2a2440;
+  --accent: #9a4a16;
+  --redact: #0e0a06;
+  --margin: #5a4c34;
+  --highlight: #b5641e;
+  --rule: rgba(22, 18, 12, 0.1);
+  --warn: #8a2412;
+}

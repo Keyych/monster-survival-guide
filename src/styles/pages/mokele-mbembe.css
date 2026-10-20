@@ -1,0 +1,16 @@
+/* Theme tokens for /mokele-mbembe. Shared layout rules live in field-manual.css. */
+/* Palette: deep jungle greens and river-silt browns of the Likouala swamp. */
+:root {
+  --paper: #e6e3cd;
+  --aged: #d2cfac;
+  --ink: #141a12;
+  --faded: #3d4a30;
+  --stamp-red: #6e2a12;
+  --stamp-blue: #1e3a22;
+  --accent: #2f5a2c;
+  --redact: #0d130b;
+  --margin: #4a5a36;
+  --highlight: #7a5a28;
+  --rule: rgba(20, 26, 18, 0.1);
+  --warn: #7a2a12;
+}

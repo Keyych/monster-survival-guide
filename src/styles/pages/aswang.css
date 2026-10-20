@@ -1,0 +1,16 @@
+/* Theme tokens for /aswang. Shared layout rules live in field-manual.css. */
+/* Palette: tropical night — deep jungle green and blood-dark over aged island paper. */
+:root {
+  --paper: #e7e1cd;
+  --aged: #d4cab0;
+  --ink: #131a12;
+  --faded: #39432f;
+  --stamp-red: #6e1411;
+  --stamp-blue: #16311e;
+  --accent: #2f5d39;
+  --redact: #0b0f0a;
+  --margin: #48583d;
+  --highlight: #7a1f16;
+  --rule: rgba(19, 26, 18, 0.1);
+  --warn: #6e1411;
+}

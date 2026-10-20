@@ -9,7 +9,8 @@ danger: 6
 bandColor: '#2a1a4a'
 classification: 'monster survival guide  —  spring-heeled jack'
 entryStatus: 'Active Entry'
-status: 'draft'
+status: 'published'
+publishDate: '2026-10-20'
 season: 1
 sightings:
   - {
@@ -41,113 +42,282 @@ sightings:
       label: 'Final widely-reported Spring-Heeled Jack appearance · the William Henry Street rooftop incident',
     }
 recordKind: reported
-recordNote: Working draft based on reported accounts and their later retellings. Sources and claims
-  still need checking; reports do not establish that the creature exists.
+recordNote: Reported accounts and their penny-dreadful afterlife. A real wave of Victorian panic —
+  the reports point to pranksters, assaults, and press sensation rather than a verified creature.
 illustration:
   src: /illustrations/spring-heeled-jack.png
   alt: Loose ink doodle of a sharp-faced Victorian figure with a high collar and swept-back cape.
 dossier:
   entity: Spring-Heeled Jack
-  origin: Victorian London → Britain
-  status: Draft — awaiting research
+  origin: Victorian London → Britain, 1837–1904
+  status: Historic Panic — No Creature Ever Recovered
   stamps:
     - Victorian
     - Phantom Assailant
     - London Press
-  dangerLabel: PHANTOM
-  dangerNote: 6/10 — Documented assaults on women and soldiers in Victorian press;
-    supernatural-seeming jumping reach. Active period 1837–1904.
+  dangerLabel: OVERSTATED
+  dangerNote: 6/10 — Real assaults on women and sentries sit under one name, but the leaping,
+    fire-breathing fiend is press and penny-dreadful invention. Nothing was ever caught.
 rules:
-  - title: TODO — rule 1
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 2
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 3
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 4
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 5
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 6
-    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: Suspect a man before a monster.
+    body:
+      Every assault that reached a courtroom was physical and human-scaled — a grab, a clawing hand, a
+      cloak, a trick with a light. Describe a prowler to a constable, not a devil to a crowd.
+  - title: The candle at the door is the trap.
+    body:
+      Jack's favourite opening was to pose as an officer and ask for a light, putting flame and a free
+      hand exactly where he wanted them. Never carry your own lamp out to a stranger in the dark.
+  - title: Don't take the unlit alley alone.
+    body:
+      Lucy Scales was struck in a dark passage a single step ahead of her sister. Keep abreast of your
+      companions and to lit streets — isolation is the one thing every account shares.
+  - title: Blue flame is a prop, not a power.
+    body:
+      Witnesses described a spurt of blue-and-white fire to the face. Phosphorus and conjuror's tricks
+      did that in 1838 — it blinds and terrifies, but expect a fleeing man, not a dragon.
+  - title: Count the letters, then divide.
+    body:
+      When the Lord Mayor read his postbag, one name was collecting every prank and assault for miles.
+      Report only what you saw, and let no single bogeyman swallow unrelated crimes.
+  - title: The leap grows in the retelling.
+    body:
+      Rooftop jumps, horns, and bat-wings belong to the penny dreadfuls and the stage, not the first
+      depositions. Trust the earliest account over the one that sells best.
 ---
 
 import Section from '../../components/Section.astro';
+import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
 import EncounterCard from '../../components/EncounterCard.astro';
 import Outro from '../../components/Outro.astro';
 import MonsterMap from '../../components/MonsterMap.astro';
-import '../../styles/pages/_draft.css';
+import '../../styles/pages/spring-heeled-jack.css';
 
 <Section heading="If You're Reading This">
   <p>
-    TODO — cold open. Place the reader at the scene of the encounter. Establish atmosphere. Earn
-    attention before asking for trust.
+    It is a cold night in the winter of 1838, in one of the half-built suburbs crawling out from the
+    edge of London. There is a knock at the door. The man outside wears a dark cloak and announces,
+    in the voice of authority, that he is a police officer — they have caught Spring-heeled Jack at
+    last, and he needs a light. You bring a candle to the door, because why would you not.
+  </p>
+  <p>
+    He lets the cloak fall. There is a spurt of pale blue flame toward your face, a grab at your
+    collar, a tearing at your dress with hands that feel cold and hard as metal. You scream; someone
+    drags you back inside; and by the time anyone reaches the street he is gone — over a wall, into
+    the dark, faster than a man has any right to move.
+  </p>
+  <p>
+    This is the twenty-third journal entry of the Monster Survival Guide. The subject: Spring-heeled
+    Jack — the leaping terror of Victorian London. And like the Chupacabra, this is an entry where
+    the guide owes you honesty, because Jack is one of the few monsters we can watch being built in
+    public, out of real fear, real assaults, and a newspaper trade that had just discovered how well
+    terror sold.
   </p>
 </Section>
 
 <Section heading="Where It Comes From">
   <p>
-    TODO — origin section. Cultural / historical / geographic context. A creature without context is
-    a horror story; a creature with context is something a reader can understand.
+    Jack has a documented childhood. The first reports cluster in the London suburbs in 1837 — a
+    cloaked figure that sprang on lone pedestrians, mostly women, then vanished. It was{' '}
+    <em>The Times</em>, in the winter of 1837–38, that gave the attacker the name that stuck:
+    Spring-heeled Jack, a single tidy label for a scatter of nocturnal frights across the city's
+    northern and eastern fringes.
   </p>
+  <p>
+    The panic peaked in January 1838 inside the Mansion House itself, where the Lord Mayor of
+    London, Sir John Cowan, read out an anonymous complaint and then — over the following days —
+    displayed a growing pile of letters from terrified suburbs. Cowan, to his credit, was openly
+    sceptical of the supernatural half of it. But the name was already loose, and it behaved exactly
+    as a good name does: it gathered everything.
+  </p>
+  <div class="pull-quote">
+    Most monsters hide in the dark of the past. This one was assembled in public — in the
+    newspapers, with named witnesses, a sceptical Lord Mayor, and a stack of letters we can still
+    read. That is not a flaw in the story. That is the story.
+  </div>
+  <div class="lore-box">
+    <p>
+      By the 1860s Jack had leapt off the police page and onto the stage and the serial. The penny
+      dreadful <em>Spring-heeled Jack — the Terror of London</em> ran in weekly episodes, and
+      theatre melodramas gave him springs in his boots, horns, and bat-like wings. The folklorist
+      David Clarke traces almost everything "impossible" about Jack — the rooftop bounds, the
+      flight, the devilish costume — to this fiction rather than to the first witness statements.
+      The name even drifted into street slang for any cloaked footpad.
+    </p>
+  </div>
 </Section>
 
 <Section heading="What You Are Looking At">
+  <StatRow
+    stats={[
+      { num: '1837', label: 'Year of the first reported encounter, in the London suburbs' },
+      { num: '1838', label: 'The winter the panic peaked — and the Lord Mayor read the letters' },
+      { num: '0', label: 'Assailants convicted, and creatures ever recovered' },
+    ]}
+  />
   <p>
-    TODO — physical description and identifying features. What witnesses agree on. What varies. What
-    to look for before you know what you are looking at.
+    There is no single Spring-heeled Jack, and the two versions do not match. The first is the
+    figure of the 1838 depositions: a man in a cloak, roughly human-sized, who posed as an official
+    or lurked in an unlit passage, produced a flash of flame, clawed at his victim, and fled over a
+    wall. Cruel, frightening, and entirely physical — a person committing assaults.
   </p>
+  <p>
+    The second is the creature of the penny dreadfuls and the stage: a caped acrobat with
+    spring-loaded boots, glowing eyes, horns, and leathery wings, bounding across rooftops and
+    breathing fire at will. This one sold for a penny a week. It is the one most people picture —
+    and it is the one that never filed a deposition or stood in a dock.
+  </p>
+  <div class="warning-box">
+    <div class="warn-label">⚠ Critical Field Note</div>
+    <p>
+      When someone describes "Spring-heeled Jack," establish which one they mean. If it is the
+      cloaked prowler at a doorway or in an alley, you are looking at a dangerous man with a costume
+      and a conjuror's trick — something a locked door and a lit street can defend against. If it is
+      the fire-breathing, wall-leaping acrobat, you are looking at thirty years of theatre and cheap
+      print, and the only thing it can hurt is your judgement.
+    </p>
+  </div>
 </Section>
 
 <Section heading="How It Operates">
   <p>
-    TODO — behaviour pattern. How it hunts / haunts / appears. What comes first, next, and after.
+    The reported method is consistent and very human. Jack isolates: he waits in a dark passage, or
+    he comes to a door and borrows the authority of a policeman to get it opened. He creates panic
+    fast — a sudden spurt of blue-and-white flame to the face, which blinds and terrifies — then he
+    grabs, claws, and runs before anyone can give chase or fix a clear description.
+  </p>
+  <p>
+    The "impossible" leap is doing a lot of work in the legend, and most of it arrives after the
+    fact. In the earliest statements he runs and climbs like a fit, frightened man escaping a scene.
+    The rooftop bounds and the vanishing come later, from retellings and from fiction — the gap
+    between what a panicked witness saw at night and what a serial needed him to do by the next
+    installment.
+  </p>
+  <p>
+    What is real here is a string of genuine assaults on real women, and a handful of later frights
+    like the Aldershot sentries in 1877, where guards challenged a cloaked figure, fired, and hit
+    nothing. Real fear, real victims, real pranksters — stitched by a single name into one
+    impossible biography.
   </p>
 </Section>
 
 <Section heading="An Honest Assessment of Its Weaknesses">
   <p>
-    TODO — what the accumulated evidence suggests works against it. Be honest when this section is
-    thin.
+    This is the entry where the honest assessment is the point, so plainly: Spring-heeled Jack has
+    never survived contact with a primary source.
+  </p>
+  <p>
+    <strong>The creature collapses.</strong> In sixty-seven years of reports, no body, no capture,
+    and no conviction. The one man tried for an Alsop-style attack, Thomas Millbank, walked free
+    precisely because he could not breathe fire — the "supernatural" detail was what a human
+    defendant could not supply.
+  </p>
+  <p>
+    <strong>The powers collapse.</strong> The flame is a phosphorus-and-conjuror's trick well within
+    1838 means; the fantastic leaps belong to the stage and the serials, not the depositions. Strip
+    the fiction and you are left with a prowler, a costume, and a flash of light.
+  </p>
+  <p>
+    <strong>The single name collapses.</strong> The Mansion House postbag shows the real mechanism —
+    one catchy label acting as a magnet for every unrelated prank, assault, and fright across a
+    nervous city, amplified by a press that had found a story it loved.
+  </p>
+  <p>
+    None of that makes the assaults imaginary or the fear unreasonable. It means the thing to defend
+    against was a man, and the thing to be sceptical of is the biography the newspapers gave him.
   </p>
 </Section>
 
 <Section heading="Six Rules That May Save Your Life">
-  <p>TODO — short intro paragraph framing the rules.</p>
+  <p>
+    These rules will not help you fight a fire-breathing acrobat, because the evidence says there
+    wasn't one. They will help you read a dark street honestly, refuse a stranger's convenient
+    story, and avoid feeding one more fright into a legend that was always hungry for them.
+  </p>
   <SixRules
     rules={frontmatter.rules}
     title={frontmatter.title}
     number={frontmatter.number}
-    pocketHref={
-      frontmatter.status === 'draft'
-        ? `/drafts/spring-heeled-jack/pocket/`
-        : `/pocket/spring-heeled-jack/`
-    }
+    pocketHref="/pocket/spring-heeled-jack/"
   />
 </Section>
 
 <Section heading="Two Cases on the Record">
-  <p>TODO — intro paragraph for the encounter section.</p>
+  <p>
+    These two cases bracket the panic of 1838: the attack that fixed Jack's image in the public
+    mind, and the Mansion House session that shows how a city turned a scatter of frights into a
+    single monster.
+  </p>
   <EncounterCard
-    id="Encounter 01 · TODO · TODO date"
-    title="TODO — encounter title"
-    meta="TODO — encounter witness / context"
-    verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    id="Encounter 01 · Bow, East London · February 1838"
+    title="The Bearbind Cottage Attack"
+    meta="Jane Alsop · The Case That Fixed the Legend"
+    verdict="documented"
+    verdictLabel="Documented — No Conviction"
+    references={[
+      {
+        text: 'Wikipedia — “Spring-heeled Jack” (Jane Alsop case, with contemporary press citations)',
+        label: 'en.wikipedia.org',
+        href: 'https://en.wikipedia.org/wiki/Spring-heeled_Jack',
+      },
+      {
+        text: 'Dr David Clarke, folklorist — “Spring-heeled Jack” (from Paranormal magazine)',
+        label: 'drdavidclarke.co.uk',
+        href: 'https://drdavidclarke.co.uk/spring-heeled-jack/',
+      },
+    ]}
   >
-    <p>TODO — encounter prose. Real, cited account.</p>
+    <p>
+      On the night of 19–20 February 1838, Jane Alsop answered the door of Bearbind Cottage, near
+      Old Ford in Bow, to a man who claimed to be a police officer and shouted for a light — they
+      had caught Spring-heeled Jack. When she brought a candle, he threw off his cloak, spurted
+      blue-and- white flame toward her face, and tore at her gown and neck with claws she described
+      as cold and hard, "of some metallic substance." Her sisters hauled her back indoors and bolted
+      the door.
+    </p>
+    <p>
+      The attack was reported in <em>The Times</em> on 2 March 1838 as "the Late Outrage at Old
+      Ford," and it became the template for every Jack that followed. A plasterer named Thomas
+      Millbank, who had drunkenly boasted at the Morgan's Arms that he was the attacker, was
+      arrested and tried at Lambeth Street. He was acquitted — Jane swore her assailant had breathed
+      fire, Millbank plainly could not, and the one "impossible" detail of her account was exactly
+      what cleared a very possible man.
+    </p>
   </EncounterCard>
   <EncounterCard
-    id="Encounter 02 · TODO · TODO date"
-    title="TODO — second encounter title"
-    meta="TODO — second encounter witness / context"
-    verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    id="Encounter 02 · Mansion House, City of London · January 1838"
+    title="The Lord Mayor's Postbag"
+    meta="Sir John Cowan · When One Name Collected Every Fright"
+    verdict="documented"
+    verdictLabel="Mass Panic — Documented"
+    references={[
+      {
+        text: 'Wikipedia — “Spring-heeled Jack” (Lord Mayor / Mansion House, 9 January 1838)',
+        label: 'en.wikipedia.org',
+        href: 'https://en.wikipedia.org/wiki/Spring-heeled_Jack',
+      },
+      {
+        text: 'The Collector — “How Spring Heeled Jack Terrified Victorian England” (Greg Beyer)',
+        label: 'thecollector.com',
+        href: 'https://www.thecollector.com/spring-heeled-jack-victorian-england/',
+      },
+    ]}
   >
-    <p>TODO — second encounter prose.</p>
+    <p>
+      On 9 January 1838, the Lord Mayor of London, Sir John Cowan, read out at the Mansion House an
+      anonymous letter signed "a resident of Peckham." It alleged a wager among wealthy men that had
+      sent one of their number into the villages around London in three disguises — a ghost, a bear,
+      and a devil — to frighten the inhabitants. Cowan was openly sceptical of the supernatural
+      element, judging the wilder feats exaggerated and "impossible."
+    </p>
+    <p>
+      Scepticism did not matter. The session opened a floodgate: over the following days the Lord
+      Mayor displayed a swelling pile of letters from Hammersmith, Stockwell, Brixton, Camberwell,
+      Vauxhall, Lewisham, and Blackheath, reporting women thrown into fits and clawed by a cloaked
+      figure. This is the panic in miniature — one memorable name acting as a magnet for every
+      unrelated prank, assault, and night-terror across a jittery city, with the national press
+      carrying it all the next morning.
+    </p>
   </EncounterCard>
 </Section>
 
@@ -156,8 +326,19 @@ import '../../styles/pages/_draft.css';
 <Section heading="Before You Go">
   <Outro>
     <p>
-      TODO — closing outro. Echo the cold open. Land the rules. Give the reader a parting
-      instruction.
+      Spring-heeled Jack is one of the most instructive monsters in this guide, because we can watch
+      him assemble himself in real time: a genuine prowler or two, a terrified witness at a
+      candlelit door, a perfect name coined by a newspaper, a Lord Mayor's postbag, and thirty years
+      of penny dreadfuls happy to give the rest.
+    </p>
+    <p>
+      Keep your doors shut to strangers with convenient stories. Keep to lit streets and to the
+      people you came with. And the next time something impossible leaps a wall in the retelling —{' '}
+      <em>go back to the first account, and trust it over the one that sells.</em>
+    </p>
+    <p>
+      End of journal entry. Mind the doorway. Stay sceptical. The scariest thing here is how good a
+      name can be.
     </p>
   </Outro>
 </Section>
