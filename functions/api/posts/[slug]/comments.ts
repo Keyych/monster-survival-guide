@@ -38,15 +38,38 @@ const RATE_LIMIT = 5;
 const WINDOW_MS = 5 * 60 * 1000; // 5 minutes
 
 const SLUG_RE = /^[a-z0-9][a-z0-9-]{0,79}$/;
+// Published entry slugs — comments only attach to real posts. Keep in sync
+// with src/content/monsters/*.mdx (regenerate when entries are added):
+//   for f in src/content/monsters/*.mdx; do basename "$f" .mdx; done | sort
 const ALLOWED_SLUGS = new Set([
-  'wendigo',
-  'slenderman',
-  'black-eyed-children',
-  'mothman',
+  'aswang',
+  'banshee',
   'beast-of-bray-road',
+  'bigfoot-sasquatch',
+  'black-eyed-children',
+  'bunyip',
+  'chupacabra',
+  'dover-demon',
+  'el-coco',
+  'flatwoods-monster',
   'jersey-devil',
+  'jiangshi',
+  'kappa',
+  'krampus',
+  'loch-ness-monster',
+  'mokele-mbembe',
+  'mongolian-death-worm',
+  'mothman',
+  'owlman-of-mawnan',
+  'rougarou',
   'skinwalker',
+  'slenderman',
+  'spring-heeled-jack',
   'the-rake',
+  'wendigo',
+  'yeti',
+  'yowie',
+  'yuki-onna',
 ]);
 
 function json(data: unknown, init: ResponseInit = {}) {

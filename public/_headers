@@ -1,4 +1,16 @@
 # Cloudflare Pages headers.
+
+# Security headers applied site-wide. These are safe alongside AdSense:
+# X-Frame-Options restricts others framing US, not our ads framing into the
+# page. (A Content-Security-Policy is intentionally omitted — it needs careful
+# allowlisting of Google's ad domains and is better rolled out report-only.)
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+
 # Astro fingerprints everything under /_astro/ (CSS, JS, fonts, processed
 # images), so those URLs are content-addressed and safe to cache forever.
 /_astro/*
