@@ -39,62 +39,45 @@ sightings:
       lon: -124.5,
       label: "Sasq'ets / Sasquatch — the etymology and the originating tradition",
     }
+recordKind: reported
+recordNote: Working draft based on reported accounts and their later retellings. Sources and claims
+  still need checking; reports do not establish that the creature exists.
+illustration:
+  src: /illustrations/bigfoot-sasquatch.png
+  alt: Loose ink doodle of Bigfoot's head, broad shoulders, and long arm.
+dossier:
+  entity: Bigfoot
+  origin: Pacific Northwest, North America
+  status: Draft — awaiting research
+  stamps:
+    - Forest Giant
+    - Pacific NW
+    - Bipedal Cryptid
+  dangerLabel: FOREST
+  dangerNote:
+    5/10 — Avoidant by default. Reported displays of force when approached. Stay out of the
+    deep woods alone.
+rules:
+  - title: TODO — rule 1
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 2
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 3
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 4
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 5
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 6
+    body: Replace with a specific, actionable rule derived from the encounter record.
 ---
 
-import StampRow from '../../components/StampRow.astro';
-import DocMeta from '../../components/DocMeta.astro';
-import DocTitle from '../../components/DocTitle.astro';
-import DangerMeter from '../../components/DangerMeter.astro';
 import Section from '../../components/Section.astro';
-import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
 import EncounterCard from '../../components/EncounterCard.astro';
 import Outro from '../../components/Outro.astro';
 import MonsterMap from '../../components/MonsterMap.astro';
 import '../../styles/pages/_draft.css';
-
-export const rules = [
-  {
-    title: 'TODO — rule 1',
-    body: 'Replace with a specific, actionable rule derived from the encounter record.',
-  },
-  {
-    title: 'TODO — rule 2',
-    body: 'Replace with a specific, actionable rule derived from the encounter record.',
-  },
-  {
-    title: 'TODO — rule 3',
-    body: 'Replace with a specific, actionable rule derived from the encounter record.',
-  },
-  {
-    title: 'TODO — rule 4',
-    body: 'Replace with a specific, actionable rule derived from the encounter record.',
-  },
-  {
-    title: 'TODO — rule 5',
-    body: 'Replace with a specific, actionable rule derived from the encounter record.',
-  },
-  {
-    title: 'TODO — rule 6',
-    body: 'Replace with a specific, actionable rule derived from the encounter record.',
-  },
-];
-
-<StampRow red="Forest Giant" faded="Pacific NW" blue="Bipedal Cryptid" />
-<DocMeta
-  rows={[
-    { label: 'ENTITY', value: 'Bigfoot' },
-    { label: 'ORIGIN', value: 'Pacific Northwest, North America' },
-    { label: 'THREAT GUIDE TYPE', value: 'Identification · Behaviour · Survival Protocol' },
-    { label: 'STATUS', value: 'Draft — awaiting research' },
-  ]}
-/>
-<DocTitle subtitle={frontmatter.description}>Bigfoot</DocTitle>
-<DangerMeter
-  danger={frontmatter.danger}
-  label="FOREST"
-  description="5/10 — Avoidant by default. Reported displays of force when approached. Stay out of the deep woods alone."
-/>
 
 <Section heading="If You're Reading This">
   <p>
@@ -132,7 +115,16 @@ export const rules = [
 
 <Section heading="Six Rules That May Save Your Life">
   <p>TODO — short intro paragraph framing the rules.</p>
-  <SixRules rules={rules} />
+  <SixRules
+    rules={frontmatter.rules}
+    title={frontmatter.title}
+    number={frontmatter.number}
+    pocketHref={
+      frontmatter.status === 'draft'
+        ? `/drafts/bigfoot-sasquatch/pocket/`
+        : `/pocket/bigfoot-sasquatch/`
+    }
+  />
 </Section>
 
 <Section heading="Two Cases on the Record">
@@ -141,9 +133,9 @@ export const rules = [
     id="Encounter 01 · TODO · TODO date"
     title="TODO — encounter title"
     meta="TODO — encounter witness / context"
-    verdict="documented"
-    verdictLabel="TODO Classification"
-    references={[{ text: 'TODO — primary source', href: 'https://example.com/' }]}
+    verdict="draft"
+    verdictLabel="Awaiting research"
+    references={[{ text: 'TODO — primary source to be checked' }]}
   >
     <p>TODO — encounter prose. Real, cited account.</p>
   </EncounterCard>
@@ -151,9 +143,9 @@ export const rules = [
     id="Encounter 02 · TODO · TODO date"
     title="TODO — second encounter title"
     meta="TODO — second encounter witness / context"
-    verdict="documented"
-    verdictLabel="TODO Classification"
-    references={[{ text: 'TODO — primary source', href: 'https://example.com/' }]}
+    verdict="draft"
+    verdictLabel="Awaiting research"
+    references={[{ text: 'TODO — primary source to be checked' }]}
   >
     <p>TODO — second encounter prose.</p>
   </EncounterCard>

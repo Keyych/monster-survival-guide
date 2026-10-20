@@ -36,62 +36,45 @@ sightings:
       lon: 11.58,
       label: 'Bavarian Krampus tradition · documented since the 17th century',
     }
+recordKind: folklore
+recordNote: Working draft about folklore and tradition. Cultural context and sources still need
+  checking. The doodle is an imagined interpretation, not an authoritative cultural depiction.
+illustration:
+  src: /illustrations/krampus.png
+  alt: Loose ink doodle of a horned, bearded Krampus with a long tongue.
+dossier:
+  entity: Krampus
+  origin: Alpine Europe · seasonal
+  status: Draft — awaiting research
+  stamps:
+    - Folk Devil
+    - Alpine
+    - Yuletide
+  dangerLabel: YULE
+  dangerNote:
+    5/10 — Strictly seasonal — December 5th and 6th. Recipients are children behaving badly.
+    Adult bystander injury is rare but not unheard of in the modern Krampuslauf.
+rules:
+  - title: TODO — rule 1
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 2
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 3
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 4
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 5
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 6
+    body: Replace with a specific, actionable rule derived from the encounter record.
 ---
 
-import StampRow from '../../components/StampRow.astro';
-import DocMeta from '../../components/DocMeta.astro';
-import DocTitle from '../../components/DocTitle.astro';
-import DangerMeter from '../../components/DangerMeter.astro';
 import Section from '../../components/Section.astro';
-import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
 import EncounterCard from '../../components/EncounterCard.astro';
 import Outro from '../../components/Outro.astro';
 import MonsterMap from '../../components/MonsterMap.astro';
 import '../../styles/pages/_draft.css';
-
-export const rules = [
-  {
-    title: 'TODO — rule 1',
-    body: 'Replace with a specific, actionable rule derived from the encounter record.',
-  },
-  {
-    title: 'TODO — rule 2',
-    body: 'Replace with a specific, actionable rule derived from the encounter record.',
-  },
-  {
-    title: 'TODO — rule 3',
-    body: 'Replace with a specific, actionable rule derived from the encounter record.',
-  },
-  {
-    title: 'TODO — rule 4',
-    body: 'Replace with a specific, actionable rule derived from the encounter record.',
-  },
-  {
-    title: 'TODO — rule 5',
-    body: 'Replace with a specific, actionable rule derived from the encounter record.',
-  },
-  {
-    title: 'TODO — rule 6',
-    body: 'Replace with a specific, actionable rule derived from the encounter record.',
-  },
-];
-
-<StampRow red="Folk Devil" faded="Alpine" blue="Yuletide" />
-<DocMeta
-  rows={[
-    { label: 'ENTITY', value: 'Krampus' },
-    { label: 'ORIGIN', value: 'Alpine Europe · seasonal' },
-    { label: 'THREAT GUIDE TYPE', value: 'Identification · Behaviour · Survival Protocol' },
-    { label: 'STATUS', value: 'Draft — awaiting research' },
-  ]}
-/>
-<DocTitle subtitle={frontmatter.description}>Krampus</DocTitle>
-<DangerMeter
-  danger={frontmatter.danger}
-  label="YULE"
-  description="5/10 — Strictly seasonal — December 5th and 6th. Recipients are children behaving badly. Adult bystander injury is rare but not unheard of in the modern Krampuslauf."
-/>
 
 <Section heading="If You're Reading This">
   <p>
@@ -129,7 +112,12 @@ export const rules = [
 
 <Section heading="Six Rules That May Save Your Life">
   <p>TODO — short intro paragraph framing the rules.</p>
-  <SixRules rules={rules} />
+  <SixRules
+    rules={frontmatter.rules}
+    title={frontmatter.title}
+    number={frontmatter.number}
+    pocketHref={frontmatter.status === 'draft' ? `/drafts/krampus/pocket/` : `/pocket/krampus/`}
+  />
 </Section>
 
 <Section heading="Two Cases on the Record">
@@ -138,9 +126,9 @@ export const rules = [
     id="Encounter 01 · TODO · TODO date"
     title="TODO — encounter title"
     meta="TODO — encounter witness / context"
-    verdict="documented"
-    verdictLabel="TODO Classification"
-    references={[{ text: 'TODO — primary source', href: 'https://example.com/' }]}
+    verdict="draft"
+    verdictLabel="Awaiting research"
+    references={[{ text: 'TODO — primary source to be checked' }]}
   >
     <p>TODO — encounter prose. Real, cited account.</p>
   </EncounterCard>
@@ -148,9 +136,9 @@ export const rules = [
     id="Encounter 02 · TODO · TODO date"
     title="TODO — second encounter title"
     meta="TODO — second encounter witness / context"
-    verdict="documented"
-    verdictLabel="TODO Classification"
-    references={[{ text: 'TODO — primary source', href: 'https://example.com/' }]}
+    verdict="draft"
+    verdictLabel="Awaiting research"
+    references={[{ text: 'TODO — primary source to be checked' }]}
   >
     <p>TODO — second encounter prose.</p>
   </EncounterCard>

@@ -36,62 +36,44 @@ sightings:
       lon: 120.98,
       label: 'Philippine Coco tradition · Spanish colonial-era survival',
     }
+recordKind: folklore
+recordNote: Working draft about folklore and tradition. Cultural context and sources still need
+  checking. The doodle is an imagined interpretation, not an authoritative cultural depiction.
+illustration:
+  src: /illustrations/el-coco.png
+  alt: Loose ink doodle of an indistinct hooded figure holding the edge of its cloak.
+dossier:
+  entity: El Coco
+  origin: Iberian peninsula → Latin America
+  status: Draft — awaiting research
+  stamps:
+    - Iberian Lore
+    - Bedtime
+    - Hispanophone
+  dangerLabel: BEDTIME
+  dangerNote: 4/10 — Targets children. Documented as a behavioural lever ('sleep or El Coco comes');
+    claims of physical contact are rare in the modern record.
+rules:
+  - title: TODO — rule 1
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 2
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 3
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 4
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 5
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 6
+    body: Replace with a specific, actionable rule derived from the encounter record.
 ---
 
-import StampRow from '../../components/StampRow.astro';
-import DocMeta from '../../components/DocMeta.astro';
-import DocTitle from '../../components/DocTitle.astro';
-import DangerMeter from '../../components/DangerMeter.astro';
 import Section from '../../components/Section.astro';
-import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
 import EncounterCard from '../../components/EncounterCard.astro';
 import Outro from '../../components/Outro.astro';
 import MonsterMap from '../../components/MonsterMap.astro';
 import '../../styles/pages/_draft.css';
-
-export const rules = [
-  {
-    title: 'TODO — rule 1',
-    body: 'Replace with a specific, actionable rule derived from the encounter record.',
-  },
-  {
-    title: 'TODO — rule 2',
-    body: 'Replace with a specific, actionable rule derived from the encounter record.',
-  },
-  {
-    title: 'TODO — rule 3',
-    body: 'Replace with a specific, actionable rule derived from the encounter record.',
-  },
-  {
-    title: 'TODO — rule 4',
-    body: 'Replace with a specific, actionable rule derived from the encounter record.',
-  },
-  {
-    title: 'TODO — rule 5',
-    body: 'Replace with a specific, actionable rule derived from the encounter record.',
-  },
-  {
-    title: 'TODO — rule 6',
-    body: 'Replace with a specific, actionable rule derived from the encounter record.',
-  },
-];
-
-<StampRow red="Iberian Lore" faded="Bedtime" blue="Hispanophone" />
-<DocMeta
-  rows={[
-    { label: 'ENTITY', value: 'El Coco' },
-    { label: 'ORIGIN', value: 'Iberian peninsula → Latin America' },
-    { label: 'THREAT GUIDE TYPE', value: 'Identification · Behaviour · Survival Protocol' },
-    { label: 'STATUS', value: 'Draft — awaiting research' },
-  ]}
-/>
-<DocTitle subtitle={frontmatter.description}>El Coco</DocTitle>
-<DangerMeter
-  danger={frontmatter.danger}
-  label="BEDTIME"
-  description="4/10 — Targets children. Documented as a behavioural lever ('sleep or El Coco comes'); claims of physical contact are rare in the modern record."
-/>
 
 <Section heading="If You're Reading This">
   <p>
@@ -129,7 +111,12 @@ export const rules = [
 
 <Section heading="Six Rules That May Save Your Life">
   <p>TODO — short intro paragraph framing the rules.</p>
-  <SixRules rules={rules} />
+  <SixRules
+    rules={frontmatter.rules}
+    title={frontmatter.title}
+    number={frontmatter.number}
+    pocketHref={frontmatter.status === 'draft' ? `/drafts/el-coco/pocket/` : `/pocket/el-coco/`}
+  />
 </Section>
 
 <Section heading="Two Cases on the Record">
@@ -138,9 +125,9 @@ export const rules = [
     id="Encounter 01 · TODO · TODO date"
     title="TODO — encounter title"
     meta="TODO — encounter witness / context"
-    verdict="documented"
-    verdictLabel="TODO Classification"
-    references={[{ text: 'TODO — primary source', href: 'https://example.com/' }]}
+    verdict="draft"
+    verdictLabel="Awaiting research"
+    references={[{ text: 'TODO — primary source to be checked' }]}
   >
     <p>TODO — encounter prose. Real, cited account.</p>
   </EncounterCard>
@@ -148,9 +135,9 @@ export const rules = [
     id="Encounter 02 · TODO · TODO date"
     title="TODO — second encounter title"
     meta="TODO — second encounter witness / context"
-    verdict="documented"
-    verdictLabel="TODO Classification"
-    references={[{ text: 'TODO — primary source', href: 'https://example.com/' }]}
+    verdict="draft"
+    verdictLabel="Awaiting research"
+    references={[{ text: 'TODO — primary source to be checked' }]}
   >
     <p>TODO — second encounter prose.</p>
   </EncounterCard>

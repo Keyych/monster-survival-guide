@@ -36,62 +36,44 @@ sightings:
       lon: 29.62,
       label: "Secondary Mokele-Mbembe / 'Emela-ntouka' tradition cluster",
     }
+recordKind: reported
+recordNote: Working draft based on reported accounts and their later retellings. Sources and claims
+  still need checking; reports do not establish that the creature exists.
+illustration:
+  src: /illustrations/mokele-mbembe.png
+  alt: Loose ink doodle of an imagined long-necked river creature with a rounded back.
+dossier:
+  entity: Mokele-Mbembe
+  origin: Congo basin · Likouala-aux-Herbes region
+  status: Draft — awaiting research
+  stamps:
+    - Congo Basin
+    - Living Fossil
+    - Indigenous Lore
+  dangerLabel: LARGE
+  dangerNote: 7/10 — Reported by local hunters to attack canoes that enter its territory. Most
+    expeditions return without sighting.
+rules:
+  - title: TODO — rule 1
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 2
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 3
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 4
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 5
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 6
+    body: Replace with a specific, actionable rule derived from the encounter record.
 ---
 
-import StampRow from '../../components/StampRow.astro';
-import DocMeta from '../../components/DocMeta.astro';
-import DocTitle from '../../components/DocTitle.astro';
-import DangerMeter from '../../components/DangerMeter.astro';
 import Section from '../../components/Section.astro';
-import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
 import EncounterCard from '../../components/EncounterCard.astro';
 import Outro from '../../components/Outro.astro';
 import MonsterMap from '../../components/MonsterMap.astro';
 import '../../styles/pages/_draft.css';
-
-export const rules = [
-  {
-    title: 'TODO — rule 1',
-    body: 'Replace with a specific, actionable rule derived from the encounter record.',
-  },
-  {
-    title: 'TODO — rule 2',
-    body: 'Replace with a specific, actionable rule derived from the encounter record.',
-  },
-  {
-    title: 'TODO — rule 3',
-    body: 'Replace with a specific, actionable rule derived from the encounter record.',
-  },
-  {
-    title: 'TODO — rule 4',
-    body: 'Replace with a specific, actionable rule derived from the encounter record.',
-  },
-  {
-    title: 'TODO — rule 5',
-    body: 'Replace with a specific, actionable rule derived from the encounter record.',
-  },
-  {
-    title: 'TODO — rule 6',
-    body: 'Replace with a specific, actionable rule derived from the encounter record.',
-  },
-];
-
-<StampRow red="Congo Basin" faded="Living Fossil" blue="Indigenous Lore" />
-<DocMeta
-  rows={[
-    { label: 'ENTITY', value: 'Mokele-Mbembe' },
-    { label: 'ORIGIN', value: 'Congo basin · Likouala-aux-Herbes region' },
-    { label: 'THREAT GUIDE TYPE', value: 'Identification · Behaviour · Survival Protocol' },
-    { label: 'STATUS', value: 'Draft — awaiting research' },
-  ]}
-/>
-<DocTitle subtitle={frontmatter.description}>Mokele-Mbembe</DocTitle>
-<DangerMeter
-  danger={frontmatter.danger}
-  label="LARGE"
-  description="7/10 — Reported by local hunters to attack canoes that enter its territory. Most expeditions return without sighting."
-/>
 
 <Section heading="If You're Reading This">
   <p>
@@ -129,7 +111,14 @@ export const rules = [
 
 <Section heading="Six Rules That May Save Your Life">
   <p>TODO — short intro paragraph framing the rules.</p>
-  <SixRules rules={rules} />
+  <SixRules
+    rules={frontmatter.rules}
+    title={frontmatter.title}
+    number={frontmatter.number}
+    pocketHref={
+      frontmatter.status === 'draft' ? `/drafts/mokele-mbembe/pocket/` : `/pocket/mokele-mbembe/`
+    }
+  />
 </Section>
 
 <Section heading="Two Cases on the Record">
@@ -138,9 +127,9 @@ export const rules = [
     id="Encounter 01 · TODO · TODO date"
     title="TODO — encounter title"
     meta="TODO — encounter witness / context"
-    verdict="documented"
-    verdictLabel="TODO Classification"
-    references={[{ text: 'TODO — primary source', href: 'https://example.com/' }]}
+    verdict="draft"
+    verdictLabel="Awaiting research"
+    references={[{ text: 'TODO — primary source to be checked' }]}
   >
     <p>TODO — encounter prose. Real, cited account.</p>
   </EncounterCard>
@@ -148,9 +137,9 @@ export const rules = [
     id="Encounter 02 · TODO · TODO date"
     title="TODO — second encounter title"
     meta="TODO — second encounter witness / context"
-    verdict="documented"
-    verdictLabel="TODO Classification"
-    references={[{ text: 'TODO — primary source', href: 'https://example.com/' }]}
+    verdict="draft"
+    verdictLabel="Awaiting research"
+    references={[{ text: 'TODO — primary source to be checked' }]}
   >
     <p>TODO — second encounter prose.</p>
   </EncounterCard>

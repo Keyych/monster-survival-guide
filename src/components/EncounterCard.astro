@@ -9,25 +9,27 @@ interface Props {
   id: string;
   title: string;
   meta: string;
-  /** "verified" | "documented" | "firsthand" | "folklore" | "lore" | "cultural" */
-  verdict: 'verified' | 'documented' | 'firsthand' | 'folklore' | 'lore' | 'cultural';
+  /** "verified" | "documented" | "firsthand" | "folklore" | "lore" | "cultural" | "draft" */
+  verdict: 'verified' | 'documented' | 'firsthand' | 'folklore' | 'lore' | 'cultural' | 'draft';
   /** Text that appears in the verdict badge. */
   verdictLabel: string;
   references: Reference[];
 }
 const { id, title, meta, verdict, verdictLabel, references } = Astro.props;
 const sourceContext =
-  verdict === 'lore'
-    ? 'Constructed lore · fictional source text'
-    : verdict === 'cultural'
-      ? 'Cultural tradition · attributed account'
-      : verdict === 'folklore'
-        ? 'Folklore · unverified narrative'
-        : /self.report/i.test(verdictLabel)
-          ? 'Self-reported experience · not independently verified'
-          : verdict === 'firsthand'
-            ? 'Reported account · witness testimony'
-            : 'Documented event or report · does not verify the entity';
+  verdict === 'draft'
+    ? 'Draft placeholder · sources not yet checked'
+    : verdict === 'lore'
+      ? 'Constructed lore · fictional source text'
+      : verdict === 'cultural'
+        ? 'Cultural tradition · attributed account'
+        : verdict === 'folklore'
+          ? 'Folklore · unverified narrative'
+          : /self.report/i.test(verdictLabel)
+            ? 'Self-reported experience · not independently verified'
+            : verdict === 'firsthand'
+              ? 'Reported account · witness testimony'
+              : 'Documented event or report · does not verify the entity';
 ---
 
 <article class="encounter-card">

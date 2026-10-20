@@ -1,162 +1,139 @@
 ---
 import { getCollection } from 'astro:content';
 import FieldManual from '../../layouts/FieldManual.astro';
-import StampRow from '../../components/StampRow.astro';
-import DocMeta from '../../components/DocMeta.astro';
-import DocTitle from '../../components/DocTitle.astro';
-import Section from '../../components/Section.astro';
-import '../../styles/pages/_draft.css';
+import InkIllustration from '../../components/InkIllustration.astro';
+import { recordLabels } from '../../lib/entry-sections.ts';
+import '../../styles/pages/entries.css';
 
-// Drafts only. The public collection consumers all filter status === 'published'.
 const drafts = (await getCollection('monsters', ({ data }) => data.status === 'draft')).sort(
   (a, b) => parseInt(a.data.number, 10) - parseInt(b.data.number, 10),
 );
 ---
 
 <FieldManual
+  variant="index"
   title="Drafts (Internal)"
-  description="Internal drafts queue. Not linked anywhere. Not indexed."
+  description="Unpublished notebook entries. Text and sources are still being worked on."
   classification="monster survival guide  —  drafts  —  internal"
-  bottomBar="monster survival guide  ·  internal drafts queue  ·  not for public distribution"
+  bottomBar="monster survival guide  ·  unfinished notes  ·  not for public distribution"
+  status="Draft"
   noindex
 >
-  <StampRow red="Internal" faded="Drafts" blue="Not Public" />
-  <DocMeta
-    rows={[
-      { label: 'DOCUMENT TYPE', value: 'Editorial Drafts Queue (Internal)' },
-      { label: 'COUNT', value: `${drafts.length} entries awaiting research` },
-      { label: 'VISIBILITY', value: 'Hidden — noindex + nofollow + robots.txt disallow' },
-      { label: 'STATUS', value: 'Author preview only · do not link from public pages' },
-    ]}
-  />
-  <DocTitle
-    subtitle="Twenty scaffolded entries with researched frontmatter (real coordinates, classes, danger ratings) and TODO prose. Click any row to preview the full entry."
-  >
-    Drafts
-  </DocTitle>
-
-  <Section heading="How this page works">
-    <div class="field-note">
-      <p>
-        Every entry below has Zod-valid frontmatter — real coordinates, region, entry class, danger
-        rating, classification, tags, and bandColor — plus a body scaffold with the same section
-        structure the published entries use. The prose, the six rules, and the encounter cards are
-        all <code>TODO</code> placeholders.
-      </p>
-      <p>
-        These drafts are <strong>not</strong> on the live menu, sightings map, RSS feed, sitemap, or seasons
-        index. They are filtered out everywhere by the <code>status === 'published'</code>
-        check. The only way to reach them is this page or the per-draft preview URLs below. Robots are
-        blocked via <code>noindex,nofollow</code> on every draft page plus a <code
-          >Disallow: /drafts/</code
-        >
-        line in <code>robots.txt</code>.
-      </p>
-      <p>
-        To <strong>publish</strong> a draft: edit its frontmatter, set <code
-          >status: 'published'</code
-        >
-        (and optionally a future <code>publishDate:</code>), fill in the body prose, and commit. The
-        public menu / sightings / RSS / OG-image route all pick it up on the next deploy.
-      </p>
+  <header class="index-heading">
+    <div class="index-topline">
+      <span>Unfinished notebook</span><a href="/entries/">Published entries ↗</a>
     </div>
-  </Section>
-
-  <Section heading="All drafts (sorted by entry number)">
-    <div class="drafts-scroll" role="region" aria-label="Draft entries" tabindex="0">
-      <table class="format-table drafts-table">
-        <thead>
-          <tr>
-            <th scope="col">No.</th>
-            <th scope="col">Title</th>
-            <th scope="col">Class</th>
-            <th scope="col">Region</th>
-            <th scope="col">Danger</th>
-            <th scope="col">Pins</th>
-            <th scope="col">Preview</th>
-          </tr>
-        </thead>
-        <tbody>
-          {
-            drafts.map((d) => (
-              <tr>
-                <td>
-                  <code>{d.data.number}</code>
-                </td>
-                <td>
-                  <strong>{d.data.title}</strong>
-                  <div class="drafts-hook">{d.data.description}</div>
-                </td>
-                <td>{d.data.entryClass}</td>
-                <td>{d.data.region}</td>
-                <td>
-                  <span class="drafts-danger" data-danger={d.data.danger}>
-                    {d.data.danger}/10
-                  </span>
-                </td>
-                <td>{d.data.sightings.length}</td>
-                <td>
-                  <a class="drafts-preview-link" href={`/drafts/${d.id}/`}>
-                    Preview →
-                  </a>
-                </td>
-              </tr>
-            ))
-          }
-        </tbody>
-      </table>
-    </div>
-  </Section>
+    <h1>Still in the margins.</h1>
+    <p>{drafts.length} draft entries. Text, rules, and sources are still being worked on.</p>
+  </header>
+  <label class="filter-search" for="draft-search">
+    <span class="visually-hidden">Search draft entries</span>
+    <svg viewBox="0 0 24 24" aria-hidden="true" class="filter-search-icon"
+      ><circle cx="11" cy="11" r="6" fill="none" stroke="currentColor" stroke-width="2"
+      ></circle><path d="m15.5 15.5 4.5 4.5" stroke="currentColor" stroke-width="2"></path></svg
+    >
+    <input
+      id="draft-search"
+      type="search"
+      placeholder="Search unfinished notes…"
+      autocomplete="off"
+      data-draft-search
+    />
+    <button
+      type="button"
+      class="filter-search-clear"
+      data-draft-clear
+      aria-label="Clear search"
+      hidden>×</button
+    >
+  </label>
+  <div class="index-toolbar">
+    <details class="index-filters">
+      <summary>About these drafts</summary>
+      <p class="draft-guidance">
+        These notes and their pocket-guide previews are unpublished and excluded from the public
+        index, sitemap, and feeds. Complete the writing and check the sources before publishing.
+      </p>
+    </details>
+    <p class="index-count" role="status" aria-live="polite" data-draft-count>
+      {drafts.length} drafts
+    </p>
+  </div>
+  <p class="filter-empty" data-draft-empty hidden>No draft entries match this search.</p>
+  <h2 class="visually-hidden">All draft entries</h2>
+  <div class="entry-list">
+    {
+      drafts.map((entry) => (
+        <a
+          class="entry-card"
+          href={`/drafts/${entry.id}/`}
+          data-draft-card
+          data-search-text={[
+            entry.data.title,
+            entry.data.description,
+            entry.data.entryClass,
+            entry.data.region,
+            ...entry.data.tags,
+          ]
+            .join(' ')
+            .toLowerCase()}
+        >
+          <div class="entry-band" style={`background:${entry.data.bandColor}`} />
+          {entry.data.illustration && (
+            <figure class="index-study">
+              <InkIllustration src={entry.data.illustration.src} alt="" width={140} />
+            </figure>
+          )}
+          <div class="entry-body">
+            <div class="entry-label">
+              Draft {entry.data.number} · {entry.data.entryClass}
+            </div>
+            <h3 class="entry-title">{entry.data.title}</h3>
+            <div class="entry-desc">{entry.data.description}</div>
+            <div class="entry-summary">
+              <span>{entry.data.region}</span>
+              {entry.data.recordKind && <span>{recordLabels[entry.data.recordKind]}</span>}
+            </div>
+          </div>
+          <div class="entry-right">
+            <div class="entry-arrow">→</div>
+          </div>
+        </a>
+      ))
+    }
+  </div>
 </FieldManual>
-
 <style>
-  .drafts-scroll {
-    max-width: 100%;
-    overflow-x: auto;
-  }
-
-  .drafts-table th,
-  .drafts-table td {
-    font-size: 0.85rem;
-    line-height: 1.5;
-    vertical-align: top;
-  }
-
-  .drafts-hook {
-    font-family: 'Sorts Mill Goudy', Georgia, serif;
-    font-style: italic;
-    font-size: 0.85rem;
-    color: var(--faded);
-    margin-top: 4px;
-    line-height: 1.5;
-  }
-
-  .drafts-danger {
-    font-family: 'Anonymous Pro', monospace;
-    font-weight: 700;
-    color: var(--warn);
-  }
-
-  .drafts-preview-link {
-    font-family: 'Anonymous Pro', monospace;
-    font-size: 0.7rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--accent);
-    text-decoration: none;
-    white-space: nowrap;
-    border-bottom: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
-  }
-
-  .drafts-preview-link:hover,
-  .drafts-preview-link:focus-visible {
-    border-color: var(--accent);
-  }
-
-  code {
-    font-family: 'Anonymous Pro', monospace;
-    font-size: 0.85em;
-    background: color-mix(in srgb, var(--ink) 5%, transparent);
-    padding: 1px 4px;
+  .draft-guidance {
+    font-size: 0.9rem;
+    margin: 12px 0 0;
+    max-width: 50ch;
   }
 </style>
+<script>
+  const input = document.querySelector<HTMLInputElement>('[data-draft-search]');
+  const clear = document.querySelector<HTMLButtonElement>('[data-draft-clear]');
+  const cards = [...document.querySelectorAll<HTMLElement>('[data-draft-card]')];
+  const count = document.querySelector<HTMLElement>('[data-draft-count]');
+  const empty = document.querySelector<HTMLElement>('[data-draft-empty]');
+  function filter() {
+    const query = input?.value.trim().toLocaleLowerCase() ?? '';
+    let visible = 0;
+    for (const card of cards) {
+      card.hidden = !query.split(/\s+/).every((word) => card.dataset.searchText?.includes(word));
+      if (!card.hidden) visible++;
+    }
+    if (count)
+      count.textContent = query ? `${visible} of ${cards.length} drafts` : `${cards.length} drafts`;
+    if (clear) clear.hidden = !query;
+    if (empty) empty.hidden = visible > 0;
+  }
+  input?.addEventListener('input', filter);
+  clear?.addEventListener('click', () => {
+    if (input) {
+      input.value = '';
+      filter();
+      input.focus();
+    }
+  });
+</script>

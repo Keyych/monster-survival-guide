@@ -10,6 +10,8 @@ interface Props {
 }
 const { entry, stats } = Astro.props;
 const { data } = entry;
+const isDraft = data.status === 'draft';
+const pocketHref = isDraft ? `/drafts/${entry.id}/pocket/` : `/pocket/${entry.id}/`;
 ---
 
 <header class="entry-opening" id="entry-opening">
@@ -19,7 +21,8 @@ const { data } = entry;
       <h1 class="doc-title">{data.title}</h1>
       <p class="entry-reading-time">
         {stats.minutes} min read <span aria-hidden="true">·</span>
-        {stats.words.toLocaleString()} words
+        {stats.words.toLocaleString()}
+        {isDraft ? 'draft words' : 'words'}
       </p>
       <p class="doc-subtitle">{data.description}</p>
       <div class="entry-actions">
@@ -28,7 +31,7 @@ const { data } = entry;
         >
         {
           data.rules && (
-            <a class="pocket-link" href={`/pocket/${entry.id}/`}>
+            <a class="pocket-link" href={pocketHref}>
               Printable pocket guide ↗
             </a>
           )

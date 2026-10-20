@@ -40,62 +40,44 @@ sightings:
       year: 1904,
       label: 'Final widely-reported Spring-Heeled Jack appearance · the William Henry Street rooftop incident',
     }
+recordKind: reported
+recordNote: Working draft based on reported accounts and their later retellings. Sources and claims
+  still need checking; reports do not establish that the creature exists.
+illustration:
+  src: /illustrations/spring-heeled-jack.png
+  alt: Loose ink doodle of a sharp-faced Victorian figure with a high collar and swept-back cape.
+dossier:
+  entity: Spring-Heeled Jack
+  origin: Victorian London → Britain
+  status: Draft — awaiting research
+  stamps:
+    - Victorian
+    - Phantom Assailant
+    - London Press
+  dangerLabel: PHANTOM
+  dangerNote: 6/10 — Documented assaults on women and soldiers in Victorian press;
+    supernatural-seeming jumping reach. Active period 1837–1904.
+rules:
+  - title: TODO — rule 1
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 2
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 3
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 4
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 5
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 6
+    body: Replace with a specific, actionable rule derived from the encounter record.
 ---
 
-import StampRow from '../../components/StampRow.astro';
-import DocMeta from '../../components/DocMeta.astro';
-import DocTitle from '../../components/DocTitle.astro';
-import DangerMeter from '../../components/DangerMeter.astro';
 import Section from '../../components/Section.astro';
-import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
 import EncounterCard from '../../components/EncounterCard.astro';
 import Outro from '../../components/Outro.astro';
 import MonsterMap from '../../components/MonsterMap.astro';
 import '../../styles/pages/_draft.css';
-
-export const rules = [
-  {
-    title: 'TODO — rule 1',
-    body: 'Replace with a specific, actionable rule derived from the encounter record.',
-  },
-  {
-    title: 'TODO — rule 2',
-    body: 'Replace with a specific, actionable rule derived from the encounter record.',
-  },
-  {
-    title: 'TODO — rule 3',
-    body: 'Replace with a specific, actionable rule derived from the encounter record.',
-  },
-  {
-    title: 'TODO — rule 4',
-    body: 'Replace with a specific, actionable rule derived from the encounter record.',
-  },
-  {
-    title: 'TODO — rule 5',
-    body: 'Replace with a specific, actionable rule derived from the encounter record.',
-  },
-  {
-    title: 'TODO — rule 6',
-    body: 'Replace with a specific, actionable rule derived from the encounter record.',
-  },
-];
-
-<StampRow red="Victorian" faded="Phantom Assailant" blue="London Press" />
-<DocMeta
-  rows={[
-    { label: 'ENTITY', value: 'Spring-Heeled Jack' },
-    { label: 'ORIGIN', value: 'Victorian London → Britain' },
-    { label: 'THREAT GUIDE TYPE', value: 'Identification · Behaviour · Survival Protocol' },
-    { label: 'STATUS', value: 'Draft — awaiting research' },
-  ]}
-/>
-<DocTitle subtitle={frontmatter.description}>Spring-Heeled Jack</DocTitle>
-<DangerMeter
-  danger={frontmatter.danger}
-  label="PHANTOM"
-  description="6/10 — Documented assaults on women and soldiers in Victorian press; supernatural-seeming jumping reach. Active period 1837–1904."
-/>
 
 <Section heading="If You're Reading This">
   <p>
@@ -133,7 +115,16 @@ export const rules = [
 
 <Section heading="Six Rules That May Save Your Life">
   <p>TODO — short intro paragraph framing the rules.</p>
-  <SixRules rules={rules} />
+  <SixRules
+    rules={frontmatter.rules}
+    title={frontmatter.title}
+    number={frontmatter.number}
+    pocketHref={
+      frontmatter.status === 'draft'
+        ? `/drafts/spring-heeled-jack/pocket/`
+        : `/pocket/spring-heeled-jack/`
+    }
+  />
 </Section>
 
 <Section heading="Two Cases on the Record">
@@ -142,9 +133,9 @@ export const rules = [
     id="Encounter 01 · TODO · TODO date"
     title="TODO — encounter title"
     meta="TODO — encounter witness / context"
-    verdict="documented"
-    verdictLabel="TODO Classification"
-    references={[{ text: 'TODO — primary source', href: 'https://example.com/' }]}
+    verdict="draft"
+    verdictLabel="Awaiting research"
+    references={[{ text: 'TODO — primary source to be checked' }]}
   >
     <p>TODO — encounter prose. Real, cited account.</p>
   </EncounterCard>
@@ -152,9 +143,9 @@ export const rules = [
     id="Encounter 02 · TODO · TODO date"
     title="TODO — second encounter title"
     meta="TODO — second encounter witness / context"
-    verdict="documented"
-    verdictLabel="TODO Classification"
-    references={[{ text: 'TODO — primary source', href: 'https://example.com/' }]}
+    verdict="draft"
+    verdictLabel="Awaiting research"
+    references={[{ text: 'TODO — primary source to be checked' }]}
   >
     <p>TODO — second encounter prose.</p>
   </EncounterCard>
