@@ -28,6 +28,15 @@ export const site = {
 export const cloudflareAnalyticsToken: string | null = null;
 
 /**
+ * Cloudflare Turnstile site key (public) for the comment form's bot check.
+ * When non-null, the comment form renders the Turnstile widget and the
+ * comments Pages Function enforces it (requires TURNSTILE_SECRET in the Pages
+ * env). Leave `null` to disable. Create a widget at Cloudflare Dashboard →
+ * Turnstile. The site key is public; the secret is an env var, never here.
+ */
+export const turnstileSiteKey: string | null = null;
+
+/**
  * Contact details surfaced on the About page (and used as `mailto:` links).
  */
 export const contact: {

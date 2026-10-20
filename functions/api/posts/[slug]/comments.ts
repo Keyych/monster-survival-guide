@@ -13,6 +13,13 @@
 interface Env {
   COMMENTS_DB: D1Database;
   COMMENTS_REQUIRE_APPROVAL?: string;
+  /** Server secret for keyed IP hashing. When unset, falls back to plain
+   *  SHA-256 so the endpoint keeps working, but set it: an unsalted hash of an
+   *  IP is trivially reversible. */
+  IP_HASH_SECRET?: string;
+  /** Cloudflare Turnstile secret. When set, every POST must carry a valid
+   *  Turnstile token; when unset, the check is skipped. */
+  TURNSTILE_SECRET?: string;
 }
 
 interface CommentRow {
@@ -27,6 +34,8 @@ interface PostBody {
   body?: string;
   /** Honeypot: bots fill this; humans never see it. */
   website?: string;
+  /** Cloudflare Turnstile token from the widget (when enabled). */
+  turnstileToken?: string;
 }
 
 const MIN_BODY = 1;
@@ -90,6 +99,47 @@ async function sha256(input: string): Promise<string> {
     .join('');
 }
 
+async function hmacHex(secret: string, data: string): Promise<string> {
+  const key = await crypto.subtle.importKey(
+    'raw',
+    new TextEncoder().encode(secret),
+    { name: 'HMAC', hash: 'SHA-256' },
+    false,
+    ['sign'],
+  );
+  const sig = await crypto.subtle.sign('HMAC', key, new TextEncoder().encode(data));
+  return Array.from(new Uint8Array(sig))
+    .map((b) => b.toString(16).padStart(2, '0'))
+    .join('');
+}
+
+/** Keyed hash of the submitter IP — HMAC when a secret is configured, else a
+ *  plain digest. Used only for rate limiting; never stored in cleartext. */
+async function hashIp(ip: string, env: Env): Promise<string> {
+  return env.IP_HASH_SECRET ? hmacHex(env.IP_HASH_SECRET, ip) : sha256(ip);
+}
+
+/** Verify a Cloudflare Turnstile token. Returns true when verification is not
+ *  enabled (no secret) so the endpoint degrades gracefully. */
+async function verifyTurnstile(token: string | undefined, env: Env, ip: string): Promise<boolean> {
+  if (!env.TURNSTILE_SECRET) return true;
+  if (!token) return false;
+  const form = new FormData();
+  form.append('secret', env.TURNSTILE_SECRET);
+  form.append('response', token);
+  if (ip && ip !== '0.0.0.0') form.append('remoteip', ip);
+  try {
+    const res = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+      method: 'POST',
+      body: form,
+    });
+    const data = (await res.json()) as { success?: boolean };
+    return data.success === true;
+  } catch {
+    return false;
+  }
+}
+
 function isValidSlug(slug: string): boolean {
   if (!SLUG_RE.test(slug)) return false;
   return ALLOWED_SLUGS.has(slug);
@@ -128,6 +178,16 @@ export const onRequestPost: PagesFunction<Env> = async ({ params, env, request }
     return json({ ok: true, spam: true });
   }
 
+  const ip =
+    request.headers.get('cf-connecting-ip') ??
+    request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ??
+    '0.0.0.0';
+
+  // Bot check (no-op unless TURNSTILE_SECRET is configured).
+  if (!(await verifyTurnstile(payload.turnstileToken, env, ip))) {
+    return json({ error: 'verification failed — please try again' }, { status: 403 });
+  }
+
   const author = (payload.author ?? '').trim();
   const body = (payload.body ?? '').trim();
 
@@ -139,11 +199,7 @@ export const onRequestPost: PagesFunction<Env> = async ({ params, env, request }
   }
 
   // Hash the submitter's IP for rate limiting.
-  const ip =
-    request.headers.get('cf-connecting-ip') ??
-    request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ??
-    '0.0.0.0';
-  const ipHash = await sha256(ip);
+  const ipHash = await hashIp(ip, env);
 
   const windowStart = new Date(Date.now() - WINDOW_MS).toISOString().replace('T', ' ').slice(0, 19);
   const recent = await env.COMMENTS_DB.prepare(

@@ -9,6 +9,7 @@
  * Set COMMENTS_REQUIRE_APPROVAL=1 in the Pages env to gate every
  * comment behind moderation; pending comments don't appear in GET.
  */
+import { turnstileSiteKey } from '../config/site.ts';
 interface Props {
   /** URL slug for this post — used as the comment scope. */
   slug: string;
@@ -69,10 +70,21 @@ const { slug } = Astro.props;
       Website
       <input type="text" name="website" tabindex="-1" autocomplete="off" />
     </label>
+    {
+      turnstileSiteKey && (
+        <div class="cf-turnstile" data-sitekey={turnstileSiteKey} data-theme="auto" />
+      )
+    }
     <button type="submit" class="comments-submit" data-comments-submit> Post comment </button>
     <p class="comments-status" data-comments-status></p>
   </form>
 </section>
+
+{
+  turnstileSiteKey && (
+    <script is:inline async defer src="https://challenges.cloudflare.com/turnstile/v0/api.js" />
+  )
+}
 
 <style>
   .comments {
@@ -333,6 +345,7 @@ const { slug } = Astro.props;
       const author = String(formData.get('author') ?? '').trim();
       const body = String(formData.get('body') ?? '').trim();
       const website = String(formData.get('website') ?? '');
+      const turnstileToken = String(formData.get('cf-turnstile-response') ?? '');
 
       if (!author || !body) {
         status.dataset.state = 'error';
@@ -348,7 +361,7 @@ const { slug } = Astro.props;
         const res = await fetch(`/api/posts/${slug}/comments`, {
           method: 'POST',
           headers: { 'content-type': 'application/json' },
-          body: JSON.stringify({ author, body, website }),
+          body: JSON.stringify({ author, body, website, turnstileToken }),
         });
         const data = (await res.json()) as {
           ok?: boolean;
@@ -389,6 +402,8 @@ const { slug } = Astro.props;
           err instanceof Error ? err.message : 'Something went wrong. Try again in a moment.';
       } finally {
         submit.disabled = false;
+        // Turnstile tokens are single-use; reset so the next post gets a fresh one.
+        (window as unknown as { turnstile?: { reset: () => void } }).turnstile?.reset();
       }
     });
 
