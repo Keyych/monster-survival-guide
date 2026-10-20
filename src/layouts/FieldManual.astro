@@ -94,6 +94,13 @@ const jsonLd = article
     }
     <meta name="generator" content={Astro.generator} />
 
+    {/* Google AdSense */}
+    <script
+      is:inline
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8050001391076027"
+      crossorigin="anonymous"></script>
+
     {/* Open Graph */}
     <meta property="og:type" content={article ? 'article' : 'website'} />
     <meta property="og:title" content={fullTitle} />
