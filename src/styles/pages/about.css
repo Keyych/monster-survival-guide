@@ -36,6 +36,8 @@
   color: var(--accent);
   text-decoration: none;
   border-bottom: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
+  /* Long emails / repo URLs must wrap rather than overflow narrow screens. */
+  overflow-wrap: anywhere;
 }
 
 .contact-list a:hover,
