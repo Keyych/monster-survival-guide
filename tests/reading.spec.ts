@@ -23,7 +23,9 @@ test('search combines with danger filters and reset restores the archive', async
   await expect(page.locator('[data-filter-empty]')).toBeVisible();
   await page.getByRole('button', { name: 'Reset', exact: true }).click();
   await expect(page.locator('[data-card]:visible')).toHaveCount(publishedCount);
-  await expect(page.getByRole('status')).toHaveText(`${publishedCount} of ${publishedCount} entries`);
+  await expect(page.getByRole('status')).toHaveText(
+    `${publishedCount} of ${publishedCount} entries`,
+  );
 });
 
 test('each entry has working contents, an illustration, and the same six rules in print', async ({
