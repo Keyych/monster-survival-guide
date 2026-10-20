@@ -36,12 +36,15 @@ sightings:
       lon: 130.02,
       label: 'Kyushu kappa tradition cluster (recorded in Kunio Yanagita ethnography)',
     }
+dossier:
+  entity: 'The Kappa'
+  origin: 'Japan · river systems'
+  status: 'Draft — awaiting research'
+  stamps: ['Yōkai', 'River Spirit', 'Edo Tradition']
+  dangerLabel: 'WATER YŌKAI'
+  dangerNote: '5/10 — Documented to drag the inattentive into rivers; reportedly polite if you bow back.'
 ---
 
-import StampRow from '../../components/StampRow.astro';
-import DocMeta from '../../components/DocMeta.astro';
-import DocTitle from '../../components/DocTitle.astro';
-import DangerMeter from '../../components/DangerMeter.astro';
 import Section from '../../components/Section.astro';
 import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
@@ -76,22 +79,6 @@ export const rules = [
     body: 'Replace with a specific, actionable rule derived from the encounter record.',
   },
 ];
-
-<StampRow red="Yōkai" faded="River Spirit" blue="Edo Tradition" />
-<DocMeta
-  rows={[
-    { label: 'ENTITY', value: 'The Kappa' },
-    { label: 'ORIGIN', value: 'Japan · river systems' },
-    { label: 'THREAT GUIDE TYPE', value: 'Identification · Behaviour · Survival Protocol' },
-    { label: 'STATUS', value: 'Draft — awaiting research' },
-  ]}
-/>
-<DocTitle subtitle={frontmatter.description}>The Kappa</DocTitle>
-<DangerMeter
-  danger={frontmatter.danger}
-  label="WATER YŌKAI"
-  description="5/10 — Documented to drag the inattentive into rivers; reportedly polite if you bow back."
-/>
 
 <Section heading="If You're Reading This">
   <p>

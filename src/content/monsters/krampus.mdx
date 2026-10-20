@@ -36,12 +36,15 @@ sightings:
       lon: 11.58,
       label: 'Bavarian Krampus tradition · documented since the 17th century',
     }
+dossier:
+  entity: 'Krampus'
+  origin: 'Alpine Europe · seasonal'
+  status: 'Draft — awaiting research'
+  stamps: ['Folk Devil', 'Alpine', 'Yuletide']
+  dangerLabel: 'YULE'
+  dangerNote: '5/10 — Strictly seasonal — December 5th and 6th. Recipients are children behaving badly. Adult bystander injury is rare but not unheard of in the modern Krampuslauf.'
 ---
 
-import StampRow from '../../components/StampRow.astro';
-import DocMeta from '../../components/DocMeta.astro';
-import DocTitle from '../../components/DocTitle.astro';
-import DangerMeter from '../../components/DangerMeter.astro';
 import Section from '../../components/Section.astro';
 import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
@@ -76,22 +79,6 @@ export const rules = [
     body: 'Replace with a specific, actionable rule derived from the encounter record.',
   },
 ];
-
-<StampRow red="Folk Devil" faded="Alpine" blue="Yuletide" />
-<DocMeta
-  rows={[
-    { label: 'ENTITY', value: 'Krampus' },
-    { label: 'ORIGIN', value: 'Alpine Europe · seasonal' },
-    { label: 'THREAT GUIDE TYPE', value: 'Identification · Behaviour · Survival Protocol' },
-    { label: 'STATUS', value: 'Draft — awaiting research' },
-  ]}
-/>
-<DocTitle subtitle={frontmatter.description}>Krampus</DocTitle>
-<DangerMeter
-  danger={frontmatter.danger}
-  label="YULE"
-  description="5/10 — Strictly seasonal — December 5th and 6th. Recipients are children behaving badly. Adult bystander injury is rare but not unheard of in the modern Krampuslauf."
-/>
 
 <Section heading="If You're Reading This">
   <p>

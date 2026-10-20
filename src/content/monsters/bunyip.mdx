@@ -36,12 +36,15 @@ sightings:
       lon: 132.3,
       label: 'Warlpiri tradition of the kurdaitcha-associated waterhole-spirit',
     }
+dossier:
+  entity: 'The Bunyip'
+  origin: 'Australia · wetlands & waterholes'
+  status: 'Draft — awaiting research'
+  stamps: ['Waterhole', 'Aboriginal Lore', 'Continental Tradition']
+  dangerLabel: 'WATERHOLE'
+  dangerNote: '7/10 — Aboriginal tradition consistently warns against approaching standing water it inhabits. Reported attacks documented in 19th-century settler accounts.'
 ---
 
-import StampRow from '../../components/StampRow.astro';
-import DocMeta from '../../components/DocMeta.astro';
-import DocTitle from '../../components/DocTitle.astro';
-import DangerMeter from '../../components/DangerMeter.astro';
 import Section from '../../components/Section.astro';
 import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
@@ -76,22 +79,6 @@ export const rules = [
     body: 'Replace with a specific, actionable rule derived from the encounter record.',
   },
 ];
-
-<StampRow red="Waterhole" faded="Aboriginal Lore" blue="Continental Tradition" />
-<DocMeta
-  rows={[
-    { label: 'ENTITY', value: 'The Bunyip' },
-    { label: 'ORIGIN', value: 'Australia · wetlands & waterholes' },
-    { label: 'THREAT GUIDE TYPE', value: 'Identification · Behaviour · Survival Protocol' },
-    { label: 'STATUS', value: 'Draft — awaiting research' },
-  ]}
-/>
-<DocTitle subtitle={frontmatter.description}>The Bunyip</DocTitle>
-<DangerMeter
-  danger={frontmatter.danger}
-  label="WATERHOLE"
-  description="7/10 — Aboriginal tradition consistently warns against approaching standing water it inhabits. Reported attacks documented in 19th-century settler accounts."
-/>
 
 <Section heading="If You're Reading This">
   <p>

@@ -30,12 +30,15 @@ sightings:
       lon: 113.27,
       label: 'Southern Chinese funerary traditions where the Jiangshi was an active part of folk practice',
     }
+dossier:
+  entity: 'The Jiangshi'
+  origin: 'China · Hong Kong cinematic spread'
+  status: 'Draft — awaiting research'
+  stamps: ['Hopping Corpse', 'Qing Dynasty', 'Taoist Lore']
+  dangerLabel: 'REANIMATE'
+  dangerNote: '7/10 — Reanimate corpse · siphons qi · neutralised by Taoist seals.'
 ---
 
-import StampRow from '../../components/StampRow.astro';
-import DocMeta from '../../components/DocMeta.astro';
-import DocTitle from '../../components/DocTitle.astro';
-import DangerMeter from '../../components/DangerMeter.astro';
 import Section from '../../components/Section.astro';
 import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
@@ -70,22 +73,6 @@ export const rules = [
     body: 'Replace with a specific, actionable rule derived from the encounter record.',
   },
 ];
-
-<StampRow red="Hopping Corpse" faded="Qing Dynasty" blue="Taoist Lore" />
-<DocMeta
-  rows={[
-    { label: 'ENTITY', value: 'The Jiangshi' },
-    { label: 'ORIGIN', value: 'China · Hong Kong cinematic spread' },
-    { label: 'THREAT GUIDE TYPE', value: 'Identification · Behaviour · Survival Protocol' },
-    { label: 'STATUS', value: 'Draft — awaiting research' },
-  ]}
-/>
-<DocTitle subtitle={frontmatter.description}>The Jiangshi</DocTitle>
-<DangerMeter
-  danger={frontmatter.danger}
-  label="REANIMATE"
-  description="7/10 — Reanimate corpse · siphons qi · neutralised by Taoist seals."
-/>
 
 <Section heading="If You're Reading This">
   <p>

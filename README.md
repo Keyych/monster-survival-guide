@@ -143,7 +143,7 @@ playwright.config.ts            # E2E config
 
 ### Illustrated entries and pocket guides
 
-Published entries use the shared `EntryHeader` and `EntryNavigation` components.
+Published entries and all draft previews use the shared `EntryHeader` and `EntryNavigation` components.
 Keep a single notebook column, quiet links in the page flow, and circled rule
 numbers in the margin. The contents note opens on demand; it does not stay fixed
 beside or above the prose.
@@ -163,8 +163,10 @@ interrupted or throttled animations.
 
 Copy the `illustration`, `recordKind`, `recordNote`, `dossier`, and `rules`
 frontmatter from an existing published entry, then replace its values. Do not
-repeat the title or dossier in the MDX body. Drafts with their older inline
-headers remain supported.
+repeat the title or dossier in the MDX body. Drafts use the same dossier frontmatter and notebook reading styles, with a draft notice
+and a return link to the drafts queue. Their placeholder text remains unchanged;
+they stay excluded from public indexes. Headers without artwork use the full text
+width, and draft previews do not link to published pocket guides.
 
 - **Artwork:** put a transparent PNG in `src/assets/illustrations/<slug>.png` and set
   `illustration.src` to `/illustrations/<slug>.png`. Use loose monochrome ink

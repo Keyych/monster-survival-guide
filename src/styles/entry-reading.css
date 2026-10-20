@@ -29,6 +29,9 @@
   gap: 16px;
   margin: 28px 0 12px;
 }
+.entry-hero--text-only {
+  grid-template-columns: minmax(0, 1fr);
+}
 .entry-heading .doc-title {
   font-family: 'Sorts Mill Goudy', Georgia, serif;
   font-weight: 400;

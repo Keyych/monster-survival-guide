@@ -1,7 +1,11 @@
 ---
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 import FieldManual from '../../layouts/FieldManual.astro';
-import BackLink from '../../components/BackLink.astro';
+import EntryHeader from '../../components/EntryHeader.astro';
+import EntryNavigation from '../../components/EntryNavigation.astro';
+import { entrySections } from '../../lib/entry-sections.ts';
+import { readingStats } from '../../lib/reading-time.ts';
+import '../../styles/entry-reading.css';
 
 export async function getStaticPaths() {
   // Only drafts — published entries already render at /<slug>/.
@@ -18,9 +22,12 @@ interface Props {
 const { entry } = Astro.props;
 const { Content } = await render(entry);
 const data = entry.data;
+const stats = readingStats(entry.body ?? '');
+const sections = entrySections(entry.body ?? '');
 ---
 
 <FieldManual
+  variant="entry"
   title={`DRAFT — ${data.title}`}
   description={`Internal draft preview: ${data.description}`}
   classification={`draft preview  —  ${data.title.toLowerCase()}  —  not published`}
@@ -28,16 +35,17 @@ const data = entry.data;
   status="Draft"
   noindex
 >
-  <BackLink href="/drafts/" label="Back to drafts queue" />
-
-  <div class="draft-banner" role="alert">
-    <strong>DRAFT — not published.</strong>
-    This entry has scaffolded structure and frontmatter only. Body prose, six rules, and encounter cards
-    are placeholder. Filtered out of every public page (menu, sightings map, RSS, sitemap, seasons). Not
-    indexed.
-  </div>
-
-  <Content />
+  <article class="entry-content">
+    <a class="entry-back" href="/drafts/">← Back to drafts queue</a>
+    <aside class="draft-banner" aria-label="Draft status">
+      <strong>Draft — awaiting research.</strong>
+      Prose, rules, and encounter records are placeholders. This preview is excluded from public indexes
+      and search engines.
+    </aside>
+    <EntryHeader entry={entry} stats={stats} />
+    <EntryNavigation sections={sections} />
+    <Content />
+  </article>
 </FieldManual>
 
 <style>

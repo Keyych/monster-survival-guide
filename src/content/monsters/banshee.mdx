@@ -36,12 +36,15 @@ sightings:
       lon: -9.51,
       label: "O'Connor Kerry tradition · 19th-century folkloric record",
     }
+dossier:
+  entity: 'The Banshee'
+  origin: 'Ireland · ancestral lands'
+  status: 'Draft — awaiting research'
+  stamps: ['Celtic Omen', 'Ireland', 'Family Lineage']
+  dangerLabel: 'OMEN'
+  dangerNote: '4/10 — Does not strike. Heralds. The danger is what follows, not the herald.'
 ---
 
-import StampRow from '../../components/StampRow.astro';
-import DocMeta from '../../components/DocMeta.astro';
-import DocTitle from '../../components/DocTitle.astro';
-import DangerMeter from '../../components/DangerMeter.astro';
 import Section from '../../components/Section.astro';
 import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
@@ -76,22 +79,6 @@ export const rules = [
     body: 'Replace with a specific, actionable rule derived from the encounter record.',
   },
 ];
-
-<StampRow red="Celtic Omen" faded="Ireland" blue="Family Lineage" />
-<DocMeta
-  rows={[
-    { label: 'ENTITY', value: 'The Banshee' },
-    { label: 'ORIGIN', value: 'Ireland · ancestral lands' },
-    { label: 'THREAT GUIDE TYPE', value: 'Identification · Behaviour · Survival Protocol' },
-    { label: 'STATUS', value: 'Draft — awaiting research' },
-  ]}
-/>
-<DocTitle subtitle={frontmatter.description}>The Banshee</DocTitle>
-<DangerMeter
-  danger={frontmatter.danger}
-  label="OMEN"
-  description="4/10 — Does not strike. Heralds. The danger is what follows, not the herald."
-/>
 
 <Section heading="If You're Reading This">
   <p>

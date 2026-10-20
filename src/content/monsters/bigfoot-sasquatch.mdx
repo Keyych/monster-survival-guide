@@ -39,12 +39,15 @@ sightings:
       lon: -124.5,
       label: "Sasq'ets / Sasquatch — the etymology and the originating tradition",
     }
+dossier:
+  entity: 'Bigfoot'
+  origin: 'Pacific Northwest, North America'
+  status: 'Draft — awaiting research'
+  stamps: ['Forest Giant', 'Pacific NW', 'Bipedal Cryptid']
+  dangerLabel: 'FOREST'
+  dangerNote: '5/10 — Avoidant by default. Reported displays of force when approached. Stay out of the deep woods alone.'
 ---
 
-import StampRow from '../../components/StampRow.astro';
-import DocMeta from '../../components/DocMeta.astro';
-import DocTitle from '../../components/DocTitle.astro';
-import DangerMeter from '../../components/DangerMeter.astro';
 import Section from '../../components/Section.astro';
 import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
@@ -79,22 +82,6 @@ export const rules = [
     body: 'Replace with a specific, actionable rule derived from the encounter record.',
   },
 ];
-
-<StampRow red="Forest Giant" faded="Pacific NW" blue="Bipedal Cryptid" />
-<DocMeta
-  rows={[
-    { label: 'ENTITY', value: 'Bigfoot' },
-    { label: 'ORIGIN', value: 'Pacific Northwest, North America' },
-    { label: 'THREAT GUIDE TYPE', value: 'Identification · Behaviour · Survival Protocol' },
-    { label: 'STATUS', value: 'Draft — awaiting research' },
-  ]}
-/>
-<DocTitle subtitle={frontmatter.description}>Bigfoot</DocTitle>
-<DangerMeter
-  danger={frontmatter.danger}
-  label="FOREST"
-  description="5/10 — Avoidant by default. Reported displays of force when approached. Stay out of the deep woods alone."
-/>
 
 <Section heading="If You're Reading This">
   <p>

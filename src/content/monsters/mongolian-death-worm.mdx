@@ -30,12 +30,15 @@ sightings:
       lon: 99.75,
       label: "Czech cryptozoologist Ivan Mackerle's 1990s expeditions concentrate here",
     }
+dossier:
+  entity: 'The Mongolian Death Worm'
+  origin: 'Gobi Desert, Mongolia'
+  status: 'Draft — awaiting research'
+  stamps: ['Desert Predator', 'Gobi', 'Mongolian Lore']
+  dangerLabel: 'DESERT'
+  dangerNote: '8/10 — Reported electrical / venomous discharge. Survival rate in close encounters is low in the Mongolian oral record.'
 ---
 
-import StampRow from '../../components/StampRow.astro';
-import DocMeta from '../../components/DocMeta.astro';
-import DocTitle from '../../components/DocTitle.astro';
-import DangerMeter from '../../components/DangerMeter.astro';
 import Section from '../../components/Section.astro';
 import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
@@ -70,22 +73,6 @@ export const rules = [
     body: 'Replace with a specific, actionable rule derived from the encounter record.',
   },
 ];
-
-<StampRow red="Desert Predator" faded="Gobi" blue="Mongolian Lore" />
-<DocMeta
-  rows={[
-    { label: 'ENTITY', value: 'The Mongolian Death Worm' },
-    { label: 'ORIGIN', value: 'Gobi Desert, Mongolia' },
-    { label: 'THREAT GUIDE TYPE', value: 'Identification · Behaviour · Survival Protocol' },
-    { label: 'STATUS', value: 'Draft — awaiting research' },
-  ]}
-/>
-<DocTitle subtitle={frontmatter.description}>The Mongolian Death Worm</DocTitle>
-<DangerMeter
-  danger={frontmatter.danger}
-  label="DESERT"
-  description="8/10 — Reported electrical / venomous discharge. Survival rate in close encounters is low in the Mongolian oral record."
-/>
 
 <Section heading="If You're Reading This">
   <p>

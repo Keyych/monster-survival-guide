@@ -40,12 +40,15 @@ sightings:
       year: 1904,
       label: 'Final widely-reported Spring-Heeled Jack appearance · the William Henry Street rooftop incident',
     }
+dossier:
+  entity: 'Spring-Heeled Jack'
+  origin: 'Victorian London → Britain'
+  status: 'Draft — awaiting research'
+  stamps: ['Victorian', 'Phantom Assailant', 'London Press']
+  dangerLabel: 'PHANTOM'
+  dangerNote: '6/10 — Documented assaults on women and soldiers in Victorian press; supernatural-seeming jumping reach. Active period 1837–1904.'
 ---
 
-import StampRow from '../../components/StampRow.astro';
-import DocMeta from '../../components/DocMeta.astro';
-import DocTitle from '../../components/DocTitle.astro';
-import DangerMeter from '../../components/DangerMeter.astro';
 import Section from '../../components/Section.astro';
 import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
@@ -80,22 +83,6 @@ export const rules = [
     body: 'Replace with a specific, actionable rule derived from the encounter record.',
   },
 ];
-
-<StampRow red="Victorian" faded="Phantom Assailant" blue="London Press" />
-<DocMeta
-  rows={[
-    { label: 'ENTITY', value: 'Spring-Heeled Jack' },
-    { label: 'ORIGIN', value: 'Victorian London → Britain' },
-    { label: 'THREAT GUIDE TYPE', value: 'Identification · Behaviour · Survival Protocol' },
-    { label: 'STATUS', value: 'Draft — awaiting research' },
-  ]}
-/>
-<DocTitle subtitle={frontmatter.description}>Spring-Heeled Jack</DocTitle>
-<DangerMeter
-  danger={frontmatter.danger}
-  label="PHANTOM"
-  description="6/10 — Documented assaults on women and soldiers in Victorian press; supernatural-seeming jumping reach. Active period 1837–1904."
-/>
 
 <Section heading="If You're Reading This">
   <p>

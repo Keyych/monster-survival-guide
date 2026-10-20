@@ -38,12 +38,15 @@ sightings:
       year: 1925,
       label: 'A. N. Tombazi Royal Geographical Society sighting',
     }
+dossier:
+  entity: 'The Yeti'
+  origin: 'Himalayas, Nepal & Tibet'
+  status: 'Draft — awaiting research'
+  stamps: ['Alpine Apex', 'Sherpa Lore', 'Himalayan']
+  dangerLabel: 'ALPINE'
+  dangerNote: '7/10 — Reports of attacks on livestock; rare on humans. The altitude is more dangerous than the creature.'
 ---
 
-import StampRow from '../../components/StampRow.astro';
-import DocMeta from '../../components/DocMeta.astro';
-import DocTitle from '../../components/DocTitle.astro';
-import DangerMeter from '../../components/DangerMeter.astro';
 import Section from '../../components/Section.astro';
 import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
@@ -78,22 +81,6 @@ export const rules = [
     body: 'Replace with a specific, actionable rule derived from the encounter record.',
   },
 ];
-
-<StampRow red="Alpine Apex" faded="Sherpa Lore" blue="Himalayan" />
-<DocMeta
-  rows={[
-    { label: 'ENTITY', value: 'The Yeti' },
-    { label: 'ORIGIN', value: 'Himalayas, Nepal & Tibet' },
-    { label: 'THREAT GUIDE TYPE', value: 'Identification · Behaviour · Survival Protocol' },
-    { label: 'STATUS', value: 'Draft — awaiting research' },
-  ]}
-/>
-<DocTitle subtitle={frontmatter.description}>The Yeti</DocTitle>
-<DangerMeter
-  danger={frontmatter.danger}
-  label="ALPINE"
-  description="7/10 — Reports of attacks on livestock; rare on humans. The altitude is more dangerous than the creature."
-/>
 
 <Section heading="If You're Reading This">
   <p>

@@ -36,12 +36,15 @@ sightings:
       lon: 148.32,
       label: "Aboriginal Ngarigo tradition · the doolagah / 'great hairy man'",
     }
+dossier:
+  entity: 'The Yowie'
+  origin: 'Eastern Australian forests'
+  status: 'Draft — awaiting research'
+  stamps: ['Australian', 'Eastern Forests', 'Aboriginal Lore']
+  dangerLabel: 'FOREST'
+  dangerNote: '5/10 — Avoidant. Significant size advantage. Reported in densely forested ranges; very few violent encounters.'
 ---
 
-import StampRow from '../../components/StampRow.astro';
-import DocMeta from '../../components/DocMeta.astro';
-import DocTitle from '../../components/DocTitle.astro';
-import DangerMeter from '../../components/DangerMeter.astro';
 import Section from '../../components/Section.astro';
 import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
@@ -76,22 +79,6 @@ export const rules = [
     body: 'Replace with a specific, actionable rule derived from the encounter record.',
   },
 ];
-
-<StampRow red="Australian" faded="Eastern Forests" blue="Aboriginal Lore" />
-<DocMeta
-  rows={[
-    { label: 'ENTITY', value: 'The Yowie' },
-    { label: 'ORIGIN', value: 'Eastern Australian forests' },
-    { label: 'THREAT GUIDE TYPE', value: 'Identification · Behaviour · Survival Protocol' },
-    { label: 'STATUS', value: 'Draft — awaiting research' },
-  ]}
-/>
-<DocTitle subtitle={frontmatter.description}>The Yowie</DocTitle>
-<DangerMeter
-  danger={frontmatter.danger}
-  label="FOREST"
-  description="5/10 — Avoidant. Significant size advantage. Reported in densely forested ranges; very few violent encounters."
-/>
 
 <Section heading="If You're Reading This">
   <p>

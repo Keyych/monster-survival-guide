@@ -33,12 +33,15 @@ sightings:
       year: 1952,
       label: 'Secondary 1952 Frametown sighting — same week, ~20 miles south',
     }
+dossier:
+  entity: 'The Flatwoods Monster'
+  origin: 'Braxton County, West Virginia · 1952'
+  status: 'Draft — awaiting research'
+  stamps: ['1952', 'Braxton County', 'UFO Crossover']
+  dangerLabel: 'VISITOR'
+  dangerNote: '6/10 — Single documented incident. Multiple witnesses reported physical symptoms after exposure (nausea, irritated eyes).'
 ---
 
-import StampRow from '../../components/StampRow.astro';
-import DocMeta from '../../components/DocMeta.astro';
-import DocTitle from '../../components/DocTitle.astro';
-import DangerMeter from '../../components/DangerMeter.astro';
 import Section from '../../components/Section.astro';
 import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
@@ -73,22 +76,6 @@ export const rules = [
     body: 'Replace with a specific, actionable rule derived from the encounter record.',
   },
 ];
-
-<StampRow red="1952" faded="Braxton County" blue="UFO Crossover" />
-<DocMeta
-  rows={[
-    { label: 'ENTITY', value: 'The Flatwoods Monster' },
-    { label: 'ORIGIN', value: 'Braxton County, West Virginia · 1952' },
-    { label: 'THREAT GUIDE TYPE', value: 'Identification · Behaviour · Survival Protocol' },
-    { label: 'STATUS', value: 'Draft — awaiting research' },
-  ]}
-/>
-<DocTitle subtitle={frontmatter.description}>The Flatwoods Monster</DocTitle>
-<DangerMeter
-  danger={frontmatter.danger}
-  label="VISITOR"
-  description="6/10 — Single documented incident. Multiple witnesses reported physical symptoms after exposure (nausea, irritated eyes)."
-/>
 
 <Section heading="If You're Reading This">
   <p>

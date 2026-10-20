@@ -36,12 +36,15 @@ sightings:
       lon: 29.62,
       label: "Secondary Mokele-Mbembe / 'Emela-ntouka' tradition cluster",
     }
+dossier:
+  entity: 'Mokele-Mbembe'
+  origin: 'Congo basin · Likouala-aux-Herbes region'
+  status: 'Draft — awaiting research'
+  stamps: ['Congo Basin', 'Living Fossil', 'Indigenous Lore']
+  dangerLabel: 'LARGE'
+  dangerNote: '7/10 — Reported by local hunters to attack canoes that enter its territory. Most expeditions return without sighting.'
 ---
 
-import StampRow from '../../components/StampRow.astro';
-import DocMeta from '../../components/DocMeta.astro';
-import DocTitle from '../../components/DocTitle.astro';
-import DangerMeter from '../../components/DangerMeter.astro';
 import Section from '../../components/Section.astro';
 import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
@@ -76,22 +79,6 @@ export const rules = [
     body: 'Replace with a specific, actionable rule derived from the encounter record.',
   },
 ];
-
-<StampRow red="Congo Basin" faded="Living Fossil" blue="Indigenous Lore" />
-<DocMeta
-  rows={[
-    { label: 'ENTITY', value: 'Mokele-Mbembe' },
-    { label: 'ORIGIN', value: 'Congo basin · Likouala-aux-Herbes region' },
-    { label: 'THREAT GUIDE TYPE', value: 'Identification · Behaviour · Survival Protocol' },
-    { label: 'STATUS', value: 'Draft — awaiting research' },
-  ]}
-/>
-<DocTitle subtitle={frontmatter.description}>Mokele-Mbembe</DocTitle>
-<DangerMeter
-  danger={frontmatter.danger}
-  label="LARGE"
-  description="7/10 — Reported by local hunters to attack canoes that enter its territory. Most expeditions return without sighting."
-/>
 
 <Section heading="If You're Reading This">
   <p>

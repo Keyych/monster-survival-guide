@@ -36,12 +36,15 @@ sightings:
       lon: -91.83,
       label: '18th-century French-colonial loup-garou tradition arrives here',
     }
+dossier:
+  entity: 'The Rougarou'
+  origin: 'Cajun Louisiana · the bayous'
+  status: 'Draft — awaiting research'
+  stamps: ['Bayou Threat', 'Louisiana', 'Cajun Lore']
+  dangerLabel: 'BAYOU'
+  dangerNote: '6/10 — Wolf-headed, human-bodied. Documented attacks on livestock and a few on humans. Salt and Catholic rite recur as counters in the lore.'
 ---
 
-import StampRow from '../../components/StampRow.astro';
-import DocMeta from '../../components/DocMeta.astro';
-import DocTitle from '../../components/DocTitle.astro';
-import DangerMeter from '../../components/DangerMeter.astro';
 import Section from '../../components/Section.astro';
 import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
@@ -76,22 +79,6 @@ export const rules = [
     body: 'Replace with a specific, actionable rule derived from the encounter record.',
   },
 ];
-
-<StampRow red="Bayou Threat" faded="Louisiana" blue="Cajun Lore" />
-<DocMeta
-  rows={[
-    { label: 'ENTITY', value: 'The Rougarou' },
-    { label: 'ORIGIN', value: 'Cajun Louisiana · the bayous' },
-    { label: 'THREAT GUIDE TYPE', value: 'Identification · Behaviour · Survival Protocol' },
-    { label: 'STATUS', value: 'Draft — awaiting research' },
-  ]}
-/>
-<DocTitle subtitle={frontmatter.description}>The Rougarou</DocTitle>
-<DangerMeter
-  danger={frontmatter.danger}
-  label="BAYOU"
-  description="6/10 — Wolf-headed, human-bodied. Documented attacks on livestock and a few on humans. Salt and Catholic rite recur as counters in the lore."
-/>
 
 <Section heading="If You're Reading This">
   <p>

@@ -36,12 +36,15 @@ sightings:
       lon: 140.1,
       label: 'Tōhoku winter-festival traditions reference local Yuki-onna lore',
     }
+dossier:
+  entity: 'The Yuki-Onna'
+  origin: 'Northern Japan · mountain winters'
+  status: 'Draft — awaiting research'
+  stamps: ['Snow Yōkai', 'Tōhoku', 'Mountain Tradition']
+  dangerLabel: 'WINTER YŌKAI'
+  dangerNote: '7/10 — A specifically winter / mountain-pass threat. Mostly fatal in encounter when fatal at all.'
 ---
 
-import StampRow from '../../components/StampRow.astro';
-import DocMeta from '../../components/DocMeta.astro';
-import DocTitle from '../../components/DocTitle.astro';
-import DangerMeter from '../../components/DangerMeter.astro';
 import Section from '../../components/Section.astro';
 import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
@@ -76,22 +79,6 @@ export const rules = [
     body: 'Replace with a specific, actionable rule derived from the encounter record.',
   },
 ];
-
-<StampRow red="Snow Yōkai" faded="Tōhoku" blue="Mountain Tradition" />
-<DocMeta
-  rows={[
-    { label: 'ENTITY', value: 'The Yuki-Onna' },
-    { label: 'ORIGIN', value: 'Northern Japan · mountain winters' },
-    { label: 'THREAT GUIDE TYPE', value: 'Identification · Behaviour · Survival Protocol' },
-    { label: 'STATUS', value: 'Draft — awaiting research' },
-  ]}
-/>
-<DocTitle subtitle={frontmatter.description}>The Yuki-Onna</DocTitle>
-<DangerMeter
-  danger={frontmatter.danger}
-  label="WINTER YŌKAI"
-  description="7/10 — A specifically winter / mountain-pass threat. Mostly fatal in encounter when fatal at all."
-/>
 
 <Section heading="If You're Reading This">
   <p>

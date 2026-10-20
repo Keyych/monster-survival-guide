@@ -39,12 +39,15 @@ sightings:
       lon: -4.32,
       label: 'Centre of long-term volunteer watch (Steve Feltham, 1991–present)',
     }
+dossier:
+  entity: 'The Loch Ness Monster'
+  origin: 'Loch Ness, Scotland'
+  status: 'Draft — awaiting research'
+  stamps: ['Aquatic Threat', 'Loch Ness', 'Scottish Folklore']
+  dangerLabel: 'AQUATIC'
+  dangerNote: '3/10 — Mostly sightings, not attacks. Avoidance is trivial: stay out of the loch.'
 ---
 
-import StampRow from '../../components/StampRow.astro';
-import DocMeta from '../../components/DocMeta.astro';
-import DocTitle from '../../components/DocTitle.astro';
-import DangerMeter from '../../components/DangerMeter.astro';
 import Section from '../../components/Section.astro';
 import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
@@ -79,22 +82,6 @@ export const rules = [
     body: 'Replace with a specific, actionable rule derived from the encounter record.',
   },
 ];
-
-<StampRow red="Aquatic Threat" faded="Loch Ness" blue="Scottish Folklore" />
-<DocMeta
-  rows={[
-    { label: 'ENTITY', value: 'The Loch Ness Monster' },
-    { label: 'ORIGIN', value: 'Loch Ness, Scotland' },
-    { label: 'THREAT GUIDE TYPE', value: 'Identification · Behaviour · Survival Protocol' },
-    { label: 'STATUS', value: 'Draft — awaiting research' },
-  ]}
-/>
-<DocTitle subtitle={frontmatter.description}>The Loch Ness Monster</DocTitle>
-<DangerMeter
-  danger={frontmatter.danger}
-  label="AQUATIC"
-  description="3/10 — Mostly sightings, not attacks. Avoidance is trivial: stay out of the loch."
-/>
 
 <Section heading="If You're Reading This">
   <p>

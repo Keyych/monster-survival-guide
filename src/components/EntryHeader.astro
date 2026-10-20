@@ -14,7 +14,7 @@ const { data } = entry;
 
 <header class="entry-opening" id="entry-opening">
   <div class="entry-kicker"><span>Journal entry {data.number}</span><span>{data.region}</span></div>
-  <div class="entry-hero">
+  <div class:list={['entry-hero', { 'entry-hero--text-only': !data.illustration }]}>
     <div class="entry-heading">
       <h1 class="doc-title">{data.title}</h1>
       <p class="entry-reading-time">
@@ -27,7 +27,7 @@ const { data } = entry;
           >Jump to Six Rules <span aria-hidden="true">↓</span></a
         >
         {
-          data.rules && (
+          data.status === 'published' && data.rules && (
             <a class="pocket-link" href={`/pocket/${entry.id}/`}>
               Printable pocket guide ↗
             </a>

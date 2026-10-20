@@ -36,12 +36,15 @@ sightings:
       lon: 120.98,
       label: 'Philippine Coco tradition · Spanish colonial-era survival',
     }
+dossier:
+  entity: 'El Coco'
+  origin: 'Iberian peninsula → Latin America'
+  status: 'Draft — awaiting research'
+  stamps: ['Iberian Lore', 'Bedtime', 'Hispanophone']
+  dangerLabel: 'BEDTIME'
+  dangerNote: "4/10 — Targets children. Documented as a behavioural lever ('sleep or El Coco comes'); claims of physical contact are rare in the modern record."
 ---
 
-import StampRow from '../../components/StampRow.astro';
-import DocMeta from '../../components/DocMeta.astro';
-import DocTitle from '../../components/DocTitle.astro';
-import DangerMeter from '../../components/DangerMeter.astro';
 import Section from '../../components/Section.astro';
 import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
@@ -76,22 +79,6 @@ export const rules = [
     body: 'Replace with a specific, actionable rule derived from the encounter record.',
   },
 ];
-
-<StampRow red="Iberian Lore" faded="Bedtime" blue="Hispanophone" />
-<DocMeta
-  rows={[
-    { label: 'ENTITY', value: 'El Coco' },
-    { label: 'ORIGIN', value: 'Iberian peninsula → Latin America' },
-    { label: 'THREAT GUIDE TYPE', value: 'Identification · Behaviour · Survival Protocol' },
-    { label: 'STATUS', value: 'Draft — awaiting research' },
-  ]}
-/>
-<DocTitle subtitle={frontmatter.description}>El Coco</DocTitle>
-<DangerMeter
-  danger={frontmatter.danger}
-  label="BEDTIME"
-  description="4/10 — Targets children. Documented as a behavioural lever ('sleep or El Coco comes'); claims of physical contact are rare in the modern record."
-/>
 
 <Section heading="If You're Reading This">
   <p>

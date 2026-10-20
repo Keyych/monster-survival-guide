@@ -36,12 +36,15 @@ sightings:
       lon: 120.62,
       label: 'Northern variant traditions: the manananggal vs. the wakwak',
     }
+dossier:
+  entity: 'The Aswang'
+  origin: 'Philippines · Visayas archipelago'
+  status: 'Draft — awaiting research'
+  stamps: ['Filipino Lore', 'Visayas', 'Sacred Tradition']
+  dangerLabel: 'CRITICAL'
+  dangerNote: '8/10 — Apex shapeshifting threat in Filipino tradition. Mimicry, possession risk. Cultural protections are the defensive doctrine.'
 ---
 
-import StampRow from '../../components/StampRow.astro';
-import DocMeta from '../../components/DocMeta.astro';
-import DocTitle from '../../components/DocTitle.astro';
-import DangerMeter from '../../components/DangerMeter.astro';
 import Section from '../../components/Section.astro';
 import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
@@ -76,22 +79,6 @@ export const rules = [
     body: 'Replace with a specific, actionable rule derived from the encounter record.',
   },
 ];
-
-<StampRow red="Filipino Lore" faded="Visayas" blue="Sacred Tradition" />
-<DocMeta
-  rows={[
-    { label: 'ENTITY', value: 'The Aswang' },
-    { label: 'ORIGIN', value: 'Philippines · Visayas archipelago' },
-    { label: 'THREAT GUIDE TYPE', value: 'Identification · Behaviour · Survival Protocol' },
-    { label: 'STATUS', value: 'Draft — awaiting research' },
-  ]}
-/>
-<DocTitle subtitle={frontmatter.description}>The Aswang</DocTitle>
-<DangerMeter
-  danger={frontmatter.danger}
-  label="CRITICAL"
-  description="8/10 — Apex shapeshifting threat in Filipino tradition. Mimicry, possession risk. Cultural protections are the defensive doctrine."
-/>
 
 <Section heading="If You're Reading This">
   <p>

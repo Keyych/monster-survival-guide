@@ -33,12 +33,15 @@ sightings:
       year: 1995,
       label: "'Gemini' letter sighting reported in Fortean Times — disputed authenticity",
     }
+dossier:
+  entity: 'The Owlman of Mawnan'
+  origin: 'Cornwall, England'
+  status: 'Draft — awaiting research'
+  stamps: ['Cornish Lore', 'Mawnan Parish', 'Aerial Cryptid']
+  dangerLabel: 'AERIAL'
+  dangerNote: '5/10 — Reportedly observes rather than attacks. Investigation cluster strictly localised to Mawnan parish.'
 ---
 
-import StampRow from '../../components/StampRow.astro';
-import DocMeta from '../../components/DocMeta.astro';
-import DocTitle from '../../components/DocTitle.astro';
-import DangerMeter from '../../components/DangerMeter.astro';
 import Section from '../../components/Section.astro';
 import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
@@ -73,22 +76,6 @@ export const rules = [
     body: 'Replace with a specific, actionable rule derived from the encounter record.',
   },
 ];
-
-<StampRow red="Cornish Lore" faded="Mawnan Parish" blue="Aerial Cryptid" />
-<DocMeta
-  rows={[
-    { label: 'ENTITY', value: 'The Owlman of Mawnan' },
-    { label: 'ORIGIN', value: 'Cornwall, England' },
-    { label: 'THREAT GUIDE TYPE', value: 'Identification · Behaviour · Survival Protocol' },
-    { label: 'STATUS', value: 'Draft — awaiting research' },
-  ]}
-/>
-<DocTitle subtitle={frontmatter.description}>The Owlman of Mawnan</DocTitle>
-<DangerMeter
-  danger={frontmatter.danger}
-  label="AERIAL"
-  description="5/10 — Reportedly observes rather than attacks. Investigation cluster strictly localised to Mawnan parish."
-/>
 
 <Section heading="If You're Reading This">
   <p>

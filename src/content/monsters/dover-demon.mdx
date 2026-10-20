@@ -33,12 +33,15 @@ sightings:
       year: 1977,
       label: 'Will Taintor and Abby Brabham sighting · ~12am April 22',
     }
+dossier:
+  entity: 'The Dover Demon'
+  origin: 'Dover, Massachusetts · 1977'
+  status: 'Draft — awaiting research'
+  stamps: ['1977', 'Dover, MA', 'Three Witnesses']
+  dangerLabel: 'BRIEF'
+  dangerNote: '5/10 — Three sightings in 25 hours, all by different witnesses, in a 2-mile radius. No further appearances in 49 years.'
 ---
 
-import StampRow from '../../components/StampRow.astro';
-import DocMeta from '../../components/DocMeta.astro';
-import DocTitle from '../../components/DocTitle.astro';
-import DangerMeter from '../../components/DangerMeter.astro';
 import Section from '../../components/Section.astro';
 import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
@@ -73,22 +76,6 @@ export const rules = [
     body: 'Replace with a specific, actionable rule derived from the encounter record.',
   },
 ];
-
-<StampRow red="1977" faded="Dover, MA" blue="Three Witnesses" />
-<DocMeta
-  rows={[
-    { label: 'ENTITY', value: 'The Dover Demon' },
-    { label: 'ORIGIN', value: 'Dover, Massachusetts · 1977' },
-    { label: 'THREAT GUIDE TYPE', value: 'Identification · Behaviour · Survival Protocol' },
-    { label: 'STATUS', value: 'Draft — awaiting research' },
-  ]}
-/>
-<DocTitle subtitle={frontmatter.description}>The Dover Demon</DocTitle>
-<DangerMeter
-  danger={frontmatter.danger}
-  label="BRIEF"
-  description="5/10 — Three sightings in 25 hours, all by different witnesses, in a 2-mile radius. No further appearances in 49 years."
-/>
 
 <Section heading="If You're Reading This">
   <p>
