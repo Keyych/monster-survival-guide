@@ -6,7 +6,7 @@
 export const site = {
   name: 'Monster Survival Guide',
   shortName: 'Field Manual',
-  signature: 'Zazu',
+  signature: 'Stallbaumers',
   tagline: 'Identification · Survival · Documented Accounts',
   description:
     'A field manual for the things that should not exist — researched, verified where possible, and written so you have the information before you need it.',
@@ -79,8 +79,8 @@ export const social: Record<'youtube' | 'facebook' | 'instagram' | 'x' | 'tiktok
     youtube: null,
     facebook: null,
     instagram: null,
-    x: 'https://x.com/zazudoes',
-    tiktok: 'https://www.tiktok.com/@zazudoes',
+    x: 'https://x.com/stallbaumer_',
+    tiktok: 'https://www.tiktok.com/@keyych',
   };
 
 /**
