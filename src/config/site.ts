@@ -80,7 +80,7 @@ export const social: Record<'youtube' | 'facebook' | 'instagram' | 'x' | 'tiktok
     facebook: null,
     instagram: null,
     x: 'https://x.com/stallbaumer_',
-    tiktok: 'https://www.tiktok.com/@keyych',
+    tiktok: 'https://www.tiktok.com/@mikinkey',
   };
 
 /**
