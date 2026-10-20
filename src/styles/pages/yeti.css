@@ -1,0 +1,15 @@
+/* Theme tokens for /yeti. Shared layout rules live in field-manual.css. */
+:root {
+  --paper: #e9eef3;
+  --aged: #d2dce5;
+  --ink: #141b22;
+  --faded: #3f4c58;
+  --stamp-red: #7a2418;
+  --stamp-blue: #2f5a7a;
+  --accent: #3d6c92;
+  --redact: #0d1217;
+  --margin: #5a7084;
+  --highlight: #4f93c0;
+  --rule: rgba(20, 27, 34, 0.1);
+  --warn: #7a2418;
+}

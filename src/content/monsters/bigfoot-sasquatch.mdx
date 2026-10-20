@@ -9,7 +9,8 @@ danger: 5
 bandColor: '#3a2818'
 classification: 'monster survival guide  —  bigfoot'
 entryStatus: 'Active Entry'
-status: 'draft'
+status: 'published'
+publishDate: '2026-10-20'
 season: 1
 sightings:
   - {
@@ -40,114 +41,294 @@ sightings:
       label: "Sasq'ets / Sasquatch — the etymology and the originating tradition",
     }
 recordKind: reported
-recordNote: Working draft based on reported accounts and their later retellings. Sources and claims
-  still need checking; reports do not establish that the creature exists.
+recordNote: Modern sighting reports, a disputed 1967 film, and physical traces that have not
+  survived laboratory testing. No body, bone, or tooth has ever been recovered; the reports do
+  not establish that the creature exists.
 illustration:
   src: /illustrations/bigfoot-sasquatch.png
   alt: Loose ink doodle of Bigfoot's head, broad shoulders, and long arm.
 dossier:
   entity: Bigfoot
   origin: Pacific Northwest, North America
-  status: Draft — awaiting research
+  status: Unconfirmed — No Physical Specimen on Record
   stamps:
     - Forest Giant
     - Pacific NW
     - Bipedal Cryptid
-  dangerLabel: FOREST
+  dangerLabel: UNVERIFIED
   dangerNote:
-    5/10 — Avoidant by default. Reported displays of force when approached. Stay out of the
-    deep woods alone.
+    5/10 — No verified attack on record. The documented dangers of the deep PNW backcountry are
+    the ordinary ones — exposure, falls, bears, getting lost. Treat the terrain, not the legend.
 rules:
-  - title: TODO — rule 1
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 2
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 3
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 4
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 5
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 6
-    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: Respect the forest before you fear the giant.
+    body:
+      Exposure, falls, bears, and getting lost are what kill people in the PNW backcountry — nothing
+      new to science. File your route, pack layers and a headlamp, and the wilderness stops being the
+      real threat.
+  - title: A big track is not a big animal.
+    body:
+      Giant footprints are the easiest evidence to fake — Ray Wallace's family admitted he pressed
+      the original Bluff Creek tracks with carved wooden feet. Treat a too-perfect lone print as a
+      prank.
+  - title: Photograph the whole scene — in focus, with something for scale.
+    body:
+      The "best evidence" is still one shaky reel under a minute long; a blurry frame only adds to
+      the folklore. Steady the shot, include something of known size, and keep the original file.
+  - title: Send the sample to a lab, not to a forum.
+    body:
+      Every anomalous hair sequenced has come back as a known animal — bear, cow, horse, dog, or
+      human. Bag anything you find cleanly and let the lab have the last word.
+  - title: Ask who profits, and what came first.
+    body:
+      The famous footage has a man who says he wore the suit; the famous tracks, a family who
+      admitted the hoax. When a sighting sells tickets, or the story precedes the evidence, be
+      sceptical.
+  - title: Give any large wild animal room — whatever it is.
+    body:
+      Bear, elk, or legend, the move is the same — do not approach or corner it, make yourself
+      known, and back away slowly. The lore's "displays of force" are just what a crowded wild
+      animal does.
 ---
 
 import Section from '../../components/Section.astro';
+import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
 import EncounterCard from '../../components/EncounterCard.astro';
 import Outro from '../../components/Outro.astro';
 import MonsterMap from '../../components/MonsterMap.astro';
-import '../../styles/pages/_draft.css';
+import '../../styles/pages/bigfoot-sasquatch.css';
 
 <Section heading="If You're Reading This">
   <p>
-    TODO — cold open. Place the reader at the scene of the encounter. Establish atmosphere. Earn
-    attention before asking for trust.
+    It is late afternoon on a logging road in the Six Rivers country of Northern California, and the
+    light under the firs has already gone the colour of weak tea. You are further from a paved road
+    than you have ever been. Somewhere off the track there is a line of prints in the creek mud —
+    deep, flat-footed, far too long — and the part of your brain that keeps you alive has gone very
+    quiet and very alert all at once.
+  </p>
+  <p>
+    Nothing comes out of the trees. That is almost always how it goes. A print, a smell, a shape at
+    the edge of the headlamp, a story you will tell for the rest of your life. Then the forest closes
+    over it and keeps whatever it was. This is the creature that has been seen more often, by more
+    people, in more of North America than any other in this guide — and that has left behind less
+    that a laboratory can hold.
+  </p>
+  <p>
+    This is the tenth journal entry of the Monster Survival Guide. The subject: Bigfoot — the
+    Sasquatch — the forest giant of the Pacific Northwest. It is also the entry where the honest
+    danger and the honest doubt point in slightly different directions, and you need to hold both.
   </p>
 </Section>
 
 <Section heading="Where It Comes From">
   <p>
-    TODO — origin section. Cultural / historical / geographic context. A creature without context is
-    a horror story; a creature with context is something a reader can understand.
+    The name that matters came first from the people who were here first. Among the Coast Salish
+    nations of what is now British Columbia, the Halq'eméylem word <em>sasq'ets</em> — roughly "wild
+    man" or "hairy man" — named a being woven into the oral tradition of the Sts'ailes (Chehalis)
+    people long before any newspaper took an interest. In the late 1920s an Indian agent named
+    J.W. Burns, working with the Sts'ailes community, gathered their accounts and Anglicised the word
+    into <em>Sasquatch</em>, publishing it for a settler audience. The creature did not begin as a
+    tabloid story. It began as someone else's neighbour on the land.
+  </p>
+  <p>
+    The other name — Bigfoot — is much younger and much more suspect. In 1958, workers on a road crew
+    at Bluff Creek, California, found enormous footprints around their equipment; a local newspaper,
+    the Humboldt Times, ran the story and the catchy label stuck. The man whose company held that
+    contract was Ray Wallace. When Wallace died in 2002, his family came forward with the wooden
+    feet he had used to stamp those first "Bigfoot" tracks into the mud. The brand name of the modern
+    legend was, at its root, a joke that got out of hand.
+  </p>
+  <div class="pull-quote">
+    Two creatures share one body here. One is a figure in the deep tradition of the Coast Salish
+    peoples, held with respect for centuries. The other is a mid-century media sensation built on
+    casts, film, and merchandise. Keep them separate, and the story gets clearer, not less.
+  </div>
+  <p>
+    What makes Bigfoot so durable is the setting. The temperate rainforests of the Pacific Northwest
+    are vast, dense, and genuinely under-travelled — country where a large animal really could go
+    unseen, and where a frightened or hopeful mind fills the gaps between the trees. The habitat is
+    real. The question has always been whether anything new lives in it.
   </p>
 </Section>
 
 <Section heading="What You Are Looking At">
+  <StatRow
+    stats={[
+      { num: '1958', label: 'Year the name "Bigfoot" first appeared in print, from tracks later shown to be hoaxed' },
+      { num: '0', label: 'Bodies, bones, or teeth ever recovered and confirmed as an unknown species' },
+      { num: '59s', label: 'Length of the Patterson–Gimlin film — still the single most-cited piece of evidence' },
+    ]}
+  />
   <p>
-    TODO — physical description and identifying features. What witnesses agree on. What varies. What
-    to look for before you know what you are looking at.
+    The witnesses are strikingly consistent on the broad strokes. Bigfoot is described as a bipedal,
+    ape-like figure roughly seven to nine feet tall, heavily built, covered in dark brown or reddish
+    hair, with long arms, a crested or conical head set low on the shoulders, and a fluid upright
+    walk that observers insist does not look like a person in a costume. A powerful, lingering stench
+    — "like a wet dog and rotten eggs" — recurs across accounts often enough to have its own regional
+    nickname, the Skunk Ape, in the American South.
   </p>
+  <p>
+    What varies is everything a hoaxer or a tired brain would get wrong: the exact height, the colour,
+    the face, the eyeshine. And what is always missing is the one thing that would settle it — a
+    carcass, a skeleton, a tooth, a confirmed strand of hair. For an animal supposedly this large,
+    this widespread, and this long-reported, that absence is the single most important fact on the
+    page.
+  </p>
+  <div class="warning-box">
+    <div class="warn-label">⚠ Critical Field Note</div>
+    <p>
+      Before you decide what you are looking at, run the ordinary suspects first. A black bear
+      standing or walking briefly on its hind legs is the single most common source of credible
+      Bigfoot sightings, and in poor light at distance it is genuinely convincing. Elk, hikers in
+      dark clothing, stumps, and shadow all pad out the record. The burden is on the extraordinary
+      claim — not on the bear.
+    </p>
+  </div>
 </Section>
 
 <Section heading="How It Operates">
   <p>
-    TODO — behaviour pattern. How it hunts / haunts / appears. What comes first, next, and after.
+    The reported pattern is not predation — it is avoidance. Unlike most entries in this guide,
+    Bigfoot is almost never said to hunt people. The overwhelming majority of accounts describe a
+    creature that flees, hides, or watches from cover, active mostly at dawn, dusk, and night, keeping
+    to dense timber and water courses, and vanishing the instant it is noticed.
+  </p>
+  <p>
+    The "evidence" it supposedly leaves is a familiar catalogue: lines of oversized footprints,
+    twisted or stacked branches, tree knocks, whoops and howls in the dark, and the smell. Each of
+    these is also something the forest, an ordinary animal, or a person with a motive can produce.
+    That is the central difficulty — every trace Bigfoot leaves is a trace something known could leave
+    too.
+  </p>
+  <p>
+    The genuinely dangerous version of a Bigfoot encounter is almost always the mundane one. People
+    get hurt in this country by going deeper and staying later than they planned because they are
+    chasing a sound, by startling an actual bear, or by losing the light and the trail at once. The
+    legend's real hazard is the way it pulls you off the path.
   </p>
 </Section>
 
 <Section heading="An Honest Assessment of Its Weaknesses">
   <p>
-    TODO — what the accumulated evidence suggests works against it. Be honest when this section is
-    thin.
+    This is the entry where honesty costs the monster the most, so here it is plainly: for all the
+    volume of reports, Bigfoot has never produced a specimen that survives examination.
+  </p>
+  <p>
+    <strong>The tracks collapse.</strong> The footprints that built the modern legend at Bluff Creek
+    were made with carved wooden feet, a fact Ray Wallace's own family disclosed after his death.
+    Tracks are evidence of a track-maker, and track-makers can be human.
+  </p>
+  <p>
+    <strong>The film is unresolved — and that is not proof.</strong> The 1967 Patterson–Gimlin
+    footage has resisted sixty years of analysis without being conclusively debunked, but "no one has
+    proven it fake" is not the same as "it is real." One man says he wore the suit; the footage alone
+    cannot settle it either way.
+  </p>
+  <p>
+    <strong>The DNA collapses.</strong> When hair samples attributed to Bigfoot and the Yeti were put
+    through rigorous genetic sequencing in Bryan Sykes's 2014 study, every one resolved to a known
+    animal — bears, cows, horses, a dog, a human. Not a single sample pointed to an unknown primate.
+  </p>
+  <p>
+    None of this proves a negative — the forest is large and absence of evidence is not evidence of
+    absence. But after decades of looking, the thing to prepare for is the wilderness itself, and the
+    thing to be sceptical of is the specimen that never makes it to the lab.
   </p>
 </Section>
 
 <Section heading="Six Rules That May Save Your Life">
-  <p>TODO — short intro paragraph framing the rules.</p>
+  <p>
+    These rules will not help you fight a forest giant, because nothing recovered to date shows there
+    is one to fight. They will keep you alive in genuinely dangerous country, help you read a scene
+    without fooling yourself, and keep you from becoming the next convincing story that doesn't hold
+    up.
+  </p>
   <SixRules
     rules={frontmatter.rules}
     title={frontmatter.title}
     number={frontmatter.number}
-    pocketHref={
-      frontmatter.status === 'draft'
-        ? `/drafts/bigfoot-sasquatch/pocket/`
-        : `/pocket/bigfoot-sasquatch/`
-    }
+    pocketHref="/pocket/bigfoot-sasquatch/"
   />
 </Section>
 
 <Section heading="Two Cases on the Record">
-  <p>TODO — intro paragraph for the encounter section.</p>
+  <p>
+    These two cases bookend the modern Bigfoot story: the piece of film that made it famous, and the
+    genetic testing that tried, decades later, to finally pin it down.
+  </p>
   <EncounterCard
-    id="Encounter 01 · TODO · TODO date"
-    title="TODO — encounter title"
-    meta="TODO — encounter witness / context"
-    verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    id="Encounter 01 · Bluff Creek, California · October 20, 1967"
+    title="The Patterson–Gimlin Film"
+    meta="Roger Patterson & Bob Gimlin · The Canonical Visual Record"
+    verdict="documented"
+    verdictLabel="Filmed — Authenticity Disputed"
+    references={[
+      {
+        text: 'Wikipedia — “Patterson–Gimlin film”',
+        label: 'wikipedia.org',
+        href: 'https://en.wikipedia.org/wiki/Patterson%E2%80%93Gimlin_film',
+      },
+      {
+        text: 'Wikipedia — “Bigfoot” (naming, Bluff Creek, Ray Wallace tracks)',
+        label: 'wikipedia.org',
+        href: 'https://en.wikipedia.org/wiki/Bigfoot',
+      },
+    ]}
   >
-    <p>TODO — encounter prose. Real, cited account.</p>
+    <p>
+      On October 20, 1967, Roger Patterson and Bob Gimlin were on horseback near Bluff Creek, a
+      tributary of the Klamath River in Northern California, when — by their account — they filmed a
+      large, dark, hair-covered figure walking upright along the creekbed. The roughly one-minute
+      16mm clip, showing the subject striding away and turning to look back at the camera, became and
+      remains the single most reproduced piece of Bigfoot evidence ever recorded.
+    </p>
+    <p>
+      In the decades since, the film has been picked over by biomechanics experts, special-effects
+      artists, and forensic analysts without a definitive verdict either way: no one has conclusively
+      proven it a hoax, and no one has proven it genuine. A man named Bob Heironimus has publicly
+      claimed he was the person inside an ape suit. The footage endures precisely because it sits in
+      that unresolved gap — which, honestly read, is a reason for doubt, not proof of a creature.
+    </p>
   </EncounterCard>
   <EncounterCard
-    id="Encounter 02 · TODO · TODO date"
-    title="TODO — second encounter title"
-    meta="TODO — second encounter witness / context"
-    verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    id="Encounter 02 · Oxford, United Kingdom · 2014"
+    title="The Sykes DNA Study"
+    meta="Bryan Sykes et al. · Proceedings of the Royal Society B · 30 Hair Samples Sequenced"
+    verdict="documented"
+    verdictLabel="Tested — All Known Animals"
+    references={[
+      {
+        text: 'Sykes et al. (2014) — “Genetic analysis of hair samples attributed to yeti, bigfoot and other anomalous primates,” Proc. R. Soc. B',
+        label: 'ncbi.nlm.nih.gov',
+        href: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC4100509',
+      },
+      {
+        text: 'The Christian Science Monitor — “How genetic sequencing is stomping on the Bigfoot myth” (2014)',
+        label: 'csmonitor.com',
+        href: 'https://www.csmonitor.com/Science/2014/0702/How-genetic-sequencing-is-stomping-on-the-Bigfoot-myth',
+      },
+      {
+        text: 'Mongabay — “Bigfoot found? Nope: sasquatch hairs come from cows, raccoons, and humans” (2014)',
+        label: 'mongabay.com',
+        href: 'https://news.mongabay.com/2014/07/bigfoot-found-nope-sasquatch-hairs-come-from-cows-raccoons-and-humans/',
+      },
+    ]}
   >
-    <p>TODO — second encounter prose.</p>
+    <p>
+      In 2014, Oxford geneticist Bryan Sykes and colleagues published a study in the Proceedings of
+      the Royal Society B that did what eyewitnesses never can: it put the physical evidence under a
+      sequencer. The team collected hair samples from around the world attributed to the Yeti,
+      Bigfoot, and other "anomalous primates," decontaminated them, and sequenced their mitochondrial
+      DNA.
+    </p>
+    <p>
+      The result was the one the pattern predicts. Every sample matched a known animal — bears, a
+      cow, horses, a dog, a porcupine, a tapir, and, in one case, a human. Not one came back as an
+      unknown primate. Two Himalayan samples carried an intriguing genetic signature close to an
+      ancient polar bear, hinting at an unusual bear rather than an ape-man. Sykes was careful to note
+      that this does not prove such creatures cannot exist — but the hair that was supposed to be
+      Bigfoot turned out, every time, to belong to something already in the textbooks.
+    </p>
   </EncounterCard>
 </Section>
 
@@ -156,8 +337,18 @@ import '../../styles/pages/_draft.css';
 <Section heading="Before You Go">
   <Outro>
     <p>
-      TODO — closing outro. Echo the cold open. Land the rules. Give the reader a parting
-      instruction.
+      Bigfoot is the most-seen and least-proven creature in this guide, and both halves of that
+      sentence are worth respecting. Generations of people across North America have come back from
+      the trees certain of what they witnessed. And generation after generation, the carved feet, the
+      disputed film, and the sequenced hair have pointed the same way — toward us, and toward the
+      ordinary animals we already know.
     </p>
+    <p>
+      So go into the deep woods prepared for the real dangers: the cold, the drop, the bear, the lost
+      trail, the early dark. Watch the ground, photograph what you find, and bag the sample for the
+      lab. And if a tall shape ever stands at the edge of your light and then is gone —{' '}
+      <em>back away slowly, and keep the original file.</em>
+    </p>
+    <p>End of journal entry. Mind the trail. Stay sceptical. The forest keeps its secrets, and most of them are just the forest.</p>
   </Outro>
 </Section>

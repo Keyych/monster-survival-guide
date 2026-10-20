@@ -67,7 +67,7 @@ export const newsletter: NewsletterConfig | null = null;
  */
 export const social: Record<'youtube' | 'facebook' | 'instagram' | 'x' | 'tiktok', string | null> =
   {
-    youtube: 'https://www.youtube.com/@ZazuDoes',
+    youtube: null,
     facebook: null,
     instagram: null,
     x: 'https://x.com/zazudoes',

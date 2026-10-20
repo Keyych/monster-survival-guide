@@ -9,7 +9,8 @@ danger: 3
 bandColor: '#1a4060'
 classification: 'monster survival guide  —  the loch ness monster'
 entryStatus: 'Active Entry'
-status: 'draft'
+status: 'published'
+publishDate: '2026-10-20'
 season: 1
 sightings:
   - {
@@ -40,112 +41,291 @@ sightings:
       label: 'Centre of long-term volunteer watch (Steve Feltham, 1991–present)',
     }
 recordKind: reported
-recordNote: Working draft based on reported accounts and their later retellings. Sources and claims
-  still need checking; reports do not establish that the creature exists.
+recordNote: Modern reports, press accounts, sonar surveys, and a 2019 environmental-DNA
+  study. Every systematic search to date has failed to find an unknown animal, and the
+  single most famous piece of evidence was a confessed hoax.
 illustration:
   src: /illustrations/loch-ness-monster.png
   alt: Loose ink doodle of a long-necked creature emerging from a few ripples.
 dossier:
-  entity: The Loch Ness Monster
+  entity: The Loch Ness Monster ("Nessie")
   origin: Loch Ness, Scotland
-  status: Draft — awaiting research
+  status: Active in Reports — Unverified After 90 Years of Searching
   stamps:
     - Aquatic Threat
     - Loch Ness
     - Scottish Folklore
-  dangerLabel: AQUATIC
-  dangerNote: '3/10 — Mostly sightings, not attacks. Avoidance is trivial: stay out of the loch.'
+  dangerLabel: OVERSTATED
+  dangerNote: 3/10 — No verified creature and no verified attack in ninety years of
+    searching. The only reliable hazard at Loch Ness is the loch itself — cold, 230 m
+    deep, and steep-sided.
 rules:
-  - title: TODO — rule 1
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 2
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 3
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 4
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 5
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 6
-    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: Explain it with the loch before you explain it with a monster.
+    body:
+      Deep, cold, peat-black water manufactures illusions — standing waves, boat wakes,
+      floating logs that rise and sink. Exhaust what the geography already explains first.
+  - title: Never trust a single cropped photograph.
+    body:
+      The famous image was cropped to hide the shoreline and kill any sense of scale.
+      Demand the uncropped frame and something of known size in it before you judge size.
+  - title: Learn the hoax playbook, because it keeps working.
+    body:
+      The 1934 photo was staged revenge, built from a toy, and unexposed for sixty years.
+      When a picture is too good, ask who benefits from your believing it.
+  - title: Believe the water before you believe the witness.
+    body:
+      DNA sampling of the whole loch found no reptile and a great deal of eel. Identify the
+      ordinary animal that fits the sighting before you invent an extraordinary one.
+  - title: Guard against seeing what you came to see.
+    body:
+      When the 2003 survey raised a hidden fence post, several onlookers drew a monster's
+      head. Note what you actually saw, plainly, before memory improves it.
+  - title: If you must fear the loch, fear the loch.
+    body:
+      The real hazard is water near freezing, 230 metres deep, with nothing to climb out
+      onto. The oldest Ness story is a drowning. Respect the cold, not the legend.
 ---
 
 import Section from '../../components/Section.astro';
+import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
 import EncounterCard from '../../components/EncounterCard.astro';
 import Outro from '../../components/Outro.astro';
 import MonsterMap from '../../components/MonsterMap.astro';
-import '../../styles/pages/_draft.css';
+import '../../styles/pages/loch-ness-monster.css';
 
 <Section heading="If You're Reading This">
   <p>
-    TODO — cold open. Place the reader at the scene of the encounter. Establish atmosphere. Earn
-    attention before asking for trust.
+    It is a grey morning on the A82, the road that runs the length of the western shore, and the loch
+    below you is doing the thing it does best: lying completely still. Loch Ness is 23 miles long and
+    230 metres deep, and the water is stained the colour of strong tea by peat washed off the
+    surrounding hills, so that a foot below the surface the loch is simply black. You cannot see into
+    it. Almost nobody ever has.
+  </p>
+  <p>
+    Then something breaks the surface a few hundred yards out — a dark shape, a line of what might be
+    humps, a wake with no boat in front of it. It holds for a moment. By the time you have fumbled for
+    a phone it is gone, and the loch is flat again, and you are left with a memory that will grow a
+    long neck and a small head every time you tell it.
+  </p>
+  <p>
+    This is the ninth journal entry of the Monster Survival Guide. The subject: the Loch Ness Monster —
+    Nessie — the most watched, most photographed, most searched-for creature in this book. It is also
+    the entry with the thinnest danger rating, because in ninety years of looking, nobody has produced
+    a body, and nobody has been hurt by anything but the water. What there is instead is a near-perfect
+    case study in how a loch, a photograph, and a very good name can keep a monster alive without one.
   </p>
 </Section>
 
 <Section heading="Where It Comes From">
   <p>
-    TODO — origin section. Cultural / historical / geographic context. A creature without context is
-    a horror story; a creature with context is something a reader can understand.
+    The deep history is older than the legend. The earliest written account is a miracle story:
+    Adomnán's <em>Life of Columba</em>, composed on Iona around the end of the seventh century, roughly
+    a hundred years after Columba's death. In it, the saint comes to the River Ness — the river flowing
+    out of the loch, not the loch itself — where locals are burying a man killed by a "water beast." He
+    sends a companion to swim across; the creature rises; Columba makes the sign of the cross and
+    commands it to go no further, and it retreats. It is a saint demonstrating power over a frightening
+    landscape, not a wildlife report, and the chapter heading says as much.
+  </p>
+  <p>
+    The <em>modern</em> monster has a much more precise birthday. In spring 1933 the Inverness Courier
+    ran an account of a sighting by Aldie Mackay, manager of a Drumnadrochit hotel; the article is
+    often credited with first attaching the word "monster" to the loch. Then, in July 1933, London
+    visitors George Spicer and his wife reported a large animal lurching across the road in front of
+    their car and down into the water. The Spicer account, published in August, was the one that caught
+    fire. Within months the name had settled into "the Loch Ness monster," and the sightings began to
+    arrive in their hundreds.
+  </p>
+  <div class="pull-quote">
+    A new road had just been blasted along the loch's steep northern shore, clearing trees and bringing
+    cars and tourists to a waterline few had ever lingered at. More eyes on more water is, by itself,
+    enough to manufacture a monster. It did not hurt that a newspaper was waiting to buy the pictures.
+  </div>
+  <p>
+    The following year the legend got its face. On 21 April 1934 the Daily Mail published a photograph,
+    attributed to a respectable London doctor, Colonel Robert Kenneth Wilson, showing a slender neck
+    and small head rising from the water. Wilson declined to attach his name too firmly to it — it
+    became known simply as the "Surgeon's Photograph" — and for sixty years it was the single most
+    reproduced piece of evidence that Nessie was real. It was also, as we now know, a toy.
   </p>
 </Section>
 
 <Section heading="What You Are Looking At">
+  <StatRow
+    stats={[
+      { num: '230M', label: 'Maximum depth of Loch Ness — deeper than most of the North Sea' },
+      { num: '1933', label: 'Year the modern phenomenon began, after a new lochside road opened' },
+      { num: '0', label: 'Unknown animals found by sonar survey or by DNA sampling of the loch' },
+    ]}
+  />
   <p>
-    TODO — physical description and identifying features. What witnesses agree on. What varies. What
-    to look for before you know what you are looking at.
+    There is no agreed creature, only an agreed silhouette. The classic report is a long, slender neck
+    held above the water with a small head on top, one or more rounded humps behind it, and a dark,
+    smooth, often glistening body — a shape that, not coincidentally, matches the plesiosaur from every
+    museum poster and children's book. Length estimates run anywhere from a few feet to the
+    frankly impossible. Colour is almost always "dark." Detail is almost always absent.
   </p>
+  <p>
+    What witnesses are really describing is a transient disturbance on an opaque, mirror-flat surface,
+    seen at distance, usually briefly, often from a moving car. That is a near-ideal setup for
+    misidentification, and the loch supplies plenty of raw material: swimming red deer, otters,
+    cormorants and other diving birds, salmon and sturgeon-sized fish, floating logs, and the loch's
+    own water behaving strangely.
+  </p>
+  <div class="warning-box">
+    <div class="warn-label">⚠ Critical Field Note</div>
+    <p>
+      Loch Ness is long, narrow, and deep, which makes it prone to a <em>seiche</em> — a slow standing
+      wave that sloshes back and forth along the basin and can push a smooth, humped swell across an
+      otherwise glassy surface with no wind and no boat to explain it. Several of the most convincing
+      "moving hump" sightings are consistent with exactly this. If the water is doing something
+      unaccountable, suspect the water before you suspect the wildlife.
+    </p>
+  </div>
 </Section>
 
 <Section heading="How It Operates">
   <p>
-    TODO — behaviour pattern. How it hunts / haunts / appears. What comes first, next, and after.
+    Nessie does not hunt, and she does not haunt. What she does is <em>appear</em> — briefly, at
+    distance, and in a way that resists verification. The pattern is remarkably stable: a surface
+    disturbance, a few seconds of a shape the brain resolves into head-neck-and-humps, then nothing,
+    with the loch's black water closing the case before any camera can.
+  </p>
+  <p>
+    The legend's real engine is the gap between what was seen and what gets reported. A dark object at
+    half a mile becomes a neck; a boat wake that arrives after the boat has passed becomes a body; a
+    line of cormorants diving in sequence becomes three humps surfacing and submerging. Memory then
+    does its own work, sanding off the ambiguity with each retelling until the witness is sincerely
+    certain they saw something they only half-saw.
+  </p>
+  <p>
+    And the setting rewards all of it. Loch Ness is a place people travel to in order to look for a
+    monster, primed by a century of images of what that monster looks like. Expectation is not a minor
+    factor here; it may be the main one. When you go to the water wanting a long neck, a long neck is
+    what an ambiguous shape will tend to become.
   </p>
 </Section>
 
 <Section heading="An Honest Assessment of Its Weaknesses">
   <p>
-    TODO — what the accumulated evidence suggests works against it. Be honest when this section is
-    thin.
+    This is the entry where "weaknesses" means the weaknesses of the <em>case</em>, not the creature,
+    because the evidence has a long habit of dissolving the moment anyone tests it.
+  </p>
+  <p>
+    <strong>The famous photo collapses.</strong> In 1994 Christian Spurling confessed, shortly before
+    his death at ninety, that the Surgeon's Photograph was staged: a sea-serpent head and neck mounted
+    on a toy submarine, floated on the loch as revenge by big-game hunter Marmaduke Wetherell after the
+    Daily Mail had publicly embarrassed him over a faked line of "monster" footprints.
+  </p>
+  <p>
+    <strong>The sonar collapses.</strong> In 2003 a BBC-funded survey swept the loch with roughly 600
+    sonar beams guided by satellite positioning, shoreline to shoreline, top to bottom. It found no
+    large animal — only a submerged buoy. The specialists involved reported seeing no sign of anything
+    big and living in the water at all.
+  </p>
+  <p>
+    <strong>The DNA collapses.</strong> In 2018 a team led by Professor Neil Gemmell sampled
+    environmental DNA from across the whole loch and sequenced it. No reptile DNA. No shark, catfish, or
+    sturgeon. What they did find, nearly everywhere, was eel — enough that "a very large eel" is the
+    least unreasonable survivor of the hunt, though even Gemmell stressed the DNA cannot tell you how
+    big any individual animal is.
+  </p>
+  <p>
+    None of this proves a negative; you cannot sample every litre of a loch this size. But every
+    systematic look has come back the same way. The honest position is not "debunked," it is
+    "unverified after ninety years of serious searching" — which, for a creature this famous, tells you
+    most of what you need to know.
   </p>
 </Section>
 
 <Section heading="Six Rules That May Save Your Life">
-  <p>TODO — short intro paragraph framing the rules.</p>
+  <p>
+    These rules will not help you fight a monster, because the evidence says there very likely isn't
+    one. They will help you look at the loch clearly, resist the machinery that turns a ripple into a
+    plesiosaur, and respect the one thing at Loch Ness that genuinely can kill you — the water.
+  </p>
   <SixRules
     rules={frontmatter.rules}
     title={frontmatter.title}
     number={frontmatter.number}
-    pocketHref={
-      frontmatter.status === 'draft'
-        ? `/drafts/loch-ness-monster/pocket/`
-        : `/pocket/loch-ness-monster/`
-    }
+    pocketHref="/pocket/loch-ness-monster/"
   />
 </Section>
 
 <Section heading="Two Cases on the Record">
-  <p>TODO — intro paragraph for the encounter section.</p>
+  <p>
+    These two cases bracket the whole phenomenon: the image that made the monster famous, and the
+    survey that looked hardest for her and came back with eels. One was a deliberate hoax; the other
+    was careful science. Both point the same way.
+  </p>
   <EncounterCard
-    id="Encounter 01 · TODO · TODO date"
-    title="TODO — encounter title"
-    meta="TODO — encounter witness / context"
-    verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    id="Encounter 01 · Loch Ness, Scotland · 21 April 1934"
+    title="The Surgeon's Photograph"
+    meta="Attributed to Col. Robert Kenneth Wilson · Confessed as a Hoax in 1994"
+    verdict="documented"
+    verdictLabel="Confirmed Hoax"
+    references={[
+      {
+        text: 'The Museum of Hoaxes — “The Loch Ness Monster and the Surgeon’s Photo”',
+        label: 'hoaxes.org',
+        href: 'https://hoaxes.org/photo_database/image/the_surgeons_photo/',
+      },
+      {
+        text: 'Wikipedia — “Loch Ness Monster” (Surgeon’s Photograph; 1994 Spurling confession)',
+        label: 'wikipedia.org',
+        href: 'https://en.wikipedia.org/wiki/Loch_Ness_Monster',
+      },
+    ]}
   >
-    <p>TODO — encounter prose. Real, cited account.</p>
+    <p>
+      On 21 April 1934 the Daily Mail published a photograph that would define the Loch Ness Monster for
+      generations: a graceful neck and small head rising from the loch, credited to a London doctor,
+      Colonel Robert Kenneth Wilson. His professional respectability was the point — a surgeon would not
+      lie — and the image, cropped tight to remove the shoreline and any sense of scale, was taken as
+      proof.
+    </p>
+    <p>
+      It was a model. In 1994 Christian Spurling, shortly before his death at ninety, confessed that the
+      "monster" was a sea-serpent head mounted on a clockwork toy submarine, floated on the loch at the
+      instigation of his stepfather, big-game hunter Marmaduke Wetherell, who had been publicly
+      humiliated by the same newspaper after presenting faked "monster" footprints made with a dried
+      hippopotamus foot. The most famous evidence for Nessie turned out to be an act of revenge against
+      the paper that printed it — and the uncropped frame shows an object only about a foot long.
+    </p>
   </EncounterCard>
   <EncounterCard
-    id="Encounter 02 · TODO · TODO date"
-    title="TODO — second encounter title"
-    meta="TODO — second encounter witness / context"
-    verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    id="Encounter 02 · Loch Ness, Scotland · 2018–2019"
+    title="The Environmental-DNA Survey"
+    meta="Prof. Neil Gemmell, University of Otago · Sequencing the Whole Loch"
+    verdict="documented"
+    verdictLabel="No Unknown DNA — Abundant Eel"
+    references={[
+      {
+        text: 'NBC News — “New study suggests mythical Loch Ness monster may be a giant eel” (2019)',
+        label: 'nbcnews.com',
+        href: 'https://www.nbcnews.com/news/world/new-study-suggests-mythical-loch-ness-monster-may-be-giant-n1049871',
+      },
+      {
+        text: 'Phys.org — “Could the Loch Ness monster be a giant eel?” (2019)',
+        label: 'phys.org',
+        href: 'https://phys.org/news/2019-09-loch-ness-monster-giant-eel.html',
+      },
+    ]}
   >
-    <p>TODO — second encounter prose.</p>
+    <p>
+      In 2018 a team led by Professor Neil Gemmell of the University of Otago collected roughly 250
+      water samples from across Loch Ness, at multiple sites and depths, and read the environmental DNA
+      shed into the water by everything living in it. Published in 2019, the results were the most
+      thorough biological census the loch has ever had.
+    </p>
+    <p>
+      There was no reptile DNA — the plesiosaur hypothesis, Gemmell said, simply does not survive the
+      data — and no sign of large interlopers like sharks, sturgeon, or catfish. What there was, in
+      startling quantity and at nearly every sampling point, was eel. Gemmell was careful not to
+      overclaim: DNA reveals presence, not size, so a genuinely giant eel cannot be ruled out, and, as
+      he put it, there may well be a monster in Loch Ness — they just did not find it. The search that
+      tried hardest to detect an unknown animal detected ordinary ones instead.
+    </p>
   </EncounterCard>
 </Section>
 
@@ -154,8 +334,18 @@ import '../../styles/pages/_draft.css';
 <Section heading="Before You Go">
   <Outro>
     <p>
-      TODO — closing outro. Echo the cold open. Land the rules. Give the reader a parting
-      instruction.
+      The Loch Ness Monster is the gentlest entry in this guide and, in its way, the most revealing. We
+      can watch the legend assemble itself: an ancient saint's story, a new road, a flat black loch that
+      hides everything and suggests anything, a staged photograph, and a name so good it was never going
+      to die.
     </p>
+    <p>
+      Go to the loch. It is genuinely beautiful, and genuinely worth the trip. Watch the water as long
+      as you like. But when a dark shape breaks the surface and your heart jumps, remember the sonar,
+      remember the DNA, and remember the toy submarine — and look again, slowly, at what is actually
+      there before you name it.
+    </p>
+    <p>End of journal entry. Mind the water. Stay sceptical. The loch keeps its secrets because it is
+    deep and dark, not because something is guarding them.</p>
   </Outro>
 </Section>

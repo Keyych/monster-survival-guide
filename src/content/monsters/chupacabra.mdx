@@ -5,11 +5,12 @@ region: 'Puerto Rico → Latin America → US Southwest'
 title: 'The Chupacabra'
 description: 'It started with one goat in Canóvanas in 1995. By the end of the year there were hundreds. Twenty years on, the name has crossed three continents and the picture has gotten less clear, not more.'
 tags: ['Livestock killer', '1990s origin', 'Hispanophone folklore']
-danger: 6
+danger: 4
 bandColor: '#3a2010'
 classification: 'monster survival guide  —  the chupacabra'
 entryStatus: 'Active Entry'
-status: 'draft'
+status: 'published'
+publishDate: '2026-10-20'
 season: 1
 sightings:
   - {
@@ -18,20 +19,22 @@ sightings:
       lon: -65.91,
       year: 1995,
       label: 'Madelyne Tolentino — first reported sighting that named the creature',
+      sourceUrl: 'https://www.csmonitor.com/Science/2011/0322/El-Chupacabra-mystery-origins-traced-to-1995-sci-fi-film',
     }
   - {
       name: 'Cuatro Ciénegas, Coahuila, Mexico',
       lat: 26.99,
       lon: -102.07,
       year: 2004,
-      label: 'Mexican goat-killing wave — ranchers shoot specimens',
+      label: 'Mexican goat-killing wave — ranchers shoot hairless canids',
     }
   - {
       name: 'Cuero, Texas',
       lat: 29.1,
       lon: -97.29,
       year: 2007,
-      label: 'Phylis Canion specimen · DNA testing on the Texas Chupacabra',
+      label: 'Phylis Canion specimen — DNA testing on the Texas Chupacabra',
+      sourceUrl: 'https://www.nbcnews.com/news/amp/wbna44167449',
     }
   - {
       name: 'Ratón, New Mexico',
@@ -41,111 +44,274 @@ sightings:
       label: 'Mainstream press picks up southwestern sightings',
     }
 recordKind: reported
-recordNote: Working draft based on reported accounts and their later retellings. Sources and claims
-  still need checking; reports do not establish that the creature exists.
+recordNote: Modern reports, press accounts, and a book-length investigation. Every testable
+  specimen recovered to date has been identified as a known animal.
 illustration:
   src: /illustrations/chupacabra.png
   alt: Loose ink doodle of a spiny-backed Chupacabra with large eyes and a clawed forelimb.
 dossier:
-  entity: The Chupacabra
-  origin: Puerto Rico → Latin America → US Southwest
-  status: Draft — awaiting research
+  entity: The Chupacabra (el chupacabras — "the goat-sucker")
+  origin: Canóvanas, Puerto Rico, 1995 → Latin America → US Southwest
+  status: Active in Reports — Explained on Every Recovered Specimen
   stamps:
     - Livestock Threat
     - Puerto Rico
-    - Hispanophone
-  dangerLabel: PREDATOR
-  dangerNote: 6/10 — Confirmed attacks on goats / chickens / sheep. No verified human attacks. Risk
-    concentrates around livestock.
+    - Misidentification
+  dangerLabel: OVERSTATED
+  dangerNote: 4/10 — Real losses to livestock, but from ordinary predators. No verified human
+    attacks, and no recovered carcass has ever been anything but a known animal.
 rules:
-  - title: TODO — rule 1
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 2
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 3
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 4
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 5
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 6
-    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: Lock the barn before you hunt the monster.
+    body:
+      A goat is far likelier to die to a coyote, a feral dog, or a stray than to anything new to
+      science — and those are the killers a fence, a light, and a closed gate actually stop. Secure
+      the pen first; investigate the legend second.
+  - title: A bloodless-looking kill is not a bloodless kill.
+    body:
+      When the "drained" carcasses were examined they had normal blood levels; it had simply pooled
+      and clotted inside, as in any dead animal. Puncture wounds and an uneaten body are ordinary
+      predator work, not vampirism.
+  - title: Photograph it before you bury it.
+    body:
+      A story grows teeth with every retelling. A clear photo with something for scale — and, if you
+      can manage it, a tissue sample in a bag — will outlast any certainty about what you saw.
+  - title: Distrust the description that arrives before the animal.
+    body:
+      The first and most influential witness described a creature matching Sil, from the 1995 film
+      Species, which she had just seen. When a new monster looks like last year's movie, suspect the
+      movie.
+  - title: A hairless dog is a sick dog, not a new species.
+    body:
+      Every "Texas chupacabra" examined has been a coyote or dog with advanced mange — which strips
+      the fur and shrinks the frame into something that looks genuinely wrong. Pity it; don't
+      mythologise it.
+  - title: Let the lab have the last word.
+    body:
+      Eyewitnesses disagree; DNA does not. Every chupacabra carcass ever tested has come back a canid
+      — coyote, dog, or hybrid. Want truth over the thrill? Get the sample tested and believe the
+      result.
 ---
 
 import Section from '../../components/Section.astro';
+import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
 import EncounterCard from '../../components/EncounterCard.astro';
 import Outro from '../../components/Outro.astro';
 import MonsterMap from '../../components/MonsterMap.astro';
-import '../../styles/pages/_draft.css';
+import '../../styles/pages/chupacabra.css';
 
 <Section heading="If You're Reading This">
   <p>
-    TODO — cold open. Place the reader at the scene of the encounter. Establish atmosphere. Earn
-    attention before asking for trust.
+    It is a morning in the hill country outside Canóvanas, Puerto Rico, and a farmer is standing over
+    eight dead goats. There is no blood on the ground. The bodies are intact — no sign that anything
+    tried to eat them — but each one has two or three small, deep punctures in the neck. Nothing in
+    the farmer's experience leaves a kill like this and then walks away hungry.
+  </p>
+  <p>
+    Word travels. By nightfall a neighbour has lost chickens the same way. Within weeks the island
+    has a name for the thing doing it, and within a year that name has jumped to Mexico, to Texas, to
+    the evening news. It is one of the few monsters in this guide young enough that we can watch it
+    being born — and that, as it turns out, is exactly the problem.
+  </p>
+  <p>
+    This is the twelfth journal entry of the Monster Survival Guide. The subject: the Chupacabra —
+    the goat-sucker. It is also the entry where the guide has to be most honest with you, because the
+    most useful thing we can tell you about this creature is how a monster gets made.
   </p>
 </Section>
 
 <Section heading="Where It Comes From">
   <p>
-    TODO — origin section. Cultural / historical / geographic context. A creature without context is
-    a horror story; a creature with context is something a reader can understand.
+    The Chupacabra has a birthday, which is rare. In August 1995, in the municipality of Canóvanas,
+    farmers began reporting livestock killed in a strange way — puncture wounds, no obvious feeding,
+    the animals apparently drained. A resident named Madelyne Tolentino gave the account that defined
+    everything to follow: a creature standing on two legs, three to four feet tall, with huge dark
+    eyes, thin arms, and a row of spines running down its back.
+  </p>
+  <p>
+    The name came shortly after. The Puerto Rican comedian and television personality Silverio Pérez
+    is generally credited with coining <em>el chupacabras</em> — literally "the goat-sucker" — and
+    the label was too good not to spread. Within months the creature had crossed the water to the
+    Latin American mainland, carried by newspapers and the young internet, each retelling adding
+    teeth, spines, and glowing eyes.
+  </p>
+  <div class="pull-quote">
+    Most monsters are old and anonymous. This one is young enough that we can name the first witness,
+    the week it appeared, and the movie it looked like. That is not a weakness in the story. It is
+    the story.
+  </div>
+  <p>
+    In his five-year investigation, published as <em>Tracking the Chupacabra</em> (2011), folklorist
+    Benjamin Radford traced that founding description back to a specific source. Tolentino, he found,
+    had recently seen the 1995 science-fiction film <em>Species</em> — whose alien creature, Sil,
+    closely resembles the spined, big-eyed biped she described. Radford concluded that "the most
+    important chupacabra description cannot be trusted." The monster, in other words, may have walked
+    out of a cinema before it walked into a goat pen.
   </p>
 </Section>
 
 <Section heading="What You Are Looking At">
+  <StatRow
+    stats={[
+      { num: '1995', label: 'Year the first sighting was reported, in Canóvanas, Puerto Rico' },
+      { num: '2', label: 'Distinct, incompatible creatures sold under one name' },
+      { num: '0', label: 'Recovered carcasses that turned out to be an unknown species' },
+    ]}
+  />
   <p>
-    TODO — physical description and identifying features. What witnesses agree on. What varies. What
-    to look for before you know what you are looking at.
+    There is no single Chupacabra. There are two, and they do not match. The original — the Puerto
+    Rican version — is the bipedal, reptilian, spiny-backed creature of Tolentino's account, roughly
+    the size of a small person, with oversized eyes. It is described, not recovered. No specimen of
+    it has ever been produced.
   </p>
+  <p>
+    The second arrived later, in Mexico and the US Southwest: a four-legged animal, hairless, grey,
+    with a pronounced spine, leathery skin, and a long muzzle full of prominent teeth. This one does
+    get recovered — ranchers shoot it, photograph it, freeze it. It is real, physical, and testable.
+    It is also, every single time, a dog family animal with mange.
+  </p>
+  <div class="warning-box">
+    <div class="warn-label">⚠ Critical Field Note</div>
+    <p>
+      When someone shows you "a chupacabra," establish which one they mean. If it is the upright
+      spined creature, you are looking at a story. If it is the hairless four-legged animal, you are
+      looking at a sick coyote or dog — and sarcoptic mange can make a familiar animal genuinely
+      unrecognisable, shrinking it, greying the skin, and giving it the gaunt, wrong silhouette that
+      sells the legend.
+    </p>
+  </div>
 </Section>
 
 <Section heading="How It Operates">
   <p>
-    TODO — behaviour pattern. How it hunts / haunts / appears. What comes first, next, and after.
+    The reported pattern is consistent: livestock — goats, chickens, sheep — found dead overnight,
+    intact, with small puncture wounds and, supposedly, no blood. The "no blood" claim is the engine
+    of the whole myth, the detail that turns an ordinary predator kill into something unnatural.
+  </p>
+  <p>
+    It is also the detail that failed first. When attacked animals were actually given a necropsy,
+    they were found to have normal blood levels. "They were not, in fact, vampirized," Radford noted
+    of the examined carcasses. Blood settles and clots inside a body after death; a predator that
+    bites, kills, and is then interrupted or simply not hungry will leave exactly the scene that
+    launched a legend — a punctured, uneaten animal that only looks drained.
+  </p>
+  <p>
+    What is real here is livestock loss, and it is not trivial to a farmer who depends on the herd.
+    But the culprits are the ones that have always taken livestock at night: coyotes, feral and stray
+    dogs, and other everyday predators, doing everyday damage that a strange name made strange.
   </p>
 </Section>
 
 <Section heading="An Honest Assessment of Its Weaknesses">
   <p>
-    TODO — what the accumulated evidence suggests works against it. Be honest when this section is
-    thin.
+    This is the entry where the honest assessment is the whole point, so here it is plainly: the
+    Chupacabra has never survived contact with a laboratory.
+  </p>
+  <p>
+    <strong>The description collapses.</strong> The founding Puerto Rican account traces to a film,
+    and the creature's appearance has drifted freely ever since — a sign of a story being retold, not
+    an animal being observed.
+  </p>
+  <p>
+    <strong>The carcasses collapse.</strong> Every physical "chupacabra" that has been examined and
+    genetically tested has come back as a coyote, a dog, or a coyote-dog hybrid, typically ravaged by
+    mange. Not one has been an unknown species.
+  </p>
+  <p>
+    <strong>The signature collapses.</strong> The "bloodless kill" — the one feature that made this
+    more than a predator problem — does not hold up to a necropsy.
+  </p>
+  <p>
+    None of that makes the fear unreal, or the dead goats imaginary. It means the thing to defend
+    against is ordinary, and the thing to be sceptical of is the story.
   </p>
 </Section>
 
 <Section heading="Six Rules That May Save Your Life">
-  <p>TODO — short intro paragraph framing the rules.</p>
+  <p>
+    These rules will not help you fight a monster, because the evidence says there isn't one. They
+    will help you protect a herd, read a scene honestly, and avoid being the next person who turns a
+    sick coyote into a legend.
+  </p>
   <SixRules
     rules={frontmatter.rules}
     title={frontmatter.title}
     number={frontmatter.number}
-    pocketHref={
-      frontmatter.status === 'draft' ? `/drafts/chupacabra/pocket/` : `/pocket/chupacabra/`
-    }
+    pocketHref="/pocket/chupacabra/"
   />
 </Section>
 
 <Section heading="Two Cases on the Record">
-  <p>TODO — intro paragraph for the encounter section.</p>
+  <p>
+    These two cases bookend the Chupacabra's short life: the sighting that created it, and the
+    specimen that explained it.
+  </p>
   <EncounterCard
-    id="Encounter 01 · TODO · TODO date"
-    title="TODO — encounter title"
-    meta="TODO — encounter witness / context"
-    verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    id="Encounter 01 · Canóvanas, Puerto Rico · August 1995"
+    title="The First Sighting"
+    meta="Madelyne Tolentino · The Account That Named the Creature"
+    verdict="documented"
+    verdictLabel="Origin Documented"
+    references={[
+      {
+        text: 'The Christian Science Monitor — “El Chupacabra mystery origins traced to 1995 sci-fi film” (2011)',
+        label: 'csmonitor.com',
+        href: 'https://www.csmonitor.com/Science/2011/0322/El-Chupacabra-mystery-origins-traced-to-1995-sci-fi-film',
+      },
+      {
+        text: 'Benjamin Radford — “Tracking the Chupacabra” (University of New Mexico Press, 2011)',
+        label: 'benjaminradford.com',
+        href: 'https://benjaminradford.com/tracking-the-chupacabra/',
+      },
+    ]}
   >
-    <p>TODO — encounter prose. Real, cited account.</p>
+    <p>
+      In August 1995, after a wave of strangely punctured, apparently bloodless livestock killings
+      around Canóvanas, resident Madelyne Tolentino described seeing the animal responsible: an
+      upright creature, three to four feet tall, with large dark eyes, thin limbs, and spines down
+      its back. Her account, widely repeated in the Puerto Rican press, became the template for every
+      Chupacabra that followed.
+    </p>
+    <p>
+      Years later, folklorist Benjamin Radford interviewed Tolentino as part of a five-year
+      investigation and found that she had recently watched the 1995 film <em>Species</em>, whose
+      creature — a spined, large-eyed humanoid — closely matched her description. Radford concluded
+      that the single most influential eyewitness account of the Chupacabra could not be relied upon,
+      and that the creature's defining image may have originated on screen.
+    </p>
   </EncounterCard>
   <EncounterCard
-    id="Encounter 02 · TODO · TODO date"
-    title="TODO — second encounter title"
-    meta="TODO — second encounter witness / context"
-    verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    id="Encounter 02 · Cuero, Texas · 2007"
+    title="The Cuero Specimen"
+    meta="Phylis Canion · A Body, a Freezer, and a DNA Test"
+    verdict="documented"
+    verdictLabel="Identified — Canid"
+    references={[
+      {
+        text: 'NBC News — “That’s no chupacabra! It’s probably a mangy old fox” (2011)',
+        label: 'nbcnews.com',
+        href: 'https://www.nbcnews.com/news/amp/wbna44167449',
+      },
+      {
+        text: 'Benjamin Radford — “Tracking the Chupacabra” (University of New Mexico Press, 2011)',
+        label: 'wikipedia.org',
+        href: 'https://en.wikipedia.org/wiki/Tracking_the_Chupacabra',
+      },
+    ]}
   >
-    <p>TODO — second encounter prose.</p>
+    <p>
+      In 2007, rancher Phylis Canion of Cuero, Texas, recovered the bodies of several strange,
+      hairless, grey animals she associated with the deaths of dozens of her chickens. She kept a
+      head in her freezer and, unlike almost every earlier claimant, pursued laboratory testing
+      rather than publicity alone.
+    </p>
+    <p>
+      The result was the one the pattern predicts. DNA analysis identified the animal as a member of
+      the dog family — the "Texas chupacabra," like every other recovered specimen, turning out to be
+      a coyote or coyote-dog hybrid, its uncanny appearance the work of sarcoptic mange rather than a
+      new branch of the tree of life. The specimen that was supposed to prove the creature instead
+      became the clearest evidence against it.
+    </p>
   </EncounterCard>
 </Section>
 
@@ -154,8 +320,15 @@ import '../../styles/pages/_draft.css';
 <Section heading="Before You Go">
   <Outro>
     <p>
-      TODO — closing outro. Echo the cold open. Land the rules. Give the reader a parting
-      instruction.
+      The Chupacabra is the youngest monster in this guide and, in a way, the most instructive. We can
+      watch it assemble itself in real time: a bad night in a goat pen, a frightened witness, a
+      half-remembered film, a perfect name, and a press and a public that wanted the story to be true.
     </p>
+    <p>
+      Keep your animals penned and lit. When you find a kill, look at it clearly before you name it.
+      And the next time something impossible shows up wearing last year's movie monster for a face —
+      <em>get the sample tested, and believe the lab.</em>
+    </p>
+    <p>End of journal entry. Mind your herd. Stay sceptical. The scariest thing here is how easily we made it.</p>
   </Outro>
 </Section>

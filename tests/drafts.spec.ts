@@ -1,27 +1,21 @@
 import { test, expect } from '@playwright/test';
+import { readdirSync, readFileSync } from 'node:fs';
 
-const slugs = [
-  'loch-ness-monster',
-  'bigfoot-sasquatch',
-  'yeti',
-  'chupacabra',
-  'aswang',
-  'kappa',
-  'yuki-onna',
-  'banshee',
-  'jiangshi',
-  'rougarou',
-  'mongolian-death-worm',
-  'yowie',
-  'bunyip',
-  'krampus',
-  'spring-heeled-jack',
-  'owlman-of-mawnan',
-  'flatwoods-monster',
-  'dover-demon',
-  'mokele-mbembe',
-  'el-coco',
-];
+// Derive the entry sets from content so this suite tracks drafts being
+// promoted to published entries batch by batch, instead of hard-coding counts.
+const entries = readdirSync('src/content/monsters')
+  .filter((f) => f.endsWith('.mdx'))
+  .map((f) => {
+    const src = readFileSync(`src/content/monsters/${f}`, 'utf8');
+    return {
+      slug: f.replace(/\.mdx$/, ''),
+      status: src.match(/^status:\s*['"]?(\w+)/m)?.[1] ?? '',
+      title: (src.match(/^title:\s*['"]?([^'"\n]+?)['"]?\s*$/m)?.[1] ?? f).trim(),
+    };
+  });
+const drafts = entries.filter((e) => e.status === 'draft');
+const slugs = drafts.map((d) => d.slug);
+const publishedCount = entries.filter((e) => e.status === 'published').length;
 const normalize = (text: string) => text.replace(/\s+/g, ' ').trim();
 
 for (const slug of slugs) {
@@ -83,18 +77,20 @@ for (const slug of slugs) {
 }
 
 test('draft search is high on mobile and handles reset and no matches', async ({ page }) => {
+  test.skip(drafts.length === 0, 'no drafts remain');
+  const searchName = drafts[0].title.replace(/^The\s+/i, '');
   await page.setViewportSize({ width: 375, height: 812 });
   await page.goto('/drafts/');
   await expect(page.getByRole('searchbox', { name: 'Search draft entries' })).toBeInViewport();
-  await expect(page.locator('[data-draft-card]')).toHaveCount(20);
+  await expect(page.locator('[data-draft-card]')).toHaveCount(drafts.length);
   await expect(page.locator('[data-draft-card]').first()).toBeInViewport();
-  await page.getByRole('searchbox').fill('Loch Ness');
+  await page.getByRole('searchbox').fill(searchName);
   await expect(page.locator('[data-draft-card]:visible')).toHaveCount(1);
-  await expect(page.getByRole('status')).toHaveText('1 of 20 drafts');
+  await expect(page.getByRole('status')).toHaveText(`1 of ${drafts.length} drafts`);
   await page.getByRole('searchbox').fill('unfindable creature');
   await expect(page.locator('[data-draft-empty]')).toBeVisible();
   await page.getByRole('button', { name: 'Clear search' }).click();
-  await expect(page.locator('[data-draft-card]:visible')).toHaveCount(20);
+  await expect(page.locator('[data-draft-card]:visible')).toHaveCount(drafts.length);
   await expect(page.getByRole('searchbox')).toBeFocused();
 });
 
@@ -108,7 +104,7 @@ test('drafts stay outside public indexes, feed, sitemap, and pocket routes', asy
     expect(await response.text(), path).not.toContain('/drafts/');
   }
   await page.goto('/entries/');
-  await expect(page.locator('[data-card]')).toHaveCount(8);
+  await expect(page.locator('[data-card]')).toHaveCount(publishedCount);
   for (const slug of slugs) {
     const response = await request.get(`/pocket/${slug}/`);
     expect(response.status(), slug).toBe(404);

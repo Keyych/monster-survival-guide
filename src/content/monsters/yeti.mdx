@@ -9,7 +9,8 @@ danger: 7
 bandColor: '#5a7a98'
 classification: 'monster survival guide  —  the yeti'
 entryStatus: 'Active Entry'
-status: 'draft'
+status: 'published'
+publishDate: '2026-10-20'
 season: 1
 sightings:
   - {
@@ -39,109 +40,281 @@ sightings:
       label: 'A. N. Tombazi Royal Geographical Society sighting',
     }
 recordKind: folklore
-recordNote: Working draft about folklore and tradition. Cultural context and sources still need
-  checking. The doodle is an imagined interpretation, not an authoritative cultural depiction.
+recordNote: Centuries of Himalayan oral tradition alongside a photographic record and modern
+  genetics. Every physical specimen recovered and tested to date has been identified as a
+  known animal — almost always a bear.
 illustration:
   src: /illustrations/yeti.png
   alt: Loose ink doodle of a hunched Yeti with a shaggy head and one large hand.
 dossier:
-  entity: The Yeti
-  origin: Himalayas, Nepal & Tibet
-  status: Draft — awaiting research
+  entity: The Yeti (meh-teh / mi-go — the "Abominable Snowman" by mistranslation)
+  origin: Himalayas, Nepal & Tibet — Sherpa & Tibetan tradition
+  status: Active in Reports — Identified as Bears on Every Tested Specimen
   stamps:
     - Alpine Apex
     - Sherpa Lore
     - Himalayan
   dangerLabel: ALPINE
-  dangerNote: 7/10 — Reports of attacks on livestock; rare on humans. The altitude is more dangerous
-    than the creature.
+  dangerNote: 7/10 — and almost all of that is the mountain. No verified Yeti attack on a human;
+    every tested specimen has been a bear or a dog. The altitude, the cold, and the crevasses are
+    the real killers at this elevation.
 rules:
-  - title: TODO — rule 1
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 2
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 3
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 4
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 5
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 6
-    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: Respect the mountain before you fear the monster.
+    body:
+      Hypoxia, cold, avalanche, and hidden crevasses kill climbers here every season; no Yeti has a
+      verified human kill. Plan for the environment first.
+  - title: Learn the local names before you name the creature.
+    body:
+      Sherpa and Tibetan tradition separates the meh-teh, dzu-teh, and mi-go. "Abominable Snowman"
+      is a 1921 newspaper mistranslation, not a fact — trust the people who live here.
+  - title: Distrust a single footprint in snow.
+    body:
+      Sun widens a print by the hour and melt fuses overlapping tracks into one giant oval; even
+      Shipton's party noted the Menlung prints had blurred. A lone track is a measurement problem.
+  - title: Assume bear until the evidence says otherwise.
+    body:
+      Himalayan brown and Tibetan blue bears rear upright and set a hind paw in a forepaw print,
+      leaving a long, humanlike, five-toed track. Messner, Taylor, and the DNA agree — rule out the
+      bear first.
+  - title: Bring back a sample, not a story.
+    body:
+      Testimony curdles into legend on the walk down. A hair, a scraping, or a photo with scale,
+      kept cold, outlasts any certainty about what you saw.
+  - title: Let the lab, and the local experts, have the last word.
+    body:
+      Every Yeti specimen ever sequenced came back a bear or a dog. Get the sample tested, believe
+      the result, and leave the real, endangered animal be.
 ---
 
 import Section from '../../components/Section.astro';
+import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
 import EncounterCard from '../../components/EncounterCard.astro';
 import Outro from '../../components/Outro.astro';
 import MonsterMap from '../../components/MonsterMap.astro';
-import '../../styles/pages/_draft.css';
+import '../../styles/pages/yeti.css';
 
 <Section heading="If You're Reading This">
   <p>
-    TODO — cold open. Place the reader at the scene of the encounter. Establish atmosphere. Earn
-    attention before asking for trust.
+    You are somewhere above twenty thousand feet, on a glacier west of Everest, and the air has
+    about half the oxygen your body was built for. The light is blinding. Your head aches in the
+    particular way that altitude aches. And in the snow ahead of you is a line of tracks — large,
+    deep, and shaped, you could swear, like the print of a bare human foot far too big to be human.
+  </p>
+  <p>
+    You have no tape measure. The sun is already softening the edges. In an hour the prints will be
+    wider than they are now; by tomorrow they will be shapeless ovals. Whatever you decide they are,
+    you have to decide it here, cold and oxygen-starved, standing over the single most famous piece
+    of evidence any monster in this guide has ever produced.
+  </p>
+  <p>
+    This is the eleventh journal entry of the Monster Survival Guide. The subject: the Yeti — the
+    being the Sherpa named long before the West arrived, and the West promptly renamed the Abominable
+    Snowman. It is also an entry where the honest answer and the exciting answer pull in opposite
+    directions, and we are going to side with honesty.
   </p>
 </Section>
 
 <Section heading="Where It Comes From">
   <p>
-    TODO — origin section. Cultural / historical / geographic context. A creature without context is
-    a horror story; a creature with context is something a reader can understand.
+    The Yeti does not begin with a cryptozoologist. It begins in the oral tradition of the Sherpa and
+    the Tibetan communities of the high Himalaya, who distinguished between several beings long before
+    any outsider went looking. Among the names recorded are the <em>meh-teh</em> — roughly a
+    man-sized wild creature — the <em>dzu-teh</em>, a larger cattle-killer, and the{' '}
+    <em>mi-go</em>, the "wild man" of the snows. These were not one monster. They were a vocabulary.
+  </p>
+  <p>
+    The famous English name is an accident. In 1921, after the British Everest reconnaissance
+    reported strange tracks, the journalist Henry Newman — writing under the byline "Kim" for the
+    Calcutta <em>Statesman</em> — interviewed the returning porters about the term{' '}
+    <em>metoh-kangmi</em>. He rendered <em>metoh</em> not as something like "man-bear" but as
+    "filthy," then reached for the punchier "abominable." Newman later admitted the whole thing
+    "seemed such a joyous creation" that he sent it round the papers. The monster, in other words,
+    got its headline before it got a hearing.
+  </p>
+  <div class="pull-quote">
+    The Sherpa had three careful names for what lived in those mountains. A newspaper flattened them
+    into two words that have misled everyone for a century. The first thing to survive about the Yeti
+    is the translation.
+  </div>
+  <p>
+    From there the legend climbed with the expeditions. A 1925 account from the Greek photographer
+    A. N. Tombazi, relayed to the Royal Geographical Society, described a dark figure on the
+    Annapurna side, upright, that had vanished by the time he reached the spot — where he found only
+    footprints. Each decade added relics, photographs, and claims, and each one pulled the Yeti
+    further from the measured tradition it came from and closer to the thing the West wanted it to be.
   </p>
 </Section>
 
 <Section heading="What You Are Looking At">
+  <StatRow
+    stats={[
+      { num: '1921', label: 'Year "Abominable Snowman" was coined — by mistranslation in a newspaper' },
+      { num: '9', label: 'Alleged Yeti specimens genetically tested in the 2017 study' },
+      { num: '0', label: 'Tested specimens that turned out to be an unknown species' },
+    ]}
+  />
   <p>
-    TODO — physical description and identifying features. What witnesses agree on. What varies. What
-    to look for before you know what you are looking at.
+    There is no single agreed Yeti, because the tradition never described one. The reports converge
+    on a large, shaggy, upright creature covered in reddish-brown or dark hair, broad through the
+    shoulders, that walks on two legs and leaves a wide, five-toed, humanlike track in snow. Height
+    estimates balloon with the retelling, which is the first clue that you are dealing with a story
+    rather than a measured animal.
   </p>
+  <p>
+    What the evidence keeps resolving into is a bear. The Himalayan brown bear (<em>Ursus arctos
+    isabellinus</em>) and the Tibetan blue bear (<em>U. a. pruinosus</em>) both rear onto their hind
+    legs to look around, stand taller than a person when they do, and — crucially — place a hind paw
+    into the impression left by a forepaw. The result is an elongated, overlapping print that reads
+    to a startled eye as a single enormous barefoot human track.
+  </p>
+  <div class="warning-box">
+    <div class="warn-label">⚠ Critical Field Note</div>
+    <p>
+      Before you decide you are looking at a Yeti, establish what the snow has done to the evidence.
+      A print in sun-warmed snow grows for hours after it is made; overlapping tracks melt together;
+      a bear's natural gait leaves a humanlike line. The classic Yeti footprint is less a portrait of
+      an animal than a photograph of how much melting has happened since it walked past.
+    </p>
+  </div>
 </Section>
 
 <Section heading="How It Operates">
   <p>
-    TODO — behaviour pattern. How it hunts / haunts / appears. What comes first, next, and after.
+    The reported pattern is sparse and consistent: tracks far more often than a figure, a figure far
+    more often than a clear look, and almost never contact. Herders report livestock losses in high
+    pasture; climbers report a dark shape on a ridge that is gone by the time they close the distance;
+    expeditions bring back prints in the snow and, occasionally, a relic held in a monastery.
+  </p>
+  <p>
+    That profile matches a shy, high-altitude omnivore avoiding people — which is exactly how a bear
+    behaves. The dzu-teh of Sherpa tradition, the larger cattle-raider, maps neatly onto a brown bear
+    taking livestock. What does not happen, in any verified record, is the thing the horror version
+    promises: a stalking, a confrontation, a human kill. The Yeti's "behaviour" is mostly the
+    behaviour of tracks in snow and stories told afterward.
+  </p>
+  <p>
+    What is genuinely dangerous up here is the setting. People die on these slopes every season — to
+    altitude sickness, cold, avalanche, and crevasse — and a frightening legend in a lethal landscape
+    is a bad combination, because it points your attention at the wrong threat.
   </p>
 </Section>
 
 <Section heading="An Honest Assessment of Its Weaknesses">
   <p>
-    TODO — what the accumulated evidence suggests works against it. Be honest when this section is
-    thin.
+    As with the goat-sucker, the honest assessment is the whole point, so plainly: the Yeti has never
+    survived laboratory contact either.
+  </p>
+  <p>
+    <strong>The name collapses.</strong> "Abominable Snowman" is a documented mistranslation, and the
+    single tradition it implies never existed — the Sherpa described several distinct beings.
+  </p>
+  <p>
+    <strong>The tracks collapse.</strong> Snow enlarges and merges prints, and a bear's overlapping
+    fore-and-hind gait produces the humanlike footprint on its own. Even the best photographs are
+    measurement problems before they are mysteries.
+  </p>
+  <p>
+    <strong>The specimens collapse.</strong> When alleged Yeti hair, bone, tooth, skin, and
+    droppings were genetically sequenced, they came back as bears — and in one case a dog. Not one
+    was an unknown species.
+  </p>
+  <p>
+    None of that makes the mountain safe or the tradition foolish. It means the creature to respect
+    is a bear, the danger to prepare for is the altitude, and the thing to be sceptical of is the
+    headline.
   </p>
 </Section>
 
 <Section heading="Six Rules That May Save Your Life">
-  <p>TODO — short intro paragraph framing the rules.</p>
+  <p>
+    These rules will not help you fight a Yeti, because the evidence says the footprints belong to a
+    bear and the real killer is the mountain. They will help you read the snow honestly, stay alive
+    at altitude, and avoid being the next expedition to carry a bear home as a monster.
+  </p>
   <SixRules
     rules={frontmatter.rules}
     title={frontmatter.title}
     number={frontmatter.number}
-    pocketHref={frontmatter.status === 'draft' ? `/drafts/yeti/pocket/` : `/pocket/yeti/`}
+    pocketHref="/pocket/yeti/"
   />
 </Section>
 
 <Section heading="Two Cases on the Record">
-  <p>TODO — intro paragraph for the encounter section.</p>
+  <p>
+    These two cases bookend the modern Yeti: the photograph that launched the search, and the study
+    that, for most scientists, closed it.
+  </p>
   <EncounterCard
-    id="Encounter 01 · TODO · TODO date"
-    title="TODO — encounter title"
-    meta="TODO — encounter witness / context"
-    verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    id="Encounter 01 · Menlung Glacier, Nepal · November 1951"
+    title="The Shipton Footprint"
+    meta="Eric Shipton & Michael Ward · The Photograph That Launched Modern Yeti Research"
+    verdict="documented"
+    verdictLabel="Documented — Disputed"
+    references={[
+      {
+        text: 'National Geographic — “Did This Explorer Really Find the Abominable Snowman?” (2017)',
+        label: 'nationalgeographic.com',
+        href: 'https://www.nationalgeographic.com/animals/article/yeti-abominable-snowman-bear-daniel-taylor',
+      },
+      {
+        text: 'Wikipedia — “Yeti” (Shipton 1951 Menlung Basin photographs)',
+        label: 'wikipedia.org',
+        href: 'https://en.wikipedia.org/wiki/Yeti',
+      },
+    ]}
   >
-    <p>TODO — encounter prose. Real, cited account.</p>
+    <p>
+      In 1951, during the Everest reconnaissance, mountaineers Eric Shipton and Michael Ward were
+      scouting an alternative route when they came upon a line of large prints in the snow of the
+      Menlung Glacier, near the Nepal–Tibet border. Having no means of measuring them, Shipton laid an
+      ice axe and a booted foot beside the clearest print for scale and took his now-famous
+      photographs. He noted that most of the trail had already blurred in the thaw, with only one
+      print still showing distinct toes.
+    </p>
+    <p>
+      That single sharp image became the foundation of half a century of Yeti research. It is also,
+      on closer reading, a textbook illustration of why snow tracks are unreliable: the prints were
+      melting as they were photographed. Decades later, researcher Daniel Taylor — who spent much of
+      his life investigating the mystery — concluded that the Menlung tracks were most plausibly made
+      by an Asian black bear, whose overlapping paw prints and thumb-like digit can account for the
+      humanlike shape. The photograph is real; the monster in it is the open question.
+    </p>
   </EncounterCard>
   <EncounterCard
-    id="Encounter 02 · TODO · TODO date"
-    title="TODO — second encounter title"
-    meta="TODO — second encounter witness / context"
-    verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    id="Encounter 02 · Himalaya & Tibetan Plateau · 2017"
+    title="The DNA Verdict"
+    meta="Charlotte Lindqvist et al. · Nine “Yeti” Specimens, Sequenced"
+    verdict="documented"
+    verdictLabel="Identified — Bears (and One Dog)"
+    references={[
+      {
+        text: 'University at Buffalo — “Abominable Snowman? Nope. Study ties DNA samples from purported Yetis to Asian bears” (2017)',
+        label: 'buffalo.edu',
+        href: 'https://www.buffalo.edu/news/releases/2017/11/037.html',
+      },
+      {
+        text: 'Lan et al. — “Evolutionary history of enigmatic bears… and the identity of the yeti,” Proc. R. Soc. B 284:20171804 (2017)',
+        label: 'doi.org',
+        href: 'https://doi.org/10.1098/rspb.2017.1804',
+      },
+    ]}
   >
-    <p>TODO — second encounter prose.</p>
+    <p>
+      In 2017, a team led by biologist Charlotte Lindqvist of the University at Buffalo carried out
+      the most rigorous genetic analysis of alleged Yeti material to date. They examined nine
+      specimens drawn from museums and private collections — bone, tooth, skin, hair, and fecal
+      samples — including a tooth from a stuffed "Yeti" and a piece of skin from a supposed Yeti hand
+      kept as a monastery relic. Several had been passed down for years as proof of the creature.
+    </p>
+    <p>
+      The result was the one the pattern predicts. Eight of the nine samples were Asian bears — six
+      Tibetan brown bears, one Himalayan brown bear, and one Asian black bear — and the ninth was a
+      dog. Published in <em>Proceedings of the Royal Society B</em>, the study also produced the first
+      genetic maps of the region's rare brown and black bears. "Our findings strongly suggest that the
+      biological underpinnings of the Yeti legend can be found in local bears," Lindqvist concluded —
+      the specimens meant to prove the creature became the clearest evidence against it.
+    </p>
   </EncounterCard>
 </Section>
 
@@ -150,8 +323,17 @@ import '../../styles/pages/_draft.css';
 <Section heading="Before You Go">
   <Outro>
     <p>
-      TODO — closing outro. Echo the cold open. Land the rules. Give the reader a parting
-      instruction.
+      The Yeti is the best-documented monster in this guide and, in a way, the most instructive. It
+      has a famous photograph, a century of expeditions, relics in monasteries, and a name known on
+      every continent — and when each piece was finally measured, weighed, or sequenced, it resolved
+      into a bear, a melting footprint, or a mistranslated headline.
     </p>
+    <p>
+      Respect the mountain, which is the thing up here that actually kills. Listen to the Sherpa, who
+      named these beings with more care than the West ever did. And the next time you stand over an
+      impossible footprint in warming snow, with the sun widening it by the minute —{' '}
+      <em>photograph it, sample it, and believe the lab.</em>
+    </p>
+    <p>End of journal entry. Mind the altitude. Stay sceptical. Up here, the mountain is the monster.</p>
   </Outro>
 </Section>

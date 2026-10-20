@@ -1,0 +1,15 @@
+/* Theme tokens for /chupacabra. Shared layout rules live in field-manual.css. */
+:root {
+  --paper: #ece3d0;
+  --aged: #ddd0b4;
+  --ink: #1c1710;
+  --faded: #4e4330;
+  --stamp-red: #8b1a0a;
+  --stamp-blue: #3a2812;
+  --accent: #8a4a1a;
+  --redact: #120d08;
+  --margin: #6a5a3a;
+  --highlight: #a85a20;
+  --rule: rgba(28, 23, 16, 0.1);
+  --warn: #8b1a0a;
+}

@@ -1,0 +1,15 @@
+/* Theme tokens for /krampus. Shared layout rules live in field-manual.css. */
+:root {
+  --paper: #e7dccf;
+  --aged: #d6c6b4;
+  --ink: #1a1210;
+  --faded: #4a3228;
+  --stamp-red: #8a1410;
+  --stamp-blue: #3a2420;
+  --accent: #9a2418;
+  --redact: #140c0a;
+  --margin: #6a4038;
+  --highlight: #b8401c;
+  --rule: rgba(26, 18, 16, 0.11);
+  --warn: #8a1410;
+}

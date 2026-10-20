@@ -1,0 +1,15 @@
+/* Theme tokens for /loch-ness-monster. Shared layout rules live in field-manual.css. */
+:root {
+  --paper: #dbe3e8;
+  --aged: #c3d0d7;
+  --ink: #0f171c;
+  --faded: #3a474e;
+  --stamp-red: #7a1f12;
+  --stamp-blue: #1a4060;
+  --accent: #1f5a78;
+  --redact: #0a1014;
+  --margin: #46535a;
+  --highlight: #2d7ca0;
+  --rule: rgba(15, 23, 28, 0.1);
+  --warn: #7a1f12;
+}

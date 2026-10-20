@@ -1,29 +1,29 @@
 import { test, expect } from '@playwright/test';
+import { readdirSync, readFileSync } from 'node:fs';
 
-const slugs = [
-  'wendigo',
-  'slenderman',
-  'black-eyed-children',
-  'mothman',
-  'beast-of-bray-road',
-  'jersey-devil',
-  'skinwalker',
-  'the-rake',
-];
+// Derive the published set from content so the suite tracks drafts being
+// promoted into published entries, rather than hard-coding the list/count.
+const slugs = readdirSync('src/content/monsters')
+  .filter((f) => f.endsWith('.mdx'))
+  .filter((f) =>
+    /^status:\s*['"]?published/m.test(readFileSync(`src/content/monsters/${f}`, 'utf8')),
+  )
+  .map((f) => f.replace(/\.mdx$/, ''));
+const publishedCount = slugs.length;
 
 test('search combines with danger filters and reset restores the archive', async ({ page }) => {
   await page.goto('/entries/');
   await expect(page.getByRole('searchbox', { name: 'Search entries' })).toBeInViewport();
   await page.getByRole('searchbox', { name: 'Search entries' }).fill('Mothman');
   await expect(page.locator('[data-card]:visible')).toHaveCount(1);
-  await expect(page.getByRole('status')).toHaveText('1 of 8 entries');
+  await expect(page.getByRole('status')).toHaveText(`1 of ${publishedCount} entries`);
   await page.locator('.index-filters summary').click();
   await page.getByRole('button', { name: '9–10', exact: true }).click();
   await expect(page.locator('[data-card]:visible')).toHaveCount(0);
   await expect(page.locator('[data-filter-empty]')).toBeVisible();
   await page.getByRole('button', { name: 'Reset', exact: true }).click();
-  await expect(page.locator('[data-card]:visible')).toHaveCount(8);
-  await expect(page.getByRole('status')).toHaveText('8 of 8 entries');
+  await expect(page.locator('[data-card]:visible')).toHaveCount(publishedCount);
+  await expect(page.getByRole('status')).toHaveText(`${publishedCount} of ${publishedCount} entries`);
 });
 
 test('each entry has working contents, an illustration, and the same six rules in print', async ({
