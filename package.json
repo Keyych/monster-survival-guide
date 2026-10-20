@@ -18,21 +18,21 @@
     "lhci": "lhci autorun"
   },
   "dependencies": {
-    "@astrojs/mdx": "^5.0.4",
-    "@astrojs/rss": "^4.0.18",
-    "@astrojs/sitemap": "^3.6.0",
+    "@astrojs/mdx": "^8.1.0",
+    "@astrojs/rss": "^4.0.19",
+    "@astrojs/sitemap": "^3.7.4",
     "@fontsource/anonymous-pro": "^5.2.8",
     "@fontsource/rajdhani": "^5.2.7",
     "@fontsource/sorts-mill-goudy": "^5.2.8",
     "@resvg/resvg-js": "^2.6.2",
-    "astro": "^6.2.2",
+    "astro": "^7.4.1",
     "d3-geo": "^3.1.1",
     "satori": "^0.26.0",
     "topojson-client": "^3.1.0",
     "world-atlas": "^2.0.2"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.9",
+    "@astrojs/check": "^0.9.11",
     "@cloudflare/workers-types": "^4.20260510.1",
     "@lhci/cli": "^0.15.1",
     "@playwright/test": "^1.59.1",
