@@ -9,7 +9,8 @@ danger: 4
 bandColor: '#2a1850'
 classification: 'monster survival guide  —  el coco'
 entryStatus: 'Active Entry'
-status: 'draft'
+status: 'published'
+publishDate: '2026-10-20'
 season: 1
 sightings:
   - {
@@ -17,129 +18,302 @@ sightings:
       lat: 40.42,
       lon: -3.7,
       label: 'Earliest documented El Coco references (Iberian medieval tradition · 17th-century literature)',
+      sourceUrl: 'https://en.wikipedia.org/wiki/Coco_(folklore)',
     }
   - {
       name: 'Mexico City, Mexico',
       lat: 19.43,
       lon: -99.13,
       label: 'Mexican Cucuy tradition · the most widespread Latin American variant',
+      sourceUrl: 'https://en.wikipedia.org/wiki/Coco_(folklore)',
     }
   - {
       name: 'Buenos Aires, Argentina',
       lat: -34.6,
       lon: -58.38,
       label: 'Argentine Cuco tradition · 19th-century criollo immigration carries the figure south',
+      sourceUrl: 'https://en.wikipedia.org/wiki/Coco_(folklore)',
     }
   - {
       name: 'Manila, Philippines',
       lat: 14.6,
       lon: 120.98,
       label: 'Philippine Coco tradition · Spanish colonial-era survival',
+      sourceUrl: 'https://en.wikipedia.org/wiki/Coco_(folklore)',
     }
 recordKind: folklore
-recordNote: Working draft about folklore and tradition. Cultural context and sources still need
-  checking. The doodle is an imagined interpretation, not an authoritative cultural depiction.
+recordNote: Folklore and cultural history — a traditional bedtime figure documented in lullaby,
+  literature, and art. The figure itself and the historical record of how it was used are distinct.
 illustration:
   src: /illustrations/el-coco.png
   alt: Loose ink doodle of an indistinct hooded figure holding the edge of its cloak.
 dossier:
-  entity: El Coco
-  origin: Iberian peninsula → Latin America
-  status: Draft — awaiting research
+  entity: El Coco (El Cuco · El Cucuy · the Coca)
+  origin: Northern Portugal & Galicia → Spain → Latin America & the Philippines
+  status: Living Tradition — Invoked at Bedtime for Centuries
   stamps:
     - Iberian Lore
     - Bedtime
     - Hispanophone
   dangerLabel: BEDTIME
-  dangerNote: 4/10 — Targets children. Documented as a behavioural lever ('sleep or El Coco comes');
-    claims of physical contact are rare in the modern record.
+  dangerNote: 4/10 — A figure aimed at children, invoked to enforce sleep and obedience. There is
+    no creature to fight here; the real cost is the fear itself.
 rules:
-  - title: TODO — rule 1
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 2
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 3
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 4
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 5
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 6
-    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: Know what you are actually dealing with.
+    body: El Coco is a discipline device, not a predator — a shapeless threat invoked to make
+      children sleep. There is nothing in the dark to fight, only a habit of fear to outgrow.
+  - title: The threat lives in the voice, not the shadow.
+    body: The Coco has no fixed face because he was never meant to have one; the dread is carried by
+      the adult who names him. Lower the voice and the monster shrinks.
+  - title: Hear what the lullaby is really doing.
+    body: The lullaby Duérmete niño is sung to soothe, yet it warns that the Coco will come and eat
+      the child who stays awake. Comfort and threat arrive in a single breath.
+  - title: Fear buys sleep tonight and a debt tomorrow.
+    body: A frightened child may shut their eyes, but bedtime terror tends to return as nightmares
+      and clinging. Tonight's quiet is borrowed against longer unrest.
+  - title: Name the fear to disarm it.
+    body:
+      Children handle a monster far better once an adult explains it is only a story told to make
+      them behave. Understanding is the one thing the Coco cannot survive.
+  - title: Retire the bogeyman as the child grows.
+    body: The threat loses its grip the moment a child is old enough to doubt it, and leaning harder
+      only breeds resentment. Let the Coco go before it is clung to.
 ---
 
 import Section from '../../components/Section.astro';
+import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
 import EncounterCard from '../../components/EncounterCard.astro';
 import Outro from '../../components/Outro.astro';
 import MonsterMap from '../../components/MonsterMap.astro';
-import '../../styles/pages/_draft.css';
+import '../../styles/pages/el-coco.css';
 
 <Section heading="If You're Reading This">
   <p>
-    TODO — cold open. Place the reader at the scene of the encounter. Establish atmosphere. Earn
-    attention before asking for trust.
+    It is somewhere past the hour a small child should be asleep, and the small child is not asleep.
+    The room is dark except for a candle or a hallway light. A parent — tired, out of patience, out
+    of options — leans into the doorway and says the oldest thing in the book. Go to sleep. If you
+    do not go to sleep, <em>el Coco</em> will come.
+  </p>
+  <p>
+    The child does not ask what el Coco looks like, because el Coco does not look like anything.
+    That is the whole trick. He is a shape at the edge of the room, a weight on the roof, a thing
+    that takes children who will not close their eyes. He has no face, and so he wears the one the
+    child is most afraid of.
+  </p>
+  <p>
+    This is the twenty-eighth journal entry of the Monster Survival Guide, and it is a strange one,
+    because the subject is not a creature you can meet in the woods. El Coco lives in doorways and
+    lullabies. He has frightened children across the Spanish- and Portuguese-speaking world for
+    centuries — and the most useful thing this guide can tell you is who actually sends him.
   </p>
 </Section>
 
 <Section heading="Where It Comes From">
   <p>
-    TODO — origin section. Cultural / historical / geographic context. A creature without context is
-    a horror story; a creature with context is something a reader can understand.
+    El Coco is one of the oldest bogeymen on record in the Iberian world. Folklorists trace the
+    figure to northern Portugal and Galicia, where the words <em>coco</em> and <em>coca</em> mean,
+    roughly, "head" or "skull" — and where a related female figure, the Coca, appears in old
+    processional traditions. From the peninsula the figure travelled on the tongues of parents: with
+    Spanish and Portuguese colonisation it spread across Latin America as el Cuco, el Cucuy, and la
+    Cuca, and as far as the Philippines.
   </p>
+  <p>
+    The oldest surviving rhyme about him dates to the 17th century, preserved in a dramatic
+    <em> auto</em> by the playwright Juan Caxés. But the figure was never really a story with a
+    plot. He was a tool — a word you reached for when a child would not sleep and reason had failed.
+  </p>
+  <div class="pull-quote">
+    Most monsters in this guide are described in detail. El Coco is defined by the opposite: he is
+    whatever shape a child's fear needs him to be. The vagueness is not a gap in the record. It is
+    the design.
+  </div>
+  <p>
+    That is why there is no definitive portrait of him. In some regions he is a shrouded figure, in
+    others a lurking animal, in Brazil a fearsome alligator-woman named Cuca. The constant across
+    every version is not the body but the sentence: <em>behave, or he comes for you.</em>
+  </p>
+  <div class="lore-box">
+    <p>
+      The Coco belongs to a family of child-frightening figures that appears in nearly every culture
+      — the English bogeyman, the Slavic Baba Yaga, the sack-man of a dozen countries. They are
+      among the most universal of folk inventions precisely because they answer a universal problem:
+      a tired adult and a child who will not obey. The monster is imaginary. The bedtime standoff is
+      very real.
+    </p>
+  </div>
 </Section>
 
 <Section heading="What You Are Looking At">
+  <StatRow
+    stats={[
+      { num: '17th', label: 'Century of the oldest surviving Coco rhyme, in a Caxés auto' },
+      { num: '0', label: 'Fixed physical descriptions — his shapelessness is the point' },
+      { num: '1799', label: 'Year Goya etched the Coco for Los Caprichos' },
+    ]}
+  />
   <p>
-    TODO — physical description and identifying features. What witnesses agree on. What varies. What
-    to look for before you know what you are looking at.
+    There is nothing consistent to see, and that is the first thing to understand about him. Ask ten
+    adults who were raised on el Coco what he looks like and you will get ten different answers — a
+    hunched shadow, a man in a sack, a hairy thing, a pair of eyes under the bed. None of them is
+    wrong, because the figure was never standardised. He is a placeholder for dread.
   </p>
+  <p>
+    What is consistent is the <em>function</em>. El Coco is invoked, almost always, at two moments —
+    when a child will not sleep, and when a child will not behave. He is a lever, pulled by a
+    parent, and the shape he takes is supplied by the child's own imagination. That is what makes
+    him so effective and so hard to fight. You cannot kill a thing that lives in the listener's
+    head.
+  </p>
+  <div class="warning-box">
+    <div class="warn-label">⚠ Critical Field Note</div>
+    <p>
+      If a child reports el Coco, do not go looking for el Coco. Look for what the child is actually
+      frightened of — the dark, the empty hallway, being alone, the adult who named him. The figure
+      is a container for a real fear, and treating the container as the problem leaves the fear
+      exactly where it was.
+    </p>
+  </div>
 </Section>
 
 <Section heading="How It Operates">
   <p>
-    TODO — behaviour pattern. How it hunts / haunts / appears. What comes first, next, and after.
+    El Coco does not hunt. He is summoned. The mechanism is a sentence, usually a lullaby or a
+    warning, and it works by attaching an enormous, formless consequence to a small act of
+    disobedience. The child cannot picture the punishment clearly, so the child pictures the worst
+    thing they can — and complies.
+  </p>
+  <p>
+    The most famous delivery system is the cradle song.{' '}
+    <em>Duérmete niño, duérmete ya, que viene el Coco y te comerá</em> — "sleep, child, sleep now,
+    or the Coco comes and will eat you." It is sung in the gentle register of a lullaby while
+    carrying, in plain words, a threat of being devoured. That contradiction — a soothing melody
+    wrapped around a warning — is the entire machinery of el Coco in miniature.
+  </p>
+  <p>
+    It is also self-limiting. The threat works on the very young and loses its grip as the child
+    grows old enough to doubt it. There is no documented pattern of el Coco "appearing" to anyone,
+    because there is nothing to appear. What persists is the memory of the fear, and for some, the
+    uneasy inheritance of passing the same words down the line.
   </p>
 </Section>
 
 <Section heading="An Honest Assessment of Its Weaknesses">
   <p>
-    TODO — what the accumulated evidence suggests works against it. Be honest when this section is
-    thin.
+    This is the easiest honest assessment in the guide, because el Coco has no body to find a
+    weakness in. He is not a creature that can be fought, trapped, or verified. He is a parenting
+    instrument, and the honest questions are about the instrument, not the monster.
+  </p>
+  <p>
+    <strong>He dissolves under explanation.</strong> Unlike a predator, the Coco cannot survive a
+    child understanding what he is. The moment an adult explains that he is a story told to
+    encourage sleep, the figure has nothing left to stand on.
+  </p>
+  <p>
+    <strong>He dies with age.</strong> The threat is calibrated to the credulity of the very young.
+    Pull the lever on an older child and it does nothing — or worse, it breeds resentment and the
+    sense of having been manipulated.
+  </p>
+  <p>
+    <strong>And the method itself is now questioned.</strong> Fear-based discipline can buy
+    compliance in the short term, but child-development research broadly favours calm, consistent
+    guidance over scare tactics, which tend to raise anxiety without teaching the behaviour they
+    were meant to. Even in Goya's day, as the next section shows, the tactic had its critics.
   </p>
 </Section>
 
 <Section heading="Six Rules That May Save Your Life">
-  <p>TODO — short intro paragraph framing the rules.</p>
+  <p>
+    These rules will not help you fight a monster, because there is no monster — there is a sentence
+    that adults say and children believe. They are here to help you recognise the device for what it
+    is, and to retire it kindly.
+  </p>
   <SixRules
     rules={frontmatter.rules}
     title={frontmatter.title}
     number={frontmatter.number}
-    pocketHref={frontmatter.status === 'draft' ? `/drafts/el-coco/pocket/` : `/pocket/el-coco/`}
+    pocketHref="/pocket/el-coco/"
   />
 </Section>
 
 <Section heading="Two Cases on the Record">
-  <p>TODO — intro paragraph for the encounter section.</p>
+  <p>
+    These two cases are not sightings — el Coco leaves no carcass and no witness. They are
+    documented pieces of cultural history: the lullaby that carried him for centuries, and the
+    moment one of the greatest artists in Europe put the whole mechanism on a single plate.
+  </p>
   <EncounterCard
-    id="Encounter 01 · TODO · TODO date"
-    title="TODO — encounter title"
-    meta="TODO — encounter witness / context"
-    verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    id="Encounter 01 · Iberia & Latin America · 17th century → present"
+    title="The Lullaby That Carries Him"
+    meta="Duérmete niño · The Cradle Song as Delivery System"
+    verdict="cultural"
+    verdictLabel="Living Tradition"
+    references={[
+      {
+        text: 'Wikipedia — “Coco (folklore)”, on the lullaby, the 17th-century Caxés auto, and the figure’s spread',
+        label: 'wikipedia.org',
+        href: 'https://en.wikipedia.org/wiki/Coco_(folklore)',
+      },
+      {
+        text: 'Sensational Spain — “Spanish Monsters: Why are Kids in Spain Afraid of El Coco?”',
+        label: 'sensationalspain.com',
+        href: 'https://sensationalspain.com/spanish-monsters/',
+      },
+    ]}
   >
-    <p>TODO — encounter prose. Real, cited account.</p>
+    <p>
+      The most durable record of el Coco is not a painting or a chronicle but a song that parents
+      still sing. The traditional cradle rhyme —{' '}
+      <em>Duérmete niño, duérmete ya, que viene el Coco y te comerá</em> — instructs the child to
+      sleep at once, because the Coco is coming and will eat them. It is sung in the soft cadence of
+      any lullaby, which is exactly what makes it remarkable: a threat of being devoured, delivered
+      as a comfort.
+    </p>
+    <p>
+      The oldest surviving verse of this kind is traced to the 17th century, preserved in a dramatic
+      <em> auto</em> by the Spanish playwright Juan Caxés. From that root the figure travelled
+      wherever Spanish and Portuguese were spoken — becoming el Cucuy in Mexico, el Cuco across much
+      of Latin America, and the Coca in the Portuguese tradition — carried not by books but by
+      caregivers repeating the same few lines to the next sleepless child. It is one of the clearest
+      examples we have of folklore surviving purely as a tool of everyday parenting.
+    </p>
   </EncounterCard>
   <EncounterCard
-    id="Encounter 02 · TODO · TODO date"
-    title="TODO — second encounter title"
-    meta="TODO — second encounter witness / context"
-    verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    id="Encounter 02 · Madrid, Spain · 1799"
+    title="Goya Puts the Bogeyman on a Plate"
+    meta="Francisco Goya · “Que viene el Coco” · Los Caprichos, Plate 3"
+    verdict="documented"
+    verdictLabel="Art-Historical Record"
+    references={[
+      {
+        text: 'The Metropolitan Museum of Art — Plate 3 from “Los Caprichos”: Here comes the bogey-man (Que viene el Coco)',
+        label: 'metmuseum.org',
+        href: 'https://www.metmuseum.org/art/collection/search/360412',
+      },
+      {
+        text: 'Seattle Art Museum — “Que viene el coco (Here Comes the Bogeyman)”',
+        label: 'seattleartmuseum.org',
+        href: 'https://art.seattleartmuseum.org/objects/18638/que-viene-el-coco-here-comes-the-bogeyman',
+      },
+    ]}
   >
-    <p>TODO — second encounter prose.</p>
+    <p>
+      In 1799 Francisco Goya published <em>Los Caprichos</em>, a series of etchings satirising the
+      follies of Spanish society. The third plate is titled <em>Que viene el Coco</em> — "Here comes
+      the bogeyman." It shows a mother and two small children recoiling as a tall, shrouded,
+      faceless figure looms over them in the dark. It is el Coco, rendered by one of the most
+      important artists in European history, and the image is not flattering to the people who
+      summon him.
+    </p>
+    <p>
+      Museum scholarship reads the plate as a criticism of a fear-based upbringing. The Metropolitan
+      Museum of Art describes it as Goya's attack on an educational system built on frightening
+      children with supernatural beings, and notes the darker possibility that the "bogeyman" —
+      wearing fashionable pointed shoes beneath his robe — is the mother's lover in disguise. The
+      Seattle Art Museum frames the same image as propaganda for Enlightenment reforms that warned
+      against using scare tactics on children. Either way, the verdict is the one this entry keeps
+      arriving at — the thing to be wary of is not the Coco, but the adult holding him.
+    </p>
   </EncounterCard>
 </Section>
 
@@ -148,8 +322,20 @@ import '../../styles/pages/_draft.css';
 <Section heading="Before You Go">
   <Outro>
     <p>
-      TODO — closing outro. Echo the cold open. Land the rules. Give the reader a parting
-      instruction.
+      El Coco is the rare monster in this guide that was never meant to be real. He is a word for a
+      consequence too large to picture, handed to a child in the dark so the child will close their
+      eyes. He has no shape because he does not need one. We supply the shape ourselves, and then we
+      pass it on.
     </p>
+    <p>
+      Goya saw the whole machine two centuries ago and put it on a plate — the looming figure, the
+      terrified children, and the grown-up who called him into the room. That is still the honest
+      picture. The danger here was never the bogeyman. It was the ease of reaching for him.
+    </p>
+    <p>
+      So when the room is dark and the child will not sleep and the oldest sentence in the book is
+      right there on your tongue — <em>name the fear instead of feeding it.</em>
+    </p>
+    <p>End of journal entry. Mind the doorway. Stay sceptical. The monster was us all along.</p>
   </Outro>
 </Section>

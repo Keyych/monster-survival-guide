@@ -9,7 +9,8 @@ danger: 5
 bandColor: '#a08038'
 classification: 'monster survival guide  —  the dover demon'
 entryStatus: 'Active Entry'
-status: 'draft'
+status: 'published'
+publishDate: '2026-10-20'
 season: 1
 sightings:
   - {
@@ -18,6 +19,7 @@ sightings:
       lon: -71.27,
       year: 1977,
       label: 'Bill Bartlett sighting · ~10:30pm April 21',
+      sourceUrl: 'https://en.wikipedia.org/wiki/Dover_Demon',
     }
   - {
       name: 'Miller Hill Road, Dover, MA',
@@ -25,6 +27,7 @@ sightings:
       lon: -71.28,
       year: 1977,
       label: 'John Baxter sighting · ~12:30am April 22 (independent witness)',
+      sourceUrl: 'https://en.wikipedia.org/wiki/Dover_Demon',
     }
   - {
       name: 'Springdale Avenue, Dover, MA',
@@ -32,113 +35,283 @@ sightings:
       lon: -71.27,
       year: 1977,
       label: 'Will Taintor and Abby Brabham sighting · ~12am April 22',
+      sourceUrl: 'https://en.wikipedia.org/wiki/Dover_Demon',
     }
 recordKind: reported
-recordNote: Working draft based on reported accounts and their later retellings. Sources and claims
-  still need checking; reports do not establish that the creature exists.
+recordNote: Reported accounts from April 1977 and the retellings and investigations that followed.
+  The reports are real; they do not establish that the creature was.
 illustration:
   src: /illustrations/dover-demon.png
   alt: Loose ink doodle of an oval-headed creature with large eyes and long delicate fingers.
 dossier:
   entity: The Dover Demon
-  origin: Dover, Massachusetts · 1977
-  status: Draft — awaiting research
+  origin: Dover, Massachusetts · April 1977
+  status: Dormant — No Confirmed Sighting Since 1977
   stamps:
     - '1977'
     - Dover, MA
     - Three Witnesses
   dangerLabel: BRIEF
-  dangerNote: 5/10 — Three sightings in 25 hours, all by different witnesses, in a 2-mile radius. No
-    further appearances in 49 years.
+  dangerNote: 5/10 — Three independent teenage witnesses in a 25-hour window, then nothing for 49
+    years. No contact, no casualty, no carcass.
 rules:
-  - title: TODO — rule 1
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 2
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 3
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 4
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 5
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 6
-    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: Draw it before you discuss it.
+    body: Bill Bartlett sketched the creature within minutes of a seven-second look, and that
+      drawing — not the talk that followed — is why the case still stands. Record what you saw before
+      anyone tells you what you saw.
+  - title: Keep your witnesses apart.
+    body:
+      The Dover reports carry weight because three teenagers were questioned separately and still
+      matched; a shared story proves only that people talked. Independent accounts are the whole
+      value here.
+  - title: A featureless face at night is usually a lit-up animal.
+    body: Headlights strip colour and detail off a startled creature, leaving a smooth head and two
+      glowing eyes. Before you name a demon, ask what ordinary animal your beams just blinded.
+  - title: Look for tracks, droppings, and a missing animal.
+    body: A foal, a moose calf, or a mangy dog leaves prints and a gap in someone's barn; Dover
+      turned up none of that. Absence of physical trace is evidence, not a detail to skip past.
+  - title: Mistrust the eyes most of all.
+    body: Even these witnesses split — orange for two of them, green for one who would not budge.
+      When the most vivid feature is the one that disagrees, treat every colour and glow as the least
+      reliable part.
+  - title: One short night is not a pattern.
+    body: The entire case is roughly 25 hours in 1977 and nothing verifiable since. A creature that
+      appears once and never leaves a body is a story to document honestly, not a monster to hunt.
 ---
 
 import Section from '../../components/Section.astro';
+import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
 import EncounterCard from '../../components/EncounterCard.astro';
 import Outro from '../../components/Outro.astro';
 import MonsterMap from '../../components/MonsterMap.astro';
-import '../../styles/pages/_draft.css';
+import '../../styles/pages/dover-demon.css';
 
 <Section heading="If You're Reading This">
   <p>
-    TODO — cold open. Place the reader at the scene of the encounter. Establish atmosphere. Earn
-    attention before asking for trust.
+    It is a little after half past ten on a Thursday night in April 1977, and you are seventeen,
+    driving a friend's car along Farm Street on the edge of Dover, Massachusetts. This is
+    comfortable country — low stone walls, horse paddocks, big dark houses set back from the road,
+    fifteen miles from Boston and a world away from it. Your headlights swing across a broken wall,
+    and something is on it.
+  </p>
+  <p>
+    It is the size of a small child, but it is not a child. The head is too big — a smooth oval,
+    like a watermelon set on a thin body — and where the face should be there is nothing but two
+    eyes throwing your headlights back at you in orange. Long fingers grip the stone. Then the car
+    is past it, and when you look back it is gone. You saw it for perhaps eight seconds.
+  </p>
+  <p>
+    This is the twenty-sixth journal entry of the Monster Survival Guide. The subject is the Dover
+    Demon — a creature reported by a handful of teenagers over a single day and night, never
+    convincingly before and never since. It is one of the shortest-lived cases in this guide, and
+    that brevity is exactly why it is worth your attention.
   </p>
 </Section>
 
 <Section heading="Where It Comes From">
   <p>
-    TODO — origin section. Cultural / historical / geographic context. A creature without context is
-    a horror story; a creature with context is something a reader can understand.
+    The Dover Demon has no folklore behind it. There is no centuries-old warning, no regional
+    tradition, no body of belief — only three young witnesses, one ordinary New England town, and
+    about twenty-five hours in the spring of 1977. That is unusual. Most monsters arrive wrapped in
+    generations of story; this one arrived as a police matter and a few pencil sketches.
   </p>
+  <p>
+    The first witness was seventeen-year-old Bill Bartlett, driving on Farm Street late on 21 April
+    1977. A few hours later, around midnight, fifteen-year-old John Baxter reported a similar figure
+    while walking home along Miller Hill Road. The next night, fifteen-year-old Abby Brabham
+    described the same thing from a car on Springdale Avenue. Plotted on a map, the three locations
+    fell along a line more than two miles long. The accounts did not become public until the first
+    half of May.
+  </p>
+  <div class="pull-quote">
+    This creature has a name because someone gave it one. It is not a word handed down through a
+    culture; it is a label coined by an investigator, after the fact, because the town was called
+    Dover. Keep that order of events in mind — it is the whole shape of this case.
+  </div>
+  <div class="lore-box">
+    <p>
+      The name was the work of cryptozoologist Loren Coleman, who learned of the sightings, took
+      them seriously, and wrote the story up in his book <em>Mysterious America</em>. By his own
+      account the "Dover Demon" was chosen for the alliteration of the town's name, not because
+      anyone thought the thing was demonic. Coleman's framing — three separate, sober teenagers,
+      matching drawings, no obvious hoax — is why a 25-hour event in one small town became a named
+      cryptid at all.
+    </p>
+  </div>
 </Section>
 
 <Section heading="What You Are Looking At">
+  <StatRow
+    stats={[
+      { num: '3', label: 'Independent witness groups, interviewed separately' },
+      { num: '25', label: 'Hours spanning every reported sighting, 21–22 April 1977' },
+      { num: '0', label: 'Confirmed sightings in the 49 years since' },
+    ]}
+  />
   <p>
-    TODO — physical description and identifying features. What witnesses agree on. What varies. What
-    to look for before you know what you are looking at.
+    The witnesses broadly agree on the body. It stood roughly four feet tall, hairless, thin-limbed,
+    with an oversized watermelon-shaped head and long, delicate fingers that gripped stone and
+    branches. There was no visible nose, mouth, or ears — the face was essentially blank except for
+    large, round, glowing eyes. Bartlett and Baxter produced sketches so alike that investigators
+    treated the match as the strongest point in the case.
   </p>
+  <p>
+    The eyes are where it frays. Bartlett and Baxter described them as orange; Abby Brabham insisted
+    hers were green and would not change her account even when told the others disagreed. That is a
+    small detail, but it is the kind of small detail that matters — the single most memorable
+    feature of the creature is the one the witnesses could not agree on.
+  </p>
+  <div class="warning-box">
+    <div class="warn-label">⚠ Critical Field Note</div>
+    <p>
+      A smooth, featureless head and two brightly glowing eyes is also exactly what a frightened
+      ordinary animal looks like when it is caught side-on in old yellow headlights at night.
+      Headlights flatten texture, wash out colour, and turn any reflective eye into a hard glow.
+      Before you file what you saw as unknown, account for the lighting that showed it to you.
+    </p>
+  </div>
 </Section>
 
 <Section heading="How It Operates">
   <p>
-    TODO — behaviour pattern. How it hunts / haunts / appears. What comes first, next, and after.
+    There is almost nothing to operate. The Dover Demon did not stalk anyone, did not attack, did
+    not return. In every account it was simply there — perched on a wall, standing in a gully,
+    caught in headlights — and then it was gone into the dark. Baxter said it scurried off and
+    braced itself against a tree; Bartlett said it had vanished by the time he looked back. No
+    sound, no pursuit, no aftermath.
+  </p>
+  <p>
+    That is the honest description of its "behaviour": three brief, passive sightings over one night
+    and the next, in a two-mile stretch of a single town, and then a complete and permanent silence.
+    No photographs were taken. No tracks were found. No animal went missing. Nothing physical was
+    ever recovered.
+  </p>
+  <p>
+    If there is a pattern worth naming, it is this — the whole phenomenon is the first twenty-five
+    hours and nothing afterward. A creature that genuinely lived in those woods would, over
+    forty-nine years, have been seen again, struck by a car, photographed, or found dead. It never
+    has been.
   </p>
 </Section>
 
 <Section heading="An Honest Assessment of Its Weaknesses">
   <p>
-    TODO — what the accumulated evidence suggests works against it. Be honest when this section is
-    thin.
+    This is a case with no monster to fight, so the honest assessment is about the evidence rather
+    than the creature.
+  </p>
+  <p>
+    <strong>The record is thin by design.</strong> It rests on a handful of teenage witnesses over a
+    single day, with no physical trace of any kind. That is not proof of nothing, but it is the
+    weakest possible footing for a claim this large.
+  </p>
+  <p>
+    <strong>The ordinary explanations fit.</strong> Sceptics have offered a newborn foal, a moose
+    calf, or a sick or young animal seen badly in the dark; Joe Nickell argued specifically for a
+    snowy owl, its pale plumage tinted peach by yellow headlights and its half-spread wings read as
+    long spindly arms. None of these is airtight, but each requires far less than a creature unknown
+    to biology.
+  </p>
+  <p>
+    <strong>The strongest point is also the weakest.</strong> The matching sketches impress until
+    you remember the sightings were briefly local news before some of the drawings were discussed,
+    and that the one feature witnesses should most agree on — the eyes — is the one they
+    contradicted.
+  </p>
+  <p>
+    None of that calls the teenagers liars. Writer Brian Dunning, weighing the options, notes the
+    plainest reading is simply that nothing unusual happened — which is the default whenever the
+    only evidence is memory.
   </p>
 </Section>
 
 <Section heading="Six Rules That May Save Your Life">
-  <p>TODO — short intro paragraph framing the rules.</p>
+  <p>
+    There is no creature here to survive, so these rules are about surviving your own account — how
+    to record a strange night honestly, so that what you report is worth more than a story.
+  </p>
   <SixRules
     rules={frontmatter.rules}
     title={frontmatter.title}
     number={frontmatter.number}
-    pocketHref={
-      frontmatter.status === 'draft' ? `/drafts/dover-demon/pocket/` : `/pocket/dover-demon/`
-    }
+    pocketHref="/pocket/dover-demon/"
   />
 </Section>
 
 <Section heading="Two Cases on the Record">
-  <p>TODO — intro paragraph for the encounter section.</p>
+  <p>
+    These two cases are the whole of it — the night (and the next night) the creature was seen, and
+    the investigation and sceptical reckoning that followed. There is no third chapter.
+  </p>
   <EncounterCard
-    id="Encounter 01 · TODO · TODO date"
-    title="TODO — encounter title"
-    meta="TODO — encounter witness / context"
-    verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    id="Encounter 01 · Dover, Massachusetts · 21–22 April 1977"
+    title="The Twenty-Five Hours"
+    meta="Bill Bartlett · John Baxter · Abby Brabham — Three Separate Sightings"
+    verdict="firsthand"
+    verdictLabel="Firsthand Accounts"
+    references={[
+      {
+        text: 'Wikipedia — “Dover Demon”',
+        label: 'wikipedia.org',
+        href: 'https://en.wikipedia.org/wiki/Dover_Demon',
+      },
+      {
+        text: 'GBH — “Nearly half a century later, Dover Demon mystery still puzzles enthusiasts” (2024)',
+        label: 'wgbh.org',
+        href: 'https://wgbh.org/culture/2024-04-29/nearly-half-a-century-later-dover-demon-mystery-still-puzzles-enthusiasts',
+      },
+    ]}
   >
-    <p>TODO — encounter prose. Real, cited account.</p>
+    <p>
+      Late on 21 April 1977, seventeen-year-old Bill Bartlett was driving along Farm Street in Dover
+      when his headlights caught a small, hairless figure on a low stone wall — about four feet
+      tall, with a large watermelon-shaped head, no visible nose or mouth, and glowing orange eyes.
+      He saw it for only seven or eight seconds. Home again, he drew it, and signed the sketch, "I,
+      Bill Bartlett, swear on a stack of Bibles that I saw this creature."
+    </p>
+    <p>
+      He was not the only one. Around midnight, fifteen-year-old John Baxter reported a similar
+      figure on Miller Hill Road, watching it brace against a tree before it fled; his drawing
+      closely matched Bartlett's. The following night, fifteen-year-old Abby Brabham described the
+      same hairless, big-headed creature from a car on Springdale Avenue — though she insisted its
+      eyes were green, not orange. The three had been questioned separately, which is precisely why
+      the case was taken seriously at all.
+    </p>
   </EncounterCard>
   <EncounterCard
-    id="Encounter 02 · TODO · TODO date"
-    title="TODO — second encounter title"
-    meta="TODO — second encounter witness / context"
-    verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    id="Encounter 02 · Dover & After · 1977 onward"
+    title="The Investigation and the Reckoning"
+    meta="Loren Coleman, the Press, and the Sceptics · Why It Was Never Resolved"
+    verdict="documented"
+    verdictLabel="Investigated — Unresolved"
+    references={[
+      {
+        text: 'Skeptoid #965 — “The Legend of the Dover Demon,” Brian Dunning (2024)',
+        label: 'skeptoid.com',
+        href: 'https://skeptoid.com/episodes/965',
+      },
+      {
+        text: 'Wikipedia — “Dover Demon”',
+        label: 'wikipedia.org',
+        href: 'https://en.wikipedia.org/wiki/Dover_Demon',
+      },
+    ]}
   >
-    <p>TODO — second encounter prose.</p>
+    <p>
+      When the sightings surfaced in May 1977, cryptozoologist Loren Coleman gathered the accounts,
+      coined the name "Dover Demon" after the town, and set the case down in his book{' '}
+      <em>Mysterious America</em>. Police were less impressed, reportedly dismissing the reports to
+      the press as likely a school-vacation hoax, and a check of the area turned up nothing. No
+      photograph, track, or carcass was ever produced.
+    </p>
+    <p>
+      The explanations that followed stayed earthbound. Investigators and later sceptics proposed a
+      foal, a moose calf, or a sick animal glimpsed in the dark; Joe Nickell made the detailed case
+      for a snowy owl lit peach by old headlights. Brian Dunning, applying Occam's razor, ranks a
+      genuinely unknown creature as the least likely answer and the plain "nothing unusual happened"
+      reading as the one with no real weaknesses — while taking care not to call the witnesses
+      liars. Forty-nine years on, with no new evidence, that is where the case rests.
+    </p>
   </EncounterCard>
 </Section>
 
@@ -147,8 +320,20 @@ import '../../styles/pages/_draft.css';
 <Section heading="Before You Go">
   <Outro>
     <p>
-      TODO — closing outro. Echo the cold open. Land the rules. Give the reader a parting
-      instruction.
+      The Dover Demon is the briefest entry in this guide and one of the most instructive. For
+      twenty-five hours in 1977, three level-headed teenagers saw something they could not explain,
+      drew it carefully, and told the truth as best they knew it — and then the woods went quiet and
+      stayed quiet for half a century.
+    </p>
+    <p>
+      That silence is the answer, or as close as we are going to get. Something crossed those roads
+      that April — most likely an ordinary animal in extraordinary light — and three honest
+      witnesses did the right thing by writing it down. The error, if there was one, was never
+      theirs. It was in everyone who came after and needed it to be a monster.
+    </p>
+    <p>
+      End of journal entry. Record what you see. Account for the headlights. And stay sceptical —
+      the shortest stories are the easiest to stretch.
     </p>
   </Outro>
 </Section>

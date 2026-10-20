@@ -3,13 +3,14 @@ number: '21'
 entryClass: 'Waterhole Spirit'
 region: 'Australia · wetlands & waterholes'
 title: 'The Bunyip'
-description: 'Aboriginal traditions across the entire continent describe an animal nobody has ever caught: amphibious, large, found in still water, dangerous. Colonial settlers heard the warnings and ignored them. The skeletons in the museums are not the answer.'
+description: 'Aboriginal traditions across the continent describe an animal nobody has ever caught: amphibious, large, found in still water, dangerous. Colonial settlers heard the warnings, then tried to explain them with a skull and a box of bones. Neither was the answer.'
 tags: ['Aboriginal traditions', 'Wetland encounter', 'Bone fossils']
 danger: 7
 bandColor: '#1a3848'
 classification: 'monster survival guide  —  the bunyip'
 entryStatus: 'Active Entry'
-status: 'draft'
+status: 'published'
+publishDate: '2026-10-20'
 season: 1
 sightings:
   - {
@@ -37,109 +38,298 @@ sightings:
       label: 'Warlpiri tradition of the kurdaitcha-associated waterhole-spirit',
     }
 recordKind: folklore
-recordNote: Working draft about folklore and tradition. Cultural context and sources still need
-  checking. The doodle is an imagined interpretation, not an authoritative cultural depiction.
+recordNote: Aboriginal oral tradition, colonial newspaper accounts, and museum records. The
+  creature of living tradition and the colonial attempts to explain it are distinct — the doodle is
+  an imagined interpretation, not an authoritative cultural depiction.
 illustration:
   src: /illustrations/bunyip.png
   alt: Loose ink doodle of an imagined blunt-muzzled water creature with a humped shoulder.
 dossier:
-  entity: The Bunyip
+  entity: The Bunyip (banib — Wergaia / Wemba-Wemba)
   origin: Australia · wetlands & waterholes
-  status: Draft — awaiting research
+  status: Active in Tradition — Every Recovered "Specimen" Explained
   stamps:
     - Waterhole
     - Aboriginal Lore
     - Continental Tradition
   dangerLabel: WATERHOLE
-  dangerNote: 7/10 — Aboriginal tradition consistently warns against approaching standing water it
-    inhabits. Reported attacks documented in 19th-century settler accounts.
+  dangerNote: 7/10 in tradition — the warnings guard real dangers of deep, cold, still water. Every
+    physical "specimen" ever recovered has proved to be a known animal or a fossil.
 rules:
-  - title: TODO — rule 1
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 2
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 3
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 4
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 5
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 6
-    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: Heed the old warnings.
+    body: Aboriginal traditions across Australia warn against still water a bunyip is said to hold;
+      those warnings encode real danger.
+  - title: The stories are not yours to rewrite.
+    body:
+      The bunyip belongs to living Aboriginal cultures — record only what is shared with you, and
+      never invent lore.
+  - title: A giant bone is a fossil.
+    body: Diprotodon and other megafauna bones were long mistaken for bunyip remains. Found big
+      bones? Call a palaeontologist, not a paper.
+  - title: Distrust the skull that draws a crowd.
+    body: The 1847 Sydney "bunyip skull" proved to be a deformed foal or calf. Spectacle outruns
+      evidence; wait for the anatomist.
+  - title: Name the ordinary first.
+    body: A booming bittern, a seal strayed up-river, or a drifting log can all read as a monster at
+      dusk. Rule those out before the unknown.
+  - title: Stay out of unknown still water.
+    body: Whatever the legend's origin, the practical lesson holds — murky billabongs hide snags,
+      cold, and depth. Give them wide room.
 ---
 
 import Section from '../../components/Section.astro';
+import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
 import EncounterCard from '../../components/EncounterCard.astro';
 import Outro from '../../components/Outro.astro';
 import MonsterMap from '../../components/MonsterMap.astro';
-import '../../styles/pages/_draft.css';
+import '../../styles/pages/bunyip.css';
 
 <Section heading="If You're Reading This">
   <p>
-    TODO — cold open. Place the reader at the scene of the encounter. Establish atmosphere. Earn
-    attention before asking for trust.
+    It is late and still at the edge of a billabong somewhere inland — a Murray backwater, maybe, or
+    a reed-choked lagoon that has not moved in a thousand years. The water is black and flat. The
+    frogs have stopped. Somewhere out in the middle, something lows — a deep, booming call that
+    carries across the flat country and does not sound like any animal you can name.
+  </p>
+  <p>
+    The people who have lived beside this water for tens of thousands of years have a word for what
+    makes that sound, and a rule that goes with it: do not go to the water's edge in the dark, and
+    do not take more from it than you need. The word, in the Wergaia and Wemba-Wemba languages of
+    Victoria, is <em>banib</em>. Settlers would spell it a dozen ways before fixing on one —{' '}
+    <em>bunyip</em>.
+  </p>
+  <p>
+    This is the twenty-first journal entry of the Monster Survival Guide. The subject is the Bunyip
+    — the water-spirit of Aboriginal Australia, and the creature that colonial Australia spent the
+    nineteenth century trying, and failing, to catch, label, and put in a glass case. The honest
+    thing to say at the start is this: the tradition is old, continental, and real. The attempts to
+    explain it are where the record gets strange.
   </p>
 </Section>
 
 <Section heading="Where It Comes From">
   <p>
-    TODO — origin section. Cultural / historical / geographic context. A creature without context is
-    a horror story; a creature with context is something a reader can understand.
+    The Bunyip is not a colonial invention. It belongs to the oral traditions of Aboriginal peoples
+    across much of the Australian continent — appearing, under many different names, from the
+    Murray–Darling waterholes to the lagoons of the south-east. The word that entered English comes
+    from the Wergaia or Wemba-Wemba language of the Aboriginal people of Victoria, and is usually
+    rendered today by Aboriginal Australians as "devil" or "evil spirit."
   </p>
+  <p>
+    That gloss, though, is a translation made for outsiders, and it flattens something. The Bunyip
+    is not simply a demon in the water. In many traditions it is a guardian of the waterways and a
+    teacher — the reason you do not foul a soak, overfish a lagoon, or let a child wander to the
+    edge of a dark pool alone. The story carries a law about how to live beside water that can kill
+    you.
+  </p>
+  <div class="pull-quote">
+    The settlers heard a monster. The people who had lived there for forty thousand years were
+    describing a boundary — where the safe country ends and the still, deep, cold water begins. Both
+    were talking about the same edge. Only one of them understood it.
+  </div>
+  <p>
+    The word first appeared in print in English in the mid-1840s. In July 1845 the{' '}
+    <em>Geelong Advertiser</em>, reporting fossil bones found near Geelong under the headline
+    "Wonderful Discovery of a new Animal," recorded that an Aboriginal man shown one of the bones
+    identified it as belonging to the bunyip — and, at the paper's request, drew the creature. From
+    the very first written record, the Bunyip and a box of old bones were already tangled together.
+  </p>
+  <div class="lore-box">
+    <p>
+      The name did not stay in the swamp. By the 1850s "bunyip" had become Australian slang for an
+      impostor or humbug — the phrase "bunyip aristocracy," coined in 1853, mocked colonists playing
+      at nobility. A word for a sacred water-spirit had been borrowed, drained of its meaning, and
+      turned into a joke. That, too, is part of how this creature was treated.
+    </p>
+  </div>
 </Section>
 
 <Section heading="What You Are Looking At">
+  <StatRow
+    stats={[
+      { num: '1845', label: 'First appearance of "bunyip" in print — the Geelong Advertiser' },
+      { num: '0', label: 'Recovered specimens that proved to be an animal unknown to science' },
+      {
+        num: '~40k',
+        label: 'Years since Diprotodon — the megafauna some link to the tradition — died out',
+      },
+    ]}
+  />
   <p>
-    TODO — physical description and identifying features. What witnesses agree on. What varies. What
-    to look for before you know what you are looking at.
+    There is no single agreed Bunyip, and that is the first thing to understand. Across the hundreds
+    of nations and languages of Aboriginal Australia, the descriptions differ: a creature with a
+    dog-like or seal-like face; a long neck and a maned or feathered body; a thing the size of a
+    calf or larger; tusks, flippers, a horse-like tail. What the accounts share is habitat and habit
+    — it lives in still, deep water, in swamps, billabongs, and waterholes, and it is dangerous to
+    anyone who comes too close.
   </p>
+  <p>
+    The one feature nearly every account agrees on is the voice — a loud, booming, bellowing cry
+    heard across the water at night. That cry is the Bunyip's calling card in the traditions, and,
+    as we will see, it is also the feature that gives the sceptics their best ordinary candidate.
+  </p>
+  <div class="warning-box">
+    <div class="warn-label">⚠ Critical Field Note</div>
+    <p>
+      Do not try to resolve the Bunyip into one animal. It is not a species with a type specimen; it
+      is a continent-wide body of tradition about a kind of place — the still water that drowns the
+      careless. Treat the descriptions as a map of where the danger is, not as a wanted poster for a
+      single beast.
+    </p>
+  </div>
 </Section>
 
 <Section heading="How It Operates">
   <p>
-    TODO — behaviour pattern. How it hunts / haunts / appears. What comes first, next, and after.
+    In the traditions, the Bunyip keeps to still and standing water — the waterhole that never
+    drains, the lagoon rimmed with dead reeds, the deep bend of a slow river. It is a creature of
+    the edge, most dangerous to those who come to the water alone and at night. Many accounts tie it
+    directly to transgression: it takes those who break the law of the water, who overfish, who foul
+    a soak, who ignore the warnings of their elders.
+  </p>
+  <p>
+    The colonial pattern was different. For settlers, the Bunyip "operated" mainly through rumour. A
+    strange call across a swamp, an unexplained death in a lagoon, a set of bones in a riverbank —
+    any of these could touch off a regional scare, amplified by newspapers hungry for a sensation.
+    The sightings clustered not where the creature lived but where the stories spread: Lake
+    Bathurst, Lake George, the Murray, wherever a settler could put a frightening name to an
+    unfamiliar country.
+  </p>
+  <p>
+    So there are two mechanisms here, and it matters which one you are looking at. One is an old law
+    about a real and lethal landscape. The other is a young colonial folklore built on half-heard
+    warnings, misread bones, and the human appetite for a monster.
   </p>
 </Section>
 
 <Section heading="An Honest Assessment of Its Weaknesses">
   <p>
-    TODO — what the accumulated evidence suggests works against it. Be honest when this section is
-    thin.
+    This entry needs the same honesty the Chupacabra did, but pointed in a more careful direction,
+    because two very different things are braided together and only one of them has "weaknesses" in
+    the usual sense.
+  </p>
+  <p>
+    <strong>The physical specimens collapse.</strong> Every object ever recovered and offered as
+    bunyip remains has turned out to be something known. The famous 1847 "bunyip skull" shown in
+    Sydney was identified by anatomists as a deformed foal or calf. The giant bones were fossils of
+    extinct marsupials. Not one specimen has ever been an animal unknown to science.
+  </p>
+  <p>
+    <strong>Ordinary candidates fit the sightings.</strong> The booming call long attributed to the
+    Bunyip matches the breeding cry of the Australasian bittern — still nicknamed the "bunyip bird."
+    In 1933 the geographer Charles Fenner suggested that seals straying up the Murray and Darling,
+    with their smooth fur, bright eyes, and bellowing voice, could account for many river sightings.
+  </p>
+  <p>
+    <strong>But the tradition is not a weakness to be exposed.</strong> Explaining a skull does not
+    explain away a belief system forty thousand years deep. Some scholars have cautiously suggested
+    the stories may even preserve a cultural memory of real extinct megafauna. The thing to be
+    sceptical of is the colonial monster. The thing to respect is the law of the water underneath
+    it.
   </p>
 </Section>
 
 <Section heading="Six Rules That May Save Your Life">
-  <p>TODO — short intro paragraph framing the rules.</p>
+  <p>
+    These rules will not help you fight a monster, because the record does not describe one you can
+    fight. They will help you respect the people whose tradition this is, read a strange find
+    honestly, and stay out of the water that the warnings were always really about.
+  </p>
   <SixRules
     rules={frontmatter.rules}
     title={frontmatter.title}
     number={frontmatter.number}
-    pocketHref={frontmatter.status === 'draft' ? `/drafts/bunyip/pocket/` : `/pocket/bunyip/`}
+    pocketHref="/pocket/bunyip/"
   />
 </Section>
 
 <Section heading="Two Cases on the Record">
-  <p>TODO — intro paragraph for the encounter section.</p>
+  <p>
+    These two cases are not sightings — they are the two times colonial Australia thought it had
+    finally caught the Bunyip. Both are well documented. Both ended the same way: with a known
+    animal where a monster was supposed to be.
+  </p>
   <EncounterCard
-    id="Encounter 01 · TODO · TODO date"
-    title="TODO — encounter title"
-    meta="TODO — encounter witness / context"
-    verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    id="Encounter 01 · Balranald, New South Wales · 1846–47"
+    title="The Murrumbidgee Skull"
+    meta="A Riverbank Find · Displayed at the Australian Museum, Sydney · 1847"
+    verdict="documented"
+    verdictLabel="Colonial Record"
+    references={[
+      {
+        text: 'Wikipedia — “Bunyip” (etymology, the 1846–47 skull, and Macleay/Owen identification)',
+        label: 'en.wikipedia.org',
+        href: 'https://en.wikipedia.org/wiki/Bunyip',
+      },
+      {
+        text: 'Madeleine D’Este — “The Bunyip: Australia’s Mysterious Man-eating Swamp Beast” (#FolkloreThursday, 2016)',
+        label: 'folklorethursday.com',
+        href: 'https://folklorethursday.com/legends/bunyip-australias-mysterious-man-eating-swamp-beast/',
+      },
+    ]}
   >
-    <p>TODO — encounter prose. Real, cited account.</p>
+    <p>
+      In January 1846 a settler took an unusual skull from the bank of the Murrumbidgee River near
+      Balranald, New South Wales. Early reports suggested it belonged to something unknown to
+      science, and the finder said that local Aboriginal people who saw it called it a bunyip. For a
+      colony primed by a decade of swamp rumours, it was exactly the proof it wanted.
+    </p>
+    <p>
+      In 1847 the skull was put on display at the Australian Museum in Sydney for two days, and
+      crowds poured in to see it. The press reported that the exhibit prompted many visitors to come
+      forward with their own "bunyip sightings" — a feedback loop of spectacle and testimony feeding
+      each other, the exhibit manufacturing the very evidence it claimed to confirm.
+    </p>
+    <p>
+      Then the anatomists looked at it. By July 1847 several experts — among them the naturalist W.
+      S. Macleay and the eminent "Professor Owen" — had identified the object as the deformed foetal
+      skull of a foal or calf. The great recovered specimen of the Bunyip was a malformed farm
+      animal. The crowds moved on; the tradition, which had never needed the skull, stayed exactly
+      where it was.
+    </p>
   </EncounterCard>
   <EncounterCard
-    id="Encounter 02 · TODO · TODO date"
-    title="TODO — second encounter title"
-    meta="TODO — second encounter witness / context"
-    verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    id="Encounter 02 · Australia-wide · 1830–1871"
+    title="The Bones in the Museum"
+    meta="Diprotodon Fossils · Dr George Bennett’s Megafauna Hypothesis, Australian Museum · 1871"
+    verdict="cultural"
+    verdictLabel="Tradition & Fossil Record"
+    references={[
+      {
+        text: 'Wikipedia — “Bunyip” (Diprotodon misidentification and George Bennett’s 1871 hypothesis)',
+        label: 'en.wikipedia.org',
+        href: 'https://en.wikipedia.org/wiki/Bunyip',
+      },
+      {
+        text: 'Will Newton — “Did this giant, prehistoric 1.8m tall wombat inspire a man-eating mythical monster…?” (Discover Wildlife / BBC Wildlife, 2026)',
+        label: 'discoverwildlife.com',
+        href: 'https://www.discoverwildlife.com/prehistoric-life/bunyip-myth',
+      },
+    ]}
   >
-    <p>TODO — second encounter prose.</p>
+    <p>
+      Running underneath the skull story was a stranger one made of bones. As colonists dug up giant
+      fossil remains across the continent — the skeletons of extinct marsupials such as{' '}
+      <em>Diprotodon</em>, a plant-eater that stood around 1.8 metres at the shoulder, identified by
+      the British anatomist Richard Owen — those bones were, again and again through the nineteenth
+      and early twentieth centuries, labelled as the remains of bunyips.
+    </p>
+    <p>
+      In 1871 Dr George Bennett of the Australian Museum turned the confusion into a hypothesis. He
+      was the first to formally suggest that bunyip traditions might preserve a folk memory of these
+      extinct megafauna — that the stories were not nonsense but a record of real animals, carried
+      in oral tradition across an immense span of time. Later palaeontologists have revisited the
+      idea, cautiously, noting that the first Australians lived alongside <em>Diprotodon</em> before
+      it died out roughly forty thousand years ago.
+    </p>
+    <p>
+      It remains a hypothesis, not a proof, and it sits beside the plainer explanations — the
+      bittern's boom, the stray seal, the drowned log. But it reframes the whole entry. The bones in
+      the museum did not catch a monster. At most, they are a reminder that an oral tradition can
+      hold a true thing far longer than a written one — and that the people who warned the settlers
+      about the water may have been remembering more than the settlers could imagine.
+    </p>
   </EncounterCard>
 </Section>
 
@@ -148,8 +338,25 @@ import '../../styles/pages/_draft.css';
 <Section heading="Before You Go">
   <Outro>
     <p>
-      TODO — closing outro. Echo the cold open. Land the rules. Give the reader a parting
-      instruction.
+      The Bunyip is the entry where the guide has to stand down. There is no field tactic here, no
+      fire to keep burning, no silver to carry — because the record does not give us a beast to
+      survive. It gives us something harder to handle: a deep and living tradition about dangerous
+      water, and a colonial habit of mistaking warnings for monsters and fossils for proof.
+    </p>
+    <p>
+      So carry the two things that are actually true. The still water is dangerous — snags, cold,
+      and depth have always been enough to drown the careless, with or without a spirit in them. And
+      the knowledge belongs to someone. Do not take the story, flatten it, or sell it back as a
+      cryptid.
+    </p>
+    <p>
+      The next time you hear a low boom carry across a black lagoon at dusk, you will probably be
+      hearing a bittern. But stay back from the edge anyway. That was the whole lesson, told to
+      careful people, forty thousand years before you got there.
+    </p>
+    <p>
+      End of journal entry. Mind the water. Respect the record. And listen to the people who were
+      here first.
     </p>
   </Outro>
 </Section>

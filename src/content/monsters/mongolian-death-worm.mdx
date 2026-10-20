@@ -9,7 +9,8 @@ danger: 8
 bandColor: '#7a3818'
 classification: 'monster survival guide  —  the mongolian death worm'
 entryStatus: 'Active Entry'
-status: 'draft'
+status: 'published'
+publishDate: '2026-10-20'
 season: 1
 sightings:
   - {
@@ -23,121 +24,281 @@ sightings:
       lat: 42.8,
       lon: 105.5,
       label: "Roy Chapman Andrews' 1922 American Museum of Natural History expedition first collected witness reports",
+      sourceUrl: 'https://en.wikipedia.org/wiki/Mongolian_death_worm',
     }
   - {
       name: 'Khermen Tsav',
       lat: 43.46,
       lon: 99.75,
       label: "Czech cryptozoologist Ivan Mackerle's 1990s expeditions concentrate here",
+      sourceUrl: 'https://en.wikipedia.org/wiki/Ivan_Mackerle',
     }
 recordKind: folklore
-recordNote: Working draft about folklore and tradition. Cultural context and sources still need
-  checking. The doodle is an imagined interpretation, not an authoritative cultural depiction.
+recordNote: A cryptid of Gobi tradition with no specimen, photograph, or physical trace on
+  record. Expeditions across a century have come back empty-handed. The doodle is an imagined
+  interpretation, not an authoritative cultural depiction.
 illustration:
   src: /illustrations/mongolian-death-worm.png
   alt: Loose ink doodle of a stout worm curled into an S with a raised blunt end.
 dossier:
-  entity: The Mongolian Death Worm
-  origin: Gobi Desert, Mongolia
-  status: Draft — awaiting research
+  entity: The Mongolian Death Worm (olgoi-khorkhoi — "the large-intestine worm")
+  origin: Gobi Desert, Mongolia — centuries of herder tradition
+  status: Unverified in the Record — No Specimen Ever Recovered
   stamps:
-    - Desert Predator
-    - Gobi
+    - Gobi Desert
     - Mongolian Lore
-  dangerLabel: DESERT
-  dangerNote: 8/10 — Reported electrical / venomous discharge. Survival rate in close encounters is
-    low in the Mongolian oral record.
+    - No Evidence
+  dangerLabel: UNVERIFIED
+  dangerNote: 8/10 in legend — but no verified death, carcass, or photograph exists. The real,
+    documented danger of the Gobi is heat, thirst, and distance, not the worm.
 rules:
-  - title: TODO — rule 1
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 2
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 3
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 4
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 5
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 6
-    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: Treat the worm as folklore, not fauna.
+    body: No specimen, photograph, or carcass has ever been produced despite a century of looking.
+      Pack for the real Gobi — heat, dehydration, and distance — not for a venom-spraying worm.
+  - title: The desert is the actual killer.
+    body: Every verified death out here comes from exposure, thirst, or getting lost, never from
+      olgoi-khorkhoi. Carry water, shade, and a way to be found before any anti-worm precaution.
+  - title: Don't kill the snake you can't name.
+    body: The red "worm" herders point to is most likely the harmless Tartar sand boa (Eryx
+      tataricus) or a legless lizard. Photograph it for an expert — don't stamp on it.
+  - title: Doubt the shock and the venom spray.
+    body: No animal is known to kill at a distance by electricity across open sand, and the "venom"
+      traces to the goyo plant in retellings. Extraordinary powers are the first thing to question.
+  - title: Collect the account, then the animal.
+    body: Andrews and Mackerle both logged sincere, vivid testimony and still came home empty-handed
+      — belief is not evidence. Record who saw what and when, but let a specimen settle the species.
+  - title: Respect the people and the tradition.
+    body: Gobi herders have named this creature far longer than outsiders have chased it, and their
+      warnings encode real desert hazards. Honour the lore without mistaking it for a field guide.
 ---
 
 import Section from '../../components/Section.astro';
+import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
 import EncounterCard from '../../components/EncounterCard.astro';
 import Outro from '../../components/Outro.astro';
 import MonsterMap from '../../components/MonsterMap.astro';
-import '../../styles/pages/_draft.css';
+import '../../styles/pages/mongolian-death-worm.css';
 
 <Section heading="If You're Reading This">
   <p>
-    TODO — cold open. Place the reader at the scene of the encounter. Establish atmosphere. Earn
-    attention before asking for trust.
+    It is July in the Galbyn Gobi, the deep southern desert where the gravel plains run to the
+    horizon and the heat comes off the ground in sheets. A herder is walking you past a patch of
+    bare, rust-coloured sand and he will not step on it. Something lives under there, he says — a
+    thing as thick as a man's arm and the colour of fresh blood, no head and no tail you can tell
+    apart, and you do not want to be near it when it rises.
+  </p>
+  <p>
+    He has never seen it. His father never saw it. But everyone in the camp believes in it
+    completely, and everyone can describe it in the same minute detail — the way it rears up before
+    it strikes, the way a man or a camel simply drops. They call it olgoi-khorkhoi, the
+    large-intestine worm, because that is exactly what it is said to look like.
+  </p>
+  <p>
+    This is the nineteenth journal entry of the Monster Survival Guide. The subject: the Mongolian
+    Death Worm — one of the most famous cryptids on earth, and one of the least evidenced. This is
+    an entry where honesty is the whole point, because after a hundred years of searching, the most
+    useful thing we can tell you is how little there is to find.
   </p>
 </Section>
 
 <Section heading="Where It Comes From">
   <p>
-    TODO — origin section. Cultural / historical / geographic context. A creature without context is
-    a horror story; a creature with context is something a reader can understand.
+    The worm came to the outside world through a sceptic. In the early 1920s the American
+    paleontologist Roy Chapman Andrews led the American Museum of Natural History's Central Asiatic
+    expeditions into the Gobi — the trips that would turn up the first recognised dinosaur eggs.
+    Mongolian officials pressed him about the allghoi khorkhoi and asked him to catch one. He wrote
+    the account down and published it, but he did not believe it.
+  </p>
+  <p>
+    Andrews was blunt about his sources. None of the people describing the creature, he noted, had
+    ever actually seen it — they had only heard of it, repeated it, and believed it. He recorded the
+    tale as hearsay from a culture that held it deeply, not as a report of an animal he thought was
+    real. That distinction has been lost in nearly every retelling since.
+  </p>
+  <div class="pull-quote">
+    The man who introduced the Death Worm to the West did not think it existed. He wrote it down the
+    way a careful traveller writes down a local belief — faithfully, and without endorsing a word of
+    it.
+  </div>
+  <p>
+    The legend sat quietly until the Czech cryptozoologist Ivan Mackerle revived it, first in his
+    1987 book and then in person, leading small groups into the Gobi in 1990 and 1992 to hunt the
+    worm directly. He is the reason the creature is famous today. He also never found it — and by
+    his final expedition he had concluded it was most likely a myth, or a trick the desert heat
+    plays on the mind.
   </p>
 </Section>
 
 <Section heading="What You Are Looking At">
+  <StatRow
+    stats={[
+      { num: '1922', label: 'Year Andrews first recorded the tale — as second-hand hearsay' },
+      { num: '0', label: 'Specimens, photographs, or carcasses ever recovered' },
+      { num: '3', label: 'Mackerle Gobi expeditions (1990, 1992, 2004) — all empty-handed' },
+    ]}
+  />
   <p>
-    TODO — physical description and identifying features. What witnesses agree on. What varies. What
-    to look for before you know what you are looking at.
+    The description is remarkably consistent, which is part of what makes it compelling. Witnesses
+    agree it is a fat, sausage-shaped worm around two to five feet long, dark red, with no
+    distinguishable head or tail — hence "large-intestine worm." It is said to live just below the
+    surface of the hottest, most barren sand, surfacing mainly in the warmest months.
   </p>
+  <p>
+    Then come the powers, and the powers are where the trouble starts. The worm is credited with
+    killing at a distance — spraying a corrosive, lethal venom, or discharging an electric shock
+    strong enough to drop a camel. No known animal kills that way across open ground, and the
+    "venom" in many accounts is tied to the yellow goyo plant the worm supposedly lives among. These
+    are the hallmarks of a story growing in the retelling, not a biology anyone has observed.
+  </p>
+  <div class="warning-box">
+    <div class="warn-label">⚠ Critical Field Note</div>
+    <p>
+      When a herder points out a red "worm," look closely before you flinch. The leading natural
+      explanation is the Tartar sand boa (Eryx tataricus), a blunt, thick-bodied, reddish burrowing
+      snake native to the region — in a 1983 test, locals shown a specimen agreed it was their
+      olgoi-khorkhoi. Legless lizards and amphisbaenians (worm-lizards) are the other usual
+      suspects. You are far likelier to be looking at a shy, harmless reptile than at anything new
+      to science.
+    </p>
+  </div>
 </Section>
 
 <Section heading="How It Operates">
   <p>
-    TODO — behaviour pattern. How it hunts / haunts / appears. What comes first, next, and after.
+    On paper, the worm's method is terrifyingly simple — it waits beneath the sand and kills
+    whatever comes too close, by venom or by shock, without ever being properly seen. In practice,
+    that "without ever being properly seen" is the entire problem. The behaviour is reported, never
+    recorded; feared, never filmed.
+  </p>
+  <p>
+    The pattern that actually repeats is not the worm's but the expeditions'. Andrews recorded the
+    tale and moved on to his fossils. Mackerle baited the sand, built a motor-driven "thumper" to
+    summon the creature by vibration, and even set off small buried charges — and came home with
+    nothing. Later searches, including Richard Freeman's 2005 trip and David Farrier's in 2009,
+    ended the same way. The one consistent behaviour of the Death Worm is its absence.
+  </p>
+  <p>
+    What is real is the Gobi. It is one of the harshest deserts on the planet, and it kills people
+    the ordinary ways — heatstroke, dehydration, cold nights, and the simple fact of being a very
+    long way from help. Those are the hazards a herder is genuinely warning you about when he steers
+    you off the bare red sand.
   </p>
 </Section>
 
 <Section heading="An Honest Assessment of Its Weaknesses">
   <p>
-    TODO — what the accumulated evidence suggests works against it. Be honest when this section is
-    thin.
+    This is the entry where the honest assessment is the whole point, so here it is plainly: there
+    is nothing here to fight, because there is nothing here that has ever been caught.
+  </p>
+  <p>
+    <strong>The evidence is absent.</strong> No specimen, no carcass, no photograph, no verified
+    attack. A hundred years of interest and multiple dedicated expeditions have produced testimony
+    and nothing else.
+  </p>
+  <p>
+    <strong>The powers collapse.</strong> Killing by electric discharge or sprayed venom across open
+    sand has no parallel in the animal kingdom, and the venom detail is entangled with a desert
+    plant. These are the features most likely to be invention.
+  </p>
+  <p>
+    <strong>The animal has an ordinary explanation.</strong> A blunt, reddish, burrowing snake — the
+    Tartar sand boa — fits the core description, and locals have confirmed the match. Add
+    worm-lizards and the heat-haze of the open desert, and the legend has everything it needs
+    without a new species.
+  </p>
+  <p>
+    None of this makes the belief foolish, or the herders' caution wrong. It means the thing to
+    respect is the desert, and the thing to be sceptical of is the worm.
   </p>
 </Section>
 
 <Section heading="Six Rules That May Save Your Life">
-  <p>TODO — short intro paragraph framing the rules.</p>
+  <p>
+    These rules will not help you fight a monster, because the evidence says there isn't one. They
+    will help you survive the Gobi, read a reptile honestly, and avoid being the next traveller who
+    turns a sand boa into a legend.
+  </p>
   <SixRules
     rules={frontmatter.rules}
     title={frontmatter.title}
     number={frontmatter.number}
-    pocketHref={
-      frontmatter.status === 'draft'
-        ? `/drafts/mongolian-death-worm/pocket/`
-        : `/pocket/mongolian-death-worm/`
-    }
+    pocketHref="/pocket/mongolian-death-worm/"
   />
 </Section>
 
 <Section heading="Two Cases on the Record">
-  <p>TODO — intro paragraph for the encounter section.</p>
+  <p>
+    These two cases bookend the Death Worm's modern life: the account that carried it out of the
+    Gobi, and the searches that went looking and found nothing.
+  </p>
   <EncounterCard
-    id="Encounter 01 · TODO · TODO date"
-    title="TODO — encounter title"
-    meta="TODO — encounter witness / context"
-    verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    id="Encounter 01 · Southern Gobi, Mongolia · 1922"
+    title="The Andrews Account"
+    meta="Roy Chapman Andrews · American Museum of Natural History · Recorded, Not Believed"
+    verdict="documented"
+    verdictLabel="Hearsay Recorded"
+    references={[
+      {
+        text: 'Wikipedia — “Mongolian death worm” (Andrews account and scepticism)',
+        label: 'en.wikipedia.org',
+        href: 'https://en.wikipedia.org/wiki/Mongolian_death_worm',
+      },
+      {
+        text: 'Skeptoid #344 — Brian Dunning, “Olgoi-Khorkhoi: The Mongolian Death Worm” (2013)',
+        label: 'skeptoid.com',
+        href: 'https://skeptoid.com/episodes/4344',
+      },
+    ]}
   >
-    <p>TODO — encounter prose. Real, cited account.</p>
+    <p>
+      In the early 1920s, leading the American Museum of Natural History's Central Asiatic
+      expeditions through the Gobi, paleontologist Roy Chapman Andrews was repeatedly questioned by
+      Mongolian officials about the allghoi khorkhoi — a blood-red, intestine-shaped worm said to
+      kill at a touch. He was asked, in effect, to catch one for the government. He wrote the
+      request and the description down and later published them.
+    </p>
+    <p>
+      Crucially, Andrews did not endorse the tale. He observed that none of those describing the
+      creature had ever seen it themselves; they had only heard of it and believed in it firmly. He
+      treated the account as a faithfully recorded local belief, not as evidence of a real animal —
+      a distinction stripped away in most of the sensational retellings that followed, which cite
+      his book as if he had vouched for the worm.
+    </p>
   </EncounterCard>
   <EncounterCard
-    id="Encounter 02 · TODO · TODO date"
-    title="TODO — second encounter title"
-    meta="TODO — second encounter witness / context"
-    verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    id="Encounter 02 · Gobi Desert, Mongolia · 1990–2004"
+    title="The Mackerle Expeditions"
+    meta="Ivan Mackerle · Czech Cryptozoologist · Three Trips, No Worm"
+    verdict="documented"
+    verdictLabel="Searched — Nothing Found"
+    references={[
+      {
+        text: 'Wikipedia — “Ivan Mackerle” (1990, 1992, and 2004 Gobi expeditions)',
+        label: 'en.wikipedia.org',
+        href: 'https://en.wikipedia.org/wiki/Ivan_Mackerle',
+      },
+      {
+        text: 'Skeptoid #344 — Brian Dunning, “Olgoi-Khorkhoi: The Mongolian Death Worm” (2013)',
+        label: 'skeptoid.com',
+        href: 'https://skeptoid.com/episodes/4344',
+      },
+    ]}
   >
-    <p>TODO — second encounter prose.</p>
+    <p>
+      The Czech engineer and cryptozoologist Ivan Mackerle is the reason the Death Worm is a
+      household name. After writing about it in 1987, he led small expeditions into the Gobi in 1990
+      and 1992, searching the southern desert for weeks at a time. Inspired by the sandworms of{' '}
+      <em>Dune</em>, he built a motor-driven "thumper" to lure the creature up by vibration and set
+      off small buried charges in the dunes.
+    </p>
+    <p>
+      Nothing surfaced. Mackerle returned a third time in 2004, searching from the air with an
+      ultralight, and again found no trace. By the end he had come to doubt the creature himself,
+      concluding it was most likely a myth or a product of the desert heat on the mind. Later
+      searches by other investigators ended the same way — a great deal of sincere effort, and not a
+      single specimen to show for it.
+    </p>
   </EncounterCard>
 </Section>
 
@@ -146,8 +307,19 @@ import '../../styles/pages/_draft.css';
 <Section heading="Before You Go">
   <Outro>
     <p>
-      TODO — closing outro. Echo the cold open. Land the rules. Give the reader a parting
-      instruction.
+      The Death Worm is one of the best-known monsters in this guide and one of the emptiest files
+      in it. We can name the sceptic who recorded it, the enthusiast who made it famous, and the
+      ordinary snake that most likely sits at the bottom of the whole story — and still we have not
+      a single worm to point to.
+    </p>
+    <p>
+      So respect the Gobi, not the legend. Carry more water than you think you need, keep someone
+      who knows where you are, and if a herder steers you off a patch of bare red sand, thank him
+      and walk around it. The caution is wise even when the creature is not real.
+    </p>
+    <p>
+      End of journal entry. Mind the heat. Stay sceptical. Out here the desert needs no help from a
+      monster to kill you.
     </p>
   </Outro>
 </Section>

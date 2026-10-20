@@ -1,0 +1,16 @@
+/* Theme tokens for /yowie. Shared layout rules live in field-manual.css. */
+/* Palette: Australian bush — weathered eucalypt green-grey over red earth. */
+:root {
+  --paper: #e7e0cf;
+  --aged: #d6cbab;
+  --ink: #1b1a12;
+  --faded: #4a4a35;
+  --stamp-red: #9a3415;
+  --stamp-blue: #3c4a2c;
+  --accent: #6b6a3a;
+  --redact: #121208;
+  --margin: #5f5a38;
+  --highlight: #a6531f;
+  --rule: rgba(27, 26, 18, 0.1);
+  --warn: #9a3415;
+}

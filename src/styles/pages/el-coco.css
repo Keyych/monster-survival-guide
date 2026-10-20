@@ -1,0 +1,16 @@
+/* Theme tokens for /el-coco. Shared layout rules live in field-manual.css.
+   Mood: a dark bedroom at night — candle glow, deep indigo shadow. */
+:root {
+  --paper: #e6ddc8;
+  --aged: #d6c9ac;
+  --ink: #171208;
+  --faded: #463a26;
+  --stamp-red: #7a1410;
+  --stamp-blue: #2a1850;
+  --accent: #4a2a70;
+  --redact: #0d0a14;
+  --margin: #5a4a6a;
+  --highlight: #b07818;
+  --rule: rgba(23, 18, 8, 0.11);
+  --warn: #7a1410;
+}

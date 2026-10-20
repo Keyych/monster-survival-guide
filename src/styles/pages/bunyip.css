@@ -1,0 +1,15 @@
+/* Theme tokens for /bunyip. Shared layout rules live in field-manual.css. */
+:root {
+  --paper: #e4e2d2;
+  --aged: #cfd0bd;
+  --ink: #141c1e;
+  --faded: #3c4a46;
+  --stamp-red: #7a3410;
+  --stamp-blue: #1a3848;
+  --accent: #2a6274;
+  --redact: #0b1416;
+  --margin: #4a5c52;
+  --highlight: #b5731f;
+  --rule: rgba(20, 28, 30, 0.1);
+  --warn: #8a4a18;
+}

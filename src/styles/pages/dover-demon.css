@@ -1,0 +1,16 @@
+/* Theme tokens for /dover-demon. Shared layout rules live in field-manual.css.
+   Palette: a New England night — cold slate greys and sodium-lamp amber. */
+:root {
+  --paper: #e4e6e4;
+  --aged: #cdd1d0;
+  --ink: #15181b;
+  --faded: #42474b;
+  --stamp-red: #8b2a12;
+  --stamp-blue: #27323a;
+  --accent: #b5771f;
+  --redact: #0d1013;
+  --margin: #4a545a;
+  --highlight: #d89a3a;
+  --rule: rgba(21, 24, 27, 0.12);
+  --warn: #8b2a12;
+}

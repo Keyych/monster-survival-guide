@@ -1,0 +1,15 @@
+/* Theme tokens for /mongolian-death-worm. Shared layout rules live in field-manual.css. */
+:root {
+  --paper: #e8dcc0;
+  --aged: #d6c6a2;
+  --ink: #221a10;
+  --faded: #544632;
+  --stamp-red: #8b1a0a;
+  --stamp-blue: #6a3a12;
+  --accent: #b06a1e;
+  --redact: #140e08;
+  --margin: #7a5a2e;
+  --highlight: #c47a24;
+  --rule: rgba(34, 26, 16, 0.1);
+  --warn: #8b1a0a;
+}

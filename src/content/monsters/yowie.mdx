@@ -9,7 +9,8 @@ danger: 5
 bandColor: '#5a3018'
 classification: 'monster survival guide  —  the yowie'
 entryStatus: 'Active Entry'
-status: 'draft'
+status: 'published'
+publishDate: '2026-10-20'
 season: 1
 sightings:
   - {
@@ -37,109 +38,298 @@ sightings:
       label: "Aboriginal Ngarigo tradition · the doolagah / 'great hairy man'",
     }
 recordKind: folklore
-recordNote: Working draft about folklore and tradition. Cultural context and sources still need
-  checking. The doodle is an imagined interpretation, not an authoritative cultural depiction.
+recordNote: Deep Aboriginal tradition, 19th-century colonial Yahoo accounts, and a modern
+  cryptozoological sighting record. No specimen, bone, or tooth has ever been recovered, and
+  Australia has no native primates — so the reports do not establish that the creature exists.
 illustration:
   src: /illustrations/yowie.png
   alt: Loose ink doodle of a broad-faced shaggy biped with heavy shoulders.
 dossier:
-  entity: The Yowie
-  origin: Eastern Australian forests
-  status: Draft — awaiting research
+  entity: The Yowie (Yahoo / Doolagah)
+  origin: Eastern Australian forests — Aboriginal tradition to modern cryptid
+  status: Unconfirmed — No Physical Specimen on Record
   stamps:
-    - Australian
-    - Eastern Forests
-    - Aboriginal Lore
-  dangerLabel: FOREST
-  dangerNote: 5/10 — Avoidant. Significant size advantage. Reported in densely forested ranges; very
-    few violent encounters.
+    - Forest Giant
+    - Eastern Australia
+    - Aboriginal Tradition
+  dangerLabel: UNVERIFIED
+  dangerNote: 5/10 — No verified attack on record. The real hazards of the Australian bush are the
+    ordinary ones — heat, dehydration, snakes, and getting lost. Mind the terrain, not the legend.
 rules:
-  - title: TODO — rule 1
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 2
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 3
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 4
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 5
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 6
-    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: Respect the bush before you fear the giant.
+    body: Heat, dehydration, and getting lost are what kill people in the Australian ranges — not
+      anything unknown to science. Carry water, tell someone your route, and plan your exit.
+  - title: A big track is not a big animal.
+    body: Reported Yowie prints vary wildly in shape and toe count between finds, and casts are the
+      easiest evidence to fake. Treat a lone, too-clean track in soft ground as a prank.
+  - title: Remember there are no apes to misread here.
+    body: Australia has no native primates in its living fauna or its fossil record — it was ocean
+      isolated before apes evolved. An undiscovered great ape in the gum forest is an enormous claim.
+  - title: Send the sample to a lab, not a legend-hunter.
+    body: No hair, bone, tooth, or body has ever been recovered and confirmed as a new species. Bag
+      anything you find cleanly and let a museum have the last word.
+  - title: Ask who is doing the collecting.
+    body: Promoters like Rex Gilroy swept dozens of unrelated Aboriginal names into one Yowie, which
+      strains language and anthropology alike. When a story needs every legend to match, be sceptical.
+  - title: Honour the tradition without flattening it.
+    body:
+      The doolagah, yahoo, and many other beings belong to distinct nations and distinct stories,
+      held long before colonists arrived. Treat them as living culture, not proof of a cryptid.
 ---
 
 import Section from '../../components/Section.astro';
+import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
 import EncounterCard from '../../components/EncounterCard.astro';
 import Outro from '../../components/Outro.astro';
 import MonsterMap from '../../components/MonsterMap.astro';
-import '../../styles/pages/_draft.css';
+import '../../styles/pages/yowie.css';
 
 <Section heading="If You're Reading This">
   <p>
-    TODO — cold open. Place the reader at the scene of the encounter. Establish atmosphere. Earn
-    attention before asking for trust.
+    It is the blue end of the afternoon in the ranges behind the Gold Coast, and the rainforest has
+    already gone quiet in the way it does before dark. You are deeper into the scrub than you meant
+    to be. There is a shape in the gap between two bloodwoods — tall, broad-shouldered, standing the
+    way a person stands — and the part of your brain that keeps you alive has gone very still.
+  </p>
+  <p>
+    Nothing comes out of the trees. That is almost always how it goes. A smell, a shape, a stripped
+    line of bark, a story you will tell for the rest of your life. Then the forest closes over it
+    and keeps whatever it was. People on this continent have been coming back from the bush with
+    that story for a very long time — long before the first European ever set foot here.
+  </p>
+  <p>
+    This is the twentieth journal entry of the Monster Survival Guide. The subject: the Yowie — the
+    Yahoo, the hairy man of the eastern forests, Australia's answer to Bigfoot. It is also an entry
+    that has to hold two true things at once — a deep Indigenous tradition on one hand, and on the
+    other a modern cryptid with nothing a laboratory can keep.
   </p>
 </Section>
 
 <Section heading="Where It Comes From">
   <p>
-    TODO — origin section. Cultural / historical / geographic context. A creature without context is
-    a horror story; a creature with context is something a reader can understand.
+    The oldest layer of this story is not a cryptid at all. Hairy, human-like beings run through the
+    traditions of many Aboriginal nations across eastern Australia under many different names — the
+    doolagah of the Yuin, the Gamilaraay word Rev. William Ridley recorded in print in 1875 as
+    "Yō-wī," a spirit said to roam the earth at night, and dozens more in languages that are not
+    related to one another. These are distinct stories, held by distinct peoples, and they predate
+    the colony entirely.
+  </p>
+  <p>
+    The settler layer is younger and more tangled. Through the nineteenth century, colonists wrote
+    about a creature they called the Yahoo — a word Jonathan Swift had coined in{' '}
+    <em>Gulliver's Travels</em> (1726) for a brutish wild man, and one that travelling showmen were
+    already using for captive apes. In November 1876 the{' '}
+    <em>Australian Town and Country Journal</em> passed on an account from Milburn Creek of "the
+    Yahoo-Devil Devil, or hairy man of the wood." The name people use now — Yowie — only came to
+    dominate Australian media in the 1970s, which is why every sighting since has been filed under
+    it.
+  </p>
+  <div class="pull-quote">
+    Two things wear one body here. One is a figure woven through the traditions of many Aboriginal
+    nations, held for thousands of years. The other is a mid-century media cryptid assembled from
+    newspaper clippings and a borrowed insult. Keep them apart, and the story gets clearer, not
+    less.
+  </div>
+  <p>
+    The modern Yowie is largely the work of one man. From the mid-1970s the self-described
+    cryptozoologist Rex Gilroy gathered sighting reports — he claimed a file of over three thousand
+    — tied them to an Aboriginal being he called the Tjangara, and declared that Australia had its
+    own Bigfoot. In 1977 the Canberra archivist Graham Joyner published a careful collection of the
+    old "Yahoo" references and argued the opposite: that the creature as we now imagine it was
+    barely known before the 1970s, and was built out of a misreading of the historical record.
   </p>
 </Section>
 
 <Section heading="What You Are Looking At">
+  <StatRow
+    stats={[
+      {
+        num: '1875',
+        label: 'Year Rev. William Ridley first recorded "Yō-wī" in print, among the Gamilaraay',
+      },
+      {
+        num: '0',
+        label: 'Specimens, bones, or teeth ever recovered and confirmed as an unknown species',
+      },
+      {
+        num: '0',
+        label: "Native primate species in Australia's living fauna or fossil record",
+      },
+    ]}
+  />
   <p>
-    TODO — physical description and identifying features. What witnesses agree on. What varies. What
-    to look for before you know what you are looking at.
+    The reports settle on a familiar outline: a bipedal, ape-like figure roughly six to ten feet
+    tall, heavily built, covered in dark brown or reddish hair, with long arms, a head set low on
+    broad shoulders, and a powerful smell. It is the same creature the Pacific Northwest calls
+    Sasquatch, transplanted into eucalypt forest — and the parallel is not an accident, since the
+    modern Australian version was deliberately modelled on the American one in the 1970s.
   </p>
+  <p>
+    What varies is everything a hoaxer or a tired brain would get wrong: the exact height, the face,
+    the colour, the number of toes in the tracks. And what is always missing is the one thing that
+    would settle it — a carcass, a skeleton, a tooth, a confirmed strand of hair. For a large animal
+    said to range this widely and be seen this often, that absence is the single most important fact
+    on the page.
+  </p>
+  <div class="warning-box">
+    <div class="warn-label">⚠ Critical Field Note</div>
+    <p>
+      Before you decide what you are looking at, run the ordinary suspects. There is no native ape
+      in Australia to mistake a Yowie for, but there is plenty else — a startled person, a large
+      feral pig or goat on its hind legs at the fence, a stump in bad light, a kangaroo standing
+      tall at dusk. The burden sits on the extraordinary claim, not on the bush.
+    </p>
+  </div>
 </Section>
 
 <Section heading="How It Operates">
   <p>
-    TODO — behaviour pattern. How it hunts / haunts / appears. What comes first, next, and after.
+    The reported pattern is avoidance, not predation. Like its northern-hemisphere cousin, the Yowie
+    is almost never said to hunt people. The overwhelming majority of accounts describe a creature
+    that watches from cover, freezes when noticed, and is gone the moment anyone reaches for a
+    camera — active mostly at dawn, dusk, and night, keeping to dense timber and steep gullies.
+  </p>
+  <p>
+    The "evidence" it supposedly leaves is the usual catalogue: lines of oversized footprints,
+    twisted branches, night-time calls, and the smell. Each of these is also something the bush, an
+    ordinary animal, or a person with a motive can produce. That is the central difficulty — every
+    trace a Yowie leaves is a trace something known could leave too.
+  </p>
+  <p>
+    The genuinely dangerous version of a Yowie encounter is almost always the mundane one. People
+    come to grief in this country by pushing further and staying later than they planned because
+    they are chasing a sound, by running out of water, by meeting a snake in the grass, or by losing
+    the light and the track at once. The legend's real hazard is the way it pulls you off the path.
   </p>
 </Section>
 
 <Section heading="An Honest Assessment of Its Weaknesses">
   <p>
-    TODO — what the accumulated evidence suggests works against it. Be honest when this section is
-    thin.
+    This is the entry where honesty costs the monster the most, so here it is plainly: for all the
+    reports and all the tradition behind the name, the Yowie has never produced anything a
+    laboratory can keep.
+  </p>
+  <p>
+    <strong>The specimen never arrives.</strong> In well over a century of sightings, not one body,
+    bone, tooth, or verified hair has ever been recovered and confirmed as an unknown species. An
+    animal this large does not leave zero remains if it is really there.
+  </p>
+  <p>
+    <strong>The biology does not fit.</strong> Australia has no native primates — the only native
+    placental land mammals are bats and rodents — and none appear in its fossil record. The
+    continent was isolated by ocean before apes evolved, and great apes arose in Eurasia, nowhere
+    near a route here. A breeding population of undiscovered apes in the gum forest is a very large
+    thing to ask.
+  </p>
+  <p>
+    <strong>The names do not add up.</strong> Collecting dozens of unrelated words from more than a
+    hundred Aboriginal languages and declaring them all one animal, as Gilroy did, strains both
+    philology and anthropology. The tradition is real and deserves respect; the claim stacked on top
+    of it is the thing to doubt.
+  </p>
+  <p>
+    None of this proves a negative — the bush is vast and absence of evidence is not evidence of
+    absence. But after a century of looking, the thing to prepare for is the terrain, and the thing
+    to be sceptical of is the specimen that never makes it to the museum.
   </p>
 </Section>
 
 <Section heading="Six Rules That May Save Your Life">
-  <p>TODO — short intro paragraph framing the rules.</p>
+  <p>
+    These rules will not help you fight a forest giant, because nothing recovered to date shows
+    there is one to fight. They will keep you alive in genuinely dangerous country, help you read a
+    scene without fooling yourself, and keep you from flattening a living tradition into a souvenir.
+  </p>
   <SixRules
     rules={frontmatter.rules}
     title={frontmatter.title}
     number={frontmatter.number}
-    pocketHref={frontmatter.status === 'draft' ? `/drafts/yowie/pocket/` : `/pocket/yowie/`}
+    pocketHref="/pocket/yowie/"
   />
 </Section>
 
 <Section heading="Two Cases on the Record">
-  <p>TODO — intro paragraph for the encounter section.</p>
+  <p>
+    These two cases bookend the Yowie story: a vivid colonial sighting that put a price on the
+    creature's head, and the modern reckoning — historical and biological — that the price was never
+    going to be paid.
+  </p>
   <EncounterCard
-    id="Encounter 01 · TODO · TODO date"
-    title="TODO — encounter title"
-    meta="TODO — encounter witness / context"
-    verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    id="Encounter 01 · South Coast, New South Wales · 1882"
+    title="McCooey's Indigenous Ape"
+    meta="Henry James McCooey · Amateur Naturalist · An Offer to the Australian Museum"
+    verdict="documented"
+    verdictLabel="Historical Account"
+    references={[
+      {
+        text: 'Wikipedia — “Yowie” (McCooey 1882; colonial “Yahoo” record; Ridley 1875)',
+        label: 'wikipedia.org',
+        href: 'https://en.wikipedia.org/wiki/Yowie',
+      },
+      {
+        text: 'Skeptoid — “The Australian Yowie” (Brian Dunning), on the colonial Yahoo history',
+        label: 'skeptoid.com',
+        href: 'https://skeptoid.com/episodes/4762',
+      },
+    ]}
   >
-    <p>TODO — encounter prose. Real, cited account.</p>
+    <p>
+      In 1882 the amateur naturalist Henry James McCooey reported watching an "indigenous ape" in
+      the scrub between Batemans Bay and Ulladulla, on the New South Wales south coast. He described
+      the animal in confident detail — hair, build, size — and, unusually, put a figure on it: he
+      offered to capture one for the Australian Museum for £40. His account sat inside a wider wave
+      of nineteenth-century colonial "Yahoo" reports running up and down the Great Dividing Range.
+    </p>
+    <p>
+      No ape was ever delivered, and no specimen reached the museum. That is the shape of the whole
+      colonial record — vivid first-hand descriptions, offers, drawings, and not one body to
+      examine. These reports also drew on genuine and far older Aboriginal traditions of hairy
+      beings, which is exactly why the honest reading is careful: a detailed account and a standing
+      bounty are not, and were never, the same thing as a creature in a crate.
+    </p>
   </EncounterCard>
   <EncounterCard
-    id="Encounter 02 · TODO · TODO date"
-    title="TODO — second encounter title"
-    meta="TODO — second encounter witness / context"
-    verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    id="Encounter 02 · Australia · 1977 to today"
+    title="The Record That Doesn't Survive Scrutiny"
+    meta="Graham Joyner, Rex Gilroy & the Biogeographical Problem"
+    verdict="documented"
+    verdictLabel="Examined — No Evidence"
+    references={[
+      {
+        text: 'Skeptoid — “The Australian Yowie” (Brian Dunning): Gilroy, Joyner 1977, zero evidence',
+        label: 'skeptoid.com',
+        href: 'https://skeptoid.com/episodes/4762',
+      },
+      {
+        text: 'Blue Mountains Gazette — “Vale Rex Gilroy” (2023), on his sighting database and books',
+        label: 'bluemountainsgazette.com.au',
+        href: 'https://www.bluemountainsgazette.com.au/story/8226708/eccentric-controversial-always-searching-for-answers-vale-rex-gilroy/',
+      },
+      {
+        text: 'Wikipedia — “Fauna of Australia” (native placental mammals limited to bats and rodents)',
+        label: 'wikipedia.org',
+        href: 'https://en.wikipedia.org/wiki/Fauna_of_Australia',
+      },
+    ]}
   >
-    <p>TODO — second encounter prose.</p>
+    <p>
+      In 1977 the Canberra archivist Graham Joyner published{' '}
+      <em>The Hairy Man of South Eastern Australia</em>, a collection of nineteenth-century "Yahoo"
+      references dated from 1842 onward. His conclusion cut against the grain of the then-new craze:
+      the modern Yowie was little known before the mid-1970s, and had been assembled — largely by
+      the cryptozoologist Rex Gilroy, who swept many unrelated Aboriginal names into a single
+      creature and tied it to American Bigfoot — out of a misreading of the historical record rather
+      than a living animal.
+    </p>
+    <p>
+      The biology points the same way. Australia has no native primates, living or fossil; its only
+      native placental land mammals are bats and rodents. The continent was already cut off by ocean
+      before apes evolved, and the great apes arose in Eurasia, far from any path south. A breeding
+      population of undiscovered apes leaving behind no bone, no tooth, and no body is implausible
+      on those grounds alone — which is why, like Bigfoot, the Yowie is represented by exactly zero
+      physical evidence after decades of searching.
+    </p>
   </EncounterCard>
 </Section>
 
@@ -148,8 +338,20 @@ import '../../styles/pages/_draft.css';
 <Section heading="Before You Go">
   <Outro>
     <p>
-      TODO — closing outro. Echo the cold open. Land the rules. Give the reader a parting
-      instruction.
+      The Yowie is two things that do not sit easily together. It is a genuine, ancient presence in
+      the traditions of many Aboriginal nations — and it is a modern cryptid, modelled on Bigfoot,
+      built out of old clippings and left, after fifty years of looking, without a single bone to
+      show for it.
+    </p>
+    <p>
+      So go into the ranges prepared for the real dangers: the heat, the dry, the snake in the
+      grass, the lost track, the early dark. Watch the ground, photograph what you find in focus and
+      with something for scale, and bag any sample cleanly for a museum. Respect the people whose
+      stories came first — and keep the tradition and the tabloid firmly apart.
+    </p>
+    <p>
+      End of journal entry. Mind the track. Stay sceptical. The bush keeps its secrets, and most of
+      them are just the bush.
     </p>
   </Outro>
 </Section>
