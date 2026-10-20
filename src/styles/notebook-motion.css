@@ -4,6 +4,21 @@
 html {
   scrollbar-gutter: stable both-edges;
 }
+/* Subtle page fade-in on load — a calm replacement for the old 3D page-turn.
+   Opacity only (no transform) so sticky/fixed descendants stay unaffected. */
+@media (prefers-reduced-motion: no-preference) {
+  .document[data-notebook-page] {
+    animation: notebook-fade-in 320ms ease-out both;
+  }
+  @keyframes notebook-fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
 html[data-notebook-departure] [data-notebook-page],
 html[data-notebook-arrival] [data-notebook-page] {
   visibility: hidden;
