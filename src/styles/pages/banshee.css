@@ -1,0 +1,15 @@
+/* Theme tokens for /banshee. Shared layout rules live in field-manual.css. */
+:root {
+  --paper: #e3e6dc;
+  --aged: #ccd2c2;
+  --ink: #14180f;
+  --faded: #3d4634;
+  --stamp-red: #7a1f12;
+  --stamp-blue: #2a4830;
+  --accent: #4a6a4a;
+  --redact: #0d110a;
+  --margin: #4e5b41;
+  --highlight: #5c7a48;
+  --rule: rgba(20, 24, 15, 0.1);
+  --warn: #7a1f12;
+}

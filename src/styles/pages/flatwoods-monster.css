@@ -1,0 +1,16 @@
+/* Theme tokens for /flatwoods-monster. Shared layout rules live in field-manual.css. */
+/* Palette: eerie green over a dark West Virginia night — aged paper, pine shadow, meteor glow. */
+:root {
+  --paper: #e6e4d1;
+  --aged: #d3d6ba;
+  --ink: #141a11;
+  --faded: #3b4631;
+  --stamp-red: #7a1c0c;
+  --stamp-blue: #1f3a24;
+  --accent: #2f6b34;
+  --redact: #0b110a;
+  --margin: #495a3b;
+  --highlight: #3f8a38;
+  --rule: rgba(20, 26, 17, 0.1);
+  --warn: #8a2a0a;
+}

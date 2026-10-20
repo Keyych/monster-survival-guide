@@ -3,13 +3,14 @@ number: '25'
 entryClass: 'Visitor / Aerial'
 region: 'Braxton County, West Virginia · 1952'
 title: 'The Flatwoods Monster'
-description: "September 12, 1952. Seven witnesses, including the chief of police's wife, walk up a hillside in Braxton County to investigate what they think is a downed plane. What they see waiting at the top is not a plane."
+description: "September 12, 1952. A mother, her sons and a group of neighbourhood boys climb a Braxton County hillside to find whatever landed there. What they meet in the torchlight becomes West Virginia's most famous monster — and one of its most cleanly explained."
 tags: ['UFO crossover', 'Single incident', '1952']
 danger: 6
 bandColor: '#3a6028'
 classification: 'monster survival guide  —  the flatwoods monster'
 entryStatus: 'Active Entry'
-status: 'draft'
+status: 'published'
+publishDate: '2026-10-20'
 season: 1
 sightings:
   - {
@@ -18,6 +19,7 @@ sightings:
       lon: -80.65,
       year: 1952,
       label: 'Bailey Fisher / May / Lemon party encounter · the single documented incident',
+      sourceUrl: 'https://en.wikipedia.org/wiki/Flatwoods_monster',
     }
   - {
       name: 'Sutton, West Virginia',
@@ -34,113 +36,279 @@ sightings:
       label: 'Secondary 1952 Frametown sighting — same week, ~20 miles south',
     }
 recordKind: reported
-recordNote: Working draft based on reported accounts and their later retellings. Sources and claims
-  still need checking; reports do not establish that the creature exists.
+recordNote: One famous night of sightings in 1952, retold ever since. The strongest
+  explanation is an ordinary one — a meteor, a startled barn owl and fear in the dark; the
+  reports do not establish that a creature exists.
 illustration:
   src: /illustrations/flatwoods-monster.png
   alt: Loose ink doodle of the Flatwoods Monster's spade-shaped hood and pleated torso.
 dossier:
-  entity: The Flatwoods Monster
-  origin: Braxton County, West Virginia · 1952
-  status: Draft — awaiting research
+  entity: The Flatwoods Monster (Braxton County Monster / the Green Monster)
+  origin: Flatwoods, Braxton County, West Virginia · 12 September 1952
+  status: Single 1952 Incident — Explained
   stamps:
     - '1952'
     - Braxton County
-    - UFO Crossover
-  dangerLabel: VISITOR
-  dangerNote: 6/10 — Single documented incident. Multiple witnesses reported physical symptoms after
-    exposure (nausea, irritated eyes).
+    - Meteor + Owl
+  dangerLabel: EXPLAINED
+  dangerNote: 6/10 for the fright, far lower for any real threat — one night of genuine panic
+    with physical after-effects, best explained by a meteor, a startled barn owl and fear in
+    the dark.
 rules:
-  - title: TODO — rule 1
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 2
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 3
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 4
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 5
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 6
-    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: Name the light before you name the monster.
+    body:
+      A fireball crossed three states that night, so the thing that "landed" was almost
+      certainly a meteor. Identify the ordinary event first and the visitor on the hill usually
+      dissolves.
+  - title: Glowing eyes in a tree are an owl until proven otherwise.
+    body:
+      A startled barn owl shows a pale heart-shaped face, bright eyes and a hiss — the "monster"
+      seven frightened people met by flashlight. Look for talons on a branch, not claws in the
+      dark.
+  - title: Fear redraws whatever it lights up.
+    body:
+      Darkness and one wavering torch turn foliage into a skirt and a bird into a ten-foot
+      giant. Steady the light and the group before you trust the shape.
+  - title: Treat a strange smell as a hazard, not a clue.
+    body:
+      The "pungent mist" that sickened the witnesses meant irritant air or panic — either way,
+      back off and breathe. Nausea and watering eyes are reasons to leave, not to investigate.
+  - title: Let the ground measure the thing, not the story.
+    body:
+      The creature grew from seven feet to seventeen within a day of retelling. Pace the site
+      and note the real height of the tree before you believe any figure.
+  - title: Go back in the morning with sober eyes.
+    body:
+      Skid marks and a "gummy deposit" looked damning at night and ordinary by day. Revisit when
+      it is bright, calm and crowded — the truth keeps better in sunlight.
 ---
 
 import Section from '../../components/Section.astro';
+import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
 import EncounterCard from '../../components/EncounterCard.astro';
 import Outro from '../../components/Outro.astro';
 import MonsterMap from '../../components/MonsterMap.astro';
-import '../../styles/pages/_draft.css';
+import '../../styles/pages/flatwoods-monster.css';
 
 <Section heading="If You're Reading This">
   <p>
-    TODO — cold open. Place the reader at the scene of the encounter. Establish atmosphere. Earn
-    attention before asking for trust.
+    It is dusk on September 12, 1952, in the hills above Flatwoods, West Virginia. A handful of
+    boys are playing on a school field when something bright crosses the sky and seems to come
+    down on the Bailey Fisher farm, on the crest of a nearby hill. They run to tell Kathleen May,
+    a local beautician and mother of two of them. She hands them a flashlight and climbs the hill
+    with them to see what fell.
+  </p>
+  <p>
+    At the top, in the torchlight, there is a smell first — sharp, metallic, wrong. Then a pair of
+    eyes in a tree, and beneath them a towering shape with a round red face and a pointed, hooded
+    head like the ace of spades. It hisses and seems to glide toward the group. The flashlight
+    drops. Everyone runs. Some of them will be nauseous for days.
+  </p>
+  <p>
+    This is the twenty-fifth journal entry of the Monster Survival Guide. The subject: the
+    Flatwoods Monster — the Braxton County Monster, the Green Monster. It is one of the few entries
+    built on a single night, which is both its strength and its undoing, because a single night can
+    be walked back step by step. That is exactly what we are going to do.
   </p>
 </Section>
 
 <Section heading="Where It Comes From">
   <p>
-    TODO — origin section. Cultural / historical / geographic context. A creature without context is
-    a horror story; a creature with context is something a reader can understand.
+    The Flatwoods Monster has an address and a date, which is rare for a monster. On the evening of
+    September 12, 1952, at around 7:15, several boys in Flatwoods saw a glowing object arc overhead
+    and appear to land on the hilltop property of farmer G. Bailey Fisher. The group that went up to
+    look included the May brothers, their neighbours Tommy Hyer, Neil Nunley and Ronnie Shaver,
+    Kathleen May, and seventeen-year-old Gene Lemon, a member of the West Virginia National Guard,
+    with his dog.
+  </p>
+  <p>
+    What they reported became a national story within days. The UFO writer Gray Barker arrived soon
+    after, tape-recorded the witnesses, and published an account in <em>Fate</em> magazine; the Air
+    Force logged it under Project Blue Book. The town eventually embraced the legend outright,
+    raising a sign that reads "Home of the Green Monster." But the witnesses themselves, by every
+    careful retelling, were simply terrified young people and one frightened adult on a dark hill.
+  </p>
+  <div class="pull-quote">
+    Most monsters are old and anonymous. This one has a map reference, a wristwatch time, and a list
+    of names. That precision is not proof the creature was real. It is what lets us test the story
+    against the sky.
+  </div>
+  <p>
+    And the sky cooperates. The same evening, a bright meteor was seen streaking across Maryland,
+    Pennsylvania and West Virginia — three states watching the identical "object" that the Flatwoods
+    boys watched come down. The thing that "landed" on Fisher's hill was almost certainly the end of
+    that fireball, glimpsed from directly beneath its path.
   </p>
 </Section>
 
 <Section heading="What You Are Looking At">
+  <StatRow
+    stats={[
+      { num: '1952', label: 'The single September night the whole legend rests on' },
+      { num: '7+', label: 'Frightened witnesses on the hillside, from young boys to a Guardsman' },
+      { num: '3', label: 'States that saw the same meteor cross the sky that evening' },
+    ]}
+  />
   <p>
-    TODO — physical description and identifying features. What witnesses agree on. What varies. What
-    to look for before you know what you are looking at.
+    The description is vivid and remarkably consistent for one night of panic: a figure around ten
+    feet tall, with a round, blood-red face set inside a large pointed hood shaped, witnesses said,
+    like the ace of spades. The eyes — or eye-like features — emitted a greenish-orange glow. The
+    body was dark, variously called black or green, with a pleated or drape-like lower half and
+    small, claw-like hands held out in front.
   </p>
+  <p>
+    Read that again with a barn owl in mind. A startled barn owl roosting in a tree presents a pale,
+    heart-shaped face, large reflective eyes that catch a flashlight, and a hiss when threatened. It
+    grips its branch with prominent talons held forward. The foliage and limbs around it, lit from
+    below by a single wavering torch, supply the hood, the "skirt," and the impression of great
+    height. The pieces of the monster are all there — just not assembled into a monster.
+  </p>
+  <div class="warning-box">
+    <div class="warn-label">⚠ Critical Field Note</div>
+    <p>
+      The real hazard that night was not the shape in the tree. It was the "pungent mist" several
+      witnesses reported, followed by nausea, watering eyes and an oily film on the skin — symptoms
+      a doctor examined and could not pin to a cause. Whether irritant vapour, a smouldering object,
+      or the physical toll of acute fear, the field lesson is the same: a strange smell on a dark
+      hill is a reason to leave, not a reason to step closer.
+    </p>
+  </div>
 </Section>
 
 <Section heading="How It Operates">
   <p>
-    TODO — behaviour pattern. How it hunts / haunts / appears. What comes first, next, and after.
+    The Flatwoods Monster does not hunt, because the evidence says there is nothing there to hunt
+    you. What "operates" is a sequence of ordinary events landing on frightened people in the worst
+    possible order. First the meteor — an enormous, silent light that appears to come down close by.
+    Then the climb up a dark hill, nerves already stretched, toward the place it seemed to fall.
+  </p>
+  <p>
+    Then the encounter itself: a flashlight sweeps a tree, two eyes flare back, and a hissing owl
+    launches toward the only gap it can see — the opening where the group is standing. To seven
+    people braced for a crashed craft, a bird coming straight at their faces is not a bird. It is the
+    monster arriving. The flashlight falls, the group scatters, and in the retelling the shape keeps
+    growing.
+  </p>
+  <p>
+    That is the real mechanism here — not predation, but perception under stress. By the next day the
+    creature had reportedly grown from seven feet to seventeen, which tells you less about the
+    creature than about how a story behaves once fear has written the first draft.
   </p>
 </Section>
 
 <Section heading="An Honest Assessment of Its Weaknesses">
   <p>
-    TODO — what the accumulated evidence suggests works against it. Be honest when this section is
-    thin.
+    This is a monster that, unusually, can be dismantled almost completely — and doing so takes
+    nothing away from how real the fear on that hill was.
+  </p>
+  <p>
+    <strong>The light explains itself.</strong> A documented meteor crossed three states at the same
+    hour, seen and reported far beyond Flatwoods. The "landing craft" was a fireball viewed from
+    underneath.
+  </p>
+  <p>
+    <strong>The creature explains itself.</strong> Every distinctive feature — the glowing eyes, the
+    hiss, the forward claws, the hooded face, the towering skirt — matches a startled barn owl in a
+    tree, lit from below and framed by foliage. The investigator Joe Nickell assembled exactly this
+    case, and the Air Force's own inquiry reached the same place.
+  </p>
+  <p>
+    <strong>The red glow explains itself.</strong> Flashing aircraft beacons were visible from the
+    area and plausibly account for the pulsing red light folded into later accounts.
+  </p>
+  <p>
+    None of that makes the witnesses liars or fools. It means the thing to defend against on a dark
+    hill is your own startled nervous system — and that is a far more useful thing to know than how
+    to fight a visitor from the stars.
   </p>
 </Section>
 
 <Section heading="Six Rules That May Save Your Life">
-  <p>TODO — short intro paragraph framing the rules.</p>
+  <p>
+    These rules will not help you fight the Flatwoods Monster, because the evidence says there wasn't
+    one. They will help you read a frightening night honestly, protect yourself from the ordinary
+    hazards that <em>were</em> real, and avoid becoming the next person to turn an owl into a legend.
+  </p>
   <SixRules
     rules={frontmatter.rules}
     title={frontmatter.title}
     number={frontmatter.number}
-    pocketHref={
-      frontmatter.status === 'draft'
-        ? `/drafts/flatwoods-monster/pocket/`
-        : `/pocket/flatwoods-monster/`
-    }
+    pocketHref="/pocket/flatwoods-monster/"
   />
 </Section>
 
 <Section heading="Two Cases on the Record">
-  <p>TODO — intro paragraph for the encounter section.</p>
+  <p>
+    These two cases bookend the Flatwoods Monster's single night: the encounter that created it, and
+    the patient investigation that explained it.
+  </p>
   <EncounterCard
-    id="Encounter 01 · TODO · TODO date"
-    title="TODO — encounter title"
-    meta="TODO — encounter witness / context"
-    verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    id="Encounter 01 · Flatwoods, West Virginia · 12 September 1952"
+    title="The Night on Fisher's Hill"
+    meta="Kathleen May, Gene Lemon & the Flatwoods boys · The Encounter That Named the Creature"
+    verdict="documented"
+    verdictLabel="Incident Documented"
+    references={[
+      {
+        text: 'HISTORY — “In 1952, the Flatwoods Monster Terrified 6 Kids, a Mom, a Dog—and the Nation”',
+        label: 'history.com',
+        href: 'https://www.history.com/news/flatwoods-monster-west-virginia',
+      },
+      {
+        text: 'Visit Braxton, WV (Braxton County CVB) — “Folklore: The Flatwoods Monster”',
+        label: 'braxtonwv.org',
+        href: 'https://braxtonwv.org/the-flatwoods-monster/folklore/',
+      },
+    ]}
   >
-    <p>TODO — encounter prose. Real, cited account.</p>
+    <p>
+      At around 7:15 p.m. on September 12, 1952, a group of boys in Flatwoods saw a bright object
+      cross the sky and appear to come down on G. Bailey Fisher's hilltop farm. They fetched Kathleen
+      May, who gave them a flashlight and climbed the hill with them, joined by seventeen-year-old
+      National Guardsman Gene Lemon and his dog.
+    </p>
+    <p>
+      Near the top they met a pungent mist and, in the flashlight's beam, a tall figure with a round
+      red face inside a pointed, hood-like head, glowing eyes and small claw-like hands. It hissed
+      and seemed to glide toward them. Lemon dropped the light and the whole party fled. Several were
+      nauseous afterward, with watering eyes and an oily film on the skin; a doctor could find no
+      clear cause, and searchers at the site that night reported nothing unusual.
+    </p>
   </EncounterCard>
   <EncounterCard
-    id="Encounter 02 · TODO · TODO date"
-    title="TODO — second encounter title"
-    meta="TODO — second encounter witness / context"
-    verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    id="Encounter 02 · Skeptical Inquirer · November 2000"
+    title="The Meteor and the Barn Owl"
+    meta="Joe Nickell · Investigative Files · The Explanation That Held Up"
+    verdict="documented"
+    verdictLabel="Explained — Meteor & Owl"
+    references={[
+      {
+        text: 'Joe Nickell — “The Flatwoods UFO Monster,” Skeptical Inquirer, Vol. 24 No. 6 (Nov/Dec 2000)',
+        label: 'skepticalinquirer.org',
+        href: 'https://skepticalinquirer.org/2000/11/the-flatwoods-ufo-monster/',
+      },
+      {
+        text: 'Wikipedia — “Flatwoods monster” (conventional explanations; Air Force / Project Blue Book)',
+        label: 'wikipedia.org',
+        href: 'https://en.wikipedia.org/wiki/Flatwoods_monster',
+      },
+    ]}
   >
-    <p>TODO — second encounter prose.</p>
+    <p>
+      Writing for <em>Skeptical Inquirer</em> in 2000, investigator Joe Nickell worked the case back
+      to its ordinary parts. The bright object, he found, was a meteor — one seen that same night
+      across Maryland, Pennsylvania and West Virginia. The pulsing red light folded into later
+      accounts matched flashing aircraft beacons visible from the area.
+    </p>
+    <p>
+      The creature itself, Nickell argued, was a startled barn owl perched in a tree: its pale
+      heart-shaped face, flashlight-bright eyes, hiss and forward-gripping talons supplied the
+      "monster," while the surrounding foliage lit from below produced the hood and the pleated
+      skirt. Fear and darkness did the rest. His conclusion lines up with the U.S. Air Force's own
+      Project Blue Book assessment — a meteor overhead and an owl in the tree — making this one of
+      the most cleanly resolved monster cases in the guide.
+    </p>
   </EncounterCard>
 </Section>
 
@@ -149,8 +317,21 @@ import '../../styles/pages/_draft.css';
 <Section heading="Before You Go">
   <Outro>
     <p>
-      TODO — closing outro. Echo the cold open. Land the rules. Give the reader a parting
-      instruction.
+      The Flatwoods Monster is one of the most instructive entries in this guide precisely because it
+      can be solved. We can name the night, the hill, the witnesses, the meteor that crossed three
+      states, and the owl that almost certainly waited in the tree. Put those pieces in the order they
+      actually happened and the ten-foot visitor comes apart in your hands.
     </p>
+    <p>
+      That is not a disappointment. It is a survival skill. The real dangers that night were a strange
+      irritant in the air and a group of people frightened past the point of seeing clearly — and both
+      of those are things you can prepare for.
+    </p>
+    <p>
+      So when a light comes down on a dark hill, name it before you climb. Keep your torch steady and
+      your people together. And the next time two eyes flare back at you from a tree —{' '}
+      <em>consider the owl before you run from the monster.</em>
+    </p>
+    <p>End of journal entry. Mind the dark. Stay sceptical. The scariest thing on that hill was how little it took to make a monster.</p>
   </Outro>
 </Section>

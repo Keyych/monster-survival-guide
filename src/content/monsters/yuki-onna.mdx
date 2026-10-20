@@ -9,136 +9,341 @@ danger: 7
 bandColor: '#3a4a6a'
 classification: 'monster survival guide  —  the yuki-onna'
 entryStatus: 'Active Entry'
-status: 'draft'
+status: 'published'
+publishDate: '2026-10-20'
 season: 1
 sightings:
   - {
-      name: 'Mogami River basin, Yamagata',
-      lat: 38.7,
-      lon: 140.3,
-      label: 'Setting of the Yuki-onna tale Lafcadio Hearn collected in Kwaidan (1904)',
+      name: 'Nishitama, Musashi (western Tokyo)',
+      lat: 35.79,
+      lon: 139.11,
+      label: 'Home district of the farmer who told Lafcadio Hearn the Yuki-onna tale in Kwaidan (1904)',
+      sourceUrl: 'https://www.gutenberg.org/files/1210/1210-h/1210-h.htm',
+    }
+  - {
+      name: 'Echigo Province (Niigata)',
+      lat: 37.92,
+      lon: 138.96,
+      label: 'Where the renga poet Sōgi recorded the earliest known Yuki-onna account (Muromachi period)',
+      sourceUrl: 'https://en.wikipedia.org/wiki/Yuki-onna',
     }
   - {
       name: 'Aomori prefecture, Tōhoku',
       lat: 40.82,
       lon: 140.74,
-      label: 'Northern Japan winter-encounter cluster · documented in regional ethnography',
-    }
-  - {
-      name: 'Niigata mountains',
-      lat: 37.92,
-      lon: 138.96,
-      label: 'Sea-of-Japan-coast tradition · alternative Yuki-onna lineage',
+      label: 'Northern Tōhoku snow-country variant cluster · documented in regional folklore',
+      sourceUrl: 'https://en.wikipedia.org/wiki/Yuki-onna',
     }
   - {
       name: 'Akita prefecture',
       lat: 39.72,
       lon: 140.1,
-      label: 'Tōhoku winter-festival traditions reference local Yuki-onna lore',
+      label: 'Tōhoku snow-country tradition · local Yuki-onna variants on record',
+      sourceUrl: 'https://en.wikipedia.org/wiki/Yuki-onna',
     }
 recordKind: folklore
-recordNote: Working draft about folklore and tradition. Cultural context and sources still need
-  checking. The doodle is an imagined interpretation, not an authoritative cultural depiction.
+recordNote: Traditional Japanese folklore and its literary record. The spirit and the documented
+  tradition that preserved the warning are distinct.
 illustration:
   src: /illustrations/yuki-onna.png
   alt: Loose ink doodle of a long-haired woman in a plain flowing kimono.
 dossier:
-  entity: The Yuki-Onna
-  origin: Northern Japan · mountain winters
-  status: Draft — awaiting research
+  entity: The Yuki-onna (雪女 — "snow woman")
+  origin: Snow country of northern Japan — Tōhoku mountain winters
+  status: Folklore — Seasonal / Deep-Winter Mountain Threat
   stamps:
-    - Snow Yōkai
-    - Tōhoku
-    - Mountain Tradition
-  dangerLabel: WINTER YŌKAI
-  dangerNote: 7/10 — A specifically winter / mountain-pass threat. Mostly fatal in encounter when fatal at all.
+    - Extreme Cold
+    - Tōhoku Snow Country
+    - Yōkai Tradition
+  dangerLabel: SEASONAL
+  dangerNote: 7/10 — A winter and mountain-pass danger. The legend maps a real killer — exposure
+    and hypothermia in the cold.
 rules:
-  - title: TODO — rule 1
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 2
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 3
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 4
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 5
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 6
-    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: Never cross a mountain pass alone in a blizzard.
+    body:
+      Almost every tale begins with a lone traveller caught by a storm at dusk. Move in daylight, in
+      company, and turn back before the weather closes in.
+  - title: Treat a sudden stillness and cold as the first warning.
+    body:
+      She arrives with a sharp drop in temperature. Real hypothermia starts the same way, so get
+      sheltered the moment shivering turns to clumsiness.
+  - title: Do not sleep unguarded in the cold.
+    body:
+      Mosaku froze where he slept; Minokichi lived because he woke. Keep a fire and keep watch —
+      sleep is where the mountain finishes you.
+  - title: Keep your word, and do not follow a figure into the storm.
+    body:
+      The yuki-onna spares those who honour her terms and kills those who break faith. Read as plain
+      survival sense — never chase a shape deeper into the snow.
+  - title: Carry fire, light, and warmth you can trust.
+    body:
+      Every version turns her cold against human heat. Pack dry tinder, layers, and a windproof
+      flame — the north's oldest defence still works.
+  - title: Respect the tradition that recorded this warning.
+    body:
+      Tōhoku snow country kept the yuki-onna for centuries to teach winter's lethal arithmetic. This
+      is survival knowledge paid for in lost travellers, not quaint superstition.
 ---
 
 import Section from '../../components/Section.astro';
+import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
 import EncounterCard from '../../components/EncounterCard.astro';
 import Outro from '../../components/Outro.astro';
 import MonsterMap from '../../components/MonsterMap.astro';
-import '../../styles/pages/_draft.css';
+import '../../styles/pages/yuki-onna.css';
 
 <Section heading="If You're Reading This">
   <p>
-    TODO — cold open. Place the reader at the scene of the encounter. Establish atmosphere. Earn
-    attention before asking for trust.
+    It is February, somewhere in the mountains of northern Japan. The light is going, the path ahead
+    has already filled with snow, and the wind has stopped — which should be a relief, and is not.
+    The silence of a mountain in deep winter is not the silence of safety. It is the silence of a
+    place that has stopped caring whether you make it down.
+  </p>
+  <p>
+    You find a hut, or a boatman's shelter, or an inn with one lamp still lit, and you are grateful
+    for it. Later, you wake. There is a woman standing in the room in a white kimono, and the cold
+    coming off her is not the cold of the storm outside. She is beautiful, and she is looking at the
+    person sleeping next to you, and her breath is frost.
+  </p>
+  <p>
+    The people of Japan's snow country have told a version of this story for centuries, from the
+    Muromachi period down to Lafcadio Hearn's famous retelling in 1904. They did not tell it to
+    frighten children. They told it because the mountains in winter really do take people, quietly,
+    every year — and a story is one way a community teaches its young not to be next.
+  </p>
+  <p>
+    This is Journal Entry Fifteen of the Monster Survival Guide. The subject: the Yuki-onna — the
+    snow woman, the spirit of the blizzard, the beautiful cold that leaves no footprints. Keep your
+    fire lit. Do not fall asleep in the open. And if someone in white asks you to make a promise —
+    remember that she will know whether you keep it.
   </p>
 </Section>
 
 <Section heading="Where It Comes From">
   <p>
-    TODO — origin section. Cultural / historical / geographic context. A creature without context is
-    a horror story; a creature with context is something a reader can understand.
+    The Yuki-onna is not a single story but a whole family of them, scattered across the snowy north
+    of Japan — Aomori, Iwate, Miyagi, Yamagata, Akita, Fukushima, Niigata, Nagano — and reaching as
+    far south as Gifu, Tottori, and Ehime. She is, at root, a broad name for the female apparition
+    who appears on snowy nights and mountain roads. Her age, her hair, and her intentions shift from
+    valley to valley, but the cold is always hers.
   </p>
+  <p>
+    The earliest written account we have comes from the renga poet Sōgi (1421–1502), who recorded
+    seeing a towering, pale woman in a frozen garden while staying in Echigo Province — present-day
+    Niigata. That places belief in the Yuki-onna firmly in the Muromachi period, centuries before
+    she became famous abroad. In different regions she is called <em>yukinba</em> (snow hag) in
+    Ehime, <em>yukifuri-baba</em> (snowfall hag) in Nagano, and a dozen other local names.
+  </p>
+  <div class="pull-quote">
+    Most of this guide's monsters are warnings about something unknown. The Yuki-onna is a warning
+    about something perfectly known — the cold — dressed in a face you will want to follow. That is
+    what makes her the most honest monster in the book.
+  </div>
+  <p>
+    The version nearly everyone knows today was set down by Lafcadio Hearn in <em>Kwaidan: Stories
+    and Studies of Strange Things</em> (1904). Hearn noted in his introduction that the tale was told
+    to him by a farmer of Chōfu, in Nishitama-gōri, Musashi province, as a legend of the man's native
+    village. Hearn's gentler, more romantic Yuki-onna — who spares a young man and later becomes his
+    wife — has since become the template, quietly superseding the harsher regional originals.
+  </p>
+  <div class="lore-box">
+    <p>
+      The Yuki-onna belongs to the <em>yōkai</em> tradition — the vast catalogue of Japanese spirits,
+      apparitions, and strange phenomena later organised by folklorists such as Kunio Yanagita, whose
+      <em>Tōno Monogatari</em> (1910) helped found the academic study of Japanese folklore. Within
+      that tradition she sits close to the <em>yūrei</em>, the restless dead: several tellings give
+      her no feet and no footprints in the snow, the classic mark of a ghost rather than a living
+      thing.
+    </p>
+  </div>
 </Section>
 
 <Section heading="What You Are Looking At">
+  <StatRow
+    stats={[
+      { num: '1904', label: 'Year Hearn published the retelling that fixed her modern image, in Kwaidan' },
+      { num: '15c', label: 'Earliest written account, recorded by the renga poet Sōgi in Echigo' },
+      { num: '10+', label: 'Prefectures with documented Yuki-onna variants, from Tōhoku to Shikoku' },
+    ]}
+  />
   <p>
-    TODO — physical description and identifying features. What witnesses agree on. What varies. What
-    to look for before you know what you are looking at.
+    Witnesses across the regions agree on the broad picture. She appears on snowy nights as a tall,
+    strikingly beautiful woman with long hair, her skin snow-white and sometimes described as
+    translucent, so that she seems to blend into the storm. She wears a thin white kimono — in some
+    tellings almost nothing at all, only her face and hair visible against the white. Her lips are
+    pale, often described as blue.
   </p>
+  <p>
+    What varies is the detail. Sōgi's account gives her white hair; most later tales give her black.
+    Some say she drifts across the surface of the snow leaving no footprints; some give her no feet
+    at all. In every version, the defining feature is the cold that comes with her — a breath of
+    frost that can freeze a sleeping person where they lie.
+  </p>
+  <div class="warning-box">
+    <div class="warn-label">⚠ Critical Field Note</div>
+    <p>
+      The danger of the Yuki-onna is that she does not look dangerous. She is not a beast at the
+      treeline; she is a beautiful stranger offering shelter from exactly the thing that is killing
+      you. The oldest tellings are blunt about the trade: comfort now, in exchange for a breath you
+      will not wake from. By the time you understand which one she is, you are already warm, already
+      still, already half-asleep.
+    </p>
+  </div>
 </Section>
 
 <Section heading="How It Operates">
   <p>
-    TODO — behaviour pattern. How it hunts / haunts / appears. What comes first, next, and after.
+    The pattern is remarkably consistent across the regional tales. She appears during a blizzard or
+    a heavy snowfall, almost always at night, almost always to someone caught out in the open or
+    sheltering alone. The traveller, the woodcutter, the man who stayed on the mountain too long —
+    these are her people. She finds the isolated and the exposed, the ones the winter would have
+    taken anyway.
+  </p>
+  <p>
+    From there the stories fork. In the harsher traditions she simply kills: she leans over a
+    sleeping victim and breathes a killing frost, or lures someone off the path and into the snow. In
+    the gentler ones — Hearn's chief among them — she spares a victim who is young, or beautiful, or
+    simply lucky, on one condition: that he never speak of what he saw. The mercy always comes with a
+    vow, and the vow is the hook.
+  </p>
+  <p>
+    Because she comes back. In the Kwaidan telling she returns years later as an ordinary woman, marries
+    the man she spared, bears his children, and does not age — until the night he forgets himself and
+    tells the story of the snow woman to his wife. The threat she made decades earlier was never idle.
+    She had simply been waiting to see whether he would keep his word.
   </p>
 </Section>
 
 <Section heading="An Honest Assessment of Its Weaknesses">
   <p>
-    TODO — what the accumulated evidence suggests works against it. Be honest when this section is
-    thin.
+    Here the honest assessment and the survival advice are the same thing, because the Yuki-onna is a
+    story wrapped around a real killer. Strip away the white kimono and what remains is the most
+    reliable predator in any mountain winter: exposure.
+  </p>
+  <p>
+    <strong>She is the cold, so heat is the answer.</strong> Every version turns on her chill against
+    human warmth. Fire, dry layers, and shelter you can keep heated are not symbolic defences here —
+    they are the literal countermeasures to the thing the legend describes.
+  </p>
+  <p>
+    <strong>She takes the isolated, so company is the answer.</strong> The tales almost never show her
+    attacking a group in good order. Travelling with others, keeping to known routes, and turning
+    back early remove the exact conditions in which both the spirit and real hypothermia do their
+    work.
+  </p>
+  <p>
+    <strong>She works through sleep, so vigilance is the answer.</strong> The killing breath finds the
+    sleeping. Hypothermia, too, ends in a fatal drowsiness that feels like warmth and rest. The old
+    instruction — do not sleep in the cold, keep someone awake — is as sound now as it was then.
+  </p>
+  <p>
+    None of this makes the folklore foolish. It makes it accurate. The Yuki-onna is what a lethal
+    environment looks like when a culture gives it a face so its children will remember to be afraid
+    of the right thing.
   </p>
 </Section>
 
 <Section heading="Six Rules That May Save Your Life">
-  <p>TODO — short intro paragraph framing the rules.</p>
+  <p>
+    These rules respect the folklore and the physics behind it at the same time. Follow them against
+    the snow woman and you are, not by coincidence, following the standard advice for surviving a
+    mountain winter.
+  </p>
   <SixRules
     rules={frontmatter.rules}
     title={frontmatter.title}
     number={frontmatter.number}
-    pocketHref={frontmatter.status === 'draft' ? `/drafts/yuki-onna/pocket/` : `/pocket/yuki-onna/`}
+    pocketHref="/pocket/yuki-onna/"
   />
 </Section>
 
 <Section heading="Two Cases on the Record">
-  <p>TODO — intro paragraph for the encounter section.</p>
+  <p>
+    There are no police files or DNA tests for the Yuki-onna — she belongs to folklore, not forensics.
+    What the record does hold is the literary history of the tradition: the earliest written sighting,
+    and the retelling that carried her image around the world. These two cases are documented in
+    primary texts and the scholarship built on them.
+  </p>
   <EncounterCard
-    id="Encounter 01 · TODO · TODO date"
-    title="TODO — encounter title"
-    meta="TODO — encounter witness / context"
-    verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    id="Encounter 01 · Musashi Province · recorded 1904"
+    title="The Woodcutters' Night — Hearn's Kwaidan"
+    meta="Mosaku & Minokichi · told to Lafcadio Hearn by a farmer of Chōfu"
+    verdict="documented"
+    verdictLabel="Recorded by Hearn, 1904"
+    references={[
+      {
+        text: 'Lafcadio Hearn — “Yuki-Onna,” in Kwaidan: Stories and Studies of Strange Things (1904), full text',
+        label: 'gutenberg.org',
+        href: 'https://www.gutenberg.org/files/1210/1210-h/1210-h.htm',
+      },
+      {
+        text: 'Wikipedia — “Kwaidan: Stories and Studies of Strange Things”',
+        label: 'en.wikipedia.org',
+        href: 'https://en.wikipedia.org/wiki/Kwaidan:_Stories_and_Studies_of_Strange_Things',
+      },
+    ]}
   >
-    <p>TODO — encounter prose. Real, cited account.</p>
+    <p>
+      In his 1904 collection <em>Kwaidan</em>, Lafcadio Hearn set down the tale as it was told to him
+      by a farmer of Chōfu, in Nishitama-gōri, Musashi province — a legend, the man said, of his own
+      native village. Two woodcutters, old Mosaku and his eighteen-year-old apprentice Minokichi, are
+      caught by a great snowstorm on their way home and shelter in a boatman's hut by a flooded river.
+    </p>
+    <p>
+      In the night Minokichi wakes to find a woman in white leaning over Mosaku, breathing a bright
+      white frost upon him. When she turns to Minokichi she stops, telling him he is young and
+      beautiful and that she will spare him — on one condition. In Hearn's words, she warns: <em>"if
+      you ever tell anybody — even your own mother — about what you have seen this night, I shall know
+      it, and I shall kill you."</em> Mosaku is found frozen dead at dawn.
+    </p>
+    <p>
+      A year later Minokichi meets a young woman named O-Yuki, marries her, and raises a family with
+      her; strangely, she never seems to age. Years on, watching her sew by lamplight, he makes the
+      mistake of telling her about the snow woman of his youth. O-Yuki rises, reveals that she was
+      that spirit, and spares him only for the sake of their children — before melting into a white
+      mist and gone. Hearn's gentle, romantic version became the model for nearly every Yuki-onna
+      that followed.
+    </p>
   </EncounterCard>
   <EncounterCard
-    id="Encounter 02 · TODO · TODO date"
-    title="TODO — second encounter title"
-    meta="TODO — second encounter witness / context"
-    verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    id="Encounter 02 · Echigo Province · Muromachi period (15th century)"
+    title="The Poet's Record — Sōgi in Echigo"
+    meta="Sōgi · Sōgi Shokoku Monogatari · earliest known written account"
+    verdict="documented"
+    verdictLabel="Earliest Written Record"
+    references={[
+      {
+        text: 'Wikipedia — “Yuki-onna” (origins; the Sōgi Shokoku Monogatari account)',
+        label: 'en.wikipedia.org',
+        href: 'https://en.wikipedia.org/wiki/Yuki-onna',
+      },
+      {
+        text: 'Zack Davisson — “Yuki Onna – The Snow Woman,” Hyakumonogatari Kaidankai (2013)',
+        label: 'hyakumonogatari.com',
+        href: 'https://hyakumonogatari.com/2013/12/18/yuki-onna-the-snow-woman/',
+      },
+    ]}
   >
-    <p>TODO — second encounter prose.</p>
+    <p>
+      Centuries before Hearn, the renga poet Sōgi (1421–1502) recorded what is generally cited as the
+      earliest written Yuki-onna account. While staying in Echigo Province — present-day Niigata, on
+      the Sea of Japan coast — he described waking to see a towering, pale woman standing in a frozen
+      garden, her hair white, who vanished when he tried to speak to her.
+    </p>
+    <p>
+      A local acquaintance, the story goes, identified the figure for him as a spirit of the snow — a
+      being long known in that region and not to be addressed. The brief account appears in the
+      collection associated with Sōgi's travels, the <em>Sōgi Shokoku Monogatari</em>, and is enough
+      to establish that belief in the snow woman was already settled in the snow country during the
+      Muromachi period.
+    </p>
+    <p>
+      This older record matters because it anchors the Yuki-onna as something far deeper and more
+      widely held than one famous book. Hearn fixed her modern face; Sōgi shows she had already been
+      haunting the Japanese winter for four hundred years before Hearn ever heard of her — a tradition
+      built, retelling by retelling, out of the real and constant danger of the cold.
+    </p>
   </EncounterCard>
 </Section>
 
@@ -147,8 +352,20 @@ import '../../styles/pages/_draft.css';
 <Section heading="Before You Go">
   <Outro>
     <p>
-      TODO — closing outro. Echo the cold open. Land the rules. Give the reader a parting
-      instruction.
+      The Yuki-onna is not hiding in your peripheral vision or crawling out of the internet. She is
+      the oldest danger in the north wearing its most beautiful disguise — the warmth that is really
+      the cold, the rest that is really the end, the stranger who offers shelter from the very thing
+      she is.
     </p>
+    <p>
+      Sōgi saw her in a frozen garden and lived to write it down. Minokichi was spared and then nearly
+      undone by a single careless word. Both stories carry the same instruction underneath the magic:
+      respect the winter, keep your fire, keep your company, and do not lie down in the snow.
+    </p>
+    <p>
+      So if you are ever on a mountain in February and the wind goes suddenly still, and someone in
+      white steps out of the white to offer you rest — <em>thank her, and keep walking down.</em>
+    </p>
+    <p>End of journal entry. Stay warm. Stay awake. And remember — in the mountains, the cold wears a face.</p>
   </Outro>
 </Section>

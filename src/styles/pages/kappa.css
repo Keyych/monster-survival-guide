@@ -1,0 +1,15 @@
+/* Theme tokens for /kappa. Shared layout rules live in field-manual.css. */
+:root {
+  --paper: #e4ece2;
+  --aged: #cdd9c9;
+  --ink: #0f201a;
+  --faded: #35483e;
+  --stamp-red: #7a2417;
+  --stamp-blue: #14463a;
+  --accent: #1a6b53;
+  --redact: #07120e;
+  --margin: #3f5a4b;
+  --highlight: #2a8f6c;
+  --rule: rgba(15, 32, 26, 0.1);
+  --warn: #7a2417;
+}

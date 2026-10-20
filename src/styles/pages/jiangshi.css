@@ -1,0 +1,15 @@
+/* Theme tokens for /jiangshi. Shared layout rules live in field-manual.css. */
+:root {
+  --paper: #ece0cf;
+  --aged: #ddcdb2;
+  --ink: #1b1510;
+  --faded: #4c3f30;
+  --stamp-red: #8a1512;
+  --stamp-blue: #5a1a18;
+  --accent: #9a2a1a;
+  --redact: #120c08;
+  --margin: #6a4a3a;
+  --highlight: #b03a24;
+  --rule: rgba(28, 21, 16, 0.1);
+  --warn: #8a1512;
+}

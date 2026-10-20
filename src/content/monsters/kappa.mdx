@@ -9,7 +9,8 @@ danger: 5
 bandColor: '#1a4838'
 classification: 'monster survival guide  —  the kappa'
 entryStatus: 'Active Entry'
-status: 'draft'
+status: 'published'
+publishDate: '2026-10-20'
 season: 1
 sightings:
   - {
@@ -37,108 +38,302 @@ sightings:
       label: 'Kyushu kappa tradition cluster (recorded in Kunio Yanagita ethnography)',
     }
 recordKind: folklore
-recordNote: Working draft about folklore and tradition. Cultural context and sources still need
-  checking. The doodle is an imagined interpretation, not an authoritative cultural depiction.
+recordNote: Traditional folklore and cultural history, handled with real records. The yōkai and the
+  real river danger it encodes are two different things.
 illustration:
   src: /illustrations/kappa.png
   alt: Loose ink doodle of a beaked Kappa with a bowl-shaped crown and turtle shell.
 dossier:
-  entity: The Kappa
-  origin: Japan · river systems
-  status: Draft — awaiting research
+  entity: The Kappa (河童 — "river child")
+  origin: Japan · river systems · Edo-period record onward
+  status: Active in Folklore — Explained as River-Safety Lore
   stamps:
     - Yōkai
     - River Spirit
-    - Edo Tradition
-  dangerLabel: WATER YŌKAI
-  dangerNote: 5/10 — Documented to drag the inattentive into rivers; reportedly polite if you bow back.
+    - Cautionary Tale
+  dangerLabel: CAUTIONARY
+  dangerNote: 5/10 — The creature is folklore, but the danger it names is real. Rivers drown the
+    careless, and that is exactly what the legend was built to prevent.
 rules:
-  - title: TODO — rule 1
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 2
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 3
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 4
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 5
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 6
-    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: Never go to the river alone.
+    body:
+      Every kappa story is a warning in disguise — the yōkai takes the child who wandered to the
+      bank by themselves. Swim with others, and tell someone on dry land where you went.
+  - title: Fear the calm water most.
+    body:
+      Kappa are said to lurk in still pools and under cut banks — the same quiet spots where cold
+      shock and hidden currents drown real swimmers. Treat glassy, inviting water as the dangerous
+      kind.
+  - title: When in doubt, bow.
+    body:
+      Legend says a kappa must return a deep bow, tipping the water from the dish on its head and
+      losing its strength. Pausing to show respect at the water's edge is the safe instinct too.
+  - title: Keep the dish full, keep your head.
+    body:
+      A kappa is only strong while the sara on its crown stays wet; spill it and the creature is
+      helpless. Guard your own clear head near water the same way — no drink, no dares, no showing
+      off.
+  - title: Mind the pull, not the monster.
+    body:
+      The shirikodama legend — a soul drawn out from below — mirrors how drowning really seizes you
+      from beneath the surface. Respect the pull of the water, because that current is the true
+      kappa.
+  - title: Leave the cucumber at the bank.
+    body:
+      Villagers floated cucumbers downstream to appease the kappa, its favourite food and the
+      namesake of kappa-maki. Make your peace with the river from the shore, and stay out of water
+      you do not trust.
 ---
 
 import Section from '../../components/Section.astro';
+import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
 import EncounterCard from '../../components/EncounterCard.astro';
 import Outro from '../../components/Outro.astro';
 import MonsterMap from '../../components/MonsterMap.astro';
-import '../../styles/pages/_draft.css';
+import '../../styles/pages/kappa.css';
 
 <Section heading="If You're Reading This">
   <p>
-    TODO — cold open. Place the reader at the scene of the encounter. Establish atmosphere. Earn
-    attention before asking for trust.
+    It is a hot afternoon in the Japanese countryside, and a child has gone down to the river alone.
+    The water behind the village temple looks harmless — a slow green pool, barely a metre deep,
+    hemmed in by bamboo grass that leans out over the surface. It is the kind of water that invites
+    you in. That is the problem with it.
+  </p>
+  <p>
+    For as long as anyone can remember, the grown-ups have had a name for what waits in pools like
+    this one. It squats on the far bank, about the size of a child, with a beaked face, a turtle's
+    shell, and a shallow dish of water set into the top of its head. It is patient, it is polite, and
+    it is strong beyond any reason — and it would very much like you to come a little closer to the
+    edge.
+  </p>
+  <p>
+    This is the fourteenth journal entry of the Monster Survival Guide. The subject: the Kappa — the
+    river child, the water yōkai whose warning was carved into the banks of Japan centuries before
+    anyone put it on a sign. It is also an entry where the honest reading matters, because the kappa
+    is one of the clearest examples we have of a monster built to keep people alive.
   </p>
 </Section>
 
 <Section heading="Where It Comes From">
   <p>
-    TODO — origin section. Cultural / historical / geographic context. A creature without context is
-    a horror story; a creature with context is something a reader can understand.
+    The kappa is not a campfire invention. It is one of the oldest and most widespread figures in
+    Japanese folk belief — a <em>yōkai</em>, a creature of the spirit-world catalogue that
+    communities have recorded, drawn, enshrined, and legislated for in temple registers for
+    centuries. By the Edo period it was common enough to be catalogued like natural history: in 1820
+    the scholar Koga Dōan compiled the <em>Suiko kōryaku</em>, a volume that gathered a dozen kappa
+    accounts and a set of illustrations, sorting the reports into ape-type and softshell-turtle-type
+    creatures.
   </p>
+  <p>
+    But underneath the catalogues sits a plainer purpose. In a country laced with rivers, canals,
+    paddies, and irrigation pools, children drowned — and the kappa was the shape that danger was
+    given so that a small child could understand it. The stories are, at root, a cautionary tale:
+    do not go to the water alone, do not wander to the undercut bank, do not trust the quiet pool.
+  </p>
+  <div class="pull-quote">
+    Most monsters are invented to frighten you away from the dark. The kappa was invented to
+    frighten you away from the water — and the water, unlike most monsters, was always genuinely
+    trying to kill you.
+  </div>
+  <p>
+    That double life runs through the whole tradition. The kappa is a trickster and a menace, but it
+    is also owed courtesy, fond of cucumbers, and — in several regions of Tōhoku and Kyūshū —
+    worshipped outright as a water deity, with cucumbers offered to it at the riverside. The same
+    creature that drags you under can be bargained with, bowed to, and fed. That is not a
+    contradiction. That is how you teach respect for something that will drown you if you forget it.
+  </p>
+  <div class="lore-box">
+    <p>
+      The darkest thread in the lore is the <em>shirikodama</em> — a small ball, said to sit just
+      inside the anus, which folk belief treated as the seat of the soul. The kappa was said to reach
+      into a drowning victim and pull it out. Scholars have long noted the grim likely origin of the
+      detail: a body recovered from a river often has a slackened, open anus, and the legend gave a
+      face to what the water had actually done.
+    </p>
+  </div>
 </Section>
 
 <Section heading="What You Are Looking At">
+  <StatRow
+    stats={[
+      { num: '1910', label: 'Year Yanagita Kunio published Tōno monogatari, fixing the Kappabuchi tales in print' },
+      { num: '1820', label: 'The Suiko kōryaku — an Edo compendium that gathered twelve kappa accounts in one volume' },
+      { num: '0', label: 'Verified biological specimens — the kappa lives in record and ritual, not in the fossil bed' },
+    ]}
+  />
   <p>
-    TODO — physical description and identifying features. What witnesses agree on. What varies. What
-    to look for before you know what you are looking at.
+    Descriptions vary by region, but the core is remarkably stable. The kappa is roughly child-sized,
+    greenish, amphibian or reptilian, often shelled like a turtle, with webbed hands and a beak-like
+    mouth. The single detail every account agrees on is the one on top of its head: a shallow,
+    water-filled depression called the <em>sara</em> — "the dish" — that it carries wherever it goes.
   </p>
+  <p>
+    That dish is the whole creature in miniature. The water in it is the source of the kappa's
+    uncanny strength; keep it full and the yōkai can out-wrestle a grown adult, which is why so many
+    tales have it challenging humans to sumo. Let the water spill, and the strength drains with it.
+    An emptied kappa is said to be helpless, unable even to rise, until the dish is filled again from
+    the river it belongs to.
+  </p>
+  <div class="warning-box">
+    <div class="warn-label">⚠ Critical Field Note</div>
+    <p>
+      The kappa does not chase you across open ground. It waits at the edge of the water and relies
+      on you to close the distance — leaning out for a better look, reaching for something that
+      drifted past, stepping onto a bank that gives way. In every version of the story the fatal
+      move is yours. Translated out of folklore, the warning is exact: the water does not come to the
+      careless; the careless go to the water.
+    </p>
+  </div>
 </Section>
 
 <Section heading="How It Operates">
   <p>
-    TODO — behaviour pattern. How it hunts / haunts / appears. What comes first, next, and after.
+    The reported pattern is consistent across centuries. The kappa haunts a fixed body of water — a
+    pool, a river bend, a canal — and takes the inattentive who come too close: children, livestock,
+    the occasional careless adult. It is associated above all with pulling victims in and drowning
+    them, sometimes framed as the theft of the shirikodama from below.
+  </p>
+  <p>
+    What makes it a <em>yōkai</em> rather than a simple predator is that it can be reasoned with. The
+    kappa is bound by rules. It is obsessively polite, so a deep bow traps it into bowing back and
+    spilling its dish. It is honest to a fault, so a promise extracted from a captured kappa is held
+    to be unbreakable — regional folktales abound in which a defeated kappa signs a pledge never to
+    harm the villagers again. And it is greedy for cucumbers, which is why the offering works.
+  </p>
+  <p>
+    Strip away the supernatural machinery and the behaviour maps cleanly onto real hazard. The danger
+    is concentrated at specific, known spots. It targets the unsupervised and the overconfident. And
+    it can be "defeated" not by force but by a set of habits — caution, courtesy, staying back from
+    the edge — that a community can teach a child in the shape of a story.
   </p>
 </Section>
 
 <Section heading="An Honest Assessment of Its Weaknesses">
   <p>
-    TODO — what the accumulated evidence suggests works against it. Be honest when this section is
-    thin.
+    The honest assessment of the kappa is not that it is weak. It is that it is a lesson wearing a
+    monster's skin, and the lesson is sound.
+  </p>
+  <p>
+    <strong>The dish is the tell.</strong> Every traditional defence — bowing to spill the water,
+    striking the sara, tricking it into tipping its head during sumo — comes down to separating the
+    kappa from the water on its crown. In folklore terms it is a genuine weakness. In plain terms it
+    encodes the real one, which is that the power here belongs to the water, not the creature.
+  </p>
+  <p>
+    <strong>The offering is a boundary.</strong> Floating a cucumber downstream, bowing at the bank,
+    leaving the pool to the kappa — these are rituals that keep people out of dangerous water and
+    give them something to do instead of wading in. The creature's "weakness" for cucumbers is really
+    a culture's method for setting a line you do not cross.
+  </p>
+  <p>
+    <strong>There is no carcass.</strong> No tested specimen, no skeleton, no species. The kappa
+    survives entirely as record and custom — which, for the purpose that matters, is enough. A
+    drowning it prevents is just as prevented whether or not the thing in the pool was ever real.
   </p>
 </Section>
 
 <Section heading="Six Rules That May Save Your Life">
-  <p>TODO — short intro paragraph framing the rules.</p>
+  <p>
+    These rules will not help you wrestle a yōkai, because the evidence says the yōkai is a teaching
+    tool. They are the lesson the kappa was built to carry — how to read the water, keep your head,
+    and come home from the river.
+  </p>
   <SixRules
     rules={frontmatter.rules}
     title={frontmatter.title}
     number={frontmatter.number}
-    pocketHref={frontmatter.status === 'draft' ? `/drafts/kappa/pocket/` : `/pocket/kappa/`}
+    pocketHref="/pocket/kappa/"
   />
 </Section>
 
 <Section heading="Two Cases on the Record">
-  <p>TODO — intro paragraph for the encounter section.</p>
+  <p>
+    These two cases are drawn from documented folklore and cultural history, not from any claimed
+    encounter. One is the record that fixed the kappa in print; the other is the place where a town
+    turned the legend into its own identity.
+  </p>
   <EncounterCard
-    id="Encounter 01 · TODO · TODO date"
-    title="TODO — encounter title"
-    meta="TODO — encounter witness / context"
-    verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    id="Encounter 01 · Tōno, Iwate · recorded 1910"
+    title="The Kappabuchi Record"
+    meta="Yanagita Kunio · Tōno monogatari · The Tales That Fixed the Kappa in Print"
+    verdict="documented"
+    verdictLabel="Folklore on Record"
+    references={[
+      {
+        text: 'World History Encyclopedia — “Kappa” (Matthew Allison, 2025)',
+        label: 'worldhistory.org',
+        href: 'https://www.worldhistory.org/kappa/',
+      },
+      {
+        text: 'Good Luck Trip — “Kappabuchi Pool / Jokenji Temple,” Tōno, Iwate',
+        label: 'gltjp.com',
+        href: 'https://www.gltjp.com/en/directory/item/12572/',
+      },
+      {
+        text: 'Wikipedia — “Kappa (folklore)”',
+        label: 'wikipedia.org',
+        href: 'https://en.wikipedia.org/wiki/Kappa_(folklore)',
+      },
+    ]}
   >
-    <p>TODO — encounter prose. Real, cited account.</p>
+    <p>
+      In 1910 the folklorist Yanagita Kunio published <em>Tōno monogatari</em> — "The Legends of
+      Tōno" — a collection of tales gathered from the Tōno basin in Iwate Prefecture and still
+      counted among the foundational works of Japanese folklore studies. Several of its stories
+      concern kappa, and the most famous are set at a quiet stream behind Jōkenji Temple that the
+      locals call Kappabuchi, "the kappa pool."
+    </p>
+    <p>
+      The value of the record is in how ordinary the setting is. Kappabuchi is a modest creek, often
+      less than a metre deep, overhung with dense bamboo grass — exactly the kind of inviting, easily
+      underestimated water that the legend warns about. Tōno has since built much of its identity
+      around the creature: the komainu guardian statues at Jōkenji have water-holding hollows worn
+      into their heads and are nicknamed the "kappa komainu," and kappa imagery lines the town. The
+      tale and the terrain fit each other precisely, which is the point — the story grew where the
+      water was genuinely dangerous.
+    </p>
   </EncounterCard>
   <EncounterCard
-    id="Encounter 02 · TODO · TODO date"
-    title="TODO — second encounter title"
-    meta="TODO — second encounter witness / context"
-    verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    id="Encounter 02 · Asakusa, Tokyo · 1814 onward"
+    title="The Kappa Temple of Kappabashi"
+    meta="Kihachi Kappaya · Sōgen-ji (Kappa-dera) · A Legend Written into a Neighbourhood"
+    verdict="documented"
+    verdictLabel="Cultural History"
+    references={[
+      {
+        text: 'Wikipedia — “Kappa-dera” (Sōgen-ji, Tokyo)',
+        label: 'wikipedia.org',
+        href: 'https://en.wikipedia.org/wiki/Kappa-dera',
+      },
+      {
+        text: 'Wikipedia — “Kappabashi-dori” (Tokyo “Kitchen Town”)',
+        label: 'wikipedia.org',
+        href: 'https://en.wikipedia.org/wiki/Kappabashi-dori',
+      },
+      {
+        text: 'World History Encyclopedia — “Kappa” (Matthew Allison, 2025)',
+        label: 'worldhistory.org',
+        href: 'https://www.worldhistory.org/kappa/',
+      },
+    ]}
   >
-    <p>TODO — second encounter prose.</p>
+    <p>
+      In early 19th-century Edo, a raincoat-and-umbrella merchant named Kihachi Kappaya funded
+      embankments and a footbridge to relieve the flooding that plagued the low-lying district now
+      known as Kappabashi. Folktales attached themselves to the work almost immediately: kappa from
+      the nearby Sumida River were said to have come ashore at night to help build it. When Kihachi
+      died in 1814 he was buried at the local temple, Sōgen-ji, which has been known ever since as
+      Kappa-dera — "the kappa temple."
+    </p>
+    <p>
+      The legend never really left. The district kept the name, the shops of Kappabashi "Kitchen
+      Town" officially adopted the kappa as their mascot, and nearby Kappa-dera is still where
+      residents leave cucumbers to appease the creature — the same offering the Edo scholars recorded
+      two centuries ago. It is a clean example of the kappa's real cultural function on display: a
+      flood-prone stretch of water, a cautionary figure, and a living ritual that keeps both in
+      memory long after the hazard was engineered away.
+    </p>
   </EncounterCard>
 </Section>
 
@@ -147,8 +342,17 @@ import '../../styles/pages/_draft.css';
 <Section heading="Before You Go">
   <Outro>
     <p>
-      TODO — closing outro. Echo the cold open. Land the rules. Give the reader a parting
-      instruction.
+      The kappa is one of the oldest monsters in this guide and, in its way, one of the kindest. For
+      all its beaked menace and its taste for the shirikodama, its real work was never to kill
+      children — it was to keep them off the dangerous bank, out of the quiet pool, and away from the
+      current that genuinely would.
     </p>
+    <p>
+      Keep your distance from water you do not know. Treat the still green pool with more suspicion
+      than the loud rapids, because the still one is the liar. And if you ever find yourself at the
+      edge of a slow Japanese river, feeling it invite you closer —{' '}
+      <em>bow, step back, and leave the cucumber on the bank.</em>
+    </p>
+    <p>End of journal entry. Mind the water. Stay courteous. The river keeps what it is given.</p>
   </Outro>
 </Section>

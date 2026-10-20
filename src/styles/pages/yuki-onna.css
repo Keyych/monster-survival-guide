@@ -1,0 +1,15 @@
+/* Theme tokens for /yuki-onna. Shared layout rules live in field-manual.css. */
+:root {
+  --paper: #eef3f7;
+  --aged: #d8e3ec;
+  --ink: #16222e;
+  --faded: #45586a;
+  --stamp-red: #8b1a0a;
+  --stamp-blue: #2f4a6a;
+  --accent: #35668c;
+  --redact: #0d141c;
+  --margin: #49617a;
+  --highlight: #5a8fb8;
+  --rule: rgba(22, 34, 46, 0.1);
+  --warn: #8b1a0a;
+}

@@ -9,7 +9,8 @@ danger: 4
 bandColor: '#2a4830'
 classification: 'monster survival guide  —  the banshee'
 entryStatus: 'Active Entry'
-status: 'draft'
+status: 'published'
+publishDate: '2026-10-20'
 season: 1
 sightings:
   - {
@@ -37,108 +38,294 @@ sightings:
       label: "O'Connor Kerry tradition · 19th-century folkloric record",
     }
 recordKind: folklore
-recordNote: Working draft about folklore and tradition. Cultural context and sources still need
-  checking. The doodle is an imagined interpretation, not an authoritative cultural depiction.
+recordNote: Traditional folklore and historical records of belief across Gaelic Ireland. The
+  tradition and the interpretation of the records are distinct.
 illustration:
   src: /illustrations/banshee.png
   alt: Loose ink doodle of a keening woman with loose hair and a raised hand.
 dossier:
-  entity: The Banshee
-  origin: Ireland · ancestral lands
-  status: Draft — awaiting research
+  entity: The Banshee (bean sídhe — "woman of the fairy mound")
+  origin: Ireland · Gaelic family lineages
+  status: Active in Tradition — Family-Bound Across Gaelic Ireland
   stamps:
     - Celtic Omen
     - Ireland
     - Family Lineage
   dangerLabel: OMEN
-  dangerNote: 4/10 — Does not strike. Heralds. The danger is what follows, not the herald.
+  dangerNote: 4/10 — She does not strike; she heralds. The danger is the death she announces, not
+    the herald who announces it.
 rules:
-  - title: TODO — rule 1
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 2
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 3
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 4
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 5
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 6
-    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: She is a herald, not a hunter.
+    body:
+      The bean sídhe does not strike, chase, or enter — she announces a death already on its way.
+      What you should fear is the news she carries, never the messenger herself.
+  - title: She keens for her own blood.
+    body:
+      Tradition binds her to specific Gaelic families, most carrying an Ó or Mac name. If you are
+      not of that lineage, a cry in the dark is not addressed to you.
+  - title: Do not go out to confront the cry.
+    body:
+      Every credible account ends the same way — the figure is glimpsed at a window or heard in the
+      dark, then gone. Stay inside, wake the household, and let the warning do its work.
+  - title: Treat the warning as time, not doom.
+    body:
+      The keen is said to come before the death, sometimes by a day. Use the hours to gather the
+      family, send word to those far off, and sit with whoever is failing.
+  - title: Do not mistake grief-craft for the omen.
+    body:
+      The human keening woman — the bean chaointe — was hired to mourn aloud after a death; her
+      lament is custom, not prophecy. Learn which of the two you are hearing.
+  - title: Respect the tradition that carried this.
+    body:
+      The belief is woven into centuries of real Irish mourning practice. Treat it as inherited
+      grief-wisdom, not a ghost story to be debunked.
 ---
 
 import Section from '../../components/Section.astro';
+import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
 import EncounterCard from '../../components/EncounterCard.astro';
 import Outro from '../../components/Outro.astro';
 import MonsterMap from '../../components/MonsterMap.astro';
-import '../../styles/pages/_draft.css';
+import '../../styles/pages/banshee.css';
 
 <Section heading="If You're Reading This">
   <p>
-    TODO — cold open. Place the reader at the scene of the encounter. Establish atmosphere. Earn
-    attention before asking for trust.
+    It is late, and the house is quiet, and someone in it is old or ill or simply asleep. Then it
+    comes from outside the walls — a cry that is not a dog, not the wind, not a neighbour. A woman's
+    voice, raised in a lament that rises and falls and will not resolve, keening for a grief that has
+    not yet arrived. In the morning you will understand what it was for.
+  </p>
+  <p>
+    This is not a creature you fight, and there is no advice in these pages about bolts or blades or
+    fire. The Irish bean sídhe is an omen, not a predator. She does not come to take anyone. She
+    comes to tell you that someone is already being taken, and that the household has a little time
+    left to gather around them.
+  </p>
+  <p>
+    This is the sixteenth journal entry of the Monster Survival Guide. The subject is the Banshee —
+    the keening woman, the fairy-woman who weeps for the dying of certain Gaelic families. Treat this
+    one gently. It sits closer to real grief than almost anything else in this guide.
   </p>
 </Section>
 
 <Section heading="Where It Comes From">
   <p>
-    TODO — origin section. Cultural / historical / geographic context. A creature without context is
-    a horror story; a creature with context is something a reader can understand.
+    The word is Irish — <em>bean sídhe</em>, from Old Irish <em>ben síde</em>, "woman of the fairy
+    mound." It ties her to the <em>síde</em>, the ancient tumuli that dot the Irish countryside and
+    that pre-Christian tradition held to be the dwellings of the Otherworld. She is not a demon and
+    not a ghost in the ordinary sense. She is a being of the old order, attached across generations
+    to the living families of Gaelic Ireland.
   </p>
+  <p>
+    Her cry is bound to a real human custom. Keening — <em>caoineadh</em>, "weeping" — was the
+    traditional Irish lament for the dead, performed aloud at a wake by a mourning woman, the{' '}
+    <em>bean chaointe</em>, sometimes hired for the purpose. Folk belief held that a fairy woman sang
+    that same lament, and that she would sing it when a family member died or was about to, even if
+    the death happened far from home. In that case her wail was the household's first news of it.
+  </p>
+  <div class="pull-quote">
+    Most of this guide is about things that want to harm you. The banshee wants nothing from you at
+    all. She is grief given a voice and sent on ahead — a warning delivered out of what the tradition
+    frames almost as loyalty to a bloodline.
+  </div>
+  <p>
+    She does not attach to everyone. By long tradition she laments only the old Gaelic families —
+    those whose surnames carry the <em>Ó</em> or <em>Mac</em> prefix that marks native descent, with
+    a few recorded exceptions for families "gifted in music and song." Britannica notes the belief
+    that she warns only families of old Irish stock; certain lineages have their visits from her
+    chronicled down the centuries as a matter of record rather than rumour.
+  </p>
+  <div class="lore-box">
+    <p>
+      The keening tradition was real and widespread enough that the Catholic Church repeatedly moved
+      to suppress professional keening women at wakes between the 17th and 19th centuries. The
+      banshee belief grew in the same soil — not as a children's fright, but as the supernatural
+      echo of a formal, communal way of mourning that has largely now been lost.
+    </p>
+  </div>
 </Section>
 
 <Section heading="What You Are Looking At">
+  <StatRow
+    stats={[
+      { num: '1642', label: "Year of Lady Fanshawe's firsthand account — the best-known early record" },
+      { num: '0', label: 'Attacks on record — she heralds a death, she does not cause one' },
+      { num: '1825', label: 'Year Croker printed the Bunworth encounter in Fairy Legends' },
+    ]}
+  />
   <p>
-    TODO — physical description and identifying features. What witnesses agree on. What varies. What
-    to look for before you know what you are looking at.
+    Accounts of her appearance do not fully agree, which is itself worth knowing. She is most often
+    described as a woman with long, streaming hair, frequently seen combing it — some legends insist
+    she can only keen while combing. She is variously young and beautiful or bent and ancient; Lady
+    Wilde recorded her as small and old. Her dress is commonly a grey cloak over green, her eyes red
+    from endless weeping.
   </p>
+  <p>
+    But the most-cited firsthand sighting, Lady Fanshawe's, describes something different: a pale
+    figure with reddish hair hanging loose, appearing at a window above water. The lesson is that she
+    is known far more reliably by her voice than by her face. The keen is the constant. The woman
+    behind it shifts from telling to telling.
+  </p>
+  <div class="warning-box">
+    <div class="warn-label">⚠ Critical Field Note</div>
+    <p>
+      If you hear a wail with no mourner to make it, do not assume it is meant for you. The bean
+      sídhe keens for her own bloodline, and in much of the tradition she is heard before she is ever
+      seen — if she is seen at all. The thing to do with the sound is not to chase it down. It is to
+      count who is under your roof and who is not yet home.
+    </p>
+  </div>
 </Section>
 
 <Section heading="How It Operates">
   <p>
-    TODO — behaviour pattern. How it hunts / haunts / appears. What comes first, next, and after.
+    The pattern in the records is consistent. First comes the cry, usually at night, usually outside
+    the house — a sustained keening lament rather than a scream, often described as unbearably
+    sorrowful rather than frightening. In parts of Leinster the wail is said to be strong enough to
+    shatter glass. It is heard by the household, sometimes by a whole townland, before any word of a
+    death has reached them.
+  </p>
+  <p>
+    Then, within hours or a day or two, the death comes — of a member of the family she is bound to,
+    wherever in the world that person happens to be. The sequence is always that way round. The keen
+    precedes the loss; it does not follow it. That ordering is the whole of the belief, and the whole
+    of its terror, because it means the sound is a prediction coming true.
+  </p>
+  <p>
+    There is one escalation worth noting. Tradition holds that when several banshees are heard
+    keening together at once, the death they foretell is that of someone great or holy — a figure of
+    unusual importance. A single voice is for a single household. A chorus is for a nation.
   </p>
 </Section>
 
 <Section heading="An Honest Assessment of Its Weaknesses">
   <p>
-    TODO — what the accumulated evidence suggests works against it. Be honest when this section is
-    thin.
+    This is not a section about how to defeat her, because there is nothing here to defeat. The
+    banshee takes no one and touches no one. To "survive" a banshee is simply to understand what you
+    are hearing and to respond to it well.
+  </p>
+  <p>
+    <strong>There is nothing to resist.</strong> She is a messenger. Fighting the message does not
+    change the news, and in every account the figure cannot be caught, cornered, or driven off — she
+    is seen, and then she is gone.
+  </p>
+  <p>
+    <strong>The sound can be mistaken.</strong> A fox's scream, a barn owl, the wind in a chimney,
+    or a human keener at a nearby wake can all be taken for her. The honest field skill here is
+    telling an ordinary night-sound from the thing the tradition describes.
+  </p>
+  <p>
+    <strong>The real work is human.</strong> If you take the warning seriously, the response is not
+    defensive — it is to gather the family, send for those who are far away, and make sure no one who
+    is dying does so alone. That is what the belief, at its core, was always for.
   </p>
 </Section>
 
 <Section heading="Six Rules That May Save Your Life">
-  <p>TODO — short intro paragraph framing the rules.</p>
+  <p>
+    These rules will not help you fight a monster, because there is no monster here to fight. They
+    will help you recognise an omen for what it is, keep a clear head in a frightened house, and
+    treat an old grief-tradition with the seriousness it was given.
+  </p>
   <SixRules
     rules={frontmatter.rules}
     title={frontmatter.title}
     number={frontmatter.number}
-    pocketHref={frontmatter.status === 'draft' ? `/drafts/banshee/pocket/` : `/pocket/banshee/`}
+    pocketHref="/pocket/banshee/"
   />
 </Section>
 
 <Section heading="Two Cases on the Record">
-  <p>TODO — intro paragraph for the encounter section.</p>
+  <p>
+    These two accounts are the most-cited in the written record — one set down by a 17th-century
+    Englishwoman in her own memoirs, the other preserved by the folklorist who collected the
+    south of Ireland's legends. Neither is proof of the supernatural. Both are genuine documents of
+    what people saw, heard, and believed.
+  </p>
   <EncounterCard
-    id="Encounter 01 · TODO · TODO date"
-    title="TODO — encounter title"
-    meta="TODO — encounter witness / context"
-    verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    id="Encounter 01 · County Clare, Ireland · 1642"
+    title="Lady Fanshawe at the Window"
+    meta="Ann, Lady Fanshawe · A Guest of the O'Brien Family · Recorded in Her Memoirs"
+    verdict="documented"
+    verdictLabel="Historical Record"
+    references={[
+      {
+        text: "Fairyist — “A Digest of Lady Fanshawe's Brush with the Banshee (Co. Clare)”",
+        label: 'fairyist.com',
+        href: 'https://www.fairyist.com/fairy-sightings/a-digest-of-lady-fanshawes-brush-with-the-banshee/',
+      },
+      {
+        text: 'Clare County Library — Folklore Survey (drawing on T. J. Westropp)',
+        label: 'clarelibrary.ie',
+        href: 'https://www.clarelibrary.ie/eolas/coclare/folklore/folklore_survey/chapter2.htm',
+      },
+      {
+        text: 'Britannica — “Banshee”',
+        label: 'britannica.com',
+        href: 'https://www.britannica.com/topic/banshee',
+      },
+    ]}
   >
-    <p>TODO — encounter prose. Real, cited account.</p>
+    <p>
+      In 1642, the Englishwoman Ann, Lady Fanshawe, was staying as a guest with members of the
+      O'Brien family in County Clare. She recorded the night in the memoirs she later wrote for her
+      son — a sober, domestic document, not a book of ghost stories. She was woken, she wrote, by a
+      horrible scream, and going to the window of her room, which overhung water, she saw a figure
+      outside it.
+    </p>
+    <p>
+      It was a pale woman, she wrote, rather handsome, with reddish hair hanging dishevelled over
+      her shoulders. The figure remained for some time and then vanished with further ghastly
+      shrieks. Fanshawe, badly shaken, raised it with her host the next morning.
+    </p>
+    <p>
+      He was not surprised. A near relation of the family, he told her, had died in the castle during
+      the night — an illness that, she realised, had been kept from her as a guest. The account is
+      one of the earliest detailed English-language descriptions of a banshee sighting, and it is
+      cited to this day precisely because it comes not from folklore collectors but from the witness's
+      own hand.
+    </p>
   </EncounterCard>
   <EncounterCard
-    id="Encounter 02 · TODO · TODO date"
-    title="TODO — second encounter title"
-    meta="TODO — second encounter witness / context"
-    verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    id="Encounter 02 · Buttevant, County Cork · September 1772"
+    title="The Bunworth Banshee"
+    meta="Rev. Charles Bunworth, Rector of Buttevant · Recorded by Thomas Crofton Croker"
+    verdict="documented"
+    verdictLabel="Folklorist's Record"
+    references={[
+      {
+        text: 'Wikipedia — “Charles Bunworth” (d. 14 September 1772)',
+        label: 'wikipedia.org',
+        href: 'https://en.wikipedia.org/wiki/Charles_Bunworth',
+      },
+      {
+        text: 'Patrick Comerford — “Canon Charles Bunworth, Rector of Buttevant”',
+        label: 'patrickcomerford.com',
+        href: 'https://www.patrickcomerford.com/2020/10/canon-charles-bunworth-rector-of.html',
+      },
+    ]}
   >
-    <p>TODO — second encounter prose.</p>
+    <p>
+      The Rev. Charles Bunworth was rector of Buttevant, County Cork, a respected clergyman and a
+      famous patron of travelling harpers. He died on 14 September 1772. More than fifty years later
+      his great-grandson, the Cork antiquarian Thomas Crofton Croker, set down the family's account
+      of his death in <em>Fairy Legends and Traditions of the South of Ireland</em> (first published
+      1825).
+    </p>
+    <p>
+      By that account, a banshee was heard keening around the rectory roughly a week before Bunworth
+      fell ill, and again on the night he died — a wailing lament circling the house, heard by those
+      keeping vigil over him. The telling became one of the most widely reproduced banshee stories in
+      print, carried by the popularity of Croker's collection.
+    </p>
+    <p>
+      Croker was honest about his evidence in a way worth respecting. He named no single source,
+      stating only that "there are still living credible witnesses" to what had been heard. Later
+      commentators have pointed out that he was himself descended from Bunworth, making it very much
+      a family legend — a reminder that even the best-recorded banshee account is a record of belief,
+      faithfully kept, rather than a record of fact.
+    </p>
   </EncounterCard>
 </Section>
 
@@ -147,8 +334,21 @@ import '../../styles/pages/_draft.css';
 <Section heading="Before You Go">
   <Outro>
     <p>
-      TODO — closing outro. Echo the cold open. Land the rules. Give the reader a parting
-      instruction.
+      The banshee is the gentlest entry in this guide and, in some ways, the saddest. She asks
+      nothing of you, takes nothing from you, and cannot be fought, because she was never the enemy.
+      She is the sound a culture gave to the moment before a loss — grief arriving a few hours early,
+      in a voice loyal to a bloodline.
     </p>
+    <p>
+      Lady Fanshawe went to the window and saw a weeping woman, and in the morning learned a relation
+      had died. The household around Charles Bunworth heard a keening in the dark and, within days,
+      buried him. In both cases the right response was the same, and it was never a weapon.
+    </p>
+    <p>
+      So if you are ever of such a family, and you hear it — do not go out, and do not be afraid of
+      her. Wake the house. Send for the ones who are far away. And sit with whoever needs sitting
+      with, because the time she is giving you is short, and it is the only gift she has to give.
+    </p>
+    <p>End of journal entry. Mind your people. Keep the vigil. Some warnings are a kindness.</p>
   </Outro>
 </Section>

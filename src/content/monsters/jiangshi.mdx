@@ -9,130 +9,309 @@ danger: 7
 bandColor: '#4a1818'
 classification: 'monster survival guide  —  the jiangshi'
 entryStatus: 'Active Entry'
-status: 'draft'
+status: 'published'
+publishDate: '2026-10-20'
 season: 1
 sightings:
   - {
       name: 'Xiangxi prefecture, Hunan',
       lat: 28.31,
       lon: 109.74,
-      label: "Originating folkloric region · 'transporting corpses' practice",
+      label: "Western Hunan · the 'driving corpses' (ganshi) corpse-transport trade",
+      sourceUrl: 'https://www.theworldofchinese.com/post/the-real-walking-dead-one/',
     }
   - {
       name: 'Hong Kong',
       lat: 22.3,
       lon: 114.17,
-      label: 'Cinematic Jiangshi tradition (Mr. Vampire, 1985) spreads the lore globally',
+      label: 'Cinematic Jiangshi boom — Mr. Vampire (1985) spreads the lore globally',
+      sourceUrl: 'https://en.wikipedia.org/wiki/Mr._Vampire',
     }
   - {
       name: 'Guangdong province',
       lat: 23.13,
       lon: 113.27,
-      label: 'Southern Chinese funerary traditions where the Jiangshi was an active part of folk practice',
+      label: 'Southern Chinese funerary traditions where the Jiangshi lived in folk practice',
+      sourceUrl: 'https://en.wikipedia.org/wiki/Jiangshi',
     }
 recordKind: folklore
-recordNote: Working draft about folklore and tradition. Cultural context and sources still need
-  checking. The doodle is an imagined interpretation, not an authoritative cultural depiction.
+recordNote: Chinese folklore set beside documented cultural history — a real corpse-transport
+  trade and a 1980s Hong Kong cinema boom. The creature and the historical record are distinct,
+  and the doodle is an imagined interpretation, not an authoritative cultural depiction.
 illustration:
   src: /illustrations/jiangshi.png
   alt: Loose ink doodle of a stiff-armed Jiangshi wearing a cap and robe.
 dossier:
-  entity: The Jiangshi
-  origin: China · Hong Kong cinematic spread
-  status: Draft — awaiting research
+  entity: The Jiangshi (僵屍 — the "stiff corpse")
+  origin: Qing-dynasty China · Hong Kong cinematic spread
+  status: Folklore — Qing-era Origin · Cinematic Spread
   stamps:
     - Hopping Corpse
     - Qing Dynasty
     - Taoist Lore
   dangerLabel: REANIMATE
-  dangerNote: 7/10 — Reanimate corpse · siphons qi · neutralised by Taoist seals.
+  dangerNote: 7/10 — A folkloric reanimated corpse that siphons qi; the real record is a
+    corpse-transport trade and Hong Kong cinema.
 rules:
-  - title: TODO — rule 1
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 2
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 3
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 4
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 5
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 6
-    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: Hold your breath when it is near.
+    body: Jiangshi are said to be blind, hunting by the breath of the living — stop breathing and
+      still your chest, and the corpse loses the thread that leads to you.
+  - title: Heed the bell on the night road.
+    body: Corpse-drivers moved only after dark and rang a bell so the living could clear the path
+      — a bell in the dark means look away and step aside, never follow.
+  - title: Leave the sealing rite to the priest.
+    body: Legend immobilises a jiangshi with a fulu — an inked paper talisman pressed to its
+      forehead — but the rite belongs to a trained Taoist, not to the panicked.
+  - title: Let it meet its own reflection.
+    body: A mirror turned on a jiangshi is said to drive it back, for the corpse cannot bear its
+      own face; a bright surface at the threshold is an old, simple ward.
+  - title: Keep peachwood, rice, and a high doorsill.
+    body: Tradition arms the home with a peachwood sword, glutinous rice, and a raised threshold
+      the stiff corpse cannot step over — humble things, not heroics.
+  - title: Honour the dead you carry home.
+    body: The whole legend grew from filial duty — bodies walked back to ancestral ground for
+      burial — so treat a corpse as a person owed rest, not a trophy.
 ---
 
 import Section from '../../components/Section.astro';
+import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
 import EncounterCard from '../../components/EncounterCard.astro';
 import Outro from '../../components/Outro.astro';
 import MonsterMap from '../../components/MonsterMap.astro';
-import '../../styles/pages/_draft.css';
+import '../../styles/pages/jiangshi.css';
 
 <Section heading="If You're Reading This">
   <p>
-    TODO — cold open. Place the reader at the scene of the encounter. Establish atmosphere. Earn
-    attention before asking for trust.
+    It is well after dark on a narrow mountain road in western Hunan. You hear a handbell first —
+    slow, deliberate, coming closer — and then a voice somewhere ahead calling for the living to
+    stand aside and avert their eyes. Local custom is absolute on this point: you do not watch what
+    is passing, and you do not get in its way.
+  </p>
+  <p>
+    If you looked anyway, the old accounts say you would see a short procession moving through the
+    cold: a Taoist master, an apprentice, and between them a line of the dead — upright, capped,
+    robed, seeming to hop forward in unison down the track toward home. For centuries the people of
+    these hills believed a corpse could be made to walk back to the village where it was born.
+  </p>
+  <p>
+    This is the seventeenth journal entry of the Monster Survival Guide. The subject: the Jiangshi
+    — the "stiff corpse," the hopping dead of Chinese folklore. It is one of the entries where the
+    history behind the monster is stranger, and sadder, than the monster itself.
   </p>
 </Section>
 
 <Section heading="Where It Comes From">
   <p>
-    TODO — origin section. Cultural / historical / geographic context. A creature without context is
-    a horror story; a creature with context is something a reader can understand.
+    The Jiangshi is woven from several threads of Chinese belief, but the most grounded of them is
+    a real occupation. In the Qing era, men from the mountainous west of Hunan often left home to
+    work and died far away. Filial duty — reinforced by ancestor worship and feng shui — demanded
+    that they be buried in their ancestral ground, and so a trade grew up around carrying the dead
+    home, sometimes over a thousand <em>li</em>.
   </p>
+  <p>
+    The work was done at night, when the roads were thought fit for the dead, and announced by
+    bells and gongs so the living could clear the way. A Daoist master and his apprentice led the
+    procession, placing a paper talisman on each corpse's forehead and testing the body with a
+    peachwood sword. Viewed from a distance, bodies tied upright to flexing bamboo poles appeared
+    to rise and fall together — to <em>hop</em>.
+  </p>
+  <div class="pull-quote">
+    The horror of the Jiangshi did not begin as a horror. It began as devotion — the refusal to
+    leave a family member buried among strangers, and the belief that a lost soul far from home
+    could never truly rest.
+  </div>
+  <p>
+    From that solemn practice, rumour did the rest. Corpse-driving using manual labour gave rise to
+    legends of Taoist sorcery that reanimated the dead and marched them home, and some accounts
+    suggest the stories were deliberately encouraged — to keep the curious at a respectful distance,
+    and, by one theory, to help smugglers scare off anyone who came too close.
+  </p>
+  <div class="lore-box">
+    <p>
+      The Jiangshi also draws on older strands of belief — that a soul which fails to leave the
+      body after an improper or untimely death may animate the corpse, and that an unburied body
+      left too long could absorb <em>yang</em> energy and rise. The folklore is a layering of
+      funerary taboo, ritual, and genuine anxiety about the dead who have not been laid to rest.
+    </p>
+  </div>
 </Section>
 
 <Section heading="What You Are Looking At">
+  <StatRow
+    stats={[
+      { num: '1,000+', label: 'Li a body might be carried home — the corpse-transport trade of western Hunan' },
+      { num: '1985', label: 'Year Mr. Vampire launched Hong Kong\'s hopping-corpse film boom' },
+      { num: '0', label: 'Reanimated corpses documented anywhere outside folklore and film' },
+    ]}
+  />
   <p>
-    TODO — physical description and identifying features. What witnesses agree on. What varies. What
-    to look for before you know what you are looking at.
+    The Jiangshi of legend is a corpse gone rigid — stiff-limbed, which is precisely why it is said
+    to hop rather than walk, arms held out straight ahead for want of flexing joints. Its skin is
+    described as greenish-white or mottled, sometimes furred with the mould of the grave, and its
+    gaze is vacant. It is blind, the stories insist, and finds the living only by sensing their
+    breath.
   </p>
+  <p>
+    The image most of the world carries, though, comes from the screen: the Qing-dynasty mandarin's
+    coat-like robe and tall round-brimmed cap, with a yellow paper talisman hanging from the
+    forehead. That costume is a twentieth-century cinematic convention more than a folk constant —
+    and once you have seen it, every Jiangshi you imagine will wear it.
+  </p>
+  <div class="warning-box">
+    <div class="warn-label">⚠ Critical Field Note</div>
+    <p>
+      Separate the record into its two honest halves. One half is documented cultural history — a
+      funerary trade, a set of Taoist rites, and a genre of films. The other half is the
+      supernatural creature itself, which lives in folklore and on screen and has never once walked
+      into the daylight of the verifiable. Keep the line between them clear.
+    </p>
+  </div>
 </Section>
 
 <Section heading="How It Operates">
   <p>
-    TODO — behaviour pattern. How it hunts / haunts / appears. What comes first, next, and after.
+    In folklore the Jiangshi does not stalk by sight. It is blind, and it hunts by the breath of
+    the living — which is why the oldest piece of survival advice attached to it is simply to stop
+    breathing when it draws near. It feeds not on blood but on <em>qi</em>, the life-force, draining
+    it from the living to grow stronger; the more it takes, the more capable it becomes.
+  </p>
+  <p>
+    It moves by hopping, stiff and relentless, though older accounts grant the truly ancient ones
+    the ability to run, and even to fly once they have absorbed enough <em>yang</em> energy. It is
+    not clever the way a Wendigo is clever. It is persistent — a dead thing pointed in a direction,
+    unable to reason with and difficult to turn aside.
+  </p>
+  <p>
+    Against it, tradition offers a whole household of defences: the <em>fulu</em> talisman pressed
+    to the forehead to still it, mirrors it cannot bear to face, peachwood to deter it, glutinous
+    rice and adzuki beans, and a raised doorsill its rigid legs cannot step across. These are the
+    tools of the priest and the frightened family, not the hero.
   </p>
 </Section>
 
 <Section heading="An Honest Assessment of Its Weaknesses">
   <p>
-    TODO — what the accumulated evidence suggests works against it. Be honest when this section is
-    thin.
+    The honest assessment here is a matter of categories. The Jiangshi as a reanimated, qi-draining
+    corpse has no case file — no body, no recovered specimen, no documented encounter. What is real
+    is everything that grew up <em>around</em> the belief.
+  </p>
+  <p>
+    <strong>The trade was real.</strong> The transport of the dead home for ancestral burial in
+    western Hunan is documented cultural history, filial duty made into a paid occupation, done at
+    night and warned of by bells.
+  </p>
+  <p>
+    <strong>The illusion is explicable.</strong> Corpses carried upright on flexing bamboo poles,
+    seen at a distance in the dark, really would appear to bob and hop in unison — a plausible seed
+    for the image of the walking dead.
+  </p>
+  <p>
+    <strong>The costume is cinema.</strong> The capped, robed, talisman-browed Jiangshi that the
+    world pictures is largely the invention of 1980s Hong Kong filmmakers, not a timeless folk
+    portrait. The monster you fear may be wearing a movie's wardrobe.
   </p>
 </Section>
 
 <Section heading="Six Rules That May Save Your Life">
-  <p>TODO — short intro paragraph framing the rules.</p>
+  <p>
+    These rules will not arm you against a reanimated corpse, because the record offers no such
+    thing to fight. They are the folklore's own advice, read with respect — and a reminder that the
+    tradition began in care for the dead, not in fear of them.
+  </p>
   <SixRules
     rules={frontmatter.rules}
     title={frontmatter.title}
     number={frontmatter.number}
-    pocketHref={frontmatter.status === 'draft' ? `/drafts/jiangshi/pocket/` : `/pocket/jiangshi/`}
+    pocketHref="/pocket/jiangshi/"
   />
 </Section>
 
 <Section heading="Two Cases on the Record">
-  <p>TODO — intro paragraph for the encounter section.</p>
+  <p>
+    These two cases are not hauntings. They are documented cultural history — the funerary practice
+    that seeded the legend, and the film that carried it around the world.
+  </p>
   <EncounterCard
-    id="Encounter 01 · TODO · TODO date"
-    title="TODO — encounter title"
-    meta="TODO — encounter witness / context"
-    verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    id="Encounter 01 · Western Hunan, China · Qing era"
+    title="The Corpse-Drivers of Western Hunan"
+    meta="Xiangxi ganshi · The 'Driving Corpses' Trade"
+    verdict="documented"
+    verdictLabel="Cultural History"
+    references={[
+      {
+        text: 'The World of Chinese — “The Real Walking Dead: The Practice of Corpse-Herding in China”',
+        label: 'theworldofchinese.com',
+        href: 'https://www.theworldofchinese.com/post/the-real-walking-dead-one/',
+      },
+      {
+        text: 'Wikipedia — “Jiangshi” (origins and corpse-driving)',
+        label: 'wikipedia.org',
+        href: 'https://en.wikipedia.org/wiki/Jiangshi',
+      },
+    ]}
   >
-    <p>TODO — encounter prose. Real, cited account.</p>
+    <p>
+      In the mountainous west of Hunan, men who died far from home posed a problem of duty. Ancestor
+      worship and filial piety held that the dead belonged in their native ground, and that a soul
+      buried among strangers could be lost. Families who could not carry a body home themselves, or
+      afford easier transport across the hard terrain, turned to those who could — and a trade in
+      moving the dead grew up, carrying corpses back across great distances for burial.
+    </p>
+    <p>
+      The work was done after dark and announced with bells and gongs, warning the living to stand
+      aside and look away, since to set eyes on the passing dead was thought to invite misfortune. A
+      Daoist master and his apprentice led each procession, checking the deceased, testing the body
+      with a peachwood sword, and placing a talisman on each forehead. Bodies tied upright to
+      flexing bamboo poles, glimpsed at night from a distance, seemed to hop forward in step.
+    </p>
+    <p>
+      Historians treat this corpse-driving as one strand of the Jiangshi legend rather than its
+      whole origin, but the connection is direct: a real, solemn occupation, wrapped in ritual and
+      rumour, is the most grounded source we have for the image of the dead who walk themselves
+      home. The practice faded over the twentieth century as the fears around it grew and the old
+      ways were suppressed.
+    </p>
   </EncounterCard>
   <EncounterCard
-    id="Encounter 02 · TODO · TODO date"
-    title="TODO — second encounter title"
-    meta="TODO — second encounter witness / context"
-    verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    id="Encounter 02 · Hong Kong · 7 November 1985"
+    title="Mr. Vampire and the Cinematic Jiangshi"
+    meta="Ricky Lau, dir. · Sammo Hung, prod. · Golden Harvest"
+    verdict="documented"
+    verdictLabel="Cultural History"
+    references={[
+      {
+        text: 'Wikipedia — “Mr. Vampire” (1985)',
+        label: 'wikipedia.org',
+        href: 'https://en.wikipedia.org/wiki/Mr._Vampire',
+      },
+      {
+        text: '/Film — “Hold Your Breath For The Hopping Undead In Mr. Vampire”',
+        label: 'slashfilm.com',
+        href: 'https://slashfilm.com/976576/year-of-the-vampire-hold-your-breath-for-the-hopping-undead-in-mr-vampire',
+      },
+    ]}
   >
-    <p>TODO — second encounter prose.</p>
+    <p>
+      On 7 November 1985, Golden Harvest released <em>Mr. Vampire</em>, directed by Ricky Lau and
+      produced by Sammo Hung. A horror-comedy built on the hopping dead, it became the breakthrough
+      success of the Jiangshi genre and established many of the tropes the world now takes for the
+      folklore itself — among them the detail, immortalised in its Taiwanese title "Hold Your Breath
+      for a Moment," that you survive a Jiangshi by not breathing.
+    </p>
+    <p>
+      Lam Ching-ying's Taoist master, Kau, set the template for the unibrowed priest who battles
+      the capped, Qing-robed dead with paper talismans, glutinous rice, mirrors, and peachwood. The
+      film spawned a franchise and a wave of imitators across the 1980s, and its hopping corpses
+      travelled far beyond Hong Kong — into Taiwanese and Japanese productions, and into the
+      imaginations of overseas audiences meeting the creature for the first time.
+    </p>
+    <p>
+      That reach is the point of the case. For a great many people worldwide, the Jiangshi
+      <em>is</em> the one from this film — breath held, talisman fluttering, arms outstretched. It
+      is a striking example of how a piece of regional folklore, filtered through a single popular
+      work, becomes the version everyone remembers.
+    </p>
   </EncounterCard>
 </Section>
 
@@ -141,8 +320,19 @@ import '../../styles/pages/_draft.css';
 <Section heading="Before You Go">
   <Outro>
     <p>
-      TODO — closing outro. Echo the cold open. Land the rules. Give the reader a parting
-      instruction.
+      The Jiangshi is not, in the end, a story about a monster. It is a story about the dead who are
+      far from home, and the lengths the living once went to bring them back — carrying bodies
+      through the mountains by night, ringing a bell, asking strangers only to look away.
     </p>
+    <p>
+      From that devotion came the rumour, and from the rumour came the hopping corpse, and from the
+      corpse came the films that fixed its capped, talisman-browed face in the world's memory. Each
+      layer is real in its own way; only the last one hops.
+    </p>
+    <p>
+      So if you are ever on a dark road and you hear a bell coming closer — step aside, lower your
+      eyes, and let the dead pass on toward home.
+    </p>
+    <p>End of journal entry. Mind the threshold. Stay sceptical. And hold your breath.</p>
   </Outro>
 </Section>
