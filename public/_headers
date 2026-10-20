@@ -1,0 +1,10 @@
+# Cloudflare Pages headers.
+# Astro fingerprints everything under /_astro/ (CSS, JS, fonts, processed
+# images), so those URLs are content-addressed and safe to cache forever.
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Pre-rendered Open Graph images change only when content/slug changes; a day
+# of browser caching is plenty and keeps regenerated ones fresh.
+/og/*
+  Cache-Control: public, max-age=86400
