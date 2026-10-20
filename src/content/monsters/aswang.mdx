@@ -36,49 +36,44 @@ sightings:
       lon: 120.62,
       label: 'Northern variant traditions: the manananggal vs. the wakwak',
     }
+recordKind: folklore
+recordNote: Working draft about folklore and tradition. Cultural context and sources still need
+  checking. The doodle is an imagined interpretation, not an authoritative cultural depiction.
+illustration:
+  src: /illustrations/aswang.png
+  alt: Loose ink doodle of an imagined shapeshifter with a humanlike face and a clawed hand.
 dossier:
-  entity: 'The Aswang'
-  origin: 'Philippines · Visayas archipelago'
-  status: 'Draft — awaiting research'
-  stamps: ['Filipino Lore', 'Visayas', 'Sacred Tradition']
-  dangerLabel: 'CRITICAL'
-  dangerNote: '8/10 — Apex shapeshifting threat in Filipino tradition. Mimicry, possession risk. Cultural protections are the defensive doctrine.'
+  entity: The Aswang
+  origin: Philippines · Visayas archipelago
+  status: Draft — awaiting research
+  stamps:
+    - Filipino Lore
+    - Visayas
+    - Sacred Tradition
+  dangerLabel: CRITICAL
+  dangerNote: 8/10 — Apex shapeshifting threat in Filipino tradition. Mimicry, possession risk.
+    Cultural protections are the defensive doctrine.
+rules:
+  - title: TODO — rule 1
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 2
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 3
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 4
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 5
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 6
+    body: Replace with a specific, actionable rule derived from the encounter record.
 ---
 
 import Section from '../../components/Section.astro';
-import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
 import EncounterCard from '../../components/EncounterCard.astro';
 import Outro from '../../components/Outro.astro';
 import MonsterMap from '../../components/MonsterMap.astro';
 import '../../styles/pages/_draft.css';
-
-export const rules = [
-  {
-    title: 'TODO — rule 1',
-    body: 'Replace with a specific, actionable rule derived from the encounter record.',
-  },
-  {
-    title: 'TODO — rule 2',
-    body: 'Replace with a specific, actionable rule derived from the encounter record.',
-  },
-  {
-    title: 'TODO — rule 3',
-    body: 'Replace with a specific, actionable rule derived from the encounter record.',
-  },
-  {
-    title: 'TODO — rule 4',
-    body: 'Replace with a specific, actionable rule derived from the encounter record.',
-  },
-  {
-    title: 'TODO — rule 5',
-    body: 'Replace with a specific, actionable rule derived from the encounter record.',
-  },
-  {
-    title: 'TODO — rule 6',
-    body: 'Replace with a specific, actionable rule derived from the encounter record.',
-  },
-];
 
 <Section heading="If You're Reading This">
   <p>
@@ -116,7 +111,12 @@ export const rules = [
 
 <Section heading="Six Rules That May Save Your Life">
   <p>TODO — short intro paragraph framing the rules.</p>
-  <SixRules rules={rules} />
+  <SixRules
+    rules={frontmatter.rules}
+    title={frontmatter.title}
+    number={frontmatter.number}
+    pocketHref={frontmatter.status === 'draft' ? `/drafts/aswang/pocket/` : `/pocket/aswang/`}
+  />
 </Section>
 
 <Section heading="Two Cases on the Record">
@@ -125,9 +125,9 @@ export const rules = [
     id="Encounter 01 · TODO · TODO date"
     title="TODO — encounter title"
     meta="TODO — encounter witness / context"
-    verdict="documented"
-    verdictLabel="TODO Classification"
-    references={[{ text: 'TODO — primary source', href: 'https://example.com/' }]}
+    verdict="draft"
+    verdictLabel="Awaiting research"
+    references={[{ text: 'TODO — primary source to be checked' }]}
   >
     <p>TODO — encounter prose. Real, cited account.</p>
   </EncounterCard>
@@ -135,9 +135,9 @@ export const rules = [
     id="Encounter 02 · TODO · TODO date"
     title="TODO — second encounter title"
     meta="TODO — second encounter witness / context"
-    verdict="documented"
-    verdictLabel="TODO Classification"
-    references={[{ text: 'TODO — primary source', href: 'https://example.com/' }]}
+    verdict="draft"
+    verdictLabel="Awaiting research"
+    references={[{ text: 'TODO — primary source to be checked' }]}
   >
     <p>TODO — second encounter prose.</p>
   </EncounterCard>

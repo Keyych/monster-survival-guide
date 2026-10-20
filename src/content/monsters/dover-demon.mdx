@@ -33,49 +33,44 @@ sightings:
       year: 1977,
       label: 'Will Taintor and Abby Brabham sighting · ~12am April 22',
     }
+recordKind: reported
+recordNote: Working draft based on reported accounts and their later retellings. Sources and claims
+  still need checking; reports do not establish that the creature exists.
+illustration:
+  src: /illustrations/dover-demon.png
+  alt: Loose ink doodle of an oval-headed creature with large eyes and long delicate fingers.
 dossier:
-  entity: 'The Dover Demon'
-  origin: 'Dover, Massachusetts · 1977'
-  status: 'Draft — awaiting research'
-  stamps: ['1977', 'Dover, MA', 'Three Witnesses']
-  dangerLabel: 'BRIEF'
-  dangerNote: '5/10 — Three sightings in 25 hours, all by different witnesses, in a 2-mile radius. No further appearances in 49 years.'
+  entity: The Dover Demon
+  origin: Dover, Massachusetts · 1977
+  status: Draft — awaiting research
+  stamps:
+    - '1977'
+    - Dover, MA
+    - Three Witnesses
+  dangerLabel: BRIEF
+  dangerNote: 5/10 — Three sightings in 25 hours, all by different witnesses, in a 2-mile radius. No
+    further appearances in 49 years.
+rules:
+  - title: TODO — rule 1
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 2
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 3
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 4
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 5
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 6
+    body: Replace with a specific, actionable rule derived from the encounter record.
 ---
 
 import Section from '../../components/Section.astro';
-import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
 import EncounterCard from '../../components/EncounterCard.astro';
 import Outro from '../../components/Outro.astro';
 import MonsterMap from '../../components/MonsterMap.astro';
 import '../../styles/pages/_draft.css';
-
-export const rules = [
-  {
-    title: 'TODO — rule 1',
-    body: 'Replace with a specific, actionable rule derived from the encounter record.',
-  },
-  {
-    title: 'TODO — rule 2',
-    body: 'Replace with a specific, actionable rule derived from the encounter record.',
-  },
-  {
-    title: 'TODO — rule 3',
-    body: 'Replace with a specific, actionable rule derived from the encounter record.',
-  },
-  {
-    title: 'TODO — rule 4',
-    body: 'Replace with a specific, actionable rule derived from the encounter record.',
-  },
-  {
-    title: 'TODO — rule 5',
-    body: 'Replace with a specific, actionable rule derived from the encounter record.',
-  },
-  {
-    title: 'TODO — rule 6',
-    body: 'Replace with a specific, actionable rule derived from the encounter record.',
-  },
-];
 
 <Section heading="If You're Reading This">
   <p>
@@ -113,7 +108,14 @@ export const rules = [
 
 <Section heading="Six Rules That May Save Your Life">
   <p>TODO — short intro paragraph framing the rules.</p>
-  <SixRules rules={rules} />
+  <SixRules
+    rules={frontmatter.rules}
+    title={frontmatter.title}
+    number={frontmatter.number}
+    pocketHref={
+      frontmatter.status === 'draft' ? `/drafts/dover-demon/pocket/` : `/pocket/dover-demon/`
+    }
+  />
 </Section>
 
 <Section heading="Two Cases on the Record">
@@ -122,9 +124,9 @@ export const rules = [
     id="Encounter 01 · TODO · TODO date"
     title="TODO — encounter title"
     meta="TODO — encounter witness / context"
-    verdict="documented"
-    verdictLabel="TODO Classification"
-    references={[{ text: 'TODO — primary source', href: 'https://example.com/' }]}
+    verdict="draft"
+    verdictLabel="Awaiting research"
+    references={[{ text: 'TODO — primary source to be checked' }]}
   >
     <p>TODO — encounter prose. Real, cited account.</p>
   </EncounterCard>
@@ -132,9 +134,9 @@ export const rules = [
     id="Encounter 02 · TODO · TODO date"
     title="TODO — second encounter title"
     meta="TODO — second encounter witness / context"
-    verdict="documented"
-    verdictLabel="TODO Classification"
-    references={[{ text: 'TODO — primary source', href: 'https://example.com/' }]}
+    verdict="draft"
+    verdictLabel="Awaiting research"
+    references={[{ text: 'TODO — primary source to be checked' }]}
   >
     <p>TODO — second encounter prose.</p>
   </EncounterCard>

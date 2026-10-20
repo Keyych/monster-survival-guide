@@ -22,7 +22,9 @@ interface Props {
 const { entry } = Astro.props;
 const { Content } = await render(entry);
 const data = entry.data;
-const stats = readingStats(entry.body ?? '');
+const stats = readingStats(
+  [entry.body ?? '', ...(data.rules ?? []).map((rule) => `${rule.title} ${rule.body}`)].join('\n'),
+);
 const sections = entrySections(entry.body ?? '');
 ---
 
@@ -36,12 +38,10 @@ const sections = entrySections(entry.body ?? '');
   noindex
 >
   <article class="entry-content">
-    <a class="entry-back" href="/drafts/">← Back to drafts queue</a>
-    <aside class="draft-banner" aria-label="Draft status">
-      <strong>Draft — awaiting research.</strong>
-      Prose, rules, and encounter records are placeholders. This preview is excluded from public indexes
-      and search engines.
-    </aside>
+    <a class="entry-back" href="/drafts/">← All draft entries</a>
+    <p class="draft-note">
+      <strong>Unfinished notes.</strong> Text, rules, and sources are still being worked on. Not published.
+    </p>
     <EntryHeader entry={entry} stats={stats} />
     <EntryNavigation sections={sections} />
     <Content />
@@ -49,15 +49,11 @@ const sections = entrySections(entry.body ?? '');
 </FieldManual>
 
 <style>
-  .draft-banner {
+  .draft-note {
     font-family: 'Anonymous Pro', monospace;
     font-size: 0.75rem;
     line-height: 1.6;
     color: var(--warn);
-    background: color-mix(in srgb, var(--warn) 6%, transparent);
-    border: 1px solid color-mix(in srgb, var(--warn) 30%, transparent);
-    border-left-width: 4px;
-    padding: 14px 18px;
-    margin-bottom: 32px;
+    margin: 0 0 24px;
   }
 </style>

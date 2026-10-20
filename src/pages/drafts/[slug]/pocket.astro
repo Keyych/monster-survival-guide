@@ -1,0 +1,18 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import PocketGuide from '../../../layouts/PocketGuide.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection(
+    'monsters',
+    ({ data }) => data.status === 'draft' && !!data.rules,
+  );
+  return entries.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+interface Props {
+  entry: CollectionEntry<'monsters'>;
+}
+const { entry } = Astro.props;
+---
+
+<PocketGuide entry={entry} />

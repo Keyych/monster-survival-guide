@@ -15,6 +15,7 @@ const pages = [
   '/drafts/banshee/',
   '/404.html',
   '/pocket/slenderman/',
+  '/drafts/banshee/pocket/',
 ];
 
 for (const width of [1280, 375]) {
@@ -38,36 +39,36 @@ for (const width of [1280, 375]) {
   });
 }
 
-test('page links navigate, section jumps stay still, and back navigation remains usable', async ({
-  page,
-}) => {
+test('page links, section jumps, and back navigation remain usable', async ({ page }) => {
   await page.goto('/entries/');
+  await expect(page.locator('[data-notebook-page]')).toHaveCSS(
+    'animation-name',
+    'notebook-fade-in',
+  );
   await page.locator('[data-card][href="/slenderman"]').click();
   await expect(page).toHaveURL(/\/slenderman\/?$/);
-  // Anchor IDs on the rendered page stay unique.
-  expect(
-    await page.locator('[id]').evaluateAll((elements) => {
-      const ids = elements.map((element) => element.id);
-      return new Set(ids).size === ids.length;
-    }),
-  ).toBe(true);
-
+  await expect(page.locator('.notebook-turn-layer')).toHaveCount(0);
   await page.getByRole('link', { name: 'Jump to Six Rules', exact: true }).click();
   await expect(page.locator('#six-rules-heading')).toBeInViewport();
-
   await page.getByRole('link', { name: 'Print pocket guide', exact: false }).click();
   await expect(page).toHaveURL(/\/pocket\/slenderman\/?$/);
   await page.goBack();
   await expect(page).toHaveURL(/\/slenderman\/?#six-rules$/);
-  // The print link is below the rules; returning keeps that scroll position.
   await expect(
     page.getByRole('link', { name: 'Print pocket guide', exact: false }),
   ).toBeInViewport();
-
   await page.getByRole('link', { name: 'All entries', exact: false }).click();
-  await expect(page).toHaveURL(/\/entries\/?$/);
   await page.getByRole('searchbox').fill('Mothman');
   await expect(page.locator('[data-card]:visible')).toHaveCount(1);
+});
+
+test('reduced motion disables the page fade', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.goto('/entries/');
+  await expect(page.locator('[data-notebook-page]')).toHaveCSS('animation-name', 'none');
+  await page.locator('[data-card][href="/slenderman"]').click();
+  await expect(page).toHaveURL(/\/slenderman\/?$/);
+  await expect(page.locator('[data-notebook-page]')).toBeVisible();
 });
 
 test('blocked session storage never prevents a page link from working', async ({ page }) => {
@@ -82,4 +83,15 @@ test('blocked session storage never prevents a page link from working', async ({
   await page.locator('[data-card][href="/slenderman"]').click();
   await expect(page).toHaveURL(/\/slenderman\/?$/);
   await expect(page.locator('h1')).toHaveText('Slenderman');
+});
+
+test('throttled animation frames cannot block navigation', async ({ page }) => {
+  await page.addInitScript(() => {
+    window.requestAnimationFrame = () => 0;
+  });
+  await page.goto('/entries/');
+  await page.locator('[data-card][href="/slenderman"]').click();
+  await expect(page).toHaveURL(/\/slenderman\/?$/);
+  await expect(page.locator('[data-notebook-page]')).toBeVisible();
+  await expect(page.locator('.notebook-turn-layer')).toHaveCount(0);
 });

@@ -143,34 +143,29 @@ playwright.config.ts            # E2E config
 
 ### Illustrated entries and pocket guides
 
-Published entries and all draft previews use the shared `EntryHeader` and `EntryNavigation` components.
+Published and draft entries use the shared `EntryHeader` and `EntryNavigation` components.
 Keep a single notebook column, quiet links in the page flow, and circled rule
 numbers in the margin. The contents note opens on demand; it does not stay fixed
 beside or above the prose.
 All reading pages, including pocket-guide previews, share the 850px maximum
 notebook width, responsive margins, and viewport minimum height. Longer entries
 continue vertically. Keep that geometry in `field-manual.css`; do not introduce
-page-specific wrapper widths. `NotebookMotion` curls the outer edge across a
-temporary paper surface on same-site page links, then lets the arriving sheet
-uncurl and settle. Narrow segments follow one continuous bend with a shaded
-paper reverse and a moving fold shadow; the viewport-sized overlay is inert and
-removed after the turn. The real page keeps its layout, focus, and scroll
-position. Normal document navigation initializes each page's scripts. Section jumps, external links, downloads,
-and reduced-motion preferences bypass the animation. Pocket guides retain their
-separate A5 print dimensions. `tests/notebook.spec.ts` covers the shared frame,
-navigation, history restoration, and motion/storage fallbacks, including
-interrupted or throttled animations.
+page-specific wrapper widths. `NotebookMotion` applies a short opacity fade on
+page load, respecting reduced-motion preferences. Navigation uses normal page
+links and browser history. Pocket guides retain their separate A5 print dimensions.
+`tests/notebook.spec.ts` covers the shared frame, navigation, history restoration,
+and motion/storage fallbacks.
 
 Copy the `illustration`, `recordKind`, `recordNote`, `dossier`, and `rules`
 frontmatter from an existing published entry, then replace its values. Do not
-repeat the title or dossier in the MDX body. Drafts use the same dossier frontmatter and notebook reading styles, with a draft notice
-and a return link to the drafts queue. Their placeholder text remains unchanged;
-they stay excluded from public indexes. Headers without artwork use the full text
-width, and draft previews do not link to published pocket guides.
+repeat the title or dossier in the MDX body.
 
 - **Artwork:** put a transparent PNG in `src/assets/illustrations/<slug>.png` and set
   `illustration.src` to `/illustrations/<slug>.png`. Use loose monochrome ink
-  sketches with open shading, no painted background or colored rendering. Write
+  drawings matching the eight published entries: recognizable anatomy and
+  details, scratchy overlapping strokes, unfinished edges, and light scattered
+  hatching. Keep large areas open; avoid heavy shading, polished contours, painted
+  backgrounds, and color. Rough does not mean simplified or barely visible. Write
   descriptive alt text for accessibility. Keep the drawings uncaptioned so they
   feel like the writer’s doodles on the page.
   `InkIllustration` builds PNGs at the display size and twice that size for sharp
@@ -190,9 +185,14 @@ number={frontmatter.number} pocketHref="/pocket/<slug>/" />` inside the existing
 
 The optional Decap editor includes these fields. `tests/reading.spec.ts` checks
 contents links, search/filter behavior, mobile navigation, matching print rules,
-and single-page A5 output for all eight current entries.
+and single-page A5 output for all eight published entries. `tests/drafts.spec.ts`
+covers all twenty draft entries, search, source placeholders, pocket guides, and
+exclusion from public listings. Draft pocket guides use the shared `PocketGuide`
+layout at `/drafts/<slug>/pocket/`; link there while `status` is `draft`, switching
+to `/pocket/<slug>/` on publication. Keep unfinished prose and rules marked TODO,
+and use the `draft` encounter verdict until sources are checked.
 
-To **draft** an entry: set `status: 'draft'`. To **schedule** publication: set `status: 'published'` plus a future `publishDate:`. Both cases keep the entry out of the built site.
+To **draft** an entry: set `status: 'draft'`. To **schedule** publication: set `status: 'published'` plus a future `publishDate:`. Both cases keep the entry out of public listings. Draft previews remain available under `/drafts/`, with `noindex`, no canonical URL, and no inclusion in sitemap or RSS. These are preview URLs, not access-controlled pages.
 
 ## Adding a glossary term
 
