@@ -34,7 +34,7 @@ export const cloudflareAnalyticsToken: string | null = null;
  * env). Leave `null` to disable. Create a widget at Cloudflare Dashboard →
  * Turnstile. The site key is public; the secret is an env var, never here.
  */
-export const turnstileSiteKey: string | null = null;
+export const turnstileSiteKey: string | null = '0x4AAAAAAFd2Hd_0DSsg1JdH';
 
 /**
  * Contact details surfaced on the About page (and used as `mailto:` links).
