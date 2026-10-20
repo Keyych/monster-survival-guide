@@ -1,16 +1,21 @@
 # Cloudflare Pages headers.
 
-# Security headers applied site-wide. These are safe alongside AdSense:
-# X-Frame-Options restricts others framing US, not our ads framing into the
-# page. (A Content-Security-Policy is intentionally omitted — it needs careful
-# allowlisting of Google's ad domains and is better rolled out report-only.)
+# Security headers applied site-wide. Safe alongside AdSense: X-Frame-Options
+# restricts others framing US, not our ads framing into the page.
+#
+# The CSP allowlist covers the Google Ads + Turnstile + Cloudflare-analytics
+# ecosystems ('unsafe-inline' scripts are required by AdSense). The strong
+# protections — default-src 'self', base-uri 'self', object-src 'none',
+# frame-ancestors 'self' — stay strict. Tuned from report-only violations
+# (added *.adtrafficquality.google). If AdSense breaks after a serving change,
+# widen script-src/frame-src/connect-src rather than removing the header.
 /*
   X-Content-Type-Options: nosniff
   X-Frame-Options: SAMEORIGIN
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: geolocation=(), microphone=(), camera=()
   Strict-Transport-Security: max-age=31536000; includeSubDomains
-  Content-Security-Policy-Report-Only: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; script-src 'self' 'unsafe-inline' https://pagead2.googlesyndication.com https://*.googlesyndication.com https://*.googleadservices.com https://*.google.com https://*.doubleclick.net https://*.gstatic.com https://challenges.cloudflare.com https://static.cloudflareinsights.com; frame-src https://*.googlesyndication.com https://*.doubleclick.net https://*.google.com https://challenges.cloudflare.com; connect-src 'self' https://*.google.com https://*.doubleclick.net https://*.googlesyndication.com https://pagead2.googlesyndication.com https://challenges.cloudflare.com https://cloudflareinsights.com
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; img-src 'self' data: blob: https:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; worker-src 'self' blob:; script-src 'self' 'unsafe-inline' https://pagead2.googlesyndication.com https://*.googlesyndication.com https://*.googleadservices.com https://*.google.com https://*.doubleclick.net https://*.gstatic.com https://*.adtrafficquality.google https://challenges.cloudflare.com https://static.cloudflareinsights.com; frame-src https://*.googlesyndication.com https://*.doubleclick.net https://*.google.com https://*.adtrafficquality.google https://challenges.cloudflare.com; connect-src 'self' https://*.google.com https://*.doubleclick.net https://*.googlesyndication.com https://pagead2.googlesyndication.com https://*.adtrafficquality.google https://challenges.cloudflare.com https://cloudflareinsights.com
 
 # Astro fingerprints everything under /_astro/ (CSS, JS, fonts, processed
 # images), so those URLs are content-addressed and safe to cache forever.
