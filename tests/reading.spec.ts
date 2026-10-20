@@ -53,7 +53,17 @@ test('each entry has working contents, an illustration, and the same six rules i
       await page.getByRole('link', { name: 'Printable pocket guide' }).click();
       await expect(page).toHaveURL(new RegExp(`/pocket/${slug}/`));
       await expect(page.locator('[data-notebook-page]')).toBeVisible();
-      const printed = await page.locator('.pocket-rules li > div').allTextContents();
+      // Join the pocket guide's title (<h2>) and body (<p>) with an explicit
+      // space. They are separate block elements, so their combined textContent
+      // has no reliable separator — Astro's whitespace handling between them is
+      // not guaranteed — and the entry renders "title body" in a single span.
+      const printed = await page.locator('.pocket-rules li > div').evaluateAll((divs) =>
+        divs.map((d) => {
+          const h2 = d.querySelector('h2')?.textContent ?? '';
+          const p = d.querySelector('p')?.textContent ?? '';
+          return `${h2} ${p}`;
+        }),
+      );
       const normalize = (s: string) => s.replace(/\s+/g, ' ').trim();
       expect(printed.map(normalize)).toEqual(rules.map(normalize));
     });

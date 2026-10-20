@@ -99,10 +99,8 @@ const entryUrl = new URL(entryPath, site.url).href;
                     </span>
                     <div>
                       <>
-                        {/* Explicit space keeps title/body separated in the
-                            element's text content — Astro 7 strips the plain
-                            whitespace between these block elements. */}
-                        <h2>{rule.title}</h2> <p>{rule.body}</p>
+                        <h2>{rule.title}</h2>
+                        <p>{rule.body}</p>
                       </>
                     </div>
                   </>
