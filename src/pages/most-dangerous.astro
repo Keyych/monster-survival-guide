@@ -1,0 +1,67 @@
+---
+import { getCollection } from 'astro:content';
+import FieldManual from '../layouts/FieldManual.astro';
+import '../styles/pages/most-dangerous.css';
+
+const now = new Date();
+const entries = (await getCollection('monsters', ({ data }) => data.status === 'published'))
+  .filter((e) => !e.data.publishDate || e.data.publishDate <= now)
+  // Most lethal first; ties fall back to alphabetical for a stable order.
+  .sort((a, b) => b.data.danger - a.data.danger || a.data.title.localeCompare(b.data.title));
+---
+
+<FieldManual
+  variant="index"
+  title="The Most Dangerous Cryptids"
+  description="Every Monster Survival Guide entry ranked by its danger index — the most lethal creatures first."
+  classification="monster survival guide  —  threat ranking"
+  bottomBar="monster survival guide  ·  danger index  ·  season one"
+>
+  <header class="rank-heading">
+    <div class="index-topline">
+      <span>Monster Survival Guide</span><nav aria-label="Guide navigation">
+        <a href="/entries/">All entries</a><a href="/sightings/">Sightings</a>
+      </nav>
+    </div>
+    <h1>Ranked by danger.</h1>
+    <p>Every creature in the journal, most lethal first — {entries.length} entries.</p>
+  </header>
+
+  <ol class="rank-list">
+    {
+      entries.map((e, i) => (
+        <li class="rank-row">
+          <a class="rank-main" href={`/${e.id}/`} style={`--band:${e.data.bandColor}`}>
+            <span class="rank-num">{String(i + 1).padStart(2, '0')}</span>
+            <span class="rank-text">
+              <span class="rank-title">{e.data.title}</span>
+              <span class="rank-meta">
+                {e.data.entryClass} · {e.data.region}
+              </span>
+              {e.data.dossier?.dangerNote && (
+                <span class="rank-note">{e.data.dossier.dangerNote}</span>
+              )}
+            </span>
+            <span class="rank-score">
+              <span
+                class="rank-bars"
+                role="img"
+                aria-label={`Danger index ${e.data.danger} out of 10`}
+              >
+                {Array.from({ length: 10 }, (_, b) => (
+                  <span class={b < e.data.danger ? 'b on' : 'b'} />
+                ))}
+              </span>
+              <span class="rank-value">
+                <strong>{e.data.danger}</strong>/10
+              </span>
+              {e.data.dossier?.dangerLabel && (
+                <span class="rank-label">{e.data.dossier.dangerLabel}</span>
+              )}
+            </span>
+          </a>
+        </li>
+      ))
+    }
+  </ol>
+</FieldManual>

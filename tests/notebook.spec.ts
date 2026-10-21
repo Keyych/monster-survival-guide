@@ -3,6 +3,7 @@ import { test, expect } from '@playwright/test';
 const pages = [
   '/',
   '/entries/',
+  '/most-dangerous/',
   '/slenderman/',
   '/mothman/',
   '/about/',
