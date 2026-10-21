@@ -90,6 +90,8 @@ const STYLE = `
     font-family:'Anonymous Pro',ui-monospace,SFMono-Regular,Menlo,monospace; line-height:1.5; }
   .wrap { max-width:820px; margin:0 auto; }
   h1 { font-size:1.2rem; letter-spacing:.14em; text-transform:uppercase; margin:0 0 4px; }
+  .pending-badge { font-size:.62rem; letter-spacing:.08em; padding:2px 8px; margin-left:8px;
+    border-radius:2px; vertical-align:middle; background:var(--warn); color:var(--paper); }
   .sub { color:var(--faded); font-size:.8rem; margin:0 0 24px; }
   .count { color:var(--faded); font-size:.75rem; text-transform:uppercase; letter-spacing:.1em;
     margin:24px 0 10px; border-bottom:1px solid var(--rule); padding-bottom:6px; }
@@ -167,7 +169,7 @@ async function listPage(env: Env): Promise<string> {
 <meta name="robots" content="${NOINDEX}" /><title>Moderation (${pending.length} pending)</title>
 <style>${STYLE}</style></head><body><div class="wrap">
 <form method="POST" action="/admin/comments" class="logout"><button name="action" value="logout">Sign out</button></form>
-<h1>Moderation</h1><p class="sub">Approve, unapprove, or delete comments. Pending comments are hidden from the site until approved.</p>
+<h1>Moderation${pending.length ? ` <span class="pending-badge">${pending.length} pending</span>` : ''}</h1><p class="sub">Approve, unapprove, or delete comments. Pending comments are hidden from the site until approved.</p>
 ${section('Pending', pending)}
 ${section('Live', live)}
 </div></body></html>`;

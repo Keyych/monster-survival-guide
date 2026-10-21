@@ -6,6 +6,7 @@ import EntryNavigation from '../components/EntryNavigation.astro';
 import { entrySections } from '../lib/entry-sections.ts';
 import '../styles/entry-reading.css';
 import RelatedEntries from '../components/RelatedEntries.astro';
+import ShareRow from '../components/ShareRow.astro';
 import CommentSection from '../components/CommentSection.astro';
 import { readingStats } from '../lib/reading-time.ts';
 
@@ -54,6 +55,7 @@ const sections = entrySections(entry.body ?? '');
     {data.dossier && <EntryHeader entry={entry} stats={stats} />}
     <EntryNavigation sections={sections} />
     <Content />
+    <ShareRow path={`/${entry.id}/`} title={data.title} />
     <RelatedEntries currentSlug={entry.id} currentTags={data.tags} currentDanger={data.danger} />
     <CommentSection slug={entry.id} />
   </article>

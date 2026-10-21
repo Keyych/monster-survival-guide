@@ -1,0 +1,122 @@
+---
+/**
+ * Share row shown at the end of a monster entry. External share targets are
+ * plain links (navigations — not subject to CSP); "Copy link" is progressively
+ * enhanced and simply hidden when the Clipboard API is unavailable.
+ */
+import { site } from '../config/site.ts';
+
+interface Props {
+  /** Site-root-relative path of the entry, e.g. "/wendigo/". */
+  path: string;
+  /** Entry title, used as the share text. */
+  title: string;
+}
+const { path, title } = Astro.props;
+
+const url = new URL(path, site.url).href;
+const u = encodeURIComponent(url);
+const t = encodeURIComponent(title);
+
+const targets = [
+  { name: 'X', href: `https://twitter.com/intent/tweet?text=${t}&url=${u}` },
+  { name: 'Reddit', href: `https://www.reddit.com/submit?url=${u}&title=${t}` },
+  { name: 'Facebook', href: `https://www.facebook.com/sharer/sharer.php?u=${u}` },
+  { name: 'Email', href: `mailto:?subject=${t}&body=${u}` },
+];
+---
+
+<aside class="share-row" aria-label="Share this entry">
+  <span class="share-label">Share this file</span>
+  <ul class="share-links">
+    {
+      targets.map((target) => (
+        <li>
+          <a href={target.href} target="_blank" rel="noopener noreferrer">
+            {target.name}
+          </a>
+        </li>
+      ))
+    }
+    <li>
+      <button type="button" class="share-copy" data-share-copy data-url={url} hidden>
+        Copy link
+      </button>
+    </li>
+  </ul>
+</aside>
+
+<script>
+  // Reveal "Copy link" only where the Clipboard API exists, then wire it up.
+  for (const btn of document.querySelectorAll<HTMLButtonElement>('[data-share-copy]')) {
+    if (!navigator.clipboard) continue;
+    btn.hidden = false;
+    btn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(btn.dataset.url ?? '');
+        const original = btn.textContent;
+        btn.textContent = 'Copied ✓';
+        btn.disabled = true;
+        setTimeout(() => {
+          btn.textContent = original;
+          btn.disabled = false;
+        }, 1500);
+      } catch {
+        /* ignore — the other share targets still work */
+      }
+    });
+  }
+</script>
+
+<style>
+  .share-row {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 10px 16px;
+    margin: 40px 0 8px;
+    padding-top: 20px;
+    border-top: 1px solid var(--rule);
+  }
+  .share-label {
+    font-family: 'Anonymous Pro', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--margin, var(--faded));
+  }
+  .share-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 10px;
+  }
+  .share-links a,
+  .share-copy {
+    display: inline-block;
+    font-family: 'Anonymous Pro', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+    padding: 5px 11px;
+    border: 1px solid var(--rule);
+    background: transparent;
+    cursor: pointer;
+  }
+  .share-links a:hover,
+  .share-links a:focus-visible,
+  .share-copy:hover,
+  .share-copy:focus-visible {
+    border-color: var(--accent, var(--ink));
+    color: var(--accent, var(--ink));
+    outline: none;
+  }
+  .share-copy:disabled {
+    color: var(--faded);
+    cursor: default;
+  }
+</style>
