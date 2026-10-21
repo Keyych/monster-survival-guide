@@ -24,6 +24,10 @@ const dangerBands = [
   { label: '7–8', min: 7, max: 8 },
   { label: '9–10', min: 9, max: 10 },
 ];
+
+// Slugs for the "random cryptid" jump. Progressively enhanced: the link falls
+// back to this index when JavaScript is off.
+const randomSlugs = entries.map((e) => e.id);
 ---
 
 <FieldManual
@@ -36,7 +40,10 @@ const dangerBands = [
   <header class="index-heading">
     <div class="index-topline">
       <span>Monster Survival Guide</span><nav aria-label="Guide navigation">
-        <a href="/sightings/">Sightings</a><a href="/glossary/">Glossary</a>
+        <a href="/sightings/">Sightings</a><a href="/glossary/">Glossary</a><a
+          href="/entries/"
+          data-random-entry>Random ↯</a
+        >
       </nav>
     </div>
     <h1>Find your next encounter.</h1>
@@ -357,5 +364,16 @@ const dangerBands = [
       chip.setAttribute('aria-pressed', String(chip.dataset.value === 'all'));
     });
     applyFilters();
+  });
+</script>
+
+<script define:vars={{ randomSlugs }}>
+  // Random cryptid: jump to a random entry. The link otherwise falls back to
+  // the index for no-JS visitors.
+  document.querySelector('[data-random-entry]')?.addEventListener('click', (event) => {
+    if (!randomSlugs.length) return;
+    event.preventDefault();
+    const slug = randomSlugs[Math.floor(Math.random() * randomSlugs.length)];
+    window.location.href = `/${slug}/`;
   });
 </script>

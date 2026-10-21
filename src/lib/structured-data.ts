@@ -46,6 +46,16 @@ export function siteGraph(): string {
 }
 
 export function articleGraph(article: ArticleSchemaInput): string {
+  const breadcrumbSchema = {
+    '@type': 'BreadcrumbList',
+    '@id': `${article.url}#breadcrumb`,
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${site.url}/` },
+      { '@type': 'ListItem', position: 2, name: 'Entries', item: `${site.url}/entries/` },
+      { '@type': 'ListItem', position: 3, name: article.headline, item: article.url },
+    ],
+  };
+
   const articleSchema = {
     '@type': 'Article',
     '@id': `${article.url}#article`,
@@ -56,6 +66,7 @@ export function articleGraph(article: ArticleSchemaInput): string {
     author: { '@id': `${site.url}/#person` },
     publisher: { '@id': `${site.url}/#person` },
     isPartOf: { '@id': `${site.url}/#website` },
+    breadcrumb: { '@id': `${article.url}#breadcrumb` },
     inLanguage: 'en',
     ...(article.datePublished && { datePublished: article.datePublished }),
     ...(article.dateModified && { dateModified: article.dateModified }),
@@ -63,6 +74,6 @@ export function articleGraph(article: ArticleSchemaInput): string {
 
   return JSON.stringify({
     '@context': 'https://schema.org',
-    '@graph': [personSchema, websiteSchema, articleSchema],
+    '@graph': [personSchema, websiteSchema, articleSchema, breadcrumbSchema],
   });
 }
