@@ -3,7 +3,7 @@ number: '43'
 entryClass: 'Polar Sea Legend'
 region: 'Antarctic waters · Japanese internet lore'
 title: 'The Ningen'
-description: 'Anonymous posts on Japanese forums in the 2000s described huge, pale, humanlike creatures seen by whaling crews in Antarctic waters. No ship, crew, or photograph has ever been confirmed.'
+description: 'In May 2002, an anonymous poster on the Japanese forum 2channel described huge, white, human-shaped things seen during research whaling in Antarctic waters. No ship, crew member, or photograph has ever been confirmed. This is internet lore.'
 tags: ['2000s', 'Internet lore', 'Antarctica']
 danger: 2
 bandColor: '#4a5a6a'
@@ -16,39 +16,55 @@ sightings:
       name: 'Southern Ocean (claimed)',
       lat: -66.0,
       lon: 0.0,
-      label: 'Approximate waters named in the original posts',
+      label: 'Antarctic Sea · setting of the 2002 2channel posts (no position given; pin approximate)',
+      sourceUrl: 'https://www.shimajournal.org/issues/v14n1/10.-Greenland-and-Hayward-Shima-v14n1.pdf',
+    }
+  - {
+      name: 'Off the coast of Namibia (claimed image)',
+      lat: -24.0,
+      lon: 13.0,
+      label: 'Map-imagery "Ningen" shown in Mu, April 2007 · exact coordinates not confirmed; pin approximate',
+      sourceUrl: 'https://pinktentacle.com/2010/01/page/2/',
     }
 recordKind: constructed
-recordNote: 'Working draft about a story that grew on internet forums. Sources and dates still need checking; the posts are unverified and the creature is not documented.'
+recordNote: 'Constructed internet lore — anonymous 2channel posts from 2002, a 2007 magazine image, and the retellings that followed. The posts are real; nothing in them has ever been verified.'
 illustration:
   src: /illustrations/ningen.png
   alt: 'Loose ink doodle of a huge smooth pale humanlike creature with a blank face rising from icy water.'
 dossier:
   entity: 'The Ningen'
   origin: 'Antarctic waters · Japanese internet lore'
-  status: Draft — awaiting research
+  status: Internet Lore — No Ship, Crew, or Photograph Ever Confirmed
   stamps:
-    - '2000s'
+    - '2002'
     - 'Antarctic'
     - 'Forum Lore'
   dangerLabel: LOW
-  dangerNote: '2/10 — An unverified forum story with no witnesses on record. The Southern Ocean itself is the hazard.'
+  dangerNote: '2/10 — An anonymous forum story with no named witness, ship, or record. The only real hazard is the Southern Ocean itself.'
 rules:
-  - title: TODO — rule 1
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 2
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 3
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 4
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 5
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 6
-    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: Ask who actually saw it.
+    body: The whole legend rests on an anonymous poster passing on what an unnamed insider said. No
+      ship, crew member, or logbook was ever named. A sighting with no witness is a rumour.
+  - title: Find the first date.
+    body: The earliest known posts date from May 2002. Retellings that push the story decades
+      earlier, or bolt on older sightings, are adding a history it does not have.
+  - title: A pale blur is not a body.
+    body: The famous map image is a smudge of white off Namibia, thousands of miles from Antarctica.
+      Ice, foam, whales, and image artefacts all make pale shapes at sea. Start there.
+  - title: Fiction feeds the record.
+    body: Manga, songs, horror videos, and fan art have all added to the Ningen since 2007.
+      Before you share a clip, trace where it was first posted and who made it.
+  - title: The cold is the real monster.
+    body: If you ever sail the Southern Ocean, the water is what can kill you. Follow the crew's
+      safety briefings, wear what you are told to wear on deck, and never lean out over the rail
+      at night to look at something.
+  - title: Read it as what it is.
+    body: The Ningen is modern folklore about secrecy, whaling, and the deep. Enjoy it as a story,
+      credit the people who made it, and do not mistake a good thread for evidence.
 ---
 
 import Section from '../../components/Section.astro';
+import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
 import EncounterCard from '../../components/EncounterCard.astro';
 import Outro from '../../components/Outro.astro';
@@ -57,40 +73,151 @@ import '../../styles/pages/_draft.css';
 
 <Section heading="If You're Reading This">
   <p>
-    TODO — cold open. Place the reader at the scene of the encounter. Establish atmosphere. Earn
-    attention before asking for trust.
+    It is night in the Antarctic Sea, and you are on the deck of a research whaling ship, or so the
+    story goes. The water is black and flat between the floes. Someone on watch points at a shape
+    that has surfaced off the bow — white, smooth, far too big to be a seal, far too still to be a
+    whale. For a moment it looks like a body. It has arms. It has something like a face.
+  </p>
+  <p>
+    Then you look again, and you realise you are not on a ship at all. You are reading a forum post.
+    It is May 2002, the board is the Occult section of the Japanese site 2channel, and the person
+    telling you this has no name, no ship, and no photograph. They are passing on what a friend told
+    them. That is the whole of the evidence, and it is where every version of the Ningen begins.
+  </p>
+  <p>
+    This is the forty-third journal entry of the Monster Survival Guide. The subject is the Ningen,
+    a giant pale humanoid said to haunt Antarctic waters. It is not folklore in the old sense and
+    not a reported sighting. It is internet lore, built in public by anonymous posters, and this
+    entry will treat it as exactly that.
   </p>
 </Section>
 
 <Section heading="Where It Comes From">
   <p>
-    TODO — origin section. Cultural / historical / geographic context. A creature without context is
-    a horror story; a creature with context is something a reader can understand.
+    The most careful account of the Ningen's origins is an academic paper by Felicity Greenland and
+    Philip Hayward, published in the island-studies journal <em>Shima</em> in 2020. They trace the
+    story to a single post made on 11 May 2002 in a 2channel Occult thread about giant and monster
+    fish. The poster, writing anonymously and describing themselves as a part-timer, said an insider
+    they called "Mr F" had told them about something recorded during Japan's research whaling in the
+    Antarctic.
+  </p>
+  <p>
+    According to the post, the whaling programme logged the whales it did not catch, and alongside
+    them were "objects" that no one could explain. Some were said to have four limbs and a head; one
+    was said to look like two human upper bodies joined together. The post added that an official
+    announcement would damage the credibility of the research whaling itself. A dedicated thread
+    followed the same day. The original poster announced a "temporary" break within a week and, by
+    the paper's account, never came back. Other posters kept the threads going until late 2003.
+  </p>
+  <div class="pull-quote">
+    The Ningen has a name, a size, and a habitat, but it has never had a witness. Every detail
+    arrived second-hand through an anonymous account, and the story has been growing ever since.
+  </div>
+  <div class="lore-box">
+    <p>
+      The name is a small puzzle of its own. Greenland and Hayward report that Mr F said an
+      unofficial document used one term for the things, which he said was being misread, and that
+      the right reading was <em>hitogata buttai</em>, "human-shaped objects". Then he added that the
+      crews just called them <em>ningen</em>. In ordinary Japanese, <em>ningen</em> means "human
+      being". The paper notes it also sounds close to <em>ningyo</em>, the mermaid-like fish of
+      Japanese folklore, and that writing it in katakana gives it a faintly scientific, alien feel.{' '}
+      <em>Hitogata</em> survived alongside it as an alternative name.
+    </p>
+  </div>
+  <p>
+    The thread also borrowed authority from an older tale: a reputed 1958 sighting of an "Antarctic
+    Godzilla" by the crew of the icebreaker <em>Sōya-maru</em>. That story is a separate legend.
+    Linking the two made the Ningen feel older than it was. It does not make either of them true.
   </p>
 </Section>
 
 <Section heading="What You Are Looking At">
+  <StatRow
+    stats={[
+      { num: '2002', label: 'Year of the first known forum post (11 May, 2channel)' },
+      { num: '0', label: 'Ships, crew members, or logbooks ever named in the original posts' },
+      { num: '19m', label: 'Length claimed for the figure in the 2007 magazine image' },
+    ]}
+  />
   <p>
-    TODO — physical description and identifying features. What witnesses agree on. What varies. What
-    to look for before you know what you are looking at.
+    The 2002 post gives the core of the description: the whole body is white, it comes up from the
+    water the way a whale does, and it is, in the paper's translation, "a few tens of metres long."
+    Later English-language write-ups settled on twenty to thirty metres, a humanlike shape with arms
+    and sometimes legs or five-fingered hands, and a face that shows only eyes and a mouth. Others
+    give it a tail or fins, like a mermaid. Most accounts say it is seen at night.
   </p>
+  <p>
+    Very little of this is stable. The number of limbs changes, the tail comes and goes, and the
+    size has drifted with every retelling. That is what you would expect from a description that was
+    never anchored to a single sighting. Each new poster, artist, or video maker has added the
+    detail that frightened them most.
+  </p>
+  <div class="warning-box">
+    <div class="warn-label">⚠ Critical Field Note</div>
+    <p>
+      A large, white, roughly human shape in polar water at night describes a great many ordinary
+      things: a slab of ice, a pale whale, foam over a swell, the underside of a big ray. Before you
+      file a pale shape as a Ningen, remember the Southern Ocean is full of ice, and the human eye
+      is very good at finding bodies and faces in it.
+    </p>
+  </div>
 </Section>
 
 <Section heading="How It Operates">
   <p>
-    TODO — behaviour pattern. How it hunts / haunts / appears. What comes first, next, and after.
+    In the story, the Ningen does almost nothing. It surfaces near a ship, it is noticed, and it is
+    gone. One popular version has a crew mistaking it for a foreign submarine until its shape gave
+    it away as something alive. It does not attack, chase, or take anyone. Its threat is entirely in
+    the secrecy around it: the idea that the government knows and is not telling.
+  </p>
+  <p>
+    The more accurate way to describe how the Ningen operates is how it spreads. After 2002 the
+    threads went quiet, and then in April 2007 the Japanese occult magazine <em>Mu</em> ran a short
+    piece on a map-imagery "mystery": a large white figure with limbs, said to be about nineteen
+    metres long, in the sea off the coast of Namibia. The article suggested it might be a
+    human-shaped monster called <em>ningen</em> or <em>hitogata</em>. A further <em>Mu</em>
+    supplement followed in 2008.
+  </p>
+  <p>
+    From there it moved into manga, a 2008 song voiced by the virtual singer Hatsune Miku, a 2016
+    television segment, a 2018 novel, horror videos, and fan art, according to Greenland and
+    Hayward's survey. Some later retellings move it north into Arctic waters; the original posts did
+    not. Every one of these is a new layer of story, and none of them is new evidence.
   </p>
 </Section>
 
 <Section heading="An Honest Assessment of Its Weaknesses">
+  <p>There is no creature here to weaken, so the honest assessment is about the claim.</p>
   <p>
-    TODO — what the accumulated evidence suggests works against it. Be honest when this section is
-    thin.
+    <strong>There is no witness.</strong> The story starts with an anonymous poster repeating what
+    an unnamed insider said. No ship, no crew member, no date of sighting, and no position has ever
+    been produced. A claim that cannot be traced to anyone cannot be checked.
+  </p>
+  <p>
+    <strong>The picture is in the wrong ocean.</strong> The most famous image is a blur off Namibia,
+    in the South Atlantic, nowhere near the Antarctic whaling grounds where the story is set. A pale
+    smudge on map imagery is a weak thing to build a monster on.
+  </p>
+  <p>
+    <strong>The ordinary answers fit.</strong> Marine scientist Andrew Thaler, writing on
+    <em>Southern Fried Science</em> in 2010, suggested a modern take on the mermaid myth, the
+    face-like underside of large rays, and above all pareidolia: icebergs that happen to look human.
+    He also noted he could find no reports earlier than 2007, which shows how far the story's roots
+    had already been forgotten by then.
+  </p>
+  <p>
+    <strong>The meaning is the interesting part.</strong> Greenland and Hayward do not ask whether
+    the Ningen is real. They argue that its setting in the Southern Ocean, during the disputed years
+    of Japanese research whaling, is central to why it appeared at all. On their reading it is a
+    story about whales, secrecy, and unease, told as a monster.
   </p>
 </Section>
 
 <Section heading="Six Rules That May Save Your Life">
-  <p>TODO — short intro paragraph framing the rules.</p>
+  <p>
+    The Ningen is internet lore, so there is nothing in the water to survive. These rules are about
+    not being fooled by a good thread, and about respecting the sea that really is dangerous.
+  </p>
   <SixRules
     rules={frontmatter.rules}
     title={frontmatter.title}
@@ -100,26 +227,89 @@ import '../../styles/pages/_draft.css';
 </Section>
 
 <Section heading="Two Cases on the Record">
-  <p>TODO — intro paragraph for the encounter section.</p>
+  <p>
+    Neither of these is a sighting. The first is the forum post where the story began; the second is
+    the image that gave it a face, and the sceptics who looked at it.
+  </p>
   <EncounterCard
-    id="Encounter 01 · TODO · TODO date"
-    title="TODO — encounter title"
-    meta="TODO — encounter witness / context"
+    id="Encounter 01 · 2channel, Occult board · 11 May 2002"
+    title="The Part-Timer's Post"
+    meta="Anonymous poster relaying an unnamed insider, 'Mr F' · Forum claim, unverified"
     verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    verdictLabel="Awaiting review"
+    references={[
+      {
+        text: 'Greenland & Hayward — “The generation of media:lore concerning a giant, sub-Antarctic, aquatic humanoid and its relation to Japanese whaling activity,” Shima 14(1) (2020)',
+        label: 'shimajournal.org',
+        href: 'https://www.shimajournal.org/issues/v14n1/10.-Greenland-and-Hayward-Shima-v14n1.pdf',
+      },
+      {
+        text: 'Pink Tentacle — “‘Ningen’ humanoid sea creatures of the Antarctic” (6 January 2010)',
+        label: 'pinktentacle.com',
+        href: 'https://pinktentacle.com/2010/01/page/2/',
+      },
+      {
+        text: 'Karapaia — Japanese write-up of the forum legend (7 January 2010)',
+        label: 'karapaia.com',
+        href: 'https://karapaia.com/archives/51580254.html',
+      },
+    ]}
   >
-    <p>TODO — encounter prose. Real, cited account.</p>
+    <p>
+      On 11 May 2002, in a 2channel Occult thread about giant fish, an anonymous poster claimed that
+      Japan's research whaling in the Antarctic had recorded unexplained "objects" alongside the
+      whales. The source, they said, was an insider called Mr F. The things were white, a few tens
+      of metres long, and surfaced like whales; some had four limbs and a head. Making them public,
+      the poster claimed, would hurt the credibility of research whaling. These are forum claims,
+      and they are the only "testimony" the legend has.
+    </p>
+    <p>
+      The poster stopped within a week, but the threads ran on into late 2003, and the legend spread
+      through Japanese forums. By January 2010 English and Japanese blogs were describing a white
+      humanoid of twenty to thirty metres, seen at night by crews of government whale-research
+      ships, and tracing it to "numbered" bulletin boards. Not one of those accounts names a ship, a
+      sailor, or a date of sighting.
+    </p>
   </EncounterCard>
   <EncounterCard
-    id="Encounter 02 · TODO · TODO date"
-    title="TODO — second encounter title"
-    meta="TODO — second encounter witness / context"
+    id="Encounter 02 · Mu magazine & after · April 2007 onward"
+    title="The Figure off Namibia"
+    meta="A map-imagery blur, an occult magazine, and the sceptics · Image claim, unverified"
     verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    verdictLabel="Awaiting review"
+    references={[
+      {
+        text: 'Greenland & Hayward — Shima 14(1) (2020), citing Namiki, “Google Earth Mystery,” Mu no. 324 (April 2007)',
+        label: 'shimajournal.org',
+        href: 'https://www.shimajournal.org/issues/v14n1/10.-Greenland-and-Hayward-Shima-v14n1.pdf',
+      },
+      {
+        text: 'Southern Fried Science — “Our favorite sea monsters – Ningen (#4),” Andrew Thaler (7 September 2010)',
+        label: 'southernfriedscience.com',
+        href: 'https://www.southernfriedscience.com/our-favorite-sea-monsters-ningen-4',
+      },
+      {
+        text: 'Pink Tentacle — “‘Ningen’ humanoid sea creatures of the Antarctic” (6 January 2010)',
+        label: 'pinktentacle.com',
+        href: 'https://pinktentacle.com/2010/01/page/2/',
+      },
+    ]}
   >
-    <p>TODO — second encounter prose.</p>
+    <p>
+      In its April 2007 issue, the Japanese occult magazine <em>Mu</em> printed a short piece on a
+      map-imagery mystery: a large white figure with limbs, said to be about nineteen metres long,
+      in the sea off Namibia. The article floated the idea that it might be the <em>ningen</em> or
+      <em>hitogata</em>. Some later accounts date the magazine's coverage to later in 2007, and the
+      exact coordinates of the image have not been confirmed. Blogs in 2010 were still reposting a
+      map screenshot of the same stretch of sea.
+    </p>
+    <p>
+      The sceptical reading came quickly. In 2010 Andrew Thaler pointed to the mermaid myth, the
+      face-like undersides of rays, and pareidolia among the Southern Ocean's icebergs as far more
+      likely than a giant unknown animal. A decade later, Greenland and Hayward set aside the
+      question of existence entirely and treated the Ningen as media lore tied to the politics of
+      whaling. No physical evidence has surfaced in the years between, or since.
+    </p>
   </EncounterCard>
 </Section>
 
@@ -128,8 +318,19 @@ import '../../styles/pages/_draft.css';
 <Section heading="Before You Go">
   <Outro>
     <p>
-      TODO — closing outro. Echo the cold open. Land the rules. Give the reader a parting
-      instruction.
+      The Ningen began as one anonymous post on a spring night in 2002, passed on second-hand, about
+      a sea most readers would never see. It had no witness and no photograph, and it did not need
+      either. It had a good shape — pale, enormous, almost human — and a good secret.
+    </p>
+    <p>
+      That is worth understanding, because it is how a great deal of modern folklore is made. Nobody
+      lied about seeing a monster. Someone told a story about what someone else had seen, and
+      thousands of people added to it. The real things in this entry are the forum, the magazine,
+      the ice, and the cold black water. Respect the last two.
+    </p>
+    <p>
+      End of journal entry. Ask who saw it. Find the first date. And stay sceptical — a story that
+      no one witnessed can grow to any size.
     </p>
   </Outro>
 </Section>

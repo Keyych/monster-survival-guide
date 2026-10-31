@@ -3,7 +3,7 @@ number: '41'
 entryClass: 'Camera Anomaly'
 region: 'Fresno, California · 2007'
 title: 'The Fresno Nightcrawlers'
-description: 'A home security camera in Fresno caught two pale figures that seemed to be nothing but legs, walking across a lawn at night. The footage spread online years before anyone could fake it with AI.'
+description: 'A home security camera in Fresno caught two pale figures that seemed to be nothing but legs, walking across a lawn at night. The footage spread online years before AI video tools existed — and it still cannot be traced to its source.'
 tags: ['2007', 'Security footage', 'California']
 danger: 1
 bandColor: '#5a5a5a'
@@ -13,43 +13,62 @@ status: 'draft'
 season: 1
 sightings:
   - {
-      name: 'Fresno, California',
+      name: 'South Fresno, California',
       lat: 36.74,
       lon: -119.79,
       year: 2007,
-      label: 'Where the security footage was reportedly recorded',
+      label: 'Home security footage, reportedly 5 November 2007 · exact address never published',
+      sourceUrl: 'https://kingsriverlife.com/11/16/night-of-the-creeps-the-fresno-nightcrawler-californias-newest-cryptid/',
+    }
+  - {
+      name: 'Yosemite area, California',
+      lat: 37.2,
+      lon: -119.75,
+      year: 2011,
+      label: 'Second clip, dated 28 March 2011 · location disputed (Yosemite National Park or Yosemite Lakes Park)',
+      sourceUrl: 'https://kingsriverlife.com/11/16/night-of-the-creeps-the-fresno-nightcrawler-californias-newest-cryptid/',
     }
 recordKind: reported
-recordNote: 'Working draft about a video and its online spread. Sources, dates, and the footage history still need checking; the clip does not establish that the figures were creatures.'
+recordNote: Two anonymous security-camera clips from 2007 and 2011 and the television and online
+  retellings that followed. The footage is real; it does not establish that the figures were.
 illustration:
   src: /illustrations/fresno-nightcrawlers.png
   alt: 'Loose ink doodle of two pale figures that are almost all long legs, walking across grass.'
 dossier:
   entity: 'The Fresno Nightcrawlers'
-  origin: 'Fresno, California · 2007'
-  status: Draft — awaiting research
+  origin: 'Fresno, California · November 2007'
+  status: Dormant — Two Untraceable Clips, Nothing Verified Since 2011
   stamps:
-    - 'c. 2007'
+    - 'Nov 2007'
     - 'Fresno, CA'
     - 'Video Only'
   dangerLabel: MINIMAL
   dangerNote: '1/10 — Nothing but footage: no contact, no harm. The only risk is believing a video you cannot trace.'
 rules:
-  - title: TODO — rule 1
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 2
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 3
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 4
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 5
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 6
-    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: Ask who filmed it.
+    body: The Fresno tape came from a man known only by his first name, and the Yosemite clip from
+      anonymous friends of a YouTuber. A video with no traceable owner is a story, not a record.
+  - title: Find the first upload.
+    body:
+      Most copies are re-uploads, crops and compilations. Work back to the earliest dated version
+      before you judge anything; every copy in between loses detail and adds claims.
+  - title: A screen filmed on a phone is not raw footage.
+    body: The Fresno clip is reportedly a camera recording of a monitor. Each generation of copying
+      hides edits, joins and frame changes. Ask for the original file.
+  - title: Television is not verification.
+    body: A paranormal show named the creature and called the footage genuine. Failing to recreate a
+      clip on a deadline proves only that one crew failed.
+  - title: Old does not mean authentic.
+    body: Puppets, stilts and editing tricks were all available in 2007. The clips predate AI video,
+      which rules out one method of faking, not every method.
+  - title: The real hazard is the night itself.
+    body: Nobody has been harmed by a nightcrawler. If you go looking in yards, parks or on trails
+      after dark, the risks are trespass, traffic and a twisted ankle. Stay off private property and
+      tell someone where you are.
 ---
 
 import Section from '../../components/Section.astro';
+import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
 import EncounterCard from '../../components/EncounterCard.astro';
 import Outro from '../../components/Outro.astro';
@@ -58,40 +77,158 @@ import '../../styles/pages/_draft.css';
 
 <Section heading="If You're Reading This">
   <p>
-    TODO — cold open. Place the reader at the scene of the encounter. Establish atmosphere. Earn
-    attention before asking for trust.
+    It is a little after half past midnight in November 2007, somewhere in south Fresno, and you are
+    asleep. Outside, above the garage, a security camera you put up only recently is doing its job:
+    a fixed, grey, low-resolution view of your own front yard, the lawn flat and colourless under
+    whatever light reaches it. Nothing moves. Then something does.
+  </p>
+  <p>
+    It walks in from the edge of the frame — pale, small, and wrong. There is no body to speak of,
+    no arms, no obvious head; just two long white legs, joined at the top, stepping across the grass
+    with a stiff, jointed rhythm, as though someone were working each leg on a string. A few minutes
+    later a second one follows, smaller than the first. You will not see any of this until the next
+    day, when you play the tape back.
+  </p>
+  <p>
+    This is the forty-first journal entry of the Monster Survival Guide. The subject is the Fresno
+    Nightcrawlers — a creature that exists, as far as anyone can show, only on two short pieces of
+    security footage. It is a case about video, not about a monster, and it is worth your attention
+    for one reason above all: the footage predates the age of AI-generated video, and it still
+    cannot be traced.
   </p>
 </Section>
 
 <Section heading="Where It Comes From">
   <p>
-    TODO — origin section. Cultural / historical / geographic context. A creature without context is
-    a horror story; a creature with context is something a reader can understand.
+    The Fresno Nightcrawlers have no folklore behind them. There is no generations-old warning and
+    no regional tradition — only a home-security tape, a television segment, and an internet that
+    found the figures funny, eerie and strangely endearing all at once. Where most monsters arrive
+    wrapped in centuries of story, this one arrived as a clip of about twenty seconds.
   </p>
+  <p>
+    The accepted origin runs like this. A south Fresno resident who has only ever been identified by
+    his first name, Jose, set up a camera outside his house — to find out why his dogs were barking
+    at night, by one account, or because of burglaries in the area, by another. The footage is dated
+    to the night of 5 November 2007. Because his system reportedly overwrote recordings on playback,
+    he filmed the monitor with a separate video camera, and that copy is what survives. He took the
+    tape to the Fresno office of the Spanish-language network Univision, which brought in Victor
+    Camacho, host of the late-night paranormal radio show <em>Los Desvelados</em>. Within a
+    fortnight, a video examining the footage had appeared on Camacho's YouTube channel.
+  </p>
+  <div class="pull-quote">
+    This creature has a name because a television programme gave it one. It is not a word handed
+    down through a culture; it is a label applied three years after the footage, for broadcast. Keep
+    that order of events in mind — it is the whole shape of this case.
+  </div>
+  <div class="lore-box">
+    <p>
+      The name "Fresno Nightcrawler" was coined in October 2010 by Syfy's{' '}
+      <em>Fact or Faked: Paranormal Files</em>, which ran the clip in its second episode. That
+      exposure carried the figures well beyond local Spanish-language media and into
+      English-language blogs, list sites and forums. Claims that the creatures belong to a local
+      Native American legend circulate widely online, but none of the versions this guide found
+      names a community or a source; Michael Banti of the blog <em>Weird Fresno</em> reportedly
+      asked regional tribes about images being passed off as tribal carvings of the creature, and
+      his contacts did not recognise them. Treat the "ancient legend" framing as internet
+      decoration, not tradition.
+    </p>
+  </div>
 </Section>
 
 <Section heading="What You Are Looking At">
+  <StatRow
+    stats={[
+      { num: '2', label: 'Security-camera clips — Fresno, 2007, and the Yosemite area, 2011' },
+      { num: '~20', label: 'Seconds of footage in the original Fresno clip' },
+      { num: '0', label: 'Named, contactable witnesses to either recording' },
+    ]}
+  />
   <p>
-    TODO — physical description and identifying features. What witnesses agree on. What varies. What
-    to look for before you know what you are looking at.
+    The figures are consistent across both clips in the broad shape. Each is a small, pale, roughly
+    white form that appears to be all legs — two long limbs joined at a rounded top, with no visible
+    arms or face. They walk upright, one leg after the other, in a stiff and rhythmic gait that
+    writer Brian Dunning likened to a marionette. In the Fresno clip a second, smaller figure
+    follows the first a few minutes later; in the 2011 clip two figures appear together, one taller
+    than the other.
   </p>
+  <p>
+    The size is where it frays. Camacho, after visiting the yard in February 2008, has been reported
+    as estimating the figures at no more than half a metre in one telling and at two to four feet in
+    another. In the 2011 clip, the man who posted it superimposed a daytime photograph of the path
+    with a baby stroller placed in the frame, putting the taller figure at about stroller height.
+    That is a careful-looking piece of scale work — done by the uploader, on footage nobody else has
+    been able to examine in its original form.
+  </p>
+  <div class="warning-box">
+    <div class="warn-label">⚠ Critical Field Note</div>
+    <p>
+      "Before AI" is not the same as "unfakeable". In 2007 a convincing small walking figure on a
+      grainy night-vision camera could be made with a puppet, a costume on a stick, stilts, or
+      ordinary editing software — and a copy filmed off a monitor hides the seams of all of them.
+      The age of this footage removes one modern suspect. It does not clear the older ones.
+    </p>
+  </div>
 </Section>
 
 <Section heading="How It Operates">
   <p>
-    TODO — behaviour pattern. How it hunts / haunts / appears. What comes first, next, and after.
+    There is almost nothing to operate. The Fresno Nightcrawlers do not approach anyone, do not
+    attack, and do not react to the camera. In both clips they simply walk across the frame and out
+    of it. No sound was recorded, no one reported seeing them with their own eyes, and nothing was
+    found afterwards that has been independently verified.
+  </p>
+  <p>
+    What the case does have is a pattern of transmission, and that is the honest description of its
+    "behaviour". A private tape goes to a local broadcaster; a paranormal radio host takes it up and
+    presents it at the 2008 MUFON UFO Symposium in San Jose; a national television show names it and
+    declares it genuine; a second clip turns up on YouTube; and from there the figures pass into
+    list articles, podcasts and plush toys. Each step adds reach. None adds evidence.
+  </p>
+  <p>
+    The trail has also gone cold at the source. According to Camacho, as reported in 2018, Jose died
+    some years after the recording. The man who handled the original tape can no longer be asked
+    about it, and no original file has ever been made public.
   </p>
 </Section>
 
 <Section heading="An Honest Assessment of Its Weaknesses">
   <p>
-    TODO — what the accumulated evidence suggests works against it. Be honest when this section is
-    thin.
+    This is a case with no monster to fight, so the honest assessment is about the evidence rather
+    than the creature.
+  </p>
+  <p>
+    <strong>The provenance is close to nothing.</strong> Both clips come from people who were never
+    publicly named. The Fresno footage is a camera recording of a screen; the Yosemite clip arrived
+    through a self-described UFO enthusiast who said friends had sent it. Even its location is
+    disputed — some accounts put it inside Yosemite National Park, others in the residential
+    community of Yosemite Lakes Park to the south, and some say park staff filmed it, which the
+    uploader's own account does not.
+  </p>
+  <p>
+    <strong>The ordinary explanations fit.</strong> The commonest sceptical reading is a hoax: a
+    puppet or small costume walked across a lawn, or a figure created with camera tricks. According
+    to <em>The Ghost in My Machine</em>, the YouTube effects debunker Captain Disillusion
+    demonstrated in 2012 that footage of this kind could be produced that way. None of this proves
+    how these clips were made, but each explanation needs far less than an unknown animal.
+  </p>
+  <p>
+    <strong>The strongest point is also the weakest.</strong> <em>Fact or Faked</em> reportedly
+    could not recreate the footage and pronounced it authentic. But a production team failing to
+    match a clip is a statement about that team, not about the clip — and a MUFON look at the
+    footage, as summarised on a National Park Service blog in 2023, came back simply "inconclusive".
+  </p>
+  <p>
+    None of that calls anyone a liar. Dunning, writing in 2022, declined even to argue authenticity:
+    he judged that the creature has little real belief behind it and set out to explain why it is so
+    popular instead. That is a fair summary of where the case sits — loved, not believed.
   </p>
 </Section>
 
 <Section heading="Six Rules That May Save Your Life">
-  <p>TODO — short intro paragraph framing the rules.</p>
+  <p>
+    There is no creature here to survive, so these rules are about surviving the footage — how to
+    look at a strange clip honestly, and how not to get hurt if you go looking for the thing in it.
+  </p>
   <SixRules
     rules={frontmatter.rules}
     title={frontmatter.title}
@@ -105,26 +242,102 @@ import '../../styles/pages/_draft.css';
 </Section>
 
 <Section heading="Two Cases on the Record">
-  <p>TODO — intro paragraph for the encounter section.</p>
+  <p>
+    These two cases are the whole of it — the Fresno tape and the Yosemite clip. Later reports from
+    other states and countries exist, but none comes with anything better than the originals.
+  </p>
   <EncounterCard
-    id="Encounter 01 · TODO · TODO date"
-    title="TODO — encounter title"
-    meta="TODO — encounter witness / context"
+    id="Encounter 01 · South Fresno, California · 5 November 2007"
+    title="The Tape From the Garage"
+    meta="Homeowner known only as Jose · Univision Fresno · Victor Camacho"
     verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    verdictLabel="Awaiting review"
+    references={[
+      {
+        text: 'Skeptophilia — “Invasion of the nightcrawlers,” Gordon Bonnet (11 July 2018)',
+        label: 'skeptophilia.com',
+        href: 'https://www.skeptophilia.com/2018/07/invasion-of-nightcrawlers.html',
+      },
+      {
+        text: 'Skeptoid #826 — “Why the Fresno Nightcrawler Is So Popular,” Brian Dunning (2022)',
+        label: 'skeptoid.com',
+        href: 'https://skeptoid.com/episodes/826',
+      },
+      {
+        text: 'Kings River Life — “Night of the Creeps: The Fresno Nightcrawler,” Sarah A. Peterson-Camacho (2024)',
+        label: 'kingsriverlife.com',
+        href: 'https://kingsriverlife.com/11/16/night-of-the-creeps-the-fresno-nightcrawler-californias-newest-cryptid/',
+      },
+      {
+        text: 'The Ghost in My Machine — “Encyclopaedia of the Impossible: The Fresno Nightcrawlers” (2024)',
+        label: 'theghostinmymachine.com',
+        href: 'https://theghostinmymachine.com/2024/06/17/encyclopaedia-of-the-impossible-the-fresno-nightcrawlers/',
+      },
+    ]}
   >
-    <p>TODO — encounter prose. Real, cited account.</p>
+    <p>
+      The footage is dated to the night of 5 November 2007, with the first figure appearing just
+      after 12:40am and the second about five minutes later. The homeowner, identified only as Jose,
+      recorded the playback on a separate camera and took the tape to Univision's Fresno office.
+      Univision asked radio host Victor Camacho to say on air that the figures were aliens; by
+      Dunning's account Camacho declined, saying he did not know what they were. Camacho posted a
+      video about the footage on 19 November 2007, visited the yard in February 2008, and presented
+      the case at the MUFON UFO Symposium in San Jose later that year.
+    </p>
+    <p>
+      In October 2010 the clip appeared on Syfy's <em>Fact or Faked: Paranormal Files</em>, which
+      named the creature and declared the footage genuine. By 2018 it was circulating widely enough
+      that Gordon Bonnet could write up a list-site feature on it, noting that the case for
+      authenticity was secondhand and that digital editing made claims that it was impossible to
+      fake doubtful. No original file has been released, and Jose's identity was never made public.
+    </p>
   </EncounterCard>
   <EncounterCard
-    id="Encounter 02 · TODO · TODO date"
-    title="TODO — second encounter title"
-    meta="TODO — second encounter witness / context"
+    id="Encounter 02 · Yosemite area, California · 28 March 2011"
+    title="The Second Clip"
+    meta="Posted by YouTuber Dovus X-Life Operior · Footage attributed to anonymous friends"
     verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    verdictLabel="Awaiting review"
+    references={[
+      {
+        text: 'The Odyssey Online — “The Fresno Nightcrawlers,” Susannah Wagner (12 August 2015)',
+        label: 'theodysseyonline.com',
+        href: 'https://www.theodysseyonline.com/fresno-nightcrawlers',
+      },
+      {
+        text: 'Skeptoid #826 — “Why the Fresno Nightcrawler Is So Popular,” Brian Dunning (2022)',
+        label: 'skeptoid.com',
+        href: 'https://skeptoid.com/episodes/826',
+      },
+      {
+        text: 'National Park Service — “Yosemite: The Weird and the Wonderful” (2023)',
+        label: 'nps.gov',
+        href: 'https://www.nps.gov/yose/blogs/yosemite-the-weird-and-the-wonderful.htm',
+      },
+      {
+        text: 'Fresnoland — “The Fresno Nightcrawler,” Gisselle Medina (2025)',
+        label: 'fresnoland.org',
+        href: 'https://fresnoland.org/2025/05/01/the-fresno-nightcrawler/',
+      },
+    ]}
   >
-    <p>TODO — second encounter prose.</p>
+    <p>
+      In April 2011 a YouTuber posting as Dovus X-Life Operior, a self-described fan of UFOs and the
+      paranormal, uploaded security footage he said had been recorded the previous month by retired
+      friends. The clip is dated 28 March 2011, at around 2:18am, and shows two pale, legs-only
+      figures on a paved path, one taller than the other. To show scale, he laid the video over a
+      daytime photograph of the same path with a baby stroller in shot. Dunning notes, drily, how
+      convenient it was that the anonymous witnesses happened to contact a paranormal enthusiast.
+    </p>
+    <p>
+      The retellings disagree about almost everything else. A 2015 article already described the
+      clip as Yosemite National Park security footage filmed while staff hunted for vandals — and,
+      in the same piece, dated the Fresno tape to the 1990s, which no other source supports. Later
+      local reporting places the clip in Yosemite Lakes Park, a residential community outside the
+      national park, and says it has reportedly been debunked. A National Park Service blog in 2023
+      mentioned the Fresno and Yosemite figures among the area's oddities. Fifteen years on, nobody
+      has produced the original recording or the people who made it.
+    </p>
   </EncounterCard>
 </Section>
 
@@ -133,8 +346,21 @@ import '../../styles/pages/_draft.css';
 <Section heading="Before You Go">
   <Outro>
     <p>
-      TODO — closing outro. Echo the cold open. Land the rules. Give the reader a parting
-      instruction.
+      The Fresno Nightcrawlers are the smallest entry in this guide and one of the most modern. For
+      about twenty seconds in 2007, a camera above a garage recorded something it could not explain,
+      and for three years afterwards that tape and one more passed from hand to hand until a
+      television show gave them a name and the internet gave them a fan club.
+    </p>
+    <p>
+      That is worth remembering now that anyone can make a walking pair of legs in seconds. These
+      clips were made before that was possible, and they are still no more trustworthy for it —
+      because a video is only ever as good as the chain of people who handled it, and here that
+      chain is broken at the first link. The lesson was never about artificial intelligence. It was
+      about provenance.
+    </p>
+    <p>
+      End of journal entry. Ask who filmed it. Find the first upload. And stay sceptical — a clip
+      that cannot be traced has already told you most of what it can.
     </p>
   </Outro>
 </Section>

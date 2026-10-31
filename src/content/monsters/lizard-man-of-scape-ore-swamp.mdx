@@ -13,43 +13,80 @@ status: 'draft'
 season: 1
 sightings:
   - {
-      name: 'Scape Ore Swamp, near Bishopville, SC',
+      name: 'Browntown Road, near Scape Ore Swamp, SC',
+      lat: 34.17,
+      lon: -80.27,
+      year: 1988,
+      label: 'Christopher Davis report · ~2am, 29 June 1988 (approximate location)',
+      sourceUrl: 'https://charlestoncitypaper.com/4-things-you-should-know-about-the-lizard-man/',
+    }
+  - {
+      name: 'Waye home, outside Bishopville, SC',
+      lat: 34.19,
+      lon: -80.26,
+      year: 1988,
+      label: 'Tom and Mary Waye car damage and tracks · July 1988 (approximate location)',
+      sourceUrl: 'https://www.deseret.com/1988/7/20/18772443/lizard-man-just-a-fox-or-a-drunk-biologist-says/',
+    }
+  - {
+      name: 'Bishopville, Lee County, SC',
       lat: 34.22,
       lon: -80.25,
-      year: 1988,
-      label: 'Area of the 1988 reports',
+      year: 2008,
+      label: 'Bob and Dixie Rawson van damage · February 2008 (approximate location)',
+      sourceUrl: 'https://www.wistv.com/story/8091061/california-group-comes-to-bishopville-to-investigate-lizard-man/',
+    }
+  - {
+      name: 'Church near Bishopville, SC',
+      lat: 34.21,
+      lon: -80.24,
+      year: 2015,
+      label: 'Unnamed woman photographs a figure at the woods edge · 2015 (approximate location)',
+      sourceUrl: 'https://edition.cnn.com/2015/08/04/us/south-carolina-lizard-man-feat',
     }
 recordKind: reported
-recordNote: 'Working draft based on reported sightings and their retellings. Sources and claims still need checking; reports do not establish that the creature exists.'
+recordNote: Reported accounts from the summer of 1988, a confessed hoax that same August, and
+  scattered claims in 2008 and 2015. The reports are real; they do not establish that the creature
+  was.
 illustration:
   src: /illustrations/lizard-man-of-scape-ore-swamp.png
   alt: 'Loose ink doodle of a tall upright lizard-like humanoid with three clawed fingers standing in swamp reeds.'
 dossier:
   entity: 'The Lizard Man of Scape Ore Swamp'
   origin: 'Bishopville, South Carolina · 1988'
-  status: Draft — awaiting research
+  status: Dormant — Sporadic Claims Since 1988, None Verified
   stamps:
     - '1988'
     - 'Bishopville, SC'
     - 'Swamp'
   dangerLabel: GUARDED
-  dangerNote: '4/10 — Damaged-car reports, no confirmed injury. Swamp at night is the hazard: snakes, water, and getting lost.'
+  dangerNote: 4/10 — One teenager's account, some damaged cars, fox hair, and one confessed hoax. No
+    confirmed injury. The swamp at night, not the lizard, is the hazard.
 rules:
-  - title: TODO — rule 1
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 2
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 3
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 4
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 5
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 6
-    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: Pull over somewhere lit.
+    body: The whole legend begins with a flat tyre on a dark swamp road at 2am. If your car fails
+      out there, crawl on to a lit, open spot and call for help rather than kneeling in the dark by
+      the trees.
+  - title: Photograph the damage before anyone theorises.
+    body: The damage to Christopher Davis's car survives in the record only as description, and the
+      story filled the gap. Date-stamped pictures of scratches, dents and bite marks outlast any retelling.
+  - title: Let the hair and blood be tested.
+    body: The Waye car's hairs came back as red fox; the 2008 van's blood came back as dog.
+      Bag samples, hand them to someone who can test them, and accept the answer.
+  - title: Ask who profits from the sighting.
+    body: Within weeks of the first report there were T-shirts, a radio reward and an airman who
+      admitted inventing his encounter. Weigh any new claim against who gains from it.
+  - title: Do not go hunting in the swamp.
+    body: Crowds and TV crews poured into Scape Ore in 1988. A swamp at night means deep mud,
+      snakes, getting lost and no signal. Look from the road, in daylight, with company.
+  - title: A blurred photo is not a return.
+    body:
+      The 2015 pictures caused a stir and settled nothing. Without a clear image, an original file
+      and a named witness willing to be checked, file it as a story, not a sighting.
 ---
 
 import Section from '../../components/Section.astro';
+import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
 import EncounterCard from '../../components/EncounterCard.astro';
 import Outro from '../../components/Outro.astro';
@@ -58,40 +95,158 @@ import '../../styles/pages/_draft.css';
 
 <Section heading="If You're Reading This">
   <p>
-    TODO — cold open. Place the reader at the scene of the encounter. Establish atmosphere. Earn
-    attention before asking for trust.
+    It is about two o'clock in the morning at the end of June 1988, and you are seventeen, driving
+    home from a night shift at McDonald's in a 1976 Toyota Celica. The road runs out of Bishopville,
+    South Carolina, through flat farm country and over the bridge at Scape Ore Swamp, with nothing
+    lit for miles. About a mile past the bridge, a tyre goes.
+  </p>
+  <p>
+    You get out and start on the wheel by whatever light you have. When you look up, something is
+    coming out of the trees towards you on two legs. It is tall — taller than a man — and wet, and
+    green, and its eyes are red. You get back in the car. You feel it on the door handle, then on
+    the roof, and you swerve until it falls away. At home, by your account, there are scratches on
+    the roof and a mirror is damaged.
+  </p>
+  <p>
+    This is the thirty-ninth journal entry of the Monster Survival Guide. The subject is the Lizard
+    Man of Scape Ore Swamp — a creature that existed, as far as the record shows, as one teenager's
+    story, a handful of damaged cars, and a summer in which a small town discovered that a monster
+    can be very good for business.
   </p>
 </Section>
 
 <Section heading="Where It Comes From">
   <p>
-    TODO — origin section. Cultural / historical / geographic context. A creature without context is
-    a horror story; a creature with context is something a reader can understand.
+    The Lizard Man has no folklore behind it. There is no older regional tradition of a reptile man
+    in Lee County, no warning handed down through families. It begins in the summer of 1988 with a
+    sheriff's office, a teenager named Christopher Davis, and a couple whose car had been damaged in
+    the night.
   </p>
+  <p>
+    Davis's encounter, by later reconstructions, took place around 2am on 29 June 1988 on Browntown
+    Road, near the swamp that lies a few miles south of Bishopville. He kept it to himself at first,
+    fearing nobody would believe him. In mid-July, Tom and Mary Waye reported that their Ford LTD
+    had been chewed and scratched overnight. Lee County Sheriff Liston Truesdale connected the two,
+    and on Monday 18 July he mentioned a strange creature to Jan Easterling, a reporter checking in
+    with local police. Her story — a little over 200 words — ran on the front page of{' '}
+    <em>The State</em> the next day, headlined as a "Lizard Man" lurking in a Lee County swamp.
+  </p>
+  <div class="pull-quote">
+    This creature was named by a newspaper headline within a day of becoming public. Everything that
+    followed — the crowds, the reward, the T-shirts, the hoaxers — came after the name, not before
+    it. Keep that order of events in mind.
+  </div>
+  <p>
+    What happened next is the real story. By the Associated Press's account two days later, the
+    swamp was crowded with television crews and onlookers. A Columbia radio station, WCOS, offered a
+    $1 million reward for the creature's capture. According to the{' '}
+    <em>South Carolina Encyclopedia</em>, citing <em>Time</em>, the state was taking more than 200
+    calls a day, some from as far away as New Zealand and Germany, and the governor, Carroll
+    Campbell, was fielding questions about it.
+  </p>
+  <div class="lore-box">
+    <p>
+      Bishopville did not resist. Lizard Man T-shirts and hats sold quickly, shops did a trade in
+      green "lizard juice" lemonade, and Davis signed autographs at a "Lizard Man Information
+      Center" in a local restaurant; he later estimated he made about $3,000 from his story. Decades
+      on, the South Carolina Cotton Museum in Bishopville keeps a Lizard Man exhibit, including
+      footprint casts from 1988, and since 2018 the town has held festivals in the creature's name.
+      The monster is uncertain. Its economic value has been well documented.
+    </p>
+  </div>
 </Section>
 
 <Section heading="What You Are Looking At">
+  <StatRow
+    stats={[
+      { num: '7 ft', label: 'Reported height in the original 1988 account' },
+      { num: '$1M', label: 'Reward offered by Columbia radio station WCOS for its capture' },
+      { num: '200+', label: 'Calls a day the state reportedly received that summer' },
+    ]}
+  />
   <p>
-    TODO — physical description and identifying features. What witnesses agree on. What varies. What
-    to look for before you know what you are looking at.
+    The core description comes from Davis, and it is short. He described the creature as "green,
+    wet-like, about seven feet tall and had three fingers," with red eyes — later retellings add
+    scaly skin. That is essentially the whole portrait: an upright, man-sized reptile,
+    three-fingered, red-eyed, coming out of the water.
   </p>
+  <p>
+    Beyond Davis, the description frays quickly. Of the dozen or so strange occurrences enthusiasts
+    have since tied to the creature, the <em>Post and Courier</em> notes that few described anything
+    lizard-like at all; many witnesses spoke of something brown and hairy. The physical evidence
+    from 1988 — tracks near the Waye home, and short hairs caught in the trim of their car — was
+    examined by a state wildlife biologist, Matt Knox, who said the hairs came from a red fox and
+    that the tracks might be a bear's.
+  </p>
+  <div class="warning-box">
+    <div class="warn-label">⚠ Critical Field Note</div>
+    <p>
+      The only fully lizard-like account in the record is the first one, and it was given by a
+      frightened teenager, at night, by the light of a broken-down car. Every later "Lizard Man" was
+      reported after the name and the drawings were already on T-shirts. Before you describe what
+      you saw, ask whether you are describing it — or the shirt.
+    </p>
+  </div>
 </Section>
 
 <Section heading="How It Operates">
   <p>
-    TODO — behaviour pattern. How it hunts / haunts / appears. What comes first, next, and after.
+    If the creature has a habit, it is cars. In Davis's account it grabbed the door and landed on
+    the roof. The Wayes' car was said to have been chewed. In 2008 a Bishopville couple found their
+    van's fender and grille bitten, and in 2015 a comedian on national television joked that it had
+    damaged his rental car. The Lizard Man is, in practice, a story told about damaged vehicles near
+    a swamp.
+  </p>
+  <p>
+    The other pattern is timing. The reports cluster tightly in the summer of 1988 and then thin
+    out, returning in brief bursts — 2008, a few mentions around 2011, a grainy photograph in 2015 —
+    each time with a news cycle attached. Between bursts, there is nothing: no body, no road kill,
+    no clear picture.
+  </p>
+  <p>
+    It also attracts imitators. In August 1988 an airman from nearby Shaw Air Force Base, Kenneth
+    Orr, told Sheriff Truesdale he had shot and wounded the creature on his way to the base, and
+    produced a sketch along with blood and scales from his car. The sketch looked like the T-shirt
+    art on sale in town and the scales appeared to be from a fish. Orr admitted the hoax, saying he
+    did it to keep the legend going, and was charged.
   </p>
 </Section>
 
 <Section heading="An Honest Assessment of Its Weaknesses">
+  <p>There is no creature here to fight, so the honest assessment is of the evidence.</p>
   <p>
-    TODO — what the accumulated evidence suggests works against it. Be honest when this section is
-    thin.
+    <strong>The physical traces pointed elsewhere.</strong> The hairs from the Waye car were
+    identified as red fox; the tracks were possibly bear. In 2008 the blood on the Rawsons' van was,
+    by later reporting, identified by a forensic lab as coming from a dog, and local authorities had
+    suggested a coyote. Each time an object could be tested, it came back as an ordinary animal.
+  </p>
+  <p>
+    <strong>The founding account cannot be re-examined.</strong> It rests on one witness, alone, at
+    night, who told no one for weeks. The damage to his car survives only as description, and his
+    account was retold many times that summer, for reporters and for autographs. Davis died in 2009,
+    and Truesdale in 2015, so the two people closest to the beginning can no longer be asked.
+  </p>
+  <p>
+    <strong>The explanations were offered at the time.</strong> In the same week the story broke,
+    biologist Matt Knox suggested — with evident scepticism — that Davis might have seen a drunk man
+    getting up out of a muddy ditch. Locals have since repeated a rumour that a butterbean farmer
+    used to dress up to scare off thieves; his own family say they do not know whether it is true.
+    Neither is proven. Both require less than a seven-foot reptile.
+  </p>
+  <p>
+    <strong>Everyone had a reason to keep it alive.</strong> A confessed hoaxer, a radio station
+    with a reward, shops with shirts to sell, and a retired deputy who has admitted playing animal
+    calls over his patrol car's speaker to scare tourists. That does not make Davis a liar. It does
+    mean the later record is badly contaminated.
   </p>
 </Section>
 
 <Section heading="Six Rules That May Save Your Life">
-  <p>TODO — short intro paragraph framing the rules.</p>
+  <p>
+    There is no lizard to survive, so these rules are about the real hazards — a dark swamp road and
+    a broken-down car — and about not being taken in by a story that many people have had good
+    reason to keep telling.
+  </p>
   <SixRules
     rules={frontmatter.rules}
     title={frontmatter.title}
@@ -105,26 +260,97 @@ import '../../styles/pages/_draft.css';
 </Section>
 
 <Section heading="Two Cases on the Record">
-  <p>TODO — intro paragraph for the encounter section.</p>
+  <p>
+    These two cases cover the summer that made the legend and the returns that tried to revive it.
+    The first is a firsthand account backed by a sheriff's investigation; the second is a pair of
+    later claims that arrived, each time, with a camera crew close behind.
+  </p>
   <EncounterCard
-    id="Encounter 01 · TODO · TODO date"
-    title="TODO — encounter title"
-    meta="TODO — encounter witness / context"
+    id="Encounter 01 · Scape Ore Swamp, Lee County · June–August 1988"
+    title="The Summer of the Lizard Man"
+    meta="Christopher Davis · Tom and Mary Waye · Sheriff Liston Truesdale"
     verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    verdictLabel="Awaiting review"
+    references={[
+      {
+        text: 'Associated Press via Deseret News — “Lizard Man just a fox or a drunk, biologist says” (20 July 1988)',
+        label: 'deseret.com',
+        href: 'https://www.deseret.com/1988/7/20/18772443/lizard-man-just-a-fox-or-a-drunk-biologist-says/',
+      },
+      {
+        text: 'Charleston City Paper — “4 things you should know about the Lizard Man,” Paul Bowers (2015)',
+        label: 'charlestoncitypaper.com',
+        href: 'https://charlestoncitypaper.com/4-things-you-should-know-about-the-lizard-man/',
+      },
+      {
+        text: 'Post and Courier — “Return of the Lizard Man: Bishopville’s journey to reclaim an SC monster” (2022)',
+        label: 'postandcourier.com',
+        href: 'https://www.postandcourier.com/lizardman/return-of-the-lizard-man-bishopvilles-journey-to-reclaim-an-sc-monster/article_b2ba81e2-fe4b-11ec-be8f-c350d7fbfa69.html',
+      },
+    ]}
   >
-    <p>TODO — encounter prose. Real, cited account.</p>
+    <p>
+      Around 2am on 29 June 1988, seventeen-year-old Christopher Davis was driving home from a night
+      shift when his car blew a tyre on Browntown Road, about a mile past the Scape Ore bridge. As
+      he changed it, he said, a seven-foot, green, three-fingered creature with red eyes came at him
+      from the swamp, grabbed the door handle as he got in, and jumped on to the roof until he
+      swerved it off. At first he kept it to himself.
+    </p>
+    <p>
+      In mid-July, Tom and Mary Waye reported that their car had been chewed up overnight. Sheriff
+      Liston Truesdale investigated, found tracks near the Waye home that were not from a cow or a
+      deer, and told the Associated Press he was hearing from callers he considered "reputable
+      people." Davis agreed to be hypnotised to recall more. A state wildlife biologist identified
+      hairs from the car as red fox and suggested the tracks might be a bear's. In August, airman
+      Kenneth Orr's claim to have shot the creature collapsed into a confessed hoax.
+    </p>
   </EncounterCard>
   <EncounterCard
-    id="Encounter 02 · TODO · TODO date"
-    title="TODO — second encounter title"
-    meta="TODO — second encounter witness / context"
+    id="Encounter 02 · Bishopville, South Carolina · 2008 and 2015"
+    title="The Returns"
+    meta="The Rawson Van · An Unnamed Churchgoer's Photograph · The News Cycle"
     verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    verdictLabel="Awaiting review"
+    references={[
+      {
+        text: 'Free Republic forum post (14 April 2008) reposting The State — “Bigfoot in S.C.? Experts: it’s the real deal,” Randy Burns (13 April 2008) — forum claim',
+        label: 'freerepublic.com',
+        href: 'https://freerepublic.com/focus/news/2001397/posts',
+      },
+      {
+        text: 'WIS News 10 — “California group comes to Bishopville to investigate ‘Lizard Man’” (2008)',
+        label: 'wistv.com',
+        href: 'https://www.wistv.com/story/8091061/california-group-comes-to-bishopville-to-investigate-lizard-man/',
+      },
+      {
+        text: 'WIS News 10 — “DNA tests say car attack culprit wasn’t Lizard Man” (May 2008)',
+        label: 'wistv.com',
+        href: 'https://www.wistv.com/story/8332479/dna-tests-say-car-attack-culprit-wasnt-lizard-man/',
+      },
+      {
+        text: 'CNN — “South Carolina Lizard Man” (2015)',
+        label: 'cnn.com',
+        href: 'https://edition.cnn.com/2015/08/04/us/south-carolina-lizard-man-feat',
+      },
+    ]}
   >
-    <p>TODO — second encounter prose.</p>
+    <p>
+      Early on 28 February 2008, by the account posted to a Free Republic forum thread from{' '}
+      <em>The State</em>, Bob and Dixie Rawson of Bishopville found their van with a chewed front
+      fender, bite marks through the grille and blood on its front and sides, and their cats gone.
+      The local news ran it, and the Lizard Man was back. Then-Lee County Sheriff E.J. Melvin told
+      CNN, "you look at the damage to the vehicle, it's hard to say." Tom Biscardi of the California
+      group Searching for Bigfoot came to make moulds and take samples; local authorities had
+      suggested a coyote. In May a forensic lab matched the blood to a dog, a finding Biscardi and
+      Dixie Rawson both disputed.
+    </p>
+    <p>
+      In August 2015 a woman said she had photographed the creature at the edge of the woods as she
+      left a church service near Bishopville, and a hunter sent a local station video he said he
+      shot at Scape Ore Swamp that May. The images were grainy and the witnesses went unnamed in the
+      coverage. The story made national news, and Stephen Colbert joked about it. Nothing further
+      was established.
+    </p>
   </EncounterCard>
 </Section>
 
@@ -133,8 +359,19 @@ import '../../styles/pages/_draft.css';
 <Section heading="Before You Go">
   <Outro>
     <p>
-      TODO — closing outro. Echo the cold open. Land the rules. Give the reader a parting
-      instruction.
+      The Lizard Man is one of the most human entries in this guide. A frightened teenager on a dark
+      road told a story, a sheriff took it seriously, a newspaper gave it a name, and a small farm
+      town found, for one hot summer, that the whole country wanted to visit. Some of what followed
+      was sincere. Some of it was a fox, a dog, a coyote. And some of it was invented on purpose and
+      later admitted.
+    </p>
+    <p>
+      Whatever Christopher Davis saw at two in the morning on Browntown Road, the creature that
+      lives on in Bishopville is the one on the T-shirts — and that one, at least, is entirely real.
+    </p>
+    <p>
+      End of journal entry. Fix the tyre somewhere lit. Photograph the damage. And stay sceptical —
+      a monster that sells this well will always find another witness.
     </p>
   </Outro>
 </Section>

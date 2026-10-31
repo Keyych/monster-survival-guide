@@ -3,7 +3,7 @@ number: '38'
 entryClass: 'Sea Giant'
 region: 'Norwegian Sea · Scandinavian lore'
 title: 'The Kraken'
-description: 'Norwegian sailors told of a sea beast so large it could be mistaken for islands. The legend grew for centuries, and then the deep sea turned out to hold a real giant squid.'
+description: 'Norwegian fishermen told of a sea beast so large it could be mistaken for islands. The legend grew for centuries, and then the deep sea turned out to hold a real giant squid.'
 tags: ['Scandinavian folklore', 'Sea monster', 'Giant squid']
 danger: 6
 bandColor: '#1a3a4a'
@@ -16,39 +16,64 @@ sightings:
       name: 'Norwegian Sea, off Norway',
       lat: 66.0,
       lon: 8.0,
-      label: 'Waters of the Norwegian kraken tradition',
+      label: 'Waters of the Norwegian kraken tradition · described by Pontoppidan, 1752–53',
+    }
+  - {
+      name: 'Portugal Cove, Conception Bay, Newfoundland',
+      lat: 47.62,
+      lon: -52.86,
+      year: 1873,
+      label: 'Fishing boat gripped by a giant squid · arm cut free with an axe · late October 1873',
+      sourceUrl: 'https://skullsinthestars.com/2010/08/04/attack-of-the-giant-squid-1874-2/',
+    }
+  - {
+      name: 'Logy Bay, Newfoundland',
+      lat: 47.63,
+      lon: -52.67,
+      year: 1873,
+      label: 'Whole giant squid taken by fishermen and photographed for Moses Harvey · 1873',
+      sourceUrl: 'https://skullsinthestars.com/2010/08/04/attack-of-the-giant-squid-1874-2/',
+    }
+  - {
+      name: 'Ogasawara Islands, Japan',
+      lat: 27.09,
+      lon: 142.19,
+      year: 2012,
+      label: 'Live giant squid filmed in its habitat · July 2012 (first live photographs here, 2004)',
+      sourceUrl: 'https://www.scientificamerican.com/article/live-giant-squid-filmed-in-deep-ocean',
     }
 recordKind: folklore
-recordNote: 'Working draft about sea folklore and its links to real animals. Sources still need checking. The doodle is an imagined interpretation.'
+recordNote: 'Folklore and natural history — sea monsters recorded in medieval Norse writing and in Pontoppidan’s Natural History of Norway, and a real animal later documented from carcasses, photographs and film. The legend and the giant squid are related, but they are not the same thing.'
 illustration:
   src: /illustrations/kraken.png
   alt: 'Loose ink doodle of a giant squid with a huge eye coiling its tentacles around a small sailing ship.'
 dossier:
   entity: 'The Kraken'
   origin: 'Norwegian Sea · Scandinavian lore'
-  status: Draft — awaiting research
+  status: 'Legend Retired — The Animal Behind It Was Filmed Alive in 2012'
   stamps:
     - 'Norway'
     - 'Deep Sea'
     - 'Sailor Lore'
   dangerLabel: ELEVATED
-  dangerNote: '6/10 — The legendary beast sank ships. The real giant squid lives deep and avoids people; the sea itself is the danger.'
+  dangerNote: '6/10 — The legendary beast pulled ships under. The real giant squid lives hundreds of metres down and is almost never seen; cold water, weather and a small boat are the hazards.'
 rules:
-  - title: TODO — rule 1
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 2
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 3
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 4
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 5
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 6
-    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: An island that is not on the chart is not an island.
+    body: Pontoppidan's kraken was a back mistaken for land that rose and sank again. Trust the chart and the depth sounder over a shape on the water, and do not row out to inspect it.
+  - title: The whirlpool was always the real warning.
+    body: Even in the legend, the worst danger was the water dragged down as the beast sank. At sea the sea kills first — wear a lifejacket, watch the weather, and tell someone where you have gone.
+  - title: Do not strike what is floating.
+    body: In 1873 a Newfoundland boat was gripped after its crew approached the animal and reportedly prodded it. Give any large, injured animal at the surface a wide berth, and report it instead.
+  - title: Measure before the story grows.
+    body: The first estimate of the Conception Bay squid was sixty feet; the preserved arm argued for something smaller. Photograph it, put a tape on it, and write the numbers down the same day.
+  - title: A stranded squid belongs to a museum.
+    body: Newfoundland's carcasses settled a centuries-old argument because someone kept and shipped them to a zoologist. Keep it cold, keep it whole, and call a museum or fisheries office.
+  - title: An old book records belief, not proof.
+    body: A careful bishop printed the kraken, and his reviewers doubted it in print. When you read a sea-monster account, separate what someone saw from what someone was told.
 ---
 
 import Section from '../../components/Section.astro';
+import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
 import EncounterCard from '../../components/EncounterCard.astro';
 import Outro from '../../components/Outro.astro';
@@ -57,40 +82,152 @@ import '../../styles/pages/_draft.css';
 
 <Section heading="If You're Reading This">
   <p>
-    TODO — cold open. Place the reader at the scene of the encounter. Establish atmosphere. Earn
-    attention before asking for trust.
+    You are a fisherman off the coast of Norway in the middle of the eighteenth century, a long way
+    out on a calm day. There is a low, broad shape on the water ahead that was not there an hour ago
+    — flat and dark, wider than your boat is long, like a reef or a scatter of small islands. No
+    chart shows land here. The older men in the boat go quiet. They have heard the stories, and so
+    have you.
+  </p>
+  <p>
+    Then the shape moves. Something like arms, or branches, lifts from its edges. Nobody argues
+    about what to do. You row hard, away, because the stories are very clear about this part: the
+    danger is not when it rises. The danger is when it goes back down, and takes the sea with it.
+  </p>
+  <p>
+    This is the thirty-eighth journal entry of the Monster Survival Guide. The subject is the Kraken
+    — the great sea beast of Scandinavian telling, written into a respected work of natural history
+    in the 1750s and doubted almost as soon as it was printed. It is also one of the rare entries in
+    this guide where the sceptics were partly wrong, because something enormous really was down
+    there.
   </p>
 </Section>
 
 <Section heading="Where It Comes From">
   <p>
-    TODO — origin section. Cultural / historical / geographic context. A creature without context is
-    a horror story; a creature with context is something a reader can understand.
+    The idea of a sea creature mistaken for land is older than the word kraken. The late
+    fourteenth-century Icelandic <em>Örvar-Odds saga</em> describes two monsters in the Greenland
+    Sea: the lyngbakr, or "heather-back", called the largest whale in the sea, and the hafgufa, or
+    "sea mist", said to swallow men and ships. A thirteenth-century Norwegian work, the{' '}
+    <em>Konungs skuggsjá</em> or <em>King's Mirror</em>, describes a beast that looked more like an
+    island than a fish. Olaus Magnus, writing in 1555, gave his northern sea monsters long horns and
+    huge red eyes.
   </p>
+  <p>
+    The kraken as we know it was fixed in place by Erik Pontoppidan, Bishop of Bergen, in his{' '}
+    <em>Det første Forsøg paa Norges naturlige Historie</em>, published in Copenhagen in 1752–53. A
+    German translation followed, and in 1755 an English edition appeared in London as{' '}
+    <em>The Natural History of Norway</em>, in two large folio volumes. Pontoppidan was a careful
+    man who stressed verifiable evidence, and still he gave the kraken and other sea monsters long
+    sections, drawing on the accounts of fishermen and on earlier writers.
+  </p>
+  <div class="pull-quote">
+    The kraken was never a single story handed down intact. It is a stack of them — saga, chronicle,
+    fishermen's talk, and finally a bishop's book — each layer borrowing from the one beneath. By
+    the time it reached print in English, it had been travelling for five hundred years.
+  </div>
+  <div class="lore-box">
+    <p>
+      Pontoppidan described the kraken as the largest sea monster in the world, "round, flat, and
+      full of arms, or branches", so broad that it was sometimes taken for an island. It could pull
+      a large ship to the bottom, he wrote, but the greater danger was the whirlpool it made when it
+      sank. Even Linnaeus had briefly listed a kraken-like cephalopod, <em>Microcosmus marinus</em>,
+      in the first edition of <em>Systema Naturae</em> in 1735, before dropping it from later
+      editions.
+    </p>
+  </div>
 </Section>
 
 <Section heading="What You Are Looking At">
+  <StatRow
+    stats={[
+      { num: '1752', label: 'Pontoppidan’s Natural History of Norway begins to appear in Danish' },
+      { num: '13 m', label: 'Longest giant squid on record, tentacles included' },
+      { num: '2012', label: 'First film of a live giant squid in its own habitat' },
+    ]}
+  />
   <p>
-    TODO — physical description and identifying features. What witnesses agree on. What varies. What
-    to look for before you know what you are looking at.
+    There are two answers to what you are looking at, and it matters which one you mean. The kraken
+    of the books is a flat, many-armed mass the size of an island, seen only when it surfaces and
+    feared mostly for what happens when it goes back down. No one has ever produced a specimen of
+    that animal, and nothing in the modern record suggests one exists.
   </p>
+  <p>
+    The animal behind the stories is <em>Architeuthis</em>, the giant squid. According to the
+    Smithsonian, the longest one on record measured about 13 metres including its tentacles, and its
+    eyes, around 30 centimetres across, are the largest of any animal. It lives roughly 500 to 1,000
+    metres down, where sperm whales hunt it; squid beaks turn up in whale stomachs, and stranded
+    whales carry the marks of suckers on their skin. It is very large. It is not the size of an
+    island.
+  </p>
+  <div class="warning-box">
+    <div class="warn-label">⚠ Critical Field Note</div>
+    <p>
+      Size is the first thing to inflate. Sea-monster reports routinely give lengths several times
+      larger than any measured specimen, because a moving animal in open water has nothing beside it
+      to judge scale by. If you cannot put a tape measure on it, treat every length — yours included
+      — as a guess.
+    </p>
+  </div>
 </Section>
 
 <Section heading="How It Operates">
   <p>
-    TODO — behaviour pattern. How it hunts / haunts / appears. What comes first, next, and after.
+    In the legend, the kraken does very little. It rises, it lies at the surface, and it sinks.
+    Pontoppidan allowed that it could drag a large ship to the bottom, but he put the greater danger
+    in the whirlpool it left behind as it went down. The Monthly Review, summarising his book in
+    July 1755, reported the fishermen's accounts of it rising from the sea, and reasoned that such a
+    creature, if real, must be rare.
+  </p>
+  <p>
+    The real animal operates far below anything a fisherman could see. For most of history it was
+    known only from carcasses. The Danish zoologist Japetus Steenstrup traced the earliest recorded
+    one to a beach in Iceland in 1639, and in a paper read in 1849 he set out the case for a real
+    giant squid; the name <em>Architeuthis</em> was published in 1857. In the 1870s, Newfoundland
+    became the place where the argument was settled, with dozens of giant squid reportedly washed
+    ashore or found floating between 1871 and 1881.
+  </p>
+  <p>
+    Seeing one alive took until the twenty-first century. On 30 September 2004, Tsunemi Kubodera and
+    Kyoichi Mori photographed a giant squid off Japan's Ogasawara Islands using a camera on a baited
+    line; the animal snagged an arm and struggled for more than four hours before the tentacle tore
+    away. In July 2012, in the same waters, a team using Edith Widder's Medusa camera — with a lure
+    imitating a glowing jellyfish — and Kubodera in a Triton submersible finally filmed one in its
+    own habitat. What they recorded was not an island. It was an animal attacking bait in the dark.
   </p>
 </Section>
 
 <Section heading="An Honest Assessment of Its Weaknesses">
   <p>
-    TODO — what the accumulated evidence suggests works against it. Be honest when this section is
-    thin.
+    The legendary kraken has one weakness, and it is fatal: it has never been found. The real animal
+    has several, and they are what make it nearly harmless to you.
+  </p>
+  <p>
+    <strong>It lives where you do not.</strong> Hundreds of metres down, in water no swimmer or
+    small boat reaches. The occasions on which it meets people at all are rare, and usually involve
+    a dying or dead animal at the surface.
+  </p>
+  <p>
+    <strong>It has a predator.</strong> Sperm whales eat giant squid, and the Smithsonian notes that
+    no recognisable whale parts have been found in squid stomachs. The thing sailors pictured as the
+    master of the deep is, in fact, prey.
+  </p>
+  <p>
+    <strong>The ship-sinking is all in the books.</strong> None of the sources consulted for this
+    entry records a vessel lost to a giant squid. The one famous Newfoundland struggle, covered
+    below, ended with the fishermen rowing home and the squid short of an arm.
+  </p>
+  <p>
+    That leaves the sea itself, which has never needed a monster to drown anyone. If you take one
+    lesson from Pontoppidan's fishermen, take the one hidden inside the story: the danger was the
+    water, and the sensible response was to leave.
   </p>
 </Section>
 
 <Section heading="Six Rules That May Save Your Life">
-  <p>TODO — short intro paragraph framing the rules.</p>
+  <p>
+    The kraken will not take your boat. The sea might. These rules are about the water, the animal
+    that inspired the legend, and the habit of measuring before you believe.
+  </p>
   <SixRules
     rules={frontmatter.rules}
     title={frontmatter.title}
@@ -100,26 +237,103 @@ import '../../styles/pages/_draft.css';
 </Section>
 
 <Section heading="Two Cases on the Record">
-  <p>TODO — intro paragraph for the encounter section.</p>
+  <p>
+    The first case is the kraken on paper — the book that defined it and the reviewers who weighed
+    it. The second is the moment, a century later, when a giant squid came into a small boat's reach
+    in Newfoundland and the legend acquired a body.
+  </p>
   <EncounterCard
-    id="Encounter 01 · TODO · TODO date"
-    title="TODO — encounter title"
-    meta="TODO — encounter witness / context"
+    id="Encounter 01 · Bergen, Copenhagen & London · 1752–1756"
+    title="The Bishop's Monster"
+    meta="Erik Pontoppidan · The Natural History of Norway and Its Reviewers"
     verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    verdictLabel="Awaiting review"
+    references={[
+      {
+        text: 'The Virginia Gazette, no. 261, 16 January 1756 — “The KRAKEN” (reprinted from the Monthly Review, July 1755)',
+        label: 'cwfjdrlsc.omeka.net',
+        href: 'https://cwfjdrlsc.omeka.net/items/show/12',
+      },
+      {
+        text: 'University of Cambridge, Faculty of History — “Monsters, Myths and Methods” (on Pontoppidan’s 1752–53 Natural History)',
+        label: 'hist.cam.ac.uk',
+        href: 'https://www.hist.cam.ac.uk/node/202',
+      },
+      {
+        text: 'Royal Collection Trust — The Natural History of Norway (English edition, 1755)',
+        label: 'rct.uk',
+        href: 'https://www.rct.uk/collection/themes/Trails/the-libraries-of-george-iii/the-natural-history-of-norway-in-two-parts',
+      },
+      {
+        text: 'Biodiversity Heritage Library blog — “Release the Kraken!”, Grace Costantino (2014)',
+        label: 'biodiversitylibrary.org',
+        href: 'https://blog.biodiversitylibrary.org/2014/10/release-kraken.html',
+      },
+    ]}
   >
-    <p>TODO — encounter prose. Real, cited account.</p>
+    <p>
+      In 1752–53, Erik Pontoppidan, Bishop of Bergen, published the first volumes of his natural
+      history of Norway. Among the soils, minerals, birds and fish were long sections on sea
+      monsters — the sea serpent, mermaids, and the kraken, a round, flat, many-armed creature so
+      large it could be mistaken for an island. He drew on eyewitness accounts from fishermen and on
+      earlier writers, and he argued that such creatures existed.
+    </p>
+    <p>
+      The English edition of 1755 carried the kraken across the Atlantic. In January 1756 the{' '}
+      <em>Virginia Gazette</em> in Williamsburg reprinted a Monthly Review piece on the front page,
+      calling the kraken "the most enormous Animal that ever has been mentioned". The reviewer found
+      the evidence thin but allowed that the creature was possible, and must be rare — and closed
+      with a joke that it was small next to other marvels. Doubt and belief were in print together
+      from the start, and for long afterwards sea-monster sightings as far apart as Ireland, India
+      and Singapore were reported with direct reference to Pontoppidan's book.
+    </p>
   </EncounterCard>
   <EncounterCard
-    id="Encounter 02 · TODO · TODO date"
-    title="TODO — second encounter title"
-    meta="TODO — second encounter witness / context"
+    id="Encounter 02 · Conception Bay, Newfoundland · October–December 1873"
+    title="The Arm in the Boat"
+    meta="Theophilus Picot · Alexander Murray · Rev. Moses Harvey · A. E. Verrill"
     verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    verdictLabel="Awaiting review"
+    references={[
+      {
+        text: 'Skulls in the Stars — “Attack of the giant squid! (1874)” (2010), on A. Murray’s letter in The American Naturalist 8 (1874) and M. Harvey in Annals and Magazine of Natural History 13 (1874)',
+        label: 'skullsinthestars.com',
+        href: 'https://skullsinthestars.com/2010/08/04/attack-of-the-giant-squid-1874-2/',
+      },
+      {
+        text: 'Dictionary of Canadian Biography — “Harvey, Moses”',
+        label: 'biographi.ca',
+        href: 'https://www.biographi.ca/en/bio/harvey_moses_13E.html',
+      },
+      {
+        text: 'Canada’s History — “Giant Squid”, J. R. McConvey (2015)',
+        label: 'canadashistory.ca',
+        href: 'https://www.canadashistory.ca/explore/science-technology/giant-squid',
+      },
+      {
+        text: 'Smithsonian Ocean — “Giant Squid”',
+        label: 'ocean.si.edu',
+        href: 'https://ocean.si.edu/ocean-life/invertebrates/giant-squid',
+      },
+    ]}
   >
-    <p>TODO — second encounter prose.</p>
+    <p>
+      In late October 1873, in Conception Bay, a fisherman named Theophilus Picot and at least one
+      companion approached something large floating in the water — near Great Bell Island by one
+      account, off Portugal Cove by another, and on the 25th or 26th depending on who was writing.
+      By the account the geologist Alexander Murray sent to Harvard in November, the animal threw
+      its arms over the boat and Picot cut one free with an axe. Murray put the creature at about
+      sixty feet, a figure later writers treat as an exaggeration. Later retellings centre on a boy,
+      Tom Picot or Piccott; the earliest letter does not.
+    </p>
+    <p>
+      The severed arm reached the Presbyterian minister Moses Harvey in St. John's, and the
+      zoologist A. E. Verrill recorded about nineteen feet of it preserved. Weeks later, fishermen
+      at Logy Bay brought in a whole giant squid, which Harvey had photographed draped over his
+      sponge bath. The Smithsonian credits that specimen with helping Verrill produce the first
+      accurate scientific description of the animal. The kraken, after six centuries of stories, had
+      a body on a table.
+    </p>
   </EncounterCard>
 </Section>
 
@@ -128,8 +342,21 @@ import '../../styles/pages/_draft.css';
 <Section heading="Before You Go">
   <Outro>
     <p>
-      TODO — closing outro. Echo the cold open. Land the rules. Give the reader a parting
-      instruction.
+      The kraken began as a back in the water that fishermen mistook for land, and it ended — as
+      much as any legend ends — in a minister's bathtub in Newfoundland and a flicker of film off
+      Japan. Somewhere between those points it shrank from an island to an animal about the length
+      of a bus, and from a destroyer of ships to a deep-water hunter that sperm whales eat.
+    </p>
+    <p>
+      That is not a disappointment. It is the rare case where the old stories were pointing at
+      something true, and the truth only needed measuring. The fishermen who rowed away from a
+      rising sea were not foolish. They were doing the one thing in this entry that actually keeps
+      people alive.
+    </p>
+    <p>
+      End of journal entry. Mind the water before the monster. Measure what the sea gives up. And
+      stay sceptical — even when the legend turns out to have teeth, it rarely has the size it
+      claims.
     </p>
   </Outro>
 </Section>

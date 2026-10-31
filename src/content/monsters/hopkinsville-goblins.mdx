@@ -3,7 +3,7 @@ number: '40'
 entryClass: 'Night Siege'
 region: 'Kelly, Kentucky · 1955'
 title: 'The Hopkinsville Goblins'
-description: 'On an August night in 1955, a rural Kentucky family said small silver creatures with huge ears surrounded their farmhouse for hours. They fired at them. The police came. Nothing was ever found.'
+description: 'On an August night in 1955, a rural Kentucky household said small silver creatures with huge ears surrounded their farmhouse for hours. They fired at them. The police came. No creature was ever found.'
 tags: ['1955', 'Multiple witnesses', 'Kentucky']
 danger: 5
 bandColor: '#3a3a5a'
@@ -14,42 +14,44 @@ season: 1
 sightings:
   - {
       name: 'Kelly, near Hopkinsville, KY',
-      lat: 36.73,
-      lon: -87.5,
+      lat: 36.97,
+      lon: -87.48,
       year: 1955,
-      label: 'Farmhouse where the 1955 siege was reported',
+      label: 'Sutton farmhouse, about eight miles north of Hopkinsville · night of 21–22 August 1955',
+      sourceUrl: 'https://ufology.patrickgross.org/htm/kelly55kne.htm',
     }
 recordKind: reported
-recordNote: 'Working draft based on a reported 1955 incident and its investigations. Sources and claims still need checking; reports do not establish that the creatures existed.'
+recordNote: 'Reported accounts from the night of 21–22 August 1955, the police response, and the investigations that followed. The reports are real; they do not establish that the creatures were.'
 illustration:
   src: /illustrations/hopkinsville-goblins.png
   alt: 'Loose ink doodle of a small big-eared goblin creature with large eyes and long clawed arms raised.'
 dossier:
   entity: 'The Hopkinsville Goblins'
   origin: 'Kelly, Kentucky · 1955'
-  status: Draft — awaiting research
+  status: 'Dormant — No Reported Return Since August 1955'
   stamps:
     - '1955'
     - 'Kelly, KY'
     - 'Farmhouse Siege'
   dangerLabel: MODERATE
-  dangerNote: '5/10 — No creature was harmed or found. The real danger that night was frightened people firing guns in the dark.'
+  dangerNote: '5/10 — One long night, eleven people in the house, no injuries and no creature ever recovered. The real hazard was frightened people firing guns in the dark.'
 rules:
-  - title: TODO — rule 1
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 2
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 3
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 4
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 5
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 6
-    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: Guns in the dark are the real danger.
+    body: Nobody at Kelly was hurt by a goblin. The risk came from two frightened men firing a rifle and a shotgun through the windows and into the yard, at night, with children in the house. Do not shoot at what you cannot identify.
+  - title: Know your night birds.
+    body: A great horned owl is about two feet tall, has big yellow eyes, ear tufts, no visible neck, talons, and defends its nest hard in late summer. Seen half-lit on a roof or a branch, it is a convincing little man.
+  - title: Count what you saw at once.
+    body: The first report said twelve to fifteen creatures; investigators found that only once were two seen together. Note how many you saw at the same moment, not how many sightings you added up.
+  - title: Light the yard before you go out.
+    body: There was no telephone in the house, and every face at the window was seen at night through a screen. A torch or a porch light settles most night arguments faster than a gun.
+  - title: Write it down before the press arrives.
+    body: Within a day the creatures had shrunk by more than a foot and gained pointed ears; later retellings turned them green. Sign a plain statement early, as the household's mother did the next day, and keep a copy.
+  - title: Go for help, and let others search.
+    body: Driving to the police was the most sensible thing anyone did that night. The search that followed found a hole in a screen and nothing else, and that result belongs in the story too.
 ---
 
 import Section from '../../components/Section.astro';
+import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
 import EncounterCard from '../../components/EncounterCard.astro';
 import Outro from '../../components/Outro.astro';
@@ -58,40 +60,153 @@ import '../../styles/pages/_draft.css';
 
 <Section heading="If You're Reading This">
   <p>
-    TODO — cold open. Place the reader at the scene of the encounter. Establish atmosphere. Earn
-    attention before asking for trust.
+    It is a Sunday evening in late August 1955, still hot, and you are in a small farmhouse at
+    Kelly, a scatter of homes about eight miles north of Hopkinsville, Kentucky. There is no
+    telephone here. Eleven people are in or around the house — adults, visitors, three children —
+    and one of the visitors has just come back from the well saying he saw a bright light cross the
+    sky. Nobody takes him seriously.
+  </p>
+  <p>
+    An hour later the dog starts barking. Two of the men go to look, and come back in fast for a
+    rifle and a shotgun. For the next three hours they will fire at faces in the windows and at
+    small shapes on the roof and in the trees, and nothing they hit will stay down. Around eleven
+    o'clock everyone crams into two cars and drives to the police station in Hopkinsville.
+  </p>
+  <p>
+    This is the fortieth journal entry of the Monster Survival Guide. The subject is what the
+    newspapers soon called the little men of Kelly, and what the rest of the world remembers as the
+    Hopkinsville Goblins. It is one of the most famous close encounters on record. It is also a
+    story about a dark yard, a frightened household, and a great deal of gunfire.
   </p>
 </Section>
 
 <Section heading="Where It Comes From">
   <p>
-    TODO — origin section. Cultural / historical / geographic context. A creature without context is
-    a horror story; a creature with context is something a reader can understand.
+    There is no folklore behind the Kelly creatures. They arrived in 1955, at the height of the
+    American flying-saucer craze, and they arrived as a police matter. The first press account, in
+    the <em>Kentucky New Era</em> on 22 August, ran under a headline about a space ship and twelve
+    little men, and described two carloads of people turning up at police headquarters around 11
+    p.m. with a story of creatures that bullets could not stop.
   </p>
+  <p>
+    The response was serious. The paper reported more than a dozen city, county and state officers
+    at the farm, along with four military police from Fort Campbell, the Army base nearby. They
+    stayed until after 2 a.m. and found no tracks and no sign that anything had landed — only a hole
+    in a window screen where the household said a shot had gone through. Officials offered no
+    opinion, though the paper noted they agreed there had been no drinking.
+  </p>
+  <div class="pull-quote">
+    The earliest accounts of Kelly did not call the creatures green. The colour came later, from the
+    national press and the retellings, and it tied the case so firmly to an older phrase — "little
+    green men" — that many people assume Kelly invented it. Keep that in mind: the most famous
+    detail of this case is one the first reports never gave.
+  </div>
+  <div class="lore-box">
+    <p>
+      The most thorough early investigation was by the ufologist Isabel Davis, who went to Kelly in
+      1956, a year after the event. Her work, written up with Ted Bloecher, was not published until
+      1978, when the Center for UFO Studies issued it as{' '}
+      <em>Close Encounter at Kelly and Others of 1955</em>. Davis and Bloecher describe the beings
+      as silvery and metallic rather than green, and their report is the source that later
+      investigators, sceptics included, still lean on.
+    </p>
+  </div>
 </Section>
 
 <Section heading="What You Are Looking At">
+  <StatRow
+    stats={[
+      { num: '11', label: 'People at the farmhouse on the night of 21 August 1955' },
+      {
+        num: '12+',
+        label: 'Officers reported at the scene, including Fort Campbell military police',
+      },
+      { num: '0', label: 'Creatures, tracks or landing marks ever recovered' },
+    ]}
+  />
   <p>
-    TODO — physical description and identifying features. What witnesses agree on. What varies. What
-    to look for before you know what you are looking at.
+    The first newspaper story described the visitors as about four feet tall, with big heads, huge
+    eyes, long arms and oversized hands, and something like metal plating for clothing. By the time
+    the household's mother, Glennie Lankford, signed a statement the next day, they had shrunk to
+    around two and a half feet, with large pointed ears, clawed hands and eyes that shone yellow.
+    Later descriptions add thin, stiff legs.
   </p>
+  <p>
+    The numbers drift too. The earliest report spoke of twelve to fifteen creatures. Yet when
+    investigators went through the accounts, there was only one moment when anyone saw more than one
+    at the same time — a pair, one on the roof and one in a tree. The rest of the night, as far as
+    the record shows, may have been the same one or two figures seen again and again.
+  </p>
+  <div class="warning-box">
+    <div class="warn-label">⚠ Critical Field Note</div>
+    <p>
+      Big yellow eyes, pointed "ears", no visible neck, talons, about two feet tall, perched on a
+      roof or a branch and then seeming to float to the ground. Before you read that list as a
+      visitor from space, read it again as a description of a bird that hunts at dusk in rural
+      Kentucky.
+    </p>
+  </div>
 </Section>
 
 <Section heading="How It Operates">
   <p>
-    TODO — behaviour pattern. How it hunts / haunts / appears. What comes first, next, and after.
+    According to the accounts, the pattern was simple. A figure would appear — at a window, at the
+    edge of the yard, on the roof — and the men would fire at it. By some accounts it flipped over
+    when hit, then got up or vanished into the dark. In one account a huge clawed hand grabbed a
+    man's hair as he stepped outside. In another, a creature shot at in a tree floated to the ground
+    instead of falling.
+  </p>
+  <p>
+    It never came inside, and no one was reported hurt. After a lull the household left for town;
+    after the police had gone, the creatures were reported back around 3:30 in the morning, this
+    time without any shooting, and gone again by daylight. Afterwards, reportedly, the families left
+    for Evansville, Indiana. Hundreds of curious people came to look at the farm, and the household
+    reportedly tried charging them for admission, information and photographs.
+  </p>
+  <p>
+    That is the whole of its behaviour: one night, a few hours of appearances near a dark house, and
+    then nothing, ever. The farmhouse is gone now. What lives on is a town festival — and a phrase.
   </p>
 </Section>
 
 <Section heading="An Honest Assessment of Its Weaknesses">
+  <p>There is no creature here to defeat, so the honest assessment is about the explanations.</p>
   <p>
-    TODO — what the accumulated evidence suggests works against it. Be honest when this section is
-    thin.
+    <strong>The owl explanation fits most of it.</strong> In 2005 the investigator Joe Nickell was
+    invited to speak at Hopkinsville's fiftieth-anniversary festival, visited the site, read the
+    original clippings and talked with surviving witnesses. In the <em>Skeptical Inquirer</em> the
+    next year he matched the descriptions point by point to the great horned owl: about 25 inches
+    tall, large yellow eyes, long ear tufts, a big head with no apparent neck, talons, and an
+    aggressive streak when defending the nest. His conclusion was "a meteor and a pair of
+    territorial owls." The French researcher Renaud Leclet had reached a similar view in 2001.
+  </p>
+  <p>
+    <strong>The light in the sky has an ordinary answer.</strong> Davis and Bloecher themselves
+    noted area reports of meteors that evening, and Nickell took the "saucer" to be a bright
+    fireball. Brian Dunning of <em>Skeptoid</em> points to the Kappa Cygnid meteor shower active at
+    the time.
+  </p>
+  <p>
+    <strong>The other theories are weaker.</strong> Escaped monkeys were proposed early on, but no
+    escape was ever shown. Drink has been blamed for decades; one state trooper later said he
+    suspected it, yet admitted he saw no sign of it, and the 1955 paper reported officials agreeing
+    there was none. A hoax remains possible, but nothing physical supports it either.
+  </p>
+  <p>
+    <strong>The official record is muddled.</strong> Many books say Air Force investigators came the
+    next day. Dunning found no corroboration, and later writers note that Project Blue Book's files
+    describe the case as never officially reported to the Air Force — though older accounts claim it
+    was listed as unidentified, and a set of Blue Book lecture notes reportedly filed it among
+    hoaxes. Accounts differ, and none of them is a full investigation.
   </p>
 </Section>
 
 <Section heading="Six Rules That May Save Your Life">
-  <p>TODO — short intro paragraph framing the rules.</p>
+  <p>
+    Nothing at Kelly harmed anyone except, very nearly, the people holding the guns. These rules are
+    about getting through a frightening night without making it worse, and about reporting it in a
+    way that is worth more than a legend.
+  </p>
   <SixRules
     rules={frontmatter.rules}
     title={frontmatter.title}
@@ -105,26 +220,107 @@ import '../../styles/pages/_draft.css';
 </Section>
 
 <Section heading="Two Cases on the Record">
-  <p>TODO — intro paragraph for the encounter section.</p>
+  <p>
+    There is really only one night in this case. The first card is that night as it was first
+    reported; the second is everything that came after — the investigators, the sceptics, and the
+    town that turned a siege into a celebration.
+  </p>
   <EncounterCard
-    id="Encounter 01 · TODO · TODO date"
-    title="TODO — encounter title"
-    meta="TODO — encounter witness / context"
+    id="Encounter 01 · Kelly, Kentucky · 21–22 August 1955"
+    title="The Night at the Farmhouse"
+    meta="The Sutton household and visitors · Hopkinsville police and Fort Campbell MPs"
     verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    verdictLabel="Awaiting review"
+    references={[
+      {
+        text: 'Kentucky New Era — “Story of Space-Ship, 12 Little Men Probed Today” (22 August 1955), transcribed by Patrick Gross',
+        label: 'ufology.patrickgross.org',
+        href: 'https://ufology.patrickgross.org/htm/kelly55kne.htm',
+      },
+      {
+        text: 'Joe Nickell — “Siege of ‘Little Green Men’: The 1955 Kelly, Kentucky, Incident,” Skeptical Inquirer 30(6) (2006)',
+        label: 'centerforinquiry.org',
+        href: 'https://cdn.centerforinquiry.org/wp-content/uploads/sites/29/2006/11/22164554/p12.pdf',
+      },
+      {
+        text: 'HISTORY — “How the ‘Little Green Men’ Phenomenon Began on a Kentucky Farm,” Volker Janssen (2020)',
+        label: 'history.com',
+        href: 'https://www.history.com/articles/little-green-men-origins-aliens-hopkinsville-kelly',
+      },
+    ]}
   >
-    <p>TODO — encounter prose. Real, cited account.</p>
+    <p>
+      Around seven on the evening of Sunday, 21 August 1955, Billy Ray Taylor, a visitor from
+      Pennsylvania, went to the well behind the farmhouse at Kelly and came back describing a bright
+      light that had crossed the sky. The household paid him little attention. About an hour later a
+      barking dog drew Taylor and "Lucky" Sutton outside; they saw a creature, fetched a .22 and a
+      shotgun, and began what they later described as hours of shooting at faces in the windows and
+      figures on the roof and in the trees.
+    </p>
+    <p>
+      At around 11 p.m. the group reached Hopkinsville police headquarters; the next day's
+      <em>Kentucky New Era</em> quoted one of the men as saying simply, "We need help." Police Chief
+      Russell Greenwell led more than a dozen officers to the farm, joined by military police from
+      Fort Campbell. They searched until after 2 a.m. and found a hole in a screen and nothing else.
+      After they left, the creatures were reported back at about 3:30 a.m. By daylight the visitors
+      were gone, and the story was on its way to the national papers.
+    </p>
   </EncounterCard>
   <EncounterCard
-    id="Encounter 02 · TODO · TODO date"
-    title="TODO — second encounter title"
-    meta="TODO — second encounter witness / context"
+    id="Encounter 02 · Kelly & Hopkinsville · 1956 onward"
+    title="The Investigators, the Owls and the Festival"
+    meta="Isabel Davis · Joe Nickell · Brian Dunning · Little Green Men Days"
     verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    verdictLabel="Awaiting review"
+    references={[
+      {
+        text: 'Skeptoid #331 — “The Kelly-Hopkinsville Encounter,” Brian Dunning (2012)',
+        label: 'skeptoid.com',
+        href: 'https://skeptoid.com/episodes/331',
+      },
+      {
+        text: 'Joe Nickell — “Siege of ‘Little Green Men’,” Skeptical Inquirer (2006)',
+        label: 'centerforinquiry.org',
+        href: 'https://cdn.centerforinquiry.org/wp-content/uploads/sites/29/2006/11/22164554/p12.pdf',
+      },
+      {
+        text: 'WKMS — “A Hopkinsville Alien Tale Has Inspired A Yearly Festival, A Musical and Pokémon” (2016)',
+        label: 'wkms.org',
+        href: 'https://www.wkms.org/arts-culture/2016-08-19/a-hopkinsville-alien-tale-has-inspired-a-yearly-festival-a-musical-and-pokemon',
+      },
+      {
+        text: 'The Skeptic — “The Kentucky Alien Invasion: putting to bed the myths and mysteries,” Blake Smith (2024)',
+        label: 'skeptic.org.uk',
+        href: 'https://www.skeptic.org.uk/2024/01/the-kentucky-alien-invasion-putting-to-bed-the-myths-and-mysteries/',
+      },
+      {
+        text: 'The Daily Yonder — “When ‘Little Green Men’ Invaded Kelly, Kentucky,” Liz Carey (2021)',
+        label: 'dailyyonder.com',
+        href: 'https://dailyyonder.com/legend-of-little-green-men-invading-kelly-kentucky-continues/2021/10/22/',
+      },
+      {
+        text: 'WBKO — “70 years later: Revisiting the Kelly-Hopkinsville Encounter” (2025)',
+        label: 'wbko.com',
+        href: 'https://www.wbko.com/2025/08/21/70-years-later-revisiting-kelly-hopkinsville-encounter/',
+      },
+    ]}
   >
-    <p>TODO — second encounter prose.</p>
+    <p>
+      Isabel Davis went to Kelly in 1956 and, with Ted Bloecher, produced the detailed study the
+      Center for UFO Studies published in 1978. She noted that the man who first saw the light was
+      the one witness who raised immediate doubts, while the others aroused no such suspicion. Half
+      a century later Joe Nickell, invited to the 2005 anniversary festival, argued for a fireball
+      and a pair of great horned owls defending their nest; Brian Dunning added that the birds would
+      have been feeding young in August. Blake Smith has since tested how shot passes through a
+      window screen and compared the "flipping" creatures to the way birds tumble.
+    </p>
+    <p>
+      Meanwhile the town claimed the story. Kelly's Little Green Men Days festival grew through the
+      2010s, with costume contests, live music and a metal flying saucer mounted in the park; for
+      the 2017 eclipse, which fell on the anniversary, organisers planned for 20,000 visitors. Local
+      reporting in 2021 said the festival had not run since 2019. For the seventieth anniversary in
+      2025, the City of Hopkinsville marked the date with an Alien Invasion Day.
+    </p>
   </EncounterCard>
 </Section>
 
@@ -133,8 +329,20 @@ import '../../styles/pages/_draft.css';
 <Section heading="Before You Go">
   <Outro>
     <p>
-      TODO — closing outro. Echo the cold open. Land the rules. Give the reader a parting
-      instruction.
+      The Hopkinsville Goblins are one of the great set pieces of UFO history: a farmhouse under
+      siege, a family firing into the dark, a convoy of police cars on a country road. Strip away
+      seventy years of retelling and what is left is a frightened household with no telephone, a
+      bright light in the sky, and a few hours of shapes they could not identify.
+    </p>
+    <p>
+      Nothing suggests those people were lying; the police chief who met them that night said they
+      were genuinely frightened. But the creatures they described fit a large, angry bird far better
+      than a crew from another world — and the only real danger at Kelly that night came from the
+      shotgun, not the roof.
+    </p>
+    <p>
+      End of journal entry. Light the yard. Count what you see at once. And put the gun down until
+      you know what you are aiming at.
     </p>
   </Outro>
 </Section>

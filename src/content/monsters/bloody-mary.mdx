@@ -13,36 +13,37 @@ status: 'draft'
 season: 1
 sightings: []
 recordKind: folklore
-recordNote: "Working draft about a children's ritual recorded by folklorists. Sources still need checking. The ritual is real; the apparition is not documented."
+recordNote: "A children's ritual recorded by folklorists since the 1970s, with older mirror-divination customs behind it and a laboratory illusion that explains what players see. The ritual is real; the apparition is not."
 illustration:
   src: /illustrations/bloody-mary.png
   alt: 'Loose ink doodle of an oval mirror above a sink with a lit candle and a pale long-haired face looking out.'
 dossier:
   entity: 'Bloody Mary'
   origin: 'Folk ritual · English-speaking world'
-  status: Draft — awaiting research
+  status: Living Tradition — Played in Darkened Bathrooms Since at Least the 1970s
   stamps:
     - 'Mirror'
     - 'Three Times'
     - 'Sleepover Lore'
   dangerLabel: LOW
-  dangerNote: '3/10 — Nothing documented comes out of the mirror. The risks are a lit candle in the dark and a frightened child.'
+  dangerNote: '3/10 — Nothing documented has ever come out of the mirror. The real risks are a lit candle in the dark and a frightened child.'
 rules:
-  - title: TODO — rule 1
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 2
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 3
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 4
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 5
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 6
-    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: The candle is the only thing in the room that can hurt you.
+    body: Stand it in a holder on the basin, a foot clear of towels, curtains, hair and sleeves. Never leave it burning when the game ends.
+  - title: Never play alone, and never locked in.
+    body: Leave the door unlocked and the light switch within reach. Some versions say switching the light on ends the game, so make sure someone can.
+  - title: Expect your face to change.
+    body: In dim light most of the 50 people in a 2010 study saw their reflection distort within a minute. That is your visual system at work, not a visitor arriving.
+  - title: Blink, and the face comes back.
+    body: A fixed stare lets features fade and the brain fills the gaps. Look away, blink, or move your eyes, and the reflection returns to normal.
+  - title: Nobody has to play.
+    body: In the first study, only about half the children who knew the game had ever tried it. Let anyone sit out, and stop the moment a fright turns into real distress.
+  - title: Debunk with the lights on, not with mockery.
+    body: Afterwards, switch on the light and look in the mirror together. Explain what dim light does to a face. The person in the glass was always the player.
 ---
 
 import Section from '../../components/Section.astro';
+import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
 import EncounterCard from '../../components/EncounterCard.astro';
 import Outro from '../../components/Outro.astro';
@@ -51,40 +52,160 @@ import '../../styles/pages/_draft.css';
 
 <Section heading="If You're Reading This">
   <p>
-    TODO — cold open. Place the reader at the scene of the encounter. Establish atmosphere. Earn
-    attention before asking for trust.
+    It is late at a sleepover, and you are nine or ten years old. Someone has dared someone else,
+    and now four of you are squeezed into a bathroom with the door shut and the light off. One of
+    the older girls has a candle. Its flame is the only light, and in the mirror above the sink your
+    faces float, orange and unsteady, with the dark behind them.
+  </p>
+  <p>
+    You all know the rules, more or less. Say the name — three times, or thirteen, or more,
+    depending on who taught you — and keep looking. Do not look away. Somewhere around the third
+    time, the face in the glass that ought to be yours starts to look wrong. The eyes sink. The
+    mouth slides. Somebody screams, somebody hits the light switch, and everyone is out in the
+    hallway, laughing too loudly.
+  </p>
+  <p>
+    This is the forty-fifth journal entry of the Monster Survival Guide. The subject is Bloody Mary
+    — not a creature anyone has met, but a ritual that children have performed, and folklorists have
+    recorded, for half a century. The game is real. The face in the mirror is real, too. It is
+    simply not who the game says it is.
   </p>
 </Section>
 
 <Section heading="Where It Comes From">
   <p>
-    TODO — origin section. Cultural / historical / geographic context. A creature without context is
-    a horror story; a creature with context is something a reader can understand.
+    Bloody Mary has no single origin story, and the stories told about her contradict each other. In
+    some versions she is a witch put to death long ago; in others she is a local woman killed in a
+    car crash. Despite the name, researchers have found no real link between the mirror game and
+    Mary I of England or any other historical figure. The name itself shifts with the telling: Mary
+    Worth, Mary Whales, Mary Jane, Black Agnes, and more besides.
   </p>
+  <p>
+    What can be dated is the folklorists' record. A 1976 collection of American children's lore by
+    Mary and Herbert Knapp described girls chanting "Mary Worth" at a mirror — in that version,
+    forty-seven times. Two years later, in 1978, the folklorist Janet Langlois published the first
+    full study of the ritual, "'Mary Whales, I Believe in You': Myth and Ritual Subdued," in the
+    journal <em>Indiana Folklore</em>, based on texts she had collected in Indianapolis in 1973.
+    Twenty years after that, the folklorist Alan Dundes set out a psychoanalytic reading in{' '}
+    <em>Western Folklore</em>.
+  </p>
+  <div class="pull-quote">
+    Bloody Mary is not a ghost with a game attached. She is a game with a ghost attached — and in
+    almost every version, the children decide the rules for themselves.
+  </div>
+  <p>
+    The mirror is older than any of this. Long before Bloody Mary, mirrors in dark rooms were used
+    for divination, especially on Halloween, and especially by young women hoping to glimpse a
+    future husband. Writers on the legend have pointed out that some old versions carried a darker
+    warning: a woman fated to die unmarried might see something else looking back, and a
+    nineteenth-century belief held that staring too long into a mirror could summon the devil.
+  </p>
+  <div class="lore-box">
+    <p>
+      One clear early record comes from Robert Burns. His poem "Halloween," printed in the 1786
+      Kilmarnock edition of his <em>Poems, Chiefly in the Scottish Dialect</em>, includes a line
+      about eating an apple at the glass, and a footnote explaining the charm: "Take a candle, and
+      go, alone, to a looking glass." You eat the apple, and some say comb your hair, and the face
+      of your future spouse is said to appear as if peeping over your shoulder. Two centuries later,
+      the candle and the glass are still there. Only the face has changed.
+    </p>
+  </div>
 </Section>
 
 <Section heading="What You Are Looking At">
+  <StatRow
+    stats={[
+      { num: '1786', label: 'Burns prints the candle-and-looking-glass charm' },
+      { num: '1973', label: 'Year Langlois collected her Indianapolis texts' },
+      { num: '50', label: 'People in the 2010 mirror-gazing study, all reporting strange effects' },
+    ]}
+  />
   <p>
-    TODO — physical description and identifying features. What witnesses agree on. What varies. What
-    to look for before you know what you are looking at.
+    The ritual varies so much that there is no single correct version, but the outline is stable.
+    The players are usually girls, often between about seven and twelve, in a small group. The
+    setting is a bathroom at night with the lights off and a mirror. A name is chanted a set number
+    of times. Some versions add candles, spinning on the spot, sprinkling water on the glass, or
+    flushing the toilet afterwards; a few involve pricking a finger.
   </p>
+  <p>
+    What is supposed to happen varies too. Mary's face appears, bloody or furious. The player's own
+    reflection turns bloody. Mary scratches the player's face or eyes, drives her mad, or drags her
+    through the glass. None of these outcomes has ever been documented. What players do reliably
+    report is the moment the face in the mirror stops looking like their own — and that, it turns
+    out, has a measurable cause.
+  </p>
+  <div class="warning-box">
+    <div class="warn-label">⚠ Critical Field Note</div>
+    <p>
+      The only physical hazard recorded in this ritual is the one the players bring with them. A lit
+      candle, a cramped room, loose hair and towels, and several frightened children rushing for the
+      door at once is a fire risk, not a ghost story. Fire services advise never leaving a candle
+      unattended and keeping it at least a foot from anything that can burn.
+    </p>
+  </div>
 </Section>
 
 <Section heading="How It Operates">
   <p>
-    TODO — behaviour pattern. How it hunts / haunts / appears. What comes first, next, and after.
+    Bloody Mary works through three things: darkness, a fixed stare, and expectation. Take away any
+    one of them and the game falls flat. Put all three together and something genuinely strange
+    happens to the face in the glass.
+  </p>
+  <p>
+    In 2010 the Italian psychologist Giovanni Caputo, of the University of Urbino, described what he
+    called the strange-face-in-the-mirror illusion in the journal <em>Perception</em>. He had fifty
+    people gaze at their own reflection for ten minutes in a dim room, lit only by a low lamp behind
+    them. Most began to see changes in under a minute. Around two-thirds saw their own face deform.
+    Nearly half reported fantastical or monstrous beings; others saw an unknown person, an animal,
+    an old woman or child, or the face of a parent, living or dead. All fifty reported some sense of
+    "otherness" in the face looking back.
+  </p>
+  <p>
+    Part of the explanation is a well-known effect called Troxler fading. When you stare steadily at
+    one point, neurons that respond to unchanging input reduce their activity, and features at the
+    edge of your attention fade away. The brain then fills the gaps with expectation and memory. Dim
+    light makes it worse, because a poorly lit face is already hard to read. Give a child a name to
+    fear, a candle and a dark mirror, and the brain will build a face from what it has been told to
+    expect.
   </p>
 </Section>
 
 <Section heading="An Honest Assessment of Its Weaknesses">
   <p>
-    TODO — what the accumulated evidence suggests works against it. Be honest when this section is
-    thin.
+    There is no entity here to have weaknesses, so the honest assessment is about the game, and
+    about the explanations offered for it.
+  </p>
+  <p>
+    <strong>It cannot survive the light switch.</strong> Every version depends on darkness. Some
+    versions name switching on the light as the way to end the game, and that is not a coincidence.
+    Normal light restores a normal face.
+  </p>
+  <p>
+    <strong>It cannot survive a blink.</strong> Troxler fading needs a steady gaze. Look away,
+    blink, or move the eyes and the distortions reset. The ritual's insistence that you must not
+    look away is exactly what makes the illusion work.
+  </p>
+  <p>
+    <strong>The folklorists' interpretations are interpretations.</strong> Langlois argued that, in
+    the game, Mary becomes the girl's own reflection. Dundes went further and read the blood, the
+    bathroom and the mirror as a girls' rite about the coming onset of menstruation, a puberty
+    ritual that American culture otherwise does not give them. His reading is well known, but it is
+    a psychoanalytic theory, not a finding, and it cannot be tested the way Caputo's illusion can.
+  </p>
+  <p>
+    <strong>The fear is the point.</strong> Gail de Vos, quoted by Snopes, places games like this in
+    a stage of roughly nine to twelve, when children look for excitement and safe ways to release
+    anxiety. That safety depends on the adults and older children around them knowing when the fun
+    has stopped.
   </p>
 </Section>
 
 <Section heading="Six Rules That May Save Your Life">
-  <p>TODO — short intro paragraph framing the rules.</p>
+  <p>
+    Nothing comes out of the mirror, so these rules are not about escaping Mary. They are about the
+    candle, the fright, and how to take the ghost apart afterwards without leaving anyone more
+    scared than they started.
+  </p>
   <SixRules
     rules={frontmatter.rules}
     title={frontmatter.title}
@@ -96,26 +217,78 @@ import '../../styles/pages/_draft.css';
 </Section>
 
 <Section heading="Two Cases on the Record">
-  <p>TODO — intro paragraph for the encounter section.</p>
+  <p>
+    Neither of these cases is a sighting. The first is the earliest full study of the ritual as
+    children actually played it. The second is the laboratory experiment that showed what those
+    children were seeing.
+  </p>
   <EncounterCard
-    id="Encounter 01 · TODO · TODO date"
-    title="TODO — encounter title"
-    meta="TODO — encounter witness / context"
+    id="Encounter 01 · Indianapolis, Indiana · 1973"
+    title="The Children of Holy Angels"
+    meta="Janet Langlois · Fieldwork for “Mary Whales, I Believe in You” (1978)"
     verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    verdictLabel="Awaiting review"
+    references={[
+      {
+        text: 'Alan Dundes — “Bloody Mary in the Mirror: A Ritual Reflection of Pre-Pubescent Anxiety,” Western Folklore 57 (1998), summarising Langlois 1978',
+        label: 'iscte-iul.pt',
+        href: 'https://home.iscte-iul.pt/~fgvs/Dundes%20bloody.pdf',
+      },
+      {
+        text: 'Janet L. Langlois — selected works, with the full citation for Indiana Folklore 11 (1978) and its 1980 reprint',
+        label: 'contemporarylegend.org',
+        href: 'https://contemporarylegend.org/wp-content/uploads/2021/05/langloisselectedworks.pdf',
+      },
+    ]}
   >
-    <p>TODO — encounter prose. Real, cited account.</p>
+    <p>
+      Janet Langlois built her 1978 study on about seventeen texts, twelve of which she collected
+      herself in Indianapolis in 1973. As Dundes later summarised it, she interviewed about eighty
+      pupils at Holy Angels, a Catholic elementary school serving African-American children. Around
+      twenty of them knew the Mary Whales game, and about half of those had actually played it.
+    </p>
+    <p>
+      Langlois called it a game, while recognising that it was often tied to a legend. In more than
+      half of her own texts, the mirror ritual was combined with the story of the vanishing
+      hitchhiker. She concluded that, for these children, neither the legend nor the game clearly
+      came first. Her central observation, quoted by Dundes, was that "Mary Whales becomes the
+      girl's own reflection." It is still the shortest accurate description of the ritual.
+    </p>
   </EncounterCard>
   <EncounterCard
-    id="Encounter 02 · TODO · TODO date"
-    title="TODO — second encounter title"
-    meta="TODO — second encounter witness / context"
+    id="Encounter 02 · Urbino, Italy · 2010"
+    title="Fifty Faces in a Dim Room"
+    meta="Giovanni Caputo · The Strange-Face-in-the-Mirror Illusion · Perception (2010)"
     verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    verdictLabel="Awaiting review"
+    references={[
+      {
+        text: 'Mind Hacks — “The strange-face-in-the-mirror illusion” (18 September 2010), on Caputo, Perception 2010',
+        label: 'mindhacks.com',
+        href: 'https://mindhacks.com/2010/09/18/the-strange-face-in-the-mirror-illusion/',
+      },
+      {
+        text: 'Scientific American, Illusion Chasers blog — “Locking Eyes with a Monster”, on Caputo and Troxler fading',
+        label: 'scientificamerican.com',
+        href: 'https://www.scientificamerican.com/blog/illusion-chasers/locking-eyes-with-a-monster/',
+      },
+    ]}
   >
-    <p>TODO — second encounter prose.</p>
+    <p>
+      Giovanni Caputo's experiment reproduced the essentials of the bathroom ritual without the
+      chanting. Fifty volunteers sat about forty centimetres from a large mirror, in a room lit only
+      by a dim lamp behind them, and watched their own reflection for ten minutes. For most of them
+      the illusion began in under a minute.
+    </p>
+    <p>
+      What they described would be familiar to anyone who has played the game. Two-thirds saw large
+      distortions of their own face. Nearly half saw fantastical or monstrous beings. Others saw a
+      stranger, an animal, an archetypal figure such as an old woman, or the face of a parent,
+      including some who had died. Caputo suggested that dim light makes a face unstable, and that
+      the brain's face-recognition system over-interprets the instability as another person. Later
+      writers linked the effect to Troxler fading. No one in the study was told a name to expect.
+      The faces came anyway.
+    </p>
   </EncounterCard>
 </Section>
 
@@ -124,8 +297,21 @@ import '../../styles/pages/_draft.css';
 <Section heading="Before You Go">
   <Outro>
     <p>
-      TODO — closing outro. Echo the cold open. Land the rules. Give the reader a parting
-      instruction.
+      Bloody Mary is one of the very few monsters in this guide that you can reliably produce on
+      demand. Turn off the light, light a candle, stare into a mirror and wait, and within a minute
+      or two something will look back at you that is not quite you. Children have been discovering
+      this in bathrooms for at least fifty years, and young women did something similar with candles
+      and looking glasses on Halloween long before that.
+    </p>
+    <p>
+      The folklorists and the psychologist arrive at the same place by different routes. Langlois
+      saw that Mary becomes the girl's own reflection. Caputo showed how. The face in the glass is
+      real, in the sense that you really see it — it is your own face, rebuilt by a brain working in
+      the dark with too little light and too much expectation.
+    </p>
+    <p>
+      End of journal entry. Mind the candle. Keep the door unlocked. And when the face starts to
+      change, blink — then turn the light on and show everyone who was there all along.
     </p>
   </Outro>
 </Section>

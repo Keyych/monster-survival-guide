@@ -16,40 +16,49 @@ sightings:
       name: 'Ben Macdui, Cairngorms',
       lat: 57.07,
       lon: -3.67,
-      year: 1925,
-      label: "Summit plateau of the climbers' accounts",
+      year: 1891,
+      label: "Summit cairn · Collie's 1891 experience, told to the Cairngorm Club in 1925",
+      sourceUrl: 'https://www.cairngormclub.org.uk/journals/PDFs/Articles/J064/The%20Cairngorm%20Club%20Journal%20064%20-%20The%20Ben%20Macdhui%20Giant%20Spectre%20WM.pdf',
     }
 recordKind: reported
-recordNote: "Working draft based on climbers' accounts and later retellings. Sources and claims still need checking; the accounts do not establish that a being exists."
+recordNote: "Climbers' accounts from 1925 onward, beginning with Professor Collie's after-dinner story, and the retellings and explanations that followed. The accounts are real; they do not establish that anything followed anyone."
 illustration:
   src: /illustrations/grey-man-of-ben-macdui.png
   alt: 'Loose ink doodle of a tall indistinct figure in mist behind a lone climber on a rocky summit.'
 dossier:
-  entity: 'The Grey Man of Ben Macdui'
+  entity: 'The Grey Man of Ben Macdui (Am Fear Liath Mòr)'
   origin: 'Cairngorms, Scotland'
-  status: Draft — awaiting research
+  status: Unresolved — Reported in Mist Since 1925, No Physical Trace
   stamps:
     - 'Cairngorms'
     - '1925'
     - 'Mountain Mist'
   dangerLabel: ELEVATED
-  dangerNote: '6/10 — No attack on record. Panic in mist on a high plateau is dangerous in itself: falls, exposure, getting lost.'
+  dangerNote: '6/10 — No attack on record. The danger is what frightened people do in mist on a high plateau ringed by cliffs: run, fall, get lost.'
 rules:
-  - title: TODO — rule 1
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 2
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 3
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 4
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 5
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 6
-    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: Carry a map and compass, and know how to use them.
+    body: In mist or snow the Cairngorm plateau turns featureless, and cliffs drop into the Northern
+      Corries. A bearing is the only thing that knows where the edge is.
+  - title: Check the mountain forecast and be ready to turn back.
+    body: Collie and Tewnion both met their Grey Man in mist. Conditions here change
+      within minutes; turning round early is a skill, not a failure.
+  - title: Never run in mist.
+    body: Collie fled four or five miles, staggering blindly among the boulders. On this plateau
+      flight is the real hazard. Stop, breathe, take a bearing, then walk.
+  - title: Name the noise and the shadow before you name the thing.
+    body: Snow crunches, stones fall, deer and birds move, wind sings in gullies. A giant figure on
+      cloud may be your own shadow; raise an arm and see if it copies you.
+  - title: Never act against a shape you cannot identify.
+    body:
+      Tewnion fired three shots at a figure in the mist. The likeliest thing on a summit in fog is
+      another walker. Call out, wait, and keep your hands still.
+  - title: Leave your route with someone, and know who to call.
+    body: Say where you are going and when you will be back. If you are lost or hurt, call 999 and
+      ask for Police, then Mountain Rescue.
 ---
 
 import Section from '../../components/Section.astro';
+import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
 import EncounterCard from '../../components/EncounterCard.astro';
 import Outro from '../../components/Outro.astro';
@@ -58,40 +67,155 @@ import '../../styles/pages/_draft.css';
 
 <Section heading="If You're Reading This">
   <p>
-    TODO — cold open. Place the reader at the scene of the encounter. Establish atmosphere. Earn
-    attention before asking for trust.
+    You are alone on the summit plateau of Ben Macdui, the second-highest mountain in Britain, and
+    the cloud has come down. There is snow underfoot. The great cairn is somewhere behind you now,
+    and the world has shrunk to a few yards of grey stone and grey air. The only sound is the crunch
+    of your own boots.
+  </p>
+  <p>
+    Then you are not sure it is the only sound. For every few steps you take, there is another
+    crunch — heavier, slower, as if something behind you were walking in your tracks with a stride
+    three or four times the length of yours. You stop. You look. There is nothing in the mist. You
+    walk on, and it walks on too. You are an experienced mountaineer and you do not mind being alone
+    on the hills. You are also, suddenly, more frightened than you have ever been.
+  </p>
+  <p>
+    This is the forty-fourth journal entry of the Monster Survival Guide. The subject is the Grey
+    Man of Ben Macdui — Am Fear Liath Mòr, the Big Grey Man — a presence reported by climbers on a
+    high, cold plateau in the Cairngorms. Nobody has ever been hurt by it. That is not the same as
+    saying nobody has been hurt by being afraid of it.
   </p>
 </Section>
 
 <Section heading="Where It Comes From">
   <p>
-    TODO — origin section. Cultural / historical / geographic context. A creature without context is
-    a horror story; a creature with context is something a reader can understand.
+    The Grey Man entered the written record at an after-dinner speech. In late November 1925 the
+    Cairngorm Club, an Aberdeen mountaineering club founded in 1889, held its thirty-seventh annual
+    meeting, followed by a dinner for over a hundred members and friends. Replying to the toast, the
+    club's Honorary President, Professor J. Norman Collie — Fellow of the Royal Society, professor
+    of organic chemistry in London, and a respected mountaineer — described an experience that had
+    befallen him alone on Ben Macdui "over thirty-five years ago". Later writers date it to 1891.
   </p>
+  <p>
+    The club's journal printed the story in 1926, and it is worth reading what it actually says.
+    Collie heard footsteps; he did not see anything. About twelve years later he told the story to
+    Dr Kellas, a fellow mountaineer, who said he had once seen something odd at the summit one June
+    midnight. And a Mr Colin Phillip reportedly heard from an old man at the edge of Rothiemurchus
+    Forest that this would have been the "Ferla Mhor" — the Big Grey Man.
+  </p>
+  <div class="pull-quote">
+    The Grey Man is not a creature anyone described first and named later. It is a feeling on a
+    mountain, borrowed a Gaelic name, and only afterwards given a body by the people who retold it.
+  </div>
+  <div class="lore-box">
+    <p>
+      When the speech reached the newspapers, the journal recorded "a flood of interviews and
+      correspondence" that ran for weeks under headings such as "Ben Macdhui Ghost". Some writers
+      put Collie's fright down to a fit of nerves. Others described their own uneasy feelings in
+      mist, or mysterious music on the Cairngorms that turned out to be wind rising and falling in
+      the gullies. The journal itself declined to judge, leaving the matter "to the judgment of the
+      individual reader". Later retellings added height, grey fur and pointed ears; none of that is
+      in the 1926 text.
+    </p>
+  </div>
 </Section>
 
 <Section heading="What You Are Looking At">
+  <StatRow
+    stats={[
+      { num: '35+', label: 'Years between Collie’s experience and his telling of it in 1925' },
+      { num: '4–5', label: 'Miles Collie said he ran, nearly to Rothiemurchus Forest' },
+      { num: '0', label: 'Photographs, specimens or physical traces of any figure' },
+    ]}
+  />
   <p>
-    TODO — physical description and identifying features. What witnesses agree on. What varies. What
-    to look for before you know what you are looking at.
+    Most of the time, you are not looking at anything. The core of the Grey Man is sound and
+    feeling: footsteps that seem to keep pace from behind at an impossible stride, and a sudden,
+    overwhelming terror that the witness cannot account for. Collie said the fear seized him by the
+    throat. Later accounts repeat the pattern — dread first, the urge to flee second, and only
+    occasionally a shape.
   </p>
+  <p>
+    When a shape does appear, it is tall and indistinct. Kellas's figure, as Collie relayed it, was
+    a man roughly the height of the summit cairn, which Collie put at ten feet or more — and
+    Kellas's brother, sitting close by, said he saw no one at all. Popular retellings since have
+    offered a hairy giant, a figure with talon-like feet, even one in a top hat. The more detailed
+    the description, the further it tends to sit from any first-hand source.
+  </p>
+  <div class="warning-box">
+    <div class="warn-label">⚠ Critical Field Note</div>
+    <p>
+      A huge grey figure standing in mist, keeping its distance and moving when you move, is also an
+      exact description of a Brocken spectre: your own shadow, thrown by a low sun onto cloud,
+      magnified and sometimes ringed with a halo of light. It needs only sun behind you and mist in
+      front. Before you file a giant, move your arm and see whether it moves too.
+    </p>
+  </div>
 </Section>
 
 <Section heading="How It Operates">
   <p>
-    TODO — behaviour pattern. How it hunts / haunts / appears. What comes first, next, and after.
+    The pattern in the classic accounts is consistent enough to describe. The witness is alone, or
+    nearly so. They are on or near the summit plateau, usually in mist, cloud or failing light,
+    often on snow or gravel. They become aware of footsteps out of step with their own. The fear
+    arrives fast and out of proportion. And then they run — Collie for miles, Tewnion down to Glen
+    Derry, others simply as far and as fast as they could from the top.
+  </p>
+  <p>
+    Nothing in the record follows them down. There is no account of contact, no injury inflicted, no
+    pursuit beyond the plateau. The phenomenon, if it is one, seems to live entirely in a few square
+    miles of high ground, in bad visibility, in the minds of people who are tired, cold and far from
+    help.
+  </p>
+  <p>
+    That is also a precise description of the conditions in which human perception fails. The
+    Cairngorm plateau is the highest, coldest and snowiest ground in the British Isles, broad and
+    bouldery on top, with steep corries cutting into its edges. In a whiteout it is easy to lose any
+    sense of direction or distance. Whatever the Grey Man is, it only ever shows itself where your
+    senses are least reliable and your mistakes most expensive.
   </p>
 </Section>
 
 <Section heading="An Honest Assessment of Its Weaknesses">
   <p>
-    TODO — what the accumulated evidence suggests works against it. Be honest when this section is
-    thin.
+    There is no creature on record to resist, so this is an assessment of the evidence — and of the
+    explanations, which are stronger than the monster.
+  </p>
+  <p>
+    <strong>The Brocken spectre explains the giant.</strong> The effect was described from the
+    Brocken in Germany in 1780, and it has long been known in Scotland. The poet James Hogg, in
+    1791, saw a towering figure in fog, took off his hat, watched the figure do the same, and
+    concluded it was his own shadow. It explains a vast figure that keeps its distance. It does not
+    explain footsteps.
+  </p>
+  <p>
+    <strong>Ordinary noise explains a good deal of the sound.</strong> On a frozen plateau, ice
+    forms and cracks, stones split and fall, and deer, hares and ptarmigan move about unseen. Trail
+    magazine has suggested refreezing footprints in snow could crunch behind a walker. In 1925
+    itself, correspondents traced mysterious "music" on the Cairngorms to wind in the gullies.
+  </p>
+  <p>
+    <strong>Fear explains the rest.</strong> Exhaustion, isolation and cold make the mind misread
+    small signals. Mountaineers have a name — mountain panic — for sudden, causeless dread in wild
+    places, and it is reported far beyond Ben Macdui. Some writers have also suggested infrasound,
+    very low-frequency sound from wind, as a cause of unease; that idea draws on laboratory work
+    elsewhere and remains a suggestion rather than a finding on this mountain.
+  </p>
+  <p>
+    <strong>The source has a twinkle in it.</strong> Collie's biographer, Christine Mill, described
+    a man with a lifelong interest in the occult and a gift for tales, and the outdoor writer
+    Cameron McNeish has called him a well-known practical joker. None of that proves the story was
+    invented. It does mean the founding text is an after-dinner anecdote, told decades after the
+    fact.
   </p>
 </Section>
 
 <Section heading="Six Rules That May Save Your Life">
-  <p>TODO — short intro paragraph framing the rules.</p>
+  <p>
+    The Grey Man has never harmed anyone. The mountain has, and the record shows frightened people
+    running blind across ground where running is the most dangerous thing you can do. These rules
+    are ordinary Scottish mountain safety, which is the only real defence on Ben Macdui.
+  </p>
   <SixRules
     rules={frontmatter.rules}
     title={frontmatter.title}
@@ -105,26 +229,90 @@ import '../../styles/pages/_draft.css';
 </Section>
 
 <Section heading="Two Cases on the Record">
-  <p>TODO — intro paragraph for the encounter section.</p>
+  <p>
+    These are the two best-documented accounts: the after-dinner story that started it, and the
+    wartime encounter that came closest to violence. Both were told by experienced mountaineers, and
+    both end with a man running off the summit in mist.
+  </p>
   <EncounterCard
-    id="Encounter 01 · TODO · TODO date"
-    title="TODO — encounter title"
-    meta="TODO — encounter witness / context"
+    id="Encounter 01 · Ben Macdui summit · 1891 (told November 1925)"
+    title="The Footsteps Behind the Professor"
+    meta="Professor J. Norman Collie · Cairngorm Club Annual Dinner, Aberdeen"
     verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    verdictLabel="Awaiting review"
+    references={[
+      {
+        text: 'The Cairngorm Club Journal, Vol. XI, No. 64 (1926) — “The Ben Macdhui Giant Spectre”',
+        label: 'cairngormclub.org.uk',
+        href: 'https://www.cairngormclub.org.uk/journals/PDFs/Articles/J064/The%20Cairngorm%20Club%20Journal%20064%20-%20The%20Ben%20Macdhui%20Giant%20Spectre%20WM.pdf',
+      },
+      {
+        text: 'The Cairngorm Club Journal, Vol. XI, No. 64 (1926) — “Proceedings of the Club”',
+        label: 'cairngormclub.org.uk',
+        href: 'https://www.cairngormclub.org.uk/journals/PDFs/Articles/J064/The%20Cairngorm%20Club%20Journal%20064%20-%20Proceedings%20of%20the%20Club%20WM.pdf',
+      },
+      {
+        text: 'Undiscovered Scotland — “The Grey Man of Ben Macdui”',
+        label: 'undiscoveredscotland.co.uk',
+        href: 'https://undiscoveredscotland.co.uk/usscotfax/outdoors/greyman.html',
+      },
+    ]}
   >
-    <p>TODO — encounter prose. Real, cited account.</p>
+    <p>
+      As the Cairngorm Club Journal set it down, Collie was returning alone from the summit cairn in
+      mist, on snow, when he began to hear something other than his own footsteps: a big crunch for
+      every few of his steps, as though someone were following with a stride three or four times his
+      own. He told himself it was nonsense, listened, heard it again, and saw nothing. Then the
+      terror came. He ran, staggering blindly among the boulders, for four or five miles, nearly
+      down to Rothiemurchus Forest.
+    </p>
+    <p>
+      He added Kellas's story of a cairn-high figure seen at midnight that Kellas's brother never
+      saw, and the old man's verdict that it was the Big Grey Man. Then he closed by saying there
+      was something very queer about the top of Ben Macdui, and that he would not go back there
+      alone. The journal reported the newspaper storm that followed, gave space to the sceptics, and
+      left the verdict to its readers.
+    </p>
   </EncounterCard>
   <EncounterCard
-    id="Encounter 02 · TODO · TODO date"
-    title="TODO — second encounter title"
-    meta="TODO — second encounter witness / context"
+    id="Encounter 02 · Ben Macdui summit · October 1943 (published June 1958)"
+    title="Three Shots in the Mist"
+    meta="Alexander Tewnion, naturalist and mountaineer · The Scots Magazine"
     verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    verdictLabel="Awaiting review"
+    references={[
+      {
+        text: 'Skeptoid #292 — “The Grey Man of Ben MacDhui,” Brian Dunning (2012), citing Tewnion, “A Shot in the Mist,” The Scots Magazine (June 1958)',
+        label: 'skeptoid.com',
+        href: 'https://skeptoid.com/episodes/4292',
+      },
+      {
+        text: 'Mysterious Britain — “The Grey Man of Ben Macdhui” (2008, updated 2018)',
+        label: 'mysteriousbritain.co.uk',
+        href: 'https://mysteriousbritain.co.uk/?p=3146',
+      },
+      {
+        text: 'Scotia News, Issue 83 — “The Gray Man of Ben MacDhui,” John May (c. 2020)',
+        label: 'brooklyn.cuny.edu',
+        href: 'https://userhome.brooklyn.cuny.edu/anthro/jbeatty/Scotia/issue83/issue83a.html',
+      },
+    ]}
   >
-    <p>TODO — second encounter prose.</p>
+    <p>
+      In October 1943, during a ten-day climbing leave in the Cairngorms, Alexander Tewnion reached
+      the summit of Ben Macdui alone as mist closed over the cairn. He was carrying a loaded
+      revolver. By his own account, published fifteen years later in The Scots Magazine, he heard
+      heavy footsteps and saw a shape loom out of the mist towards him. He fired three times and ran
+      down to Glen Derry. Retellings quote his verdict both ways — as believing it was the Grey Man,
+      and as concluding he had shot the only one his imagination would ever see.
+    </p>
+    <p>
+      Later retellings also mention Peter Densham, who reportedly did aircraft rescue work in the
+      Cairngorms during the war and fled the summit in panic in 1945; accounts of what he heard and
+      felt differ, and the earliest source for them is unclear. What Tewnion's case shows most
+      plainly is the real hazard of this entry: a frightened man firing into fog, on a summit where
+      the most likely figure in the mist is another walker.
+    </p>
   </EncounterCard>
 </Section>
 
@@ -133,8 +321,20 @@ import '../../styles/pages/_draft.css';
 <Section heading="Before You Go">
   <Outro>
     <p>
-      TODO — closing outro. Echo the cold open. Land the rules. Give the reader a parting
-      instruction.
+      The Grey Man of Ben Macdui began as footsteps in snow and a fear that a sensible man could not
+      explain, told to a room of fellow climbers more than three decades later. Everything since —
+      the fur, the height, the pointed ears — was added by people who were never on the summit with
+      him.
+    </p>
+    <p>
+      What remains true is the mountain. A broad, bouldery plateau, the cloud coming down, cliffs at
+      the edges, and a mind that fills silence with company. The shadow in the mist may be your own.
+      The crunch behind you may be ice. The fear is real, and it is the fear, not the Grey Man, that
+      can walk you off an edge.
+    </p>
+    <p>
+      End of journal entry. Carry the compass. Check your shadow. And whatever you hear behind you
+      in the mist, do not run.
     </p>
   </Outro>
 </Section>

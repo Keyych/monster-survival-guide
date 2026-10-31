@@ -4,7 +4,7 @@ entryClass: 'Bridge Legend'
 region: 'Fairfax County, Virginia · 1970'
 title: 'The Bunnyman'
 description: 'Two reports to Fairfax County police in 1970 described a man in a rabbit costume threatening people with an axe. From those, Northern Virginia built a legend around a lonely railway underpass.'
-tags: ['1970', 'Police reports', 'Virginia']
+tags: ['1970', 'Two police reports', 'Northern Virginia']
 danger: 4
 bandColor: '#5a4a4a'
 classification: 'monster survival guide  —  the bunnyman'
@@ -13,42 +13,51 @@ status: 'draft'
 season: 1
 sightings:
   - {
-      name: 'Colchester Overpass, Clifton, VA',
+      name: 'Guinea Road, Burke, VA',
+      lat: 38.81,
+      lon: -77.28,
+      year: 1970,
+      label: 'Both 1970 reports · 5400 block (18 Oct) and 5307 Guinea Road (29 Oct)',
+      sourceUrl: 'https://research.fairfaxcounty.gov/local-history/bunnyman',
+    }
+  - {
+      name: 'Colchester Overpass, Fairfax Station / Clifton, VA',
       lat: 38.79,
       lon: -77.36,
-      label: "The 'Bunnyman Bridge' of the legend",
+      label: "The 'Bunnyman Bridge' of the later legend · no 1970 report here",
     }
 recordKind: folklore
-recordNote: 'Working draft about a local legend that grew from 1970 police reports. Sources and dates still need checking; the later murders in the legend are not on record.'
+recordNote: 'Two documented incidents reported to Fairfax County police in October 1970, and the bridge legend that grew from them. The reports are real; the murders, the asylum and the escaped convict are not on record.'
 illustration:
   src: /illustrations/bunnyman.png
   alt: 'Loose ink doodle of a figure in a ragged rabbit costume holding a hatchet at the mouth of a railway underpass.'
 dossier:
   entity: 'The Bunnyman'
   origin: 'Fairfax County, Virginia · 1970'
-  status: Draft — awaiting research
+  status: 'Inactive — Police Case Closed March 1971'
   stamps:
     - '1970'
     - 'Fairfax, VA'
-    - 'Underpass'
+    - 'Two Reports'
   dangerLabel: GUARDED
-  dangerNote: "4/10 — The legend's killings are not on record. The real risks are trespass and crowds at the bridge on Halloween."
+  dangerNote: '4/10 — A couple and a security guard threatened in 1970; no one hurt, no one caught. The modern risks are a single-lane tunnel, private property and Halloween crowds.'
 rules:
-  - title: TODO — rule 1
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 2
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 3
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 4
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 5
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 6
-    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: Ask for the 1970 reports.
+    body: The documented Bunnyman is two police complaints on Guinea Road, miles from the bridge. When a teller adds an asylum, a convict and a body count, ask which record says so. None does.
+  - title: Check the source of a source.
+    body: The famous version traces to a 1999 web post citing a Clifton library that never existed. A story that names its archive is only as good as that archive.
+  - title: The tunnel is a road.
+    body: The overpass is single-lane, with no shoulder and poor sight of oncoming cars. Do not stand, pose or park in it. Cars are the danger here.
+  - title: Stay off the tracks.
+    body: The railway runs overhead. Treat any line as live, and never climb the embankment for a better photograph.
+  - title: People live here.
+    body: The bridge sits among private homes, and police have closed the road to visitors' cars on Halloween. Respect the barricades, the signs and the driveways.
+  - title: A costume is a person.
+    body: The 1970 figure was a man with a hatchet who shouted about trespassing. If someone in a mask threatens you, leave, note the time and place, and call the police — as those witnesses did.
 ---
 
 import Section from '../../components/Section.astro';
+import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
 import EncounterCard from '../../components/EncounterCard.astro';
 import Outro from '../../components/Outro.astro';
@@ -57,40 +66,151 @@ import '../../styles/pages/_draft.css';
 
 <Section heading="If You're Reading This">
   <p>
-    TODO — cold open. Place the reader at the scene of the encounter. Establish atmosphere. Earn
-    attention before asking for trust.
+    It is around midnight in October 1970, and you are sitting in a parked car with your fiancée at
+    the edge of a field off Guinea Road, in the part of Fairfax County that is about to stop being
+    countryside. This land is earmarked for a new housing development. You are talking, and the
+    engine is quiet.
+  </p>
+  <p>
+    Then someone is outside the car. He is shouting that you are on private property and that he has
+    your tag number. He is wearing something white over his head — later, the papers will say a
+    bunny suit — and he has a hatchet. The passenger window bursts inward. By the time you
+    understand what has happened, he is gone into the dark, and the hatchet is lying in the car.
+  </p>
+  <p>
+    This is the forty-second journal entry of the Monster Survival Guide. The subject is the
+    Bunnyman of Fairfax County, Virginia — a man in a costume who was reported to the police twice
+    in one fortnight, and a legend that has spent half a century turning him into something he never
+    was.
   </p>
 </Section>
 
 <Section heading="Where It Comes From">
   <p>
-    TODO — origin section. Cultural / historical / geographic context. A creature without context is
-    a horror story; a creature with context is something a reader can understand.
+    The Bunnyman is unusual in this guide because his beginning can be dated almost to the hour.
+    According to Fairfax County Public Library historian-archivist Brian A. Conley, who spent years
+    tracing the story, the first incident took place on 18 October 1970 on the 5400 block of Guinea
+    Road, near Burke. A second followed on 29 October, about a block away, at a house under
+    construction in the new Kings Park West development. The Washington Post covered both, under
+    headlines that read like a children's book: "Man in Bunny Suit Sought in Fairfax" and "The
+    'Rabbit' Reappears."
   </p>
+  <p>
+    That is the documented core. Everything else came later. By 1973 a University of Maryland
+    student, Patricia Johnson, had collected 54 variations of the tale from fellow students for the
+    Maryland Folklore Archive; according to Conley's summary, only three of them mentioned a murder.
+    Somewhere in the retelling the Bunnyman left Guinea Road and moved roughly eight miles away, to
+    a railway overpass on Colchester Road near Fairfax Station and Clifton — the place now marked on
+    maps as Bunny Man Bridge.
+  </p>
+  <div class="pull-quote">
+    The Bunnyman did not begin at the bridge. He began on the edge of a building site, with a
+    hatchet and a grievance about trespassers. The bridge was added afterwards because it looked the
+    part.
+  </div>
+  <div class="lore-box">
+    <p>
+      The version most people now know — an escaped asylum inmate in 1904, convicts on the run, dead
+      rabbits at the bridge, teenagers murdered there on Halloween — was set down in a story
+      credited to a Timothy Forbes and posted on the ghost-story website Castle of Spirits around
+      1999. It claimed to draw on records in the Clifton Town Library. Conley checked each claim and
+      reported that no such library has existed, that Fairfax County has never had an asylum for the
+      insane, that Lorton Prison belonged to Washington, D.C.'s system and did not open until 1910,
+      and that the named convicts appear in no county court record. Treat that post as what it is: a
+      web claim from around 1999, not a source.
+    </p>
+  </div>
 </Section>
 
 <Section heading="What You Are Looking At">
+  <StatRow
+    stats={[
+      { num: '2', label: 'Incidents reported to Fairfax County police, October 1970' },
+      { num: '54', label: 'Variations of the tale collected by one student in 1973' },
+      { num: '0', label: 'Murders on record connected to the man or the bridge' },
+    ]}
+  />
   <p>
-    TODO — physical description and identifying features. What witnesses agree on. What varies. What
-    to look for before you know what you are looking at.
+    What the 1970 witnesses saw was a man. The police went looking for someone in his late teens or
+    early twenties, according to the Washingtonian's account of the case file. He carried a
+    wooden-handled hatchet on the first night and an axe on the second. He spoke, in plain English,
+    about property and trespassing. He ran away when challenged.
   </p>
+  <p>
+    The costume is where the record frays. The Post's headline put him in a bunny suit, and one
+    later retelling describes white fur with long ears. But Conley found that the Fairfax Globe's
+    report of the first incident described only a white covering over the head — perhaps a
+    pillowcase, perhaps a hood — and he has suggested the full bunny suit may have been added by
+    later tellers. Accounts differ, and you should let them.
+  </p>
+  <p>
+    The bridge, for its part, is a stone railway underpass with a single lane of road running
+    through it, set in woods off a dead-end stretch of Colchester Road. Visitors describe faded
+    yellow paint and signs warning against trespassing and parking.
+  </p>
+  <div class="warning-box">
+    <div class="warn-label">⚠ Critical Field Note</div>
+    <p>
+      The two places in this story are not the same place. Every documented incident happened on
+      Guinea Road, among new houses. Nothing in the 1970 police record happened at the Colchester
+      Overpass. If someone tells you the Bunnyman was seen at the bridge, they are telling you the
+      legend, not the case.
+    </p>
+  </div>
 </Section>
 
 <Section heading="How It Operates">
   <p>
-    TODO — behaviour pattern. How it hunts / haunts / appears. What comes first, next, and after.
+    The real Bunnyman had a pattern, and it was not supernatural. Both times, he appeared at night
+    on land being turned from fields into a housing development. Both times, he confronted people he
+    seemed to regard as intruders. Both times, he damaged something — a car window, a porch post —
+    and then fled before anyone could catch him. Nobody was hurt.
+  </p>
+  <p>
+    Conley's reading, after years with the papers and the people involved, is that the man was a
+    local resident angry about the speed at which the area was being built over. He has said he
+    cannot explain the costume. The police never identified anyone, and on 14 March 1971 the
+    investigator closed the case as inactive.
+  </p>
+  <p>
+    The legendary Bunnyman operates very differently. He haunts the overpass, appears on Halloween
+    night, and kills whoever is still under the bridge at midnight. That version has no victims, no
+    dates and no records behind it. It does, however, have a reliable effect: every October it sends
+    cars full of people down a narrow lane to stand in a dark tunnel and wait. That is the behaviour
+    worth surviving.
   </p>
 </Section>
 
 <Section heading="An Honest Assessment of Its Weaknesses">
+  <p>There is no creature here, so the honest assessment concerns the story.</p>
   <p>
-    TODO — what the accumulated evidence suggests works against it. Be honest when this section is
-    thin.
+    <strong>The documented case is small.</strong> Two incidents, one hatchet, one damaged porch
+    post, no injuries, no arrest. That is enough to frighten a neighbourhood. It is not enough to
+    support a body count.
+  </p>
+  <p>
+    <strong>The legend fails on its own details.</strong> The asylum, the 1904 escape, the named
+    convicts and the library archive were each checked by the county's own archivist and none held
+    up. Conley also looked at the area's real unsolved and solved killings and found none connected
+    to the bridge.
+  </p>
+  <p>
+    <strong>The bridge is borrowed scenery.</strong> It sits miles from where the reports were made.
+    It was chosen, as far as anyone can tell, because it was secluded, eerie and already a place
+    where teenagers went at night.
+  </p>
+  <p>
+    None of that makes the 1970 witnesses unreliable. They reported what happened, the police wrote
+    it down, and the papers printed it. The weakness lies in what was built on top of them.
   </p>
 </Section>
 
 <Section heading="Six Rules That May Save Your Life">
-  <p>TODO — short intro paragraph framing the rules.</p>
+  <p>
+    The Bunnyman of the legend cannot hurt you. A single-lane tunnel, a railway line, a private road
+    and a crowd on Halloween can. These rules are about telling the case from the story, and getting
+    home from the bridge.
+  </p>
   <SixRules
     rules={frontmatter.rules}
     title={frontmatter.title}
@@ -100,26 +220,90 @@ import '../../styles/pages/_draft.css';
 </Section>
 
 <Section heading="Two Cases on the Record">
-  <p>TODO — intro paragraph for the encounter section.</p>
+  <p>
+    The first case is the fortnight in 1970 that actually happened. The second is what Fairfax
+    County has had to do about the legend since — at the bridge, every Halloween.
+  </p>
   <EncounterCard
-    id="Encounter 01 · TODO · TODO date"
-    title="TODO — encounter title"
-    meta="TODO — encounter witness / context"
+    id="Encounter 01 · Guinea Road, Burke, Virginia · 18 & 29 October 1970"
+    title="The Hatchet and the Porch Post"
+    meta="Robert Bennett & his fiancée · Security guard Paul Phillips — Two Police Reports"
     verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    verdictLabel="Awaiting review"
+    references={[
+      {
+        text: 'Fairfax County Public Library — “The Bunny Man Unmasked,” Brian A. Conley (page created 2017; cites Washington Post, 22 & 31 Oct 1970, and police report 858-748)',
+        label: 'fairfaxcounty.gov',
+        href: 'https://research.fairfaxcounty.gov/local-history/bunnyman',
+      },
+      {
+        text: 'Washingtonian — “The Scary, Weird, Somewhat True Story of the Fairfax Bunny Man” (2015)',
+        label: 'washingtonian.com',
+        href: 'https://www.washingtonian.com/2015/10/23/the-scary-weird-somewhat-true-story-of-the-fairfax-bunny-man',
+      },
+      {
+        text: 'Northern Virginia Magazine — “Long Live the Bunnyman” (2015)',
+        label: 'northernvirginiamag.com',
+        href: 'https://northernvirginiamag.com/culture/2015/10/01/long-live-the-bunnyman/',
+      },
+    ]}
   >
-    <p>TODO — encounter prose. Real, cited account.</p>
+    <p>
+      On 18 October 1970, Air Force Academy cadet Robert Bennett and his fiancée were parked near
+      his uncle's house on the 5400 block of Guinea Road when a figure in white approached the car.
+      By one account he shouted, "You're on private property, and I have your tag number," then
+      threw a wooden-handled hatchet through the window. Neither was hurt. Decades later the couple
+      confirmed the incident to Conley, and reportedly still had the hatchet.
+    </p>
+    <p>
+      On the night of 29 October, Paul Phillips, a security guard on the Kings Park West
+      construction, found a man on the porch of an unoccupied new house at 5307 Guinea Road. "I
+      started talking to him and that's when he started chopping," Phillips was quoted as saying;
+      the man swung an axe at a roof support, threatened him, and vanished into the trees. Six
+      officers responded and found no one. Further calls followed — one from a man calling himself
+      the "Axe Man" — but a stakeout produced nothing, and the case was closed as inactive in March
+      1971.
+    </p>
   </EncounterCard>
   <EncounterCard
-    id="Encounter 02 · TODO · TODO date"
-    title="TODO — second encounter title"
-    meta="TODO — second encounter witness / context"
+    id="Encounter 02 · Colchester Road, Fairfax Station · Halloween, 2003 onward"
+    title="The Barricade at the Bridge"
+    meta="Fairfax County Police · Residents · Visitors — The Legend's Crowds"
     verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    verdictLabel="Awaiting review"
+    references={[
+      {
+        text: 'Connection Newspapers — “Week in Burke” (29 October 2003)',
+        label: 'connectionnewspapers.com',
+        href: 'https://connectionnewspapers.com/news/2003/oct/29/week-in-burke',
+      },
+      {
+        text: 'Connection Newspapers — “Legend Lives on at Bunnyman Bridge” (4 November 2003)',
+        label: 'connectionnewspapers.com',
+        href: 'https://m.connectionnewspapers.com/news/2003/nov/04/legend-lives-on-at-bunnyman-bridge/',
+      },
+      {
+        text: 'Burke Connection — “The Elusive Trail of the Bunnyman Urban Myth” (2017)',
+        label: 'burkeconnection.com',
+        href: 'https://www.burkeconnection.com/news/2017/oct/18/elusive-trail-bunnyman-urban-myth/',
+      },
+    ]}
   >
-    <p>TODO — second encounter prose.</p>
+    <p>
+      By 2003 the legend had become a traffic problem. Ahead of Halloween that year, Fairfax County
+      Police announced extra foot, bicycle and vehicle patrols near the bridge, and blocked
+      Colchester Road to visitors' cars at Fairfax Station Road from 6 p.m. to midnight. People
+      could walk in; only residents could drive on. Officers said they would enforce parking,
+      trespassing and public drinking laws, and neighbours had put up hand-painted signs to keep
+      visitors out of their driveways.
+    </p>
+    <p>
+      The visitors came anyway. One driver that night had brought a carload of passengers after a
+      television countdown of scary places claimed 21 people had been killed near the bridge;
+      finding nothing, they left disappointed. A police sergeant summed it up: "It's Fairfax
+      County's 'Blair Witch Project.'" In 2017, presenting his research at a county library, Conley
+      offered his own verdict on the story's staying power: "It will not die."
+    </p>
   </EncounterCard>
 </Section>
 
@@ -128,8 +312,19 @@ import '../../styles/pages/_draft.css';
 <Section heading="Before You Go">
   <Outro>
     <p>
-      TODO — closing outro. Echo the cold open. Land the rules. Give the reader a parting
-      instruction.
+      The Bunnyman is the rare monster whose case file you can actually read. In October 1970 a man
+      in a white costume frightened a young couple and a night watchman on a building site, broke a
+      car window and gouged a porch post, and was never caught. That is the whole of the record.
+    </p>
+    <p>
+      The rest — the asylum, the convict, the rabbits on the bridge, the bodies on Halloween — was
+      built later, by teenagers, tellers and at least one web post, and pinned to a stone tunnel
+      miles away because it looked like the kind of place where such a thing should happen. The
+      murders never happened. The crowds did.
+    </p>
+    <p>
+      End of journal entry. Read the police report before the legend. Walk, don't park. And stay out
+      of the tunnel when the headlights come.
     </p>
   </Outro>
 </Section>

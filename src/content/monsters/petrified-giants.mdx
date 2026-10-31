@@ -18,12 +18,14 @@ sightings:
       lon: -76.15,
       year: 1869,
       label: 'The Cardiff Giant is dug up on a farm',
+      sourceUrl: 'https://www.cnyhistory.org/2014/10/cardiff-giant/',
     }
   - {
       name: "The Farmers' Museum, Cooperstown, NY",
       lat: 42.7,
       lon: -74.92,
       label: 'Where the Cardiff Giant is displayed today',
+      sourceUrl: 'https://archive.archaeology.org/0511/etc/giants.html',
     }
   - {
       name: 'Near Beulah, Colorado',
@@ -31,38 +33,49 @@ sightings:
       lon: -104.98,
       year: 1877,
       label: "The 'Solid Muldoon' petrified man",
+      sourceUrl: 'https://history.denverlibrary.org/node/23721',
     }
 recordKind: reported
-recordNote: 'Working draft about documented nineteenth-century hoaxes. Sources and dates still need checking. The giants were real objects; the people they claimed to be were not.'
+recordNote: Documented nineteenth-century hoaxes, recorded in the newspapers, pamphlets and
+  confessions of the time. The giants were real objects; the people they claimed to be were not.
 illustration:
   src: /illustrations/petrified-giants.png
   alt: 'Loose ink doodle of a huge cracked stone man lying on his back in a dig pit, a shovel at the edge.'
 dossier:
   entity: 'The Petrified Giants'
   origin: 'Cardiff, New York · 1869'
-  status: Draft — awaiting research
+  status: Exposed — Confessed Hoax, On Display in Cooperstown
   stamps:
     - '1869'
     - 'Cardiff, NY'
     - 'Hoax'
   dangerLabel: MINIMAL
-  dangerNote: '1/10 — Nobody was hurt; plenty of people were fleeced. The danger is to your wallet and your judgement.'
+  dangerNote: 1/10 — Carved stone and kiln-baked plaster. Nobody was hurt; thousands paid to be
+    fooled. The danger is to your wallet and your judgement.
 rules:
-  - title: TODO — rule 1
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 2
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 3
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 4
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 5
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 6
-    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: Ask who profits from the find.
+    body: Stub Newell had a tent up and was charging admission within days. When the discoverer is
+      already selling tickets, treat the discovery as a product.
+  - title: Look for the tool marks.
+    body: Othniel Marsh judged the giant a recent fake partly from chisel marks that long burial
+      should have softened. Real age leaves wear; fresh carving leaves edges.
+  - title: Flesh does not turn to stone whole.
+    body: Even in 1869, Henry Ward argued that no petrified human flesh was known to science. A
+      complete stone body is a sculpture until proven otherwise.
+  - title: An expert's name is not a verdict.
+    body: Respected men called the Cardiff figure an ancient statue, a Jesuit carving, a wonder.
+      Read what each expert actually examined, not just how famous he is.
+  - title: Two giants means at least one fake.
+    body:
+      In December 1869 New York papers advertised rival giants, one swearing in print it was no copy. When
+      the same marvel turns up twice, the honest question is whether either is real.
+  - title: Wait for the confession.
+    body: Hull confessed in 1869; the Muldoon fell apart when an insider talked. Hoaxes are usually
+      undone by money disputes, not science, so give a sensation time to sour.
 ---
 
 import Section from '../../components/Section.astro';
+import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
 import EncounterCard from '../../components/EncounterCard.astro';
 import Outro from '../../components/Outro.astro';
@@ -71,40 +84,155 @@ import '../../styles/pages/_draft.css';
 
 <Section heading="If You're Reading This">
   <p>
-    TODO — cold open. Place the reader at the scene of the encounter. Establish atmosphere. Earn
-    attention before asking for trust.
+    It is a Saturday in October 1869, and you have paid your money at the flap of a tent on a farm
+    outside the village of Cardiff, in Onondaga County, New York. The queue behind you is long and
+    still growing. Inside, at the bottom of a pit dug for a well, a man is lying on his back in the
+    wet earth. He is more than ten feet long. He is grey, and he is stone, and his face looks as
+    though he died in some discomfort.
+  </p>
+  <p>
+    People around you are murmuring about the giants of Genesis. Others are saying it is a statue,
+    hundreds of years old. Nobody is saying the obvious thing, because the obvious thing is that a
+    farmer has found a miracle exactly where he was having a well dug, and is charging you to look
+    at it.
+  </p>
+  <p>
+    This is the thirty-seventh journal entry of the Monster Survival Guide, and it is about a hoax.
+    The Cardiff Giant was carved gypsum, buried on purpose and dug up on cue. It was followed by a
+    run of imitators, the best known being Colorado's "Solid Muldoon" in 1877. There is no creature
+    in this entry. There is only a crowd, a showman, and the question of how much you are willing to
+    pay to believe something.
   </p>
 </Section>
 
 <Section heading="Where It Comes From">
   <p>
-    TODO — origin section. Cultural / historical / geographic context. A creature without context is
-    a horror story; a creature with context is something a reader can understand.
+    The man behind it was George Hull, a New York tobacconist and cigar maker, and by most accounts
+    a committed atheist. The story he told, and that later histories repeat, is that in the
+    mid-1860s he argued with a Methodist revivalist in Iowa over whether the Bible should be read
+    literally. Accounts differ on the exact year. What Hull took away from it was the thought that
+    people would believe almost anything if it was presented as proof.
   </p>
+  <p>
+    He bought a block of gypsum near Fort Dodge, Iowa, reportedly claiming it was for a statue of
+    Abraham Lincoln, and had it shipped to Chicago, where stonecutters carved it into a reclining
+    man during the late summer of 1868. In November of that year he and an accomplice buried it
+    behind the barn of his cousin, William C. "Stub" Newell, at Cardiff. One account puts the cost
+    of the venture at over $2,600. Then they waited about a year.
+  </p>
+  <div class="pull-quote">
+    The petrified giant is not a legend that grew. It is a product that was manufactured, buried,
+    and launched — and the paper trail of its making survives because the people who made it
+    eventually argued over the money.
+  </div>
+  <p>
+    Hull was working with an appetite that already existed. Reports of petrified bodies were a minor
+    craze in American papers by the 1860s; Mark Twain had mocked the fashion in October 1862 with a
+    fake report of a petrified man in Nevada's <em>Territorial Enterprise</em>, and many papers
+    reprinted it without noticing the joke. Hull's innovation was to give the public something it
+    could actually stand in front of.
+  </p>
+  <div class="lore-box">
+    <p>
+      The Cardiff Giant did not go away when it was exposed. It changed hands among exhibitors for
+      decades and was eventually owned by a Des Moines publisher, who in 1947 sold it to the
+      Farmers' Museum in Cooperstown, New York. One account puts the price at $30,000. It is still
+      there, shown under a tent made to resemble the one on Newell's farm. P. T. Barnum's copy of it
+      survives too, and is believed to be in a mechanical-amusements museum near Detroit.
+    </p>
+  </div>
 </Section>
 
 <Section heading="What You Are Looking At">
+  <StatRow
+    stats={[
+      { num: '10\'3"', label: 'Head to instep, as measured for the 1869 exhibition pamphlet' },
+      { num: '55', label: 'Days from the dig on 16 October 1869 to Hull’s press confession' },
+      { num: '2', label: 'Rival giants advertised in one New York paper, 15 December 1869' },
+    ]}
+  />
   <p>
-    TODO — physical description and identifying features. What witnesses agree on. What varies. What
-    to look for before you know what you are looking at.
+    The Cardiff Giant is a naked male figure carved from a single block of gypsum, lying on its back
+    with the right hand across the lower abdomen and the left arm pressed behind it. The 1869
+    exhibition pamphlet gave the length from the top of the head to the instep as ten feet three
+    inches; later accounts put it at around 10 feet and about 3,000 pounds.
   </p>
+  <p>
+    The Solid Muldoon, eight years later, was smaller and stranger: about seven and a half feet
+    long, reportedly around 600 pounds, brownish, with oversized hands and feet and a short tail at
+    the base of the spine. It was not carved at all but cast — accounts describe a mortar of rock
+    dust, clay, plaster, ground bone and other organic matter, fired to harden it and give it an
+    antique look.
+  </p>
+  <div class="warning-box">
+    <div class="warn-label">⚠ Critical Field Note</div>
+    <p>
+      Fossilisation replaces tissue slowly, mineral by mineral, and almost never preserves an entire
+      soft body in recognisable form. A whole human figure in stone, with an intact face and relaxed
+      limbs, is the signature of a sculptor, not of geology. The scientists of 1869 knew this; the
+      crowds paid anyway.
+    </p>
+  </div>
 </Section>
 
 <Section heading="How It Operates">
   <p>
-    TODO — behaviour pattern. How it hunts / haunts / appears. What comes first, next, and after.
+    Every petrified-giant hoax ran on the same four stages. First, the object was made in secret,
+    far from where it would be found — the Cardiff figure in Chicago, the Muldoon reportedly in a
+    kiln in northern Pennsylvania. Second, it was buried and left long enough for the ground to look
+    undisturbed. Third, it was "discovered" by people with a plausible reason to be digging: well
+    workers at Cardiff, a local man and his son in Colorado.
+  </p>
+  <p>
+    Fourth, and most important, it was monetised immediately. Newell had a tent up and was charging
+    admission within days of the find, at first 25 cents and soon 50. A syndicate of local
+    businessmen, including David Hannum, then bought into the giant and moved it to Syracuse, and
+    accounts of what they paid run well into the tens of thousands of dollars. The show travelled,
+    and the controversy travelled with it, because controversy sold tickets.
+  </p>
+  <p>
+    The decisive move came from P. T. Barnum. When the owners would not sell or lease him the giant,
+    he had a copy made and exhibited it in New York City as the genuine article. The owners went to
+    court for an injunction; by one account the judge wanted proof that their own giant was genuine,
+    and the matter went no further. No reported case has ever been found. The phrase "there's a
+    sucker born every minute" is often attached to this quarrel, but no record of who said it, or
+    whether anyone did, has been found.
   </p>
 </Section>
 
 <Section heading="An Honest Assessment of Its Weaknesses">
+  <p>The petrified giants have exactly one weakness, and it is the same one every time: people.</p>
   <p>
-    TODO — what the accumulated evidence suggests works against it. Be honest when this section is
-    thin.
+    <strong>The science was against them from the first week.</strong> State Geologist James Hall
+    and others concluded that the Cardiff figure was a carved statue, not a fossil. Many still
+    thought it ancient, but in November 1869 Yale palaeontologist Othniel C. Marsh examined it and
+    pronounced it "of very recent origin, and a most decided humbug" — noting, among other things,
+    chisel marks that would not have survived long burial.
+  </p>
+  <p>
+    <strong>The numbers were against them.</strong> Quarrymen, carvers, carters and a farmer all had
+    to keep quiet, and the more people a hoax needs, the more people can talk. Hull confessed in the
+    press on 10 December 1869, less than two months after the dig.
+  </p>
+  <p>
+    <strong>The partners were against each other.</strong> The Muldoon was finished not by a
+    laboratory but by a disgruntled insider who went to the press, naming Hull as its maker. Hoaxes
+    that require several people to share profits tend to end in exactly this way.
+  </p>
+  <p>
+    <strong>The audience was not.</strong> That is the honest problem. Even after the experts had
+    spoken, people kept paying to see the Cardiff Giant, and Barnum's copy reportedly drew larger
+    crowds than the original. Being exposed did not stop a petrified giant from earning money. It
+    only changed what people thought they were paying for.
   </p>
 </Section>
 
 <Section heading="Six Rules That May Save Your Life">
-  <p>TODO — short intro paragraph framing the rules.</p>
+  <p>
+    Nobody's life was ever at risk from a gypsum man. These rules are about something more common —
+    being separated from your money and your good sense by a marvel that arrives conveniently
+    packaged with a ticket price.
+  </p>
   <SixRules
     rules={frontmatter.rules}
     title={frontmatter.title}
@@ -118,26 +246,113 @@ import '../../styles/pages/_draft.css';
 </Section>
 
 <Section heading="Two Cases on the Record">
-  <p>TODO — intro paragraph for the encounter section.</p>
+  <p>
+    Both cases below are documented hoaxes, recorded in the newspapers and pamphlets of their own
+    day. They are on the record because the record is how they were found out.
+  </p>
   <EncounterCard
-    id="Encounter 01 · TODO · TODO date"
-    title="TODO — encounter title"
-    meta="TODO — encounter witness / context"
+    id="Encounter 01 · Cardiff, New York · 16 October–December 1869"
+    title="The Cardiff Giant"
+    meta="George Hull · William C. Newell · Two Well-Diggers · Barnum’s Copy"
     verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    verdictLabel="Awaiting review"
+    references={[
+      {
+        text: '“The American Goliah: A Wonderful Geological Discovery” — exhibition pamphlet, Redington & Howe (1869), Project Gutenberg transcription',
+        label: 'gutenberg.org',
+        href: 'https://www.gutenberg.org/cache/epub/6869/pg6869.html',
+      },
+      {
+        text: 'New-York Tribune, 15 December 1869, p. 7 — rival giant advertisements (Library of Congress, Chronicling America)',
+        label: 'loc.gov',
+        href: 'https://www.loc.gov/resource/sn83030214/1869-12-15/ed-1/?sp=7',
+      },
+      {
+        text: 'Mark Rose — “When Giants Roamed the Earth,” Archaeology, Nov/Dec 2005',
+        label: 'archaeology.org',
+        href: 'https://archive.archaeology.org/0511/etc/giants.html',
+      },
+      {
+        text: 'Library of Congress, In Custodia Legis — “The Hoax Is On You: A Short Question About a Tall Tale” (2011)',
+        label: 'loc.gov',
+        href: 'https://blogs.loc.gov/law/2011/08/the-hoax-is-on-you-a-short-question-about-a-tall-tale/',
+      },
+    ]}
   >
-    <p>TODO — encounter prose. Real, cited account.</p>
+    <p>
+      On Saturday 16 October 1869, two men, Gideon Emmons and Henry Nichols, were digging a well on
+      William Newell's farm near Cardiff, in the town of Lafayette, when one of them struck stone.
+      By the exhibition pamphlet's account, published that same year, they dug on and uncovered the
+      face of a reclining figure. Within days it was under canvas and drawing paying crowds. The
+      pamphlet itself sets out the learned debate: Dr John F. Boynton thought it a statue made by
+      early Jesuit missionaries; Professor James Hall wrote plainly that "It is a statue, cut in
+      gypsum"; others insisted it was a true petrifaction.
+    </p>
+    <p>
+      By mid-December the affair had become a commercial war. The New-York Tribune of 15 December
+      1869 carried advertisements for two giants at once: Wood's Museum promoting "the great
+      Onondaga Giant," with a sworn statement that it was not a cast, and the Cardiff Giant's own
+      exhibitors announcing that the figure then at the State Geological Hall in Albany would open
+      at Apollo Hall from Monday 20 December. The advertisement does not say whether the Wood's
+      giant was Barnum's copy. Hull had already confessed. The owners' attempt to stop Barnum's
+      rival in court was heard but, as a Library of Congress legal researcher found, apparently
+      never reported as a decided case.
+    </p>
   </EncounterCard>
   <EncounterCard
-    id="Encounter 02 · TODO · TODO date"
-    title="TODO — second encounter title"
-    meta="TODO — second encounter witness / context"
+    id="Encounter 02 · Near Beulah, Colorado · September 1877"
+    title="The Solid Muldoon"
+    meta="William A. Conant · George Hull · P. T. Barnum · The Colorado Press"
     verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    verdictLabel="Awaiting review"
+    references={[
+      {
+        text: 'Dodge City Times, 27 October 1877, p. 8 — “The Prehistoric Man, Or the ‘Solid Muldoon’ of Colorado” (Library of Congress)',
+        label: 'loc.gov',
+        href: 'https://www.loc.gov/resource/sn84029838/1877-10-27/ed-1/?sp=8',
+      },
+      {
+        text: 'Cheyenne Daily Leader, 9 October 1877, p. 4 — local note on the Muldoon’s toes (Library of Congress)',
+        label: 'loc.gov',
+        href: 'https://www.loc.gov/resource/sn84022149/1877-10-09/ed-1/?sp=4',
+      },
+      {
+        text: 'Green-Mountain Freeman (Montpelier, Vt.), 21 November 1877, p. 1 — a Denver assayer’s rival origin story (Library of Congress)',
+        label: 'loc.gov',
+        href: 'https://www.loc.gov/resource/sn84023209/1877-11-21/ed-1/?sp=1',
+      },
+      {
+        text: 'Mark Rose — “When Giants Roamed the Earth,” Archaeology, Nov/Dec 2005',
+        label: 'archaeology.org',
+        href: 'https://archive.archaeology.org/0511/etc/giants.html',
+      },
+      {
+        text: 'Denver Public Library, Western History & Genealogy — “Solid Muldoon” (undated)',
+        label: 'denverlibrary.org',
+        href: 'https://history.denverlibrary.org/node/23721',
+      },
+    ]}
   >
-    <p>TODO — second encounter prose.</p>
+    <p>
+      In September 1877, William Conant and his son reported finding a petrified figure in the hills
+      near Beulah, Colorado. Within weeks it was on show and in the papers. The Dodge City Times of
+      27 October 1877 described a long, powerfully built man lying on his back, with very large
+      hands and feet and a short tail, about seven feet five inches long, and passed on the claim
+      that scientists dated him to a million years ago. Barnum's name was attached to it from the
+      start; later accounts say he offered $20,000 for it. Not everyone was impressed: the Cheyenne
+      Daily Leader of 9 October joked about a visitor who called it poorly chiselled statuary
+      because four of its toes were the same length.
+    </p>
+    <p>
+      Accounts of the exposure differ in detail, but agree on the shape. An insider who felt cheated
+      of his share went to the press and named George Hull, the Cardiff Giant's maker, as the man
+      behind it, working with Conant. The figure had reportedly been cast and kiln-fired in
+      Pennsylvania, shipped west by rail and buried for months before it was found. Even at the
+      time, rival stories circulated — one Vermont paper in November 1877 printed a Denver assayer's
+      claim that a local stonecutter had made it — and later sources disagree on whether the name
+      came from a popular song or the strongman William Muldoon. The original's whereabouts are
+      unknown; a replica was buried near the site in 1976.
+    </p>
   </EncounterCard>
 </Section>
 
@@ -146,8 +361,21 @@ import '../../styles/pages/_draft.css';
 <Section heading="Before You Go">
   <Outro>
     <p>
-      TODO — closing outro. Echo the cold open. Land the rules. Give the reader a parting
-      instruction.
+      The tent on Stub Newell's farm is gone, but the giant is still lying in Cooperstown, under a
+      canvas built to look like the original, and people still pay to see him. That is not a failure
+      of the exposure. It is the most honest thing about him. He was always a show about believing,
+      and the show still works once you know the trick.
+    </p>
+    <p>
+      George Hull spent over two thousand dollars and a year of waiting to prove that people would
+      believe almost anything placed in front of them with enough confidence. He was right, and then
+      he did it again in Colorado. The lesson is not that people in 1869 were foolish. It is that
+      the same arrangement — a convenient discovery, a ticket price, a respectable expert, a rival
+      who calls the other a fake — still works on everyone.
+    </p>
+    <p>
+      End of journal entry. Ask who is selling the tickets. Look for the chisel marks. And stay
+      sceptical — the bigger the marvel, the smaller the print.
     </p>
   </Outro>
 </Section>

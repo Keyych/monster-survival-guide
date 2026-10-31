@@ -18,38 +18,53 @@ sightings:
       lon: -120.75,
       year: 1997,
       label: 'Area named in the original radio claim (approximate)',
+      sourceUrl: 'https://www.dailyrecordnews.com/news/getting-to-the-bottom-of-mels-hole/article_d72b6a68-7ac2-11e1-b3ce-001a4bcf887a.html',
     }
 recordKind: reported
-recordNote: 'Working draft about a single radio claim and its retellings. Sources and claims still need checking; the story has never been independently verified.'
+recordNote:
+  An unverified call-in claim made on late-night radio in 1997, and the searches, retellings
+  and sceptical findings that followed. The calls are real; nothing shows the hole is.
 illustration:
   src: /illustrations/mels-hole.png
   alt: 'Loose ink doodle of a round hole in rocky ground ringed by stones and sagebrush, a rope trailing in.'
 dossier:
   entity: "Mel's Hole"
   origin: 'Manastash Ridge, Washington · 1997'
-  status: Draft — awaiting research
+  status: Unverified — Never Located, No Record of the Caller
   stamps:
     - '1997'
     - 'Washington'
     - 'Radio Claim'
   dangerLabel: LOW
-  dangerNote: '2/10 — No verified hole, no verified victim. The real hazard is remote, rough country and people searching it.'
+  dangerNote:
+    2/10 — No verified hole, no verified owner, no verified victim. The real hazards are old
+    mine shafts, exposed dry hills and other people's land.
 rules:
-  - title: TODO — rule 1
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 2
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 3
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 4
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 5
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 6
-    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: A radio call is a claim, not a record.
+    body: Everything about Mel's Hole traces back to one anonymous caller. Until a deed, a map or a
+      photograph turns up, treat it as a story someone told on air.
+  - title: Check the caller before the hole.
+    body:
+      Local reporters found no public record of a Mel Waters in Kittitas County. When the witness
+      cannot be found, the thing he described is no firmer.
+  - title: Test the details you can test.
+    body: A 1943 Roosevelt dime is impossible; his portrait reached the coin in 1946. One checkable
+      detail that fails tells you how to weigh the uncheckable ones.
+  - title: Real holes in these hills are mine shafts.
+    body:
+      A state geologist pointed to an old gold shaft, fenced and on private land. Never lean over,
+      climb into or drop things down any opening; the danger is the fall.
+  - title: Respect gates, fences and private land.
+    body:
+      Searchers have crossed cattle gates and ranch country for years. Stay on public trails, ask
+      permission, and leave a fence exactly as you found it.
+  - title: Prepare for the ridge, not the legend.
+    body: Manastash Ridge is open, sun-beaten sagebrush country. Carry water, a hat and a map, tell
+      someone your route, and turn back early. That is what can actually hurt you here.
 ---
 
 import Section from '../../components/Section.astro';
+import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
 import EncounterCard from '../../components/EncounterCard.astro';
 import Outro from '../../components/Outro.astro';
@@ -58,40 +73,156 @@ import '../../styles/pages/_draft.css';
 
 <Section heading="If You're Reading This">
   <p>
-    TODO — cold open. Place the reader at the scene of the encounter. Establish atmosphere. Earn
-    attention before asking for trust.
+    It is late on a winter night in February 1997, and you are awake somewhere in America with the
+    radio on. The show is Art Bell's <em>Coast to Coast AM</em> — hours of open lines, strange
+    callers and stranger stories, beamed across the country in the small hours. A man comes on the
+    line and gives his name as Mel Waters. He lives, he says, near Ellensburg, in central
+    Washington, and there is a hole on his land.
+  </p>
+  <p>
+    He describes it calmly. A round opening in the ground, a few strides across, ringed with stones.
+    Rubbish has gone into it for years and it has never filled. He once lowered a weighted fishing
+    line into it, reel after reel, until he had run out more than eighty thousand feet, and it never
+    touched bottom. Then he starts telling you what else the hole can do, and the stories get
+    stranger.
+  </p>
+  <p>
+    This is the thirty-sixth journal entry of the Monster Survival Guide. The subject is Mel's Hole
+    — not a creature, but a place that may never have existed outside a radio studio. It is an
+    unverified call-in claim, and that is how this entry treats it from first page to last.
   </p>
 </Section>
 
 <Section heading="Where It Comes From">
   <p>
-    TODO — origin section. Cultural / historical / geographic context. A creature without context is
-    a horror story; a creature with context is something a reader can understand.
+    Mel's Hole has no folklore behind it. It is not an old warning, a regional tradition or a story
+    handed down in the Kittitas Valley. It begins on a precise date: according to the Ellensburg
+    <em>Daily Record</em>, the first call to Art Bell's programme came on 21 February 1997, and the
+    caller rang back three days later. Further calls reportedly followed in 2000 and twice in 2002,
+    and the show rebroadcast the segments over the years, which kept the story alive long after the
+    first night.
   </p>
+  <p>
+    The caller never gave an exact location. He and those who later claimed to have found the hole
+    have only ever pointed to Manastash Ridge, roughly nine or ten miles west and south-west of
+    Ellensburg. In the follow-up calls the story grew a second act: federal agents, he said, had
+    taken control of the land, and he had been paid to lease it and leave — to Australia, by his
+    account. Then the calls stopped.
+  </p>
+  <div class="pull-quote">
+    This place has a name because a voice on the radio gave it one. There is no deed, no photograph
+    and no map — only a first name, a hillside, and a story told to a national audience in the
+    middle of the night. Keep that order of events in mind; it is the whole shape of this entry.
+  </div>
+  <div class="lore-box">
+    <p>
+      The story spread the way late-night radio stories did at the end of the 1990s: from the
+      broadcast to listeners, and from listeners to the early internet. By 2002 the
+      <em>Seattle Times</em> was reporting on a chat site devoted to the hole and an amateur search
+      party gathering in Ellensburg. By 2008 the Library of Congress had given it a subject heading
+      of its own — catalogued, tellingly, as a "legendary place". The one Indigenous voice often
+      quoted in the coverage, a local man known as Red Elk, speaks for himself in those reports and
+      not for any community's tradition; the hole is not part of any recorded tribal lore.
+    </p>
+  </div>
 </Section>
 
 <Section heading="What You Are Looking At">
+  <StatRow
+    stats={[
+      {
+        num: '80,000+',
+        label: 'Feet of fishing line the caller said ran out without reaching bottom',
+      },
+      { num: '0', label: 'Public records found of a Mel Waters in Kittitas County' },
+      { num: '0', label: 'Times the hole has been located by anyone who searched for it' },
+    ]}
+  />
   <p>
-    TODO — physical description and identifying features. What witnesses agree on. What varies. What
-    to look for before you know what you are looking at.
+    As described on air, the hole was about nine feet across, with smooth walls and a low ring of
+    stone around the top. Accounts of the calls give it a growing list of powers: rubbish, and in
+    some retellings dead livestock, thrown in without ever filling it; a neighbour's dead dog that
+    reappeared alive; radios near the opening picking up old broadcasts; a beam of "black light"
+    rising from it. Retellings of the calls also mention a Second World War pistol and a red
+    envelope of dimes.
   </p>
+  <p>
+    Nothing in that list has ever been seen by anyone but the caller. The physical description is
+    plain enough to match almost any open shaft in dry country; the extraordinary parts rest
+    entirely on his word. Even the details are unsettled — different reports give the depth as
+    "thousands of feet" or as more than fifteen miles, and the land as nine miles west of town or
+    ten miles south-west.
+  </p>
+  <div class="warning-box">
+    <div class="warn-label">⚠ Critical Field Note</div>
+    <p>
+      If you ever find a hole in these hills, it is not this one. The real openings in this country
+      are old mine workings — unlit, unmapped, often on private land and liable to collapse at the
+      edge. They do not need to be bottomless to kill you. Keep well back, and keep children and
+      dogs back too.
+    </p>
+  </div>
 </Section>
 
 <Section heading="How It Operates">
   <p>
-    TODO — behaviour pattern. How it hunts / haunts / appears. What comes first, next, and after.
+    Mel's Hole operates the way a broadcast does. It appears when someone rings in, it grows with
+    each new call, and it goes quiet when the calls stop. The first account was a strange hole on a
+    farm. The second added soldiers and a government cover story. By 2000, according to a 2023
+    retelling in the <em>Yakima Herald-Republic</em>, the caller was describing a lease worth three
+    million dollars a year, a kidnapping off a bus near Olympia, and twelve lost days that ended in
+    San Francisco.
+  </p>
+  <p>
+    Around that core, a second layer formed: the searchers. Since the late 1990s, listeners and
+    amateur investigators have walked Manastash Ridge with topographic maps, GPS units and metal
+    detectors. They have found cattle gates, clear-cuts and old driveways. They have not found the
+    hole. Each failed search, rather than closing the case, tends to produce a new theory about why
+    it cannot be found — most often that the government has hidden it.
+  </p>
+  <p>
+    That is the pattern worth naming. Nothing physical has ever entered the record. What has grown,
+    every few years, is the story — and a story that explains its own lack of evidence is very hard
+    to disprove and very easy to keep telling.
   </p>
 </Section>
 
 <Section heading="An Honest Assessment of Its Weaknesses">
+  <p>There is no creature here, so the honest assessment is about the claim.</p>
   <p>
-    TODO — what the accumulated evidence suggests works against it. Be honest when this section is
-    thin.
+    <strong>The witness cannot be found.</strong> Local reporters, according to the
+    <em>Daily Record</em>, found no public record that a Mel Waters lived in Kittitas County, owned
+    rural property there, or had a wife working at Central Washington University. An anonymous
+    caller who has sold the land and left the country is not a source anyone can check.
+  </p>
+  <p>
+    <strong>The geology says no.</strong> In 2002, Pat Pringle of the state Department of Natural
+    Resources told the <em>Seattle Times</em> the rock there is brittle, making so deep a hole
+    unlikely, and that the Earth's heat would snap a line long before eighty thousand feet. In 2012,
+    DNR geologist Jack Powell told the <em>Daily Record</em> that a hole that deep would collapse
+    under heat and pressure — the deepest borehole ever drilled, in Russia, reached about forty
+    thousand feet.
+  </p>
+  <p>
+    <strong>A checkable detail fails.</strong> As the <em>Yakima Herald-Republic</em> points out,
+    the caller's 1943 Roosevelt dimes cannot exist: Roosevelt did not appear on the dime until 1946,
+    and the "B" mint mark he described is not a real one. In later calls he reportedly explained
+    this with a parallel world. That explanation is itself the clearest sign of what kind of story
+    this is.
+  </p>
+  <p>
+    <strong>There is a likely real hole.</strong> Powell identified an old gold-mine shaft
+    north-west of Ellensburg — fenced, on private land, perhaps a few hundred feet deep when worked
+    — and suggested the caller probably knew of it. None of this proves a hoax by any named person.
+    It simply means the ordinary explanation needs nothing that the extraordinary one does.
   </p>
 </Section>
 
 <Section heading="Six Rules That May Save Your Life">
-  <p>TODO — short intro paragraph framing the rules.</p>
+  <p>
+    There is no hole to survive, so these rules are about not being fooled by a good story — and
+    about staying safe in real, rough country if you go looking anyway.
+  </p>
   <SixRules
     rules={frontmatter.rules}
     title={frontmatter.title}
@@ -101,26 +232,90 @@ import '../../styles/pages/_draft.css';
 </Section>
 
 <Section heading="Two Cases on the Record">
-  <p>TODO — intro paragraph for the encounter section.</p>
+  <p>
+    These two cases are the whole of it — the calls that created the story, and the searches and
+    sceptical findings that followed. Neither contains a verified hole.
+  </p>
   <EncounterCard
-    id="Encounter 01 · TODO · TODO date"
-    title="TODO — encounter title"
-    meta="TODO — encounter witness / context"
+    id="Encounter 01 · Coast to Coast AM · February 1997 onward"
+    title="The Calls"
+    meta="A caller giving the name Mel Waters · Unverified radio claim"
     verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    verdictLabel="Awaiting review"
+    references={[
+      {
+        text: 'Ellensburg Daily Record — “Getting to the bottom of Mel’s Hole,” Mike Johnston (2012)',
+        label: 'dailyrecordnews.com',
+        href: 'https://www.dailyrecordnews.com/news/getting-to-the-bottom-of-mels-hole/article_d72b6a68-7ac2-11e1-b3ce-001a4bcf887a.html',
+      },
+      {
+        text: 'Straight Dope Message Board — “What’s the crack with Mel’s Hole?” (forum thread, June 2008)',
+        label: 'straightdope.com',
+        href: 'https://boards.straightdope.com/t/whats-the-crack-with-mels-hole/454585',
+      },
+      {
+        text: 'Yakima Herald-Republic — “Myth of Mel’s Hole continues to inspire fantastic storytelling in Central WA,” Donald W. Meyers (2023)',
+        label: 'yakimaherald.com',
+        href: 'https://www.yakimaherald.com/news/local/happened/myth-of-mels-hole-continues-to-inspire-fantastic-storytelling-in-central-wa/article_54c87a28-75bc-11ee-ba4b-13c787668172.html',
+      },
+    ]}
   >
-    <p>TODO — encounter prose. Real, cited account.</p>
+    <p>
+      On 21 February 1997, a man identifying himself as Mel Waters called Art Bell's late-night
+      programme and described a hole on his rural property west of Ellensburg: roughly nine feet
+      across, impossible to fill, and deep enough to swallow more than eighty thousand feet of
+      weighted line. He added a dead dog that came back to life and radios that played programmes
+      from the past. Three days later he called again, saying the government had taken an interest
+      in the land.
+    </p>
+    <p>
+      He reportedly called again in 2000, and twice in 2002, each time adding to the story — a
+      lease, a move abroad, a kidnapping. By 2008 the claim was being picked apart on public forums:
+      posters on the Straight Dope message board argued that nylon line would fail from the heat
+      long before the claimed depth, and that no one could tell by feel when so much line had
+      reached a bottom. Those are forum arguments, not measurements, but they reached the obvious
+      problems first.
+    </p>
   </EncounterCard>
   <EncounterCard
-    id="Encounter 02 · TODO · TODO date"
-    title="TODO — second encounter title"
-    meta="TODO — second encounter witness / context"
+    id="Encounter 02 · Manastash Ridge & Ellensburg · 2001–2012"
+    title="The Searches and the Shaft"
+    meta="Amateur search parties, local press, and state geologists · Never located"
     verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    verdictLabel="Awaiting review"
+    references={[
+      {
+        text: 'Seattle Times — “Expedition seeks paranormal pit,” John Zebrowski (2002)',
+        label: 'seattletimes.com',
+        href: 'https://archive.seattletimes.com/archive/20020414/melshole14m/expedition-seeks-paranormal-pit',
+      },
+      {
+        text: 'Ellensburg Daily Record — “Getting to the bottom of Mel’s Hole,” Mike Johnston (2012)',
+        label: 'dailyrecordnews.com',
+        href: 'https://www.dailyrecordnews.com/news/getting-to-the-bottom-of-mels-hole/article_d72b6a68-7ac2-11e1-b3ce-001a4bcf887a.html',
+      },
+      {
+        text: 'KVAL — “‘Mel’s Hole’ shrouded in mystery,” Denise Whitaker (2012)',
+        label: 'kval.com',
+        href: 'https://kval.com/archive/mels-hole-shrouded-in-mystery',
+      },
+    ]}
   >
-    <p>TODO — second encounter prose.</p>
+    <p>
+      In 2001, according to the <em>Daily Record</em>, a Seattle-area online group studying the hole
+      asked DNR geologist Jack Powell about local geology. He gave them a talk, then led them to an
+      old gold-mine shaft north-west of Ellensburg and told them it was the likely root of the
+      legend. In April 2002 the <em>Seattle Times</em> followed a search party of around thirty out
+      of Ellensburg — with maps, metal detectors and a GPS unit — onto the ridge. They found
+      nothing, and the group's own sceptic, Tim Withee, called the outing "like adult cartoons."
+    </p>
+    <p>
+      Red Elk, described in the coverage as an intertribal medicine man from the Kittitas Valley,
+      told reporters his father had shown him the hole around 1961, and later said the government
+      now controlled it. A local amateur researcher interviewed by KVAL in 2012 said he had led
+      expeditions but never seen it. By 2012, Powell's conclusion was blunt: the hole on Manastash
+      Ridge does not exist. Nothing found since has changed that.
+    </p>
   </EncounterCard>
 </Section>
 
@@ -129,8 +324,21 @@ import '../../styles/pages/_draft.css';
 <Section heading="Before You Go">
   <Outro>
     <p>
-      TODO — closing outro. Echo the cold open. Land the rules. Give the reader a parting
-      instruction.
+      Mel's Hole is the only entry in this guide that began, as far as anyone can show, as a voice
+      on the radio. A man gave a first name, described a hole on a hillside, and told a national
+      audience things no one could check. Nearly thirty years later, no one has found the man, the
+      deed or the hole — only an old mine shaft behind a fence and a great many people who went
+      looking.
+    </p>
+    <p>
+      That is not a mystery so much as a lesson. A story told with confidence, at night, to people
+      who want to believe it, can outlive every attempt to find its source. The geology is settled,
+      the records are empty, and the details that can be checked do not hold. What remains is a good
+      story — and a ridge with real heat, real fences and real shafts.
+    </p>
+    <p>
+      End of journal entry. Check the caller. Stay back from the edge. And stay sceptical — the
+      deepest holes are the ones dug in the telling.
     </p>
   </Outro>
 </Section>
