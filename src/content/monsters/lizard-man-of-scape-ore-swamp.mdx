@@ -1,0 +1,140 @@
+---
+number: '39'
+entryClass: 'Swamp Humanoid'
+region: 'Bishopville, South Carolina · 1988'
+title: 'The Lizard Man of Scape Ore Swamp'
+description: 'In the summer of 1988 a teenager said a seven-foot green creature attacked his car near a South Carolina swamp. The sheriff took reports, reporters arrived, and the town sold T-shirts.'
+tags: ['1988', 'Reported sightings', 'South Carolina']
+danger: 4
+bandColor: '#3a5a2a'
+classification: 'monster survival guide  —  the lizard man of scape ore swamp'
+entryStatus: 'Active Entry'
+status: 'draft'
+season: 1
+sightings:
+  - {
+      name: 'Scape Ore Swamp, near Bishopville, SC',
+      lat: 34.22,
+      lon: -80.25,
+      year: 1988,
+      label: 'Area of the 1988 reports',
+    }
+recordKind: reported
+recordNote: 'Working draft based on reported sightings and their retellings. Sources and claims still need checking; reports do not establish that the creature exists.'
+illustration:
+  src: /illustrations/lizard-man-of-scape-ore-swamp.png
+  alt: 'Loose ink doodle of a tall upright lizard-like humanoid with three clawed fingers standing in swamp reeds.'
+dossier:
+  entity: 'The Lizard Man of Scape Ore Swamp'
+  origin: 'Bishopville, South Carolina · 1988'
+  status: Draft — awaiting research
+  stamps:
+    - '1988'
+    - 'Bishopville, SC'
+    - 'Swamp'
+  dangerLabel: GUARDED
+  dangerNote: '4/10 — Damaged-car reports, no confirmed injury. Swamp at night is the hazard: snakes, water, and getting lost.'
+rules:
+  - title: TODO — rule 1
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 2
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 3
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 4
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 5
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 6
+    body: Replace with a specific, actionable rule derived from the encounter record.
+---
+
+import Section from '../../components/Section.astro';
+import SixRules from '../../components/SixRules.astro';
+import EncounterCard from '../../components/EncounterCard.astro';
+import Outro from '../../components/Outro.astro';
+import MonsterMap from '../../components/MonsterMap.astro';
+import '../../styles/pages/_draft.css';
+
+<Section heading="If You're Reading This">
+  <p>
+    TODO — cold open. Place the reader at the scene of the encounter. Establish atmosphere. Earn
+    attention before asking for trust.
+  </p>
+</Section>
+
+<Section heading="Where It Comes From">
+  <p>
+    TODO — origin section. Cultural / historical / geographic context. A creature without context is
+    a horror story; a creature with context is something a reader can understand.
+  </p>
+</Section>
+
+<Section heading="What You Are Looking At">
+  <p>
+    TODO — physical description and identifying features. What witnesses agree on. What varies. What
+    to look for before you know what you are looking at.
+  </p>
+</Section>
+
+<Section heading="How It Operates">
+  <p>
+    TODO — behaviour pattern. How it hunts / haunts / appears. What comes first, next, and after.
+  </p>
+</Section>
+
+<Section heading="An Honest Assessment of Its Weaknesses">
+  <p>
+    TODO — what the accumulated evidence suggests works against it. Be honest when this section is
+    thin.
+  </p>
+</Section>
+
+<Section heading="Six Rules That May Save Your Life">
+  <p>TODO — short intro paragraph framing the rules.</p>
+  <SixRules
+    rules={frontmatter.rules}
+    title={frontmatter.title}
+    number={frontmatter.number}
+    pocketHref={
+      frontmatter.status === 'draft'
+        ? `/drafts/lizard-man-of-scape-ore-swamp/pocket/`
+        : `/pocket/lizard-man-of-scape-ore-swamp/`
+    }
+  />
+</Section>
+
+<Section heading="Two Cases on the Record">
+  <p>TODO — intro paragraph for the encounter section.</p>
+  <EncounterCard
+    id="Encounter 01 · TODO · TODO date"
+    title="TODO — encounter title"
+    meta="TODO — encounter witness / context"
+    verdict="draft"
+    verdictLabel="Awaiting research"
+    references={[{ text: 'TODO — primary source to be checked' }]}
+  >
+    <p>TODO — encounter prose. Real, cited account.</p>
+  </EncounterCard>
+  <EncounterCard
+    id="Encounter 02 · TODO · TODO date"
+    title="TODO — second encounter title"
+    meta="TODO — second encounter witness / context"
+    verdict="draft"
+    verdictLabel="Awaiting research"
+    references={[{ text: 'TODO — primary source to be checked' }]}
+  >
+    <p>TODO — second encounter prose.</p>
+  </EncounterCard>
+</Section>
+
+<MonsterMap title={frontmatter.title} sightings={frontmatter.sightings} />
+
+<Section heading="Before You Go">
+  <Outro>
+    <p>
+      TODO — closing outro. Echo the cold open. Land the rules. Give the reader a parting
+      instruction.
+    </p>
+  </Outro>
+</Section>
