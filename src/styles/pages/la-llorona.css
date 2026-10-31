@@ -1,0 +1,16 @@
+/* Theme tokens for /la-llorona. Shared layout rules live in field-manual.css.
+   Palette: a river at night — cold blue-grey water, pale veil, and a thread of marigold. */
+:root {
+  --paper: #e3e4e6;
+  --aged: #cbced4;
+  --ink: #12151c;
+  --faded: #3f4655;
+  --stamp-red: #84241a;
+  --stamp-blue: #3a4a6a;
+  --accent: #3a4a6a;
+  --redact: #0c0f15;
+  --margin: #4c5670;
+  --highlight: #c98a1e;
+  --rule: rgba(18, 21, 28, 0.12);
+  --warn: #84241a;
+}

@@ -9,7 +9,8 @@ danger: 9
 bandColor: '#6a2a0a'
 classification: 'monster survival guide  —  the beast of gévaudan'
 entryStatus: 'Active Entry'
-status: 'draft'
+status: 'published'
+publishDate: '2026-10-31'
 season: 1
 sightings:
   - {
@@ -17,121 +18,328 @@ sightings:
       lat: 44.85,
       lon: 3.45,
       year: 1764,
-      label: 'Core area of the attacks',
+      label: 'Core area of the attacks · upland Lozère and Haute-Loire, 1764–1767',
     }
   - {
-      name: 'Mont Mouchet',
-      lat: 45.03,
-      lon: 3.43,
+      name: 'Villaret, Chanaleilles',
+      lat: 44.86,
+      lon: 3.49,
+      year: 1765,
+      label: 'Jacques Portefaix and seven other children drive the animal off · 12 January 1765',
+      sourceUrl: 'https://en.wikipedia.org/wiki/Beast_of_G%C3%A9vaudan',
+    }
+  - {
+      name: 'Paulhac-en-Margeride',
+      lat: 44.95,
+      lon: 3.38,
+      year: 1765,
+      label: 'Marie-Jeanne Valet, servant to the parish priest, wounds the animal · August 1765',
+      sourceUrl: 'https://en.wikipedia.org/wiki/Beast_of_G%C3%A9vaudan',
+    }
+  - {
+      name: 'Abbaye des Chazes (Saint-Julien-des-Chazes)',
+      lat: 45.05,
+      lon: 3.58,
+      year: 1765,
+      label: 'François Antoine shoots the "wolf of Chazes" · September 1765',
+      sourceUrl: 'https://en.wikipedia.org/wiki/Beast_of_G%C3%A9vaudan',
+    }
+  - {
+      name: "La Sogne d'Auvers, Mont Mouchet",
+      lat: 44.99,
+      lon: 3.4,
       year: 1767,
-      label: 'Area where a large animal was killed in 1767',
+      label: 'Jean Chastel shoots a large wolf during the Marquis d’Apcher’s hunt · 19 June 1767',
+      sourceUrl: 'https://en.wikipedia.org/wiki/Beast_of_G%C3%A9vaudan',
     }
 recordKind: reported
-recordNote: 'Working draft based on eighteenth-century records and later histories. Casualty figures, dates, and sources still need checking. The deaths are documented; a monster is not.'
+recordNote: Parish burial records, royal correspondence, newspaper reports and later histories
+  of the attacks in Gévaudan, 1764–1767. The deaths are documented; a monster is not.
 illustration:
   src: /illustrations/beast-of-gevaudan.png
   alt: 'Loose ink doodle of a huge snarling wolf-like beast with a bristling back and clawed forepaws.'
 dossier:
   entity: 'The Beast of Gévaudan'
   origin: 'Gévaudan, France · 1764–1767'
-  status: Draft — awaiting research
+  status: Closed — Attacks Ended After June 1767
   stamps:
     - 'Gévaudan'
     - '1764–1767'
     - 'Royal Hunt'
   dangerLabel: EXTREME
-  dangerNote: '9/10 — Documented fatal attacks over three years. Likely one or more large wolves, but the record is a real death toll.'
+  dangerNote: '9/10 — Roughly a hundred deaths over three years, most of them children and young
+    women. Most likely wolves; either way, the death toll is real.'
 rules:
-  - title: TODO — rule 1
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 2
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 3
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 4
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 5
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 6
-    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: Do not send children out alone.
+    body: Most of the dead were children and young women minding livestock on open pasture. The
+      children of Villaret survived because there were eight of them and they stayed together.
+  - title: Carry something long and pointed.
+    body: Sticks and pikes drove the animal off in January 1765; a blade on a pole wounded it in
+      August. Reach kept these people alive.
+  - title: Fight back. Do not run.
+    body: The survivors on record held their ground and struck at it. Running turns you into prey
+      the animal can catch.
+  - title: Watch the edges of the day.
+    body: Witnesses describe an ambush hunter working at dawn and dusk, going for the throat. Those
+      hours, at the edge of woods and rough pasture, carried the most risk.
+  - title: One dead wolf is not the end of it.
+    body: Antoine's wolf was stuffed and sent to Versailles in 1765, and the killing started again
+      within months. Keep your guard up until the deaths actually stop.
+  - title: Wolves, not werewolves.
+    body: The likeliest culprits are one or more wolves, perhaps hybrids. Today the main danger in
+      wolf country is the terrain and the weather. Treat a wild wolf with respect and keep your
+      distance.
 ---
 
 import Section from '../../components/Section.astro';
+import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
 import EncounterCard from '../../components/EncounterCard.astro';
 import Outro from '../../components/Outro.astro';
 import MonsterMap from '../../components/MonsterMap.astro';
-import '../../styles/pages/_draft.css';
+import '../../styles/pages/beast-of-gevaudan.css';
 
 <Section heading="If You're Reading This">
   <p>
-    TODO — cold open. Place the reader at the scene of the encounter. Establish atmosphere. Earn
-    attention before asking for trust.
+    It is the summer of 1764, and you are a child in the Margeride, the high granite country of
+    southern France. You spend your days on the open pasture with the family's cattle or sheep, a
+    long way from the nearest farmhouse, because that is what children do here. The grass is thin,
+    and the woods come right down to the meadows.
+  </p>
+  <p>
+    Something has started taking people from the pastures. It is bigger than the wolves everyone
+    knows, people say. It comes out of the broom and the pine at the start or the end of the day,
+    and it goes for the throat. Your parents still send you out, because the animals have to eat.
+    You keep a stick close and watch the treeline.
+  </p>
+  <p>
+    This is the thirty-fourth journal entry of the Monster Survival Guide. The subject is the Beast
+    of Gévaudan, the most heavily documented man-eater in European history. Unlike most entries in
+    this guide, this one has a body count written into parish registers. It is not a ghost story. It
+    is a record of real deaths and a long argument about what caused them.
   </p>
 </Section>
 
 <Section heading="Where It Comes From">
   <p>
-    TODO — origin section. Cultural / historical / geographic context. A creature without context is
-    a horror story; a creature with context is something a reader can understand.
+    Gévaudan was an old province of southern France, roughly the modern département of Lozère, with
+    the attacks spilling over into parts of Haute-Loire. In the 1760s it was poor, remote and
+    mountainous, a landscape of small farms where livestock grazed on open upland and children did
+    much of the herding.
   </p>
+  <p>
+    The first recorded death came on 30 June 1764, when a fourteen-year-old shepherd girl, Jeanne
+    Boulet, was killed near Langogne. Her burial entry, written the next day, says she was buried
+    without the sacraments, and it names her killer as the ferocious beast. More deaths followed
+    through that summer and autumn. By early 1765 they were spread over roughly 700 square miles,
+    which already suggested to some that more than one animal was involved.
+  </p>
+  <div class="pull-quote">
+    The Beast did not come from folklore. It came from the burial registers and the newspapers. Its
+    name came from people who could not believe an ordinary wolf would behave like this.
+  </div>
+  <div class="lore-box">
+    <p>
+      The story spread because of when it happened. The Seven Years' War had ended in 1763, and
+      François Morénas, editor of the <em>Courrier d'Avignon</em>, began running sensational reports
+      of the attacks as everyday incident stories. They made the Beast a national obsession.
+      Historian Jay M. Smith, in <em>Monsters of the Gévaudan</em> (2011), argues that the Beast was
+      most likely several large wolves, and that press coverage and national hysteria created the
+      legend.
+    </p>
+  </div>
 </Section>
 
 <Section heading="What You Are Looking At">
+  <StatRow
+    stats={[
+      { num: '~100', label: 'Deaths most often cited; published tallies run from about 60 to 113' },
+      { num: '3', label: 'Years of attacks, from June 1764 to June 1767' },
+      { num: '2', label: 'Large wolves killed and credited as "the Beast," in 1765 and 1767' },
+    ]}
+  />
   <p>
-    TODO — physical description and identifying features. What witnesses agree on. What varies. What
-    to look for before you know what you are looking at.
+    Nobody agrees on the exact number of victims, and the honest answer is a range. National
+    Geographic gives as many as 100 dead, noting that some sources claim up to 300 victims. One
+    often-cited 1987 tally counts 210 attacks, 113 deaths and 49 injuries. Other counts put the dead
+    at 60 to 100. Brian Dunning of Skeptoid concludes that modern analyses support a figure of about
+    100. Wherever the figure lands, most of the dead were children and young women.
   </p>
+  <p>
+    Witnesses described an animal about the size of a calf, sometimes said to be as big as a horse,
+    with a reddish-grey coat, a dark stripe down its back and a long tail. They kept saying it was
+    wolf-like but not quite a wolf; Smith sums up the reports as "like a wolf, yet not a wolf." The
+    captain who led the first hunt went further and wrote that it was "a monster whose father is a
+    lion."
+  </p>
+  <div class="warning-box">
+    <div class="warn-label">⚠ Critical Field Note</div>
+    <p>
+      Most witnesses saw it for a few seconds, while it was attacking someone, and they were
+      terrified. Fear makes an animal look bigger, and in this case no one doubted the danger was
+      real. Treat the size estimates and the stripes with caution. The burial records are a far more
+      reliable source.
+    </p>
+  </div>
 </Section>
 
 <Section heading="How It Operates">
   <p>
-    TODO — behaviour pattern. How it hunts / haunts / appears. What comes first, next, and after.
+    The pattern in the record is consistent and grim. The attacks fell mostly on people working
+    alone or in small groups on open pasture: shepherd girls, young cowherds, women carrying out
+    farm work. Accounts describe an ambush hunter that came out of cover at dawn and dusk and seized
+    its victims by the throat. Cattle herds sometimes protected the people tending them.
+  </p>
+  <p>
+    The hunting campaigns are part of the record too. Captain Jean-Baptiste Duhamel organised the
+    first large hunts along military lines, with thousands of volunteers, poisoned bait and soldiers
+    dressed as peasant women. In February 1765 the d'Ennevals arrived, a father and son from
+    Normandy. They were professional wolf hunters, and the father claimed to have killed some 1,200
+    wolves. They brought bloodhounds and achieved nothing. In June 1765 the king replaced them with
+    François Antoine, his own gun-bearer and Lieutenant of the Hunt, then about seventy.
+  </p>
+  <p>
+    Antoine got his wolf in September, and for about two months the killing stopped. Then it began
+    again. Smaller numbers died through 1766 and the first half of 1767, until the hunt of June 1767
+    and a second large wolf. After that, the attacks ended.
   </p>
 </Section>
 
 <Section heading="An Honest Assessment of Its Weaknesses">
   <p>
-    TODO — what the accumulated evidence suggests works against it. Be honest when this section is
-    thin.
+    The record does tell you what worked against this animal, which is more than most entries in
+    this guide can say.
+  </p>
+  <p>
+    <strong>It could be driven off.</strong> In the best-documented survivals, people stood together
+    and fought back with sticks, pikes, or a blade on a pole. Cattle herds that closed ranks
+    protected their herders. Several people the animal attacked lived to describe it.
+  </p>
+  <p>
+    <strong>It could be killed.</strong> Dunning argues that two large wolves were killed, one in
+    1765 and one in 1767, and that this is what ended the attacks. The notary Étienne Marin, who
+    wrote up the 1767 animal, described it as appearing to be "a wolf, but an extraordinary one."
+  </p>
+  <p>
+    <strong>The wolf explanation fits better than the alternatives.</strong> Most historians,
+    including Smith and Jean-Marc Moriceau, accept wolves, perhaps several of them, as the main
+    cause. Moriceau's research documents thousands of wolf attacks on people across early-modern
+    France, and he has argued that comparable episodes elsewhere were sometimes worse. A wolf-dog
+    hybrid is a credible refinement: Dunning thinks hybridisation likely, but there is no direct
+    evidence. Biologist Karl-Hans Taake has argued for an escaped young lion. A striped hyena, a war
+    dog in armour and a werewolf have all been proposed. None of these has any physical evidence
+    behind it, and none is needed to explain the record.
+  </p>
+  <p>
+    <strong>Rabies does not fit well.</strong> A rabid wolf is aggressive, but people bitten by one
+    almost always die of rabies. Many survivors of these attacks did not, which makes rabies a poor
+    match for the pattern.
   </p>
 </Section>
 
 <Section heading="Six Rules That May Save Your Life">
-  <p>TODO — short intro paragraph framing the rules.</p>
+  <p>
+    These rules come from the people who survived the Beast, and from the long gap between the first
+    wolf killed and the end of the attacks. Wolves are back in France today. The rules are about
+    respect, not panic.
+  </p>
   <SixRules
     rules={frontmatter.rules}
     title={frontmatter.title}
     number={frontmatter.number}
-    pocketHref={
-      frontmatter.status === 'draft'
-        ? `/drafts/beast-of-gevaudan/pocket/`
-        : `/pocket/beast-of-gevaudan/`
-    }
+    pocketHref="/pocket/beast-of-gevaudan/"
   />
 </Section>
 
 <Section heading="Two Cases on the Record">
-  <p>TODO — intro paragraph for the encounter section.</p>
+  <p>
+    The record holds about a hundred deaths, and those belong to the families who lost people, not
+    to this guide. The two cases here are about the people who fought back and the hunters who
+    finally stopped the attacks.
+  </p>
   <EncounterCard
-    id="Encounter 01 · TODO · TODO date"
-    title="TODO — encounter title"
-    meta="TODO — encounter witness / context"
-    verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    id="Encounter 01 · Villaret & Paulhac, Gévaudan · January & August 1765"
+    title="The Children of Villaret and the Maid of Gévaudan"
+    meta="Jacques Portefaix and Seven Companions · Marie-Jeanne Valet"
+    verdict="documented"
+    verdictLabel="Historically Documented"
+    references={[
+      {
+        text: 'History.com — “What Was the Beast of Gévaudan?”, Joseph A. Williams (2020)',
+        label: 'history.com',
+        href: 'https://www.history.com/news/beast-gevaudan-france-theories',
+      },
+      {
+        text: 'National Geographic — “Did a ‘werewolf’ really terrorize France in the 1700s?” (2021)',
+        label: 'nationalgeographic.com',
+        href: 'https://www.nationalgeographic.com/history/history-magazine/article/did-a-werewolf-really-terrorize-france-in-the-1700s',
+      },
+      {
+        text: 'Wikipedia — “Beast of Gévaudan” (cites the 1765 royal rewards and parish records)',
+        label: 'wikipedia.org',
+        href: 'https://en.wikipedia.org/wiki/Beast_of_G%C3%A9vaudan',
+      },
+    ]}
   >
-    <p>TODO — encounter prose. Real, cited account.</p>
+    <p>
+      On 12 January 1765, near the hamlet of Villaret in the parish of Chanaleilles, the animal
+      attacked a group of eight children, aged between about eight and twelve, who were out with
+      cattle. Among them was ten-year-old Jacques Portefaix. The children did not run. They stayed
+      together and used sticks and pikes to drive the animal off. When word reached Versailles,
+      Louis XV rewarded them: 300 livres went to Portefaix and 350 were shared among the others. By
+      most accounts the crown also paid for Portefaix's education.
+    </p>
+    <p>
+      The second account comes from that August. Accounts disagree on the exact date, but most give
+      11 August 1765. Marie-Jeanne Valet, a woman of about twenty who worked as a servant to the
+      parish priest of Paulhac, was crossing a stream with her sister when the animal attacked. She
+      drove a blade fixed to a pole into its chest, and it fled. Antoine, the king's hunter, later
+      called her the Maid of Gévaudan, and a statue of her now stands in the village of Auvers. Both
+      survivals were celebrated, and both show the animal could be beaten off.
+    </p>
   </EncounterCard>
   <EncounterCard
-    id="Encounter 02 · TODO · TODO date"
-    title="TODO — second encounter title"
-    meta="TODO — second encounter witness / context"
-    verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    id="Encounter 02 · Chazes & Mont Mouchet · 1765 & 1767"
+    title="The Two Wolves"
+    meta="François Antoine at the Abbaye des Chazes · Jean Chastel at La Sogne d'Auvers"
+    verdict="documented"
+    verdictLabel="Documented — Identity Disputed"
+    references={[
+      {
+        text: 'Skeptoid #732 — “Hunting the Beast of Gevaudan,” Brian Dunning (2020)',
+        label: 'skeptoid.com',
+        href: 'https://skeptoid.com/episodes/732',
+      },
+      {
+        text: 'History.com — “What Was the Beast of Gévaudan?”, Joseph A. Williams (2020)',
+        label: 'history.com',
+        href: 'https://www.history.com/news/beast-gevaudan-france-theories',
+      },
+      {
+        text: 'Outdoor Life — “The Mysterious Man-Eating Beast of Gévaudan,” Bjorn Dihle (updated 2023)',
+        label: 'outdoorlife.com',
+        href: 'https://www.outdoorlife.com/hunting/man-eating-beast-of-gevaudan/',
+      },
+    ]}
   >
-    <p>TODO — second encounter prose.</p>
+    <p>
+      In late September 1765, sources differ between the 20th and the 21st, François Antoine shot a
+      very large grey wolf near the Abbaye des Chazes. His nephew helped finish it. The animal was
+      reportedly about 1.7 metres long and weighed around 60 kilograms. Villagers said they
+      recognised scars from earlier hunters' shots. It was stuffed, sent to Versailles and put on
+      display, and Antoine was paid and honoured. He also killed a female and a young wolf he took
+      to be part of the same family. About two months later, the attacks resumed.
+    </p>
+    <p>
+      The end came on 19 June 1767, during a hunt organised by the Marquis d'Apcher on the slopes of
+      Mont Mouchet, at a spot now called La Sogne d'Auvers. A local farmer and hunter, Jean Chastel,
+      shot a large wolf. Antoine had once had him jailed during the earlier hunts. The carcass was
+      cut open before a surgeon arrived. Marin's report records the head of a child's thigh bone in
+      its stomach, and scars matching wounds reported from earlier encounters. By one later account
+      the remains were taken to Paris, judged to be only a big wolf, and buried quickly because of
+      the smell. The later story that Chastel used a blessed silver bullet is legend, not record.
+      After that June, the attacks stopped.
+    </p>
   </EncounterCard>
 </Section>
 
@@ -140,8 +348,20 @@ import '../../styles/pages/_draft.css';
 <Section heading="Before You Go">
   <Outro>
     <p>
-      TODO — closing outro. Echo the cold open. Land the rules. Give the reader a parting
-      instruction.
+      The Beast of Gévaudan is the rare entry where the danger was never in doubt. Children on open
+      pasture really were killed, the priests who buried them wrote it down, and the king's hunters
+      really did fail for more than a year. What remains uncertain is only the animal. It was most
+      likely a wolf, or several wolves, possibly with dog in the bloodline, and it became a monster
+      in the telling.
+    </p>
+    <p>
+      The people worth remembering are the ones who survived it: eight children who would not run,
+      and a young servant with a blade on a pole. They were frightened, they stayed together, they
+      used whatever they could reach, and they lived.
+    </p>
+    <p>
+      End of journal entry. Stay together. Keep something long within reach. And remember that the
+      worst monsters in the record are usually real animals that people failed to stop.
     </p>
   </Outro>
 </Section>

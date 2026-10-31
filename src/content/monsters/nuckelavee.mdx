@@ -9,115 +9,332 @@ danger: 7
 bandColor: '#5a2a24'
 classification: 'monster survival guide  —  the nuckelavee'
 entryStatus: 'Active Entry'
-status: 'draft'
+status: 'published'
+publishDate: '2026-10-31'
 season: 1
 sightings:
-  - { name: 'Orkney Mainland', lat: 59.0, lon: -3.1, label: 'Island traditions of the Nuckelavee' }
-  - { name: 'Sanday, Orkney', lat: 59.25, lon: -2.57, label: 'North Isles folklore cluster' }
+  - {
+      name: 'West Brough, Sanday, Orkney',
+      lat: 59.25,
+      lon: -2.57,
+      year: 1891,
+      label: 'Home of W. Traill Dennison, who recorded the Nuckelavee lore and the Tammas account',
+      sourceUrl: 'https://archive.org/details/scottishantiquar57edin',
+    }
+  - {
+      name: 'Stronsay, Orkney',
+      lat: 59.1,
+      lon: -2.61,
+      label: 'Named by Dennison as the island where kelp was first made, and where the creature first struck horses',
+      sourceUrl: 'https://archive.org/details/scottishantiquar57edin',
+    }
+  - {
+      name: 'Stenness, Orkney Mainland',
+      lat: 58.99,
+      lon: -3.21,
+      year: 1768,
+      label: 'Kirk session record of a Harray man who lost his horse to "the Mortasheen"',
+      sourceUrl: 'https://dsl.ac.uk/entry/snd/mortercheyn',
+    }
 recordKind: folklore
-recordNote: 'Working draft about folklore and tradition. Sources still need checking, especially the nineteenth-century Orkney accounts. The doodle is an imagined interpretation.'
+recordNote: Folklore recorded in Orkney in the nineteenth century, chiefly by W. Traill Dennison.
+  The tradition and the island hardships it explained are real; the creature is not established by
+  either.
 illustration:
   src: /illustrations/nuckelavee.png
   alt: 'Loose ink doodle of a skinless horse with a gaunt, long-armed rider’s torso growing from its back.'
 dossier:
   entity: 'The Nuckelavee'
   origin: 'Orkney Islands, Scotland'
-  status: Draft — awaiting research
+  status: Folklore Record — Collected in Orkney, Printed 1890–91
   stamps:
     - 'Orkney'
     - 'Sea Lore'
     - 'Running Water'
   dangerLabel: HIGH
-  dangerNote: '7/10 — In the lore, a bringer of sickness and crop failure. Fresh running water is the one recorded defence.'
+  dangerNote:
+    7/10 — In the lore, the most feared being in the islands, blamed for blight, drought and
+    plague. In the record, one man's narrow escape and no body.
 rules:
-  - title: TODO — rule 1
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 2
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 3
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 4
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 5
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 6
-    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: Read the tale as a record of losses.
+    body:
+      Dennison's informants blamed the creature for blight, drought, epidemics and stock lost over
+      the cliffs. Those losses were real. The story is how islanders explained them.
+  - title: The shore road is dangerous enough.
+    body: Tammas met it on a moonless coast road pinned between sea and loch. Walk narrow shoreline
+      paths in daylight where you can, carry a light, and know the tide.
+  - title: Running water is a story rule.
+    body:
+      In the account, Tammas escapes by leaping a burn the creature will not cross. Note it as the
+      lore's one defence; do not mistake it for a field method.
+  - title: Don't run blind on a dark shore.
+    body: Tammas fled at full tilt and fell senseless on the far bank. Real coastal accidents happen
+      that way. Slow down near rock edges and moving water.
+  - title: A sick horse needs a vet, not a legend.
+    body:
+      Mortasheen, the horse plague blamed on kelp smoke, was glanders, a real infectious disease.
+      Even in 1729, Banff ordered infected horses kept indoors. Isolate the animal and get help.
+  - title: Check the evidence before you blame.
+    body:
+      When Stronsay blamed kelp smoke for famine in 1742, men wrecked kilns and were tried for it.
+      Hard years look for a culprit. Find the real cause first.
 ---
 
 import Section from '../../components/Section.astro';
+import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
 import EncounterCard from '../../components/EncounterCard.astro';
 import Outro from '../../components/Outro.astro';
 import MonsterMap from '../../components/MonsterMap.astro';
-import '../../styles/pages/_draft.css';
+import '../../styles/pages/nuckelavee.css';
 
 <Section heading="If You're Reading This">
   <p>
-    TODO — cold open. Place the reader at the scene of the encounter. Establish atmosphere. Earn
-    attention before asking for trust.
+    It is late, and you are walking home along an Orkney shore road with no moon. The stars are out,
+    so you can see a little: on your left the sea, black and moving; on your right a fresh-water
+    loch, flat and still. The road between them is narrow. There is no turning off it.
+  </p>
+  <p>
+    Something big is coming towards you along that road. It is shaped like a horse, but too large,
+    and there is something sitting on it that does not sit the way a rider sits. It seems to grow
+    out of the horse's back. As it comes closer you see that neither of them has any skin. You
+    cannot go left or right, and you have heard that turning your back on a thing like this is the
+    worst choice of all.
+  </p>
+  <p>
+    This is the thirty-first journal entry of the Monster Survival Guide. The subject is the
+    Nuckelavee, the creature Orkney people feared above all others. It was never photographed or
+    caught, and there is only one detailed encounter on record. But it was blamed for a great deal
+    of real suffering in the islands, and that is where it is worth your attention.
   </p>
 </Section>
 
 <Section heading="Where It Comes From">
   <p>
-    TODO — origin section. Cultural / historical / geographic context. A creature without context is
-    a horror story; a creature with context is something a reader can understand.
+    Almost everything we know about the Nuckelavee comes from one man. Walter Traill Dennison, who
+    signed his letters from West Brough on the island of Sanday, collected stories from older
+    islanders, whom he called his old informers. In 1890 and 1891 he printed a series of notes on
+    Orkney sea myths in <em>The Scottish Antiquary, or, Northern Notes and Queries</em>. The
+    Nuckelavee was the fourth of them. Ten years later, George Douglas reprinted the account in{' '}
+    <em>Scottish Fairy and Folk Tales</em> (1901), and most later retellings come from that version.
   </p>
+  <p>
+    Dennison would not guess at where the name came from, beyond saying it would be obvious to
+    readers who knew northern mythology. In plain English, he wrote, it meant Devil of the Sea. He
+    also wrote that it was considered unlucky, if not unsafe, to say the name without adding a short
+    prayer straight afterwards. Other Orkney spirits were spoken of with something like fondness.
+    This one, in his words, was "a monster of unmixed malignity". People mentioned it quietly, and
+    only when they had to.
+  </p>
+  <div class="pull-quote">
+    The Nuckelavee is not a creature people claimed to see often. It is a creature people used to
+    explain things: a ruined crop, a dead horse, a summer with no rain. Most of the record describes
+    what it was blamed for, not what it did.
+  </div>
+  <p>
+    Dennison also places it inside a larger belief about the sea. In his account, only two things
+    kept it from emptying Orkney of people altogether: the Mither of the Sea in summer, and in
+    winter its own terror of fresh water.
+  </p>
+  <div class="lore-box">
+    <p>
+      In Dennison's notes the Sea Mither is a great, kindly power who gives life to every creature
+      in the sea. Her rival is Teran, a name he glosses as Orkney dialect for furious anger. Each
+      spring, around the equinox gales, the two fight in what islanders called the Vore Tullye, the
+      spring struggle, and Teran is bound at the bottom of the sea. Each autumn the worn-out Mither
+      loses the Gore Vellye, Teran breaks free, and winter comes. Dennison adds that neither of them
+      was ever seen. It is a way of explaining the seasons, and the Nuckelavee lives inside it.
+    </p>
+  </div>
 </Section>
 
 <Section heading="What You Are Looking At">
+  <StatRow
+    stats={[
+      {
+        num: '1891',
+        label: 'Year Dennison’s Nuckelavee account was printed in the Scottish Antiquary',
+      },
+      { num: '1', label: 'Eye, red as fire, in the only detailed encounter' },
+      { num: '3 ft', label: 'Rough width of the rider’s head, compared to a coil of straw rope' },
+    ]}
+  />
   <p>
-    TODO — physical description and identifying features. What witnesses agree on. What varies. What
-    to look for before you know what you are looking at.
+    Dennison gives two descriptions, and they do not fully match. The general one is a rider on a
+    horse as terrible as itself, and he notes that some people believed horse and rider were one
+    body. The head is like a man's but ten times larger, the mouth sticks out like a pig's snout and
+    is enormously wide, and there is no skin anywhere. You can see black blood moving in the veins
+    and white sinews working as it moves.
   </p>
+  <p>
+    The version from Tammas's encounter adds detail. The lower half is a great horse with flaps like
+    fins about its legs, a mouth as wide as a whale's, breath like steam from a brewing kettle, and
+    a single red eye. The upper half is a huge man with no legs who seems to grow out of the horse's
+    back. His arms reach nearly to the ground, and his head, the size of a coil of straw rope about
+    three feet across, rolls from shoulder to shoulder as if it might fall off. The blood is black
+    as tar in yellow veins, and the sinews are as thick as horse tethers.
+  </p>
+  <div class="warning-box">
+    <div class="warn-label">⚠ Critical Field Note</div>
+    <p>
+      Nearly every vivid detail of the Nuckelavee goes back to a single account, given unwillingly
+      by one old man, written down by one collector and then reprinted many times. Modern pictures
+      that look certain are copying that account, not adding to it. If you see a confident
+      description somewhere, trace it back to 1891 before you trust it.
+    </p>
+  </div>
 </Section>
 
 <Section heading="How It Operates">
   <p>
-    TODO — behaviour pattern. How it hunts / haunts / appears. What comes first, next, and after.
+    In the lore, the Nuckelavee lives in the sea and comes onto land to do harm. Dennison lists what
+    it was blamed for: crops spoiled by salt wind or mildew, livestock that fell from the cliffs
+    along the shore, and epidemics among people and animals. Its breath was said to be venom that
+    withered plants and spread disease. It was also blamed for long droughts, because it disliked
+    fresh water and was never known to come ashore while it was raining.
+  </p>
+  <p>
+    It also had a particular grievance. According to Dennison, the burning of seaweed for kelp
+    enraged it. It took revenge by striking the horses of Stronsay, which he names as the first
+    Orkney island to make kelp, with a deadly disease that spread to every island where kelp was
+    made. That disease was called Mortasheen. This is the point where the legend touches recorded
+    history. Kelp burning was real, Orkney horses really did die of Mortasheen, and the smoke really
+    was resented. All three are covered below.
+  </p>
+  <p>
+    There is no pattern of repeated sightings. The Nuckelavee behaves less like an animal with
+    habits and more like a cause people assigned to bad seasons. Its "operation" is the islanders'
+    reasoning about hardship: when things went badly wrong at the edge of the sea, something from
+    the sea was responsible.
   </p>
 </Section>
 
 <Section heading="An Honest Assessment of Its Weaknesses">
+  <p>The tradition gives it two weaknesses, and they are worth stating plainly.</p>
   <p>
-    TODO — what the accumulated evidence suggests works against it. Be honest when this section is
-    thin.
+    <strong>Fresh water.</strong> This is the one defence the record agrees on. Dennison says it
+    feared fresh water and avoided land in the rain. In Tammas's account, a splash of loch water on
+    its foreleg makes the horse shy away, and a stream running from the loch to the sea is a line it
+    will not cross. In folklore terms the logic holds together: a creature of salt water, kept back
+    by fresh.
+  </p>
+  <p>
+    <strong>The Sea Mither.</strong> In summer, Dennison says, she restrained it. As a protection,
+    that depends on believing in the whole system of sea myth he recorded. It explains the seasons.
+    It does not tell anyone what to do.
+  </p>
+  <p>
+    <strong>The honest weakness is the record itself.</strong> There is one detailed encounter, from
+    a reluctant witness whose full name was never given, with no date or place. Nothing was found
+    and nothing else was seen. The physical claims, a horse plague and failing crops, have ordinary
+    explanations that were known at the time. Mortasheen is the old Scots name for glanders, a
+    disease of horses, and Scottish authorities were dealing with it in the 1720s. A real infection
+    and an eighteenth-century famine are enough to account for the evidence. A creature is not
+    needed.
   </p>
 </Section>
 
 <Section heading="Six Rules That May Save Your Life">
-  <p>TODO — short intro paragraph framing the rules.</p>
+  <p>
+    You will not meet the Nuckelavee. You may well walk a dark Orkney shore, keep horses, or live
+    through a bad year and look for something to blame. These rules are for those situations, and
+    they come straight from what the record actually describes.
+  </p>
   <SixRules
     rules={frontmatter.rules}
     title={frontmatter.title}
     number={frontmatter.number}
-    pocketHref={
-      frontmatter.status === 'draft' ? `/drafts/nuckelavee/pocket/` : `/pocket/nuckelavee/`
-    }
+    pocketHref="/pocket/nuckelavee/"
   />
 </Section>
 
 <Section heading="Two Cases on the Record">
-  <p>TODO — intro paragraph for the encounter section.</p>
+  <p>
+    One of these cases is the only detailed encounter in the record. The other is where the legend
+    meets documented Orkney history: an industry, a disease, and an island that went looking for
+    someone to blame.
+  </p>
   <EncounterCard
-    id="Encounter 01 · TODO · TODO date"
-    title="TODO — encounter title"
-    meta="TODO — encounter witness / context"
-    verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    id="Encounter 01 · Orkney · printed 1891"
+    title="Tammas and the Loch Road"
+    meta="An unnamed old man's account · Recorded by W. Traill Dennison of Sanday"
+    verdict="folklore"
+    verdictLabel="Collected Folklore"
+    references={[
+      {
+        text: 'W. Traill Dennison — “Orkney Folklore, Sea Myths,” The Scottish Antiquary, or, Northern Notes & Queries, vol. V (1890–91), pp. 131–133',
+        label: 'archive.org',
+        href: 'https://archive.org/details/scottishantiquar57edin',
+      },
+      {
+        text: 'George Douglas (ed.) — Scottish Fairy and Folk Tales (1901), “Nuckelavee,” Internet Sacred Text Archive text (mirror)',
+        label: 'sacred-texts.com mirror',
+        href: 'https://neonvagabond.xyz/mirrors/sacred-texts/neu/celt/sfft/sfft61.htm',
+      },
+    ]}
   >
-    <p>TODO — encounter prose. Real, cited account.</p>
+    <p>
+      Dennison says he knew an old man who was believed to have met the Nuckelavee and escaped. The
+      man did not like talking about it, and the story came out only after a lot of persuading.
+      Dennison calls him Tammas and compares him to Burns's Tam o' Shanter, who was also out late
+      one night. On a moonless, starlit night, Tammas was walking a road with the sea on one side
+      and a deep fresh-water loch on the other when he saw something huge coming towards him. He
+      could not leave the road and did not dare turn his back, so he said a short prayer and walked
+      slowly forward. He kept to the loch side, because he had heard that the creature hated fresh
+      water.
+    </p>
+    <p>
+      When it came level with him, the long arms reached out. Tammas swerved towards the loch and
+      one foot went into the water, splashing the horse's foreleg. The horse snorted and shied
+      across the road, and the grab missed him. He ran. The creature turned and galloped after him,
+      roaring like the sea. Ahead of him was a small stream carrying water from the loch down to the
+      sea, and he knew he would be safe if he could get across running water. He jumped, made it to
+      the far bank, and collapsed unconscious. The creature was left holding his bonnet. No date or
+      exact place is given, and nothing physical was ever found.
+    </p>
   </EncounterCard>
   <EncounterCard
-    id="Encounter 02 · TODO · TODO date"
-    title="TODO — second encounter title"
-    meta="TODO — second encounter witness / context"
-    verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    id="Encounter 02 · Stronsay & the North Isles · 18th century"
+    title="The Smoke and the Mortasheen"
+    meta="Kelp burning, a horse plague, and the island that blamed the sea"
+    verdict="documented"
+    verdictLabel="Archival & Folklore Record"
+    references={[
+      {
+        text: 'W. Traill Dennison — “Orkney Folklore, Sea Myths,” The Scottish Antiquary, vol. V (1890–91), p. 132, on kelp and Mortasheen',
+        label: 'archive.org',
+        href: 'https://archive.org/details/scottishantiquar57edin',
+      },
+      {
+        text: 'Dictionary of the Scots Language — “Mortercheyn” (SND, first published 1965), citing Banff records of 1729 and a Stenness kirk session entry of 1768',
+        label: 'dsl.ac.uk',
+        href: 'https://dsl.ac.uk/entry/snd/mortercheyn',
+      },
+      {
+        text: 'The Orkney News — “Stronsay’s Kelp Riots,” Bill Miller (2025, first published in The Stronsay Limpet)',
+        label: 'theorkneynews.scot',
+        href: 'https://theorkneynews.scot/2025/11/01/stronsays-kelp-riots/',
+      },
+    ]}
   >
-    <p>TODO — second encounter prose.</p>
+    <p>
+      In the eighteenth century, Orkney began burning seaweed to produce kelp, a valuable ash sold
+      for making glass and soap. Local history credits James Fea of Whitehall with the first Orkney
+      kelp, around 1719. The work was hard, the kilns smoked, and not everyone welcomed it. When
+      famine and crop failure hit the islands between 1739 and 1742, people blamed the kelp smoke.
+      On 16 May 1742, about fifty protesters attacked kelp kilns on Stronsay, and two Stronsay men
+      were later tried and fined. That account says nothing about the Nuckelavee. It records the
+      grievance, not a monster.
+    </p>
+    <p>
+      The folklore Dennison collected puts the same resentment in supernatural terms. The kelp smoke
+      offended the Nuckelavee, so it struck the horses of Stronsay with Mortasheen, and the disease
+      spread to every island that burned kelp. The disease, at least, is well documented. The
+      Dictionary of the Scots Language defines mortercheyn, also spelled mortasheen, as glanders. It
+      cites a Banff order from 1729 telling owners to keep infected horses shut indoors, and a 1768
+      Stenness kirk session entry recording a collection for a poor Harray man whose horse had died
+      suddenly of "the Mortasheen". The horses really died. Only the explanation came from the sea.
+    </p>
   </EncounterCard>
 </Section>
 
@@ -126,8 +343,20 @@ import '../../styles/pages/_draft.css';
 <Section heading="Before You Go">
   <Outro>
     <p>
-      TODO — closing outro. Echo the cold open. Land the rules. Give the reader a parting
-      instruction.
+      The Nuckelavee is the darkest creature in Orkney's folklore, and it has one witness.
+      Everything else in its file is a list of things that went wrong in the islands: blight,
+      drought, sick animals, horses lost to plague, and smoke drifting over the shore in a bad year.
+      People who lived close to the sea needed a reason for what it seemed to do to them, and they
+      gave that reason a face.
+    </p>
+    <p>
+      Treat it with respect, because it is an honest record of hardship. Don't treat it as a field
+      guide. The sea, the tide, an unseen rock edge on a moonless night and a contagious disease in
+      the stable were the real dangers. They still are, and none of them is put off by fresh water.
+    </p>
+    <p>
+      End of journal entry. Keep to the loch side if you must, but carry a light, know the tide, and
+      call the vet. Stay sceptical. The sea is dangerous enough without a devil in it.
     </p>
   </Outro>
 </Section>

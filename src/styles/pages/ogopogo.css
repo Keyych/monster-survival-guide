@@ -1,0 +1,16 @@
+/* Theme tokens for /ogopogo. Shared layout rules live in field-manual.css.
+   Palette: a deep interior lake — cold green-teal water, grey basalt shore, dry-hills ochre. */
+:root {
+  --paper: #dde5e2;
+  --aged: #c5d2ce;
+  --ink: #101a19;
+  --faded: #3b4a48;
+  --stamp-red: #7d2a14;
+  --stamp-blue: #1d4a4a;
+  --accent: #2a6a66;
+  --redact: #0a1211;
+  --margin: #475755;
+  --highlight: #b8873a;
+  --rule: rgba(16, 26, 25, 0.11);
+  --warn: #7d2a14;
+}

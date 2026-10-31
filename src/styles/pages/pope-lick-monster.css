@@ -1,0 +1,16 @@
+/* Theme tokens for /pope-lick-monster. Shared layout rules live in field-manual.css.
+   Palette: a Kentucky creek gorge at dusk — rust-brown iron, creosote black, and a signal-lamp red. */
+:root {
+  --paper: #ebe5d8;
+  --aged: #d9d0bd;
+  --ink: #18140e;
+  --faded: #4a4232;
+  --stamp-red: #8b2410;
+  --stamp-blue: #2e3328;
+  --accent: #8a5a1c;
+  --redact: #0f0c08;
+  --margin: #5a4c34;
+  --highlight: #c8862e;
+  --rule: rgba(24, 20, 14, 0.12);
+  --warn: #8b2410;
+}

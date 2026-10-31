@@ -1,0 +1,16 @@
+/* Theme tokens for /kuchisake-onna. Shared layout rules live in field-manual.css.
+   Palette: a school-run street at dusk — mask-white paper, streetlamp shadow, lipstick crimson. */
+:root {
+  --paper: #e8e4e0;
+  --aged: #d4ccc6;
+  --ink: #18120f;
+  --faded: #4a3e3a;
+  --stamp-red: #7a1424;
+  --stamp-blue: #2c2a3a;
+  --accent: #6a1a2a;
+  --redact: #100b0c;
+  --margin: #5a4448;
+  --highlight: #b8505e;
+  --rule: rgba(24, 18, 15, 0.12);
+  --warn: #7a1424;
+}

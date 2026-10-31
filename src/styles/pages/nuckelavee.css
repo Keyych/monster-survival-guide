@@ -1,0 +1,16 @@
+/* Theme tokens for /nuckelavee. Shared layout rules live in field-manual.css.
+   Palette: an Orkney shore in winter — sea-fog grey, kelp-smoke brown, raw-flesh red. */
+:root {
+  --paper: #e3e2dc;
+  --aged: #cbc8bd;
+  --ink: #17191a;
+  --faded: #45484a;
+  --stamp-red: #8a2620;
+  --stamp-blue: #263840;
+  --accent: #7a3a2c;
+  --redact: #0e1011;
+  --margin: #4b5554;
+  --highlight: #b8623f;
+  --rule: rgba(23, 25, 26, 0.12);
+  --warn: #8a2620;
+}

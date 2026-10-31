@@ -1,0 +1,16 @@
+/* Theme tokens for /mapinguari. Shared layout rules live in field-manual.css.
+   Palette: deep Amazon canopy — wet leaf greens and the reddish brown of matted fur. */
+:root {
+  --paper: #e3e4d6;
+  --aged: #ced1bd;
+  --ink: #131a12;
+  --faded: #3d4a38;
+  --stamp-red: #7e2e14;
+  --stamp-blue: #1f3a2c;
+  --accent: #8a4a22;
+  --redact: #0b120a;
+  --margin: #4a5a40;
+  --highlight: #b8652e;
+  --rule: rgba(19, 26, 18, 0.12);
+  --warn: #7e2e14;
+}

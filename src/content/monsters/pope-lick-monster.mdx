@@ -9,121 +9,295 @@ danger: 8
 bandColor: '#4a3a1a'
 classification: 'monster survival guide  —  the pope lick monster'
 entryStatus: 'Active Entry'
-status: 'draft'
+status: 'published'
+publishDate: '2026-10-31'
 season: 1
 sightings:
   - {
-      name: 'Pope Lick trestle, Louisville, KY',
+      name: 'Pope Lick trestle, Fisherville, Louisville, KY',
       lat: 38.21,
       lon: -85.51,
-      label: 'Railway bridge over Pope Lick Creek',
+      label: 'Norfolk Southern trestle over Pope Lick Creek · site of the legend and of real train deaths',
+      sourceUrl: 'https://theparklands.org/the-pope-lick-monster/',
     }
 recordKind: folklore
-recordNote: 'Working draft about a local legend attached to a real, active railway bridge. Sources, incident dates, and safety details still need checking. The legend is not evidence of a creature; the danger from trains is real.'
+recordNote: A local legend attached to a real, active freight railway bridge. The legend is not
+  evidence of a creature; the deaths and injuries on the trestle are documented in the local press.
 illustration:
   src: /illustrations/pope-lick-monster.png
   alt: 'Loose ink doodle of a ram-horned goat-man crouched on hooved legs by a railway trestle.'
 dossier:
   entity: 'The Pope Lick Monster'
-  origin: 'Louisville, Kentucky'
-  status: Draft — awaiting research
+  origin: 'Pope Lick Creek, Fisherville · east Louisville, Kentucky'
+  status: Legend Only — No Confirmed Sighting; the Trestle Remains an Active Railway
   stamps:
     - 'Louisville, KY'
     - 'Trestle'
     - 'Active Railway'
   dangerLabel: SEVERE
-  dangerNote: '8/10 — The creature is folklore. The active railway trestle is not: trespassing on it has proved fatal.'
+  dangerNote: 8/10 — The goat-man is folklore. The trestle is not. Freight trains still cross it,
+    there is nowhere to stand aside, and walking it has killed people.
 rules:
-  - title: TODO — rule 1
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 2
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 3
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 4
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 5
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 6
-    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: The monster is a story. The train is not.
+    body: No one has ever confirmed a sighting. Everyone hurt on this bridge was hurt by a train or
+      a fall.
+  - title: Stay off the trestle. It is a crime.
+    body: It is private, active railway. Trespassers can be cited or arrested, and being caught is
+      the best outcome on offer.
+  - title: There is nowhere to step aside.
+    body: The bridge has no railings and no refuges, and it stands roughly 90 feet above the creek.
+      Hanging off the side is not a plan.
+  - title: You will not hear it in time.
+    body: Freight comes with little warning and cannot stop quickly. People have been caught unable
+      to reach the end.
+  - title: A broken fence is not an invitation.
+    body: The fence has been bent back before. A gap means someone else got through, not that the
+      line is closed.
+  - title: Look from the ground, and tell your friends to.
+    body: The legend lives on dares. Visit the creek by daylight from public land, and talk anyone
+      planning a night walk out of it.
 ---
 
 import Section from '../../components/Section.astro';
+import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
 import EncounterCard from '../../components/EncounterCard.astro';
 import Outro from '../../components/Outro.astro';
 import MonsterMap from '../../components/MonsterMap.astro';
-import '../../styles/pages/_draft.css';
+import '../../styles/pages/pope-lick-monster.css';
 
 <Section heading="If You're Reading This">
   <p>
-    TODO — cold open. Place the reader at the scene of the encounter. Establish atmosphere. Earn
-    attention before asking for trust.
+    It is a warm night on the eastern edge of Louisville, Kentucky, and you are standing at the foot
+    of a railway bridge. Above you, the iron trestle runs out over Pope Lick Creek and the road
+    beneath it, black against the sky, much higher than it looked from the car. Someone in your
+    group has told you the story on the way here: something lives under this bridge — a man from the
+    waist up and a goat below — and it calls people out onto the tracks.
+  </p>
+  <p>
+    There is a fence, and signs, and a path worn around them. Your friends are already talking about
+    walking out to the middle. The creek is very quiet. Nobody has mentioned the timetable, because
+    nobody here knows it.
+  </p>
+  <p>
+    This is the thirty-third journal entry of the Monster Survival Guide. The subject is the Pope
+    Lick Monster — a goat-man that has never been seen, attached to a bridge that has repeatedly
+    killed people. It is the clearest case in this guide of a legend whose danger is entirely real,
+    and entirely ordinary. Read it as a warning about a railway, not a creature.
   </p>
 </Section>
 
 <Section heading="Where It Comes From">
   <p>
-    TODO — origin section. Cultural / historical / geographic context. A creature without context is
-    a horror story; a creature with context is something a reader can understand.
+    The trestle is real and old. It carries the Norfolk Southern freight line over Pope Lick Creek
+    and South Pope Lick Road near Fisherville, in eastern Jefferson County, and local accounts date
+    it to the late 1800s. It stands roughly 90 feet above the ground and runs for somewhere around
+    750 feet — published figures differ slightly — with no railings and no place to get out of the
+    way of a train.
   </p>
+  <p>
+    The monster has no such paper trail. There is no historical event behind it, no first witness,
+    no date of origin. The Parklands of Floyds Fork, writing in 2011, described the stories as
+    having circulated for more than three generations, mostly as the setting for teenage dares.
+    Brian Dunning of Skeptoid, examining the legend in 2023, found it vague in every detail and
+    noted that goat-men are told about in many other places too, from Maryland to Texas to another
+    corner of Kentucky.
+  </p>
+  <div class="pull-quote">
+    Most legends grow out of something that happened. This one runs the other way: the story came
+    first, and the real deaths followed it onto the bridge.
+  </div>
+  <div class="lore-box">
+    <p>
+      The origin stories contradict each other freely. In one, he is a circus sideshow performer who
+      escaped when the circus train crashed — or, in another telling, when lightning struck it. In
+      another, he is a farmer who sacrificed goats to the Devil and became one. Other versions offer
+      a disfigured chemist or a hermit in a shack. None is attached to a name, a date, or a record.
+      That looseness is typical of a story passed between teenagers rather than handed down by a
+      community.
+    </p>
+  </div>
 </Section>
 
 <Section heading="What You Are Looking At">
+  <StatRow
+    stats={[
+      { num: '~90', label: 'Feet from the trestle deck to the ground below' },
+      { num: '0', label: 'Railings or refuges along the span' },
+      { num: '0', label: 'Confirmed sightings of the creature, ever' },
+    ]}
+  />
   <p>
-    TODO — physical description and identifying features. What witnesses agree on. What varies. What
-    to look for before you know what you are looking at.
+    Descriptions of the creature agree only loosely. Most give it a man's upper body and a goat's
+    legs, with horns; some add a pale, alabaster face. In other versions it is more sheep than goat
+    — locals have called it the "Sheepman." Nobody has photographed it, and no account names a
+    witness who could be questioned.
   </p>
+  <p>
+    What you can describe precisely is the bridge. It is a long trestle carrying working freight
+    trains, with no room on it to step aside. Below is a drop that the deputy coroner, after a death
+    in 2016, estimated at 80 to 100 feet. At the base there is a chain-link fence and posted
+    warnings. Residents told reporters that same year that trains pass roughly every half hour.
+  </p>
+  <div class="warning-box">
+    <div class="warn-label">⚠ Critical Field Note</div>
+    <p>
+      The thing that kills people on this bridge is a freight train, arriving on an active line
+      where there is no room to stand aside and no time to reach the end. Many visitors, a local
+      historian told WAVE 3 News, wrongly believe the line is no longer in use. It is. Do not walk
+      onto the trestle, for any reason, at any hour.
+    </p>
+  </div>
 </Section>
 
 <Section heading="How It Operates">
   <p>
-    TODO — behaviour pattern. How it hunts / haunts / appears. What comes first, next, and after.
+    In the legend, the goat-man works by lure. He is said to mimic familiar voices or to hypnotise,
+    drawing people out along the tracks until a train arrives. Other versions have him attack with
+    an axe, or drop from the ironwork onto cars passing on the road beneath.
+  </p>
+  <p>
+    The real mechanism is simpler, and it is the same every time. People go to the trestle because
+    of the story, usually at night and usually in a group. They pass the fence, walk out onto the
+    span, and are partway across when a train comes. With no railings and no refuges, the choices
+    are to run for an end they cannot reach, or to hang from the side of the bridge. People have
+    been struck. People have fallen. A few have clung on long enough to be rescued.
+  </p>
+  <p>
+    That pattern has repeated across decades — in the 1980s, the 1990s, in 2000, in 2016 and in
+    2019. The goat-man supplies the reason to go. The railway supplies everything else.
   </p>
 </Section>
 
 <Section heading="An Honest Assessment of Its Weaknesses">
   <p>
-    TODO — what the accumulated evidence suggests works against it. Be honest when this section is
-    thin.
+    The creature has every weakness a legend can have, and none of them makes the bridge any safer.
+  </p>
+  <p>
+    <strong>It cannot exist.</strong> As Dunning points out, a goat-human hybrid is biologically
+    impossible; the two lineages parted around 100 million years ago. There is no carcass, no track,
+    no photograph and no named witness.
+  </p>
+  <p>
+    <strong>Its story has no fixed shape.</strong> Goat or sheep, circus escapee or devil-farmer,
+    voice-mimic or axe-killer — the details change with the teller, which is what you would expect
+    of a dare rather than a sighting.
+  </p>
+  <p>
+    <strong>Its real power is publicity.</strong> Dunning argues that the legend became famous
+    largely through a 1988 short film and the furious local argument about it. Each new death has
+    renewed the story. Every retelling — including this one — risks doing the same, which is why
+    this entry says plainly: the only thing to survive here is the train, and the only way to
+    survive it is to stay on the ground.
+  </p>
+  <p>
+    The fence is a weakness of a different kind. Local reporting has found it bent open, its signs
+    hard to read at night, and a railway police manager confirmed that trespassers can be cited or
+    arrested for a misdemeanour. Neither the law nor the fence has stopped people going. Only the
+    decision not to go does.
   </p>
 </Section>
 
 <Section heading="Six Rules That May Save Your Life">
-  <p>TODO — short intro paragraph framing the rules.</p>
+  <p>
+    There is no goat-man to outwit. Every rule below is about a working railway bridge, because that
+    is the only thing on this site that has ever hurt anyone.
+  </p>
   <SixRules
     rules={frontmatter.rules}
     title={frontmatter.title}
     number={frontmatter.number}
-    pocketHref={
-      frontmatter.status === 'draft'
-        ? `/drafts/pope-lick-monster/pocket/`
-        : `/pocket/pope-lick-monster/`
-    }
+    pocketHref="/pocket/pope-lick-monster/"
   />
 </Section>
 
 <Section heading="Two Cases on the Record">
-  <p>TODO — intro paragraph for the encounter section.</p>
+  <p>
+    The first case is how the legend became famous, and how the railway responded. The second is
+    what the legend has cost. Victims are not named here; their families have suffered enough from
+    this story.
+  </p>
   <EncounterCard
-    id="Encounter 01 · TODO · TODO date"
-    title="TODO — encounter title"
-    meta="TODO — encounter witness / context"
-    verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    id="Encounter 01 · Louisville, Kentucky · 1986–1989"
+    title="The Film and the Fence"
+    meta="Ron Schildknecht's short film · Norfolk Southern · The Courier-Journal debate"
+    verdict="documented"
+    verdictLabel="Historically Documented"
+    references={[
+      {
+        text: 'Skeptoid #869 — “The Goat Man of Pope Lick Bridge,” Brian Dunning (2023)',
+        label: 'skeptoid.com',
+        href: 'https://skeptoid.com/episodes/869',
+      },
+      {
+        text: 'The Parklands of Floyds Fork — “The Pope Lick Monster” (2011)',
+        label: 'theparklands.org',
+        href: 'https://theparklands.org/the-pope-lick-monster/',
+      },
+    ]}
   >
-    <p>TODO — encounter prose. Real, cited account.</p>
+    <p>
+      By the late 1980s the trestle already had a body count. The Parklands records a 17-year-old
+      killed by a train in February 1987, and a 19-year-old who died that May of injuries suffered a
+      year earlier, when he jumped from the bridge to escape a train. Into that setting came
+      <em>The Legend of the Pope Lick Monster</em>, a 16-minute black-and-white horror short by
+      Louisville filmmaker Ron Schildknecht, shot at the trestle. In one scene a teenager survives a
+      train by hanging from a railroad tie — a feat the Parklands calls physically impossible.
+    </p>
+    <p>
+      Parents and the railway were alarmed that the film would draw more teenagers onto the bridge.
+      Dunning reports that Norfolk Southern's lawyers objected and that the argument filled the{' '}
+      <em>Courier-Journal</em> for weeks; at the premiere, a railway statement warned that anyone
+      caught on the trestle would be prosecuted. Afterwards a tall chain-link fence went up at the
+      base, with danger and keep-off signs. When the film was later posted online, Schildknecht
+      added an epilogue with a blunt instruction: "Stay off the damn trestle."
+    </p>
   </EncounterCard>
   <EncounterCard
-    id="Encounter 02 · TODO · TODO date"
-    title="TODO — second encounter title"
-    meta="TODO — second encounter witness / context"
-    verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    id="Encounter 02 · Pope Lick trestle · 1993–2019"
+    title="The Legend Trips"
+    meta="Fire, police and coroner accounts · Deaths in 2000, 2016 and 2019"
+    verdict="verified"
+    verdictLabel="Press Verified"
+    references={[
+      {
+        text: 'WAVE 3 News — “Coroner: Ohio woman killed by train while investigating Louisville myth” (2016)',
+        label: 'wdrbwave.com',
+        href: 'https://www.wdrbwave.com/story/31800557/coroner-ohio-woman-killed-by-train-while-investigating-louisville-myth/',
+      },
+      {
+        text: 'WAVE 3 News — “‘Stay off the tracks’: Officials warn of deadly history of Pope Lick train trestle” (2019)',
+        label: 'wdrbwave.com',
+        href: 'https://www.wdrbwave.com/2019/05/30/stay-off-tracks-officials-warn-residents-about-pope-lick-train-trestle/',
+      },
+      {
+        text: 'WHAS11 — report on calls for safety changes at the Pope Lick trestle (2019)',
+        label: 'whas11.com',
+        href: 'https://whas11.com/article/news/local/push-changes-on-deadly-pope-lick-trestle/417-1c502a3d-8c63-4553-a962-d7ba75146bce',
+      },
+      {
+        text: 'Railway Track & Structures — “After fatal strike on Ky. bridge parents of victim say more safety measures need to be installed, file suit”',
+        label: 'rtands.com',
+        href: 'https://www.rtands.com/?p=24200',
+      },
+    ]}
   >
-    <p>TODO — second encounter prose.</p>
+    <p>
+      The fence did not end it. Local fire chief Sean Dreisbach told WAVE 3 News he had personally
+      seen more than half a dozen people killed or injured by trains on the trestle. In 1993 he
+      helped rescue a teenage girl found clinging to the side after a train passed. In 1994 a man
+      was killed when his ATV overturned on the track and trapped him; in 2000 a 19-year-old fell to
+      his death after meeting a train. "A train comes with little to no warning," Dreisbach said.
+    </p>
+    <p>
+      In April 2016 a 26-year-old woman from Ohio, in Louisville for a haunted tour, heard about the
+      legend and went onto the tracks with her boyfriend. A train surprised them; unable to reach
+      the end, they hung from the side. He survived. She was killed, and the deputy coroner
+      estimated her fall at 80 to 100 feet. In late May 2019 a 15-year-old girl was killed and
+      another seriously injured. Her parents sued Norfolk Southern, alleging that the trestle was
+      unsecured and too easy to reach. WHAS11 found part of the fence bent back for weeks; the
+      railway said there had been no major changes to track safety.
+    </p>
   </EncounterCard>
 </Section>
 
@@ -132,8 +306,20 @@ import '../../styles/pages/_draft.css';
 <Section heading="Before You Go">
   <Outro>
     <p>
-      TODO — closing outro. Echo the cold open. Land the rules. Give the reader a parting
-      instruction.
+      The Pope Lick Monster has never been seen, and never will be. It is a campfire story, told at
+      the foot of a bridge to make someone brave enough, or foolish enough, to walk out onto it. As
+      a piece of Louisville folklore it is harmless enough. As a reason to climb a fence onto an
+      active railway it has been fatal, again and again.
+    </p>
+    <p>
+      So go back to that warm night at the foot of the trestle. The creek is quiet, your friends are
+      talking about the middle of the span, and nobody knows when the next train is due. That is the
+      whole of the danger. There is nothing under the bridge. There is something coming along the
+      line.
+    </p>
+    <p>
+      End of journal entry. Stay off the trestle. Look from the ground. And if anyone you know is
+      planning to go out there for the legend, tell them what actually happens to people who do.
     </p>
   </Outro>
 </Section>

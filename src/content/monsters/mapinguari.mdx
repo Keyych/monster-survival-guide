@@ -4,125 +4,328 @@ entryClass: 'Forest Giant'
 region: 'Amazon basin, Brazil'
 title: 'The Mapinguari'
 description: 'Amazonian hunters and rubber tappers describe a huge, foul-smelling, slow-moving creature in the deep forest. Some researchers have wondered if the stories carry a memory of the giant ground sloth.'
-tags: ['Amazonian folklore', 'Indigenous traditions flagged', 'Brazil']
+tags: ['Amazonian folklore', 'Ground-sloth hypothesis', 'Brazil']
 danger: 4
 bandColor: '#2a4a1a'
 classification: 'monster survival guide  —  the mapinguari'
 entryStatus: 'Active Entry'
-status: 'draft'
+status: 'published'
+publishDate: '2026-10-31'
 season: 1
 sightings:
-  - { name: 'Acre, Brazil', lat: -9.0, lon: -70.5, label: 'Western Amazon reports and searches' }
   - {
-      name: 'Rondônia, Brazil',
-      lat: -10.9,
-      lon: -62.8,
-      label: 'Reported encounter accounts from the region',
+      name: 'Acre, Brazil',
+      lat: -9.0,
+      lon: -70.5,
+      label: 'Western Amazon · where David Oren judged ground-sloth survival most likely (1993)',
+      sourceUrl: 'https://dn790002.ca.archive.org/0/items/Goeldianazoolog19/Goeldianazoolog19.pdf',
+    }
+  - {
+      name: 'Northern Rondônia, Brazil',
+      lat: -9.4,
+      lon: -64.0,
+      label: 'Karitiana territory · Owoj / Kida harara in Karitiana testimony (approximate)',
+      sourceUrl: 'https://www.redalyc.org/pdf/3940/394054352011.pdf',
+    }
+  - {
+      name: 'Barra do São Manuel, Tapajós River, Pará',
+      lat: -7.34,
+      lon: -58.15,
+      year: 1999,
+      label: 'Oren expedition · large footprints found, no specimen (approximate)',
+      sourceUrl: 'https://www.discovermagazine.com/beasts-in-the-mist-02-14641',
     }
 recordKind: folklore
-recordNote: 'Working draft about folklore and reported encounters. Indigenous and regional traditions need careful, sourced treatment; claims still need checking. Reports do not establish that the creature exists.'
+recordNote: Folklore, Indigenous testimony, and a scientific hypothesis — attributed accounts and
+  the expeditions that followed them. The traditions are real; no specimen has ever been produced.
 illustration:
   src: /illustrations/mapinguari.png
   alt: 'Loose ink doodle of a huge shaggy upright creature, like a giant ground sloth, with long curved claws.'
 dossier:
   entity: 'The Mapinguari'
   origin: 'Amazon basin, Brazil'
-  status: Draft — awaiting research
+  status: Unconfirmed — No Specimen in Three Decades of Searching
   stamps:
     - 'Amazon'
     - 'Brazil'
     - 'Forest Lore'
   dangerLabel: GUARDED
-  dangerNote: '4/10 — Feared in the stories, but no verified attack. Getting lost or injured in deep forest is the real risk.'
+  dangerNote: 4/10 — Feared in the stories, and real to some who live with it, but no verified
+    attack. Getting lost, injured, or overheated in deep forest is the real risk.
 rules:
-  - title: TODO — rule 1
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 2
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 3
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 4
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 5
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 6
-    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: Go with a local guide, or not at all.
+    body: Oren's 1999 search walked up to nine hours a day behind men who knew the forest. Out here,
+      getting lost, heat, and river crossings are the real dangers.
+  - title: Ask before you set foot.
+    body:
+      Much of this forest is Indigenous land, and the Karitiana steer clear of places they say the
+      creature lives. Respect that. Their home is not a hunting ground for content.
+  - title: A stench and a scream usually mean peccaries.
+    body: Accounts tie the creature to herds of white-lipped peccary, which smell rank and move in
+      noisy groups. Back away from a herd calmly; that encounter can actually hurt you.
+  - title: Send the sample to a lab, not the internet.
+    body: Oren's hair sample came from an agouti, and his dung samples held giant anteater DNA.
+      Collect, label, and test before you announce anything.
+  - title: A plaster cast proves effort, not existence.
+    body: Oren himself said casts carry no scientific weight because they can be faked. Photograph
+      tracks with a scale and note what else walked through.
+  - title: Follow your hosts' customs.
+    body:
+      Karitiana say the creature's name should not be spoken in the forest. Whatever you believe,
+      keep to the rules of the people who live there — they know this forest far better than any
+      expedition.
 ---
 
 import Section from '../../components/Section.astro';
+import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
 import EncounterCard from '../../components/EncounterCard.astro';
 import Outro from '../../components/Outro.astro';
 import MonsterMap from '../../components/MonsterMap.astro';
-import '../../styles/pages/_draft.css';
+import '../../styles/pages/mapinguari.css';
 
 <Section heading="If You're Reading This">
   <p>
-    TODO — cold open. Place the reader at the scene of the encounter. Establish atmosphere. Earn
-    attention before asking for trust.
+    It is late afternoon somewhere in the western Amazon, and the light under the canopy has already
+    gone green and thin. You have been walking since morning behind a man who grew up here. The
+    trail is his, not yours. You could not find your way back to the river alone, and you both know
+    it.
+  </p>
+  <p>
+    He stops. There is a smell on the air — sour, rank, like something rotting and something alive
+    at once. Somewhere ahead, beyond a wall of palms, a sound goes up that is almost a human shout
+    and not quite. Your guide does not reach for his gun. He turns, quietly, and starts walking the
+    other way. When you ask him what it was, he gives you a name, and then he asks you not to say it
+    again until you are out of the forest.
+  </p>
+  <p>
+    This is the thirty-fifth journal entry of the Monster Survival Guide. The subject is the
+    Mapinguari — a huge, shaggy, foul-smelling giant of Amazonian story, and the only creature in
+    this guide that a serious zoologist spent years trying to prove was a living fossil. It is also
+    a being that some Indigenous Amazonians treat as part of their world, not as a legend. Both of
+    those facts deserve care.
   </p>
 </Section>
 
 <Section heading="Where It Comes From">
   <p>
-    TODO — origin section. Cultural / historical / geographic context. A creature without context is
-    a horror story; a creature with context is something a reader can understand.
+    The Mapinguari belongs to the Amazon, and the Amazon is not one culture. Brazil alone is home to
+    hundreds of Indigenous peoples speaking well over a hundred languages, and folklorist Andriolli
+    Costa, speaking to PBS's <em>Monstrum</em>, notes that the creature's name and story shift from
+    community to community. Reporting for <em>The New York Times</em> in 2007, Larry Rohter wrote
+    that nearly every Amazon people has a word for it, and that the name is usually rendered as "the
+    roaring animal" or "the fetid beast."
   </p>
+  <p>
+    Riverine and rural Brazilians — hunters, rubber tappers, gold miners — carry the story too,
+    under regional names recorded by <em>Discover</em> magazine such as <em>pé de garrafa</em>{' '}
+    ("bottle foot") and <em>mão de pilão</em> ("pestle hand"). Some tellings give it an origin: an
+    old man who sought immortality, or a shaman transformed by angry gods. Across most of them, as
+    PBS puts it, the creature's role is the same — it defends the forest and punishes those who take
+    too much from it.
+  </p>
+  <div class="pull-quote">
+    To an outsider the Mapinguari is a cryptid. To some of the people who live alongside it, it is
+    simply one of the dangerous beings of their land. This entry tries to keep those two things
+    apart.
+  </div>
+  <p>
+    That distinction matters most for the Karitiana, a Tupí-speaking people of northern Rondônia.
+    Anthropologist Felipe Ferreira Vander Velden, writing in the Goeldi Museum's journal in 2016,
+    reports that they use "Mapinguari" as the Portuguese word for a being they call Owoj or Kida
+    harara, and that they do not regard it as folklore at all. Its presence shapes where they hunt
+    and travel. He argues that calling it myth misrepresents their world — and that reducing it to a
+    surviving ground sloth does too.
+  </p>
+  <div class="lore-box">
+    <p>
+      For most of the twentieth century the Mapinguari sat among Brazil's forest figures such as the
+      curupira, the guardian whose feet point backwards. Cryptozoologist Bernard Heuvelmans recast
+      it as an unknown great ape — an Amazonian Bigfoot. The idea that changed its reputation came
+      in 1993, from an American-born ornithologist at the Museu Paraense Emílio Goeldi in Belém, who
+      proposed that the stories describe a real animal science thought long extinct.
+    </p>
+  </div>
 </Section>
 
 <Section heading="What You Are Looking At">
+  <StatRow
+    stats={[
+      { num: '1993', label: 'Year David Oren published the ground-sloth hypothesis' },
+      { num: '50+', label: 'Firsthand witnesses Oren had collected by 1999' },
+      { num: '0', label: 'Specimens, bones, or confirmed samples ever produced' },
+    ]}
+  />
   <p>
-    TODO — physical description and identifying features. What witnesses agree on. What varies. What
-    to look for before you know what you are looking at.
+    The accounts agree on size and smell before anything else. Rohter's sources described something
+    seven feet or more tall when it rose on two legs, covered in thick, matted hair over a hide that
+    turned bullets and arrows. Others recorded by <em>Discover</em> spoke of long red hair, a
+    monkey-like face, claws like a giant armadillo's, and a stench strong enough to disorient anyone
+    nearby. Its voice is a roar, or a scream close enough to human to stop a hunter cold.
   </p>
+  <p>
+    Then the details fray. Some say it has two eyes, some one, set in the middle of the forehead.
+    Many describe a second mouth — huge, foul, opening in its belly. Its feet are said to point
+    backwards, so its tracks lead the wrong way. Witnesses told Oren it could be hurt only around
+    the navel. Oren himself noted that the single eye appeared in legend, not in the firsthand
+    testimony he collected.
+  </p>
+  <div class="warning-box">
+    <div class="warn-label">⚠ Critical Field Note</div>
+    <p>
+      The same accounts tie the Mapinguari to herds of white-lipped peccary, and one witness
+      compared its smell to fetid peccary. A herd of these wild pigs is loud, strong-smelling, and
+      genuinely dangerous at close quarters. If the forest suddenly reeks and erupts with noise,
+      assume pigs first — and give them room.
+    </p>
+  </div>
 </Section>
 
 <Section heading="How It Operates">
   <p>
-    TODO — behaviour pattern. How it hunts / haunts / appears. What comes first, next, and after.
+    In the stories the Mapinguari is slow, powerful, and mostly active at dusk and at night. It is
+    said to avoid water, to twist palm trees down to eat their soft hearts, and to leave broken
+    trunks and trampled undergrowth behind it. It does not stalk the way a jaguar does. It punishes
+    — the hunter who kills too much, the logger, the person who trespasses where they should not.
+  </p>
+  <p>
+    The encounter pattern in the reports is consistent: a smell first, then a roar or a scream,
+    sometimes a large shape rising on its hind legs, and then the witness running. Hunters have told
+    of firing on one and seeing no effect. None of them came back with a body.
+  </p>
+  <p>
+    For the Karitiana, Vander Velden reports, the operation is spatial. The being is said to live in
+    a cave in a stretch of hills rich in game, and people avoid that area. Whatever one makes of the
+    creature, the effect is real and measurable: a piece of forest that is hunted less.
   </p>
 </Section>
 
 <Section heading="An Honest Assessment of Its Weaknesses">
   <p>
-    TODO — what the accumulated evidence suggests works against it. Be honest when this section is
-    thin.
+    There is no creature on the table, so the honest assessment is about the ground-sloth hypothesis
+    and the evidence gathered to test it.
+  </p>
+  <p>
+    <strong>The hypothesis is clever.</strong> In his 1993 paper Oren lined up the testimony against
+    what fossils reveal about ground sloths: reddish fur matching mummified sloth hair,
+    inward-curving claws that could leave "backward" tracks, small bony plates in the skin that
+    might turn a bullet, dung like a horse's. He argued the western Amazon, especially Acre and
+    Amazonas, was where a survivor was most likely.
+  </p>
+  <p>
+    <strong>The evidence is not.</strong> Over years of searching, <em>Discover</em> reported, a
+    hair sample turned out to belong to an agouti and dung samples yielded giant anteater DNA, not
+    anything new. Oren said plainly that his footprint casts carried no scientific weight. Louise
+    Emmons of the Smithsonian Institution pointed out that naturalists have worked the Amazon for
+    centuries without finding such an animal.
+  </p>
+  <p>
+    <strong>The explanation may be backwards.</strong> Brian Dunning of <em>Skeptoid</em> argues
+    that there is no verified sighting or specimen for a sloth to explain, so the Mapinguari should
+    remain folklore until there is. And Oren never accounted for the mouth in the belly — which
+    suggests the stories are doing something other than describing an animal.
+  </p>
+  <p>
+    None of this makes the witnesses liars, and none of it settles what the Mapinguari means to the
+    Karitiana. Zoology can say no specimen exists. It cannot say what a people's forest contains.
   </p>
 </Section>
 
 <Section heading="Six Rules That May Save Your Life">
-  <p>TODO — short intro paragraph framing the rules.</p>
+  <p>
+    The Mapinguari has no verified victims. The Amazon has plenty. These rules are about surviving
+    the forest, handling evidence honestly, and behaving as a guest on someone else's land.
+  </p>
   <SixRules
     rules={frontmatter.rules}
     title={frontmatter.title}
     number={frontmatter.number}
-    pocketHref={
-      frontmatter.status === 'draft' ? `/drafts/mapinguari/pocket/` : `/pocket/mapinguari/`
-    }
+    pocketHref="/pocket/mapinguari/"
   />
 </Section>
 
 <Section heading="Two Cases on the Record">
-  <p>TODO — intro paragraph for the encounter section.</p>
+  <p>
+    These two cases come from opposite directions: a scientist walking into the forest to find an
+    animal, and a people who already know what lives there and see no need to prove it.
+  </p>
   <EncounterCard
-    id="Encounter 01 · TODO · TODO date"
-    title="TODO — encounter title"
-    meta="TODO — encounter witness / context"
-    verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    id="Encounter 01 · Pará & the Tapajós, Brazil · 1975–1999"
+    title="The Zoologist and the Footprints"
+    meta="David C. Oren, Museu Paraense Emílio Goeldi · Witness Accounts and Expeditions"
+    verdict="documented"
+    verdictLabel="Investigated — Nothing Found"
+    references={[
+      {
+        text: 'Discover — “Beasts in the Mist,” Marguerite Holloway (1999)',
+        label: 'discovermagazine.com',
+        href: 'https://www.discovermagazine.com/beasts-in-the-mist-02-14641',
+      },
+      {
+        text: 'D. C. Oren — “Did ground sloths survive to Recent times in the Amazon region?” Goeldiana Zoologia 19 (1993)',
+        label: 'archive.org',
+        href: 'https://dn790002.ca.archive.org/0/items/Goeldianazoolog19/Goeldianazoolog19.pdf',
+      },
+      {
+        text: 'UPI Archives — “U.S. zoologist seeks Brazilian beast” (1995)',
+        label: 'upi.com',
+        href: 'https://www.upi.com/Archives/1995/07/22/US-zoologist-seeks-Brazilian-beast/3329806385600/',
+      },
+    ]}
   >
-    <p>TODO — encounter prose. Real, cited account.</p>
+    <p>
+      David Oren came to Brazil as an ornithologist and, by his own account to <em>Discover</em>,
+      first dismissed the Mapinguari as myth. The stories that changed his mind came from gold
+      miners: one told him he had fired on the creature, seen no effect, and fled when it roared.
+      Others followed. <em>Discover</em> recorded a man who had hunted for a mining camp on the
+      Jamanxim River in 1975 and said something screamed and staggered towards him on two legs; he
+      said its stench left him ill for two months, and he never went back into the forest.
+    </p>
+    <p>
+      In 1993 Oren published his ground-sloth hypothesis, and from 1994 he began mounting
+      expeditions, partly on small grants. In 1999 <em>Discover</em> joined his sixth trip, near
+      Barra do São Manuel on the Tapajós. The team found tracks about eleven inches long, and a
+      local hunter described a human-like scream after he shot peccaries. There were no droppings,
+      no calls, no animal. By then Oren had collected accounts from more than fifty witnesses, and
+      near the trip's end he mused that he might give the search up and return to birds. Rohter
+      later reported him speaking of "a couple of hundred people" who claimed sightings. No specimen
+      has ever been produced.
+    </p>
   </EncounterCard>
   <EncounterCard
-    id="Encounter 02 · TODO · TODO date"
-    title="TODO — second encounter title"
-    meta="TODO — second encounter witness / context"
-    verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    id="Encounter 02 · Northern Rondônia, Brazil · Karitiana testimony"
+    title="The Being That Does Not Need Proving"
+    meta="Karitiana Accounts of Owoj / Kida harara · as Reported by Felipe Ferreira Vander Velden (2016)"
+    verdict="cultural"
+    verdictLabel="Living Tradition"
+    references={[
+      {
+        text: 'F. F. Vander Velden — “Realidade, ciência e fantasia nas controvérsias sobre o Mapinguari no sudoeste amazônico,” Boletim do Museu Paraense Emílio Goeldi (2016)',
+        label: 'redalyc.org',
+        href: 'https://www.redalyc.org/pdf/3940/394054352011.pdf',
+      },
+      {
+        text: 'PBS Monstrum — “Mapinguari: Fearsome Beast and Protector of the Amazon” (2022)',
+        label: 'pbswisconsin.org',
+        href: 'https://pbswisconsin.org/watch/monstrum/mapinguari-fearsome-beast-and-protector-of-the-amazon-xnse9d/',
+      },
+    ]}
   >
-    <p>TODO — second encounter prose.</p>
+    <p>
+      The Karitiana are a small Tupí-speaking people in northern Rondônia. According to Vander
+      Velden's study, they describe the being they call Owoj or Kida harara — <em>kida</em> being
+      their category for fierce, dangerous beings — as very large, hairy and man-like, with hooked
+      claws, huge teeth, and a chest and back that bullets cannot pierce. It is said to live in a
+      cave in a game-rich range of hills, which people avoid, and its name should not be spoken in
+      the forest. Hunters recount encounters as events, not tales.
+    </p>
+    <p>
+      Vander Velden does not try to prove or disprove the creature. His argument is that outsiders
+      get it wrong twice: once by filing it as folklore, and again by turning it into a ground
+      sloth, when for the Karitiana it is neither. He also records Karitiana complaints about an
+      earlier television production, which he could not verify. The lesson for anyone with a camera
+      is simple: this is someone's home, and what lives in it is theirs to describe.
+    </p>
   </EncounterCard>
 </Section>
 
@@ -131,8 +334,19 @@ import '../../styles/pages/_draft.css';
 <Section heading="Before You Go">
   <Outro>
     <p>
-      TODO — closing outro. Echo the cold open. Land the rules. Give the reader a parting
-      instruction.
+      The Mapinguari is two things at once, and this guide has tried not to blur them. To zoology it
+      is a hypothesis that never found its animal — a bold idea, honestly pursued, that ended with
+      an agouti's hair, an anteater's dung, and a set of tracks nobody could put a name to. To the
+      people who live with it, it is a presence in the forest that tells them where not to go.
+    </p>
+    <p>
+      Remember the guide in the opening, turning back at the smell and the scream. Whether he was
+      avoiding a peccary herd, a ground sloth, or something you have no word for, he made the right
+      call. The forest kills far more people through ordinary mistakes than any giant ever has.
+    </p>
+    <p>
+      End of journal entry. Walk behind someone who knows the way. Respect the rules of the land you
+      are on. And stay sceptical — but stay polite about it.
     </p>
   </Outro>
 </Section>

@@ -9,127 +9,319 @@ danger: 5
 bandColor: '#6a1a2a'
 classification: 'monster survival guide  —  kuchisake-onna'
 entryStatus: 'Active Entry'
-status: 'draft'
+status: 'published'
+publishDate: '2026-10-31'
 season: 1
 sightings:
   - {
-      name: 'Gifu Prefecture',
-      lat: 35.42,
-      lon: 136.76,
-      year: 1979,
-      label: 'Reported starting point of the 1979 rumour wave',
+      name: 'Yaotsu, Gifu Prefecture',
+      lat: 35.48,
+      lon: 137.14,
+      year: 1978,
+      label: 'Reported first sighting, late 1978 · an elderly farm woman (accounts differ on the town)',
+      sourceUrl: 'https://www.nippon.com/en/japan-topics/g00789/',
     }
   - {
-      name: 'Tokyo',
-      lat: 35.68,
-      lon: 139.69,
+      name: 'Himeji, Hyogo Prefecture',
+      lat: 34.82,
+      lon: 134.69,
       year: 1979,
-      label: 'Rumour spreads to schools in the capital',
+      label: 'June 1979 · a woman imitating the figure is arrested carrying a knife',
+      sourceUrl: 'https://news.mynavi.jp/article/20230725-2497323/',
+    }
+  - {
+      name: 'South Korea (pin at Seoul)',
+      lat: 37.57,
+      lon: 126.98,
+      label: 'The "Red Mask" revival · dated variously to the 1990s and the early 2000s',
+      sourceUrl: 'https://www.koreajoongangdaily.com/lifestyle/yesterdays-ghosts-are-todays-harsh-realities/10625451',
     }
 recordKind: folklore
-recordNote: 'Working draft about an urban legend and the 1979 rumour wave. Sources and dates still need checking; the rumours do not establish that the figure exists.'
+recordNote: Folklore and press history — a children's rumour that swept Japan in 1979 and was later
+  retold abroad. The panic is well recorded; no attacker matching the legend ever was.
 illustration:
   src: /illustrations/kuchisake-onna.png
   alt: 'Loose ink doodle of a long-haired woman in a coat, a surgical mask over the lower half of her face.'
 dossier:
-  entity: 'Kuchisake-onna'
-  origin: 'Japan · Gifu Prefecture, 1979'
-  status: Draft — awaiting research
+  entity: 'Kuchisake-onna (the Slit-Mouthed Woman)'
+  origin: 'Japan · Gifu Prefecture, 1978–79'
+  status: Faded — Nationwide in 1979, Gone by the Summer Holidays
   stamps:
     - 'Japan'
     - '1979'
     - 'Rumour Panic'
   dangerLabel: MODERATE
-  dangerNote: '5/10 — No verified victim. The recorded harm is the panic itself: frightened children and school-run patrols.'
+  dangerNote:
+    '5/10 — No verified victim. The recorded harm is the panic itself: frightened children,
+    police patrols, and at least one copycat arrested with a knife.'
 rules:
-  - title: TODO — rule 1
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 2
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 3
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 4
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 5
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 6
-    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: Walk home in company.
+    body: In 1979 some schools sent pupils home in groups. It was a response to a rumour, but it is
+      sound advice on any dark road, legend or no legend.
+  - title: A mask is usually just a mask.
+    body: Face masks are an ordinary sight on Japanese streets. A covered face tells you nothing
+      about intent; behaviour does.
+  - title: Ask who actually saw her.
+    body: Every account came from a friend's cousin or a child at another cram school. Trace a story
+      back one step and it tends to run out.
+  - title: The costume is the real hazard.
+    body:
+      The best-known arrest of 1979 was of a woman dressed as the legend and carrying a knife. Fear a real
+      person acting out a story, not the story.
+  - title: Leave and tell an adult.
+    body: Pomade, hard candy and clever answers belong to the playground. If a stranger frightens
+      you, walk away towards people and report it.
+  - title: Rumours burn out.
+    body: The 1979 wave crossed Japan in months and faded when the summer holidays began. Keep calm
+      and wait; panic is what spreads it.
 ---
 
 import Section from '../../components/Section.astro';
+import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
 import EncounterCard from '../../components/EncounterCard.astro';
 import Outro from '../../components/Outro.astro';
 import MonsterMap from '../../components/MonsterMap.astro';
-import '../../styles/pages/_draft.css';
+import '../../styles/pages/kuchisake-onna.css';
 
 <Section heading="If You're Reading This">
   <p>
-    TODO — cold open. Place the reader at the scene of the encounter. Establish atmosphere. Earn
-    attention before asking for trust.
+    It is the spring of 1979, and you are ten years old, walking home from cram school after dark.
+    The shops are shutting. The streetlamps are on. Today, at your desk, a boy from another school
+    told you about the woman — the one who waits on corners in a long coat with a mask over her
+    mouth, and who stops children to ask a single question.
+  </p>
+  <p>
+    <em>Am I pretty?</em> Say no, and that is the end of you. Say yes, and she lowers the mask, and
+    the face underneath is not the face you were promised, and she asks again. You have heard there
+    are ways out. Say a certain word three times. Carry a certain sweet. Nobody agrees which. At the
+    next corner there is a woman standing under the light, and she is wearing a mask.
+  </p>
+  <p>
+    This is the thirty-second journal entry of the Monster Survival Guide. The subject is
+    Kuchisake-onna, the slit-mouthed woman — less a creature than a rumour, and one of the best
+    documented rumour panics of the twentieth century. She never harmed a child. The story about her
+    reached almost every child in Japan.
   </p>
 </Section>
 
 <Section heading="Where It Comes From">
   <p>
-    TODO — origin section. Cultural / historical / geographic context. A creature without context is
-    a horror story; a creature with context is something a reader can understand.
+    The modern legend has a fairly precise birthplace. Accounts trace it to rural Gifu Prefecture
+    late in 1978, where an elderly farm woman reportedly saw a woman with a mouth split towards her
+    ears standing near her home and was badly frightened. Sources differ on the town — Yaotsu in
+    some versions, a village in Motosu district in others — but they agree on the shape of what
+    followed. Local children picked the story up, retold it, and improved it.
   </p>
+  <p>
+    By January 1979 regional newspapers in the Gifu and Nagoya area had noticed the rumour among
+    schoolchildren; accounts differ on which paper ran it first. National weekly magazines took it
+    up from March. Folklorist Iikura Yoshiyuki of Kokugakuin University, interviewed by Nippon.com,
+    credits the cram schools: they gathered children from different districts in one room each
+    evening, and the children carried each other's stories home. Within about six months the
+    slit-mouthed woman was known from Aomori in the north to Kagoshima in the south.
+  </p>
+  <div class="pull-quote">
+    Iikura has said she "must be the first purely Japanese urban legend". Not a ghost from a temple
+    scroll, not a mountain spirit — a story built by children, in cram schools and on telephones,
+    that every adult in the country heard about by summer.
+  </div>
+  <p>
+    Older roots are claimed, and should be handled carefully. Some writers point to Edo-period
+    collections of strange tales, among them <em>Kaidan Oi no Tsue</em> and the illustrated{' '}
+    <em>Ehon Sayo Shigure</em>, which include a woman who turns to reveal a mouth slit to the ears —
+    in one telling, a fox in disguise. These are genuine echoes, but a direct line from them to the
+    1979 rumour has not been established. Most of what the children told each other was new.
+  </p>
+  <div class="lore-box">
+    <p>
+      The rumour also supplied its own backstories, none of them sourced: a cosmetic operation gone
+      wrong, three unlucky sisters, a patient who had left a hospital, a grudge centuries old. Their
+      sheer number is the tell. A real figure has one history. A rumour grows a new one every time
+      someone asks "but why?"
+    </p>
+  </div>
 </Section>
 
 <Section heading="What You Are Looking At">
+  <StatRow
+    stats={[
+      { num: '1979', label: 'Year the Gifu rumour went national' },
+      { num: '~6', label: 'Months for it to cross Japan, by Nippon.com’s account' },
+      { num: '0', label: 'Verified victims of the slit-mouthed woman herself' },
+    ]}
+  />
   <p>
-    TODO — physical description and identifying features. What witnesses agree on. What varies. What
-    to look for before you know what you are looking at.
+    The children's description is consistent at its core. She is a tall woman, often said to be
+    beautiful, with long hair and a surgical-style mask over the lower half of her face. Many
+    versions dress her in red — a coat, a beret, high heels. Beneath the mask, her mouth is slit
+    wide towards the ears. In some tellings she carries scissors, a knife or a sickle.
   </p>
+  <p>
+    Everything else varies, and the variation grew over time. She could run a hundred metres in six
+    seconds; in other schools, three. She hated hair pomade, or the smell of it. She loved a kind of
+    amber hard candy called <em>bekkō-ame</em> — or detested it, depending on who was telling you.
+    Researcher Yoshida Yuki, in a book excerpt published by Bunshun, notes that before the 1979 boom
+    she mostly showed her face and gave chase, and that the version in which she attacks became
+    standard only as the rumour peaked.
+  </p>
+  <div class="warning-box">
+    <div class="warn-label">⚠ Critical Field Note</div>
+    <p>
+      The one identifying feature of Kuchisake-onna — a woman in a face mask — is also one of the
+      most ordinary sights in Japan. The legend works by attaching dread to something you will see a
+      dozen times on any walk home. If the description fits half the people on the street, it is not
+      a description. It is a fear looking for somewhere to land.
+    </p>
+  </div>
 </Section>
 
 <Section heading="How It Operates">
   <p>
-    TODO — behaviour pattern. How it hunts / haunts / appears. What comes first, next, and after.
+    The legend has a script, and the script is the whole monster. She appears at dusk on the route
+    home, alone, at a corner. She asks her question. Every answer is a trap: no is fatal, yes leads
+    to the unmasking and a second question. The listener's only hope is a trick — an evasive answer
+    such as "average", a word chanted three times, a sweet thrown to distract her.
+  </p>
+  <p>
+    That structure is why it spread. A story with a question and a set of escape rules is a story
+    children can play with, test on each other, and trade. Each new school added a rule; each new
+    rule gave the story another reason to be retold.
+  </p>
+  <p>
+    The adult world responded as if the threat were real. By several accounts, patrols on school
+    routes were stepped up in the spring, some schools sent pupils home in groups, and police cars
+    were sent out in at least two cities. In June 1979, in Himeji, a woman who had dressed as the
+    figure was arrested carrying a knife — the clearest case of the rumour producing a genuine
+    hazard. Then, around the start of the summer holidays, it simply stopped. With the children out
+    of school and out of cram school, the network that carried it went quiet.
   </p>
 </Section>
 
 <Section heading="An Honest Assessment of Its Weaknesses">
   <p>
-    TODO — what the accumulated evidence suggests works against it. Be honest when this section is
-    thin.
+    Kuchisake-onna has no body, so the assessment is about the rumour — and the rumour's weaknesses
+    are well recorded.
+  </p>
+  <p>
+    <strong>She never leaves a witness.</strong> Every account is second-hand at best: a cousin, a
+    classmate, a child at another school. Even the founding Gifu sighting is a report of a report,
+    and sources cannot agree on the village.
+  </p>
+  <p>
+    <strong>She depends on a network.</strong> The legend travelled through cram schools, telephone
+    calls and weekly magazines, and it faded the moment the holidays broke that network up. A real
+    threat does not take August off.
+  </p>
+  <p>
+    <strong>Her real dangers are human.</strong> The best-recorded arrest of the 1979 wave was of a
+    woman imitating her. The fear also had real causes: Iikura suggests the figure reflected
+    children's unease about the strangers they met on late-night streets after cram school. That
+    fear is reasonable. It deserves a reasonable answer, not pomade.
+  </p>
+  <p>
+    None of this makes the children foolish. They were doing what children everywhere do with a good
+    story. The panic belonged to the adults who printed it.
   </p>
 </Section>
 
 <Section heading="Six Rules That May Save Your Life">
-  <p>TODO — short intro paragraph framing the rules.</p>
+  <p>
+    There is no woman to outwit, so these rules are not escape tricks. They are for the actual risks
+    of 1979 — dark streets, real strangers, and a story moving faster than anyone could check it.
+  </p>
   <SixRules
     rules={frontmatter.rules}
     title={frontmatter.title}
     number={frontmatter.number}
-    pocketHref={
-      frontmatter.status === 'draft' ? `/drafts/kuchisake-onna/pocket/` : `/pocket/kuchisake-onna/`
-    }
+    pocketHref="/pocket/kuchisake-onna/"
   />
 </Section>
 
 <Section heading="Two Cases on the Record">
-  <p>TODO — intro paragraph for the encounter section.</p>
+  <p>
+    Neither of these is a sighting. The first is the 1979 wave itself, as it was set down in the
+    press and recalled by folklorists. The second is what happened when the story crossed the sea.
+  </p>
   <EncounterCard
-    id="Encounter 01 · TODO · TODO date"
-    title="TODO — encounter title"
-    meta="TODO — encounter witness / context"
-    verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    id="Encounter 01 · Gifu Prefecture → Japan · Late 1978 – Summer 1979"
+    title="The Spring of the Mask"
+    meta="Schoolchildren, Cram Schools, the Weekly Press · A Nationwide Rumour Wave"
+    verdict="documented"
+    verdictLabel="Press & Folklore Record"
+    references={[
+      {
+        text: 'Nippon.com — “Japanese Urban Legends from the ‘Slit-Mouthed Woman’ to ‘Kisaragi Station’” (interview with Iikura Yoshiyuki, 2019)',
+        label: 'nippon.com',
+        href: 'https://www.nippon.com/en/japan-topics/g00789/',
+      },
+      {
+        text: 'Mynavi News — Nagi Yuki on the origins of the Kuchisake-onna legend (2023, Japanese)',
+        label: 'news.mynavi.jp',
+        href: 'https://news.mynavi.jp/article/20230725-2497323/',
+      },
+      {
+        text: 'Tokyo Weekender — “Kuchisake-Onna: Japan’s Terrifying Legend of the Slit-Mouthed Woman,” Cezary Jan Strusiewicz (2025)',
+        label: 'tokyoweekender.com',
+        href: 'https://www.tokyoweekender.com/art_and_culture/history/kuchisake-onna-slit-mouthed-woman/',
+      },
+    ]}
   >
-    <p>TODO — encounter prose. Real, cited account.</p>
+    <p>
+      Late in 1978, by the most widely repeated account, an elderly woman in rural Gifu saw a woman
+      with a slit mouth near her home. Children took the story and ran with it. Newspapers in the
+      region mentioned the rumour in January 1979; weekly magazines carried it nationally from
+      March; by June it had reached the far ends of the country. Along the way she acquired the
+      mask, the red coat, the question, the blade, the impossible running speed, and a growing list
+      of ways to escape her.
+    </p>
+    <p>
+      Adults took it seriously enough to act. Accounts describe patrols on school routes, pupils
+      sent home in groups, and police cars dispatched in some towns. In Himeji in June, a woman
+      dressed as the figure was arrested carrying a knife. Then the summer holidays arrived, the
+      cram schools emptied, and the wave subsided. What remained was a character — one that film and
+      television have borrowed ever since.
+    </p>
   </EncounterCard>
   <EncounterCard
-    id="Encounter 02 · TODO · TODO date"
-    title="TODO — second encounter title"
-    meta="TODO — second encounter witness / context"
-    verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    id="Encounter 02 · South Korea · 1990s – 2000s"
+    title="The Red Mask"
+    meta="Korean Schoolchildren · The Legend Retold as Ppalgan Masukeu"
+    verdict="folklore"
+    verdictLabel="Collected Folklore"
+    references={[
+      {
+        text: 'USC Digital Folklore Archives — “Red Mask” (informant account, South Korea)',
+        label: 'folklore.usc.edu',
+        href: 'https://folklore.usc.edu/red-mask/',
+      },
+      {
+        text: 'Korea JoongAng Daily — “Yesterday’s ghosts are today’s harsh realities,” Hong Sang-ji (2015)',
+        label: 'koreajoongangdaily.com',
+        href: 'https://www.koreajoongangdaily.com/lifestyle/yesterdays-ghosts-are-todays-harsh-realities/10625451',
+      },
+      {
+        text: 'Nippon.com — on the legend’s spread overseas from around 2000',
+        label: 'nippon.com',
+        href: 'https://www.nippon.com/en/japan-topics/g00789/',
+      },
+    ]}
   >
-    <p>TODO — second encounter prose.</p>
+    <p>
+      In South Korea the slit-mouthed woman became the Red Mask — <em>ppalgan masukeu</em> — a woman
+      in a red mask who appears on dim street corners and asks passers-by whether she is pretty.
+      Sources disagree on when she arrived. The Korea JoongAng Daily describes a nationwide scare in
+      the 1990s, with children hurrying home before dark; Nippon.com dates the legend's overseas
+      spread to around 2000; and an informant in the USC Digital Folklore Archives remembers
+      classmates trading the story around 2004, when he was seven.
+    </p>
+    <p>
+      The Korean versions changed to suit their tellers. The JoongAng Daily gives her a cosmetic
+      operation gone wrong as a backstory; Nippon.com notes variants in which she cannot turn
+      corners or climb stairs. The JoongAng Daily also suggests parents found the story useful for
+      getting children home early. It is the same pattern seen in Japan: a real worry about streets
+      at night, given a face and a question.
+    </p>
   </EncounterCard>
 </Section>
 
@@ -138,8 +330,19 @@ import '../../styles/pages/_draft.css';
 <Section heading="Before You Go">
   <Outro>
     <p>
-      TODO — closing outro. Echo the cold open. Land the rules. Give the reader a parting
-      instruction.
+      Kuchisake-onna is the rare monster in this guide whose spread can be followed almost month by
+      month: a farmhouse in Gifu, a newspaper column, the magazines, the cram schools, the whole
+      country, and then silence when the summer holidays began. She is one of the clearest pictures
+      we have of how a story becomes a panic, and how a panic ends.
+    </p>
+    <p>
+      The child on the corner in 1979 was right to be wary. Dark streets and strangers are worth
+      some caution. But the woman under the streetlight was almost certainly just wearing a mask,
+      and the one who played the part in Himeji was arrested for it.
+    </p>
+    <p>
+      End of journal entry. Walk home in company. Ask who actually saw her. And stay sceptical — a
+      question with no right answer is a sign you are inside a story.
     </p>
   </Outro>
 </Section>

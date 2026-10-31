@@ -3,130 +3,344 @@ number: '30'
 entryClass: 'Lake Cryptid'
 region: 'Okanagan Lake, British Columbia'
 title: 'Ogopogo'
-description: 'A long, humped shape moving against the current in a deep Canadian lake. Ogopogo is reported often enough that a lake town once put it on its welcome signs.'
-tags: ['Lake monster', 'Syilx (Okanagan) traditions flagged', 'Canada']
+description: 'A long, humped shape on a long, deep Canadian lake. Ogopogo has been filmed, photographed and searched for since 1968. The older stories of the lake are not about a monster, and they belong to the Syilx.'
+tags: ['Lake monster', 'Syilx tradition distinguished', 'Canada']
 danger: 3
 bandColor: '#2a5a5a'
 classification: 'monster survival guide  —  ogopogo'
 entryStatus: 'Active Entry'
-status: 'draft'
+status: 'published'
+publishDate: '2026-10-31'
 season: 1
 sightings:
   - {
-      name: 'Kelowna, BC',
-      lat: 49.88,
-      lon: -119.49,
-      label: 'Most-reported stretch of Okanagan Lake',
+      name: 'West Kelowna, BC',
+      lat: 49.86,
+      lon: -119.58,
+      year: 2011,
+      label: 'Richard Huls video · filmed from a winery above the lake',
+      sourceUrl: 'https://www.livescience.com/16910-ogopogo-canadian-lake-monster-video.html',
     }
-  - { name: 'Peachland, BC', lat: 49.77, lon: -119.74, label: 'West-shore sightings cluster' }
+  - {
+      name: 'Vernon, BC',
+      lat: 50.27,
+      lon: -119.27,
+      label: 'City held the “Ogopogo” copyright from 1956 until assigning it to the Okanagan Nation Alliance in 2021',
+      sourceUrl: 'https://amp.cbc.ca/news/canada/british-columbia/vernon-ogopogo-copyright-syilx-first-nation-1.5969084',
+    }
   - {
       name: 'Rattlesnake Island, Okanagan Lake',
       lat: 49.73,
       lon: -119.66,
-      label: 'Traditionally linked to the creature’s home',
+      label: 'Syilx offerings made when crossing near the island and Squally Point',
+      sourceUrl: 'https://www.tourismkelowna.com/blog/post/the-legend-the-spirit-the-creature-the-history-of-ogopogo/',
     }
 recordKind: reported
-recordNote: 'Working draft based on reported sightings and their later retellings. Sources and claims still need checking, and Syilx (Okanagan) traditions about the lake need careful, sourced treatment. Reports do not establish that the creature exists.'
+recordNote: Reported sightings, films and photographs from the nineteenth century onward, set
+  beside the Syilx tradition the cryptid image grew out of and does not represent. The reports are
+  real; they do not establish that the creature is.
 illustration:
   src: /illustrations/ogopogo.png
   alt: 'Loose ink doodle of a long-necked serpent rising from a lake, humps of its body breaking the water.'
 dossier:
   entity: 'Ogopogo'
   origin: 'Okanagan Lake, British Columbia'
-  status: Draft — awaiting research
+  status: Active — Sightings Still Reported, Nothing Ever Recovered
   stamps:
     - 'Okanagan Lake'
-    - 'British Columbia'
+    - 'Syilx Territory'
     - 'Lake Sightings'
   dangerLabel: LOW
-  dangerNote: '3/10 — Many sightings, no injuries attributed. The lake itself is the hazard: cold, deep water and sudden wind.'
+  dangerNote: 3/10 — More than a century of sightings, no confirmed attack, and nothing recovered
+    from the lake. The water itself is the hazard — long, deep, and quick to change.
 rules:
-  - title: TODO — rule 1
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 2
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 3
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 4
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 5
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 6
-    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: Fear the lake, not the monster.
+    body: Okanagan Lake is 135 km long and more than 200 m deep, and its weather turns quickly. Wear
+      a lifejacket, watch the sky, and get off the water when the wind rises.
+  - title: Count the waves before the humps.
+    body: The lake throws up long, rolling waves that read exactly like a row of humps. If the humps
+      move with the swell, they are the swell.
+  - title: Assume a log until it proves otherwise.
+    body: The timber trade left vast numbers of logs drifting just under the surface. A long, dark,
+      straight shape that keeps no head is a log until it does something a log cannot.
+  - title: Distance makes everything bigger.
+    body: The best film on record most likely shows a real animal — a bird or beaver — badly
+      over-sized because no one could judge the range. Note a landmark beside the shape.
+  - title: Film steadily and keep the original.
+    body: Shaky, zoomed footage has never settled anything here. Brace the camera, keep it running,
+      write down time and conditions, and never hand over only an edited copy.
+  - title: Know whose lake it is.
+    body: To the Syilx, the lake and its spirit are sacred, not a curiosity. Do not treat their
+      teachings or offerings as monster lore, and learn them from Syilx sources.
 ---
 
 import Section from '../../components/Section.astro';
+import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
 import EncounterCard from '../../components/EncounterCard.astro';
 import Outro from '../../components/Outro.astro';
 import MonsterMap from '../../components/MonsterMap.astro';
-import '../../styles/pages/_draft.css';
+import '../../styles/pages/ogopogo.css';
 
 <Section heading="If You're Reading This">
   <p>
-    TODO — cold open. Place the reader at the scene of the encounter. Establish atmosphere. Earn
-    attention before asking for trust.
+    It is a bright summer afternoon in the Okanagan Valley, and you are standing above the lake with
+    a phone in your hand. The water is long and narrow, folded between dry brown hills, and it runs
+    off to the north and south further than you can see. Out in the middle, a little way off the far
+    shore, something dark is lying on the surface.
+  </p>
+  <p>
+    It is long. It seems to be in sections — one dark shape, then a gap, then another — and it does
+    not look as though it is drifting the way the light chop is drifting around it. You lift the
+    phone and start recording, and the image jumps and blurs every time you zoom. By the time you
+    think to steady it against a post, the shape is lower in the water, and then it is gone.
+  </p>
+  <p>
+    This is the thirtieth journal entry of the Monster Survival Guide. The subject is Ogopogo, the
+    lake monster of Okanagan Lake in British Columbia — one of the most filmed cryptids in the
+    world, and one whose name was borrowed from a London dance tune. It is also a case where the
+    lake carried a far older and very different story long before the monster arrived, and that
+    story is not ours to turn into a creature feature.
   </p>
 </Section>
 
 <Section heading="Where It Comes From">
   <p>
-    TODO — origin section. Cultural / historical / geographic context. A creature without context is
-    a horror story; a creature with context is something a reader can understand.
+    Start with the lake. Okanagan Lake runs about 135 kilometres from end to end, only a few
+    kilometres wide, and reaches depths of more than two hundred metres. Its shores are the
+    traditional territory of the Syilx (Okanagan) people, whose tradition holds the lake —
+    kɬúsx̌nítkw in nsyilxcən — to be a living being with its own spirit.
   </p>
+  <p>
+    In Syilx tradition the lake is home to n̓x̌ax̌aitkʷ — spellings vary between sources, and Tourism
+    Kelowna writes it nx̌aʔx̌ʔitkʷ — a spirit of the water. According to the Sncewips Heritage Museum
+    of Westbank First Nation, it is a benevolent spirit whose truest form is the water itself, not a
+    serpent. Families have long offered tobacco or other gifts when crossing the lake, as thanks and
+    to ask for safe passage, and that practice continues. Tourism Kelowna adds that offerings were
+    made when crossing near Rattlesnake Island, close to Squally Point, and that the being appears
+    in petroglyphs as a creature of the water.
+  </p>
+  <div class="pull-quote">
+    Ogopogo and n̓x̌ax̌aitkʷ are not two names for one animal. One is a sacred teaching about water,
+    respect and reciprocity, held by a living Nation. The other is a tourist-era monster. This entry
+    is about the second, and is careful not to borrow the first.
+  </div>
+  <p>
+    The monster's name has a much plainer origin. "The Ogo-Pogo," subtitled "The Funny Fox-Trot,"
+    was a comic song by lyricist Cumberland Clark and composer Mark Strong, first published in
+    London in 1924. Within a few years the palindrome had been attached to the thing people said
+    they were seeing in Okanagan Lake, and it stuck. In 1953 a local broadcaster, Gil Seabrook,
+    registered a copyright under the name; the rights later passed to the City of Vernon.
+  </p>
+  <div class="lore-box">
+    <p>
+      Settler retellings turned the water spirit into a man-eating demon that demanded live
+      sacrifice, and some popular accounts still repeat that framing. The Sncewips Heritage Museum
+      rejects it plainly: the spirit "does not eat people nor does it need offerings of flesh." The
+      museum explains that tobacco, sage and, now and then, a small piece of meat were offered as
+      thanks, never out of fear — and that early settlers mistook that gesture for a sacrifice. In
+      2021, after objections from Syilx leaders, Vernon's council assigned its Ogopogo copyright to
+      the Okanagan Nation Alliance. Okanagan Indian Band Chief Byron Louis had called the city's
+      ownership of the name "cultural appropriation."
+    </p>
+  </div>
 </Section>
 
 <Section heading="What You Are Looking At">
+  <StatRow
+    stats={[
+      { num: '135', label: 'Kilometres of lake, end to end, for a creature to hide in' },
+      { num: '1924', label: 'Year the comic song that supplied the name was published in London' },
+      { num: '0', label: 'Carcasses or bones found by a 1991 submersible search' },
+    ]}
+  />
   <p>
-    TODO — physical description and identifying features. What witnesses agree on. What varies. What
-    to look for before you know what you are looking at.
+    The popular description is consistent in outline. Witnesses describe a long, dark, serpentine
+    animal swimming with an undulating motion, usually seen as a line of humps moving through the
+    water. Some describe a head like a horse's or a sheep's; the Canadian Encyclopedia notes the
+    resemblance to descriptions of the Loch Ness monster. Popular art usually makes it green. One
+    recent documentary-maker puts it at up to sixty feet long.
   </p>
+  <p>
+    Beyond that, the details drift. Some witnesses see humps and no head. Many, as the sceptic
+    Benjamin Radford has pointed out, describe nothing more than a straight, featureless dark shape
+    lying in the waves — which is a description of something, but not obviously of an animal. One
+    widely shared 2022 photograph showed a small orange object with horn-like points, about three
+    feet across; a commenter quoted in a review of a later documentary suggested a dead crayfish
+    floating upside down.
+  </p>
+  <div class="warning-box">
+    <div class="warn-label">⚠ Critical Field Note</div>
+    <p>
+      On a long, open lake you almost never know how far away a shape is, and without a range you
+      cannot know its size. A duck at a kilometre and a whale at five can look the same. The single
+      best film of Ogopogo appears to be exactly this mistake. Before you estimate length, find
+      something of known size beside it — a boat, a buoy, a stretch of shoreline.
+    </p>
+  </div>
 </Section>
 
 <Section heading="How It Operates">
   <p>
-    TODO — behaviour pattern. How it hunts / haunts / appears. What comes first, next, and after.
+    The pattern of a sighting barely changes from decade to decade. Someone on the shore, or on a
+    boat, sees a dark shape or a row of humps out on the water, often on a calm day. It seems to
+    move against the waves or faster than the current. It submerges or simply stops being visible.
+    If a camera is present, the footage is distant and unsteady.
+  </p>
+  <p>
+    The record is long and almost entirely visual. The earliest settler stories go back to the
+    nineteenth century; Tourism Kelowna also records that Susan Allison, a settler, was sure in 1872
+    that she had seen a dinosaur in the lake. In August 1968 Arthur Folden shot about a minute of
+    home-movie footage of something large and lifelike on calm water — still the best-known film. In
+    2011 Richard Huls filmed two dark shapes from a winery in West Kelowna and said of them, "It was
+    not going with the waves." Photographs and videos have kept arriving since.
+  </p>
+  <p>
+    What has never arrived is a body. In 1991 an expedition financed by Japan's Nippon Television
+    took a remotely operated vehicle and a miniature submarine down to the deepest part of the lake.
+    It found no animal, no carcass and no bones. A creature large enough to be seen from shore,
+    breeding in a closed lake for well over a century, would be expected to leave remains somewhere.
+    None has ever been produced.
   </p>
 </Section>
 
 <Section heading="An Honest Assessment of Its Weaknesses">
   <p>
-    TODO — what the accumulated evidence suggests works against it. Be honest when this section is
-    thin.
+    There is no monster here to fight, so the honest assessment is of the evidence — and the
+    evidence is weaker than the volume of footage suggests.
+  </p>
+  <p>
+    <strong>The lake makes its own humps.</strong> Radford notes that the geography of Okanagan Lake
+    produces long, unusual waves that can look exactly like a string of humps. A row of humps
+    travelling in a straight line on a long, narrow lake is exactly what such a wave train looks
+    like.
+  </p>
+  <p>
+    <strong>The lake is full of logs.</strong> Decades of the timber trade have left large numbers
+    of logs floating just under the surface. The Huls video, on Radford's reading, shows two
+    straight, dark forms side by side with no head or body shape at all — which fits floating timber
+    far better than it fits a serpent.
+  </p>
+  <p>
+    <strong>The best film shrinks under analysis.</strong> In 2005 Radford and John Kirk of the
+    British Columbia Scientific Cryptozoology Club examined the Folden film for a National
+    Geographic Channel programme. They concluded it shows a real animal, but that its size had been
+    greatly overestimated — most likely a waterfowl or beaver too far away to identify.
+  </p>
+  <p>
+    <strong>The tradition is not evidence.</strong> Supporters often cite Indigenous stories as
+    proof the animal is ancient. Even Radford, from the sceptical side, argues the old stories
+    describe a water spirit rather than a literal lake monster — and the Syilx accounts above say
+    the same thing in their own terms. Using a sacred tradition as cryptozoological evidence
+    misreads it twice.
+  </p>
+  <p>
+    None of that makes the witnesses liars. Kirk considers the Okanagan footage more plentiful and
+    of better quality than anything he has seen from Loch Ness. Plentiful footage of distant,
+    ambiguous shapes is still distant and ambiguous.
   </p>
 </Section>
 
 <Section heading="Six Rules That May Save Your Life">
-  <p>TODO — short intro paragraph framing the rules.</p>
+  <p>
+    Nobody has a confirmed injury from Ogopogo. People do get hurt on big, deep, cold lakes. These
+    rules are about the real danger first, then about recording what you see honestly — and about
+    remembering whose lake you are standing beside.
+  </p>
   <SixRules
     rules={frontmatter.rules}
     title={frontmatter.title}
     number={frontmatter.number}
-    pocketHref={frontmatter.status === 'draft' ? `/drafts/ogopogo/pocket/` : `/pocket/ogopogo/`}
+    pocketHref="/pocket/ogopogo/"
   />
 </Section>
 
 <Section heading="Two Cases on the Record">
-  <p>TODO — intro paragraph for the encounter section.</p>
+  <p>
+    The first case is the oldest settler story, retold for well over a century and read very
+    differently by the people whose lake it is. The second is the best film ever taken, and what
+    happened when it was examined.
+  </p>
   <EncounterCard
-    id="Encounter 01 · TODO · TODO date"
-    title="TODO — encounter title"
-    meta="TODO — encounter witness / context"
-    verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    id="Encounter 01 · Okanagan Lake · 1850s"
+    title="The Crossing"
+    meta="John McDougall, an Early Settler · A Story Retold Ever Since"
+    verdict="folklore"
+    verdictLabel="Settler Account — Retold"
+    references={[
+      {
+        text: 'Tourism Kelowna — “The legend, the spirit, the creature: the history of Ogopogo”',
+        label: 'tourismkelowna.com',
+        href: 'https://www.tourismkelowna.com/blog/post/the-legend-the-spirit-the-creature-the-history-of-ogopogo/',
+      },
+      {
+        text: 'Reactor — “Spirit of the Waters: Investigating the Creature of Lake Okanagan,” Judith Tarr (2024)',
+        label: 'reactormag.com',
+        href: 'https://reactormag.com/spirit-of-the-waters-investigating-the-creature-of-lake-okanagan/',
+      },
+      {
+        text: 'Westbank Museum — “The Ogopogo” (information from the Sncewips Heritage Museum)',
+        label: 'westbankmuseum.com',
+        href: 'https://westbankmuseum.com/ogopogo',
+      },
+      {
+        text: 'IMSLP — “The Ogo-Pogo,” Mark Strong and Cumberland Clark (sheet music, first published 1924)',
+        label: 'imslp.org',
+        href: 'https://imslp.org/wiki/The_Ogo-Pogo_(Strong,_Mark)',
+      },
+    ]}
   >
-    <p>TODO — encounter prose. Real, cited account.</p>
+    <p>
+      The story is usually told like this. In the 1850s — Tourism Kelowna gives 1855 — a settler
+      named John McDougall was crossing Okanagan Lake by canoe with his horses swimming behind on
+      ropes. Partway across, something dragged the horses down. McDougall cut the ropes to stop the
+      canoe from being pulled under with them. It is often cited as the first settler account of the
+      creature turning aggressive.
+    </p>
+    <p>
+      It is a second-hand story with no date that everyone agrees on, and it has been told and
+      retold for a very long time. In a documentary following a 2023 expedition, reviewed by Judith
+      Tarr, the Syilx artist and museum docent Coralee Miller offers a plainer reading: McDougall
+      most likely ran into a strong current he did not understand. Swimming horses tied to a small
+      boat on a big, cold lake is a dangerous arrangement with no monster involved. The same story
+      also fed the settler idea that the lake demanded sacrifice — the misunderstanding the Sncewips
+      Heritage Museum has since set out to correct.
+    </p>
   </EncounterCard>
   <EncounterCard
-    id="Encounter 02 · TODO · TODO date"
-    title="TODO — second encounter title"
-    meta="TODO — second encounter witness / context"
-    verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    id="Encounter 02 · Okanagan Lake · August 1968"
+    title="The Folden Film"
+    meta="Arthur Folden · Home-Movie Footage · Re-examined for Television, 2005"
+    verdict="documented"
+    verdictLabel="Investigated — Size Overestimated"
+    references={[
+      {
+        text: 'Live Science — “Ogopogo: Canada’s Loch Ness Monster,” Benjamin Radford (2014)',
+        label: 'livescience.com',
+        href: 'https://www.livescience.com/42399-ogopogo.html',
+      },
+      {
+        text: 'Live Science — “Was the ‘Canadian Loch Ness Monster’ Caught on Video?”, Benjamin Radford (2011)',
+        label: 'livescience.com',
+        href: 'https://www.livescience.com/16910-ogopogo-canadian-lake-monster-video.html',
+      },
+    ]}
   >
-    <p>TODO — second encounter prose.</p>
+    <p>
+      On a sunny August day in 1968, Arthur Folden filmed about a minute of home-movie footage of
+      something large and apparently alive moving on the calm surface of Okanagan Lake. For decades
+      it was held up as the strongest film evidence for Ogopogo, and it is still the footage most
+      often cited. In 1991 a Nippon Television expedition searched the deepest part of the lake with
+      a remotely operated vehicle and a miniature submarine and found nothing to match it.
+    </p>
+    <p>
+      In 2005, for the National Geographic Channel programme <em>Is It Real?</em>, Benjamin Radford
+      and the cryptozoologist John Kirk examined the film together. They agreed it shows a real
+      animal rather than a wave or a log — but concluded that its size had been greatly
+      overestimated, and that it was probably a waterfowl or a beaver, too far from the camera to
+      identify. That is where the case rests: an honest film of something real, made extraordinary
+      by a distance nobody could measure.
+    </p>
   </EncounterCard>
 </Section>
 
@@ -135,8 +349,19 @@ import '../../styles/pages/_draft.css';
 <Section heading="Before You Go">
   <Outro>
     <p>
-      TODO — closing outro. Echo the cold open. Land the rules. Give the reader a parting
-      instruction.
+      Ogopogo is a monster named after a fox-trot, given a copyright, and filmed more often than
+      almost any creature in this guide — and in all that time the lake has given up nothing but
+      footage. The humps are probably waves, the long dark shapes probably logs, and the best film
+      probably a bird a long way off. None of that requires anyone to have lied.
+    </p>
+    <p>
+      The lake had a story long before it had a monster, and it still does. That story belongs to
+      the Syilx, and it is about water — respecting it, giving thanks for it, and remembering that
+      what happens upstream reaches everyone downstream. It was never a creature to be survived.
+    </p>
+    <p>
+      End of journal entry. Wear the lifejacket. Find something to measure the shape against. And
+      leave the lake's older story to the people who keep it.
     </p>
   </Outro>
 </Section>

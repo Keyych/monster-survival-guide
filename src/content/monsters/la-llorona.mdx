@@ -9,131 +9,357 @@ danger: 6
 bandColor: '#3a4a6a'
 classification: 'monster survival guide  —  la llorona'
 entryStatus: 'Active Entry'
-status: 'draft'
+status: 'published'
+publishDate: '2026-10-31'
 season: 1
 sightings:
   - {
-      name: 'Mexico City',
+      name: 'Mexico City (Tenochtitlan)',
       lat: 19.43,
       lon: -99.13,
-      label: 'Oldest associations of the legend · colonial-era city tradition',
+      label: 'Weeping-woman omen, c. 1509 · recorded by Sahagún and his Nahua collaborators',
+      sourceUrl: 'https://blogs.loc.gov/folklife/2021/10/la-llorona-roots-branches-and-the-missing-link-from-spain/',
     }
   - {
-      name: 'Xochimilco, Mexico City',
-      lat: 19.26,
+      name: 'Embarcadero de Cuemanco, Xochimilco',
+      lat: 19.28,
       lon: -99.1,
-      label: 'Canal-side retellings of the weeping woman',
+      label: 'Annual La Llorona staging on the canals · audiences watch from trajineras',
+      sourceUrl: 'https://www.chilango.com/cultura/lo-bueno-lo-malo-y-lo-feo-de-la-llorona/',
     }
   - {
-      name: 'San Antonio, Texas',
-      lat: 29.42,
-      lon: -98.49,
-      label: 'Borderlands variant · river and creek retellings',
+      name: 'Santa Fe River, New Mexico',
+      lat: 35.69,
+      lon: -105.94,
+      label: 'Northern New Mexico retellings · arroyos, acequias, and the Santa Fe River',
+      sourceUrl: 'https://www.newmexicomagazine.org/blog/post/spirit-world-new-mexico-folklore/',
+    }
+  - {
+      name: 'Mesilla, New Mexico',
+      lat: 32.27,
+      lon: -106.8,
+      label: 'Rio Grande version · told from the Socorro bosque south to Juárez',
+      sourceUrl: 'https://www.caminorealheritage.org/articles/1207_llorona.pdf',
+    }
+  - {
+      name: 'Near Seguin, Texas',
+      lat: 29.57,
+      lon: -97.96,
+      label: 'Woman Hollering Creek · the legend rendered in English place-name and fiction',
+      sourceUrl: 'https://borderlore.org/searching-for-la-llorona/',
     }
 recordKind: folklore
-recordNote: 'Working draft about folklore and tradition. Cultural context and sources still need checking. The doodle is an imagined interpretation, not an authoritative cultural depiction.'
+recordNote: Folklore and cultural history — a legend told across Mexico and the US Southwest, with
+  contested roots in omen accounts recorded after the Spanish conquest. The doodle is an imagined
+  interpretation, not an authoritative cultural depiction.
 illustration:
   src: /illustrations/la-llorona.png
   alt: 'Loose ink doodle of a veiled weeping woman in a long gown, face in her hand, beside river reeds.'
 dossier:
   entity: 'La Llorona'
   origin: 'Mexico · Central Valley & beyond'
-  status: Draft — awaiting research
+  status: Living Tradition — Told Across Mexico and the US Southwest
   stamps:
     - 'Mexican Lore'
     - 'Rivers'
     - 'Oral Tradition'
   dangerLabel: ELEVATED
-  dangerNote: '6/10 — A warning story about water, night, and grief. Danger lies in the places she haunts, not in any recorded attack.'
+  dangerNote: 6/10 — No credible record of her harming anyone. The danger is the setting she is
+    told about — rivers, canals, arroyos, and irrigation ditches after dark.
 rules:
-  - title: TODO — rule 1
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 2
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 3
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 4
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 5
-    body: Replace with a specific, actionable rule derived from the encounter record.
-  - title: TODO — rule 6
-    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: Respect the water, not the ghost.
+    body: Every version puts her by a river, canal, or ditch at night, and that is where the real
+      risk is. Fast water and steep banks do not need a spirit to be deadly.
+  - title: Stay out of the arroyo when it rains.
+    body: New Mexico children are told she haunts the dry washes. A dry arroyo can flood in minutes
+      from rain you cannot see; the warning is sound even if the ghost is not.
+  - title: Hear what the story is for.
+    body: In New Mexico and along the Rio Grande the tale is told to keep children from the water
+      after dark. Treat it as safety advice wrapped in grief.
+  - title: A cry at night is usually something living.
+    body: Wind, birds, animals, and people carry far over water. Before you name a weeping woman,
+      rule out the ordinary sound sources around you.
+  - title: Be careful with the "ancient" claim.
+    body: The Aztec omen and the goddess Cihuacoatl are real records, but the familiar plot is not
+      in print until the 19th century. Say what is documented and what is assumed.
+  - title: Remember whose story it is.
+    body: La Llorona belongs to families in Mexico and the borderlands, who tell her for their own
+      reasons. Listen to the teller before you file her as a monster.
 ---
 
 import Section from '../../components/Section.astro';
+import StatRow from '../../components/StatRow.astro';
 import SixRules from '../../components/SixRules.astro';
 import EncounterCard from '../../components/EncounterCard.astro';
 import Outro from '../../components/Outro.astro';
 import MonsterMap from '../../components/MonsterMap.astro';
-import '../../styles/pages/_draft.css';
+import '../../styles/pages/la-llorona.css';
 
 <Section heading="If You're Reading This">
   <p>
-    TODO — cold open. Place the reader at the scene of the encounter. Establish atmosphere. Earn
-    attention before asking for trust.
+    It is late, and you are walking home along the edge of a river. Perhaps it is a canal in the
+    south of Mexico City, perhaps an irrigation ditch in northern New Mexico, perhaps a muddy bend
+    of the Rio Grande. The water is louder than it is in daylight. There are no lights on this
+    stretch, and you are walking faster than you mean to.
+  </p>
+  <p>
+    Then you hear it, somewhere ahead or behind — you cannot tell which. A woman, crying. Not
+    quietly. A long, rising wail that breaks into words, and the words are always the same:{' '}
+    <em>¡Ay, mis hijos!</em> Oh, my children. You have heard about her since you were small. You
+    know you are not supposed to go and look.
+  </p>
+  <p>
+    This is the twenty-ninth journal entry of the Monster Survival Guide. The subject is La Llorona,
+    the weeping woman — perhaps the best-known legend in Mexico and one of the most widely told in
+    the American Southwest. She has no body to examine and no confirmed sighting, but she has
+    something more durable than either: a story that millions of people were raised on.
   </p>
 </Section>
 
 <Section heading="Where It Comes From">
   <p>
-    TODO — origin section. Cultural / historical / geographic context. A creature without context is
-    a horror story; a creature with context is something a reader can understand.
+    The tale has many versions but one core. A woman, abandoned by the man she loved, drowns her
+    children in a river. Grief or punishment condemns her to search the riverbanks for them forever,
+    weeping. In some tellings she drowned them in rage; in others she simply lost them to the water.
+    Folklorists Norma Elia Cantú and Kathleen Alcalá describe this core as the shared spine of the
+    variants told throughout what the scholar Américo Paredes called "Greater Mexico".
   </p>
+  <p>
+    Where that story began is genuinely disputed, and anyone who tells you otherwise is selling
+    something. The case for deep Indigenous roots starts in the 16th century, with the Franciscan
+    friar Bernardino de Sahagún and the Nahua scholars who worked with him on the great
+    encyclopaedia now called the Florentine Codex. Its twelfth book lists omens said to have
+    troubled Tenochtitlan before the Spanish arrived. The sixth is a woman heard crying out at night
+    for her children, asking where she could take them. Another book of the same work describes the
+    goddess Cihuacoatl, who, in the codex's words, "walked about weeping at night".
+  </p>
+  <div class="pull-quote">
+    The omen is real, and old. What is not established is the line connecting it to the woman by the
+    river. That line was drawn later, by people looking backwards — and every generation since has
+    drawn it a little differently.
+  </div>
+  <p>
+    The caution matters. Sahagún gathered these accounts decades after the conquest of 1521,
+    probably in the 1550s, and the codex itself dates to the 1570s. Historian Amy Fuller notes that
+    the codices went unpublished until the 19th century, and that the legend as we know it does not
+    appear in print until the late 19th or early 20th century. Stephen Winick, writing on the
+    Library of Congress's Folklife Today blog, found the earliest literary treatment he could locate
+    in an 1849 poem by Manuel Carpio — and, intriguingly, an 1866 Spanish tale of a weeping ghost
+    called La Llorona, set in the Andalusian town of Rota.
+  </p>
+  <div class="lore-box">
+    <p>
+      Scholars have split on this for decades. Paredes argued the literary origin story was grafted
+      onto an older Indigenous cycle of supernatural women; Bacil Kirtley pointed to European
+      parallels, from German "White Lady" ghosts to Medea. Winick's own reading is that Spanish
+      elements reached Mexico but the roots remain largely Indigenous. A strong modern tradition
+      also equates La Llorona with La Malinche, the Nahua woman who interpreted for Hernán Cortés.
+      The most honest summary is that La Llorona is a Mexican story with several ancestors, and
+      nobody has a full family tree.
+    </p>
+  </div>
 </Section>
 
 <Section heading="What You Are Looking At">
+  <StatRow
+    stats={[
+      {
+        num: '6th',
+        label: 'Of the omens of conquest in Florentine Codex Book XII — a weeping woman',
+      },
+      {
+        num: '1849',
+        label: 'Earliest literary "La Llorona" Winick could find, a poem by Manuel Carpio',
+      },
+      { num: '0', label: 'Confirmed sightings — she is a story, not a specimen' },
+    ]}
+  />
   <p>
-    TODO — physical description and identifying features. What witnesses agree on. What varies. What
-    to look for before you know what you are looking at.
+    The descriptions agree on very little except the sound. She is a woman, usually in white,
+    usually near water, usually at night. Some tellings give her long black hair, a veil, or no
+    visible face at all; the Smithsonian Latino Center records a Mexico City version in which she
+    drifts through the neighbourhoods as fog rather than walking. The crying is the constant. She is
+    heard long before she is seen, and many who "encounter" her never see anything at all.
   </p>
+  <p>
+    What she wants also shifts. In most versions she is searching for her drowned children and may
+    take any child she finds near the water in their place. In others she lures men out at night, or
+    simply passes by in grief. The older figure in the Florentine Codex is different again: a voice
+    of foreboding, lamenting for her children because something terrible is coming. Stephanie Wood,
+    writing on that codex image, observes that it is less frightening than later depictions.
+  </p>
+  <div class="warning-box">
+    <div class="warn-label">⚠ Critical Field Note</div>
+    <p>
+      Sound behaves strangely over water and in canyons at night. Wind, animals, birds, and distant
+      people can all produce cries that seem to come from everywhere and nowhere. If you hear
+      weeping by a river, the useful question is not who she is — it is whether someone living needs
+      help, and whether you are standing somewhere safe.
+    </p>
+  </div>
 </Section>
 
 <Section heading="How It Operates">
   <p>
-    TODO — behaviour pattern. How it hunts / haunts / appears. What comes first, next, and after.
+    La Llorona does not operate in the woods. She operates at the edge of the bed, and at the edge
+    of the water. The legend is passed from adult to child, usually as a warning: do not play by the
+    river, do not go out after dark, do not wander off alone. Writing for New Mexico Magazine in
+    2025, Jennifer Levin put the regional version plainly — "New Mexico children don't play in
+    arroyos for fear of La Llorona."
+  </p>
+  <p>
+    The setting adapts to the landscape. In northern New Mexico she haunts arroyos, acequias, and
+    the Santa Fe River. Along the Rio Grande, a 2007 local history by Paul Harden described a
+    version centred on the river from the Socorro bosque south to Juárez, with a variant set in
+    Mesilla. In Texas the story became a place-name, Woman Hollering Creek near Seguin, which Sandra
+    Cisneros later used for her fiction. Cantú recalls hearing of La Llorona haunting the Platte
+    River in Lincoln, Nebraska — carried north by families who moved for work.
+  </p>
+  <p>
+    And she is staged. Each autumn around the Day of the Dead, a production of La Llorona is
+    performed on the canals of Xochimilco at the Embarcadero de Cuemanco, with audiences watching
+    from torch-lit trajineras. Its producers present it as the "original" story; Fuller, reviewing
+    the codex evidence, does not think the record supports that claim. Both things can be true at
+    once: a modern performance, and a genuinely living tradition.
   </p>
 </Section>
 
 <Section heading="An Honest Assessment of Its Weaknesses">
   <p>
-    TODO — what the accumulated evidence suggests works against it. Be honest when this section is
-    thin.
+    There is no creature here to weaken. La Llorona has never left a footprint, a photograph, or a
+    victim that any credible source attributes to her. The honest assessment is of the story.
+  </p>
+  <p>
+    <strong>Her strongest claim to age is also her weakest.</strong> The sixth omen and Cihuacoatl's
+    nightly weeping are genuine 16th-century records, but they were written down after the conquest,
+    by people who already knew how it ended. Omens recorded in hindsight tell us how a defeat was
+    remembered, not what was heard in 1509.
+  </p>
+  <p>
+    <strong>The famous plot is younger than it sounds.</strong> The abandoned mother and the drowned
+    children do not appear in print until the 19th century, and a weeping ghost of the same name
+    turns up in a Spanish tale of 1866. That does not make La Llorona a European import; it makes
+    her a story that has absorbed many sources and kept the ones that rang true.
+  </p>
+  <p>
+    <strong>Her real power is what she is used for.</strong> Writers from Octavio Paz to Chicana
+    authors of the borderlands have read her as a figure of loss, conquest, and the women blamed for
+    both. A legend that can carry that much meaning is not going to be disproved. It can only be
+    understood.
   </p>
 </Section>
 
 <Section heading="Six Rules That May Save Your Life">
-  <p>TODO — short intro paragraph framing the rules.</p>
+  <p>
+    There is no ghost here to defeat. The danger in this entry is real, though, and it is the water.
+    These rules take the legend at its word — stay away from the river at night — and add what the
+    record actually supports.
+  </p>
   <SixRules
     rules={frontmatter.rules}
     title={frontmatter.title}
     number={frontmatter.number}
-    pocketHref={
-      frontmatter.status === 'draft' ? `/drafts/la-llorona/pocket/` : `/pocket/la-llorona/`
-    }
+    pocketHref="/pocket/la-llorona/"
   />
 </Section>
 
 <Section heading="Two Cases on the Record">
-  <p>TODO — intro paragraph for the encounter section.</p>
+  <p>
+    Neither of these is a sighting. The first is the oldest written trace of a weeping woman in the
+    Valley of Mexico; the second is the legend as it is still told along the rivers and ditches of
+    the American Southwest.
+  </p>
   <EncounterCard
-    id="Encounter 01 · TODO · TODO date"
-    title="TODO — encounter title"
-    meta="TODO — encounter witness / context"
-    verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    id="Encounter 01 · Tenochtitlan · c. 1509 (recorded c. 1550s–1570s)"
+    title="The Sixth Omen"
+    meta="Florentine Codex, Book XII · Bernardino de Sahagún and Nahua collaborators"
+    verdict="documented"
+    verdictLabel="Recorded After the Conquest"
+    references={[
+      {
+        text: 'American Historical Association — “Omens Predicting Catastrophe” (Florentine Codex, Book 12, Ch. 1)',
+        label: 'historians.org',
+        href: 'https://www.historians.org/resource/omens-predicting-catastrophe/',
+      },
+      {
+        text: 'Library of Congress Folklife Today — “La Llorona: Roots, Branches, and the Missing Link from Spain,” Stephen Winick (2021)',
+        label: 'loc.gov',
+        href: 'https://blogs.loc.gov/folklife/2021/10/la-llorona-roots-branches-and-the-missing-link-from-spain/',
+      },
+      {
+        text: 'Visual Lexicon of Aztec Hieroglyphs — “choca” (Florentine Codex, Book 12, f. 2v)',
+        label: 'wired-humanities.org',
+        href: 'https://aztecglyphs.wired-humanities.org/node/8291',
+      },
+      {
+        text: 'History Today — “The Evolving Legend of La Llorona,” Amy Fuller (2015)',
+        label: 'historytoday.com',
+        href: 'https://www.historytoday.com/miscellanies/wailing-woman',
+      },
+    ]}
   >
-    <p>TODO — encounter prose. Real, cited account.</p>
+    <p>
+      In the twelfth book of the Florentine Codex, the Nahua account of the conquest opens with a
+      series of omens said to have appeared in the years before the Spanish arrived. The sixth is a
+      woman heard weeping and shouting in the night. In one English rendering she cries, "Oh, my
+      children, we are about to go," and at other times asks where she can take them. Winick dates
+      the omen to around 1509, roughly a decade before Cortés landed.
+    </p>
+    <p>
+      The codex illustrates her: a woman with her hands clasped to her chest and tears on her cheek,
+      drawn in a European-influenced style. Scholars have suggested she may be the earliest image of
+      La Llorona, and the codex elsewhere links nightly weeping to Cihuacoatl. But the material was
+      collected decades after 1521 and lay unpublished for centuries. It shows that a weeping woman
+      belonged to how the conquest was remembered. It does not show that the riverbank ghost already
+      existed.
+    </p>
   </EncounterCard>
   <EncounterCard
-    id="Encounter 02 · TODO · TODO date"
-    title="TODO — second encounter title"
-    meta="TODO — second encounter witness / context"
-    verdict="draft"
-    verdictLabel="Awaiting research"
-    references={[{ text: 'TODO — primary source to be checked' }]}
+    id="Encounter 02 · New Mexico & Texas · 20th century → present"
+    title="The Weeping Woman Comes North"
+    meta="Arroyos, Acequias, and the Rio Grande · The Legend as a Living Warning"
+    verdict="cultural"
+    verdictLabel="Living Tradition"
+    references={[
+      {
+        text: 'New Mexico Magazine — “Spirit World: New Mexico Folklore,” Jennifer Levin (2025)',
+        label: 'newmexicomagazine.org',
+        href: 'https://www.newmexicomagazine.org/blog/post/spirit-world-new-mexico-folklore/',
+      },
+      {
+        text: 'Borderlore — “Searching for La Llorona,” Norma Elia Cantú and Kathleen Alcalá (2024)',
+        label: 'borderlore.org',
+        href: 'https://borderlore.org/searching-for-la-llorona/',
+      },
+      {
+        text: 'El Camino Real Heritage — “La Llorona,” Paul Harden (El Defensor Chieftain, 2007)',
+        label: 'caminorealheritage.org',
+        href: 'https://www.caminorealheritage.org/articles/1207_llorona.pdf',
+      },
+      {
+        text: 'Smithsonian Magazine, Smithsonian Latino Center blog — on La Llorona and “¡Ay, mis hijos!” (2018)',
+        label: 'smithsonianmag.com',
+        href: 'https://www.smithsonianmag.com/blogs/smithsonian-latino-center/2018/10/23/ay-mis-hijos-llorona-story/',
+      },
+    ]}
   >
-    <p>TODO — second encounter prose.</p>
+    <p>
+      North of the border, La Llorona is less an omen than a household rule. In northern New Mexico
+      she is said to search the waterways for her drowned children, and children are warned away
+      from arroyos and acequias because she might mistake them for her own. Storyteller Ray John de
+      Aragón, author of <em>The Legend of La Llorona</em>, is among those who have kept the regional
+      versions in print. Along the Rio Grande, Harden recorded a version in which a woman from
+      Juárez drowns her children in the river near Mesilla, and noted its plain purpose: keeping
+      children away from the river at night.
+    </p>
+    <p>
+      Cantú and Alcalá, introducing their 2024 collection <em>Weeping Women</em>, trace the story on
+      both banks of the Rio Grande — a river that became a border in 1848 — and beyond it, into
+      Texas, the Midwest, and Latina and Chicana writing. The Smithsonian Latino Center notes that
+      in the United States she adapts to her new country and may weep in Spanish, English, or
+      Spanglish. No one in these sources claims proof. What they document is a story doing its work,
+      generation after generation.
+    </p>
   </EncounterCard>
 </Section>
 
@@ -142,8 +368,20 @@ import '../../styles/pages/_draft.css';
 <Section heading="Before You Go">
   <Outro>
     <p>
-      TODO — closing outro. Echo the cold open. Land the rules. Give the reader a parting
-      instruction.
+      La Llorona is the oldest voice in this guide and one of the hardest to pin down. A weeping
+      woman appears in an account of the conquest written down by Nahua scholars and a Spanish
+      friar; a weeping ghost of the same name turns up in an Andalusian tale; and somewhere between
+      them, over centuries, Mexican families built a story that has outlived every attempt to fix
+      its origin.
+    </p>
+    <p>
+      What the legend has always said, underneath the grief, is simple. The river is dangerous at
+      night. Children should not be near it alone. Those who told you about her were not trying to
+      frighten you for its own sake. They were trying to bring you home.
+    </p>
+    <p>
+      End of journal entry. Keep away from the water after dark. Listen before you look. And when
+      you hear the story, remember who is telling it, and why.
     </p>
   </Outro>
 </Section>

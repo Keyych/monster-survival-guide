@@ -1,0 +1,16 @@
+/* Theme tokens for /beast-of-gevaudan. Shared layout rules live in field-manual.css.
+   Palette: the Margeride in winter — granite and parchment greys, register ink, and rust. */
+:root {
+  --paper: #e8e2d6;
+  --aged: #d6cdbd;
+  --ink: #1b1612;
+  --faded: #4a4038;
+  --stamp-red: #7a2410;
+  --stamp-blue: #2e3236;
+  --accent: #8a3a14;
+  --redact: #110d0a;
+  --margin: #5a4e44;
+  --highlight: #b8642a;
+  --rule: rgba(27, 22, 18, 0.12);
+  --warn: #7a2410;
+}
