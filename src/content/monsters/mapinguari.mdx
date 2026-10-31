@@ -1,0 +1,138 @@
+---
+number: '35'
+entryClass: 'Forest Giant'
+region: 'Amazon basin, Brazil'
+title: 'The Mapinguari'
+description: 'Amazonian hunters and rubber tappers describe a huge, foul-smelling, slow-moving creature in the deep forest. Some researchers have wondered if the stories carry a memory of the giant ground sloth.'
+tags: ['Amazonian folklore', 'Indigenous traditions flagged', 'Brazil']
+danger: 4
+bandColor: '#2a4a1a'
+classification: 'monster survival guide  —  the mapinguari'
+entryStatus: 'Active Entry'
+status: 'draft'
+season: 1
+sightings:
+  - { name: 'Acre, Brazil', lat: -9.0, lon: -70.5, label: 'Western Amazon reports and searches' }
+  - {
+      name: 'Rondônia, Brazil',
+      lat: -10.9,
+      lon: -62.8,
+      label: 'Reported encounter accounts from the region',
+    }
+recordKind: folklore
+recordNote: 'Working draft about folklore and reported encounters. Indigenous and regional traditions need careful, sourced treatment; claims still need checking. Reports do not establish that the creature exists.'
+illustration:
+  src: /illustrations/mapinguari.png
+  alt: 'Loose ink doodle of a huge shaggy upright creature, like a giant ground sloth, with long curved claws.'
+dossier:
+  entity: 'The Mapinguari'
+  origin: 'Amazon basin, Brazil'
+  status: Draft — awaiting research
+  stamps:
+    - 'Amazon'
+    - 'Brazil'
+    - 'Forest Lore'
+  dangerLabel: GUARDED
+  dangerNote: '4/10 — Feared in the stories, but no verified attack. Getting lost or injured in deep forest is the real risk.'
+rules:
+  - title: TODO — rule 1
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 2
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 3
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 4
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 5
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 6
+    body: Replace with a specific, actionable rule derived from the encounter record.
+---
+
+import Section from '../../components/Section.astro';
+import SixRules from '../../components/SixRules.astro';
+import EncounterCard from '../../components/EncounterCard.astro';
+import Outro from '../../components/Outro.astro';
+import MonsterMap from '../../components/MonsterMap.astro';
+import '../../styles/pages/_draft.css';
+
+<Section heading="If You're Reading This">
+  <p>
+    TODO — cold open. Place the reader at the scene of the encounter. Establish atmosphere. Earn
+    attention before asking for trust.
+  </p>
+</Section>
+
+<Section heading="Where It Comes From">
+  <p>
+    TODO — origin section. Cultural / historical / geographic context. A creature without context is
+    a horror story; a creature with context is something a reader can understand.
+  </p>
+</Section>
+
+<Section heading="What You Are Looking At">
+  <p>
+    TODO — physical description and identifying features. What witnesses agree on. What varies. What
+    to look for before you know what you are looking at.
+  </p>
+</Section>
+
+<Section heading="How It Operates">
+  <p>
+    TODO — behaviour pattern. How it hunts / haunts / appears. What comes first, next, and after.
+  </p>
+</Section>
+
+<Section heading="An Honest Assessment of Its Weaknesses">
+  <p>
+    TODO — what the accumulated evidence suggests works against it. Be honest when this section is
+    thin.
+  </p>
+</Section>
+
+<Section heading="Six Rules That May Save Your Life">
+  <p>TODO — short intro paragraph framing the rules.</p>
+  <SixRules
+    rules={frontmatter.rules}
+    title={frontmatter.title}
+    number={frontmatter.number}
+    pocketHref={
+      frontmatter.status === 'draft' ? `/drafts/mapinguari/pocket/` : `/pocket/mapinguari/`
+    }
+  />
+</Section>
+
+<Section heading="Two Cases on the Record">
+  <p>TODO — intro paragraph for the encounter section.</p>
+  <EncounterCard
+    id="Encounter 01 · TODO · TODO date"
+    title="TODO — encounter title"
+    meta="TODO — encounter witness / context"
+    verdict="draft"
+    verdictLabel="Awaiting research"
+    references={[{ text: 'TODO — primary source to be checked' }]}
+  >
+    <p>TODO — encounter prose. Real, cited account.</p>
+  </EncounterCard>
+  <EncounterCard
+    id="Encounter 02 · TODO · TODO date"
+    title="TODO — second encounter title"
+    meta="TODO — second encounter witness / context"
+    verdict="draft"
+    verdictLabel="Awaiting research"
+    references={[{ text: 'TODO — primary source to be checked' }]}
+  >
+    <p>TODO — second encounter prose.</p>
+  </EncounterCard>
+</Section>
+
+<MonsterMap title={frontmatter.title} sightings={frontmatter.sightings} />
+
+<Section heading="Before You Go">
+  <Outro>
+    <p>
+      TODO — closing outro. Echo the cold open. Land the rules. Give the reader a parting
+      instruction.
+    </p>
+  </Outro>
+</Section>

@@ -1,0 +1,147 @@
+---
+number: '34'
+entryClass: 'Historic Man-Eater'
+region: 'Gévaudan, France · 1764–1767'
+title: 'The Beast of Gévaudan'
+description: 'For three years in the 1760s, something killed people across a remote French province, and the king sent his own hunters. The deaths are documented in parish registers. What did the killing is still argued over.'
+tags: ['1764–1767', 'Parish records', 'France']
+danger: 9
+bandColor: '#6a2a0a'
+classification: 'monster survival guide  —  the beast of gévaudan'
+entryStatus: 'Active Entry'
+status: 'draft'
+season: 1
+sightings:
+  - {
+      name: 'Margeride, Gévaudan',
+      lat: 44.85,
+      lon: 3.45,
+      year: 1764,
+      label: 'Core area of the attacks',
+    }
+  - {
+      name: 'Mont Mouchet',
+      lat: 45.03,
+      lon: 3.43,
+      year: 1767,
+      label: 'Area where a large animal was killed in 1767',
+    }
+recordKind: reported
+recordNote: 'Working draft based on eighteenth-century records and later histories. Casualty figures, dates, and sources still need checking. The deaths are documented; a monster is not.'
+illustration:
+  src: /illustrations/beast-of-gevaudan.png
+  alt: 'Loose ink doodle of a huge snarling wolf-like beast with a bristling back and clawed forepaws.'
+dossier:
+  entity: 'The Beast of Gévaudan'
+  origin: 'Gévaudan, France · 1764–1767'
+  status: Draft — awaiting research
+  stamps:
+    - 'Gévaudan'
+    - '1764–1767'
+    - 'Royal Hunt'
+  dangerLabel: EXTREME
+  dangerNote: '9/10 — Documented fatal attacks over three years. Likely one or more large wolves, but the record is a real death toll.'
+rules:
+  - title: TODO — rule 1
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 2
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 3
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 4
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 5
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 6
+    body: Replace with a specific, actionable rule derived from the encounter record.
+---
+
+import Section from '../../components/Section.astro';
+import SixRules from '../../components/SixRules.astro';
+import EncounterCard from '../../components/EncounterCard.astro';
+import Outro from '../../components/Outro.astro';
+import MonsterMap from '../../components/MonsterMap.astro';
+import '../../styles/pages/_draft.css';
+
+<Section heading="If You're Reading This">
+  <p>
+    TODO — cold open. Place the reader at the scene of the encounter. Establish atmosphere. Earn
+    attention before asking for trust.
+  </p>
+</Section>
+
+<Section heading="Where It Comes From">
+  <p>
+    TODO — origin section. Cultural / historical / geographic context. A creature without context is
+    a horror story; a creature with context is something a reader can understand.
+  </p>
+</Section>
+
+<Section heading="What You Are Looking At">
+  <p>
+    TODO — physical description and identifying features. What witnesses agree on. What varies. What
+    to look for before you know what you are looking at.
+  </p>
+</Section>
+
+<Section heading="How It Operates">
+  <p>
+    TODO — behaviour pattern. How it hunts / haunts / appears. What comes first, next, and after.
+  </p>
+</Section>
+
+<Section heading="An Honest Assessment of Its Weaknesses">
+  <p>
+    TODO — what the accumulated evidence suggests works against it. Be honest when this section is
+    thin.
+  </p>
+</Section>
+
+<Section heading="Six Rules That May Save Your Life">
+  <p>TODO — short intro paragraph framing the rules.</p>
+  <SixRules
+    rules={frontmatter.rules}
+    title={frontmatter.title}
+    number={frontmatter.number}
+    pocketHref={
+      frontmatter.status === 'draft'
+        ? `/drafts/beast-of-gevaudan/pocket/`
+        : `/pocket/beast-of-gevaudan/`
+    }
+  />
+</Section>
+
+<Section heading="Two Cases on the Record">
+  <p>TODO — intro paragraph for the encounter section.</p>
+  <EncounterCard
+    id="Encounter 01 · TODO · TODO date"
+    title="TODO — encounter title"
+    meta="TODO — encounter witness / context"
+    verdict="draft"
+    verdictLabel="Awaiting research"
+    references={[{ text: 'TODO — primary source to be checked' }]}
+  >
+    <p>TODO — encounter prose. Real, cited account.</p>
+  </EncounterCard>
+  <EncounterCard
+    id="Encounter 02 · TODO · TODO date"
+    title="TODO — second encounter title"
+    meta="TODO — second encounter witness / context"
+    verdict="draft"
+    verdictLabel="Awaiting research"
+    references={[{ text: 'TODO — primary source to be checked' }]}
+  >
+    <p>TODO — second encounter prose.</p>
+  </EncounterCard>
+</Section>
+
+<MonsterMap title={frontmatter.title} sightings={frontmatter.sightings} />
+
+<Section heading="Before You Go">
+  <Outro>
+    <p>
+      TODO — closing outro. Echo the cold open. Land the rules. Give the reader a parting
+      instruction.
+    </p>
+  </Outro>
+</Section>

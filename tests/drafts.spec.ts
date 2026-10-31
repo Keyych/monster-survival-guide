@@ -63,7 +63,15 @@ for (const slug of slugs) {
     await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', /noindex/);
     await expect(page.locator('link[rel="canonical"]')).toHaveCount(0);
     await expect(page.locator('.eyebrow')).toContainText('Unpublished draft');
-    const printed = await page.locator('.pocket-rules li > div').allTextContents();
+    // Join title (<h2>) and body (<p>) explicitly; Astro 7 strips the
+    // whitespace between them (same fix as tests/reading.spec.ts).
+    const printed = await page.locator('.pocket-rules li > div').evaluateAll((divs) =>
+      divs.map((d) => {
+        const h2 = d.querySelector('h2')?.textContent ?? '';
+        const p = d.querySelector('p')?.textContent ?? '';
+        return `${h2} ${p}`;
+      }),
+    );
     expect(printed.map(normalize)).toEqual(rules.map(normalize));
     await expect(page.getByRole('link', { name: 'Back to the entry' })).toHaveAttribute(
       'href',

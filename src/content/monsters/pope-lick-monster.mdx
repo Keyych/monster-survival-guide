@@ -1,0 +1,139 @@
+---
+number: '33'
+entryClass: 'Trestle Legend'
+region: 'Louisville, Kentucky'
+title: 'The Pope Lick Monster'
+description: 'A goat-man said to lure people onto a railway trestle high above Pope Lick Creek. The monster has never been found. The trains are real, and people have died on that bridge.'
+tags: ['Kentucky', 'Railway trestle', 'Legend with real danger']
+danger: 8
+bandColor: '#4a3a1a'
+classification: 'monster survival guide  —  the pope lick monster'
+entryStatus: 'Active Entry'
+status: 'draft'
+season: 1
+sightings:
+  - {
+      name: 'Pope Lick trestle, Louisville, KY',
+      lat: 38.21,
+      lon: -85.51,
+      label: 'Railway bridge over Pope Lick Creek',
+    }
+recordKind: folklore
+recordNote: 'Working draft about a local legend attached to a real, active railway bridge. Sources, incident dates, and safety details still need checking. The legend is not evidence of a creature; the danger from trains is real.'
+illustration:
+  src: /illustrations/pope-lick-monster.png
+  alt: 'Loose ink doodle of a ram-horned goat-man crouched on hooved legs by a railway trestle.'
+dossier:
+  entity: 'The Pope Lick Monster'
+  origin: 'Louisville, Kentucky'
+  status: Draft — awaiting research
+  stamps:
+    - 'Louisville, KY'
+    - 'Trestle'
+    - 'Active Railway'
+  dangerLabel: SEVERE
+  dangerNote: '8/10 — The creature is folklore. The active railway trestle is not: trespassing on it has proved fatal.'
+rules:
+  - title: TODO — rule 1
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 2
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 3
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 4
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 5
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 6
+    body: Replace with a specific, actionable rule derived from the encounter record.
+---
+
+import Section from '../../components/Section.astro';
+import SixRules from '../../components/SixRules.astro';
+import EncounterCard from '../../components/EncounterCard.astro';
+import Outro from '../../components/Outro.astro';
+import MonsterMap from '../../components/MonsterMap.astro';
+import '../../styles/pages/_draft.css';
+
+<Section heading="If You're Reading This">
+  <p>
+    TODO — cold open. Place the reader at the scene of the encounter. Establish atmosphere. Earn
+    attention before asking for trust.
+  </p>
+</Section>
+
+<Section heading="Where It Comes From">
+  <p>
+    TODO — origin section. Cultural / historical / geographic context. A creature without context is
+    a horror story; a creature with context is something a reader can understand.
+  </p>
+</Section>
+
+<Section heading="What You Are Looking At">
+  <p>
+    TODO — physical description and identifying features. What witnesses agree on. What varies. What
+    to look for before you know what you are looking at.
+  </p>
+</Section>
+
+<Section heading="How It Operates">
+  <p>
+    TODO — behaviour pattern. How it hunts / haunts / appears. What comes first, next, and after.
+  </p>
+</Section>
+
+<Section heading="An Honest Assessment of Its Weaknesses">
+  <p>
+    TODO — what the accumulated evidence suggests works against it. Be honest when this section is
+    thin.
+  </p>
+</Section>
+
+<Section heading="Six Rules That May Save Your Life">
+  <p>TODO — short intro paragraph framing the rules.</p>
+  <SixRules
+    rules={frontmatter.rules}
+    title={frontmatter.title}
+    number={frontmatter.number}
+    pocketHref={
+      frontmatter.status === 'draft'
+        ? `/drafts/pope-lick-monster/pocket/`
+        : `/pocket/pope-lick-monster/`
+    }
+  />
+</Section>
+
+<Section heading="Two Cases on the Record">
+  <p>TODO — intro paragraph for the encounter section.</p>
+  <EncounterCard
+    id="Encounter 01 · TODO · TODO date"
+    title="TODO — encounter title"
+    meta="TODO — encounter witness / context"
+    verdict="draft"
+    verdictLabel="Awaiting research"
+    references={[{ text: 'TODO — primary source to be checked' }]}
+  >
+    <p>TODO — encounter prose. Real, cited account.</p>
+  </EncounterCard>
+  <EncounterCard
+    id="Encounter 02 · TODO · TODO date"
+    title="TODO — second encounter title"
+    meta="TODO — second encounter witness / context"
+    verdict="draft"
+    verdictLabel="Awaiting research"
+    references={[{ text: 'TODO — primary source to be checked' }]}
+  >
+    <p>TODO — second encounter prose.</p>
+  </EncounterCard>
+</Section>
+
+<MonsterMap title={frontmatter.title} sightings={frontmatter.sightings} />
+
+<Section heading="Before You Go">
+  <Outro>
+    <p>
+      TODO — closing outro. Echo the cold open. Land the rules. Give the reader a parting
+      instruction.
+    </p>
+  </Outro>
+</Section>

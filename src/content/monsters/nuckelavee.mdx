@@ -1,0 +1,133 @@
+---
+number: '31'
+entryClass: 'Sea Demon'
+region: 'Orkney Islands, Scotland'
+title: 'The Nuckelavee'
+description: 'Orkney islanders described a skinless horse-and-rider fused into one body, rising from the sea to blight crops and livestock. It could not cross fresh running water.'
+tags: ['Orcadian folklore', 'Sea and blight', 'Scotland']
+danger: 7
+bandColor: '#5a2a24'
+classification: 'monster survival guide  —  the nuckelavee'
+entryStatus: 'Active Entry'
+status: 'draft'
+season: 1
+sightings:
+  - { name: 'Orkney Mainland', lat: 59.0, lon: -3.1, label: 'Island traditions of the Nuckelavee' }
+  - { name: 'Sanday, Orkney', lat: 59.25, lon: -2.57, label: 'North Isles folklore cluster' }
+recordKind: folklore
+recordNote: 'Working draft about folklore and tradition. Sources still need checking, especially the nineteenth-century Orkney accounts. The doodle is an imagined interpretation.'
+illustration:
+  src: /illustrations/nuckelavee.png
+  alt: 'Loose ink doodle of a skinless horse with a gaunt, long-armed rider’s torso growing from its back.'
+dossier:
+  entity: 'The Nuckelavee'
+  origin: 'Orkney Islands, Scotland'
+  status: Draft — awaiting research
+  stamps:
+    - 'Orkney'
+    - 'Sea Lore'
+    - 'Running Water'
+  dangerLabel: HIGH
+  dangerNote: '7/10 — In the lore, a bringer of sickness and crop failure. Fresh running water is the one recorded defence.'
+rules:
+  - title: TODO — rule 1
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 2
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 3
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 4
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 5
+    body: Replace with a specific, actionable rule derived from the encounter record.
+  - title: TODO — rule 6
+    body: Replace with a specific, actionable rule derived from the encounter record.
+---
+
+import Section from '../../components/Section.astro';
+import SixRules from '../../components/SixRules.astro';
+import EncounterCard from '../../components/EncounterCard.astro';
+import Outro from '../../components/Outro.astro';
+import MonsterMap from '../../components/MonsterMap.astro';
+import '../../styles/pages/_draft.css';
+
+<Section heading="If You're Reading This">
+  <p>
+    TODO — cold open. Place the reader at the scene of the encounter. Establish atmosphere. Earn
+    attention before asking for trust.
+  </p>
+</Section>
+
+<Section heading="Where It Comes From">
+  <p>
+    TODO — origin section. Cultural / historical / geographic context. A creature without context is
+    a horror story; a creature with context is something a reader can understand.
+  </p>
+</Section>
+
+<Section heading="What You Are Looking At">
+  <p>
+    TODO — physical description and identifying features. What witnesses agree on. What varies. What
+    to look for before you know what you are looking at.
+  </p>
+</Section>
+
+<Section heading="How It Operates">
+  <p>
+    TODO — behaviour pattern. How it hunts / haunts / appears. What comes first, next, and after.
+  </p>
+</Section>
+
+<Section heading="An Honest Assessment of Its Weaknesses">
+  <p>
+    TODO — what the accumulated evidence suggests works against it. Be honest when this section is
+    thin.
+  </p>
+</Section>
+
+<Section heading="Six Rules That May Save Your Life">
+  <p>TODO — short intro paragraph framing the rules.</p>
+  <SixRules
+    rules={frontmatter.rules}
+    title={frontmatter.title}
+    number={frontmatter.number}
+    pocketHref={
+      frontmatter.status === 'draft' ? `/drafts/nuckelavee/pocket/` : `/pocket/nuckelavee/`
+    }
+  />
+</Section>
+
+<Section heading="Two Cases on the Record">
+  <p>TODO — intro paragraph for the encounter section.</p>
+  <EncounterCard
+    id="Encounter 01 · TODO · TODO date"
+    title="TODO — encounter title"
+    meta="TODO — encounter witness / context"
+    verdict="draft"
+    verdictLabel="Awaiting research"
+    references={[{ text: 'TODO — primary source to be checked' }]}
+  >
+    <p>TODO — encounter prose. Real, cited account.</p>
+  </EncounterCard>
+  <EncounterCard
+    id="Encounter 02 · TODO · TODO date"
+    title="TODO — second encounter title"
+    meta="TODO — second encounter witness / context"
+    verdict="draft"
+    verdictLabel="Awaiting research"
+    references={[{ text: 'TODO — primary source to be checked' }]}
+  >
+    <p>TODO — second encounter prose.</p>
+  </EncounterCard>
+</Section>
+
+<MonsterMap title={frontmatter.title} sightings={frontmatter.sightings} />
+
+<Section heading="Before You Go">
+  <Outro>
+    <p>
+      TODO — closing outro. Echo the cold open. Land the rules. Give the reader a parting
+      instruction.
+    </p>
+  </Outro>
+</Section>
