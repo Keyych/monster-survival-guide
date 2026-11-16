@@ -9,7 +9,7 @@ export const site = {
   signature: 'Stallbaumers',
   tagline: 'Identification · Survival · Documented Accounts',
   description:
-    'A field manual for the things that should not exist — researched, verified where possible, and written so you have the information before you need it.',
+    'A written field guide to cryptids and folklore monsters — a field manual for the things that should not exist, researched, verified where possible, and written so you have the information before you need it.',
   /**
    * Public production URL. Used by canonical, og:url, sitemap.
    * Replace once the site has a real domain.
